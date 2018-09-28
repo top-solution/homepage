@@ -1,0 +1,35 @@
+@import '../../sass/variables.scss';
+
+.header {
+  $header-text-color: $white;
+
+  background-color: $ts-purple;
+  color: $white;
+  font-family: $font-exo;
+  font-size: $font-size-body;
+
+  .header-content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $breakpont-lg;
+    padding: 1.45rem 1.0875rem;
+  }
+
+  .header-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .header-menu-item {
+    margin: $spacing-horizontal-md;
+
+    a {
+      color: $header-text-color;
+      text-decoration: none;
+    }
+  }
+}

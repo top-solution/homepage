@@ -1,0 +1,26 @@
+@import '../sass/variables.scss';
+
+.page-contacts {
+  color: $ts-purple;
+
+  .page-content {
+    display: flex;
+
+    .contacts-form {
+      flex: 1 0 50%;
+    }
+
+    .contacts-info {
+      flex: 1 0 25%;
+
+      ul {
+        list-style: none;
+        margin-left: 0;
+      }
+    }
+
+    .contacts-socials {
+      flex: 1 0 25%;
+    }
+  }
+}

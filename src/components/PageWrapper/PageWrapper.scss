@@ -1,0 +1,10 @@
+@import '../../sass/variables.scss';
+
+.page-wrapper {
+  padding: $spacing-vertical-lg;
+  
+  .page-content {
+    margin: 0 auto;
+    max-width: $breakpont-lg;
+  }
+}

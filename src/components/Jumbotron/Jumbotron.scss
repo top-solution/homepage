@@ -1,0 +1,12 @@
+@import '../../sass/variables.scss';
+
+.jumbotron {
+  background-color: $ts-purple-dark;
+  color: $white;
+  padding: $spacing-vertical-lg;
+  
+  .jumbotron-wrapper {
+    margin: 0 auto;
+    max-width: $breakpont-lg;
+  }
+}
