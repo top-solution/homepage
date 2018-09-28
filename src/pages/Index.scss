@@ -1,0 +1,42 @@
+@import '../sass/variables.scss';
+
+
+#hexagons-small {
+  max-height: calc(100vh - 120px);
+
+  .hexagon-cyan {
+    .hexagon {
+      fill: $ts-cyan;
+    }
+
+    path,
+    text,
+    tspan {
+      fill: $black;
+    }
+  }
+
+  .hexagon-purple {
+    .hexagon {
+      fill: $ts-purple;
+    }
+
+    path,
+    text,
+    tspan {
+      fill: $white;
+    }
+  }
+
+  .hexagon-orange {
+    .hexagon {
+      fill: $ts-orange;
+    }
+
+    path,
+    text,
+    tspan {
+      fill: $white;
+    }
+  }
+}

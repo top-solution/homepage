@@ -6,6 +6,8 @@ import Layout from '../components/layout'
 import ExagonsSmall from '../images/exagons-small'
 import PageWrapper from '../components/PageWrapper/PageWrapper';
 
+import './Index.scss'
+
 const IndexPage = () => (
   <Layout>
     <ExagonsSmall />
