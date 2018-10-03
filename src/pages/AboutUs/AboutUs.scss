@@ -1,0 +1,27 @@
+@import '../../sass/variables.scss';
+
+.page-about-us {
+  font-size: $font-size-body-lg;
+
+  .ts-logo {
+    margin: $spacing-vertical-md 0 $spacing-vertical-xxl;
+    text-align: center;
+
+    img {
+      max-width: 18rem;
+    }
+  }
+
+  .logos {
+    display: flex;
+    margin-top: $spacing-vertical-xxl;
+
+    align-items: center;
+    justify-content: center;
+
+
+    img {
+      max-width: 20rem;
+    }
+  }
+}

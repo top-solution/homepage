@@ -1,1 +1,1 @@
-export {default as default} from './Index/Index';
+export { default } from './Index/Index';
