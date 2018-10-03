@@ -8,13 +8,15 @@ const hexagonsSmall = props => (
     viewBox="0 0 1010 1000"
     {...props}
   >
+    <defs>
+      <filter id="blur-filter" y="-40%" height="180%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+      </filter>
+    </defs>
     <ellipse fill="none" cx={127.375} cy={1266} rx={14.625} ry={14.75} />
-    <g class="hexagon-orange">
+    <g className="hexagon-orange">
       <path
-        fill="none"
-        class="hexagon"
-        strokeWidth={16}
-        strokeMiterlimit={10}
+        className="hexagon"
         d="M654.885 585.991l-149.913 89.744-150-88.38-.087-178.125 149.912-89.745 150 88.381z"
       />
       <text transform="translate(423.43 479.02)">
@@ -32,10 +34,20 @@ const hexagonsSmall = props => (
         </tspan>
       </text>
     </g>
-    <g class="hexagon-cyan">
+    {/* Sviluppo Individuale */}
+    <g className="hexagon-cyan" onClick={ () => props.onHexagonClick('SVILUPPO_INDIVIDUALE', 'right') }>
+      <path
+        className="hexagon"
+        d="M1000.483 584.634l-149.912 89.744-150-88.38-.088-178.125 149.913-89.745 150 88.381z"
+      />
+      <path
+        className="hexagon hexagon-shadow"
+        filter="url(#blur-filter)"
+        d="M1000.483 584.634l-149.912 89.744-150-88.38-.088-178.125 149.913-89.745 150 88.381z"
+      />
       <path
         fill="none"
-        class="hexagon"
+        className="hexagon"
         strokeWidth={16}
         strokeMiterlimit={10}
         d="M1000.483 584.634l-149.912 89.744-150-88.38-.088-178.125 149.913-89.745 150 88.381z"
@@ -73,12 +85,15 @@ const hexagonsSmall = props => (
         />
       </g>
     </g>
-    <g class="hexagon-cyan">
+    {/* Audic Competenze */}
+    <g className="hexagon-cyan" onClick={ () => props.onHexagonClick('AUDIT_COMPETENZE', 'right') }>
       <path
-        fill="none"
-        class="hexagon"
-        strokeWidth={16}
-        strokeMiterlimit={10}
+        className="hexagon"
+        d="M842.872 274.506L692.959 364.25l-150-88.381-.087-178.125L692.784 8l150 88.381z"
+      />
+      <path
+        className="hexagon hexagon-shadow"
+        filter="url(#blur-filter)"
         d="M842.872 274.506L692.959 364.25l-150-88.381-.087-178.125L692.784 8l150 88.381z"
       />
       <text transform="rotate(30.499 252.924 1338.563)">
@@ -125,12 +140,15 @@ const hexagonsSmall = props => (
         </tspan>
       </text>
     </g>
-    <g class="hexagon-cyan">
+    {/* Sviluppo organizzativo */}
+    <g className="hexagon-cyan" onClick={ () => props.onHexagonClick('SVILUPPO_ORGANIZZATIVO', 'right') }>
       <path
-        fill="none"
-        class="hexagon"
-        strokeWidth={16}
-        strokeMiterlimit={10}
+        className="hexagon"
+        d="M842.6 896.127l-149.912 89.744-150-88.381-.088-178.125 149.913-89.744 150 88.381z"
+      />
+      <path
+        className="hexagon hexagon-shadow"
+        filter="url(#blur-filter)"
         d="M842.6 896.127l-149.912 89.744-150-88.381-.088-178.125 149.913-89.744 150 88.381z"
       />
       <path d="M749.962 779.111v-7.698h11.549l1.024-3.557-67.364-42.342h-2.047l-67.364 42.342 1.024 3.557h11.549v7.698l1.924 1.924h7.059c-3.843 13.939-9.268 45.693-1.261 59.664h-5.796l-1.926 1.924v9.622h-7.7l-1.924 1.924v11.547l1.924 1.924H757.66l1.924-1.924v-11.547l-1.924-1.924h-7.698v-9.622l-1.924-1.924h-5.789c7.17-14.38 2.392-45.963-.981-59.664h6.771l1.923-1.924zm-116.501-11.548l60.684-38.146 60.684 38.146H633.461zm17.852 13.473h8.637c1.785 6.922 3.877 18.696 4.594 29.969.911 14.285-.5 24.514-4.081 29.695h-9.745c-9.122-10.571-3.632-45.079.595-59.664zm12.605 0h22.249c-3.843 13.939-9.268 45.693-1.261 59.664h-20.004c7.169-14.38 2.389-45.963-.984-59.664zm34.882 0c1.783 6.922 3.877 18.696 4.595 29.969.911 14.285-.5 24.514-4.081 29.695h-9.745c-9.122-10.571-3.635-45.081.592-59.664h8.639zm56.936 75.062v7.698h-123.18v-7.698h123.18zm-9.625-3.849h-103.93v-7.698h103.933v7.698h-.003zM703.753 840.7c7.17-14.38 2.39-45.963-.981-59.664h21.888c-3.843 13.939-9.268 45.693-1.261 59.664h-19.646zm38.137-29.695c.911 14.285-.5 24.514-4.079 29.695h-9.745c-9.122-10.571-3.633-45.081.592-59.664h8.637c1.783 6.922 3.877 18.698 4.595 29.969zm4.221-33.818h-103.93v-5.773h103.933v5.773h-.003z" />
@@ -146,7 +164,6 @@ const hexagonsSmall = props => (
           SVILUPPO
         </tspan>
       </text>
-    </g>
     <text transform="rotate(30.625 -1312.911 1446.337)">
       <tspan
         x={0}
@@ -158,12 +175,16 @@ const hexagonsSmall = props => (
         ORGANIZZATIVO
       </tspan>
     </text>
-    <g class="hexagon-purple">
+    </g>
+    {/* Piattaforme web */}
+    <g className="hexagon-purple" onClick={ () => props.onHexagonClick('PIATTAFORME_WEB', 'left') }>
       <path
-        fill="none"
-        class="hexagon"
-        strokeWidth={16}
-        strokeMiterlimit={10}
+        className="hexagon"
+        d="M466.867 276.475l-149.912 89.744-150-88.38-.088-178.125L316.78 9.969l150 88.381z"
+      />
+      <path
+        className="hexagon hexagon-shadow"
+        filter="url(#blur-filter)"
         d="M466.867 276.475l-149.912 89.744-150-88.38-.088-178.125L316.78 9.969l150 88.381z"
       />
       <path fill="none" d="M177.071 266.131l271.622.335" />
@@ -186,12 +207,15 @@ const hexagonsSmall = props => (
         </tspan>
       </text>
     </g>
-    <g class="hexagon-purple">
+    {/* Applicazioni web */}
+    <g className="hexagon-purple" onClick={ () => props.onHexagonClick('APPLICAZIONI_WEB', 'left') }>
       <path
-        fill="none"
-        class="hexagon"
-        strokeWidth={16}
-        strokeMiterlimit={10}
+        className="hexagon"
+        d="M309 587.261l-149.913 89.745-150-88.381L9 410.5l149.913-89.744 150 88.38z"
+      />
+      <path
+        className="hexagon hexagon-shadow"
+        filter="url(#blur-filter)"
         d="M309 587.261l-149.913 89.745-150-88.381L9 410.5l149.913-89.744 150 88.38z"
       />
       <path
@@ -264,19 +288,19 @@ const hexagonsSmall = props => (
       </text>
       <text transform="rotate(-30.529 1255.648 -46.938)">
         <tspan x={0} y={0} fontFamily="'Exo-DemiBold'" fontSize={25}>
-          W
-        </tspan>
-        <tspan x={23.774} y={0} fontFamily="'Exo-DemiBold'" fontSize={25}>
-          EB
+          WEB
         </tspan>
       </text>
     </g>
-    <g class="hexagon-purple">
+    {/* Training ICT     */}
+    <g className="hexagon-purple" onClick={ () => props.onHexagonClick('TRAINING_ICT', 'left') }>
       <path
-        fill="none"
-        class="hexagon"
-        strokeWidth={16}
-        strokeMiterlimit={10}
+        className="hexagon"
+        d="M467.236 897.634l-149.913 89.744-150-88.38-.087-178.125 149.912-89.745 150 88.381z"
+      />
+      <path
+        className="hexagon hexagon-shadow"
+        filter="url(#blur-filter)"
         d="M467.236 897.634l-149.913 89.744-150-88.38-.087-178.125 149.912-89.745 150 88.381z"
       />
       <g>

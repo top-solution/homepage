@@ -1,0 +1,107 @@
+@import '../../sass/variables.scss';
+
+
+#hexagons-small {
+  max-height: calc(100vh - 120px);
+  margin-left: 0;
+  margin-right: 0;
+  transition: margin-left $timing-medium $timing-function, margin-right $timing-medium $timing-function;
+
+  .hexagon-cyan,
+  .hexagon-purple {
+    cursor: pointer;
+
+    &:hover {
+      .hexagon-shadow {
+        opacity: 1;
+      }
+    }
+  }
+
+  .hexagon-cyan {
+    .hexagon {
+      fill: $ts-cyan;
+    }
+
+    path,
+    text,
+    tspan {
+      fill: $black;
+    }
+  }
+
+  .hexagon-purple {
+    .hexagon {
+      fill: $ts-purple;
+    }
+
+    path,
+    text,
+    tspan {
+      fill: $white;
+    }
+  }
+
+  .hexagon-orange {
+    .hexagon {
+      fill: $ts-orange;
+    }
+
+    path,
+    text,
+    tspan {
+      fill: $white;
+    }
+  }
+
+  .hexagon-shadow {
+    opacity: 0;
+    transition: opacity $timing-quick $timing-function;
+  }
+
+  &.shift-left {
+    margin-left: 500px;
+  }
+
+  &.shift-right {
+    margin-right: 500px;
+  }
+}
+
+.left-panel,
+.right-panel {
+  opacity: 0;
+  position: absolute;
+  padding: $spacing-vertical-md $spacing-horizontal-md;
+  top: 0;
+  min-width: 500px;
+  max-width: 500px;
+  height: 100%;
+  transition: opacity $timing-medium $timing-function, left $timing-medium $timing-function, right $timing-medium $timing-function;
+
+  &.shown {
+    opacity: 1;
+  }
+}
+
+.left-panel {
+  left: -500px;
+
+  &.shown {
+    left: 0;
+  }
+}
+
+.right-panel {
+  right: -500px;
+
+  &.shown {
+    right: 0;
+  }
+}
+
+.index-page {
+  .page-content {
+    position: relative;
+  }
+}
