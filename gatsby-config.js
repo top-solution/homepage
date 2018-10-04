@@ -3,6 +3,13 @@ module.exports = {
     title: 'Gatsby Default Starter',
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/editorial`,
+        name: 'pages',
+      },
+    },
     'gatsby-plugin-react-helmet',
     // {
     //   resolve: `gatsby-plugin-manifest`,
@@ -17,6 +24,7 @@ module.exports = {
     //   },
     // },
     'gatsby-plugin-offline',
-    'gatsby-plugin-sass'
-  ],
+    'gatsby-plugin-sass',
+    `gatsby-transformer-remark`
+  ]
 }

@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../../components/layout'
 
 import ExagonsSmall from '../../images/exagons-small'
-import PageWrapper from '../../components/PageWrapper/PageWrapper';
 
 import './Index.scss'
 
@@ -94,6 +92,7 @@ class IndexPage extends Component {
         <SviluppoOrganizzativo />
       );        
         break;
+      default: break;
     }
 
     let leftPanelContent = null;
