@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Exagons = props => (
+const Hexagons = props => (
   <svg
     baseProfile="basic"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -811,4 +811,4 @@ const Exagons = props => (
   </svg>
 )
 
-export default Exagons
+export default Hexagons

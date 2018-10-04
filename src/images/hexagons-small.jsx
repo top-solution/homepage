@@ -1,6 +1,6 @@
 import React from 'react'
 
-const hexagonsSmall = props => (
+const HexagonsSmall = props => (
   <svg
     id="hexagons-small"
     baseProfile="basic"
@@ -345,5 +345,5 @@ const hexagonsSmall = props => (
   </svg>
 )
 
-export default hexagonsSmall
+export default HexagonsSmall
 

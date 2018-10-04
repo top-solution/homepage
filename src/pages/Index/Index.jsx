@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Layout from '../../components/layout'
 
-import ExagonsSmall from '../../images/exagons-small'
+import HexagonsSmall from '../../images/hexagons-small'
 
 import './Index.scss'
 
@@ -110,7 +110,7 @@ class IndexPage extends Component {
     return (
       <div className="index-page">
         <Layout>
-          <ExagonsSmall className={hexagonsClassName} onHexagonClick={ this.handleHexagonClick }/>
+          <HexagonsSmall className={hexagonsClassName} onHexagonClick={ this.handleHexagonClick }/>
           <div className={ leftPanelClassName }>
             { leftPanelContent }
           </div>
