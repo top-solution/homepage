@@ -21,6 +21,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "build-icons": "npx svgstore --inline src/images/icons/*.svg > src/images/icons/icons-sprite.svg && npx svgr --no-svgo src/images/icons/icons-sprite.svg > src/images/icons/IconsSprite.jsx",
     "build": "gatsby build",
     "start": "gatsby develop",
     "develop": "gatsby develop",
@@ -28,7 +29,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.14.2"
+    "@svgr/cli": "^3.0.0",
+    "prettier": "^1.14.2",
+    "svgstore-cli": "^1.3.1"
   },
   "repository": {
     "type": "git",

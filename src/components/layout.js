@@ -5,6 +5,8 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './Header/Header'
 
+import SvgIconsSprite from '../images/icons/IconsSprite';
+
 import './style.scss';
 
 const Layout = ({ children }) => (
@@ -30,6 +32,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <SvgIconsSprite />
         <div className="page-content">
           {children}
         </div>
