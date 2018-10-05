@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.933 16.933" height="64" width="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.836 16.431" height="62.104" width="52.296">
   <defs>
     <filter id="a" color-interpolation-filters="sRGB">
-      <feFlood result="flood" flood-color="#000" flood-opacity=".498"/>
+      <feFlood result="flood" flood-color="#000" flood-opacity=".2"/>
       <feComposite result="composite1" operator="in" in2="SourceGraphic" in="flood"/>
-      <feGaussianBlur result="blur" stdDeviation=".2" in="composite1"/>
+      <feGaussianBlur result="blur" stdDeviation=".3" in="composite1"/>
       <feOffset result="offset"/>
       <feComposite result="composite2" in2="offset" in="SourceGraphic"/>
     </filter>

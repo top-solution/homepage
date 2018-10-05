@@ -14,6 +14,7 @@ import SviluppoIndividuale from './topics/SviluppoIndividuale';
 import SviluppoOrganizzativo from './topics/SviluppoOrganizzativo';
 import Hexagon from '../../components/Hexagon/Hexagon';
 import Icon from '../../components/Icon/Icon';
+import HexagonChart from '../../components/HexagonChart/HexagonChart';
 
 
 class IndexPage extends Component {
@@ -111,9 +112,7 @@ class IndexPage extends Component {
     return (
       <div className="index-page">
         <Layout>
-          <Hexagon className="purple" width={512} height={512} icon="ict-training" text={'Applicazioni\nweb'} />
-          <Hexagon className="cyan" width={512} height={512} icon="management-development" text={'Sviluppo\norganizzativo'} />
-          <Hexagon className="orange" width={512} height={512} centralText text={'il tuo\nbusiness'} />
+          <HexagonChart />
           <HexagonsSmall className={hexagonsClassName} onHexagonClick={ this.handleHexagonClick }/>
           <div className={ leftPanelClassName }>
             { leftPanelContent }

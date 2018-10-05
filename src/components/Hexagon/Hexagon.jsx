@@ -17,37 +17,35 @@ const Hexagon = ({ className, icon, text, centralText, ...props }) => {
   }
 
   return (
-    <div className={ `hexagon ${ className || ''}` }> 
-      <SVGHexagon {...props}>
-        <g className="hexagon-icon" transform="scale(0.4) translate(12.66, 6)">        
-          <use xlinkHref={ `#${ icon }` }/>
-        </g>
-        <g className="hexagon-text">        
-          <text 
-            x="8.5"
-            y={ textY }
-            fontSize={ fontSize }
-            width="8"
-            textAnchor="middle"
-            alignmentBaseline="central"
-            fill="currentColor"
-            >
-            { textUpper }
-          </text>
-          <text 
-            x="8.5"
-            y={ textY + 2 }
-            fontSize={ fontSize }
-            width="8"
-            textAnchor="middle"
-            alignmentBaseline="central"
-            fill="currentColor"
-            >
-            { textLower }
-          </text>
-        </g>
-      </SVGHexagon>
-    </div>
+    <SVGHexagon className={ `hexagon ${ className || ''}` } {...props}>
+      <g className="hexagon-icon" transform="scale(0.4) translate(12.66, 6)">        
+        <use xlinkHref={ `#${ icon }` }/>
+      </g>
+      <g className="hexagon-text">        
+        <text 
+          x="8.5"
+          y={ textY }
+          fontSize={ fontSize }
+          width="8"
+          textAnchor="middle"
+          alignmentBaseline="central"
+          fill="currentColor"
+          >
+          { textUpper }
+        </text>
+        <text 
+          x="8.5"
+          y={ textY + 2 }
+          fontSize={ fontSize }
+          width="8"
+          textAnchor="middle"
+          alignmentBaseline="central"
+          fill="currentColor"
+          >
+          { textLower }
+        </text>
+      </g>
+    </SVGHexagon>
   );
 };
 

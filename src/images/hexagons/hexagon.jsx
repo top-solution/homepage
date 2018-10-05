@@ -4,14 +4,14 @@ const SVGHexagon = props => (
   <svg viewBox="0 0 16.933 16.933" height={64} width={64} {...props}>
     <defs>
       <filter id="a" colorInterpolationFilters="sRGB">
-        <feFlood result="flood" floodColor="#000" floodOpacity={0.498} />
+        <feFlood result="flood" floodColor="#000" floodOpacity={0.2} />
         <feComposite
           result="composite1"
           operator="in"
           in2="SourceGraphic"
           in="flood"
         />
-        <feGaussianBlur result="blur" stdDeviation={0.2} in="composite1" />
+        <feGaussianBlur result="blur" stdDeviation={0.3} in="composite1" />
         <feOffset result="offset" />
         <feComposite result="composite2" in2="offset" in="SourceGraphic" />
       </filter>
