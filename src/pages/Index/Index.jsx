@@ -12,7 +12,7 @@ import TrainingICT from './topics/TrainingICT';
 import Audit from './topics/Audit';
 import SviluppoIndividuale from './topics/SviluppoIndividuale';
 import SviluppoOrganizzativo from './topics/SviluppoOrganizzativo';
-import Hexagon from '../../images/hexagons/hexagon';
+import Hexagon from '../../components/Hexagon/Hexagon';
 import Icon from '../../components/Icon/Icon';
 
 
@@ -68,7 +68,6 @@ class IndexPage extends Component {
 
     let topicElement = null;
 
-    debugger
     switch (this.state.topic) {
       case 'PIATTAFORME_WEB': topicElement = (
         <Piattaforme />
@@ -112,8 +111,9 @@ class IndexPage extends Component {
     return (
       <div className="index-page">
         <Layout>
-          <Icon name="ict-training" />
-          <Hexagon width={1024} height={1024} />
+          <Hexagon className="purple" width={512} height={512} icon="ict-training" text={'Applicazioni\nweb'} />
+          <Hexagon className="cyan" width={512} height={512} icon="management-development" text={'Sviluppo\norganizzativo'} />
+          <Hexagon className="orange" width={512} height={512} centralText text={'il tuo\nbusiness'} />
           <HexagonsSmall className={hexagonsClassName} onHexagonClick={ this.handleHexagonClick }/>
           <div className={ leftPanelClassName }>
             { leftPanelContent }

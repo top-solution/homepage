@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Hexagon = props => (
+const SVGHexagon = props => (
   <svg viewBox="0 0 16.933 16.933" height={64} width={64} {...props}>
     <defs>
       <filter id="a" colorInterpolationFilters="sRGB">
@@ -29,7 +29,8 @@ const Hexagon = props => (
       filter="url(#a)"
       transform="translate(0 -280.067)"
     />
+    { props.children }
   </svg>
 )
 
-export default Hexagon
+export default SVGHexagon

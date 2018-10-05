@@ -1,0 +1,19 @@
+@import '../../sass/variables.scss';
+
+.hexagon {
+  text {
+    text-transform: uppercase;
+  }
+  
+  &.purple {
+    color: $ts-purple;
+  }
+
+  &.cyan {
+    color: $ts-cyan;
+  }
+
+  &.orange {
+    color: $ts-orange;
+  }
+}
