@@ -8,9 +8,9 @@ import './Index.scss'
 import ApplicazioniWeb from './topics/ApplicazioniWeb';
 import Piattaforme from './topics/Piattaforme';
 import TrainingICT from './topics/TrainingICT';
-import Audit from './topics/Audit';
-import SviluppoIndividuale from './topics/SviluppoIndividuale';
-import SviluppoOrganizzativo from './topics/SviluppoOrganizzativo';
+import CompetenceAudits from './topics/CompetenceAudits';
+import IndividualDevelopment from './topics/IndividualDevelopment';
+import ManagementDevelopment from './topics/ManagementDevelopment';
 import HexagonChart from '../../components/HexagonChart/HexagonChart';
 
 
@@ -84,15 +84,15 @@ class IndexPage extends Component {
       );     
         break;   
       case 'AUDIT_COMPETENZE': topicElement = (
-        <Audit />
+        <CompetenceAudits />
       );    
         break;    
       case 'SVILUPPO_INDIVIDUALE': topicElement = (
-        <SviluppoIndividuale />
+        <IndividualDevelopment />
       );  
         break;      
       case 'SVILUPPO_ORGANIZZATIVO': topicElement = (
-        <SviluppoOrganizzativo />
+        <ManagementDevelopment />
       );        
         break;
       default: break;

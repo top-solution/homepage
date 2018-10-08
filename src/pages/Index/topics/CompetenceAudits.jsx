@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Editorial from '../../../components/Editorial/Editorial'
 
 
-const Audit = () => {
+const CompetenceAudits = () => {
   return (
     <div>
       <StaticQuery
@@ -21,4 +21,4 @@ const Audit = () => {
   );
 };
 
-export default Audit;
+export default CompetenceAudits;
