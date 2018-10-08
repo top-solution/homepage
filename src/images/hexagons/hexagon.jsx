@@ -4,7 +4,7 @@ const SVGHexagon = props => (
   <svg viewBox="0 0 16.933 16.933" height={64} width={64} {...props}>
     <defs>
       <filter id="a" colorInterpolationFilters="sRGB">
-        <feFlood result="flood" floodColor="#000" floodOpacity={0.2} />
+        <feFlood result="flood" floodColor="#000" floodOpacity={0.4} />
         <feComposite
           result="composite1"
           operator="in"

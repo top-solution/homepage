@@ -1,102 +1,49 @@
 @import '../../sass/variables.scss';
 
+$panel-width: 500px;
 
-#hexagons-small {
-  max-height: calc(100vh - 120px);
-  margin-left: 0;
-  margin-right: 0;
-  transition: margin-left $timing-medium $timing-function, margin-right $timing-medium $timing-function;
-
-  .hexagon-cyan,
-  .hexagon-purple {
-    cursor: pointer;
-
-    &:hover {
-      .hexagon-shadow {
-        opacity: 1;
-      }
-    }
+.index-page {
+  .sliding-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
   }
 
-  .hexagon-cyan {
-    .hexagon {
-      fill: $ts-cyan;
+  .sliding {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    max-width: 1920px;
+    transform: translate(0, 0);
+    transition: transform $timing-medium $timing-function;
+
+    &.shift-left {
+      transform: translate($panel-width, 0);
     }
 
-    path,
-    text,
-    tspan {
-      fill: $black;
-    }
-  }
-
-  .hexagon-purple {
-    .hexagon {
-      fill: $ts-purple;
+    &.shift-right {
+      transform: translate(-$panel-width, 0);
     }
 
-    path,
-    text,
-    tspan {
-      fill: $white;
-    }
-  }
-
-  .hexagon-orange {
-    .hexagon {
-      fill: $ts-orange;
-    }
-
-    path,
-    text,
-    tspan {
-      fill: $white;
-    }
-  }
-
-  .hexagon-shadow {
-    opacity: 0;
-    transition: opacity $timing-quick $timing-function;
-  }
-
-  &.shift-left {
-    margin-left: 500px;
-  }
-
-  &.shift-right {
-    margin-right: 500px;
   }
 }
+
+.hexagon-chart {
+  flex: 1 0 auto;
+  max-height: calc(100vh - 120px);
+}
+
 
 .left-panel,
 .right-panel {
-  opacity: 0;
-  position: absolute;
-  padding: $spacing-vertical-md $spacing-horizontal-md;
-  top: 0;
-  min-width: 500px;
-  max-width: 500px;
+  flex: 0 0 $panel-width;
   height: 100%;
-  transition: opacity $timing-medium $timing-function, left $timing-medium $timing-function, right $timing-medium $timing-function;
+  opacity: 0;
+  padding: $spacing-horizontal-md $spacing-vertical-md;
+  transition: opacity $timing-medium $timing-function;
 
   &.shown {
     opacity: 1;
-  }
-}
-
-.left-panel {
-  left: -500px;
-
-  &.shown {
-    left: 0;
-  }
-}
-
-.right-panel {
-  right: -500px;
-
-  &.shown {
-    right: 0;
   }
 }
 

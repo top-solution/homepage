@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import Layout from '../../components/layout'
 
-import HexagonsSmall from '../../images/hexagons-small'
 
 import './Index.scss'
 
@@ -12,8 +11,6 @@ import TrainingICT from './topics/TrainingICT';
 import Audit from './topics/Audit';
 import SviluppoIndividuale from './topics/SviluppoIndividuale';
 import SviluppoOrganizzativo from './topics/SviluppoOrganizzativo';
-import Hexagon from '../../components/Hexagon/Hexagon';
-import Icon from '../../components/Icon/Icon';
 import HexagonChart from '../../components/HexagonChart/HexagonChart';
 
 
@@ -56,7 +53,7 @@ class IndexPage extends Component {
   
   
   render() {
-    let hexagonsClassName = ''; 
+    let hexagonsClassName = 'sliding '; 
 
     if (this.state.leftPanelShown) {
       hexagonsClassName += 'shift-left'
@@ -112,13 +109,16 @@ class IndexPage extends Component {
     return (
       <div className="index-page">
         <Layout>
-          <HexagonChart />
-          <HexagonsSmall className={hexagonsClassName} onHexagonClick={ this.handleHexagonClick }/>
-          <div className={ leftPanelClassName }>
-            { leftPanelContent }
-          </div>
-          <div className={ rightPanelClassName }>
-            { rightPanelContent }
+          <div className="sliding-container">
+            <div  className={ hexagonsClassName }>
+              <div className={ leftPanelClassName }>
+                { leftPanelContent }
+              </div>
+              <HexagonChart onHexagonClick={ this.handleHexagonClick } />
+              <div className={ rightPanelClassName }>
+                { rightPanelContent }
+              </div>
+            </div>
           </div>
         </Layout>
       </div>

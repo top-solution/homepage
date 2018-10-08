@@ -4,16 +4,16 @@
   text {
     text-transform: uppercase;
   }
-  
+
   &.purple {
     color: $ts-purple;
   }
 
   &.cyan {
-    color: $ts-cyan;
+    color: darken($color: $ts-cyan, $amount: 20%);
   }
 
   &.orange {
-    color: $ts-orange;
+    color: darken($color: $ts-orange, $amount: 10%);
   }
 }

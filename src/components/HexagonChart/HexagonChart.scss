@@ -1,4 +1,23 @@
+@import '../../sass/variables.scss';
+
+
 .hexagon-chart {
-  width: 100%;
+  display: block;
   height: 80vh;
+
+  .hexagon {
+    cursor: pointer;
+    
+    &:hover {
+      .hexagon-shadow {
+        opacity: 1;
+      }
+    }
+  }
+
+  .hexagon-shadow {
+    opacity: .5;
+    transition: opacity $timing-quick $timing-function;
+  }
+  
 }
