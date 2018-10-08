@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <SvgIconsSprite />
+        <SvgIconsSprite className="svg-icon-sprite" />
         <div className="page-content">
           {children}
         </div>
