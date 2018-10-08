@@ -23,6 +23,7 @@
   "scripts": {
     "build-icons": "npx svgstore --inline src/images/icons/*.svg > src/images/icons/icons-sprite.svg && npx svgr --no-svgo src/images/icons/icons-sprite.svg > src/images/icons/IconsSprite.jsx",
     "build": "gatsby build",
+    "deploy": "gatsby build && aws s3 sync ./public s3://topsolution/website --acl public-read --exclude \"*DS_Store\" --delete --profile topsolution-bucket",
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
