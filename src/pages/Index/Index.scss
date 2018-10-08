@@ -65,11 +65,33 @@ $panel-width: 50vw;
 
   }
 
+  p {
+    &:nth-child(2n + 2) {
+      margin-left: 0;
+      margin-right: $icon-size + $spacing-horizontal-sm;
+    }
+  }
+
+  h4 {
+    &:nth-child(2n + 1) {
+      margin-left: 0;
+      margin-right: $icon-size + $spacing-horizontal-sm;
+    }
+  }
+
+  h6 {
+    &:nth-child(2n + 2) {
+      .icon {
+        float: right;
+      }
+    }
+  }
+
   .icon {
-    width: $icon-size;
-    height: $icon-size;
     float: left;
-    margin-top: $spacing-vertical-md + $spacing-vertical-sm;
+    height: $icon-size;
+    margin-top: $spacing-vertical-lg;
+    width: $icon-size;
   }
 }
 
@@ -77,21 +99,21 @@ $panel-width: 50vw;
   flex: 1 0 auto;
   height: calc(100vh - 120px);
   max-height: calc(100vh - 120px);
-  width: 100vw;
   max-width: 100vh;
+  width: 100vw;
 }
 
 
 .left-panel,
 .right-panel {
-  position: absolute;
   flex: 0 0 $panel-width;
   font-size: 1.2rem;
   height: 100%;
   opacity: 0;
-  padding: $spacing-horizontal-md $spacing-vertical-md;
-  width: $panel-width;
   overflow-y: auto;
+  padding: $spacing-horizontal-md $spacing-vertical-md;
+  position: absolute;
+  width: $panel-width;
 
   &.shown {
     opacity: 1;
@@ -99,6 +121,7 @@ $panel-width: 50vw;
 }
 
 .left-panel {
+  box-shadow: 4px 0 5px 0 rgba(0, 0, 0, .1);
   left: -$panel-width;
   transition: opacity $timing-medium $timing-function, left $timing-medium $timing-function;
   
@@ -108,6 +131,7 @@ $panel-width: 50vw;
 }
 
 .right-panel {
+  box-shadow: -4px 0 5px 0 rgba(0, 0, 0, .1);
   right: -$panel-width;
   transition: opacity $timing-medium $timing-function, right $timing-medium $timing-function;
   
