@@ -19,6 +19,10 @@ const Editorial = ( data ) => {
       </div>
     )
   } else {
+    if (!data.markdownRemark.htmlAst) {
+      return null;
+    }
+
     return (
       <div>
         {
