@@ -8,6 +8,11 @@ html {
 body {
   margin: 0;
 }
+
+.svg-icon-sprite {
+  display: none;
+}
+
 article,
 aside,
 details,
@@ -195,7 +200,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: darken($ts-purple, 15%);
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -203,6 +208,8 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1 {

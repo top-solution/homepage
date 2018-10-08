@@ -1,49 +1,117 @@
+@import '../../sass/mixins.scss';
 @import '../../sass/variables.scss';
 
-$panel-width: 500px;
+$panel-width: 50vw;
 
 .index-page {
   .sliding-container {
     display: flex;
     justify-content: center;
     width: 100vw;
+
+
+    &.shift-left {
+      .sliding {
+        transform: translate(($panel-width), 0);
+        
+        @include screen-from-lg {
+          transform: translate(($panel-width - 5vw), 0);
+        }
+      }
+
+      .left-panel {
+        left: 0;
+      }
+    }
+
+    &.shift-right {
+      .sliding {
+        transform: translate(-($panel-width), 0);
+        
+        @include screen-from-lg {
+          transform: translate(-($panel-width - 5vw), 0);
+        }
+      }
+
+      .right-panel {
+        right: 0;
+      }
+    }
   }
 
   .sliding {
     display: flex;
-    flex: 1 1 auto;
     justify-content: space-between;
-    max-width: 1920px;
+    position: relative;
     transform: translate(0, 0);
     transition: transform $timing-medium $timing-function;
+    z-index: 10;
 
-    &.shift-left {
-      transform: translate($panel-width, 0);
+
+  }
+
+
+  $icon-size: 7rem;
+
+  h4 {
+    margin-top: $spacing-vertical-lg;
+    font-size: 1.2rem;
+
+    &,
+    + p {
+      margin-left: $icon-size + $spacing-horizontal-sm;
     }
 
-    &.shift-right {
-      transform: translate(-$panel-width, 0);
-    }
+  }
 
+  .icon {
+    width: $icon-size;
+    height: $icon-size;
+    float: left;
+    margin-top: $spacing-vertical-md + $spacing-vertical-sm;
   }
 }
 
 .hexagon-chart {
   flex: 1 0 auto;
+  height: calc(100vh - 120px);
   max-height: calc(100vh - 120px);
+  width: 100vw;
+  max-width: 100vh;
 }
 
 
 .left-panel,
 .right-panel {
+  position: absolute;
   flex: 0 0 $panel-width;
+  font-size: 1.2rem;
   height: 100%;
   opacity: 0;
   padding: $spacing-horizontal-md $spacing-vertical-md;
-  transition: opacity $timing-medium $timing-function;
+  width: $panel-width;
+  overflow-y: auto;
 
   &.shown {
     opacity: 1;
+  }
+}
+
+.left-panel {
+  left: -$panel-width;
+  transition: opacity $timing-medium $timing-function, left $timing-medium $timing-function;
+  
+  &.shown {
+    left: 0;
+  }
+}
+
+.right-panel {
+  right: -$panel-width;
+  transition: opacity $timing-medium $timing-function, right $timing-medium $timing-function;
+  
+  &.shown {
+    right: 0;
   }
 }
 

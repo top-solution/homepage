@@ -1,10 +1,32 @@
 import React from 'react'
+import rehypeReact from "rehype-react"
+
+import Icon from '../Icon/Icon'
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { "icon": Icon },
+}).Compiler
 
 const Editorial = ( data ) => {
-  return (
-    <div dangerouslySetInnerHTML={ {__html :  data.markdownRemark.html} }>
-    </div>
-  )
+  if (!data || !data.markdownRemark) {
+    return null;
+  }
+
+  if (!renderAst) {
+    return (
+      <div dangerouslySetInnerHTML={ {__html : renderAst(data.markdownRemark.htmlAst)} }>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        {
+          renderAst(data.markdownRemark.htmlAst)
+        }
+      </div>
+    )
+  }
 };
 
 export default Editorial;

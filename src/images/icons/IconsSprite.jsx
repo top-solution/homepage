@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SvgIconsSprite = props => (
-  <svg {...props}>
+  <svg {...props} className="svg-icon-sprite">
     <defs />
     <symbol id="expertise-audits" viewBox="0 0 16.933 16.933">
       <g fill="currentColor">

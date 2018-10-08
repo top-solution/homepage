@@ -29,11 +29,15 @@ class IndexPage extends Component {
 
   handleHexagonClick(topic, side) {
     if (this.state.topic === topic) {
-      return this.setState({
-        topic: null,
-        leftPanelShown: false,
-        rightPanelShown: false,
-      })
+      if (side === 'left') {
+        return this.setState({
+          leftPanelShown: !this.state.leftPanelShown,
+        })
+      } else {
+        return this.setState({
+          rightPanelShown: !this.state.rightPanelShown,
+        })
+      }
     }
 
     if (side === 'left') {
@@ -53,7 +57,7 @@ class IndexPage extends Component {
   
   
   render() {
-    let hexagonsClassName = 'sliding '; 
+    let hexagonsClassName = 'sliding-container '; 
 
     if (this.state.leftPanelShown) {
       hexagonsClassName += 'shift-left'
@@ -94,30 +98,21 @@ class IndexPage extends Component {
       default: break;
     }
 
-    let leftPanelContent = null;
-
-    if (this.state.leftPanelShown) {
-      leftPanelContent = topicElement;
-    }
-
-    let rightPanelContent = null;
-
-    if (this.state.rightPanelShown) {
-      rightPanelContent = topicElement;
-    }    
+    let leftPanelContent = topicElement;
+    let rightPanelContent = topicElement;
 
     return (
       <div className="index-page">
         <Layout>
-          <div className="sliding-container">
-            <div  className={ hexagonsClassName }>
-              <div className={ leftPanelClassName }>
-                { leftPanelContent }
-              </div>
+          <div className={ hexagonsClassName }>
+            <div className={ leftPanelClassName }>
+              { leftPanelContent }
+            </div>
+            <div className="sliding">
               <HexagonChart onHexagonClick={ this.handleHexagonClick } />
-              <div className={ rightPanelClassName }>
-                { rightPanelContent }
-              </div>
+            </div>
+            <div className={ rightPanelClassName }>
+              { rightPanelContent }
             </div>
           </div>
         </Layout>
