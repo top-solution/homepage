@@ -5,9 +5,9 @@ import Layout from '../../components/layout'
 
 import './Index.scss'
 
-import ApplicazioniWeb from './topics/ApplicazioniWeb';
-import Piattaforme from './topics/Piattaforme';
-import TrainingICT from './topics/TrainingICT';
+import WebApplications from './topics/WebApplications';
+import WebPlatforms from './topics/WebPlatforms';
+import ICTTraining from './topics/ICTTraining';
 import CompetenceAudits from './topics/CompetenceAudits';
 import IndividualDevelopment from './topics/IndividualDevelopment';
 import ManagementDevelopment from './topics/ManagementDevelopment';
@@ -72,15 +72,15 @@ class IndexPage extends Component {
 
     switch (this.state.topic) {
       case 'PIATTAFORME_WEB': topicElement = (
-        <Piattaforme />
+        <WebPlatforms />
       );  
         break;      
       case 'APPLICAZIONI_WEB': topicElement = (
-        <ApplicazioniWeb />
+        <WebApplications />
       );    
         break;    
       case 'TRAINING_ICT': topicElement = (
-        <TrainingICT />
+        <ICTTraining />
       );     
         break;   
       case 'AUDIT_COMPETENZE': topicElement = (
