@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from "gatsby"
 
-import Editorial from '../../../components/Editorial/Editorial'
+import IndexTopic from '../../../components/IndexTopic/IndexTopic'
 
 
 const IndividualDevelopment = () => {
@@ -10,12 +10,16 @@ const IndividualDevelopment = () => {
       <StaticQuery
         query={ graphql`
           {
-            markdownRemark(fields: {slug: {regex: "//homepage/individual-development//"}}) {
-              htmlAst
+            markdownRemark(fields: {slug: {regex: "//homepage/individual-development/individual-development//"}}) {
+              html,
+              frontmatter {
+                title
+                icon
+              }
             }
           }
         ` }
-        render={ Editorial }
+        render={ IndexTopic }
       />
     </div>
   );

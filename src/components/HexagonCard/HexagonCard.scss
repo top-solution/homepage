@@ -1,0 +1,20 @@
+@import '../../sass/variables.scss';
+
+.hexagon-card {
+  align-items: center;
+  box-shadow: $box-shadow-default;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  overflow: hidden;
+  padding: 0 $spacing-horizontal-sm $spacing-vertical-md;
+
+  > svg {
+    flex: 0 0 auto;
+    margin-top: -70px;
+  }
+
+  .card-content {
+    flex: 1 1 auto;
+  }
+}

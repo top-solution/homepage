@@ -1,7 +1,8 @@
 import React from 'react';
 import { StaticQuery, graphql } from "gatsby"
 
-import Editorial from '../../../components/Editorial/Editorial'
+import IndexTopic from '../../../components/IndexTopic/IndexTopic'
+import IndexDetails from '../../../components/IndexDetails/IndexDetails'
 
 
 const CompetenceAudits = () => {
@@ -9,13 +10,35 @@ const CompetenceAudits = () => {
     <div>
       <StaticQuery
         query={ graphql`
-          {
-            markdownRemark(fields: {slug: {regex: "//homepage/competence-audits//"}}) {
-              htmlAst
+          query {
+            excerpt: markdownRemark(fields: {slug: {regex: "//homepage/competence-audits/competence-audits//"}}) {
+              html
+              frontmatter {
+                title
+                icon
+              }
+            }
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/web-platforms/details//"}}}) {
+              edges {
+                node {
+                  html
+                  frontmatter {
+                    title
+                    icon
+                  }
+                }
+              }
             }
           }
         ` }
-        render={ Editorial }
+        render={ (data) => {
+          return (
+            <div>
+              <IndexTopic data={data.excerpt} />
+              <IndexDetails data={data.details} />
+            </div>
+          )
+        } }
       />
     </div>
   );

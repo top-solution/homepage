@@ -210,6 +210,8 @@ body {
   font-weight: normal;
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
+  overflow-x: hidden;
+  position: relative;
 }
 
 h1 {

@@ -8,7 +8,7 @@ import logoText from '../../images/logo_text.png'
 import i3pLogo from '../../images/logos/i3p.png'
 
 import './AboutUs.scss'
-import Editorial from '../../components/Editorial/Editorial';
+import IndexTopic from '../../components/IndexTopic/IndexTopic';
 
 
 const AboutUs = () => (
@@ -27,7 +27,7 @@ const AboutUs = () => (
               }
             }
           ` }
-          render={ Editorial }
+          render={ IndexTopic }
         />
         
         <div className="logos">
