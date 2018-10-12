@@ -42,6 +42,10 @@ class HexagonCard extends Component {
   }
   
   render() {
+    if (!this.props.data) {
+      return null
+    }
+
     return (
       <div className="hexagon-card">
         <SVGHexagon height={ null } width={144} className="hexagon">

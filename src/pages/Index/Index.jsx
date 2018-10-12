@@ -15,7 +15,7 @@ import HexagonChart from '../../components/HexagonChart/HexagonChart';
 
 import tsLogo from '../../images/ts-logo.png'
 
-
+const windowGlobal = typeof window !== 'undefined' && window
 const MOBILE_BREAKPOINT = 900;
 
 class IndexPage extends Component {
@@ -105,7 +105,7 @@ class IndexPage extends Component {
     let leftPanelContent = topicElement;
     let rightPanelContent = topicElement;
 
-    if (window.innerWidth <= MOBILE_BREAKPOINT) {
+    if (windowGlobal.innerWidth <= MOBILE_BREAKPOINT) {
       return (
         <div className="index-page">
           <Layout>
