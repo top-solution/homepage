@@ -32,7 +32,29 @@ class IndexPage extends Component {
   }
 
   handleHexagonClick(topic, side) {
+    if (topic === null) {
+      this.setState({ 
+        leftPanelShown: false,
+        rightPanelShown: false
+      });
+
+
+      setTimeout(() => {
+        this.setState({ 
+          topic: null
+        });
+      }, 400);
+
+      return;
+    }
+    
     if (this.state.topic === topic) {
+      setTimeout(() => {
+        this.setState({ 
+          topic: null
+        });
+      }, 400);
+
       if (side === 'left') {
         return this.setState({
           leftPanelShown: !this.state.leftPanelShown,

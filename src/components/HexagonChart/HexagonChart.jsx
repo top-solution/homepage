@@ -43,7 +43,8 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
         text={'Applicazioni\nweb'}
       />
       <Hexagon 
-        className={`orange ${ highlighted === ''? highlighted : ''}`}
+        className="orange"
+        onClick={ () => onHexagonClick(null) }
         x={ hexWidthAdjusted }
         y={ hexHeightAdjusted }
         width={ hexWidth } 
