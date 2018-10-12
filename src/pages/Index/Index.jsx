@@ -13,7 +13,6 @@ import IndividualDevelopment from './topics/IndividualDevelopment';
 import ManagementDevelopment from './topics/ManagementDevelopment';
 import HexagonChart from '../../components/HexagonChart/HexagonChart';
 
-import tsLogo from '../../images/ts-logo.png'
 
 const windowGlobal = typeof window !== 'undefined' && window
 const MOBILE_BREAKPOINT = 900;
@@ -131,7 +130,6 @@ class IndexPage extends Component {
       return (
         <div className="index-page">
           <Layout>
-            <img className="ts-logo" src={ tsLogo } alt="Top Solution s.r.l."/>
             <WebPlatforms mobile accent="purple" />
             <WebApplications mobile accent="purple" />
             <ICTTraining mobile accent="purple" />

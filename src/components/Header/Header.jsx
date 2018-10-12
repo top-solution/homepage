@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../../images/ts-logo-transparent.png'
+import logo from '../../images/ts-logo.png'
 
 import './Header.scss';
 

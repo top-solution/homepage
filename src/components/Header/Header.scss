@@ -1,12 +1,16 @@
 @import '../../sass/variables.scss';
 
 .header {
-  $header-text-color: $white;
+  $header-text-color: $ts-purple;
 
-  background-color: $ts-purple;
-  color: $white;
+  background-color: transparent;
+  color: $header-text-color;
   font-family: $font-exo;
   font-size: $font-size-body;
+
+  img {
+    max-width: 200px;
+  }
 
   .header-content {
     align-items: center;
@@ -15,7 +19,7 @@
     justify-content: space-between;
     margin: 0 auto;
     max-width: $breakpoint-lg;
-    padding: 1.45rem 1.0875rem;
+    padding: $spacing-vertical-sm $spacing-horizontal-sm;
   }
 
   .header-menu {
@@ -26,6 +30,9 @@
 
   .header-menu-item {
     margin: $spacing-horizontal-md;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .9rem;
 
     a {
       color: $header-text-color;
