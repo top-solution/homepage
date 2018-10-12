@@ -29,7 +29,7 @@ class IndexPage extends Component {
       topic: null,
       leftPanelShown: false,
       rightPanelShown: false,
-      windowWidth: windowGlobal.innerWidth
+      windowWidth: null
     }
 
     this.buttonsRefs = {
@@ -49,7 +49,10 @@ class IndexPage extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleWindowResize);
-    this.handleWindowResize();
+
+    setTimeout(() => {
+      this.handleWindowResize();
+    }, 10);
   }
 
   componentWillUnmount() {
@@ -165,38 +168,37 @@ class IndexPage extends Component {
     let leftPanelContent = topicElement;
     let rightPanelContent = topicElement;
 
-    if (this.state.windowWidth <= MOBILE_BREAKPOINT) {
-      return (
-        <div className="index-page">
-          <Layout>
-            <ServicesButtons onClick={ this.handleQuickLinkClick } />
-            <div ref={ this.buttonsRefs['web-platforms'] }>
-              <WebPlatforms mobile accent="purple"/>
-            </div>
-            <div ref={ this.buttonsRefs['web-applications'] }>
-              <WebApplications mobile accent="purple"/>
-            </div>
-            <div ref={ this.buttonsRefs['ict-training'] }>
-              <ICTTraining mobile accent="purple"/>
-            </div>
-            <div ref={ this.buttonsRefs['expertise-audits'] }>
-              <CompetenceAudits mobile accent="cyan"/>
-            </div>
-            <div ref={ this.buttonsRefs['individual-development'] }>
-              <IndividualDevelopment mobile accent="cyan"/>
-            </div>
-            <div ref={ this.buttonsRefs['management-development'] }>
-              <ManagementDevelopment mobile accent="cyan"/>
-            </div>
-          </Layout>
+    let indexContent = null;
+
+    if (this.state.windowWidth === null) {
+      indexContent = null;
+    } else if (this.state.windowWidth <= 900) {
+      indexContent = (
+        <div className="index-page-mobile" key="mobile">
+          <ServicesButtons onClick={ this.handleQuickLinkClick } />
+          <div ref={ this.buttonsRefs['web-platforms'] }>
+            <WebPlatforms mobile accent="purple"/>
+          </div>
+          <div ref={ this.buttonsRefs['web-applications'] }>
+            <WebApplications mobile accent="purple"/>
+          </div>
+          <div ref={ this.buttonsRefs['ict-training'] }>
+            <ICTTraining mobile accent="purple"/>
+          </div>
+          <div ref={ this.buttonsRefs['expertise-audits'] }>
+            <CompetenceAudits mobile accent="cyan"/>
+          </div>
+          <div ref={ this.buttonsRefs['individual-development'] }>
+            <IndividualDevelopment mobile accent="cyan"/>
+          </div>
+          <div ref={ this.buttonsRefs['management-development'] }>
+            <ManagementDevelopment mobile accent="cyan"/>
+          </div>
         </div>
       )      
-    }
-
-
-    return (
-      <div className="index-page">
-        <Layout>
+    } else {
+      indexContent = (
+        <div className="index-page-desktop" key="desktop">
           <div className={ hexagonsClassName }>
             <div className={ leftPanelClassName }>
               { leftPanelContent }
@@ -208,6 +210,15 @@ class IndexPage extends Component {
               { rightPanelContent }
             </div>
           </div>
+        </div>
+      )
+    }
+
+
+    return (
+      <div className="index-page">
+        <Layout>
+          { indexContent }
         </Layout>
       </div>
     )
