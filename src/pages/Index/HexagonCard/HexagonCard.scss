@@ -21,6 +21,14 @@
   > svg {
     flex: 0 0 auto;
     margin-top: -70px;
+
+    .hexagon-highlight {
+      opacity: .2;
+    }
+    
+    .hexagon-shadow {
+      opacity: 0;
+    }
   }
 
   .card-content {
