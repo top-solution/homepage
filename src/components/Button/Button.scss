@@ -18,11 +18,24 @@
     box-shadow: $box-shadow-default;
   }
 
+  &.borderless {
+    box-shadow: 0 0 0 0 #000;
+  }
+
   &.purple {
     color: $ts-purple;
 
     &.active {
       background: $ts-purple;
+      color: white;
+    }    
+  }
+
+  &.cyan {
+    color: $ts-cyan-dark;
+
+    &.active {
+      background: $ts-cyan-dark;
       color: white;
     }    
   }

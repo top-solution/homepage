@@ -47,7 +47,7 @@ class HexagonCard extends Component {
     }
 
     return (
-      <div className={`hexagon-card ${this.props.accent || ''}`}>
+      <div id={ 'page-' + this.props.data.excerpt.frontmatter.icon } className={`hexagon-card ${this.props.accent || ''}`}>
         <SVGHexagon height={ null } width={144} className="hexagon">
           <g className="hexagon-icon" transform="scale(0.32) translate(18, 28)">        
             <use xlinkHref={ `#${ this.props.data.excerpt.frontmatter.icon }` }/>

@@ -1,6 +1,8 @@
 ---
+id: web-platforms
 title: Piattaforme Web
 icon: web-platforms
+type: ict
 ---
 
 I nostri servizi vengono proposti in modalità SaaS e sono rivolti allo sviluppo delle Risorse Umane e del Marketing Aziendale.
