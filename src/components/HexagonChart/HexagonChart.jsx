@@ -4,7 +4,7 @@ import Hexagon from '../Hexagon/Hexagon';
 
 import './HexagonChart.scss'
 
-const HexagonChart = ({ className, onHexagonClick }) => {
+const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
   const hexWidth = 512;
   const hexHeight = (hexWidth * 2) / Math.sqrt(3) ;
   const hexWidthAdjusted = hexWidth - (hexWidth / 8);
@@ -13,7 +13,7 @@ const HexagonChart = ({ className, onHexagonClick }) => {
   return (
     <svg className={ `hexagon-chart ${ className }` } viewBox={ `0 0 ${ hexWidthAdjusted * 3.15 } ${ hexHeightAdjusted * 3.5 }` }>
       <Hexagon 
-        className="purple" 
+        className={`purple ${ highlighted === 'PIATTAFORME_WEB'? 'highlighted' : ''}`}
         onClick={ () => onHexagonClick('PIATTAFORME_WEB', 'left') }
         x= { hexWidthAdjusted - (hexWidthAdjusted / 2) }
         y={ 0 }
@@ -23,7 +23,7 @@ const HexagonChart = ({ className, onHexagonClick }) => {
         text={'Piattaforme\nWeb'}
       />
       <Hexagon 
-        className="cyan" 
+        className={`cyan ${ highlighted === 'AUDIT_COMPETENZE'? 'highlighted' : ''}`}
         onClick={ () => onHexagonClick('AUDIT_COMPETENZE', 'right') }
         x= { 2 * hexWidthAdjusted - (hexWidthAdjusted / 2) }
         y={ 0 }
@@ -33,7 +33,7 @@ const HexagonChart = ({ className, onHexagonClick }) => {
         text={'Audit\ncompetenze'}
       />
       <Hexagon 
-        className="purple" 
+        className={`purple ${ highlighted === 'APPLICAZIONI_WEB'? 'highlighted' : ''}`}
         onClick={ () => onHexagonClick('APPLICAZIONI_WEB', 'left') }
         x={0}
         y={ hexHeightAdjusted }
@@ -43,7 +43,7 @@ const HexagonChart = ({ className, onHexagonClick }) => {
         text={'Applicazioni\nweb'}
       />
       <Hexagon 
-        className="orange" 
+        className={`orange ${ highlighted === ''? highlighted : ''}`}
         x={ hexWidthAdjusted }
         y={ hexHeightAdjusted }
         width={ hexWidth } 
@@ -52,7 +52,7 @@ const HexagonChart = ({ className, onHexagonClick }) => {
         text={'il tuo\nbusiness'}
       />
       <Hexagon 
-        className="cyan" 
+        className={`cyan ${ highlighted === 'SVILUPPO_INDIVIDUALE'? 'highlighted' : ''}`}
         onClick={ () => onHexagonClick('SVILUPPO_INDIVIDUALE', 'right') }
         x={ 2 * hexWidthAdjusted }
         y={ hexHeightAdjusted }
@@ -62,7 +62,7 @@ const HexagonChart = ({ className, onHexagonClick }) => {
         text={'Sviluppo\nindividuale'}
       />
       <Hexagon 
-        className="purple" 
+        className={`purple ${ highlighted === 'TRAINING_ICT'? 'highlighted' : ''}`}
         onClick={ () => onHexagonClick('TRAINING_ICT', 'left') }
         x= { hexWidthAdjusted - (hexWidthAdjusted / 2) }
         y={ hexHeightAdjusted * 2 }
@@ -72,7 +72,7 @@ const HexagonChart = ({ className, onHexagonClick }) => {
         text={'Training\nICT'}
       />
       <Hexagon 
-        className="cyan" 
+        className={`cyan ${ highlighted === 'SVILUPPO_ORGANIZZATIVO'? 'highlighted' : ''}`}
         onClick={ () => onHexagonClick('SVILUPPO_ORGANIZZATIVO', 'right') }
         x= { 2 * hexWidthAdjusted - (hexWidthAdjusted / 2) }
         y={ hexHeightAdjusted * 2 }

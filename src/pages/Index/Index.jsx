@@ -116,79 +116,6 @@ class IndexPage extends Component {
             <CompetenceAudits mobile accent="cyan" />
             <IndividualDevelopment mobile accent="cyan" />
             <ManagementDevelopment mobile accent="cyan" />
-            <div className="hexagons-cards-list" itemScope itemType="http://schema.org/Movie">
-              {/* <HexagonCard 
-                className="purple" 
-                // onClick={ () => onHexagonClick('PIATTAFORME_WEB', 'left') }
-                // x= { hexWidthAdjusted - (hexWidthAdjusted / 2) }
-                // y={ 0 }
-                // width={ hexWidth } 
-                // height={hexHeight} 
-                icon="web-platforms" 
-                text={'Piattaforme\nWeb'}
-              >
-                <WebPlatforms />
-              </HexagonCard>
-              <HexagonCard 
-                className="cyan" 
-                // onClick={ () => onHexagonClick('AUDIT_COMPETENZE', 'right') }
-                // x= { 2 * hexWidthAdjusted - (hexWidthAdjusted / 2) }
-                // y={ 0 }
-                // width={ hexWidth } 
-                // height={hexHeight} 
-                icon="expertise-audits" 
-                text={'Audit\ncompetenze'}
-              />
-              <HexagonCard 
-                className="purple" 
-                // onClick={ () => onHexagonClick('APPLICAZIONI_WEB', 'left') }
-                // x={0}
-                // y={ hexHeightAdjusted }
-                // width={ hexWidth } 
-                // height={hexHeight} 
-                icon="web-applications" 
-                text={'Applicazioni\nweb'}
-              />
-              {/* <HexagonCard 
-                className="orange" 
-                x={ hexWidthAdjusted }
-                y={ hexHeightAdjusted }
-                width={ hexWidth } 
-                height={hexHeight} 
-                centralText 
-                text={'il tuo\nbusiness'}
-              />
-              <HexagonCard 
-                className="cyan" 
-                // onClick={ () => onHexagonClick('SVILUPPO_INDIVIDUALE', 'right') }
-                // x={ 2 * hexWidthAdjusted }
-                // y={ hexHeightAdjusted }
-                // width={ hexWidth } 
-                // height={hexHeight} 
-                icon="individual-development" 
-                text={'Sviluppo\nindividuale'}
-              />
-              <HexagonCard 
-                className="purple" 
-                // onClick={ () => onHexagonClick('TRAINING_ICT', 'left') }
-                // x= { hexWidthAdjusted - (hexWidthAdjusted / 2) }
-                // y={ hexHeightAdjusted * 2 }
-                // width={ hexWidth } 
-                // height={hexHeight} 
-                icon="ict-training" 
-                text={'Training\nICT'}
-              />
-              <HexagonCard 
-                className="cyan" 
-                // onClick={ () => onHexagonClick('SVILUPPO_ORGANIZZATIVO', 'right') }
-                // x= { 2 * hexWidthAdjusted - (hexWidthAdjusted / 2) }
-                // y={ hexHeightAdjusted * 2 }
-                // width={ hexWidth } 
-                // height={hexHeight} 
-                icon="management-development" 
-                text={'Sviluppo\norganizzativo'}
-              />           */}
-            </div>
           </Layout>
         </div>
       )      
@@ -203,7 +130,7 @@ class IndexPage extends Component {
               { leftPanelContent }
             </div>
             <div className="sliding">
-              <HexagonChart onHexagonClick={ this.handleHexagonClick } />
+              <HexagonChart onHexagonClick={ this.handleHexagonClick } highlighted={ this.state.topic }/>
             </div>
             <div className={ rightPanelClassName }>
               { rightPanelContent }

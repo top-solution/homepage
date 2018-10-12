@@ -9,14 +9,28 @@
     
     &:hover {
       .hexagon-shadow {
+        opacity: .4;
+      }
+    }
+
+    &.highlighted {
+      .hexagon-shadow {
+        opacity: 0;
+      }
+  
+      .hexagon-highlight {
         opacity: 1;
       }
     }
   }
 
-  .hexagon-shadow {
-    opacity: .5;
+  .hexagon-highlight {
+    opacity: 0;
     transition: opacity $timing-quick $timing-function;
   }
-  
+
+  .hexagon-shadow {
+    opacity: .2;
+    transition: opacity $timing-quick $timing-function;
+  }
 }
