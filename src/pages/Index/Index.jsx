@@ -49,6 +49,7 @@ class IndexPage extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleWindowResize);
+    this.handleWindowResize();
   }
 
   componentWillUnmount() {
