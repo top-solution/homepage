@@ -29,6 +29,7 @@ class IndexPage extends Component {
       topic: null,
       leftPanelShown: false,
       rightPanelShown: false,
+      windowWidth: windowGlobal.innerWidth
     }
 
     this.buttonsRefs = {
@@ -41,8 +42,23 @@ class IndexPage extends Component {
     }
     
     
+    this.handleWindowResize = this.handleWindowResize.bind(this);
     this.handleHexagonClick = this.handleHexagonClick.bind(this);
     this.handleQuickLinkClick = this.handleQuickLinkClick.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleWindowResize);
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener('resize', this.handleWindowResize);
+  }
+
+  handleWindowResize() {
+    this.setState({
+      windowWidth: windowGlobal.innerWidth
+    })
   }
 
   handleQuickLinkClick(id) {
@@ -148,7 +164,7 @@ class IndexPage extends Component {
     let leftPanelContent = topicElement;
     let rightPanelContent = topicElement;
 
-    if (windowGlobal.innerWidth <= MOBILE_BREAKPOINT) {
+    if (this.state.windowWidth <= MOBILE_BREAKPOINT) {
       return (
         <div className="index-page">
           <Layout>
