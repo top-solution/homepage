@@ -131,7 +131,7 @@ class IndexPage extends Component {
       return (
         <div className="index-page">
           <Layout>
-            <img className="ts-logo" src={ tsLogo }/>
+            <img className="ts-logo" src={ tsLogo } alt="Top Solution s.r.l."/>
             <WebPlatforms mobile accent="purple" />
             <WebApplications mobile accent="purple" />
             <ICTTraining mobile accent="purple" />

@@ -2,7 +2,6 @@ import React from 'react';
 import { StaticQuery, graphql } from "gatsby"
 
 import Service from '../Service/Service'
-import ServiceDetails from '../ServiceDetails/ServiceDetails'
 
 
 const WebApplications = (props) => {
