@@ -1,0 +1,22 @@
+@import '../../../sass/variables.scss';
+
+.service-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: $spacing-vertical-lg;
+  margin-top: $spacing-vertical-lg;
+  min-height: calc(100vh - 150px);
+
+  .ts-button {
+    align-items: center;
+    display: flex;
+
+    .icon {
+      display: inline;
+      height: $icon-size-md;
+      width: $icon-size-md;
+      margin-right: $spacing-horizontal-xs;
+    }
+  }
+}

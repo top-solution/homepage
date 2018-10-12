@@ -9,8 +9,16 @@ const Button = (props) => {
     className += ' purple';
   }
 
+  if (props.cyan) {
+    className += ' cyan';
+  }
+
   if (props.active) {
     className += ' active';
+  }
+
+  if (props.borderless) {
+    className += ' borderless';
   }
 
   return (

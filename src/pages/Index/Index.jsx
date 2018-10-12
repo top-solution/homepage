@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from "gatsby"
+
 
 import Layout from '../../components/layout'
+import Button from '../../components/Button/Button'
 
 
 import './Index.scss'
 
+import ServicesButtons from './ServicesButtons/ServicesButtons'
 import WebApplications from './topics/WebApplications';
 import WebPlatforms from './topics/WebPlatforms';
 import ICTTraining from './topics/ICTTraining';
@@ -26,8 +30,26 @@ class IndexPage extends Component {
       leftPanelShown: false,
       rightPanelShown: false,
     }
+
+    this.buttonsRefs = {
+      'ict-training' : React.createRef(),
+      'expertise-audits' : React.createRef(),
+      'individual-development' : React.createRef(),
+      'management-development' : React.createRef(),
+      'web-applications' : React.createRef(),
+      'web-platforms' : React.createRef()
+    }
+    
     
     this.handleHexagonClick = this.handleHexagonClick.bind(this);
+    this.handleQuickLinkClick = this.handleQuickLinkClick.bind(this);
+  }
+
+  handleQuickLinkClick(id) {
+    // TODO: polyfill for safari
+    this.buttonsRefs[id].current.scrollIntoView({
+      behavior: 'smooth'
+    })
   }
 
   handleHexagonClick(topic, side) {
@@ -130,12 +152,25 @@ class IndexPage extends Component {
       return (
         <div className="index-page">
           <Layout>
-            <WebPlatforms mobile accent="purple" />
-            <WebApplications mobile accent="purple" />
-            <ICTTraining mobile accent="purple" />
-            <CompetenceAudits mobile accent="cyan" />
-            <IndividualDevelopment mobile accent="cyan" />
-            <ManagementDevelopment mobile accent="cyan" />
+            <ServicesButtons onClick={ this.handleQuickLinkClick } />
+            <div ref={ this.buttonsRefs['web-platforms'] }>
+              <WebPlatforms mobile accent="purple"/>
+            </div>
+            <div ref={ this.buttonsRefs['web-applications'] }>
+              <WebApplications mobile accent="purple"/>
+            </div>
+            <div ref={ this.buttonsRefs['ict-training'] }>
+              <ICTTraining mobile accent="purple"/>
+            </div>
+            <div ref={ this.buttonsRefs['expertise-audits'] }>
+              <CompetenceAudits mobile accent="cyan"/>
+            </div>
+            <div ref={ this.buttonsRefs['individual-development'] }>
+              <IndividualDevelopment mobile accent="cyan"/>
+            </div>
+            <div ref={ this.buttonsRefs['management-development'] }>
+              <ManagementDevelopment mobile accent="cyan"/>
+            </div>
           </Layout>
         </div>
       )      

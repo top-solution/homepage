@@ -3,6 +3,7 @@
 $ts-purple: #312783;
 $ts-purple-dark: #151450;
 $ts-cyan: #96c0e8;
+$ts-cyan-dark: saturate(darken($ts-cyan, 35%), 10%);
 $ts-orange: #e7952e;
 
 $white: #fff;

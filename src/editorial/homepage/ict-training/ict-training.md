@@ -1,6 +1,8 @@
 ---
+id: ict-training
 title: Training IT
 icon: ict-training
+type: ict
 ---
 
 E’ un training mirato all’incremento della consapevolezza dei rischi e dei vantaggi che le
