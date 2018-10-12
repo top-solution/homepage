@@ -1,3 +1,29 @@
+@import '../../sass/variables.scss';
+
 .ts-button {
-  
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: $box-shadow-lighter;
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+  padding: $spacing-vertical-sm $spacing-horizontal-sm;
+  text-align: center;
+  text-transform: uppercase;
+  transition: box-shadow $timing-quick $timing-function;
+  user-select: none;
+
+  &:hover {
+    box-shadow: $box-shadow-default;
+  }
+
+  &.purple {
+    color: $ts-purple;
+
+    &.active {
+      background: $ts-purple;
+      color: white;
+    }    
+  }
 }

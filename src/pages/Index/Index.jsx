@@ -12,7 +12,8 @@ import CompetenceAudits from './topics/CompetenceAudits';
 import IndividualDevelopment from './topics/IndividualDevelopment';
 import ManagementDevelopment from './topics/ManagementDevelopment';
 import HexagonChart from '../../components/HexagonChart/HexagonChart';
-import HexagonCard from '../../components/HexagonCard/HexagonCard';
+
+import tsLogo from '../../images/ts-logo.png'
 
 
 const MOBILE_BREAKPOINT = 900;
@@ -108,8 +109,15 @@ class IndexPage extends Component {
       return (
         <div className="index-page">
           <Layout>
+            <img className="ts-logo" src={ tsLogo }/>
+            <WebPlatforms mobile />
+            <WebApplications mobile />
+            <ICTTraining mobile />
+            <CompetenceAudits mobile />
+            <IndividualDevelopment mobile />
+            <ManagementDevelopment mobile />
             <div className="hexagons-cards-list" itemScope itemType="http://schema.org/Movie">
-              <HexagonCard 
+              {/* <HexagonCard 
                 className="purple" 
                 // onClick={ () => onHexagonClick('PIATTAFORME_WEB', 'left') }
                 // x= { hexWidthAdjusted - (hexWidthAdjusted / 2) }
@@ -119,7 +127,7 @@ class IndexPage extends Component {
                 icon="web-platforms" 
                 text={'Piattaforme\nWeb'}
               >
-                <CompetenceAudits />
+                <WebPlatforms />
               </HexagonCard>
               <HexagonCard 
                 className="cyan" 
@@ -149,7 +157,7 @@ class IndexPage extends Component {
                 height={hexHeight} 
                 centralText 
                 text={'il tuo\nbusiness'}
-              /> */}
+              />
               <HexagonCard 
                 className="cyan" 
                 // onClick={ () => onHexagonClick('SVILUPPO_INDIVIDUALE', 'right') }
@@ -179,7 +187,7 @@ class IndexPage extends Component {
                 // height={hexHeight} 
                 icon="management-development" 
                 text={'Sviluppo\norganizzativo'}
-              />          
+              />           */}
             </div>
           </Layout>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IndexTopic = ( {data} ) => {
+const ServicePreview = ( {data} ) => {
   if (!data || !data.frontmatter) {
     return null;
   }
@@ -14,4 +14,4 @@ const IndexTopic = ( {data} ) => {
   );
 };
 
-export default IndexTopic;
+export default ServicePreview;

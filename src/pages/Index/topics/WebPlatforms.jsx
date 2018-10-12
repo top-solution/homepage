@@ -1,25 +1,35 @@
 import React from 'react';
 import { StaticQuery, graphql } from "gatsby"
 
-import IndexTopic from '../../../components/IndexTopic/IndexTopic'
+import Service from '../Service/Service'
 
-
-const WebPlatforms = () => {
+const WebPlatforms = (props) => {
   return (
     <div>
       <StaticQuery
         query={ graphql`
-          {
-            markdownRemark(fields: {slug: {regex: "//homepage/web-platforms/web-platforms//"}}) {
-              html,
+          query {
+            excerpt: markdownRemark(fields: {slug: {regex: "//homepage/web-platforms/web-platforms//"}}) {
+              html
               frontmatter {
                 title
                 icon
               }
             }
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/web-platforms/details//"}}}) {
+              edges {
+                node {
+                  html
+                  frontmatter {
+                    title
+                    icon
+                  }
+                }
+              }
+            }
           }
         ` }
-        render={ IndexTopic }
+        render={ (data) => ( <Service data={ data } { ...props }/> )}
       />
     </div>
   );

@@ -1,11 +1,10 @@
 import React from 'react';
 import { StaticQuery, graphql } from "gatsby"
 
-import IndexTopic from '../../../components/IndexTopic/IndexTopic'
-import IndexDetails from '../../../components/IndexDetails/IndexDetails'
+import Service from '../Service/Service'
 
 
-const CompetenceAudits = () => {
+const CompetenceAudits = (props) => {
   return (
     <div>
       <StaticQuery
@@ -18,7 +17,7 @@ const CompetenceAudits = () => {
                 icon
               }
             }
-            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/web-platforms/details//"}}}) {
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/competence-audits/details//"}}}) {
               edges {
                 node {
                   html
@@ -31,14 +30,7 @@ const CompetenceAudits = () => {
             }
           }
         ` }
-        render={ (data) => {
-          return (
-            <div>
-              <IndexTopic data={data.excerpt} />
-              <IndexDetails data={data.details} />
-            </div>
-          )
-        } }
+        render={ (data) => ( <Service data={ data } { ...props }/> )}
       />
     </div>
   );

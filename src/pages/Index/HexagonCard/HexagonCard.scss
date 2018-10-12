@@ -1,0 +1,36 @@
+@import '../../../sass/variables.scss';
+
+.hexagon-card {
+  align-items: center;
+  box-shadow: $box-shadow-default;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-vertical-md;
+  min-height: 200px;
+  overflow: hidden;
+  padding: 0 $spacing-horizontal-sm $spacing-vertical-md;
+
+  > svg {
+    flex: 0 0 auto;
+    margin-top: -70px;
+  }
+
+  .card-content {
+    flex: 1 1 auto;
+    
+    >.ts-button {
+      margin-top: $spacing-vertical-md;
+      width: 100%;
+    }
+  }
+
+  .card-content-collapsible{
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height $timing-medium $timing-function;
+
+    &.collapsed {
+      max-height: 0;
+    }
+  }
+}
