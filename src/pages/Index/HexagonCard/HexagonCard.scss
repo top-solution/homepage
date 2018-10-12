@@ -10,6 +10,14 @@
   overflow: hidden;
   padding: 0 $spacing-horizontal-sm $spacing-vertical-md;
 
+  &.cyan {
+    color: darken($ts-cyan, 45%);
+  }
+
+  &.purple {
+    color: darken($ts-purple, 5%);
+  }
+
   > svg {
     flex: 0 0 auto;
     margin-top: -70px;

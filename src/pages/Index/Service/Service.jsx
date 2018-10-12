@@ -5,7 +5,7 @@ import ServiceDetails from '../ServiceDetails/ServiceDetails'
 import ServicePreview from '../ServicePreview/ServicePreview'
 
 
-const Service = ( {data, mobile} ) => {
+const Service = ( {accent, data, mobile} ) => {
   if (!data) {
     return null;
   }
@@ -15,7 +15,6 @@ const Service = ( {data, mobile} ) => {
   if (mobile === true) {
     content =  (
       <HexagonCard 
-        className="purple" 
         data={data}
         // onClick={ () => onHexagonClick('PIATTAFORME_WEB', 'left') }
         // x= { hexWidthAdjusted - (hexWidthAdjusted / 2) }
@@ -24,6 +23,7 @@ const Service = ( {data, mobile} ) => {
         // height={hexHeight} 
         icon="web-platforms" 
         text={'Piattaforme\nWeb'}
+        accent={ accent }
       >
       </HexagonCard>
     )

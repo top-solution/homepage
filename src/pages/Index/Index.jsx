@@ -110,12 +110,12 @@ class IndexPage extends Component {
         <div className="index-page">
           <Layout>
             <img className="ts-logo" src={ tsLogo }/>
-            <WebPlatforms mobile />
-            <WebApplications mobile />
-            <ICTTraining mobile />
-            <CompetenceAudits mobile />
-            <IndividualDevelopment mobile />
-            <ManagementDevelopment mobile />
+            <WebPlatforms mobile accent="purple" />
+            <WebApplications mobile accent="purple" />
+            <ICTTraining mobile accent="purple" />
+            <CompetenceAudits mobile accent="cyan" />
+            <IndividualDevelopment mobile accent="cyan" />
+            <ManagementDevelopment mobile accent="cyan" />
             <div className="hexagons-cards-list" itemScope itemType="http://schema.org/Movie">
               {/* <HexagonCard 
                 className="purple" 
