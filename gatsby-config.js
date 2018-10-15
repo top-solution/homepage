@@ -4,9 +4,9 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/editorial`,
+        path: `${ __dirname }/src/editorial`,
         name: 'pages',
       },
     },
@@ -25,6 +25,25 @@ module.exports = {
     // },
     // 'gatsby-plugin-offline',
     'gatsby-plugin-sass',
-    `gatsby-transformer-remark`
-  ]
+    
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+              quality: 80,
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+        ],
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+  ],
 }
