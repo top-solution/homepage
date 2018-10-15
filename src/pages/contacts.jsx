@@ -7,7 +7,7 @@ import PageWrapper from '../components/PageWrapper/PageWrapper'
 import './Contacts.scss'
 
 const SecondPage = () => (
-  <Layout>
+  <Layout variant="dark">
     <div className="page-contacts">
       <Jumbotron>
         <h2>Entra in contatto con Top Solution</h2>

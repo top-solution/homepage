@@ -30,12 +30,13 @@
   "license": "MIT",
   "scripts": {
     "build-icons": "npx svgstore --inline src/images/icons/*.svg > src/images/icons/icons-sprite.svg && npx svgr --no-svgo src/images/icons/icons-sprite.svg > src/images/icons/IconsSprite.jsx",
+    "build-svg": "npx svgr src/images/top-solution/logo-text.svg > src/images/top-solution/logo-text.jsx",
     "build": "gatsby build",
     "deploy": "npm run build && npm run s3-sync && npm run cloudfront-invalidate",
     "s3-sync": "aws s3 sync ./public s3://topsolution/website --acl public-read --exclude \"*DS_Store\" --delete --profile topsolution-bucket",
     "cloudfront-invalidate": "aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths /index.html --profile topsolution-bucket",
     "start": "gatsby develop",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

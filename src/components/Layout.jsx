@@ -9,7 +9,7 @@ import SvgIconsSprite from '../images/icons/IconsSprite'
 
 import './style.scss'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, variant }) => (
   <StaticQuery
     query={ graphql`
       query SiteTitleQuery {
@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={ data.site.siteMetadata.title } />
+        <Header variant={ variant } siteTitle={ data.site.siteMetadata.title } />
         <SvgIconsSprite className="svg-icon-sprite" />
         <div className="page-content">
           {children}
@@ -43,6 +43,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  variant: PropTypes.string,
 }
 
 export default Layout

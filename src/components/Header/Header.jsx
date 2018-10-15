@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 import Icon from '../Icon/Icon'
 
-import logo from '../../images/ts-logo.png'
+import LogoText from '../../images/top-solution/logo-text'
 
 import './Header.scss'
 
@@ -27,10 +27,10 @@ class Header extends Component {
   }
 
   render() {
-    const { siteTitle } = this.props
+    const { siteTitle, variant } = this.props
 
     return (
-      <div className="header">
+      <div className={ `header ${ variant || '' }` }>
         <div
           className="header-content"
         >
@@ -42,7 +42,7 @@ class Header extends Component {
                 textDecoration: 'none',
               } }
             >
-              <img src={ logo } alt={ siteTitle } />
+              <LogoText className="logo" />
             </Link>
           </h1>
           <div
@@ -81,6 +81,7 @@ class Header extends Component {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  variant: PropTypes.string,
 }
 
 export default Header

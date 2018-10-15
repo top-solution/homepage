@@ -2,15 +2,25 @@
 @import '../../sass/variables';
 
 .header {
-  $header-text-color: $ts-purple;
-
   background-color: transparent;
-  color: $header-text-color;
+  color: $ts-purple;
   font-family: $font-exo;
   font-size: $font-size-body;
 
-  img {
-    max-width: 200px;
+  &.dark {
+    background-color: $ts-purple-dark;
+    color: $white;
+
+    .logo {
+      .svg-ts-logo-text-purple {
+        fill: $gray-lightest;
+      }
+    }
+  }
+
+  .logo {
+    height: 56px;
+    width: auto;
   }
 
   .header-content {
@@ -57,7 +67,6 @@
     text-transform: uppercase;
 
     a {
-      color: $header-text-color;
       text-decoration: none;
     }
   }
