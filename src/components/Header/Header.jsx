@@ -57,16 +57,11 @@ class Header extends Component {
                 { 'Servizi' }
               </Link>
             </div>
-            <div className="header-menu-item">
+            {/* <div className="header-menu-item">
               <Link to="/platform">
                 { 'La piattaforma' }
               </Link>
-            </div>
-            <div className="header-menu-item">
-              <Link to="/web-agency">
-                { 'Web Agency' }
-              </Link>
-            </div>
+            </div> */}
             <div className="header-menu-item">
               <Link to="/about-us">
                 { 'Chi siamo' }

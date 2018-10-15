@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+@mixin screen-only-xs {
+  @media screen and (max-width: $breakpoint-xs) { @content; }
+}
+
 @mixin screen-only-sm {
   @media screen and (max-width: $breakpoint-sm) { @content; }
 }
