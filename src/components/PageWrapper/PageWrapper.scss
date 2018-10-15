@@ -1,8 +1,13 @@
-@import '../../sass/variables.scss';
+@import '../../sass/mixins';
+@import '../../sass/variables';
 
 .page-wrapper {
-  padding: $spacing-vertical-lg;
-  
+  @include screen-only-sm {
+    padding: $spacing-vertical-sm $spacing-horizontal-md $spacing-vertical-lg;
+  }
+
+  padding: $spacing-vertical-lg $spacing-horizontal-lg;
+
   .page-content {
     margin: 0 auto;
     max-width: $breakpoint-lg;
