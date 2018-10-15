@@ -1,8 +1,8 @@
 import React from 'react'
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from 'gatsby'
 
-import Layout from '../../components/layout'
-import PageWrapper from '../../components/PageWrapper/PageWrapper';
+import Layout from '../../components/Layout'
+import PageWrapper from '../../components/PageWrapper/PageWrapper'
 
 import logoText from '../../images/ts-logo-text.png'
 import i3pLogo from '../../images/logos/i3p.png'
@@ -31,7 +31,7 @@ const AboutUs = () => (
         />
          */}
         <div className="logos">
-          <img src={ i3pLogo } alt="Incubatore Imprese Innovative Politecnico Torino"/>
+          <img src={ i3pLogo } alt="Incubatore Imprese Innovative Politecnico Torino" />
         </div>
       </PageWrapper>
     </Layout>
