@@ -5,13 +5,13 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './Header/Header'
 
-import SvgIconsSprite from '../images/icons/IconsSprite';
+import SvgIconsSprite from '../images/icons/IconsSprite'
 
-import './style.scss';
+import './style.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
-    query={graphql`
+    query={ graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -19,25 +19,25 @@ const Layout = ({ children }) => (
           }
         }
       }
-    `}
-    render={data => (
-      <>
+    ` }
+    render={ data => (
+      <div>
         <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
+          title={ data.site.siteMetadata.title }
+          meta={ [
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
-          ]}
+          ] }
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={ data.site.siteMetadata.title } />
         <SvgIconsSprite className="svg-icon-sprite" />
         <div className="page-content">
           {children}
         </div>
-      </>
-    )}
+      </div>
+    ) }
   />
 )
 

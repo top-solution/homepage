@@ -1,0 +1,51 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "jsx": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": "error",
+    "arrow-parens": ["error", "as-needed"],
+    "array-callback-return": "error",
+    "class-methods-use-this": "warn",
+    "comma-dangle": ["error", "always-multiline"],
+    "curly": "error",
+    "eqeqeq": ["error", "always"],
+    "indent": ["error", 2],
+    "key-spacing": ["error", { "beforeColon": false, "mode": "minimum" }],
+    "no-case-declarations": 0,
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-labels": "error",
+    "no-useless-concat": "error",
+    "no-unused-vars": "warn",
+    "object-curly-spacing": ["error", "always"],
+    "prefer-const": "error",
+    "prefer-template": "error",
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "template-curly-spacing": ["error", "always"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/jsx-curly-spacing": ["error", "always"],
+    "react/jsx-equals-spacing": ["error", "never"],
+    "react/jsx-tag-spacing": ["error", {
+      "closingSlash": "never",
+      "beforeSelfClosing": "always",
+      "afterOpening": "never",
+      "beforeClosing": "never"
+    }]
+  }
+}
