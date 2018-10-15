@@ -1,3 +1,4 @@
+@import '../../sass/mixins';
 @import '../../sass/variables';
 
 .page-about-us {
@@ -12,16 +13,27 @@
     }
   }
 
-  blockquote > p {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    margin-top: $spacing-vertical-xxl;
+  blockquote {
+    margin: 0;
 
-    span {
-      flex: 0 1 auto;
-      max-width: 100%;
-      width: 20rem;
+    > p {
+      @include screen-until-lg {
+        flex-direction: column;
+      };
+
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+      margin-top: $spacing-vertical-xl;
+  
+      span {
+        @include screen-until-lg {
+          margin-bottom: $spacing-vertical-md;
+          width: 100%;
+        };
+
+        flex: 1 1 auto;
+      }
     }
   }
 }
