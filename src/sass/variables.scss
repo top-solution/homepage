@@ -12,6 +12,9 @@ $ts-orange: #e7952e;
 $white: #fff;
 $black: #000;
 
+$ts-light-background: $white;
+$ts-dark-background: $ts-purple-dark;
+
 
 // Fonts
 
@@ -74,5 +77,5 @@ $timing-function: ease-in-out;
 
 // Shadows 
 
-$box-shadow-default: 0 2px 14px 0 rgba(0, 0, 0, 0.2);
-$box-shadow-lighter: 0 2px 14px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-default: 0 2px 14px 0 rgba(0, 0, 0, .2);
+$box-shadow-lighter: 0 2px 14px 0 rgba(0, 0, 0, .1);

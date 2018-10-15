@@ -118,7 +118,7 @@ const SvgIconsSprite = props => (
         fill="currentColor"
         strokeWidth={0.125}
       >
-        010110101
+        {`010110101`}
       </text>
     </symbol>
     <symbol id="cloud" viewBox="0 0 16.933 16.933">
@@ -242,6 +242,29 @@ const SvgIconsSprite = props => (
         strokeWidth={0.392}
       />
       <circle r={0.522} cy={10.209} cx={5.94} fill="currentColor" />
+    </symbol>
+    <symbol id="menu" viewBox="0 0 16.933 16.933">
+      <path
+        d="M2.086 8.467h12.761"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2.026}
+        strokeLinecap="round"
+      />
+      <path
+        d="M2.086 13.363h12.761"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2.026}
+        strokeLinecap="round"
+      />
+      <path
+        d="M2.086 3.57h12.761"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2.026}
+        strokeLinecap="round"
+      />
     </symbol>
     <symbol id="performance-assestment" viewBox="0 0 16.933 16.933">
       <path

@@ -1,4 +1,5 @@
-@import '../../sass/variables.scss';
+@import '../../sass/mixins';
+@import '../../sass/variables';
 
 .header {
   $header-text-color: $ts-purple;
@@ -23,20 +24,51 @@
   }
 
   .header-menu {
+    @include screen-only-sm {
+      @include position (fixed, 75px 0 0 0);
+
+      align-items: center;
+      background: $ts-light-background;
+      flex-direction: column;
+      font-size: 1.2rem;
+      justify-content: flex-start;
+      max-height: 0;
+      opacity: 0;
+      position: fixed;
+      transition: opacity $timing-medium $timing-function 0s, max-height 0s linear $timing-medium;
+      z-index: 100;
+
+      &.open {
+        max-height: 100vh;
+        opacity: 1;
+        transition: opacity $timing-medium $timing-function 0s, max-height 0s linear 0s;
+      }
+    };
+
     display: flex;
     flex-direction: row;
+    font-size: 1rem;
+    font-weight: 600;
     justify-content: flex-end;
   }
 
   .header-menu-item {
     margin: $spacing-horizontal-md;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: .9rem;
 
     a {
       color: $header-text-color;
       text-decoration: none;
+    }
+  }
+
+  .mobile-menu-toggle {
+    @include screen-from-md {
+      display: none;
+    }
+
+    svg {
+      @include size($icon-size-lg);
     }
   }
 }
