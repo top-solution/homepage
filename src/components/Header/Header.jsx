@@ -34,17 +34,9 @@ class Header extends Component {
         <div
           className="header-content"
         >
-          <h1 style={ { margin: 0 } }>
-            <Link
-              to="/"
-              style={ {
-                color: 'white',
-                textDecoration: 'none',
-              } }
-            >
-              <LogoText className="logo" />
-            </Link>
-          </h1>
+          <Link className="logo" to="/">
+            <LogoText />
+          </Link>
           <div
             className={ `mobile-menu-toggle ${ this.state.mobileMenuOpen ? 'open' : '' }` }
             onClick={ this.handleMobileMenuIconClick }
@@ -68,7 +60,7 @@ class Header extends Component {
               </Link>
             </div>
             <div className="header-menu-item">
-              <Link to="/contacts">
+              <Link to="/contact-us">
                 { 'Contatti' }
               </Link>
             </div>

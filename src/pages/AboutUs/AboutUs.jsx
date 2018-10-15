@@ -29,10 +29,6 @@ const AboutUs = () => (
   <div className="page-about-us page">
     <Layout>
       <PageWrapper>
-        {/* <div className="ts-logo">
-          <img src={ logoText } alt="" />
-        </div> */}
-
         <StaticQuery
           query={ graphql`
             {
@@ -43,10 +39,6 @@ const AboutUs = () => (
           ` }
           render={ AboutUsMD }
         />
-        {/* <div className="logos">
-          <img src={ i3pLogo } alt="Incubatore Imprese Innovative Politecnico Torino" />
-          <img src={ startCup } alt="2008 StartCup Torino Piemonte" />
-        </div> */}
       </PageWrapper>
     </Layout>
   </div>

@@ -8,7 +8,7 @@
   font-size: $font-size-body;
 
   &.dark {
-    background-color: $ts-purple-dark;
+    background-color: $ts-purple;
     color: $white;
 
     .logo {
@@ -19,8 +19,12 @@
   }
 
   .logo {
-    height: 56px;
-    width: auto;
+    max-height: 56px;
+
+    svg {
+      height: 56px;
+      width: auto;
+    }
   }
 
   .header-content {
@@ -39,6 +43,7 @@
 
       align-items: center;
       background: $ts-light-background;
+      color: $ts-purple-dark;
       flex-direction: column;
       font-size: 1.2rem;
       justify-content: flex-start;
@@ -63,7 +68,7 @@
   }
 
   .header-menu-item {
-    margin: $spacing-horizontal-md;
+    margin: $spacing-vertical-md $spacing-horizontal-md;
     text-transform: uppercase;
 
     a {
