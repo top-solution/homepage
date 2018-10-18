@@ -5,7 +5,7 @@
   box-shadow: $box-shadow-default;
   display: flex;
   flex-direction: column;
-  margin-bottom: $spacing-vertical-md;
+  margin-bottom: $spacing-vertical-lg;
   min-height: 200px;
   overflow: hidden;
   padding: 0 $spacing-horizontal-sm $spacing-vertical-md;
@@ -33,11 +33,7 @@
 
   .card-content {
     flex: 1 1 auto;
-    
-    >.ts-button {
-      margin-top: $spacing-vertical-md;
-      width: 100%;
-    }
+
   }
 
   .card-content-collapsible{
@@ -48,5 +44,24 @@
     &.collapsed {
       max-height: 0;
     }
+  }
+
+  .collapsible {
+    display: inline;
+    position: relative;
+        
+    >.ts-button {
+      margin-top: $spacing-vertical-md;
+      width: 100%;
+    }
+  }
+
+  .scroller {
+    @include size(1px);
+    visibility: hidden;
+
+    position: absolute;
+    top: calc(100vh - 24px);
+
   }
 }
