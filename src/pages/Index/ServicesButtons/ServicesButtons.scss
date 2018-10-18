@@ -5,9 +5,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: $spacing-vertical-lg;
-  margin-top: $spacing-vertical-lg;
-  min-height: calc(100vh - 150px);
+  padding: $spacing-vertical-lg 5%;
+  min-height: calc(100vh - #{$header-height - 8px});
 
   .ts-button {
     @include screen-only-xs {

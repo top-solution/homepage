@@ -6,6 +6,7 @@
   color: $ts-purple;
   font-family: $font-exo;
   font-size: $font-size-body;
+  height: $header-height;
 
   &.dark {
     background-color: $ts-purple;
@@ -89,20 +90,67 @@
     justify-content: flex-end;
   }
 
+  &.dark {
+    .logo {
+
+      transition: box-shadow $timing-quick $timing-function;
+
+      .svg-ts-logo-text-purple,
+      .svg-ts-logo-text-purple {
+        fill: darken($white, 5%);
+        transition: fill $timing-quicker $timing-function;
+      }
+      .svg-ts-logo-text-cyan,
+      .svg-ts-logo-text-cyan {
+        transition: fill $timing-quicker $timing-function;
+      }
+
+      svg {
+        height: 56px;
+        width: auto;
+      }
+
+      &:hover {
+        .svg-ts-logo-text-purple,
+        .svg-ts-logo-text-purple {
+          fill: $white;
+        }
+        .svg-ts-logo-text-cyan,
+        .svg-ts-logo-text-cyan {
+          fill: $ts-cyan;
+        }
+      }
+    }
+    
+    .header-menu-item {
+      @include screen-from-md {
+        color: darken($white, 15%);
+        transition: color $timing-quicker $timing-function;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
   .header-menu-item {
+    @include screen-from-md {
+      color: desaturate($ts-purple, 100%);
+      transition: color $timing-quicker $timing-function;
+
+      &:hover {
+        color: $ts-purple;
+      }
+    }
+    
+    border-radius: 4px;
     margin: $spacing-vertical-md $spacing-horizontal-md;
     text-transform: uppercase;
-    color: desaturate($ts-purple, 100%);
-    transition: color $timing-quicker $timing-function;
 
-    border-radius: 4px;
 
     a {
       text-decoration: none;
-    }
-
-    &:hover {
-      color: $ts-purple;
     }
   }
 
