@@ -19,11 +19,33 @@
   }
 
   .logo {
-    max-height: 56px;
+    max-height: 64px;
+    box-shadow: 0;
+    transition: box-shadow $timing-quick $timing-function;
+
+    .svg-ts-logo-text-purple,
+    .svg-ts-logo-text-purple {
+      transition: fill $timing-quicker $timing-function;
+    }
+    .svg-ts-logo-text-cyan,
+    .svg-ts-logo-text-cyan {
+      transition: fill $timing-quicker $timing-function;
+    }
 
     svg {
       height: 56px;
       width: auto;
+    }
+
+    &:hover {
+      .svg-ts-logo-text-purple,
+      .svg-ts-logo-text-purple {
+        fill: $ts-purple;
+      }
+      .svg-ts-logo-text-cyan,
+      .svg-ts-logo-text-cyan {
+        fill: $ts-cyan;
+      }
     }
   }
 
@@ -70,9 +92,17 @@
   .header-menu-item {
     margin: $spacing-vertical-md $spacing-horizontal-md;
     text-transform: uppercase;
+    color: desaturate($ts-purple, 100%);
+    transition: color $timing-quicker $timing-function;
+
+    border-radius: 4px;
 
     a {
       text-decoration: none;
+    }
+
+    &:hover {
+      color: $ts-purple;
     }
   }
 

@@ -44,11 +44,11 @@ class Header extends Component {
             <Icon name="menu" />
           </div>
           <div className={ `header-menu ${ this.state.mobileMenuOpen ? 'open' : '' }` }>
-            <div className="header-menu-item">
+            {/* <div className="header-menu-item">
               <Link to="/services">
                 { 'Servizi' }
               </Link>
-            </div>
+            </div> */}
             {/* <div className="header-menu-item">
               <Link to="/platform">
                 { 'La piattaforma' }
