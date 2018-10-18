@@ -72,6 +72,7 @@
       justify-content: flex-start;
       max-height: 0;
       opacity: 0;
+      overflow: hidden;
       position: fixed;
       transition: opacity $timing-medium $timing-function 0s, max-height 0s linear $timing-medium;
       z-index: 100;
