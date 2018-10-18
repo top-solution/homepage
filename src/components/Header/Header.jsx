@@ -27,7 +27,18 @@ class Header extends Component {
   }
 
   render() {
-    const { siteTitle, variant } = this.props
+    const { siteTitle, variant, hideServices } = this.props
+
+    let services = null
+    if (!hideServices) {
+      services = (
+        <div className="header-menu-item">
+          <Link to="/">
+            { 'Servizi' }
+          </Link>
+        </div>
+      )
+    }
 
     return (
       <div className={ `header ${ variant || '' }` }>
@@ -44,11 +55,7 @@ class Header extends Component {
             <Icon name="menu" />
           </div>
           <div className={ `header-menu ${ this.state.mobileMenuOpen ? 'open' : '' }` }>
-            {/* <div className="header-menu-item">
-              <Link to="/services">
-                { 'Servizi' }
-              </Link>
-            </div> */}
+            { services }
             {/* <div className="header-menu-item">
               <Link to="/platform">
                 { 'La piattaforma' }

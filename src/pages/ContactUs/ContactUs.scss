@@ -9,6 +9,10 @@
   }
 
   .page-wrapper {
+    @include screen-only-sm {
+      padding-bottom: 0;
+    }
+
     .page-content {
       @include screen-only-sm {
         flex-direction: column;
@@ -33,6 +37,11 @@
       }
 
       iframe {
+        @include screen-only-sm {
+          padding: 0;
+          margin: $spacing-vertical-md (-$spacing-horizontal-md) 0; 
+        }
+
         margin-bottom: 0;
         min-height: 400px;
       }

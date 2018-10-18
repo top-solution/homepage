@@ -3,7 +3,7 @@
 
 .page-wrapper {
   @include screen-only-sm {
-    padding: $spacing-vertical-sm $spacing-horizontal-md $spacing-vertical-lg;
+    padding: $spacing-vertical-lg $spacing-horizontal-md $spacing-vertical-lg;
   }
 
   padding: $spacing-vertical-lg $spacing-horizontal-lg;

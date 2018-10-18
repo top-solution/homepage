@@ -86,7 +86,7 @@ class IndexPage extends Component {
         })
       }, 400)
 
-      return;
+      return
     }
     
     if (this.state.topic === topic) {
@@ -141,32 +141,32 @@ class IndexPage extends Component {
     case 'PIATTAFORME_WEB': topicElement = (
       <WebPlatforms />
     )  
-        break;      
+      break      
     case 'APPLICAZIONI_WEB': topicElement = (
       <WebApplications />
     )    
-        break;    
+      break    
     case 'TRAINING_ICT': topicElement = (
       <ICTTraining />
     )     
-        break;   
+      break   
     case 'AUDIT_COMPETENZE': topicElement = (
       <CompetenceAudits />
     )    
-        break;    
+      break    
     case 'SVILUPPO_INDIVIDUALE': topicElement = (
       <IndividualDevelopment />
     )  
-        break;      
+      break      
     case 'SVILUPPO_ORGANIZZATIVO': topicElement = (
       <ManagementDevelopment />
     )        
-        break;
+      break
     default: break
     }
 
     const leftPanelContent = topicElement
-    let rightPanelContent = topicElement
+    const rightPanelContent = topicElement
 
     let indexContent = null
 
@@ -217,7 +217,7 @@ class IndexPage extends Component {
 
     return (
       <div className="index-page">
-        <Layout>
+        <Layout hideServices>
           { indexContent }
         </Layout>
       </div>
