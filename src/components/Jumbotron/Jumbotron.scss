@@ -3,10 +3,11 @@
 .jumbotron {
   background-color: $ts-purple;
   color: $white;
-  padding: $spacing-vertical-lg;
+  padding: $spacing-vertical-xl;
   
   .jumbotron-wrapper {
     margin: 0 auto;
     max-width: $breakpoint-lg;
+    text-align: center;
   }
 }

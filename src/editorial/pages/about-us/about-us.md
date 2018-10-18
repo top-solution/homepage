@@ -1,4 +1,6 @@
-# Chi siamo
+---
+title: Chi siamo
+---
 
 Nasciamo da una vittoria: vincitrice nel 2008 della **IV edizione della Start Cup Torino Piemonte**, Top Solution è stata fondata nel febbraio 2009 e dopo un periodo di tre anni di incubazione, nel 2012 si è laureata impresa innovativa presso I3P del Politecnico di Torino.
 Top Solution nasce dall’unione e dalla condivisione di una grande expertise nel settore della Consulenza Informatica e della Gestione delle Risorse Umane. Si avvale di professionisti e manager di azienda per tenere sempre aggiornati contenuti e utilizzare nuove metodologie e 

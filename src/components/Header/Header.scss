@@ -124,7 +124,7 @@
     
     .header-menu-item {
       @include screen-from-md {
-        color: darken($white, 15%);
+        color: darken($white, 10%);
         transition: color $timing-quicker $timing-function;
 
         &:hover {
