@@ -14,20 +14,20 @@ import CompetenceAudits from './topics/CompetenceAudits'
 import IndividualDevelopment from './topics/IndividualDevelopment'
 import ManagementDevelopment from './topics/ManagementDevelopment'
 import HexagonChart from '../../HexagonChart/HexagonChart'
-import { Link } from '@reach/router'
 
 
 const windowGlobal = typeof window !== 'undefined' && window
-const MOBILE_BREAKPOINT = 900
 
 class HomePage extends Component {
   constructor(props) {
     super(props)
   
+    const urlMatch = windowGlobal.location.href.match(/\/services\/(it|consulting)\/([a-zA-Z0-9_]*)$/) || []
+
     this.state = {
-      topic: null,
-      leftPanelShown: false,
-      rightPanelShown: false,
+      topic: urlMatch[2] || null,
+      leftPanelShown: urlMatch[1] === 'it',
+      rightPanelShown: urlMatch[1] === 'consulting',
       windowWidth: null,
     }
 
@@ -97,7 +97,7 @@ class HomePage extends Component {
         })
       }, 400)
 
-      if (side === 'left') {
+      if (side === 'it') {
         return this.setState({
           leftPanelShown: !this.state.leftPanelShown,
         })
@@ -108,15 +108,16 @@ class HomePage extends Component {
       }
     }
 
-    window.history.replaceState({}, window.title, `#/services/${ topic }`)
-
-    if (side === 'left') {
+    
+    if (side === 'it') {
+      window.history.replaceState({}, window.title, `#/services/it/${ topic }`)
       this.setState({ 
         topic: topic,
         leftPanelShown: true,
         rightPanelShown: false,
       })
     } else {
+      window.history.replaceState({}, window.title, `#/services/consulting/${ topic }`)
       this.setState({ 
         topic: topic,
         leftPanelShown: false,

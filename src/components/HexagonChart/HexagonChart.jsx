@@ -14,7 +14,7 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
     <svg className={ `hexagon-chart ${ className }` } viewBox={ `0 0 ${ hexWidthAdjusted * 3.15 } ${ hexHeightAdjusted * 3.5 }` }>
       <Hexagon 
         className={ `purple ${ highlighted === 'PIATTAFORME_WEB'? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('PIATTAFORME_WEB', 'left') }
+        onClick={ () => onHexagonClick('PIATTAFORME_WEB', 'it') }
         x={ hexWidthAdjusted - (hexWidthAdjusted / 2) }
         y={ 0 }
         width={ hexWidth } 
@@ -24,7 +24,7 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
       />
       <Hexagon 
         className={ `cyan ${ highlighted === 'AUDIT_COMPETENZE'? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('AUDIT_COMPETENZE', 'right') }
+        onClick={ () => onHexagonClick('AUDIT_COMPETENZE', 'consulting') }
         x={ 2 * hexWidthAdjusted - (hexWidthAdjusted / 2) }
         y={ 0 }
         width={ hexWidth } 
@@ -34,7 +34,7 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
       />
       <Hexagon 
         className={ `purple ${ highlighted === 'APPLICAZIONI_WEB'? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('APPLICAZIONI_WEB', 'left') }
+        onClick={ () => onHexagonClick('APPLICAZIONI_WEB', 'it') }
         x={ 0 }
         y={ hexHeightAdjusted }
         width={ hexWidth } 
@@ -54,7 +54,7 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
       />
       <Hexagon 
         className={ `cyan ${ highlighted === 'SVILUPPO_INDIVIDUALE'? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('SVILUPPO_INDIVIDUALE', 'right') }
+        onClick={ () => onHexagonClick('SVILUPPO_INDIVIDUALE', 'consulting') }
         x={ 2 * hexWidthAdjusted }
         y={ hexHeightAdjusted }
         width={ hexWidth } 
@@ -64,7 +64,7 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
       />
       <Hexagon 
         className={ `purple ${ highlighted === 'TRAINING_ICT'? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('TRAINING_ICT', 'left') }
+        onClick={ () => onHexagonClick('TRAINING_ICT', 'it') }
         x={ hexWidthAdjusted - (hexWidthAdjusted / 2) }
         y={ hexHeightAdjusted * 2 }
         width={ hexWidth } 
@@ -74,7 +74,7 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
       />
       <Hexagon 
         className={ `cyan ${ highlighted === 'SVILUPPO_ORGANIZZATIVO'? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('SVILUPPO_ORGANIZZATIVO', 'right') }
+        onClick={ () => onHexagonClick('SVILUPPO_ORGANIZZATIVO', 'consulting') }
         x={ 2 * hexWidthAdjusted - (hexWidthAdjusted / 2) }
         y={ hexHeightAdjusted * 2 }
         width={ hexWidth } 

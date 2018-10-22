@@ -75,7 +75,7 @@ const Layout = ({ children, variant, hideServices }) => (
                   'name': company.name,
                   'legalName': company.name,
                   'url': data.site.siteMetadata.siteUrl,
-                  'logo': logoText,
+                  'logo': data.site.siteMetadata.siteUrl + logoText,
                   'address': {
                     '@type': 'PostalAddress',
                     'streetAddress': company.streetAddress,

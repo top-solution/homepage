@@ -17,11 +17,6 @@ const Service = ( { accent, data, mobile } ) => {
     content = (
       <HexagonCard 
         data={ data }
-        // onClick={ () => onHexagonClick('PIATTAFORME_WEB', 'left') }
-        // x= { hexWidthAdjusted - (hexWidthAdjusted / 2) }
-        // y={ 0 }
-        // width={ hexWidth } 
-        // height={hexHeight} 
         icon="web-platforms" 
         text={ 'Piattaforme\nWeb' }
         accent={ accent }
