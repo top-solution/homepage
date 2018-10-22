@@ -1,1 +1,1 @@
-export { default } from './AboutUs/AboutUs';
+export { default } from 'components/pages/AboutUs'

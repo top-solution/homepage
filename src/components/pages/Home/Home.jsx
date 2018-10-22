@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
 
-import Layout from '../../components/Layout'
+import Layout from '../../Layout'
 
 
-import './Index.scss'
+import './Home.scss'
 
 import ServicesButtons from './ServicesButtons/ServicesButtons'
 import WebApplications from './topics/WebApplications'
@@ -13,13 +13,14 @@ import ICTTraining from './topics/ICTTraining'
 import CompetenceAudits from './topics/CompetenceAudits'
 import IndividualDevelopment from './topics/IndividualDevelopment'
 import ManagementDevelopment from './topics/ManagementDevelopment'
-import HexagonChart from '../../components/HexagonChart/HexagonChart'
+import HexagonChart from '../../HexagonChart/HexagonChart'
+import { Link } from '@reach/router'
 
 
 const windowGlobal = typeof window !== 'undefined' && window
 const MOBILE_BREAKPOINT = 900
 
-class IndexPage extends Component {
+class HomePage extends Component {
   constructor(props) {
     super(props)
   
@@ -72,6 +73,7 @@ class IndexPage extends Component {
 
   handleHexagonClick(topic, side) {
     if (topic === null) {
+      window.history.replaceState({}, window.title, '#')
       this.setState({ 
         leftPanelShown: false,
         rightPanelShown: false,
@@ -89,6 +91,7 @@ class IndexPage extends Component {
     
     if (this.state.topic === topic) {
       setTimeout(() => {
+        window.history.replaceState({}, window.title, '#')
         this.setState({ 
           topic: null,
         })
@@ -104,6 +107,8 @@ class IndexPage extends Component {
         })
       }
     }
+
+    window.history.replaceState({}, window.title, `#/services/${ topic }`)
 
     if (side === 'left') {
       this.setState({ 
@@ -224,4 +229,4 @@ class IndexPage extends Component {
 }
 
 
-export default IndexPage
+export default HomePage

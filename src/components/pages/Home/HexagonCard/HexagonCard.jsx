@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Button from '../../../components/Button/Button'
+import Button from '../../../Button/Button'
 
-import SVGHexagon from '../../../images/hexagons/hexagon'
+import SVGHexagon from 'images/hexagons/hexagon'
 import ServiceDetails from '../ServiceDetails/ServiceDetails'
 import ServicePreview from '../ServicePreview/ServicePreview'
 

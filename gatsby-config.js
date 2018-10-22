@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: 'Top Solution',
@@ -6,7 +8,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${ __dirname }/src/editorial`,
+        path: path.join(__dirname, 'src', 'editorial'),
         name: 'pages',
       },
     },
@@ -31,6 +33,10 @@ module.exports = {
       options: {
         plugins: [
           {
+            includePaths: [
+              path.join(__dirname, 'src'),
+              path.join(__dirname, 'node_modules'),
+            ],
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,

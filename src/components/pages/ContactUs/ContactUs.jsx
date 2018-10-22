@@ -1,8 +1,8 @@
 // import React from 'react'
 
-// import Layout from '../../components/Layout'
-// import Jumbotron from '../../components/Jumbotron/Jumbotron'
-// import PageWrapper from '../../components/PageWrapper/PageWrapper'
+// import Layout from '../../Layout'
+// import Jumbotron from '../../Jumbotron/Jumbotron'
+// import PageWrapper from '../../PageWrapper/PageWrapper'
 
 // import './ContactUs.scss'
 
@@ -48,9 +48,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Layout from '../../components/Layout'
-import PageWrapper from '../../components/PageWrapper/PageWrapper'
-import Jumbotron from '../../components/Jumbotron/Jumbotron'
+import Layout from '../../Layout'
+import PageWrapper from '../../PageWrapper/PageWrapper'
+import Jumbotron from '../../Jumbotron/Jumbotron'
 
 import Map from './Map'
 

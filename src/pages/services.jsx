@@ -1,14 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { navigate } from 'gatsby'
 
-import Layout from '../components/Layout'
+const services = () => {
+  navigate('/')
+  return null
+};
 
-const SecondPage = () => (
-  <Layout>
-    <h1>Servizi</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
-
-export default SecondPage
+export default services
