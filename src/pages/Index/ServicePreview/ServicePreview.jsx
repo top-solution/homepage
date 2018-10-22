@@ -1,17 +1,25 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const ServicePreview = ( {data} ) => {
+const ServicePreview = ( { data } ) => {
   if (!data || !data.frontmatter) {
-    return null;
+    return null
   }
 
   return (
     <div>
       <h2>{ data.frontmatter.title }</h2>
-      <div dangerouslySetInnerHTML={{__html: data.html}}>
+      <div dangerouslySetInnerHTML={ { __html: data.html } }>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ServicePreview;
+ServicePreview.propTypes = {
+  data: PropTypes.objectOf({
+    html: PropTypes.string,
+    frontmatter: PropTypes.object,
+  }),
+}
+
+export default ServicePreview

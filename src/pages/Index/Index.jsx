@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 
 
 import Layout from '../../components/Layout'
-import Button from '../../components/Button/Button'
 
 
 import './Index.scss'

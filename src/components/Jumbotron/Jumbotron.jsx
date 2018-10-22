@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import './Jumbotron.scss'
 
 
-const Jumbotron = ({children}) => (
+const Jumbotron = ({ children }) => (
   <div className="jumbotron">
     <div className="jumbotron-wrapper">
       { children }
@@ -11,4 +12,11 @@ const Jumbotron = ({children}) => (
   </div>
 )
 
-export default Jumbotron;
+Jumbotron.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+}
+
+export default Jumbotron

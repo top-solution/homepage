@@ -6,10 +6,6 @@ import Layout from '../../components/Layout'
 import Jumbotron from '../../components/Jumbotron/Jumbotron'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 
-// import logoText from '../../images/ts-logo-text.png'
-// import i3pLogo from '../../images/logos/i3p.png'
-// import startCup from '../../images/logos/2008_startcup.jpg'
-
 import './AboutUs.scss'
 
 const AboutUsMD = ({ markdownRemark }) => {

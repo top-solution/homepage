@@ -1,12 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import Icon from '../../../components/Icon/Icon';
+import Icon from '../../../components/Icon/Icon'
 
 import './ServiceDetails.scss'
 
 const ServiceDetails = ( { data } ) => {
   if (!data) {
-    return null;
+    return null
   }
 
   const details = data.edges.map(({ node }) => (
@@ -16,7 +17,7 @@ const ServiceDetails = ( { data } ) => {
         <div className="item-icon">
           <Icon name={ node.frontmatter.icon } />
         </div>
-        <div className="text" dangerouslySetInnerHTML={{__html: node.html}} />
+        <div className="text" dangerouslySetInnerHTML={ { __html: node.html } } />
       </div>
     </div>
 
@@ -26,7 +27,11 @@ const ServiceDetails = ( { data } ) => {
     <div className="service-details">
       { details }
     </div>
-  );
-};
+  )
+}
 
-export default ServiceDetails;
+ServiceDetails.propTypes = {
+  data: PropTypes.array,
+}
+
+export default ServiceDetails

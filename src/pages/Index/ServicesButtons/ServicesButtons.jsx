@@ -1,8 +1,9 @@
-import React from 'react';
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 
-import Button from '../../../components/Button/Button';
-import Icon from '../../../components/Icon/Icon';
+import Button from '../../../components/Button/Button'
+import Icon from '../../../components/Icon/Icon'
 
 import './ServicesButtons.scss'
 
@@ -27,9 +28,8 @@ const ServicesButtons = ({ onClick }) => {
             }
           }
         ` }
-        render={ (data) => {
-          console.log(data.services.edges)
-          const buttons = data.services.edges.map(({ node : { frontmatter }}) => (
+        render={ data => {
+          const buttons = data.services.edges.map(({ node: { frontmatter } }) => (
             <Button
               key={ frontmatter.id }
               borderless
@@ -37,7 +37,7 @@ const ServicesButtons = ({ onClick }) => {
               cyan={ frontmatter.type === 'consulting' }
               onClick={ () => onClick(frontmatter.id) }
             >
-              <Icon name={ frontmatter.icon }/>
+              <Icon name={ frontmatter.icon } />
               { frontmatter.title }
             </Button>
           )) 
@@ -47,10 +47,14 @@ const ServicesButtons = ({ onClick }) => {
               { buttons }
             </div>
           )
-        }}
+        } }
       />
     </div>
-  );
-};
+  )
+}
 
-export default ServicesButtons;
+ServicesButtons.propTypes = {
+  onClick: PropTypes.func,
+}
+
+export default ServicesButtons

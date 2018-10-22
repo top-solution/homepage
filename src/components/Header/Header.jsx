@@ -27,7 +27,7 @@ class Header extends Component {
   }
 
   render() {
-    const { siteTitle, variant, hideServices } = this.props
+    const { variant, hideServices } = this.props
 
     let services = null
     if (!hideServices) {
@@ -79,6 +79,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
+  hideServices: PropTypes.bool,
   siteTitle: PropTypes.string,
   variant: PropTypes.string,
 }

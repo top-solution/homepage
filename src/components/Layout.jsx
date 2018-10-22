@@ -42,6 +42,7 @@ const Layout = ({ children, variant, hideServices }) => (
 )
 
 Layout.propTypes = {
+  hideServices: PropTypes.bool,
   children: PropTypes.node.isRequired,
   variant: PropTypes.string,
 }

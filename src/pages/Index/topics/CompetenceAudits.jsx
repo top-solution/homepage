@@ -1,10 +1,10 @@
-import React from 'react';
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Service from '../Service/Service'
 
 
-const CompetenceAudits = (props) => {
+const CompetenceAudits = props => {
   return (
     <div>
       <StaticQuery
@@ -30,10 +30,10 @@ const CompetenceAudits = (props) => {
             }
           }
         ` }
-        render={ (data) => ( <Service data={ data } { ...props }/> )}
+        render={ data => ( <Service data={ data } { ...props } /> ) }
       />
     </div>
-  );
-};
+  )
+}
 
-export default CompetenceAudits;
+export default CompetenceAudits

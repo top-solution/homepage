@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SVGHexagon = props => (
-  <svg viewBox="0 0 16.933 16.933" height={64} width={64} {...props}>
+  <svg viewBox="0 0 16.933 16.933" height={ 64 } width={ 64 } { ...props }>
     <defs>
       <filter id="hexagon-svg-blur-filter" colorInterpolationFilters="sRGB">
         <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" />

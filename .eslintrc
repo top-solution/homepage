@@ -47,5 +47,10 @@
       "afterOpening": "never",
       "beforeClosing": "never"
     }]
+  },
+  "settings": {
+    "react": {
+      "version": "16.5.0"
+    }
   }
 }

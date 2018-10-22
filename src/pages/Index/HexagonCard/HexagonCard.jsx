@@ -92,6 +92,8 @@ class HexagonCard extends Component {
 }
 
 HexagonCard.propTypes = {
+  accent: PropTypes.string,
+  data: PropTypes.object,
   icon: PropTypes.string,
   text: PropTypes.string,
 }

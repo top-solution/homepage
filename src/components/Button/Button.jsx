@@ -1,24 +1,24 @@
-import React from 'react';
+import React from 'react'
 
-import './Button.scss';
+import './Button.scss'
 
-const Button = (props) => {
-  let className = 'ts-button';
+const Button = props => {
+  let className = 'ts-button'
 
   if (props.purple) {
-    className += ' purple';
+    className += ' purple'
   }
 
   if (props.cyan) {
-    className += ' cyan';
+    className += ' cyan'
   }
 
   if (props.active) {
-    className += ' active';
+    className += ' active'
   }
 
   if (props.borderless) {
-    className += ' borderless';
+    className += ' borderless'
   }
 
   return (
@@ -28,7 +28,7 @@ const Button = (props) => {
     >
       { props.children }
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
