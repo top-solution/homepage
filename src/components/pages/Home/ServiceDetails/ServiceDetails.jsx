@@ -31,7 +31,7 @@ const ServiceDetails = ( { data } ) => {
 }
 
 ServiceDetails.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.object,
 }
 
 export default ServiceDetails

@@ -1,34 +1,48 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './Button.scss'
 
 const Button = props => {
   let className = 'ts-button'
 
-  if (props.purple) {
+  const { purple, cyan, active, borderless, ...otherProps} = props
+
+  if (purple) {
     className += ' purple'
   }
 
-  if (props.cyan) {
+  if (cyan) {
     className += ' cyan'
   }
 
-  if (props.active) {
+  if (active) {
     className += ' active'
   }
 
-  if (props.borderless) {
+  if (borderless) {
     className += ' borderless'
   }
 
   return (
     <button 
       className={ className } 
-      type="button" { ...props }
+      type="button" { ...otherProps }
     >
       { props.children }
     </button>
   )
+}
+
+Button.propTypes = {
+  active: PropTypes.bool,
+  borderless: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  cyan: PropTypes.bool,
+  purple: PropTypes.bool,
 }
 
 export default Button

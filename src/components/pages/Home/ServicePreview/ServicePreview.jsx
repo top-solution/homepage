@@ -16,10 +16,7 @@ const ServicePreview = ( { data } ) => {
 }
 
 ServicePreview.propTypes = {
-  data: PropTypes.objectOf({
-    html: PropTypes.string,
-    frontmatter: PropTypes.object,
-  }),
+  data: PropTypes.object,
 }
 
 export default ServicePreview

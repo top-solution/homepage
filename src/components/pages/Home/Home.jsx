@@ -62,7 +62,7 @@ class HomePage extends Component {
     if (prevState.windowWidth === null && this.state.windowWidth !== null) {
       const urlMatch = windowGlobal.location.href.match(/\/services\/(it|consulting)\/([a-zA-Z0-9_-]*)$/) || []
       
-      if (urlMatch[2]) {
+      if (this.state.windowWidth < 900 && urlMatch[2]) {
         this.buttonsRefs[urlMatch[2]].current.scrollIntoView({
           behavior: 'smooth',
         })

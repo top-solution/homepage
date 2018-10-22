@@ -89,7 +89,7 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
 HexagonChart.propTypes = {
   className: PropTypes.string,
   onHexagonClick: PropTypes.func,
-  highlighted: PropTypes.bool,
+  highlighted: PropTypes.string,
 }
 
 export default HexagonChart
