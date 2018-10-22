@@ -10,10 +10,15 @@ module.exports = {
       name: 'Top Solution s.r.l',
       streetAddress: 'Corso Regina Margherita, 254',
       locality: 'Turin',
+      region: 'TO',
       postalCode: 10144,
       countryName: 'Italy',
       latitude: 45.0888952,
       longitude: 7.6524942,
+    },
+    contacts: {
+      phone: '011 5833474',
+      email: 'info@topsolution.it',
     },
   },
   plugins: [

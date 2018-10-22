@@ -7,6 +7,8 @@ import Header from './Header/Header'
 
 import SvgIconsSprite from '../images/icons/IconsSprite'
 
+import logoText from '../images/top-solution/logo-text.png'
+
 import './style.scss'
 
 const Layout = ({ children, variant, hideServices }) => (
@@ -28,12 +30,17 @@ const Layout = ({ children, variant, hideServices }) => (
               latitude
               longitude
             }
+            contacts {
+              phone
+              email
+            }
           }
         }
       }
     ` }
     render={ data => {
       const company = data.site.siteMetadata.company
+      const contacts = data.site.siteMetadata.contacts
 
       return (
         <div>
@@ -60,6 +67,32 @@ const Layout = ({ children, variant, hideServices }) => (
             ] }
           >
             <html lang="en" />
+            <script type="application/ld+json">
+              {
+                JSON.stringify({ 
+                  '@context': 'http://schema.org',
+                  '@type': 'Organization',
+                  'name': company.name,
+                  'legalName': company.name,
+                  'url': data.site.siteMetadata.siteUrl,
+                  'logo': logoText,
+                  'address': {
+                    '@type': 'PostalAddress',
+                    'streetAddress': company.streetAddress,
+                    'addressLocality': company.locality,
+                    'addressRegion': company.region,
+                    'postalCode': company.postalCode,
+                    'addressCountry': company.countryName,
+                  },
+                  'contactPoint': {
+                    '@type': 'ContactPoint',
+                    'contactType': 'sales',
+                    'telephone': `+39 ${ contacts.phone }`,
+                    'email': contacts.email,
+                  },
+                })
+              }
+            </script>
           </Helmet>
           <Header variant={ variant } siteTitle={ data.site.siteMetadata.title } hideServices={ hideServices } />
           <SvgIconsSprite className="svg-icon-sprite" />
