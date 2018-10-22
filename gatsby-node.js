@@ -19,7 +19,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 // console.log('##################################')
 // console.log(path.join(__dirname, 'src'))
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [
@@ -28,4 +28,17 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
       ],
     },
   })
+  
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-visibility-sensor/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
 }

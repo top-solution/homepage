@@ -16,7 +16,7 @@ import ManagementDevelopment from './topics/ManagementDevelopment'
 import HexagonChart from '../../HexagonChart/HexagonChart'
 
 
-const windowGlobal = typeof window !== 'undefined' && window
+const windowGlobal = typeof window !== 'undefined' && window || { location: { href: '' }}
 
 class HomePage extends Component {
   constructor(props) {
