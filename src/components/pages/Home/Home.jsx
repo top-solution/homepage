@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import VisibilitySensor from 'react-visibility-sensor'
 
 import Layout from '../../Layout'
 
@@ -22,7 +22,7 @@ class HomePage extends Component {
   constructor(props) {
     super(props)
   
-    const urlMatch = windowGlobal.location.href.match(/\/services\/(it|consulting)\/([a-zA-Z0-9_]*)$/) || []
+    const urlMatch = windowGlobal.location.href.match(/\/services\/(it|consulting)\/([a-zA-Z0-9_-]*)$/) || []
 
     this.state = {
       topic: urlMatch[2] || null,
@@ -52,6 +52,18 @@ class HomePage extends Component {
     setTimeout(() => {
       this.handleWindowResize()
     }, 10)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.windowWidth === null && this.state.windowWidth !== null) {
+      const urlMatch = windowGlobal.location.href.match(/\/services\/(it|consulting)\/([a-zA-Z0-9_-]*)$/) || []
+      
+      if (urlMatch[2]) {
+        this.buttonsRefs[urlMatch[2]].current.scrollIntoView({
+          behavior: 'smooth',
+        })
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -125,7 +137,16 @@ class HomePage extends Component {
       })
     }
   }
-  
+
+  onVisibilityChange(topic, type, isVisible) {
+    if (!topic) {
+      window.history.replaceState({}, window.title, `#`)
+    }
+
+    if (isVisible) {
+      window.history.replaceState({}, window.title, `#/services/${ type }/${ topic }`)
+    }
+  }  
   
   render() {
     let hexagonsClassName = 'sliding-container ' 
@@ -142,27 +163,27 @@ class HomePage extends Component {
     let topicElement = null
 
     switch (this.state.topic) {
-    case 'PIATTAFORME_WEB': topicElement = (
+    case 'web-platforms': topicElement = (
       <WebPlatforms />
     )  
       break      
-    case 'APPLICAZIONI_WEB': topicElement = (
+    case 'web-applications': topicElement = (
       <WebApplications />
     )    
       break    
-    case 'TRAINING_ICT': topicElement = (
+    case 'ict-training': topicElement = (
       <ICTTraining />
     )     
       break   
-    case 'AUDIT_COMPETENZE': topicElement = (
+    case 'expertise-audits': topicElement = (
       <CompetenceAudits />
     )    
       break    
-    case 'SVILUPPO_INDIVIDUALE': topicElement = (
+    case 'individual-development': topicElement = (
       <IndividualDevelopment />
     )  
       break      
-    case 'SVILUPPO_ORGANIZZATIVO': topicElement = (
+    case 'management-development': topicElement = (
       <ManagementDevelopment />
     )        
       break
@@ -179,25 +200,39 @@ class HomePage extends Component {
     } else if (this.state.windowWidth <= 900) {
       indexContent = (
         <div className="index-page-mobile" key="mobile">
-          <ServicesButtons onClick={ this.handleQuickLinkClick } />
-          <div ref={ this.buttonsRefs['web-platforms'] }>
-            <WebPlatforms mobile accent="purple" />
-          </div>
-          <div ref={ this.buttonsRefs['web-applications'] }>
-            <WebApplications mobile accent="purple" />
-          </div>
-          <div ref={ this.buttonsRefs['ict-training'] }>
-            <ICTTraining mobile accent="purple" />
-          </div>
-          <div ref={ this.buttonsRefs['expertise-audits'] }>
-            <CompetenceAudits mobile accent="cyan" />
-          </div>
-          <div ref={ this.buttonsRefs['individual-development'] }>
-            <IndividualDevelopment mobile accent="cyan" />
-          </div>
-          <div ref={ this.buttonsRefs['management-development'] }>
-            <ManagementDevelopment mobile accent="cyan" />
-          </div>
+          <VisibilitySensor onChange={ () => this.onVisibilityChange(null) } scrollCheck delayedCall>
+            <ServicesButtons onClick={ this.handleQuickLinkClick } />
+          </VisibilitySensor>
+          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('web-platforms', 'it', isVisible) } scrollCheck delayedCall>
+            <div ref={ this.buttonsRefs['web-platforms'] }>
+              <WebPlatforms mobile accent="purple" />
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('web-applications', 'it', isVisible) } scrollCheck delayedCall>
+            <div ref={ this.buttonsRefs['web-applications'] }>
+              <WebApplications mobile accent="purple" />
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('ict-training', 'it', isVisible) } scrollCheck delayedCall>
+            <div ref={ this.buttonsRefs['ict-training'] }>
+              <ICTTraining mobile accent="purple" />
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('expertise-audits', 'consulting', isVisible) } scrollCheck delayedCall>
+            <div ref={ this.buttonsRefs['expertise-audits'] }>
+              <CompetenceAudits mobile accent="cyan" />
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('individual-development', 'consulting', isVisible) } scrollCheck delayedCall>
+            <div ref={ this.buttonsRefs['individual-development'] }>
+              <IndividualDevelopment mobile accent="cyan" />
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('management-development', 'consulting', isVisible) } scrollCheck delayedCall>
+            <div ref={ this.buttonsRefs['management-development'] }>
+              <ManagementDevelopment mobile accent="cyan" />
+            </div>
+          </VisibilitySensor>
         </div>
       )      
     } else {
@@ -217,7 +252,6 @@ class HomePage extends Component {
         </div>
       )
     }
-
 
     return (
       <div className="index-page">
