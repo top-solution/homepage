@@ -152,6 +152,29 @@ $panel-width: 50vw;
 .index-page {
   .page-content {
     position: relative;
+
+    > .back-to-top {
+      position: fixed;
+      bottom: $spacing-vertical-lg;
+      right: $spacing-vertical-lg;
+      transform: scale(1);
+      transition: transform $timing-quick $timing-function;
+
+      &.hidden {
+        transform: scale(0);
+      }
+
+      .ts-button {
+        @include size($icon-size-xl);
+        border-radius: $icon-size-lg;
+        box-shadow: $box-shadow-heavy;
+        padding: 11px 12px;
+      }
+
+      .icon {
+        @include size($icon-size-md);
+      }
+    }
   }
 }
 

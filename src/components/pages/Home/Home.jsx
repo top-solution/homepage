@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 
 import Layout from '../../Layout'
-
-
-import './Home.scss'
-
+import Button from 'components/Button/Button'
+import Icon from 'components/Icon/Icon'
 import ServicesButtons from './ServicesButtons/ServicesButtons'
 import WebApplications from './topics/WebApplications'
 import WebPlatforms from './topics/WebPlatforms'
@@ -14,6 +12,10 @@ import CompetenceAudits from './topics/CompetenceAudits'
 import IndividualDevelopment from './topics/IndividualDevelopment'
 import ManagementDevelopment from './topics/ManagementDevelopment'
 import HexagonChart from '../../HexagonChart/HexagonChart'
+
+
+import './Home.scss'
+
 
 
 const windowGlobal = typeof window !== 'undefined' && window || { location: { href: '' }}
@@ -29,6 +31,7 @@ class HomePage extends Component {
       leftPanelShown: urlMatch[1] === 'it',
       rightPanelShown: urlMatch[1] === 'consulting',
       windowWidth: null,
+      showBackToTopFab: false
     }
 
     this.buttonsRefs = {
@@ -44,6 +47,7 @@ class HomePage extends Component {
     this.handleWindowResize = this.handleWindowResize.bind(this)
     this.handleHexagonClick = this.handleHexagonClick.bind(this)
     this.handleQuickLinkClick = this.handleQuickLinkClick.bind(this)
+    this.scrollToTop = this.scrollToTop.bind(this)
   }
 
   componentDidMount() {
@@ -85,7 +89,7 @@ class HomePage extends Component {
 
   handleHexagonClick(topic, side) {
     if (topic === null) {
-      window.history.replaceState({}, window.title, '#')
+      windowGlobal.history.replaceState({}, window.title, '#')
       this.setState({ 
         leftPanelShown: false,
         rightPanelShown: false,
@@ -103,7 +107,7 @@ class HomePage extends Component {
     
     if (this.state.topic === topic) {
       setTimeout(() => {
-        window.history.replaceState({}, window.title, '#')
+        windowGlobal.history.replaceState({}, window.title, '#')
         this.setState({ 
           topic: null,
         })
@@ -122,14 +126,14 @@ class HomePage extends Component {
 
     
     if (side === 'it') {
-      window.history.replaceState({}, window.title, `#/services/it/${ topic }`)
+      windowGlobal.history.replaceState({}, window.title, `#/services/it/${ topic }`)
       this.setState({ 
         topic: topic,
         leftPanelShown: true,
         rightPanelShown: false,
       })
     } else {
-      window.history.replaceState({}, window.title, `#/services/consulting/${ topic }`)
+      windowGlobal.history.replaceState({}, window.title, `#/services/consulting/${ topic }`)
       this.setState({ 
         topic: topic,
         leftPanelShown: false,
@@ -140,13 +144,27 @@ class HomePage extends Component {
 
   onVisibilityChange(topic, type, isVisible) {
     if (!topic) {
-      window.history.replaceState({}, window.title, `#`)
-    }
+      windowGlobal.history.replaceState({}, window.title, `#`)
 
-    if (isVisible) {
-      window.history.replaceState({}, window.title, `#/services/${ type }/${ topic }`)
+      if (!isVisible) {
+        this.setState({ showBackToTopFab: !isVisible })
+      }
+    } else {
+      if (isVisible) {
+        windowGlobal.history.replaceState({}, window.title, `#/services/${ type }/${ topic }`)
+      }
     }
   }  
+
+  scrollToTop() {
+    windowGlobal.history.replaceState({}, window.title, `#`)
+    windowGlobal.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+
+    this.setState({ showBackToTopFab: false });
+  }
   
   render() {
     let hexagonsClassName = 'sliding-container ' 
@@ -200,7 +218,7 @@ class HomePage extends Component {
     } else if (this.state.windowWidth <= 900) {
       indexContent = (
         <div className="index-page-mobile" key="mobile">
-          <VisibilitySensor onChange={ () => this.onVisibilityChange(null) } scrollCheck delayedCall>
+          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange(null, null, isVisible) } scrollCheck delayedCall>
             <ServicesButtons onClick={ this.handleQuickLinkClick } />
           </VisibilitySensor>
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('web-platforms', 'it', isVisible) } scrollCheck delayedCall>
@@ -253,10 +271,21 @@ class HomePage extends Component {
       )
     }
 
+    let backToTopButtonClassName = `back-to-top ${this.state.showBackToTopFab ? '' : 'hidden'}`
+
     return (
       <div className="index-page">
         <Layout hideServices>
           { indexContent }
+          <span className={backToTopButtonClassName}>
+            <Button
+              cyan
+              active
+              onClick={ this.scrollToTop }
+            >
+              <Icon name="up"/>
+            </Button>
+          </span>
         </Layout>
       </div>
     )

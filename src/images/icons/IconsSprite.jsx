@@ -338,6 +338,15 @@ const SvgIconsSprite = props => (
         transform="matrix(.13546 0 0 .13546 -1.159 -.864)"
       />
     </symbol>
+    <symbol id="up" viewBox="0 0 16.933 16.933">
+      <path
+        d="M7.335 5.045h2.88l5.66 6.843h-2.47L8.724 7.052l-5.145 4.836H1.06z"
+        aria-label="^"
+        stroke="currentColor"
+        fill="currentColor"
+        strokeWidth={0.265}
+      />
+    </symbol>
     <symbol id="web-applications" viewBox="0 0 16.933 16.933">
       <g
         transform="translate(0 -280.067)"
