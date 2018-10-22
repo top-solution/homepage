@@ -6,6 +6,15 @@ module.exports = {
     description: 'Top Solution permette alle aziende di realizzare progetti ed attività finalizzate a facilitare il cambiamento e/o il consolidamento del proprio business.',
     keywords: ['Top', 'Solution', 'Topsolution', 'Topsolution srl'],
     siteUrl: 'https://dktdhd3j2o1vs.cloudfront.net',
+    company: {
+      name: 'Top Solution s.r.l',
+      streetAddress: 'Corso Regina Margherita, 254',
+      locality: 'Turin',
+      postalCode: 10144,
+      countryName: 'Italy',
+      latitude: 45.0888952,
+      longitude: 7.6524942,
+    },
   },
   plugins: [
     {
