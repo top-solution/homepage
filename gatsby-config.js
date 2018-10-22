@@ -3,6 +3,9 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: 'Top Solution',
+    description: 'Top Solution permette alle aziende di realizzare progetti ed attività finalizzate a facilitare il cambiamento e/o il consolidamento del proprio business.',
+    keywords: ['Top', 'Solution', 'Topsolution', 'Topsolution srl'],
+    siteUrl: 'https://dktdhd3j2o1vs.cloudfront.net',
   },
   plugins: [
     {
@@ -69,6 +72,12 @@ module.exports = {
         sampleRate: 5,
         siteSpeedSampleRate: 10,
         cookieDomain: 'dktdhd3j2o1vs.cloudfront.net',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        // policy: [{ userAgent: '*', allow: '/' }],
       },
     },
   ],

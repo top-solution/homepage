@@ -16,6 +16,9 @@ const Layout = ({ children, variant, hideServices }) => (
         site {
           siteMetadata {
             title
+            description
+            keywords
+            siteUrl
           }
         }
       }
@@ -25,8 +28,10 @@ const Layout = ({ children, variant, hideServices }) => (
         <Helmet
           title={ data.site.siteMetadata.title }
           meta={ [
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: data.site.siteMetadata.description },
+            { name: 'keywords', content: data.site.siteMetadata.keywords },
+            { name: 'canonical', content: data.site.siteMetadata.siteUrl },
+            { name: 'robots', content: 'index, follow' },
           ] }
         >
           <html lang="en" />
