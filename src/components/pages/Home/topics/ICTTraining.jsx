@@ -17,7 +17,7 @@ const ICTTraining = props => {
                 icon
               }
             }
-            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/ict-training/details//"}}}) {
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/ict-training/details//"}}}, sort: { fields: fields___slug }) {
               edges {
                 node {
                   html

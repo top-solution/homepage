@@ -1,8 +1,11 @@
 ---
 id: ict-training
 title: Training IT
+hexagonTitle: Training\nIT
 icon: ict-training
 type: ict
+x: -1
+y: -1
 ---
 
 E’ un training mirato all’incremento della consapevolezza dei rischi e dei vantaggi che le

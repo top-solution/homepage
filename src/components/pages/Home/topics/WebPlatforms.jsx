@@ -16,7 +16,7 @@ const WebPlatforms = props => {
                 icon
               }
             }
-            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/web-platforms/details//"}}}) {
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/web-platforms/details//"}}}, sort: { fields: fields___slug }) {
               edges {
                 node {
                   html

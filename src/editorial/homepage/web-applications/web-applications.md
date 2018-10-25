@@ -1,8 +1,11 @@
 ---
 id: web-applications
 title: Applicazioni web e mobile
+hexagonTitle: Applicazioni \n web e mobile
 icon: web-applications
 type: ict
+x: -1
+y: 0
 ---
 
 Realizziamo web applications e app mobile (iOS e Android) su misura per il tuo business,

@@ -17,7 +17,7 @@ const WebApplications = props => {
                 icon
               }
             }
-            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/web-applications/details//"}}}) {
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/web-applications/details//"}}}, sort: { fields: fields___slug }) {
               edges {
                 node {
                   html

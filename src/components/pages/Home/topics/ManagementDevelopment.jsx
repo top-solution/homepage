@@ -17,7 +17,7 @@ const ManagementDevelopment = props => {
                 icon
               }
             }
-            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/management-development/details//"}}}) {
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/management-development/details//"}}}, sort: { fields: fields___slug }) {
               edges {
                 node {
                   html

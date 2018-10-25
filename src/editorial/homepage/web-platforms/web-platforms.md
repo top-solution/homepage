@@ -1,8 +1,11 @@
 ---
 id: web-platforms
 title: Piattaforme Web
+hexagonTitle: Piattaforme\nWeb
 icon: web-platforms
 type: ict
+x: -1
+y: 1
 ---
 
 I nostri servizi vengono proposti in modalità SaaS e sono rivolti allo sviluppo delle Risorse Umane e del Marketing Aziendale.

@@ -1,8 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Hexagon from '../Hexagon/Hexagon'
+import { StaticQuery, graphql } from 'gatsby'
+
 
 import './HexagonChart.scss'
+
+const handleHexagonClick = (onHexagonClick, topic, side) => {
+  return (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    onHexagonClick(topic, side)
+  }
+}
 
 const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
   const hexWidth = 512
@@ -10,77 +20,74 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
   const hexWidthAdjusted = hexWidth - (hexWidth / 8)
   const hexHeightAdjusted = hexHeight - (hexHeight / 3)
 
+
   return (
-    <svg className={ `hexagon-chart ${ className }` } viewBox={ `0 0 ${ hexWidthAdjusted * 3.15 } ${ hexHeightAdjusted * 3.9 }` }>
-      <Hexagon 
-        className={ `purple ${ highlighted === 'web-platforms' ? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('web-platforms', 'it') }
-        x={ hexWidthAdjusted - (hexWidthAdjusted / 2) }
-        y={ 0 }
-        width={ hexWidth } 
-        height={ hexHeight } 
-        icon="web-platforms" 
-        text={ 'Piattaforme\nWeb' }
-      />
-      <Hexagon 
-        className={ `cyan ${ highlighted === 'expertise-audits' ? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('expertise-audits', 'consulting') }
-        x={ 2 * hexWidthAdjusted - (hexWidthAdjusted / 2) }
-        y={ 0 }
-        width={ hexWidth } 
-        height={ hexHeight } 
-        icon="expertise-audits" 
-        text={ 'Audit\ncompetenze' }
-      />
-      <Hexagon 
-        className={ `purple ${ highlighted === 'web-applications' ? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('web-applications', 'it') }
-        x={ 0 }
-        y={ hexHeightAdjusted }
-        width={ hexWidth } 
-        height={ hexHeight } 
-        icon="web-applications" 
-        text={ 'Applicazioni\nweb' }
-      />
-      <Hexagon 
-        className="orange"
-        onClick={ () => onHexagonClick(null) }
-        x={ hexWidthAdjusted }
-        y={ hexHeightAdjusted }
-        width={ hexWidth } 
-        height={ hexHeight } 
-        centralText 
-        text={ 'il tuo\nbusiness' }
-      />
-      <Hexagon 
-        className={ `cyan ${ highlighted === 'individual-development' ? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('individual-development', 'consulting') }
-        x={ 2 * hexWidthAdjusted }
-        y={ hexHeightAdjusted }
-        width={ hexWidth } 
-        height={ hexHeight } 
-        icon="individual-development" 
-        text={ 'Sviluppo\nindividuale' }
-      />
-      <Hexagon 
-        className={ `purple ${ highlighted === 'ict-training' ? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('ict-training', 'it') }
-        x={ hexWidthAdjusted - (hexWidthAdjusted / 2) }
-        y={ hexHeightAdjusted * 2 }
-        width={ hexWidth } 
-        height={ hexHeight } 
-        icon="ict-training" 
-        text={ 'Training\nICT' }
-      />
-      <Hexagon 
-        className={ `cyan ${ highlighted === 'management-development' ? 'highlighted' : '' }` }
-        onClick={ () => onHexagonClick('management-development', 'consulting') }
-        x={ 2 * hexWidthAdjusted - (hexWidthAdjusted / 2) }
-        y={ hexHeightAdjusted * 2 }
-        width={ hexWidth } 
-        height={ hexHeight } 
-        icon="management-development" 
-        text={ 'Sviluppo\norganizzativo' }
+    <svg className={ `hexagon-chart ${ className }` } viewBox={ `${ -hexWidthAdjusted } ${ -hexHeightAdjusted } ${ hexWidthAdjusted * 3.15 } ${ hexHeightAdjusted * 4 }` }>
+      <StaticQuery
+        query={ graphql`
+          {
+            allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/[a-zA-Z0-9-]*/[a-zA-Z0-9-]*/$/"}}}) {
+              edges {
+                node {
+                  frontmatter {
+                    title
+                    hexagonTitle
+                    icon
+                    type
+                    id
+                    x
+                    y
+                  }
+                }
+              }
+            }
+          }
+        ` }
+        render={ (data) => {
+          return data.allMarkdownRemark.edges.map(({ node }) => {
+            let color = ''
+
+            switch (node.frontmatter.type) {
+              case 'ict': 
+                color = 'purple';
+                break;
+              case 'consulting':
+                color = 'cyan';
+                break;
+              default:
+                color = 'orange';
+                break;
+            }
+
+            const id = node.frontmatter.id;
+
+            const y = hexHeightAdjusted * (-node.frontmatter.y || 0)
+            let x = hexWidthAdjusted * (node.frontmatter.x || 0)
+
+            if (node.frontmatter.y % 2 !== 0) {
+              x += (hexWidthAdjusted / 2)
+              
+              if (node.frontmatter.x > 0) {
+                x -=  hexWidthAdjusted
+              }
+            }
+
+            return (
+              <Hexagon
+                key={ node.frontmatter.id }
+                className={ `${ color } ${ highlighted === id ? 'highlighted' : '' }` }
+                onClick={ handleHexagonClick(onHexagonClick, id, node.frontmatter.type) }
+                x={ x }
+                y={ y }
+                width={ hexWidth } 
+                height={ hexHeight } 
+                icon={ node.frontmatter.icon }
+                text={ (node.frontmatter.hexagonTitle || node.frontmatter.title).replace('\\n', '\n') }
+                centralText={ node.frontmatter.x === 0 && node.frontmatter.y === 0 }
+              />
+            )
+          })
+        } }
       />
     </svg>
   )
