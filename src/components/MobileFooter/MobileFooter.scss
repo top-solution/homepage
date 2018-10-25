@@ -1,0 +1,29 @@
+@import 'src/sass/mixins';
+@import 'src/sass/variables';
+
+.mobile-footer {
+  padding: $spacing-vertical-lg 0 $spacing-vertical-xxl;
+
+  .mobile-footer-content {
+    border-radius: $border-radius-default;
+    box-shadow: $box-shadow-default;
+    color: transparentize($color: $text-color-default, $amount: .2);
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .info {
+    padding: $spacing-vertical-md $spacing-horizontal-md;
+
+    h4 {
+      margin-top: $spacing-vertical-lg;
+    }
+  }
+
+  .copyright {
+    @include position(absolute, null null $spacing-vertical-lg null);
+    
+    opacity: 0.4;
+    padding: 0 $spacing-horizontal-sm;
+  }
+}

@@ -2,6 +2,7 @@
 
 .hexagon-card {
   align-items: center;
+  border-radius: $border-radius-default;
   box-shadow: $box-shadow-default;
   display: flex;
   flex-direction: column;

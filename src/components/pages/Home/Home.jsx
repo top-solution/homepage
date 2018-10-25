@@ -4,7 +4,8 @@ import VisibilitySensor from 'react-visibility-sensor'
 import Layout from '../../Layout'
 import Button from 'components/Button/Button'
 import Icon from 'components/Icon/Icon'
-import Footer from 'components/Footer/Footer'
+import Footer from 'components/Footer'
+import MobileFooter from 'components/MobileFooter'
 import ServicesButtons from './ServicesButtons/ServicesButtons'
 import WebApplications from './topics/WebApplications'
 import WebPlatforms from './topics/WebPlatforms'
@@ -253,7 +254,7 @@ class HomePage extends Component {
               <ManagementDevelopment mobile accent="cyan" />
             </div>
           </VisibilitySensor>
-          <Footer />
+          <MobileFooter />
         </div>
       )      
     } else {
