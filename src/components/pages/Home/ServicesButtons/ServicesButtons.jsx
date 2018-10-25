@@ -29,18 +29,20 @@ const ServicesButtons = ({ onClick }) => {
           }
         ` }
         render={ data => {
-          const buttons = data.services.edges.map(({ node: { frontmatter } }) => (
-            <Button
-              key={ frontmatter.id }
-              borderless
-              purple={ frontmatter.type === 'ict' }
-              cyan={ frontmatter.type === 'consulting' }
-              onClick={ () => onClick(frontmatter.id) }
-            >
-              <Icon name={ frontmatter.icon } />
-              { frontmatter.title }
-            </Button>
-          )) 
+          const buttons = data.services.edges
+            .filter(({ node }) => node.frontmatter.type !== 'central')  
+            .map(({ node: { frontmatter } }) => (            
+              <Button
+                key={ frontmatter.id }
+                borderless
+                purple={ frontmatter.type === 'ict' }
+                cyan={ frontmatter.type === 'consulting' }
+                onClick={ () => onClick(frontmatter.id) }
+              >
+                <Icon name={ frontmatter.icon } />
+                { frontmatter.title }
+              </Button>
+            )) 
 
           return (
             <div className="service-buttons">
