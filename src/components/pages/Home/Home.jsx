@@ -91,7 +91,7 @@ class HomePage extends Component {
   }
 
   handleHexagonClick(topic, side) {
-    if (topic === null) {
+    if (side === 'central') {
       windowGlobal.history.replaceState({}, window.title, '#')
       this.setState({ 
         leftPanelShown: false,
@@ -116,7 +116,7 @@ class HomePage extends Component {
         })
       }, 400)
 
-      if (side === 'it') {
+      if (side === 'ict') {
         return this.setState({
           leftPanelShown: !this.state.leftPanelShown,
         })
@@ -128,7 +128,7 @@ class HomePage extends Component {
     }
 
     
-    if (side === 'it') {
+    if (side === 'ict') {
       windowGlobal.history.replaceState({}, window.title, `#/services/it/${ topic }`)
       this.setState({ 
         topic: topic,
