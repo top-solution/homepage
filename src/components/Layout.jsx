@@ -2,14 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import smoothscroll from 'smoothscroll-polyfill';
 
 import Header from './Header/Header'
+
 
 import SvgIconsSprite from '../images/icons/IconsSprite'
 
 import logoText from '../images/top-solution/logo-text.png'
 
 import './style.scss'
+
+// Enable the smooth scroll polyfill for Safari & Co.
+smoothscroll.polyfill();
 
 const Layout = ({ children, variant, hideServices }) => (
   <StaticQuery

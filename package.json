@@ -26,7 +26,8 @@
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
     "react-visibility-sensor": "^5.0.1",
-    "rehype-react": "^3.0.3"
+    "rehype-react": "^3.0.3",
+    "smoothscroll-polyfill": "^0.4.3"
   },
   "keywords": [
     "gatsby"
