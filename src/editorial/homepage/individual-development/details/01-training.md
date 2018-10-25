@@ -1,5 +1,5 @@
 ---
-title: Training
+title: Formazione su misura
 icon: training
 ---
 

@@ -17,7 +17,7 @@ const CompetenceAudits = props => {
                 icon
               }
             }
-            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/competence-audits/details//"}}}) {
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/competence-audits/details//"}}}, sort: { fields: fields___slug }) {
               edges {
                 node {
                   html
