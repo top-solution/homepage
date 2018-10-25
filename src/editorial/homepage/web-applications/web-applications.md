@@ -1,8 +1,12 @@
 ---
 id: web-applications
-title: Applicazioni Web
+title: Applicazioni web e mobile
 icon: web-applications
 type: ict
 ---
 
-Realizziamo soprattutto Single Page Web Application utilizzando linguaggi front end di ultima generazione (AngularJS, React, SASS). Le nostre web app sono supportate, lato back end, da web service REST (NodeJS, Go, PHP). Le nostre applicazioni Web sono in grado di utilizzare Data Base esistenti sia relazionali (MySQL, Oracle, SQL Server) sia NoSQL (Firebase, Mongo DB) e possono essere installate sia on-premises sia in ambienti Cloud (Google, AWS, Azure). Utilizziamo gli stack LAMP e MEAN sia on-premises che in ambienti cloud.
+Realizziamo web applications e app mobile (iOS e Android) su misura per il tuo business,
+prendendoci cura di tutto il processo: dall'analisi dei requisiti allo sviluppo back-end e front-end.
+
+Utilizziamo le tecnologie open source più all'avanguardia per offrirti il massimo delle performance,
+la libertà da licenze e lock-in, la possibilità di scegliere l'ambiente che preferisci.
