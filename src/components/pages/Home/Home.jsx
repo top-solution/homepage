@@ -45,10 +45,10 @@ class HomePage extends Component {
       'web-platforms': React.createRef(),
     }
     
-    
     this.handleWindowResize = this.handleWindowResize.bind(this)
     this.handleHexagonClick = this.handleHexagonClick.bind(this)
     this.handleQuickLinkClick = this.handleQuickLinkClick.bind(this)
+    this.handleSlidingContainerClick = this.handleSlidingContainerClick.bind(this)
     this.scrollToTop = this.scrollToTop.bind(this)
   }
 
@@ -168,6 +168,22 @@ class HomePage extends Component {
 
     this.setState({ showBackToTopFab: false });
   }
+
+  handleSlidingContainerClick() {
+    if (this.state.leftPanelShown || this.state.rightPanelShown) {
+      this.setState({ 
+        leftPanelShown: false,
+        rightPanelShown: false,
+      })
+
+      setTimeout(() => {
+        windowGlobal.history.replaceState({}, window.title, '#')
+        this.setState({ 
+          topic: null,
+        })
+      }, 400)
+    }
+  }
   
   render() {
     let hexagonsClassName = 'sliding-container ' 
@@ -260,7 +276,7 @@ class HomePage extends Component {
     } else {
       indexContent = (
         <div className="index-page-desktop" key="desktop">
-          <div className={ hexagonsClassName }>
+          <div className={ hexagonsClassName } onClick={ this.handleSlidingContainerClick }>
             <div className={ leftPanelClassName }>
               { leftPanelContent }
             </div>

@@ -20,6 +20,8 @@ $panel-width: 50vw;
 
 
     &.shift-left {
+      cursor: pointer;
+      
       .sliding {
         transform: translate(($panel-width), 0);
         
@@ -34,6 +36,8 @@ $panel-width: 50vw;
     }
 
     &.shift-right {
+      cursor: pointer;
+      
       .sliding {
         transform: translate(-($panel-width), 0);
         
