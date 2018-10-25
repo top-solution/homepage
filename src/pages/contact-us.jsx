@@ -1,1 +1,2 @@
-export { default } from 'components/pages/ContactUs'
+import ContactUs from 'components/pages/ContactUs'
+export default ContactUs
