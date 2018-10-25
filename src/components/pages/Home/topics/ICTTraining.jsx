@@ -10,14 +10,14 @@ const ICTTraining = props => {
       <StaticQuery
         query={ graphql`
           query {
-            excerpt: markdownRemark(fields: {slug: {regex: "//homepage/ict-training/ict-training//"}}) {
+            excerpt: markdownRemark(fields: {slug: {regex: "//homepage/ict-consulting/ict-consulting//"}}) {
               html
               frontmatter {
                 title
                 icon
               }
             }
-            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/ict-training/details//"}}}, sort: { fields: fields___slug }) {
+            details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/ict-consulting/details//"}}}, sort: { fields: fields___slug }) {
               edges {
                 node {
                   html

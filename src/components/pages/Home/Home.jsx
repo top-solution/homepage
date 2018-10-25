@@ -25,7 +25,7 @@ const windowGlobal = typeof window !== 'undefined' && window || { location: { hr
 class HomePage extends Component {
   constructor(props) {
     super(props)
-  
+
     const urlMatch = windowGlobal.location.href.match(/\/services\/(it|consulting)\/([a-zA-Z0-9_-]*)$/) || []
 
     this.state = {
@@ -44,7 +44,7 @@ class HomePage extends Component {
       'web-applications': React.createRef(),
       'web-platforms': React.createRef(),
     }
-    
+
     this.handleWindowResize = this.handleWindowResize.bind(this)
     this.handleHexagonClick = this.handleHexagonClick.bind(this)
     this.handleQuickLinkClick = this.handleQuickLinkClick.bind(this)
@@ -63,7 +63,7 @@ class HomePage extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.windowWidth === null && this.state.windowWidth !== null) {
       const urlMatch = windowGlobal.location.href.match(/\/services\/(it|consulting)\/([a-zA-Z0-9_-]*)$/) || []
-      
+
       if (this.state.windowWidth < 900 && urlMatch[2]) {
         this.buttonsRefs[urlMatch[2]].current.scrollIntoView({
           behavior: 'smooth',
@@ -93,25 +93,25 @@ class HomePage extends Component {
   handleHexagonClick(topic, side) {
     if (side === 'central') {
       windowGlobal.history.replaceState({}, window.title, '#')
-      this.setState({ 
+      this.setState({
         leftPanelShown: false,
         rightPanelShown: false,
       })
 
 
       setTimeout(() => {
-        this.setState({ 
+        this.setState({
           topic: null,
         })
       }, 400)
 
       return
     }
-    
+
     if (this.state.topic === topic) {
       setTimeout(() => {
         windowGlobal.history.replaceState({}, window.title, '#')
-        this.setState({ 
+        this.setState({
           topic: null,
         })
       }, 400)
@@ -127,17 +127,17 @@ class HomePage extends Component {
       }
     }
 
-    
+
     if (side === 'ict') {
       windowGlobal.history.replaceState({}, window.title, `#/services/it/${ topic }`)
-      this.setState({ 
+      this.setState({
         topic: topic,
         leftPanelShown: true,
         rightPanelShown: false,
       })
     } else {
       windowGlobal.history.replaceState({}, window.title, `#/services/consulting/${ topic }`)
-      this.setState({ 
+      this.setState({
         topic: topic,
         leftPanelShown: false,
         rightPanelShown: true,
@@ -157,7 +157,7 @@ class HomePage extends Component {
         windowGlobal.history.replaceState({}, window.title, `#/services/${ type }/${ topic }`)
       }
     }
-  }  
+  }
 
   scrollToTop() {
     windowGlobal.history.replaceState({}, window.title, `#`)
@@ -171,22 +171,22 @@ class HomePage extends Component {
 
   handleSlidingContainerClick() {
     if (this.state.leftPanelShown || this.state.rightPanelShown) {
-      this.setState({ 
+      this.setState({
         leftPanelShown: false,
         rightPanelShown: false,
       })
 
       setTimeout(() => {
         windowGlobal.history.replaceState({}, window.title, '#')
-        this.setState({ 
+        this.setState({
           topic: null,
         })
       }, 400)
     }
   }
-  
+
   render() {
-    let hexagonsClassName = 'sliding-container ' 
+    let hexagonsClassName = 'sliding-container '
 
     if (this.state.leftPanelShown) {
       hexagonsClassName += 'shift-left'
@@ -202,27 +202,27 @@ class HomePage extends Component {
     switch (this.state.topic) {
     case 'web-platforms': topicElement = (
       <WebPlatforms />
-    )  
-      break      
+    )
+      break
     case 'web-applications': topicElement = (
       <WebApplications />
-    )    
-      break    
-    case 'ict-training': topicElement = (
+    )
+      break
+    case 'ict-consulting': topicElement = (
       <ICTTraining />
-    )     
-      break   
+    )
+      break
     case 'expertise-audits': topicElement = (
       <CompetenceAudits />
-    )    
-      break    
+    )
+      break
     case 'individual-development': topicElement = (
       <IndividualDevelopment />
-    )  
-      break      
+    )
+      break
     case 'management-development': topicElement = (
       <ManagementDevelopment />
-    )        
+    )
       break
     default: break
     }
@@ -272,7 +272,7 @@ class HomePage extends Component {
           </VisibilitySensor>
           <MobileFooter />
         </div>
-      )      
+      )
     } else {
       indexContent = (
         <div className="index-page-desktop" key="desktop">
