@@ -216,7 +216,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-smoothing: antialiased;
-  color: darken($ts-purple, 12%);
+  color: $text-color-default;
   font-feature-settings: "kern", "liga", "clig", "calt";
   font-kerning: normal;
   font-weight: normal;

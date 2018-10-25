@@ -4,6 +4,7 @@ import VisibilitySensor from 'react-visibility-sensor'
 import Layout from '../../Layout'
 import Button from 'components/Button/Button'
 import Icon from 'components/Icon/Icon'
+import Footer from 'components/Footer/Footer'
 import ServicesButtons from './ServicesButtons/ServicesButtons'
 import WebApplications from './topics/WebApplications'
 import WebPlatforms from './topics/WebPlatforms'
@@ -252,6 +253,7 @@ class HomePage extends Component {
               <ManagementDevelopment mobile accent="cyan" />
             </div>
           </VisibilitySensor>
+          <Footer />
         </div>
       )      
     } else {
@@ -263,6 +265,7 @@ class HomePage extends Component {
             </div>
             <div className="sliding">
               <HexagonChart onHexagonClick={ this.handleHexagonClick } highlighted={ this.state.topic } />
+              <Footer />
             </div>
             <div className={ rightPanelClassName }>
               { rightPanelContent }

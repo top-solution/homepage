@@ -1,0 +1,27 @@
+@import 'src/sass/mixins';
+@import 'src/sass/variables';
+
+.footer {
+  @include position(absolute, null null 0 null);
+  color: transparentize($color: $text-color-default, $amount: .2);
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-vertical-md 0;
+  width: 100%;
+
+  > div {
+    display: flex;
+
+    > a,
+    span {
+      margin-left: .5rem;
+      text-decoration: none;
+    }
+
+    > a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

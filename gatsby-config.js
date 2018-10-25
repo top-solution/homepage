@@ -15,9 +15,10 @@ module.exports = {
       countryName: 'Italy',
       latitude: 45.0888952,
       longitude: 7.6524942,
+      vatId: '10031960015'
     },
     contacts: {
-      phone: '011 5833474',
+      phone: '+39 011 5833474',
       email: 'info@topsolution.it',
     },
   },

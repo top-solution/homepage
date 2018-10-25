@@ -184,7 +184,7 @@ $panel-width: 50vw;
 
       > div {
         &:last-child {
-          margin-bottom: 100vh;
+          min-height: 100vh;
         }
       }
     }

@@ -11,7 +11,7 @@ const HexagonChart = ({ className, highlighted, onHexagonClick }) => {
   const hexHeightAdjusted = hexHeight - (hexHeight / 3)
 
   return (
-    <svg className={ `hexagon-chart ${ className }` } viewBox={ `0 0 ${ hexWidthAdjusted * 3.15 } ${ hexHeightAdjusted * 3.5 }` }>
+    <svg className={ `hexagon-chart ${ className }` } viewBox={ `0 0 ${ hexWidthAdjusted * 3.15 } ${ hexHeightAdjusted * 3.9 }` }>
       <Hexagon 
         className={ `purple ${ highlighted === 'web-platforms' ? 'highlighted' : '' }` }
         onClick={ () => onHexagonClick('web-platforms', 'it') }
