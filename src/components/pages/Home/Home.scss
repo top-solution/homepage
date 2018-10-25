@@ -178,6 +178,10 @@ $panel-width: 50vw;
 
     .index-page-mobile {
 
+      .card-wrapper {
+        padding: $spacing-vertical-lg 0 0;
+      }
+
       > div {
         &:last-child {
           margin-bottom: 100vh;

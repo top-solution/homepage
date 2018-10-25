@@ -31,24 +31,21 @@ class HexagonCard extends Component {
         collapsibleHeight: this.collapsibleRef.current.clientHeight + 32,
       })
 
-      // setTimeout(() => {
-        this.setState({ collapsibleHeight: this.collapsibleRef.current.clientHeight + 32 })
-      // }, 1)
+      this.setState({ collapsibleHeight: this.collapsibleRef.current.clientHeight + 32 })
 
-      debugger
-      console.log(this.collapsibleButtonRef.current.offsetTop)
-        window.scroll({
-          top: this.collapsibleButtonRef.current.offsetTop + 78,
-          behavior: 'smooth',
-        });
+      let offsetTop = this.collapsibleButtonRef.current.offsetTop
+      
+      if (offsetTop === 0) {
+        // Firefox bug? Who knows
+        offsetTop = this.collapsibleButtonRef.current.parentNode.offsetTop + 12
+      }
 
-      // setTimeout(() => {
-        // TODO: polyfill for safari
-        // this.collapsibleButtonRef.current.scrollIntoView({
-        //   behavior: 'smooth',
-        //   block: 'start'
-        // })
-      // }, 400)
+      offsetTop += 78
+
+      window.scroll({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
     } else {
       this.setState({ 
         collapsed: true,

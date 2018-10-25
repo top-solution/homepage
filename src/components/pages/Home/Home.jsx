@@ -65,6 +65,7 @@ class HomePage extends Component {
       if (this.state.windowWidth < 900 && urlMatch[2]) {
         this.buttonsRefs[urlMatch[2]].current.scrollIntoView({
           behavior: 'smooth',
+          block: 'center'
         })
       }
     }
@@ -222,32 +223,32 @@ class HomePage extends Component {
             <ServicesButtons onClick={ this.handleQuickLinkClick } />
           </VisibilitySensor>
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('web-platforms', 'it', isVisible) } scrollCheck delayedCall>
-            <div ref={ this.buttonsRefs['web-platforms'] }>
+            <div className="card-wrapper" ref={ this.buttonsRefs['web-platforms'] }>
               <WebPlatforms mobile accent="purple" />
             </div>
           </VisibilitySensor>
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('web-applications', 'it', isVisible) } scrollCheck delayedCall>
-            <div ref={ this.buttonsRefs['web-applications'] }>
+            <div className="card-wrapper" ref={ this.buttonsRefs['web-applications'] }>
               <WebApplications mobile accent="purple" />
             </div>
           </VisibilitySensor>
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('ict-training', 'it', isVisible) } scrollCheck delayedCall>
-            <div ref={ this.buttonsRefs['ict-training'] }>
+            <div className="card-wrapper" ref={ this.buttonsRefs['ict-training'] }>
               <ICTTraining mobile accent="purple" />
             </div>
           </VisibilitySensor>
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('expertise-audits', 'consulting', isVisible) } scrollCheck delayedCall>
-            <div ref={ this.buttonsRefs['expertise-audits'] }>
+            <div className="card-wrapper" ref={ this.buttonsRefs['expertise-audits'] }>
               <CompetenceAudits mobile accent="cyan" />
             </div>
           </VisibilitySensor>
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('individual-development', 'consulting', isVisible) } scrollCheck delayedCall>
-            <div ref={ this.buttonsRefs['individual-development'] }>
+            <div className="card-wrapper" ref={ this.buttonsRefs['individual-development'] }>
               <IndividualDevelopment mobile accent="cyan" />
             </div>
           </VisibilitySensor>
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('management-development', 'consulting', isVisible) } scrollCheck delayedCall>
-            <div ref={ this.buttonsRefs['management-development'] }>
+            <div className="card-wrapper" ref={ this.buttonsRefs['management-development'] }>
               <ManagementDevelopment mobile accent="cyan" />
             </div>
           </VisibilitySensor>
