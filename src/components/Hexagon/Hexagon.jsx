@@ -8,8 +8,8 @@ import './Hexagon.scss'
 const Hexagon = ({ className, icon, text, centralText, ...props }) => {
   const [textUpper, textLower] = text.split('\n')
 
-  let textY = 10
-  let fontSize = 1.4
+  let textY = 9.4
+  let fontSize = 1.3
 
   if (centralText === true) {
     textY = 7.4
@@ -18,7 +18,7 @@ const Hexagon = ({ className, icon, text, centralText, ...props }) => {
 
   return (
     <SVGHexagon className={ `hexagon ${ className || '' }` } { ...props }>
-      <g className="hexagon-icon" transform="scale(0.4) translate(12.66, 6)">        
+      <g className="hexagon-icon" transform="scale(0.32) translate(18, 7.5)">        
         <use xlinkHref={ `#${ icon }` } />
       </g>
       <g className="hexagon-text">        
