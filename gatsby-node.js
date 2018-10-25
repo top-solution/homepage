@@ -37,6 +37,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /react-visibility-sensor/,
             use: loaders.null(),
           },
+          {
+            test: /smoothscroll-polyfill/,
+            use: loaders.null(),
+          },
         ],
       },
     })

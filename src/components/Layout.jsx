@@ -13,8 +13,10 @@ import logoText from '../images/top-solution/logo-text.png'
 
 import './style.scss'
 
-// Enable the smooth scroll polyfill for Safari & Co.
-smoothscroll.polyfill();
+if (typeof window !== 'undefined') {
+  // Enable the smooth scroll polyfill for Safari & Co.
+  smoothscroll.polyfill();
+}
 
 const Layout = ({ children, variant, hideServices }) => (
   <StaticQuery
