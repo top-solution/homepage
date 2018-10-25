@@ -111,4 +111,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 To build, upload to Amazon S3 and invalidate the Cloudfront cache run:
 
-`yarn deploy`
+`npm run deploy`
