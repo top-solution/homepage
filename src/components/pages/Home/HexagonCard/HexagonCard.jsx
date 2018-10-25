@@ -31,18 +31,24 @@ class HexagonCard extends Component {
         collapsibleHeight: this.collapsibleRef.current.clientHeight + 32,
       })
 
-      setTimeout(() => {
+      // setTimeout(() => {
         this.setState({ collapsibleHeight: this.collapsibleRef.current.clientHeight + 32 })
-      }, 400)
+      // }, 1)
 
-      setTimeout(() => {
-        // TODO: polyfill for safari
-        this.collapsibleButtonRef.current.scrollIntoView({
+      debugger
+      console.log(this.collapsibleButtonRef.current.offsetTop)
+        window.scroll({
+          top: this.collapsibleButtonRef.current.offsetTop + 78,
           behavior: 'smooth',
-          block: 'end', 
-          inline: 'nearest',
-        })
-      }, 500)
+        });
+
+      // setTimeout(() => {
+        // TODO: polyfill for safari
+        // this.collapsibleButtonRef.current.scrollIntoView({
+        //   behavior: 'smooth',
+        //   block: 'start'
+        // })
+      // }, 400)
     } else {
       this.setState({ 
         collapsed: true,
@@ -57,7 +63,7 @@ class HexagonCard extends Component {
     }
 
     return (
-      <div id={ `page-${ this.props.data.excerpt.frontmatter.icon }` } className={ `hexagon-card ${ this.props.accent || '' }` }>
+      <div id={ `page-${ this.props.data.excerpt.frontmatter.icon }` } className={ `hexagon-card ${ this.props.accent || '' } ${ this.state.collapsed? '' : 'expanded' }` }>
         <SVGHexagon height={ null } width={ 144 } className="hexagon">
           <g className="hexagon-icon" transform="scale(0.32) translate(18, 28)">        
             <use xlinkHref={ `#${ this.props.data.excerpt.frontmatter.icon }` } />
@@ -66,17 +72,17 @@ class HexagonCard extends Component {
         <div className="card-content">
           <ServicePreview data={ this.props.data.excerpt } />
           <div className="collapsible">
+            <div className={ 'scroller' }
+              ref={ this.collapsibleButtonRef }>
+            </div>
             <Button
               purple
               active={ !this.state.collapsed }
               onClick={ this.handleCollapseClick }>
               {'Scopri i servizi'}
             </Button>
-            <div className={ 'scroller' }
-              ref={ this.collapsibleButtonRef }>
-            </div>
             <div 
-              className={ `card-content-collapsible ${ this.state.collapsed? 'collapsed' : '' }` }
+              className="card-content-collapsible"
               style={ { maxHeight: this.state.collapsibleHeight } }
             >
               <div ref={ this.collapsibleRef }>

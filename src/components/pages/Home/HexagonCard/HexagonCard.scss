@@ -37,12 +37,14 @@
   }
 
   .card-content-collapsible{
-    max-height: 1000px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height $timing-medium $timing-function;
+  }
 
-    &.collapsed {
-      max-height: 0;
+  &.expanded {
+    .card-content-collapsible{
+      max-height: 1000px;
     }
   }
 
@@ -59,9 +61,10 @@
   .scroller {
     @include size(1px);
     visibility: hidden;
+    display: block;
 
-    position: absolute;
-    top: calc(100vh - 24px);
+    // position: absolute;
+    // top: calc(100vh - 24px);
 
   }
 }

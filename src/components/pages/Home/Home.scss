@@ -175,6 +175,15 @@ $panel-width: 50vw;
         @include size($icon-size-md);
       }
     }
+
+    .index-page-mobile {
+
+      > div {
+        &:last-child {
+          margin-bottom: 100vh;
+        }
+      }
+    }
   }
 }
 
