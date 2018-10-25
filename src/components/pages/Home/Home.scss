@@ -21,10 +21,10 @@ $panel-width: 50vw;
 
     &.shift-left {
       cursor: pointer;
-      
+
       .sliding {
         transform: translate(($panel-width), 0);
-        
+
         @include screen-from-lg {
           transform: translate(($panel-width - 5vw), 0);
         }
@@ -37,10 +37,10 @@ $panel-width: 50vw;
 
     &.shift-right {
       cursor: pointer;
-      
+
       .sliding {
         transform: translate(-($panel-width), 0);
-        
+
         @include screen-from-lg {
           transform: translate(-($panel-width - 5vw), 0);
         }
@@ -71,33 +71,33 @@ $panel-width: 50vw;
     width: 100vw;
 
     $icon-size: 7rem;
-  
+
     h4 {
       margin-top: $spacing-vertical-lg;
       font-size: 1.2rem;
-  
+
       &,
       + p,
       + ul {
         margin-left: $icon-size + $spacing-horizontal-sm;
       }
-  
+
     }
-  
+
     p {
       &:nth-child(2n + 2) {
         margin-left: 0;
         margin-right: $icon-size + $spacing-horizontal-sm;
       }
     }
-  
+
     h4 {
       &:nth-child(2n + 1) {
         margin-left: 0;
         margin-right: $icon-size + $spacing-horizontal-sm;
       }
     }
-  
+
     h6 {
       &:nth-child(2n + 2) {
         .icon {
@@ -134,20 +134,20 @@ $panel-width: 50vw;
 }
 
 .left-panel {
-  box-shadow: 4px 0 5px 0 rgba(0, 0, 0, .1);
+  // box-shadow: 4px 0 5px 0 rgba(0, 0, 0, .1);
   left: -$panel-width;
   transition: opacity $timing-medium $timing-function, left $timing-medium $timing-function;
-  
+
   &.shown {
     left: 0;
   }
 }
 
 .right-panel {
-  box-shadow: -4px 0 5px 0 rgba(0, 0, 0, .1);
+  // box-shadow: -4px 0 5px 0 rgba(0, 0, 0, .1);
   right: -$panel-width;
   transition: opacity $timing-medium $timing-function, right $timing-medium $timing-function;
-  
+
   &.shown {
     right: 0;
   }
@@ -215,7 +215,7 @@ $panel-width: 50vw;
       font-weight: 500;
       margin: $spacing-vertical-md 0 $spacing-vertical-xs;
     }
-    
+
     .icon {
       height: 20px;
       width: 20px;
