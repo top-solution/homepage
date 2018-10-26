@@ -5,7 +5,7 @@ module.exports = {
     title: 'Top Solution',
     description: 'Top Solution permette alle aziende di realizzare progetti ed attività finalizzate a facilitare il cambiamento e/o il consolidamento del proprio business.',
     keywords: ['Top', 'Solution', 'Topsolution', 'Topsolution srl'],
-    siteUrl: 'https://dktdhd3j2o1vs.cloudfront.net',
+    siteUrl: 'https://www.topsolution.it',
     company: {
       name: 'Top Solution s.r.l',
       streetAddress: 'Corso Regina Margherita, 254',
@@ -45,7 +45,7 @@ module.exports = {
     },
     // 'gatsby-plugin-offline',
     'gatsby-plugin-sass',
-    
+
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -72,21 +72,21 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-127823250-1',
+        trackingId: 'UA-51082295-10',
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
-        respectDNT: true,
+        // respectDNT: true,
         // Avoids sending pageview hits from custom paths
         exclude: [],
         // Enables Google Optimize using your container Id
         // optimizeId: 'YOUR_GOOGLE_OPTIMIZE_TRACKING_ID',
         // Any additional create only fields (optional)
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: 'dktdhd3j2o1vs.cloudfront.net',
+        // sampleRate: 5,
+        // siteSpeedSampleRate: 10,
+        cookieDomain: 'www.topsolution.it',
       },
     },
     {

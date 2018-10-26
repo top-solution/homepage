@@ -143,6 +143,11 @@ class HomePage extends Component {
         rightPanelShown: true,
       })
     }
+
+    if (window.ga) {
+      window.ga('set', 'page', location.pathname + location.hash);
+      window.ga('send', 'pageview');
+    }
   }
 
   onVisibilityChange(topic, type, isVisible) {
