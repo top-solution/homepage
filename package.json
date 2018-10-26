@@ -40,7 +40,7 @@
     "deploy:dev": "npm run build && TS_HOME_S3_PATH=s3://topsolution/website-dev npm run s3-sync && TS_HOME_CLOUDFRONT_ID=E3BPM5YSN13FES npm run cloudfront-invalidate",
     "deploy:prod": "npm run build && TS_HOME_S3_PATH=s3://topsolution/website npm run s3-sync && TS_HOME_CLOUDFRONT_ID=E3O0GC5RWFQTF7 npm run cloudfront-invalidate",
     "s3-sync": "aws s3 sync ./public $TS_HOME_S3_PATH --acl public-read --exclude \"*DS_Store\" --delete --profile topsolution-bucket",
-    "cloudfront-invalidate": "aws cloudfront create-invalidation --distribution-id $TS_HOME_CLOUDFRONT_ID --paths /index.html --profile topsolution-bucket",
+    "cloudfront-invalidate": "aws cloudfront create-invalidation --distribution-id $TS_HOME_CLOUDFRONT_ID --paths /index.html /robots.txt /sitemap.xml --profile topsolution-bucket",
     "start": "gatsby develop",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write '**/*.js'",
