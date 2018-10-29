@@ -4,7 +4,7 @@
 .service-buttons {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: stretch;
   min-height: calc(100vh - #{$header-height + 2px});
   margin-bottom: $spacing-vertical-sm;
   padding: $spacing-vertical-lg 0;
@@ -17,6 +17,7 @@
     align-items: center;
     box-shadow: none;
     display: flex;
+    flex: 1 1 auto;
     font-size: 1rem;
     padding-left: 0;
     padding-right: 0;
