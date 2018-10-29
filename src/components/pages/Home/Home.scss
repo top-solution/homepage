@@ -163,6 +163,7 @@ $panel-width: 50vw;
       right: $spacing-vertical-lg;
       transform: scale(1);
       transition: transform $timing-quick $timing-function;
+      -webkit-tap-highlight-color: transparent; 
 
       &.hidden {
         transform: scale(0);
