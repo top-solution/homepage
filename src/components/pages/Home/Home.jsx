@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from '../../Layout'
 import Button from 'components/Button/Button'
@@ -7,12 +8,7 @@ import Icon from 'components/Icon/Icon'
 import Footer from 'components/Footer'
 import MobileFooter from 'components/MobileFooter'
 import ServicesButtons from './ServicesButtons/ServicesButtons'
-import WebApplications from './topics/WebApplications'
-import WebPlatforms from './topics/WebPlatforms'
-import ICTTraining from './topics/ICTTraining'
-import CompetenceAudits from './topics/CompetenceAudits'
-import IndividualDevelopment from './topics/IndividualDevelopment'
-import ManagementDevelopment from './topics/ManagementDevelopment'
+import Service from './Service/Service'
 import HexagonChart from '../../HexagonChart/HexagonChart'
 
 
@@ -36,14 +32,10 @@ class HomePage extends Component {
       showBackToTopFab: false
     }
 
-    this.buttonsRefs = {
-      'ict-training': React.createRef(),
-      'expertise-audits': React.createRef(),
-      'individual-development': React.createRef(),
-      'management-development': React.createRef(),
-      'web-applications': React.createRef(),
-      'web-platforms': React.createRef(),
-    }
+    this.buttonsRefs = props.services.reduce((acc, service) => ({
+      [service.id]: React.createRef(),
+      ...acc
+    }), {})
 
     this.handleWindowResize = this.handleWindowResize.bind(this)
     this.handleHexagonClick = this.handleHexagonClick.bind(this)
@@ -84,7 +76,6 @@ class HomePage extends Component {
   }
 
   handleQuickLinkClick(id) {
-    // TODO: polyfill for safari
     this.buttonsRefs[id].current.scrollIntoView({
       behavior: 'smooth',
     })
@@ -200,79 +191,52 @@ class HomePage extends Component {
     const rightPanelClassName = `right-panel ${ this.state.rightPanelShown? 'shown' : '' }`
     const leftPanelClassName = `left-panel ${ this.state.leftPanelShown? 'shown' : '' }`
 
-    let topicElement = null
-
-    switch (this.state.topic) {
-    case 'web-platforms': topicElement = (
-      <WebPlatforms />
-    )
-      break
-    case 'web-applications': topicElement = (
-      <WebApplications />
-    )
-      break
-    case 'ict-consulting': topicElement = (
-      <ICTTraining />
-    )
-      break
-    case 'expertise-audits': topicElement = (
-      <CompetenceAudits />
-    )
-      break
-    case 'individual-development': topicElement = (
-      <IndividualDevelopment />
-    )
-      break
-    case 'management-development': topicElement = (
-      <ManagementDevelopment />
-    )
-      break
-    default: break
+    let serviceElement = null
+    
+    if (this.state.topic) {
+      const service = this.props.services.find(service => service.id === this.state.topic);
+      serviceElement = (
+        <Service service={ service } />
+      )
     }
 
-    const leftPanelContent = topicElement
-    const rightPanelContent = topicElement
+    const leftPanelContent = serviceElement
+    const rightPanelContent = serviceElement
 
     let indexContent = null
 
     if (this.state.windowWidth === null) {
       indexContent = null
     } else if (this.state.windowWidth <= 900) {
+      const servicesCardElements = this.props.services
+        .filter(service => service.type !== 'central')
+        .map(service => {
+          let accent = ''
+          
+          switch (service.type) {
+            case 'ict':
+              accent = 'cyan'          
+              break;
+            case 'consulting':
+              accent = 'purple'          
+              break;
+          }
+
+          return (
+            <VisibilitySensor key={ service.id } onChange={ (isVisible) => this.onVisibilityChange(service.id, service.type, isVisible) } scrollCheck delayedCall>
+              <div className="card-wrapper" ref={ this.buttonsRefs[service.id] }>
+                <Service service={ service } mobile accent={ accent } />
+              </div>
+            </VisibilitySensor>
+          )
+        })
+      
       indexContent = (
         <div className="index-page-mobile" key="mobile">
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange(null, null, isVisible) } scrollCheck delayedCall>
-            <ServicesButtons onClick={ this.handleQuickLinkClick } />
+            <ServicesButtons onClick={ this.handleQuickLinkClick } services={ this.props.services }/>
           </VisibilitySensor>
-          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('web-platforms', 'it', isVisible) } scrollCheck delayedCall>
-            <div className="card-wrapper" ref={ this.buttonsRefs['web-platforms'] }>
-              <WebPlatforms mobile accent="purple" />
-            </div>
-          </VisibilitySensor>
-          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('web-applications', 'it', isVisible) } scrollCheck delayedCall>
-            <div className="card-wrapper" ref={ this.buttonsRefs['web-applications'] }>
-              <WebApplications mobile accent="purple" />
-            </div>
-          </VisibilitySensor>
-          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('ict-training', 'it', isVisible) } scrollCheck delayedCall>
-            <div className="card-wrapper" ref={ this.buttonsRefs['ict-training'] }>
-              <ICTTraining mobile accent="purple" />
-            </div>
-          </VisibilitySensor>
-          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('expertise-audits', 'consulting', isVisible) } scrollCheck delayedCall>
-            <div className="card-wrapper" ref={ this.buttonsRefs['expertise-audits'] }>
-              <CompetenceAudits mobile accent="cyan" />
-            </div>
-          </VisibilitySensor>
-          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('individual-development', 'consulting', isVisible) } scrollCheck delayedCall>
-            <div className="card-wrapper" ref={ this.buttonsRefs['individual-development'] }>
-              <IndividualDevelopment mobile accent="cyan" />
-            </div>
-          </VisibilitySensor>
-          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange('management-development', 'consulting', isVisible) } scrollCheck delayedCall>
-            <div className="card-wrapper" ref={ this.buttonsRefs['management-development'] }>
-              <ManagementDevelopment mobile accent="cyan" />
-            </div>
-          </VisibilitySensor>
+          { servicesCardElements }
           <MobileFooter />
         </div>
       )
@@ -284,7 +248,11 @@ class HomePage extends Component {
               { leftPanelContent }
             </div>
             <div className="sliding">
-              <HexagonChart onHexagonClick={ this.handleHexagonClick } highlighted={ this.state.topic } />
+              <HexagonChart 
+                onHexagonClick={ this.handleHexagonClick }
+                highlighted={ this.state.topic }
+                services={ this.props.services }
+              />
               <Footer />
             </div>
             <div className={ rightPanelClassName }>
@@ -316,5 +284,87 @@ class HomePage extends Component {
   }
 }
 
+const whithHomeGraphql = (Component) => (props) => (
+  <StaticQuery
+    query={ graphql`
+      {
+        services: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/[a-zA-Z0-9-]*/[a-zA-Z0-9-]*/$/"}}}) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              html
+              frontmatter {
+                title
+                hexagonTitle
+                icon
+                type
+                id
+                x
+                y
+              }
+            }
+          }
+        }
+      
+        details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/[a-zA-Z0-9-]*/details/[a-zA-Z0-9-]*/"}}}) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              html
+              frontmatter {
+                title
+                icon
+              }
+            }
+          }
+        }
+      }    
+    ` }
+    render={ (data) => {
+      // Transform the services array into an object having the service id as key
+      const services = data.services.edges.reduce((acc, edge) => ({
+          [edge.node.frontmatter.id]: {
+            ...edge.node.frontmatter,
+            html: edge.node.html,
+            details: [],
+          },
+          ...acc,
+        }
+      ), {})
 
-export default HomePage
+      // Group all the details into the parent service
+      data.details.edges.forEach(edge => {
+        const serviceId = /\/homepage\/([a-zA-Z0-9-]*)/g.exec(edge.node.fields.slug)[1];
+        const service = services[serviceId];
+
+        if (service) {
+          if (!service.details) {
+            service.details = [] 
+          }
+
+          service.details.push({
+            ...edge.node.frontmatter,
+            html: edge.node.html            
+          })
+        }
+      })
+
+      // Put the services back into an array
+      const servicesArray = Object.keys(services).map(key => {
+        if (services.hasOwnProperty(key)) {
+          return services[key];
+        }
+      })
+
+      return (
+        <Component { ...props } services={ servicesArray }/>
+      )
+    } }
+  />
+)
+
+export default whithHomeGraphql(HomePage)

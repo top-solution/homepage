@@ -8,49 +8,25 @@ import Icon from '../../../Icon/Icon'
 import './ServicesButtons.scss'
 
 
-const ServicesButtons = ({ onClick }) => {
-  return (
-    <div>
-      <StaticQuery
-        query={ graphql`
-          query {
-            services: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/[a-zA-Z0-9-]*/[^/]*/$/"}}}) {
-              edges {
-                node {
-                  frontmatter {
-                    id
-                    title
-                    icon
-                    type
-                  }
-                }
-              }
-            }
-          }
-        ` }
-        render={ data => {
-          const buttons = data.services.edges
-            .filter(({ node }) => node.frontmatter.type !== 'central')  
-            .map(({ node: { frontmatter } }) => (            
-              <Button
-                key={ frontmatter.id }
-                borderless
-                purple={ frontmatter.type === 'ict' }
-                cyan={ frontmatter.type === 'consulting' }
-                onClick={ () => onClick(frontmatter.id) }
-              >
-                <Icon name={ frontmatter.icon } />
-                { frontmatter.title }
-              </Button>
-            )) 
+const ServicesButtons = ({ onClick, services }) => {
+  const buttons = services
+    .filter(service => service.type !== 'central')  
+    .map(service => (            
+      <Button
+        key={ service.id }
+        borderless
+        purple={ service.type === 'ict' }
+        cyan={ service.type === 'consulting' }
+        onClick={ () => onClick(service.id) }
+      >
+        <Icon name={ service.icon } />
+        { service.title }
+      </Button>
+    )) 
 
-          return (
-            <div className="service-buttons">
-              { buttons }
-            </div>
-          )
-        } }
-      />
+  return (
+    <div className="service-buttons">
+      { buttons }
     </div>
   )
 }

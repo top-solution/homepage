@@ -5,33 +5,32 @@ import Icon from '../../../Icon/Icon'
 
 import './ServiceDetails.scss'
 
-const ServiceDetails = ( { data } ) => {
-  if (!data) {
+const ServiceDetails = ( { details } ) => {
+  if (!details) {
     return null
   }
 
-  const details = data.edges.map(({ node }) => (
-    <div className="service-details-item" key={ node.frontmatter.title }>
-      <h3>{ node.frontmatter.title }</h3>
+  const detailsElements = details.map(detail => (
+    <div className="service-details-item" key={ detail.title }>
+      <h3>{ detail.title }</h3>
       <div className="item-content">
         <div className="item-icon">
-          <Icon name={ node.frontmatter.icon } />
+          <Icon name={ detail.icon } />
         </div>
-        <div className="text" dangerouslySetInnerHTML={ { __html: node.html } } />
+        <div className="text" dangerouslySetInnerHTML={ { __html: detail.html } } />
       </div>
     </div>
-
   ))
 
   return (
     <div className="service-details">
-      { details }
+      { detailsElements }
     </div>
   )
 }
 
 ServiceDetails.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 }
 
 export default ServiceDetails

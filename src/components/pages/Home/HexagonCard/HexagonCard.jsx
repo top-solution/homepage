@@ -55,19 +55,19 @@ class HexagonCard extends Component {
   }
   
   render() {
-    if (!this.props.data) {
+    if (!this.props.service) {
       return null
     }
 
     return (
-      <div id={ `page-${ this.props.data.excerpt.frontmatter.icon }` } className={ `hexagon-card ${ this.props.accent || '' } ${ this.state.collapsed? '' : 'expanded' }` }>
+      <div id={ `page-${ this.props.service.icon }` } className={ `hexagon-card ${ this.props.accent || '' } ${ this.state.collapsed? '' : 'expanded' }` }>
         <SVGHexagon height={ null } width={ 144 } className="hexagon">
           <g className="hexagon-icon" transform="scale(0.32) translate(18, 28)">        
-            <use xlinkHref={ `#${ this.props.data.excerpt.frontmatter.icon }` } />
+            <use xlinkHref={ `#${ this.props.service.icon }` } />
           </g>
         </SVGHexagon>
         <div className="card-content">
-          <ServicePreview data={ this.props.data.excerpt } />
+          <ServicePreview service={ this.props.service } />
           <div className="collapsible">
             <div className={ 'scroller' }
               ref={ this.collapsibleButtonRef }>
@@ -83,7 +83,7 @@ class HexagonCard extends Component {
               style={ { maxHeight: this.state.collapsibleHeight } }
             >
               <div ref={ this.collapsibleRef }>
-                <ServiceDetails data={ this.props.data.details } />
+                <ServiceDetails details={ this.props.service.details } />
               </div>
             </div>
           </div>

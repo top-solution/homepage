@@ -6,8 +6,8 @@ import ServiceDetails from '../ServiceDetails/ServiceDetails'
 import ServicePreview from '../ServicePreview/ServicePreview'
 
 
-const Service = ( { accent, data, mobile } ) => {
-  if (!data) {
+const Service = ( { accent, service, mobile } ) => {
+  if (!service) {
     return null
   }
 
@@ -16,7 +16,7 @@ const Service = ( { accent, data, mobile } ) => {
   if (mobile === true) {
     content = (
       <HexagonCard 
-        data={ data }
+        service={ service }
         icon="web-platforms" 
         text={ 'Piattaforme\nWeb' }
         accent={ accent }
@@ -26,8 +26,8 @@ const Service = ( { accent, data, mobile } ) => {
   } else { 
     content = (
       <div>
-        <ServicePreview data={ data.excerpt } />
-        <ServiceDetails data={ data.details } />
+        <ServicePreview service={ service } />
+        <ServiceDetails details={ service.details } />
       </div>
     )
   }
@@ -41,7 +41,7 @@ const Service = ( { accent, data, mobile } ) => {
 
 Service.propTypes = {
   accent: PropTypes.string,
-  data: PropTypes.object,
+  service: PropTypes.object,
   mobile: PropTypes.bool,
 }
 
