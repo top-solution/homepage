@@ -42,6 +42,8 @@ class HomePage extends Component {
     this.handleQuickLinkClick = this.handleQuickLinkClick.bind(this)
     this.handleSlidingContainerClick = this.handleSlidingContainerClick.bind(this)
     this.scrollToTop = this.scrollToTop.bind(this)
+    debugger
+    console.log('aaaaaaaaa')
   }
 
   componentDidMount() {
@@ -143,16 +145,18 @@ class HomePage extends Component {
 
   onVisibilityChange(isVisible) {
     if (isVisible || window.pageYOffset < 80) {
-        this.setState({ showBackToTopFab: false })
+      this.setState({ showBackToTopFab: false })
     } else {
       windowGlobal.history.replaceState({}, window.title, `#`)
-        this.setState({ showBackToTopFab: true })
+      this.setState({ showBackToTopFab: true })
     }
   }
 
   onCardVisibilityChange(isVisible, id, type) {
     if (isVisible) {
       windowGlobal.history.replaceState({}, window.title, `#/services/${ type }/${ id }`)
+    } else {
+      windowGlobal.history.replaceState({}, window.title, `#`)
     }
   }
 
