@@ -154,9 +154,7 @@ class HomePage extends Component {
     if (!topic) {
       windowGlobal.history.replaceState({}, window.title, `#`)
 
-      if (!isVisible) {
-        this.setState({ showBackToTopFab: !isVisible })
-      }
+      this.setState({ showBackToTopFab: !isVisible })
     } else {
       if (isVisible) {
         windowGlobal.history.replaceState({}, window.title, `#/services/${ type }/${ topic }`)

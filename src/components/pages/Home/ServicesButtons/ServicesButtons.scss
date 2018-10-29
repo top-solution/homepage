@@ -19,11 +19,12 @@
     font-size: 1rem;
     padding-left: 0;
     padding-right: 0;
+    text-align: left;
 
     .icon {
       @include size($icon-size-lg);
       display: inline;
-      margin-right: $spacing-horizontal-xs;
+      margin-right: $spacing-horizontal-sm;
     }
   }
 }
