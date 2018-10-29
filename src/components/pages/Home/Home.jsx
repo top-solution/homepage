@@ -141,15 +141,18 @@ class HomePage extends Component {
     }
   }
 
-  onVisibilityChange(topic, type, isVisible) {
-    if (!topic) {
-      windowGlobal.history.replaceState({}, window.title, `#`)
-
-      this.setState({ showBackToTopFab: !isVisible })
+  onVisibilityChange(isVisible) {
+    if (isVisible || window.pageYOffset < 80) {
+        this.setState({ showBackToTopFab: false })
     } else {
-      if (isVisible) {
-        windowGlobal.history.replaceState({}, window.title, `#/services/${ type }/${ topic }`)
-      }
+      windowGlobal.history.replaceState({}, window.title, `#`)
+        this.setState({ showBackToTopFab: true })
+    }
+  }
+
+  onCardVisibilityChange(isVisible, id, type) {
+    if (isVisible) {
+      windowGlobal.history.replaceState({}, window.title, `#/services/${ type }/${ id }`)
     }
   }
 
@@ -223,7 +226,7 @@ class HomePage extends Component {
           }
 
           return (
-            <VisibilitySensor key={ service.id } onChange={ (isVisible) => this.onVisibilityChange(service.id, service.type, isVisible) } scrollCheck delayedCall>
+            <VisibilitySensor key={ service.id } onChange={ (isVisible) => this.onCardVisibilityChange(isVisible, service.id, service.type) } scrollCheck delayedCall>
               <div className="card-wrapper" ref={ this.buttonsRefs[service.id] }>
                 <Service service={ service } mobile accent={ accent } />
               </div>
@@ -233,10 +236,14 @@ class HomePage extends Component {
       
       indexContent = (
         <div className="index-page-mobile" key="mobile">
-          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange(null, null, isVisible) } scrollCheck delayedCall>
+          <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange(true && isVisible) } scrollCheck delayedCall>
             <ServicesButtons onClick={ this.handleQuickLinkClick } services={ this.props.services }/>
           </VisibilitySensor>
-          { servicesCardElements }
+          <VisibilitySensor onChange={ () => this.onVisibilityChange(false) } scrollCheck delayedCall>
+            <div>
+              { servicesCardElements }
+            </div>
+          </VisibilitySensor>
           <MobileFooter />
         </div>
       )
