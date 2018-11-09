@@ -42,8 +42,6 @@ class HomePage extends Component {
     this.handleQuickLinkClick = this.handleQuickLinkClick.bind(this)
     this.handleSlidingContainerClick = this.handleSlidingContainerClick.bind(this)
     this.scrollToTop = this.scrollToTop.bind(this)
-    debugger
-    console.log('aaaaaaaaa')
   }
 
   componentDidMount() {
