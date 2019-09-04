@@ -16,4 +16,19 @@
   &.orange {
     color: darken($color: $ts-orange, $amount: 10%);
   }
+
+}
+
+
+// Chrome issue
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+  .hexagon-text {
+    transform: translateY(-2px);
+  }
+}
+
+@media screen and (min--moz-device-pixel-ratio:0) {
+  .hexagon-text {
+    transform: translateY(.5px);
+  }
 }
