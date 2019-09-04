@@ -42,6 +42,9 @@ class HomePage extends Component {
     this.handleQuickLinkClick = this.handleQuickLinkClick.bind(this)
     this.handleSlidingContainerClick = this.handleSlidingContainerClick.bind(this)
     this.scrollToTop = this.scrollToTop.bind(this)
+
+    this.leftPanelRef = React.createRef()
+    this.rightPanelRef = React.createRef()
   }
 
   componentDidMount() {
@@ -61,6 +64,16 @@ class HomePage extends Component {
           behavior: 'smooth',
           block: 'center'
         })
+      }
+    }
+
+    if (prevState.topic !== this.state.topic) {
+      if (this.leftPanelRef.current) {
+        this.leftPanelRef.current.scrollTop = 0;
+      }
+
+      if (this.rightPanelRef.current) {
+        this.rightPanelRef.current.scrollTop = 0;
       }
     }
   }
@@ -269,7 +282,7 @@ class HomePage extends Component {
       indexContent = (
         <div className="index-page-desktop" key="desktop">
           <div className={ hexagonsClassName } onClick={ this.handleSlidingContainerClick }>
-            <div className={ leftPanelClassName }>
+            <div className={ leftPanelClassName } ref={this.leftPanelRef}>
               { leftPanelContent }
             </div>
             <div className="sliding">
@@ -280,7 +293,7 @@ class HomePage extends Component {
               />
               <Footer />
             </div>
-            <div className={ rightPanelClassName }>
+            <div className={ rightPanelClassName } ref={this.rightPanelRef}>
               { rightPanelContent }
             </div>
           </div>
