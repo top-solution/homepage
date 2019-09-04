@@ -82,17 +82,22 @@ class HomePage extends Component {
   }
 
   handleHexagonClick(topic, side) {
+    if (this.state.isMoving) {
+      return
+    }
+
     if (side === 'central') {
       windowGlobal.history.replaceState({}, window.title, '#')
       this.setState({
         leftPanelShown: false,
         rightPanelShown: false,
+        isMoving: true
       })
-
 
       setTimeout(() => {
         this.setState({
           topic: null,
+          isMoving: false
         })
       }, 400)
 
@@ -104,16 +109,19 @@ class HomePage extends Component {
         windowGlobal.history.replaceState({}, window.title, '#')
         this.setState({
           topic: null,
+          isMoving: false
         })
       }, 400)
 
       if (side === 'ict') {
         return this.setState({
           leftPanelShown: !this.state.leftPanelShown,
+          isMoving: true
         })
       } else {
         return this.setState({
           rightPanelShown: !this.state.rightPanelShown,
+          isMoving: true
         })
       }
     }
@@ -125,6 +133,7 @@ class HomePage extends Component {
         topic: topic,
         leftPanelShown: true,
         rightPanelShown: false,
+        isMoving: true
       })
     } else {
       windowGlobal.history.replaceState({}, window.title, `#/services/consulting/${ topic }`)
@@ -132,8 +141,15 @@ class HomePage extends Component {
         topic: topic,
         leftPanelShown: false,
         rightPanelShown: true,
+        isMoving: true
       })
     }
+
+    setTimeout(() => {
+      this.setState({
+        isMoving: false
+      })
+    }, 400)
 
     if (window.ga) {
       window.ga('set', 'page', location.pathname + location.hash);
@@ -197,7 +213,7 @@ class HomePage extends Component {
     const leftPanelClassName = `left-panel ${ this.state.leftPanelShown? 'shown' : '' }`
 
     let serviceElement = null
-    
+
     if (this.state.topic) {
       const service = this.props.services.find(service => service.id === this.state.topic);
       serviceElement = (
@@ -217,13 +233,13 @@ class HomePage extends Component {
         .filter(service => service.type !== 'central')
         .map(service => {
           let accent = ''
-          
+
           switch (service.type) {
             case 'ict':
-              accent = 'cyan'          
+              accent = 'cyan'
               break;
             case 'consulting':
-              accent = 'purple'          
+              accent = 'purple'
               break;
           }
 
@@ -235,7 +251,7 @@ class HomePage extends Component {
             </VisibilitySensor>
           )
         })
-      
+
       indexContent = (
         <div className="index-page-mobile" key="mobile">
           <VisibilitySensor onChange={ (isVisible) => this.onVisibilityChange(true && isVisible) } scrollCheck delayedCall>
@@ -257,7 +273,7 @@ class HomePage extends Component {
               { leftPanelContent }
             </div>
             <div className="sliding">
-              <HexagonChart 
+              <HexagonChart
                 onHexagonClick={ this.handleHexagonClick }
                 highlighted={ this.state.topic }
                 services={ this.props.services }
@@ -316,7 +332,7 @@ const whithHomeGraphql = (Component) => (props) => (
             }
           }
         }
-      
+
         details: allMarkdownRemark(filter: {fields: {slug: {regex: "//homepage/[a-zA-Z0-9-]*/details/[a-zA-Z0-9-]*/"}}}) {
           edges {
             node {
@@ -331,7 +347,7 @@ const whithHomeGraphql = (Component) => (props) => (
             }
           }
         }
-      }    
+      }
     ` }
     render={ (data) => {
       // Transform the services array into an object having the service id as key
@@ -352,12 +368,12 @@ const whithHomeGraphql = (Component) => (props) => (
 
         if (service) {
           if (!service.details) {
-            service.details = [] 
+            service.details = []
           }
 
           service.details.push({
             ...edge.node.frontmatter,
-            html: edge.node.html            
+            html: edge.node.html
           })
         }
       })
