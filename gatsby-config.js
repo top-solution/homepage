@@ -8,17 +8,17 @@ module.exports = {
     siteUrl: 'https://www.topsolution.it',
     company: {
       name: 'Top Solution s.r.l',
-      streetAddress: 'Corso Regina Margherita, 254',
+      streetAddress: 'Via Agostino da Montefeltro, 2',
       locality: 'Turin',
       region: 'TO',
-      postalCode: 10144,
+      postalCode: 10134,
       countryName: 'Italy',
-      latitude: 45.0888952,
-      longitude: 7.6524942,
+      latitude: 45.0502167,
+      longitude: 7.6683408,
       vatId: '10031960015'
     },
     contacts: {
-      phone: '+39 011 5833474',
+      phone: '+39 011 3157373‬',
       email: 'info@topsolution.it',
     },
   },
