@@ -24,7 +24,7 @@ const userPolicy = new aws.iam.UserPolicy("deployPolicy", {
         Action: ["s3:ListBucket"],
         Effect: "Allow",
         Resource: [`arn:aws:s3:::${config.bucket}`],
-        Condition: { StringLike: { "s3:prefix": ["", config.bucketPath] } }
+        //Condition: { StringLike: { "s3:prefix": ["", config.bucketPath] } }
       },
       {
         Sid: "AllowAllActionsInHomepagePath",
