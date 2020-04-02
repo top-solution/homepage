@@ -37,7 +37,7 @@ deploy-dev:
     name: mesosphere/aws-cli
     entrypoint: [""]
   script:
-    - aws s3 sync ./public s3://topsolution/website-dev --exclude \"*DS_Store\" --delete --acl public-read
+    - aws s3 sync ./public s3://topsolution/website-dev/ --exclude \"*DS_Store\" --delete --acl public-read
     - aws cloudfront create-invalidation --distribution-id E3BPM5YSN13FES --paths /index.html /robots.txt 
   environment:
     name: dev
@@ -59,7 +59,7 @@ deploy-prod:
     name: mesosphere/aws-cli
     entrypoint: [""]
   script:
-    - aws s3 sync ./dist s3://topsolution/website --exclude \"*DS_Store\" --delete --acl public-read
+    - aws s3 sync ./dist s3://topsolution/website/ --exclude \"*DS_Store\" --delete --acl public-read
     - aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths /index.html /robots.txt
   environment:
     name: prod
