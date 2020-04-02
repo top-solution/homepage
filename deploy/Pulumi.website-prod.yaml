@@ -1,0 +1,4 @@
+encryptionsalt: v1:haglmZ5bdaM=:v1:ix2HGCEodQGVN4uc:TXsA4VCxCHfH6n9m97uUGwfyqjtYnQ==
+config:
+  aws:region: eu-west-1
+  static-website:bucketPath: website-dev
