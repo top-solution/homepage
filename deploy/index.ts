@@ -7,7 +7,7 @@ const config = {
   bucketPath: stackConfig.require("bucketPath"),
 };
 
-const user = new aws.iam.User("homepage-deploy-user");
+const user = new aws.iam.User(`${pulumi.getProject()}-deploy-user-${pulumi.getStack()}`);
 const userAccessKey = new aws.iam.AccessKey("deployKey", { user: user.name });
 const userPolicy = new aws.iam.UserPolicy("deployPolicy", {
   user: user.name,
