@@ -45,7 +45,14 @@ This is the source code for Top Solution srl homepage, hosted at [https://topsol
 
 ### Deploy to S3 + Cloudfront
 
+#### Using the CI
+
+Push your changes to the `master` to deploy to [development website](https://www.topsolution.dev)
+Push a git tag to deploy to [production website](https://www.topsolution.it)
+
+#### Manually
+
 To build, upload to Amazon S3 and invalidate the Cloudfront cache run:
 
-* `npm run deploy:dev` to deploy to [development website](https://next.topsolution.it/#/services/it/web-applications)
-* `npm run deploy:prod` to deploy to [production website](https://topsolution.it/)
+* `npm run deploy:dev` to deploy to [development website](https://www.topsolution.dev)
+* `npm run deploy:prod` to deploy to [production website](https://www.topsolution.it)
