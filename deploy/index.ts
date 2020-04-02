@@ -32,7 +32,7 @@ const userPolicy = new aws.iam.UserPolicy("deployPolicy", {
         Action: ["s3:PutObject",
           "s3:GetObjectAcl",
           "s3:GetObject",
-          "s3:ListBucket",
+          "s3:ListObjects",
           "s3:DeleteObject",
           "s3:PutObjectAcl"],
         Resource: [`arn:aws:s3:::${config.bucket}/${config.bucketPath}/*`]
