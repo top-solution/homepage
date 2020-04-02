@@ -1,0 +1,69 @@
+stages:
+  - build
+  - deploy
+
+.webappcache: &webappcache
+  key: webappcache
+  paths:
+    - node_modules
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+build:
+  stage: build
+  image: node:lts
+  cache: *webappcache
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+  only:
+    - master
+    - ci
+    - tags
+
+deploy-dev:
+  stage: deploy
+  environment: dev
+  dependencies:
+    - build
+  variables:
+    AWS_ACCESS_KEY_ID: '$DEV_AWS_ACCESS_KEY_ID'
+    AWS_SECRET_ACCESS_KEY: '$DEV_AWS_SECRET_ACCESS_KEY'
+  image:
+    name: mesosphere/aws-cli
+    entrypoint: [""]
+  script:
+    - aws s3 sync ./dist s3://topsolution/website-dev --exclude \"*DS_Store\" --delete --acl public-read
+    - aws cloudfront create-invalidation --distribution-id E3BPM5YSN13FES --paths /index.html /robots.txt 
+  environment:
+    name: dev
+    url: https://www.topsolution.dev
+  only:
+    - master
+    - ci
+
+
+deploy-prod:
+  stage: deploy
+  environment: prod
+  dependencies:
+    - build
+  variables:
+    AWS_ACCESS_KEY_ID: '$PROD_AWS_ACCESS_KEY_ID'
+    AWS_SECRET_ACCESS_KEY: '$PROD_AWS_SECRET_ACCESS_KEY'
+  image:
+    name: mesosphere/aws-cli
+    entrypoint: [""]
+  script:
+    - aws s3 sync ./dist s3://topsolution/website --exclude \"*DS_Store\" --delete --acl public-read
+    - aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths /index.html /robots.txt
+  environment:
+    name: prod
+    url: https://www.topsolution.it
+  only:
+    - tags
+  when: manual
