@@ -27,7 +27,9 @@ build:
 
 deploy-dev:
   stage: deploy
-  environment: dev
+  environment:
+    name: dev
+    url: https://www.topsolution.dev
   dependencies:
     - build
   variables:
@@ -39,16 +41,15 @@ deploy-dev:
   script:
     - aws s3 sync ./public s3://topsolution/website-dev/ --exclude \"*DS_Store\" --delete --acl public-read
     - aws cloudfront create-invalidation --distribution-id E3BPM5YSN13FES --paths /index.html /robots.txt 
-  environment:
-    name: dev
-    url: https://www.topsolution.dev
   rules:
     - if: '$CI_COMMIT_REF_NAME == "master"'
     - if: '$DEPLOY_TO == "dev"'
 
 deploy-prod:
   stage: deploy
-  environment: prod
+  environment:
+    name: prod
+    url: https://www.topsolution.it
   dependencies:
     - build
   variables:
@@ -60,9 +61,6 @@ deploy-prod:
   script:
     - aws s3 sync ./dist s3://topsolution/website/ --exclude \"*DS_Store\" --delete --acl public-read
     - aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths /index.html /robots.txt
-  environment:
-    name: prod
-    url: https://www.topsolution.it
   rules:
     - if: $CI_COMMIT_TAG
       when: manual
