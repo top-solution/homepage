@@ -59,7 +59,7 @@ deploy-prod:
     name: mesosphere/aws-cli
     entrypoint: [""]
   script:
-    - aws s3 sync ./dist s3://topsolution/website/ --exclude \"*DS_Store\" --delete --acl public-read
+    - aws s3 sync ./public s3://topsolution/website/ --exclude \"*DS_Store\" --delete --acl public-read
     - aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths /index.html /robots.txt
   rules:
     - if: $CI_COMMIT_TAG
