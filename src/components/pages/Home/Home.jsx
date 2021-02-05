@@ -291,12 +291,12 @@ class HomePage extends Component {
                 highlighted={ this.state.topic }
                 services={ this.props.services }
               />
-              <Footer />
             </div>
             <div className={ rightPanelClassName } ref={this.rightPanelRef}>
               { rightPanelContent }
             </div>
           </div>
+          <Footer />
         </div>
       )
     }

@@ -2,15 +2,21 @@
 @import 'src/sass/variables';
 
 .footer {
-  @include position(absolute, null null 0 null);
+  @include position(fixed, null 0 0 0);
   color: transparentize($color: $text-color-default, $amount: .2);
   display: flex;
   justify-content: space-between;
   padding: $spacing-vertical-md 0;
-  width: 100%;
+  width: 100vw;
 
   > div {
     display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+
+    > * {
+      display: block;
+    }
 
     > a,
     span {
