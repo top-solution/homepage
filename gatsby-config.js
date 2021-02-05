@@ -8,17 +8,17 @@ module.exports = {
     siteUrl: 'https://www.topsolution.it',
     company: {
       name: 'Top Solution s.r.l',
-      streetAddress: 'Via Agostino da Montefeltro, 2',
+      streetAddress: 'Via Livorno 60 – B2 LAB',
       locality: 'Turin',
       region: 'TO',
-      postalCode: 10134,
+      postalCode: 10144,
       countryName: 'Italy',
-      latitude: 45.0502167,
-      longitude: 7.6683408,
+      latitude: 45.087562,
+      longitude: 7.673475,
       vatId: '10031960015'
     },
     contacts: {
-      phone: '+39 011 3157373‬',
+      phone: '+39 011 2488280‬',
       email: 'info@topsolution.it',
     },
   },

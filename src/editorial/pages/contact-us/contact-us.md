@@ -5,9 +5,9 @@ subtitle: Scopri le opportunità per il tuo business offerte dalle nostre soluzi
 
 #### Sede operativa
 
-Toolbox Coworking\
-Via Agostino da Montefeltro, 2\
-10134 Torino (TO)
+Environment Park\
+Via Livorno 60 – B2 LAB\
+10144 Torino (TO)
 
 #### Sede legale
 
@@ -24,4 +24,4 @@ Corso Regina Margherita, 254\
 
 #### Telefono
 
-[+39 011 3157373‬](tel:+39 011 3157373‬)
+[+39 011 2488280‬](tel:+39 011 2488280‬)
