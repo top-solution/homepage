@@ -1,0 +1,33 @@
+<script type="module">
+  import * as bench from "/bench.js";
+  bench.start();
+  //const pages = [{ title: "title", link: "link" }];
+  for (let i = 0; i < 100; i++) {
+    document.body.innerHTML += `
+      <footer>
+        <div class="footer-top">
+          <div><a href="about.html">HOME</a></div>
+          <div><a href="about.html">L'AZIENDA</a></div>
+          <div><a href="about.html">IL TEAM</a></div>
+          <div><a href="about.html">CONTATTI</a></div>
+
+        </div>
+        <hr />
+        <div class="footer-bottom">
+          <div class="footer-bottom__img">
+            <img src="img/topsolution_footer_logo_dark.svg" alt="top-solution_logo" width="150" height="150" />
+          </div>
+          <div class="footer-bottom__text">
+            <div>+39 0112488280</div>
+            <div>info@topsolution.it</div>
+            <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
+            <div>Sede Operativa Via Livorno, 60, 10144 Torino TO</div>
+            <div>P.IVA/CF    10031960015</div>
+            <br />
+            <div class="footer-bottom__mark">© Top Solution s.r.l</div>
+          </div>
+        </div>
+      </footer>`;
+  }
+  bench.stop();
+</script>

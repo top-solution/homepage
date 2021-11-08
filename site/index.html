@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content=""> <!-- Seo ?? -->
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700|Work+Sans:100,200,300,400,500,600,700,800,900&display=swap' rel='stylesheet' type='text/css'>
+  <!-- Web Components -->
+  <script src="components/header/header.js"></script>
+  <script src="components/footer/footer.js"></script>
+  <script src="components/popupInfo/index.js"></script>
+
+  <script src="components/footer1/footer1.js"></script>
+</head>
+
+<body>
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <header-component></header-component>
+    <main>main</main>
+  </div>
+  <!-- <footer-component hidden></footer-component> -->
+
+  <footer-component1 home="Home" title="title"></footer-component1>
+
+
+  <h1>Pop-up info component</h1>
+  <form>
+     <div>
+        <label for="codiceCliente">
+           <popup-info data-text="Il tuo codice cliente si trova in alto a sinistra nella prima pagina della fattura.">
+        </label>
+        <input type="text" id="codiceCliente">
+     </div>
+  </form>
+
+
+  <script>
+    const pages = [
+      {title: "HOME", link: "home.html"},
+      {title: "L'AZIENDA", link: "home.html"},
+      {title: "IL TEAM", link: "home.html"},
+      {title: "CONTATTI", link: "home.html"},
+    ];
+
+    //document.querySelector("footer-component1").setAttribute('pages', JSON.stringify(pages));
+    document.querySelector("footer-component1").arrayProp = pages;
+
+    var list = document.querySelector("footer-component1");
+    list.items = pages;
+  </script>
+</body>
+
+</html>
