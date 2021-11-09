@@ -2,6 +2,7 @@ import svelte from "rollup-plugin-svelte";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import livereload from "rollup-plugin-livereload";
+import { readdirSync } from "fs";
 import { terser } from "rollup-plugin-terser";
 
 const production = !process.env.ROLLUP_WATCH;
@@ -31,10 +32,12 @@ function serve() {
   };
 }
 
-export default ["footer", "header"].map((name, index) => ({
-  input: `src/${name}.svelte`,
+/* Generate configuration for each svelte file found in src folder */
+const files = readdirSync('./src')
+export default files.map((name, index) => ({
+  input: `src/${name}`,
   output: {
-    name,
+    name: name.replace(/\.svelte$/, ""),
     format: "iife",
     dir: "public/build",
   },
@@ -56,14 +59,6 @@ export default ["footer", "header"].map((name, index) => ({
       dedupe: ["svelte"],
     }),
     commonjs(),
-
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
-    !production && serve(),
-
-    // Watch the `public` directory and refresh the
-    // browser on changes when not in production
-    !production && livereload("public"),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
