@@ -2,10 +2,6 @@ class Footer1 extends HTMLElement {
   constructor() {
     super();
 
-    //const pages = this.pages;
-    //const pages = this.getAttribute("content");
-    this._title = "unkwno"; //tryMe
-
     const shadow = this.attachShadow({ mode: "open" });
 
     const footer = document.createElement("footer");
@@ -16,7 +12,6 @@ class Footer1 extends HTMLElement {
     const footerHome = document.createElement("div");
     const footerHomeLink = document.createElement("a");
     footerHomeLink.setAttribute("href", "index.html");
-    const textHome = this.getAttribute("home"); //FIXME
     footerHomeLink.textContent = "HOME";
 
     const footerCompany = document.createElement("div");
@@ -74,6 +69,7 @@ class Footer1 extends HTMLElement {
     footerBottomMark.setAttribute("class", "footer-bottom__mark");
     footerBottomMark.textContent = "© Top Solution s.r.l";
 
+    /*
     const style = document.createElement("style");
     style.textContent = `
     footer {
@@ -166,9 +162,9 @@ class Footer1 extends HTMLElement {
     .iva {
       margin-left: 40px;
     }
-  `;
+  `; */
 
-    shadow.appendChild(style);
+    //shadow.appendChild(style);
     shadow.appendChild(footer);
     footer.appendChild(footerTop);
     footerTop.appendChild(footerHome);
@@ -195,32 +191,6 @@ class Footer1 extends HTMLElement {
     footerBottomText.appendChild(footerBottomMark);
 
     footer.appendChild(footerBottom);
-  }
-
-  get home() {
-    return this.getAttribute("home") || "";
-  }
-
-  get title() {
-    console.log("title", this.getAttribute("title"));
-    //return this.getAttribute("title") || "";
-    return this._title;
-  }
-
-  set title(val) {
-    this._title = val;
-    this.setAttribute("title", val);
-  }
-
-  get pages() {
-    console.log(
-      "get",
-      this,
-      this.getAttribute("pages"),
-      JSON.parse(this.getAttribute("pages"))
-    );
-    return JSON.parse(this.getAttribute("pages")) || [];
-    //return this.getAttribute("pages") || [];
   }
 }
 

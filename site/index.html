@@ -26,7 +26,10 @@
   <script src="components/footer/footer.js"></script>
   <script src="components/popupInfo/index.js"></script>
 
-  <script src="components/footer1/footer1.js"></script>
+  <link rel='stylesheet' href='my-svelte-project/public/build/bundle.css'>
+  <script src="my-svelte-project/public/build/bundle.js"></script>
+
+  <script defer src="components/footer1/footer1.js"></script>
 </head>
 
 <body>
@@ -37,8 +40,10 @@
   </div>
   <!-- <footer-component hidden></footer-component> -->
 
-  <footer-component1 home="Home" title="title"></footer-component1>
+  <!-- <footer-component1 home="Home" title="title"></footer-component1> -->
 
+  <!-- <svelte-app /> -->
+  <svelte-footer />
 
   <h1>Pop-up info component</h1>
   <form>
