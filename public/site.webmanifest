@@ -1,11 +1,11 @@
 {
   "short_name": "Top Solution",
   "name": "Top Solution",
+  "description": "Ideas for the Future",
   "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
+    "src": "img/logo.svg",
+    "type": "image/svg",
     "sizes": "192x192"
   }],
-  "start_url": "/",
-  "background_color": "#fafafa"
+  "start_url": "/"
 }
