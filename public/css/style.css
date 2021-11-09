@@ -11,7 +11,7 @@ body {
   margin: 0 auto;
 }
 
-/* Footer Style - fow now duplicated - footer.js css */
+/* Footer Style - fow now duplicated - footer.js css
 footer {
   height: 325px;
   padding: 0;
@@ -100,3 +100,5 @@ a:hover {
   padding-bottom: 5px;
   box-shadow: inset 0 -2px 0 0 #fff;
 }
+
+*/

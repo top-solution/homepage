@@ -1,8 +1,5 @@
 <svelte:options tag="svelte-footer" />
 
-<script>
-</script>
-
 <footer>
   <div class="footer-top">
     <div><a href="about.html">HOME eee</a></div>
@@ -33,7 +30,10 @@
 </footer>
 
 <style>
-  /*
+  @import "css/main.css";
+  @import "css/normalize.css";
+  @import "css/style.css";
+
   footer {
     height: 325px;
     padding: 0;
@@ -106,12 +106,13 @@
     font-style: normal;
   }
 
+  /*
   hr {
     width: 100vw;
     position: absolute;
     left: 0;
     margin: 0;
-  }
+  } */
 
   a {
     color: inherit;
@@ -121,5 +122,5 @@
   a:hover {
     padding-bottom: 5px;
     box-shadow: inset 0 -2px 0 0 #fff;
-  } */
+  }
 </style>
