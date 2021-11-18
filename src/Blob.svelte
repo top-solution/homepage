@@ -1,0 +1,322 @@
+<svelte:options tag="ts-blob" />
+
+<script>
+  import { tick } from "svelte";
+  // import { spline } from "@georgedoescode/spline";
+  import SimplexNoise from "simplex-noise";
+  import debounce from "lodash.debounce";
+  import { onMount } from "svelte";
+  // import bezierSpline from "@turf/bezier-spline";
+  // import { lineString } from "@turf/helpers";
+
+  export let fill = "#E9E8F2";
+  export let fill2;
+  export let shape = "hexagon";
+  export let variance = 1;
+  export let interactive = false;
+
+  console.log(shape);
+
+  /**
+   * See https://francoisromain.medium.com/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
+   */
+
+  const line = (pointA, pointB) => {
+    const lengthX = pointB[0] - pointA[0];
+    const lengthY = pointB[1] - pointA[1];
+    return {
+      length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
+      angle: Math.atan2(lengthY, lengthX),
+    };
+  };
+
+  const controlPoint = (current, previous, next, reverse) => {
+    // When 'current' is the first or last point of the array
+    // 'previous' or 'next' don't exist.
+    // Replace with 'current'
+    const p = previous || current;
+    const n = next || current; // The smoothing ratio
+    const smoothing = 0.2; // Properties of the opposed-line
+    const o = line(p, n); // If is end-control-point, add PI to the angle to go backward
+    const angle = o.angle + (reverse ? Math.PI : 0);
+    const length = o.length * smoothing; // The control point position is relative to the current point
+    const x = current[0] + Math.cos(angle) * length;
+    const y = current[1] + Math.sin(angle) * length;
+    return [x, y];
+  };
+
+  const bezierCommand = (point, i, a) => {
+    const n = a.length - 1;
+    const circ = (i) => ((i % n) + n) % n;
+
+    // start control point
+    const [cpsX, cpsY] = controlPoint(a[circ(i - 1)], a[circ(i - 2)], point); // end control point
+    const [cpeX, cpeY] = controlPoint(
+      point,
+      a[circ(i - 1)],
+      a[circ(i + 1)],
+      true
+    );
+    return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point[0]},${point[1]}`;
+  };
+
+  const lineCommand = (point) => `L ${point[0]} ${point[1]}`;
+
+  const svgPath = (points, command) => {
+    // build the d attributes by looping over the points
+    const d = [...points, points[0]].reduce(
+      (acc, point, i, a) =>
+        i === 0 // if first point
+          ? `M ${point[0]},${point[1]}` // else
+          : `${acc} ${bezierCommand(point, i, a)}`,
+      ""
+    );
+    return d;
+  };
+
+  let path = "";
+
+  let noiseStep = 0.0;
+  let noiseAccelStep = 0.0;
+
+  let mouseOver = false;
+
+  const simplex = new SimplexNoise();
+
+  let points;
+
+  function animate() {
+    // for every point...
+    for (let i = 0; i < points.length; i++) {
+      const point = points[i];
+
+      // return a pseudo random value between -1 / 1 based on this point's current x, y positions in "time"
+      const nX =
+        noise(point.noiseOffsetX, point.noiseOffsetX) * Number(variance);
+      const nY =
+        noise(point.noiseOffsetY, point.noiseOffsetY) * Number(variance);
+      // map this noise value to a new value, somewhere between it's original location -20 and it's original location + 20
+      const x = map(nX, 0, 1, point.originX - 5, point.originX + 5);
+      const y = map(nY, 0, 1, point.originY - 5, point.originY + 5);
+
+      // update the point's current coordinates
+      point.x = x;
+      point.y = y;
+
+      // progress the point's x, y values through "time"
+      point.noiseOffsetX += noiseStep;
+      point.noiseOffsetY += noiseStep;
+    }
+
+    // console.log(points);
+
+    if (noiseStep + noiseAccelStep < 0.005) {
+      noiseStep = noiseStep + noiseAccelStep;
+    } else if (noiseStep + noiseAccelStep < 0) {
+      noiseAccelStep = 0;
+    }
+
+    if (noiseStep > 0) {
+      requestAnimationFrame(animate);
+    }
+
+    path = svgPath(points.map((p) => [p.x, p.y]));
+  }
+
+  function map(n, start1, end1, start2, end2) {
+    return ((n - start1) / (end1 - start1)) * (end2 - start2) + start2;
+  }
+
+  function noise(x, y) {
+    return simplex.noise2D(x, y);
+  }
+
+  function createRegularPoints(numPoints) {
+    const points = [];
+    // used to equally space each point around the circle
+    const angleStep = (Math.PI * 2) / numPoints;
+    // the radius of the circle
+    const rad = 100;
+
+    for (let i = 0; i <= numPoints - 1; i++) {
+      // x & y coordinates of the current point
+      const theta = angleStep * (i - 1);
+
+      const x = 100 + Math.cos(theta) * rad;
+      const y = 100 + Math.sin(theta) * rad;
+
+      // store the point's position
+      points.push({
+        x: x,
+        y: y,
+        // reference to the point's original point for when we modulate the values later
+        originX: x,
+        originY: y,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      });
+    }
+
+    return points;
+  }
+
+  function createPointsAlt() {
+    return [
+      {
+        x: 30,
+        y: 0,
+        originX: 30,
+        originY: 0,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 170,
+        y: 0,
+        originX: 170,
+        originY: 0,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 200,
+        y: 100,
+        originX: 200,
+        originY: 100,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 170,
+        y: 200,
+        originX: 170,
+        originY: 200,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 30,
+        y: 200,
+        originX: 30,
+        originY: 200,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 0,
+        y: 100,
+        originX: 0,
+        originY: 100,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+    ];
+  }
+
+  // if (document.querySelector("div")) {
+  //   document.querySelector("div").addEventListener("mouseenter", () => {
+  //     noiseAccelStep = 0.0005;
+  //     //if (noiseStep === 0) {
+  //     animate();
+  //     //}
+  //   });
+
+  //   document.querySelector("div").addEventListener("mouseleave", () => {
+  //     noiseAccelStep = -0.0001;
+  //   });
+  // }
+
+  // setInterval(() => {
+  //   console.log(noiseStep);
+  // }, 1000);
+
+  function handleMouseEnter() {
+    mouseOver = true;
+    noiseAccelStep = 0.003;
+    animate();
+  }
+
+  const debouncedHandleMouseEnter = debounce(handleMouseEnter);
+
+  function handleMouseLeave() {
+    mouseOver = false;
+    noiseAccelStep = -0.0001;
+  }
+  const debouncedHandleMouseLeave = debounce(handleMouseLeave);
+
+  onMount(async () => {
+    console.log(shape); // "some default value"
+    await tick();
+    console.log(shape); // "Foo"
+
+    // our <path> element
+
+    switch (shape) {
+      case "hexagon":
+        points = createRegularPoints(6);
+        break;
+      case "octagon":
+        points = createRegularPoints(8);
+        break;
+      case "rectangle":
+        points = createPointsAlt();
+        break;
+    }
+    animate();
+  });
+</script>
+
+<div
+  class="blob"
+  on:mouseenter={interactive === "true" && debouncedHandleMouseEnter}
+  on:mouseleave={interactive === "true" && debouncedHandleMouseLeave}
+>
+  <div class="content">
+    <slot />
+  </div>
+  <svg viewBox="0 0 200 200" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="Gradient1">
+        <stop stop-color={fill} offset="0%" />
+        <stop stop-color={fill2 || fill} offset="100%" />
+      </linearGradient>
+    </defs>
+    <!-- <svg viewBox="20 10 160 180" preserveAspectRatio="none"> -->
+    <path
+      d={path}
+      fill="url(#Gradient1)"
+      style="box-shadow: 5px 10px #888888"
+    />
+  </svg>
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .blob {
+    padding: 32px 24px;
+    position: relative;
+  }
+
+  path {
+    cursor: pointer;
+  }
+
+  .content > * {
+    margin: 0;
+  }
+
+  svg {
+    width: 100%;
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+  }
+</style>
