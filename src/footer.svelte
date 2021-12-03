@@ -20,7 +20,11 @@
       <div>info@topsolution.it</div>
       <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
       <div>Sede Operativa Via Livorno, 60, 10144 Torino TO</div>
-      <div><span class="footer-bottom__iva">P.IVA/CF</span><span class="footer-bottom__number">10031960015</span></div>
+      <div>
+        <span class="footer-bottom__iva">P.IVA/CF</span><span
+          class="footer-bottom__number">10031960015</span
+        >
+      </div>
       <br />
       <div class="footer-bottom__mark">© Top Solution s.r.l</div>
     </div>
@@ -41,6 +45,19 @@
     font-weight: 300;
   }
 
+  /*
+  @media only screen and (max-width: 600px) {
+    .footer-top {
+      background-color: red;
+    }
+  } */
+
+  /*
+  @media screen (width: 600px) {
+    .footer-top {
+      background-color: red;
+    }
+  } */
   .footer-top {
     max-width: 850px;
     margin: 0 auto;

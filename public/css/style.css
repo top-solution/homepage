@@ -4,6 +4,8 @@
 
   --ts-size-18: 18px;
   --ts-size-24: 24px;
+
+  --ts-mobile: 600px;
 }
 
 body {
