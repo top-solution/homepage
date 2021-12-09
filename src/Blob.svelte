@@ -11,9 +11,13 @@
 
   export let fill = "#E9E8F2";
   export let fill2;
+  export let rotate = null;
+  export let flip = false;
   export let shape = "hexagon";
+  export let fade = null;
   export let variance = 1;
   export let interactive = false;
+  export let padding = 0;
 
   console.log(shape);
 
@@ -84,6 +88,7 @@
   const simplex = new SimplexNoise();
 
   let points;
+  let transform = "";
 
   function animate() {
     // for every point...
@@ -274,23 +279,6 @@
     ];
   }
 
-  // if (document.querySelector("div")) {
-  //   document.querySelector("div").addEventListener("mouseenter", () => {
-  //     noiseAccelStep = 0.0005;
-  //     //if (noiseStep === 0) {
-  //     animate();
-  //     //}
-  //   });
-
-  //   document.querySelector("div").addEventListener("mouseleave", () => {
-  //     noiseAccelStep = -0.0001;
-  //   });
-  // }
-
-  // setInterval(() => {
-  //   console.log(noiseStep);
-  // }, 1000);
-
   function handleMouseEnter() {
     mouseOver = true;
     noiseAccelStep = 0.003;
@@ -306,11 +294,7 @@
   const debouncedHandleMouseLeave = debounce(handleMouseLeave);
 
   onMount(async () => {
-    console.log(shape); // "some default value"
     await tick();
-    console.log(shape); // "Foo"
-
-    // our <path> element
 
     switch (shape) {
       case "hexagon":
@@ -327,6 +311,18 @@
         break;
     }
     animate();
+
+    if (rotate || flip) {
+      transform = "transform:";
+
+      if (rotate) {
+        transform = `${transform} rotate(${rotate}deg)`;
+      }
+
+      if (flip) {
+        transform = `${transform} scaleX(-1) translateX(-100%)`;
+      }
+    }
   });
 </script>
 
@@ -334,6 +330,7 @@
   class="blob"
   on:mouseenter={interactive === "true" && debouncedHandleMouseEnter}
   on:mouseleave={interactive === "true" && debouncedHandleMouseLeave}
+  style={`padding: ${26 + Number(padding)}px ${24 + Number(padding)}px;`}
 >
   <div class="content">
     <slot />
@@ -341,15 +338,22 @@
   <svg viewBox="0 0 200 200" preserveAspectRatio="none">
     <defs>
       <linearGradient id="Gradient1">
-        <stop stop-color={fill} offset="0%" />
-        <stop stop-color={fill2 || fill} offset="100%" />
+        <stop
+          stop-color={fill}
+          offset="0%"
+          stop-opacity={fade === "x-reverse" ? 0 : undefined}
+        />
+        <stop
+          stop-color={fill2 || fill}
+          offset="100%"
+          stop-opacity={fade === "x" ? 0 : undefined}
+        />
       </linearGradient>
     </defs>
-    <!-- <svg viewBox="20 10 160 180" preserveAspectRatio="none"> -->
     <path
       d={path}
       fill="url(#Gradient1)"
-      style="box-shadow: 5px 10px #888888"
+      style={`box-shadow: 5px 10px #888888; ${transform}; transform-box: fill-box; transform-origin: center;`}
     />
   </svg>
 </div>
@@ -362,7 +366,6 @@
   }
 
   .blob {
-    padding: 32px 24px;
     position: relative;
   }
 
