@@ -18,8 +18,7 @@
   export let variance = 1;
   export let interactive = false;
   export let padding = 0;
-
-  console.log(shape);
+  export let src = null;
 
   /**
    * See https://francoisromain.medium.com/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
@@ -96,13 +95,12 @@
       const point = points[i];
 
       // return a pseudo random value between -1 / 1 based on this point's current x, y positions in "time"
-      const nX =
-        noise(point.noiseOffsetX, point.noiseOffsetX) * Number(variance);
-      const nY =
-        noise(point.noiseOffsetY, point.noiseOffsetY) * Number(variance);
+      const nX = noise(point.noiseOffsetX, point.noiseOffsetX);
+
+      const nY = noise(point.noiseOffsetY, point.noiseOffsetY);
       // map this noise value to a new value, somewhere between it's original location -20 and it's original location + 20
-      const x = map(nX, 0, 1, point.originX - 5, point.originX + 5);
-      const y = map(nY, 0, 1, point.originY - 5, point.originY + 5);
+      const x = map(nX, point.originX);
+      const y = map(nY, point.originY);
 
       // update the point's current coordinates
       point.x = x;
@@ -112,8 +110,6 @@
       point.noiseOffsetX += noiseStep;
       point.noiseOffsetY += noiseStep;
     }
-
-    // console.log(points);
 
     if (noiseStep + noiseAccelStep < 0.005) {
       noiseStep = noiseStep + noiseAccelStep;
@@ -125,11 +121,11 @@
       requestAnimationFrame(animate);
     }
 
-    path = svgPath(points.map((p) => [p.x, p.y]));
+    path = svgPath(points.map((p) => [p.x + 10, p.y + 10]));
   }
 
-  function map(n, start1, end1, start2, end2) {
-    return ((n - start1) / (end1 - start1)) * (end2 - start2) + start2;
+  function map(n, point) {
+    return point - 5 + n * 10 * Number(variance);
   }
 
   function noise(x, y) {
@@ -318,10 +314,6 @@
       if (rotate) {
         transform = `${transform} rotate(${rotate}deg)`;
       }
-
-      if (flip) {
-        transform = `${transform} scaleX(-1) translateX(-100%)`;
-      }
     }
   });
 </script>
@@ -330,12 +322,23 @@
   class="blob"
   on:mouseenter={interactive === "true" && debouncedHandleMouseEnter}
   on:mouseleave={interactive === "true" && debouncedHandleMouseLeave}
-  style={`padding: ${26 + Number(padding)}px ${24 + Number(padding)}px;`}
+  style={`padding: ${26 + Number(padding || 0)}px ${
+    24 + Number(padding || 0)
+  }px;`}
 >
   <div class="content">
-    <slot />
+    {#if src}
+      <div style="min-width: 300px; min-height: 320px;" />
+    {:else}
+      <slot />
+    {/if}
   </div>
-  <svg viewBox="0 0 200 200" preserveAspectRatio="none">
+  <svg
+    viewBox="0 0 210 210"
+    preserveAspectRatio="none"
+    id="mask00"
+    style={flip ? "transform: scaleX(-1)" : undefined}
+  >
     <defs>
       <linearGradient id="Gradient1">
         <stop
@@ -349,10 +352,21 @@
           stop-opacity={fade === "x" ? 0 : undefined}
         />
       </linearGradient>
+      <pattern
+        id="image"
+        patternUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="210"
+        height="210"
+      >
+        <image href={src} width="210" height="210" />
+      </pattern>
     </defs>
     <path
+      id="path"
       d={path}
-      fill="url(#Gradient1)"
+      fill={`url(${src ? "#image" : "#Gradient1"})`}
       style={`box-shadow: 5px 10px #888888; ${transform}; transform-box: fill-box; transform-origin: center;`}
     />
   </svg>
