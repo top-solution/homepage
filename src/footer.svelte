@@ -40,9 +40,15 @@
     min-height: 325px;
     position: absolute;
     bottom: 0;
+    left: 0;
     background-color: var(--ts-blue-color);
     width: 100%;
     font-weight: 300;
+  }
+
+  hr {
+    max-width: 960px;
+    margin: auto;
   }
 
   /*
