@@ -28,3 +28,7 @@ hr {
   max-width: 960px;
   margin: 0 auto;
 }
+
+.component-container {
+  margin-top: 70px;
+}
