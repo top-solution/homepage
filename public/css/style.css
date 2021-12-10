@@ -32,3 +32,11 @@ hr {
 .component-container {
   margin-top: 70px;
 }
+
+.main-title {
+  font-size: 36px;
+  line-height: 42px;
+  color: var(--ts-blue-color);
+  margin-bottom: 70px;
+  text-align: center;
+}
