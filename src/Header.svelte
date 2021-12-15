@@ -1,4 +1,4 @@
-<svelte:options tag="svelte-header" />
+<svelte:options tag="ts-header" />
 
 <header>
   <div class="sub-header">

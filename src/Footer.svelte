@@ -1,4 +1,4 @@
-<svelte:options tag="svelte-footer" />
+<svelte:options tag="ts-footer" />
 
 <footer>
   <div class="footer-top">
@@ -61,7 +61,7 @@
 
   footer {
     height: 477px;
-    background-color: var(--ts-blue-color);
+    background-color: #1E1E65;
     width: 100%;
     font-weight: 300;
     color: white;
@@ -71,7 +71,7 @@
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
-    padding: 30px 0;
+    padding: 28px 0;
     max-width: 960px;
   }
 
@@ -84,24 +84,24 @@
     flex: 0 0 20%;
   }
   .footer-top__box {
-    flex: 0 0 22%;
+    flex: 0 0 20%;
   }
 
   .footer-top__bordered-box {
     flex: 0 0 32%;
     border-left: 1px solid #fff;
-    padding-left: 29px;
-    margin-left: 29px;
+    padding-left: 28px;
+    margin-left: 28px;
   }
 
   .footer-top__link-box > div {
-    margin: 7px 0;
+    margin: 8px 0;
   }
   .footer-top__box > div {
-    margin: 7px 0;
+    margin: 8px 0;
   }
   .footer-top__bordered-box > div {
-    margin: 7px 0;
+    margin: 8px 0;
   }
 
   .footer-bottom {
@@ -112,7 +112,7 @@
     border-left: 1px solid #fff;
     font-size: 15px;
     line-height: 18px;
-    padding-left: 18px;
+    padding-left: 16px;
     width: 173px;
   }
   .footer-bottom__iva {
