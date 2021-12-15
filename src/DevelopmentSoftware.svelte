@@ -5,7 +5,7 @@
 </script>
 
 <div class="component-container">
-  <div class="main-title">SVILUPPO SOFTWARE</div>
+  <h1>SVILUPPO SOFTWARE</h1>
   <div class="flex-container">
     <ts-blob
       interactive="true"

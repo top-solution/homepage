@@ -5,7 +5,7 @@
 </script>
 
 <div class="component-container">
-  <div class="main-title">SVILUPPO DELLE RISORSE UMANE</div>
+  <h1>SVILUPPO DELLE RISORSE UMANE</h1>
   <div class="flex-container">
     <ts-blob
       interactive="true"
