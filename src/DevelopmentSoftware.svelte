@@ -5,7 +5,14 @@
   <div class="flex-container">
     <ts-blob interactive="true" shape="rectangle" style="max-width: 300px;">
       <div style="text-align: center;">
-        <img src="../img/devices.svg" alt="devices icon" width="50" height="35" />
+        <p>
+          <img
+            src="../img/icons/devices.svg"
+            alt="devices icon"
+            width="50"
+            height="35"
+          />
+        </p>
         <b>EXAGON</b>
         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
       </div>
