@@ -1,77 +1,73 @@
-<svelte:options tag="ts-development-software" />
+<svelte:options tag="ts-development-hr" />
 
 <script>
   //import Button from "./Button.svelte";
 </script>
 
 <div class="component-container">
-  <div class="main-title">SVILUPPO SOFTWARE</div>
+  <div class="main-title">SVILUPPO DELLE RISORSE UMANE</div>
   <div class="flex-container">
     <ts-blob
       interactive="true"
       shape="rectangle"
       style="max-width: 300px;"
-      fill="#E3F1FA"
+      fill="#E9E8F2"
     >
       <div class="center">
         <p>
           <img
-            src="../img/icons/lens.svg"
+            src="../img/icons/devices.svg"
             alt="devices icon"
             width="50"
             height="35"
           />
         </p>
-        <b>APPLICAZIONI WEB E MOBILE</b>
-        <p>
-          Single page web applications, rest api, micro-services, hybrid apps
-        </p>
-      </div>
-    </ts-blob>
-    <ts-blob
-      interactive="true"
-      shape="rectangle"
-      style="max-width: 300px;"
-      fill="#E3F1FA"
-    >
-      <div class="center">
-        <p>
-          <img
-            src="../img/icons/palace.svg"
-            alt="devices icon"
-            width="50"
-            height="35"
-          />
-        </p>
-        <b>CONSULENZA SVILUPPO SW</b>
-        <p>Kick-off progetti, sviluppo e manutenzione, disaster recovery</p>
+        <b>AUDIT COMPETENZE</b>
+        <p>Analisi e mappatura delle competenze professionali</p>
       </div>
     </ts-blob>
     <ts-blob
       interactive="true"
       shape="octagon"
       style="max-width: 300px;"
-      fill="#E3F1FA"
+      fill="#E9E8F2"
     >
       <div class="center">
         <p>
           <img
-            src="../img/icons/user.svg"
+            src="../img/icons/optionPaper.svg"
             alt="devices icon"
             width="50"
             height="35"
           />
         </p>
-        <b>CLOUD COMPUTING</b>
+        <b>SVILUPPO ORGANIZZATIVO</b>
+        <p>Training, coaching e crescita professionale</p>
+      </div>
+    </ts-blob>
+    <ts-blob
+      interactive="true"
+      shape="rectangle"
+      style="max-width: 300px;"
+      fill="#E9E8F2"
+    >
+      <div class="center">
         <p>
-          Utilizziamo servizi cloud per rendere i progetti sempre
-          raggiungibili!!!
+          <img
+            src="../img/icons/cloud.svg"
+            alt="devices icon"
+            width="50"
+            height="35"
+          />
         </p>
+        <b>SVILUPPO INDIVIDUALE</b>
+        <p>Management diagnostic e clima organizzativo</p>
       </div>
     </ts-blob>
   </div>
   <div class="button-container">
-    <!-- <Button
+    <!--
+    <Button
       bg="transparent"
       textColor="#312783"
       text="Scopri"
