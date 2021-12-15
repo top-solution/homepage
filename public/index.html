@@ -24,13 +24,18 @@
       type="text/css"
     />
     <!-- Web Components -->
-    <script src="./build/footer.js"></script>
-    <script src="./build/header.js"></script>
+
+    <script src="./build/Header.js"></script>
+    <script src="./build/Footer.js"></script>
+    <script src="./build/Customers.js"></script>
+    <script src="./build/Blob.js"></script>
   </head>
 
-  <body>
-    <svelte-header></svelte-header>
-    <div>dev<div>
-    <svelte-footer></svelte-footer>
+  <body style="overflow-x: hidden">
+    <div style="max-width: 960px; margin: 0 auto">
+      <ts-header></ts-header>
+      <ts-customers></ts-customers>
+    </div>
+    <ts-footer></ts-footer>
   </body>
 </html>
