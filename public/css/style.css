@@ -44,3 +44,23 @@ h1 {
 .spacing-margin-8 {
   margin: 8px;
 }
+
+.center {
+  text-align: center;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.ml-12 {
+  margin-left: 12px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 8px 22px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 1px solid rgba(49, 39, 131, 0.5);
+}

@@ -7,10 +7,10 @@
 <div class="component-container">
   <h1>I NOSTRI CLIENTI</h1>
   <div class="flex-container">
-    <Picture base="customers" src="sky" alt="Sky"/>
+    <Picture base="customers" src="sky" alt="Sky" />
     <Picture base="customers" src="reply" alt="Reply" />
     <Picture base="customers" src="collins" alt="Collins" />
-    <Picture base="customers" src="sanmarco" alt="San Marco" />
+    <Picture base="customers" src="sanMarco" alt="San Marco" />
     <Picture base="customers" src="whirpool" alt="Whirpool" />
     <Picture base="customers" src="confindustria" alt="Confindustria" />
 
