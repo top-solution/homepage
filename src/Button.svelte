@@ -9,8 +9,7 @@
   export let border = "none";
   export let href;
   export let interactive = false;
-
-  console.log(bg, textColor)
+  export let type = "";
 
   let mouseOver = false;
   function handleMouseEnter() {
@@ -24,10 +23,9 @@
   }
   const debouncedHandleMouseLeave = debounce(handleMouseLeave);
 
-
-  if (!window.customElements.get('svelte-button')) {
-   window.customElements.define('svelte-button', Button);
-}
+  if (!window.customElements.get("svelte-button")) {
+    window.customElements.define("svelte-button", Button);
+  }
 </script>
 
 <div

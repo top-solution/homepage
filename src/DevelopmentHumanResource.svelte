@@ -66,7 +66,7 @@
     </ts-blob>
   </div>
   <div class="button-container">
-    <!--
+    <!-- svelte-ignore missing-declaration -->
     <Button
       bg="transparent"
       textColor="#312783"
@@ -74,7 +74,7 @@
       href="randompage.html"
       interactive="true"
       border="1px solid rgba(49, 39, 131, 0.5)"
-    /> -->
+    />
   </div>
 </div>
 
