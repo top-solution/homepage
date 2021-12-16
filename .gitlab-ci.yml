@@ -62,7 +62,7 @@ deploy-prod:
     entrypoint: [""]
   script:
     - aws s3 sync ./public s3://topsolution/website/ --exclude \"*DS_Store\" --delete --acl public-read
-    - aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths /index.html /robots.txt
+    - aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths *
   rules:
     - if: $CI_COMMIT_TAG
       when: manual
