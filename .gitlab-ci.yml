@@ -21,8 +21,8 @@ build:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_REF_NAME == "master"
-    - if: $CI_COMMIT_REF_NAME == "dev"
+    # - if: $CI_COMMIT_REF_NAME == "master"
+    # - if: $CI_COMMIT_REF_NAME == "dev"
     - if: $CI_COMMIT_TAG
     - if: $DEPLOY_TO
 
@@ -41,10 +41,10 @@ deploy-dev:
     entrypoint: [""]
   script:
     - aws s3 sync ./public s3://topsolution/website-dev/ --exclude \"*DS_Store\" --delete --acl public-read
-    - aws cloudfront create-invalidation --distribution-id E3BPM5YSN13FES --paths /index.html /robots.txt
+    - aws cloudfront create-invalidation --distribution-id E3BPM5YSN13FES --paths '/*'
   rules:
-    - if: '$CI_COMMIT_REF_NAME == "master"'
-    - if: '$CI_COMMIT_REF_NAME == "dev"'
+    # - if: '$CI_COMMIT_REF_NAME == "master"'
+    # - if: '$CI_COMMIT_REF_NAME == "dev"'
     - if: '$DEPLOY_TO == "dev"'
 
 deploy-prod:
@@ -62,7 +62,7 @@ deploy-prod:
     entrypoint: [""]
   script:
     - aws s3 sync ./public s3://topsolution/website/ --exclude \"*DS_Store\" --delete --acl public-read
-    - aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths /index.html /robots.txt
+    - aws cloudfront create-invalidation --distribution-id E3O0GC5RWFQTF7 --paths '/*'
   rules:
     - if: $CI_COMMIT_TAG
       when: manual

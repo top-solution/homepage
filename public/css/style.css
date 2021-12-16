@@ -1,11 +1,18 @@
 :root {
   --ts-blue-color: #312783;
+  --ts-blue-color-light: #4857A3;
+  --ts-blue-color-dark: #221b5c;
+  --ts-azure-color: #75bae5;
+  --ts-azure-color-light: #e3f1fa;
   --ts-white-color: #fff;
 
   --ts-size-18: 18px;
   --ts-size-24: 24px;
 
   --ts-mobile: 600px;
+
+  --ts-transition-timing-quick: 200ms;
+  --ts-transition-function-default: ease-in-out;
 }
 
 body {
@@ -58,9 +65,25 @@ h1 {
 }
 
 .button {
-  cursor: pointer;
-  padding: 8px 22px;
+  align-items: center;
   border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  height: 42px;
+  justify-content: center;
+  letter-spacing: 0.46px;
+  line-height: 26px;
+  padding: 8px 22px;
   text-transform: uppercase;
-  border: 1px solid rgba(49, 39, 131, 0.5);
+
+  border: 0;
+
+  transition: background-color var(--ts-transition-timing-quick)
+      var(--ts-transition-function-default),
+    border-color var(--ts-transition-timing-quick)
+      var(--ts-transition-function-default);
 }
