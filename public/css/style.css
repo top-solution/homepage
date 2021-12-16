@@ -1,11 +1,17 @@
 :root {
   --ts-blue-color: #312783;
+  --ts-blue-color-dark: #221b5c;
+  --ts-azure-color: #75bae5;
+  --ts-azure-color-dark: #5282a0;
   --ts-white-color: #fff;
 
   --ts-size-18: 18px;
   --ts-size-24: 24px;
 
   --ts-mobile: 600px;
+
+  --ts-transition-timing-quick: 200ms;
+  --ts-transition-function-default: ease-in-out;
 }
 
 body {
