@@ -4,11 +4,10 @@
   import debounce from "lodash.debounce";
 
   export let variant = "primary"; // "primary" | "secondary" | "outlined"
-  export let component = null; // null | "a" | "button" | "label"
+  export let component = null; // null | "a" | "button"
 
   export let href;
   export let type;
-  export let htmlFor;
 </script>
 
 {#if component === null || component === "a"}
@@ -50,18 +49,6 @@
       />
     {/if}
   </button>
-{/if}
-{#if component === "label"}
-  <!-- svelte-ignore a11y-label-has-associated-control -->
-  <label
-    class="button"
-    class:button--primary={variant === "primary"}
-    class:button--secondary={variant === "secondary"}
-    for={htmlFor}
-    {href}
-  >
-    <slot />
-  </label>
 {/if}
 
 <style>
