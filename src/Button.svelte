@@ -110,10 +110,6 @@
     background-color: transparent;
   }
 
-  .button--outlined:hover {
-    background-color: white;
-  }
-
   .button__icon {
     width: 0;
     margin-left: 0;
