@@ -8,6 +8,7 @@
 
   export let href;
   export let type;
+  export let htmlFor;
 </script>
 
 {#if component === null || component === "a"}
@@ -56,6 +57,7 @@
     class="button"
     class:button--primary={variant === "primary"}
     class:button--secondary={variant === "secondary"}
+    for={htmlFor}
     {href}
   >
     <slot />
