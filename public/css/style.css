@@ -65,9 +65,25 @@ h1 {
 }
 
 .button {
-  cursor: pointer;
-  padding: 8px 22px;
+  align-items: center;
   border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  height: 42px;
+  justify-content: center;
+  letter-spacing: 0.46px;
+  line-height: 26px;
+  padding: 8px 22px;
   text-transform: uppercase;
-  border: 1px solid rgba(49, 39, 131, 0.5);
+
+  border: 0;
+
+  transition: background-color var(--ts-transition-timing-quick)
+      var(--ts-transition-function-default),
+    border-color var(--ts-transition-timing-quick)
+      var(--ts-transition-function-default);
 }

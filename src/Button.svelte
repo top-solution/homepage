@@ -56,26 +56,6 @@
   @import "css/normalize.css";
   @import "css/style.css";
 
-  .button {
-    box-sizing: border-box;
-    height: 42px;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 26px;
-    letter-spacing: 0.46px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: 0;
-
-    transition: background-color var(--ts-transition-timing-quick)
-        var(--ts-transition-function-default),
-      border-color var(--ts-transition-timing-quick)
-        var(--ts-transition-function-default);
-  }
-
   .button--primary {
     color: white;
     background-color: var(--ts-blue-color);
