@@ -9,7 +9,7 @@
     <ts-blob
       interactive="true"
       shape="rectangle"
-      style="max-width: 300px;"
+      style="max-width: 230px;"
       fill="#E3F1FA"
     >
       <div class="center">
@@ -30,7 +30,7 @@
     <ts-blob
       interactive="true"
       shape="rectangle"
-      style="max-width: 300px;"
+      style="max-width: 230px;"
       fill="#E3F1FA"
     >
       <div class="center">
@@ -48,8 +48,8 @@
     </ts-blob>
     <ts-blob
       interactive="true"
-      shape="octagon"
-      style="max-width: 300px;"
+      shape="rectangle"
+      style="max-width: 230px;"
       fill="#E3F1FA"
     >
       <div class="center">
@@ -82,7 +82,7 @@
   .flex-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 80px;
     color: #312783;
   }
 

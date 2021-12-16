@@ -1,5 +1,9 @@
 <svelte:options tag="ts-header" />
 
+<script>
+  export let color = "light"; //light, dark
+</script>
+
 <header>
   <div class="sub-header">
     <span>ENG</span>
@@ -12,8 +16,8 @@
   <nav>
     <div class="nav__logo">
       <img
-        src="img/topsolution_logo_dark.svg"
-        alt="top-solution_logo"
+        src="img/topsolution_logo_{color}.svg"
+        alt="top Solution"
         width="150"
         height="70"
       />
@@ -60,6 +64,11 @@
   li {
     font-size: 24px;
     line-height: 28px;
+  }
+
+  li:hover {
+    color: var(--ts-blue-color-hovering);
+    text-decoration: underline;
   }
 
   a {

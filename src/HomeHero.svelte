@@ -6,13 +6,17 @@
 <div class="component-container">
   <div class="flex-container hero-title">
     <div class="flex-item">
-      Entra in <strong>contatto</strong> con noi Scopri le opportunità per il
-      tuo <strong>business</strong>
-      offerte dalle nostre <strong>soluzioni</strong>
+      <div class="text">
+        Entra in <strong>contatto</strong> con noi Scopri le opportunità per il
+        tuo <strong>business</strong>
+        offerte dalle nostre <strong>soluzioni</strong>
+      </div>
+      <div class="button-container">
+        <ts-button variant="primary" href="randompage.html"
+          >Contattaci</ts-button
+        >
+      </div>
     </div>
-  </div>
-  <div class="button-container">
-    <ts-button variant="primary" href="randompage.html">Contattaci</ts-button>
   </div>
 </div>
 
@@ -26,6 +30,10 @@
     justify-content: flex-end;
     margin-bottom: 24px;
     color: #312783;
+  }
+
+  .text {
+    margin-bottom: 80px;
   }
 
   .flex-item {
