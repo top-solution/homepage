@@ -1,7 +1,6 @@
 <svelte:options tag="ts-home-hero" />
 
 <script>
-  //import Button from "../public/build/Button.js"; //"./Button.svelte";
 </script>
 
 <div class="component-container">
@@ -13,15 +12,7 @@
     </div>
   </div>
   <div class="button-container">
-    <!-- svelte-ignore missing-declaration -->
-    <Button
-      bg="#312783"
-      textColor="#fff"
-      text="Contattaci"
-      href="randompage.html"
-      border="1px solid rgba(49, 39, 131, 0.5)"
-      type="contact"
-    />
+    <ts-button variant="primary" href="randompage.html">Contattaci</ts-button>
   </div>
 </div>
 

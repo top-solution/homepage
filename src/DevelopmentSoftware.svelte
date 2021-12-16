@@ -1,7 +1,6 @@
 <svelte:options tag="ts-development-software" />
 
 <script>
-  //import Button from "./Button.svelte";
 </script>
 
 <div class="component-container">
@@ -71,15 +70,7 @@
     </ts-blob>
   </div>
   <div class="button-container">
-    <!-- svelte-ignore missing-declaration -->
-    <Button
-      bg="transparent"
-      textColor="#312783"
-      text="Scopri"
-      href="randompage.html"
-      interactive="true"
-      border="1px solid rgba(49, 39, 131, 0.5)"
-    />
+    <ts-button variant="outlined" href="randompage.html">Scopri</ts-button>
   </div>
 </div>
 
