@@ -61,7 +61,7 @@
 
   footer {
     height: 477px;
-    background-color: #1E1E65;
+    background-color: #1e1e65;
     width: 100%;
     font-weight: 300;
     color: white;
@@ -71,7 +71,7 @@
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
-    padding: 28px 0;
+    padding: 24px 0;
     max-width: 960px;
   }
 
@@ -105,7 +105,7 @@
   }
 
   .footer-bottom {
-    margin-top: 36px;
+    margin: 28px 0 16px 0;
   }
 
   .footer-bottom__text {
@@ -127,7 +127,7 @@
 
   .flex-container {
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
     justify-content: center;
   }
 
