@@ -117,5 +117,10 @@
       margin-top: 3px;
       margin-right: var(--ts-spacing-3);
     }
+
+    ts-request-info {
+      margin-top: var(--ts-spacing-10);
+      display: block;
+    }
   }
 </style>

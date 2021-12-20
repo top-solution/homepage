@@ -143,7 +143,7 @@
         </defs>
       </svg>
     </div>
-    <h2>Richiedi <b>informazioni</b></h2>
+    <h2 class="title-3">Richiedi <b>informazioni</b></h2>
     <p class="request-info__subtitle">
       <b>Compila</b> e <b>invia</b> il form per avere maggiori
       <b>informazioni</b>
@@ -315,7 +315,7 @@
   }
 
   .request-info__drawer--open {
-    max-height: 700px;
+    max-height: 1200px;
   }
 
   .request-info h2 {
@@ -355,17 +355,12 @@
 
   ts-textfield,
   ts-select {
-    margin: 0 var(--ts-spacing-1) var(--ts-spacing-3);
+    margin: 0 0 var(--ts-spacing-3);
   }
 
   ts-textfield,
   ts-select {
     flex: 1 0 100%;
-  }
-
-  #request-info__employees-textfield,
-  #request-info__industry-textfield {
-    flex: 1 1 auto;
   }
 
   #request-info__employees-textfield {
@@ -388,7 +383,7 @@
     }
 
     .request-info__drawer--open {
-      max-height: 22000px;
+      max-height: 700px;
     }
 
     ts-textfield,
