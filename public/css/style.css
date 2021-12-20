@@ -210,3 +210,10 @@ h1 {
     line-height: 30px;
   }
 }
+
+.gm-fullscreen-control, .gm-control-active {
+  background-color: var(--ts-blue-color) !important;
+}
+.gm-fullscreen-control img, .gm-control-active img {
+  filter: brightness(4);
+}
