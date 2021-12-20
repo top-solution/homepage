@@ -27,6 +27,7 @@
 
 <div
   class="ts-textfield"
+  class:ts-textfield--focused={focused}
   class:ts-textfield--shrink={focused || (value && value.length > 0)}
   class:ts-textfield--error={error && error.length > 0}
 >
@@ -118,6 +119,9 @@
     box-sizing: border-box;
   }
   .ts-textfield--shrink label {
+    transform: translate(14px, -9px) scale(0.75);
+  }
+  .ts-textfield--focused label {
     color: var(--ts-blue-color);
     transform: translate(14px, -9px) scale(0.75);
   }
@@ -161,6 +165,9 @@
     border-radius: 4px;
   }
   .ts-textfield--shrink .ts-textfield__fieldset {
+    border-width: 2px;
+  }
+  .ts-textfield--focused .ts-textfield__fieldset {
     border-color: var(--ts-blue-color);
     border-width: 2px;
   }

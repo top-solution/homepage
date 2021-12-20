@@ -11,7 +11,6 @@
   export let options = [];
 
   let menuOpen = false;
-
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
 
@@ -21,12 +20,22 @@
       component.dispatchEvent(new CustomEvent(name, { detail }));
   };
 
+  const closeMenu = () => {
+    menuOpen = false;
+    document.removeEventListener("mousedown", clickOutsideEventListener);
+  };
+
+  const clickOutsideEventListener = () => {
+    closeMenu();
+  };
+
   let focused;
 </script>
 
 <div
   class="ts-select"
-  class:ts-select--shrink={focused || (value && value.length > 0)}
+  class:ts-select--focused={focused || menuOpen}
+  class:ts-select--shrink={focused || menuOpen || (value && value.length > 0)}
   class:ts-select--error={error && error.length > 0}
 >
   <label for="outlined-basic">{label}</label>
@@ -51,6 +60,12 @@
       }}
       on:mousedown={(e) => {
         e.preventDefault();
+        setTimeout(() => {
+          // Wait for the transition to end
+          if (menuOpen) {
+            document.addEventListener("mousedown", clickOutsideEventListener);
+          }
+        }, 250);
         menuOpen = true;
       }}
     >
@@ -74,7 +89,7 @@
         <li
           on:mousedown={() => {
             component.value = option.value;
-            menuOpen = false;
+            closeMenu();
             dispatch("change", {});
           }}
         >
@@ -112,7 +127,7 @@
     letter-spacing: 0.00938em;
     padding: 0px;
     display: block;
-    transform-origin: left top;
+    transform-origin: center top;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -129,6 +144,9 @@
     box-sizing: border-box;
   }
   .ts-select--shrink label {
+    transform: translate(14px, -9px) scale(0.75);
+  }
+  .ts-select--focused label {
     color: var(--ts-blue-color);
     transform: translate(14px, -9px) scale(0.75);
   }
@@ -188,6 +206,9 @@
     border-radius: 4px;
   }
   .ts-select--shrink .ts-select__fieldset {
+    border-width: 2px;
+  }
+  .ts-select--focused .ts-select__fieldset {
     border-color: var(--ts-blue-color);
     border-width: 2px;
   }
@@ -246,8 +267,9 @@
     width: 100%;
     z-index: 10;
     opacity: 0;
-    transform: scale(100%, 0);
+    transform: scale(90%, 50%);
     top: 56px;
+    pointer-events: none;
   }
 
   .ts-select__menu ul {
@@ -270,5 +292,6 @@
   .ts-select__menu.ts-select__menu--open {
     opacity: 1;
     transform: scale(100%, 100%);
+    pointer-events: all;
   }
 </style>
