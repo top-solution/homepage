@@ -5,7 +5,7 @@
   import Blob from "./Blob.svelte";
   import Layout from "./Layout.svelte";
   import TeamPerson from "./TeamPerson.svelte";
-  import ContactUs from "./ContactUs.svelte";
+  import RequestInfo from "./RequestInfo.svelte";
 
   let contactUsOpen = false;
   let contactUsElement = null;
@@ -51,7 +51,7 @@
   </div>
 
   <div bind:this={contactUsElement} class="contact-us">
-    <ts-contact-us open={true} on:formsubmit={handleContactUsSubmit} />
+    <ts-request-info open={true} on:formsubmit={handleContactUsSubmit} />
   </div>
   <mwc-snackbar
     bind:this={snackbarElement}
@@ -89,6 +89,11 @@
     height: 20px;
     margin-right: var(--ts-spacing-2);
     margin-top: 2px;
+  }
+
+  ts-request-info {
+    margin-top: var(--ts-spacing-15);
+    display: block;
   }
 
   @media only screen and (max-width: 900px) {
