@@ -142,13 +142,14 @@
     z-index: 1;
     pointer-events: none;
     box-sizing: border-box;
+    transform-origin: left center;
   }
   .ts-select--shrink label {
-    transform: translate(14px, -9px) scale(0.75);
+    transform: translate(14px, -10px) scale(0.75);
   }
   .ts-select--focused label {
     color: var(--ts-blue-color);
-    transform: translate(14px, -9px) scale(0.75);
+    transform: translate(14px, -10px) scale(0.75);
   }
   .ts-select--error label {
     color: var(--ts-error);
@@ -184,6 +185,7 @@
     right: 16px;
     top: 16px;
     opacity: 0.6;
+    pointer-events: none;
   }
 
   .ts-select__arrow.ts-select__arrow--open {

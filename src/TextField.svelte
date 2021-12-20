@@ -117,13 +117,14 @@
     z-index: 1;
     pointer-events: none;
     box-sizing: border-box;
+    transform-origin: left center;
   }
   .ts-textfield--shrink label {
-    transform: translate(14px, -9px) scale(0.75);
+    transform: translate(14px, -10px) scale(0.75);
   }
   .ts-textfield--focused label {
     color: var(--ts-blue-color);
-    transform: translate(14px, -9px) scale(0.75);
+    transform: translate(14px, -10px) scale(0.75);
   }
   .ts-textfield--error label {
     color: var(--ts-error);
