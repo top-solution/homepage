@@ -1,4 +1,4 @@
-<svelte:options tag="ts-page-team" />
+<svelte:options tag="ts-page-contacts" />
 
 <script>
   import "@material/mwc-snackbar";
@@ -29,53 +29,29 @@
   }
 </script>
 
-<ts-layout class="page-team">
-  <div slot="external">
-    <div class="page-team__giga-blob">
-      <img src="img/giga-blob.svg" alt="" />
-    </div>
-    <div class="page-team__giga-blob-mobile">
-      <img src="img/giga-blob-mobile.svg" alt="" />
-    </div>
-  </div>
-  <div class="page-team__copy">
-    <h1>Team</h1>
-    <p>
-      Top Solution nasce dall’associazione di una grande <b>expertise</b> nel
-      settore della <b>consulenza informatica</b> e della
-      <b>gestione delle risorse umane</b>. Il team di informatici è affiancato
-      da <b>psicologi del lavoro</b> per la realizzazione delle
-      <b>piattaforme HR</b>
-      e per la progettazione e la realizzazione di tutti i progetti rivolti alle
-      <b>risorse umane</b>.
-    </p>
-  </div>
-  <div class="people">
-    <div class="people__spacer" />
-    <ts-team-person name="Paolo Andruetto" companyrole="CEO" />
-    <ts-team-person name="Gabriele Destefanis" companyrole="CTO" />
-    <div class="people__spacer" />
-    <ts-team-person name="Luca Osti" companyrole="Backend Developer" />
-    <ts-team-person name="Gabriele Spada" companyrole="Frontend Developer" />
-    <ts-team-person name="Luca Barbetti" companyrole="Frontend Developer" />
-    <div class="people__spacer" />
-    <ts-team-person name="Elisa Solinas" companyrole="Backend Developer" />
-    <ts-team-person name="Federico Valetti" companyrole="Analista Funzionale" />
-    <div class="people__spacer" />
-    <ts-team-person name="Matteo Marsala" companyrole="Frontend Developer" />
-    <ts-team-person name="Martina Bilancieri" companyrole="UX/UI Designer" />
-    <ts-team-person src="img/question_mark.svg" name="Vuoi far parte del team?">
-      <ts-button
-        id="people__contact-us-button"
-        variant="primary"
-        component="button"
-        on:click={handleClick}>Candidati</ts-button
-      >
-    </ts-team-person>
+<ts-layout class="page-contacts">
+  <div class="page-contacts__copy">
+    <h1 class="title-2">Contatti</h1>
+    <ol class="page-contacts__contacts">
+      <li id="page-contacts__contacts__email">
+        <img src="img/icons/mail.svg" alt="" />info@topsolution.it
+      </li>
+      <li>
+        <img src="img/icons/pin.svg" alt="" />Sede Legale: Corso Regina
+        Margherita, 254 10144 Torino TO
+      </li>
+      <li id="page-contacts__contacts__phone">
+        <img src="img/icons/phone.svg" alt="" />+39 0112488280
+      </li>
+      <li>
+        <img src="img/icons/pin.svg" alt="" />Sede Operativa: Via Livorno, 60
+        10144 Torino TO
+      </li>
+    </ol>
   </div>
 
   <div bind:this={contactUsElement} class="contact-us">
-    <!-- <ts-contact-us open={contactUsOpen} on:formsubmit={handleContactUsSubmit} /> -->
+    <ts-contact-us open={true} on:formsubmit={handleContactUsSubmit} />
   </div>
   <mwc-snackbar
     bind:this={snackbarElement}
@@ -88,86 +64,53 @@
   @import "css/normalize.css";
   @import "css/style.css";
 
-  .page-team {
+  .page-contacts {
     color: var(--ts-blue-color);
   }
 
-  .people {
-    margin: var(--ts-spacing-15) 0;
+  .page-contacts__contacts {
+    list-style: none;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    font-size: 18px;
+    padding-left: 0;
+    margin-top: var(--ts-spacing-9);
   }
 
-  .people__spacer {
-    flex: 0 1 16.6666%;
-    max-width: 16.6666%;
+  .page-contacts__contacts li {
+    flex: 1 0 50%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--ts-spacing-1-5);
   }
 
-  ts-team-person {
-    margin: var(--ts-spacing-7) 0;
-    flex: 0 1 33.3333%;
-    max-width: 33.3333%;
-  }
-
-  #people__contact-us-button {
-    margin-top: var(--ts-spacing-2);
-  }
-
-  .page-team__giga-blob {
-    display: block;
-    position: absolute;
-    width: 1400px;
-    overflow: visible;
-    top: -430px;
-    left: -700px;
-    z-index: -1;
-  }
-
-  .page-team__giga-blob-mobile {
-    display: none;
-  }
-
-  .contact-us {
-    margin-bottom: var(--ts-spacing-10);
+  .page-contacts__contacts img {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--ts-spacing-2);
+    margin-top: 2px;
   }
 
   @media only screen and (max-width: 900px) {
-    .page-team__copy {
-      max-width: 80%;
-    }
-
-    .page-team__copy h1 {
+    .page-contacts__copy h1 {
       text-align: left;
       margin: var(--ts-spacing-2) 0 var(--ts-spacing-1);
     }
 
-    .people {
-      margin: var(--ts-spacing-3) 0;
+    .page-contacts__contacts {
+      font-size: 20px;
+      margin-top: var(--ts-spacing-2);
     }
 
-    .page-team__giga-blob {
-      display: none;
+    .page-contacts__contacts li {
+      flex: 1 0 100%;
     }
 
-    .page-team__giga-blob-mobile {
-      display: block;
-      position: absolute;
-      width: 1400px;
-      overflow: visible;
-      top: -130px;
-      left: -270px;
-      z-index: -1;
-    }
-
-    ts-team-person {
-      margin: var(--ts-spacing-1) 2px;
-      flex: 0 1 calc(50% - 4px);
-      max-width: calc(50% - 4px);
-    }
-
-    .people__spacer {
-      display: none;
+    .page-contacts__contacts img {
+      width: 22px;
+      height: 22px;
+      margin-top: 3px;
+      margin-right: var(--ts-spacing-3);
     }
   }
 </style>
