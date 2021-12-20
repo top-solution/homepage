@@ -165,9 +165,6 @@
     border-color: rgba(0, 0, 0, 0.38);
     border-radius: 4px;
   }
-  .ts-textfield--shrink .ts-textfield__fieldset {
-    border-width: 2px;
-  }
   .ts-textfield--focused .ts-textfield__fieldset {
     border-color: var(--ts-blue-color);
     border-width: 2px;

@@ -207,9 +207,6 @@
     border-color: rgba(0, 0, 0, 0.38);
     border-radius: 4px;
   }
-  .ts-select--shrink .ts-select__fieldset {
-    border-width: 2px;
-  }
   .ts-select--focused .ts-select__fieldset {
     border-color: var(--ts-blue-color);
     border-width: 2px;
