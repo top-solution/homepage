@@ -2,11 +2,7 @@
 
 <script>
   import "@material/mwc-snackbar";
-  import Blob from "./Blob.svelte";
-  import Layout from "./Layout.svelte";
-  import TeamPerson from "./TeamPerson.svelte";
   import RequestInfo from "./RequestInfo.svelte";
-  import { onMount } from "svelte";
 
   let contactUsOpen = false;
   let contactUsElement = null;
@@ -36,26 +32,29 @@
 <ts-layout class="page-contacts">
   <div class="page-contacts__copy">
     <h1 class="title-2">Contatti</h1>
-    <ol class="page-contacts__contacts">
-      <li id="page-contacts__contacts__email">
-        <img src="img/icons/mail.svg" alt="" /><a
-          href="mailto:info@topsolution.it">info@topsolution.it</a
-        >
-      </li>
-      <li>
-        <img src="img/icons/pin.svg" alt="" />Sede Legale: Corso Regina
-        Margherita, 254 10144 Torino TO
-      </li>
-      <li id="page-contacts__contacts__phone">
-        <img src="img/icons/phone.svg" alt="" /><a href="tel:+39 0112488280"
-          >+39 0112488280</a
-        >
-      </li>
-      <li>
-        <img src="img/icons/pin.svg" alt="" />Sede Operativa Via Livorno, 60 B2
-        Lab, 10144 Torino TO
-      </li>
-    </ol>
+    <div class="page-contacts__contacts-container">
+      <ts-office-map />
+      <ol class="page-contacts__contacts">
+        <li id="page-contacts__contacts__email">
+          <img src="img/icons/mail.svg" alt="" /><a
+            href="mailto:info@topsolution.it">info@topsolution.it</a
+          >
+        </li>
+        <li>
+          <img src="img/icons/pin.svg" alt="" />
+          Sede Legale: Corso Regina Margherita, 254 10144 Torino TO
+        </li>
+        <li id="page-contacts__contacts__phone">
+          <img src="img/icons/phone.svg" alt="" /><a href="tel:+39 0112488280"
+            >+39 0112488280</a
+          >
+        </li>
+        <li>
+          <img src="img/icons/pin.svg" alt="" />Sede Operativa: Via Livorno, 60
+          B2 Lab, 10144 Torino TO
+        </li>
+      </ol>
+    </div>
   </div>
 
   <div bind:this={contactUsElement} class="contact-us">
@@ -63,9 +62,8 @@
   </div>
   <mwc-snackbar
     bind:this={snackbarElement}
-    labelText="Grazie per aver inviato la tua candidatura spontanea!"
+    labelText="La tua richiesta è stata presa in carico dal nostro team"
   />
-  <ts-office-map />
 </ts-layout>
 
 <style>
@@ -77,22 +75,34 @@
     color: var(--ts-blue-color);
   }
 
-  .page-contacts__contacts {
-    list-style: none;
+  .page-contacts__contacts-container {
     display: flex;
-    flex-wrap: wrap;
+    margin-top: var(--ts-spacing-8);
+    margin-bottom: var(--ts-spacing-15);
+  }
+
+  .page-contacts__contacts {
+    flex: 0 0 224px;
+    list-style: none;
     font-size: 18px;
     padding-left: 0;
-    margin-top: var(--ts-spacing-9);
+    padding-left: var(--ts-spacing-3);
+    border-left: 1px solid var(--ts-blue-color);
+    margin: 0;
   }
 
   .page-contacts__contacts li {
     flex: 1 0 50%;
     display: flex;
     align-items: flex-start;
-    margin-bottom: var(--ts-spacing-1-5);
+    margin-bottom: var(--ts-spacing-3);
     order: 4;
   }
+
+  .page-contacts__contacts li:last-of-type {
+    margin-bottom: 0;
+  }
+
   .page-contacts__contacts li a {
     font-weight: inherit;
   }
@@ -114,9 +124,10 @@
   }
 
   ts-office-map {
+    height: auto;
     display: block;
-    margin-top: var(--ts-spacing-8);
-    margin-bottom: var(--ts-spacing-15);
+    flex: 1 1 0;
+    max-width: 50%;
   }
 
   @media only screen and (max-width: 900px) {
@@ -127,7 +138,7 @@
 
     .page-contacts__contacts {
       font-size: 20px;
-      margin-top: var(--ts-spacing-2);
+      border-left: 0;
     }
 
     .page-contacts__contacts li {
@@ -144,6 +155,25 @@
     ts-request-info {
       margin-top: var(--ts-spacing-10);
       display: block;
+    }
+
+    ts-office-map {
+      height: auto;
+      display: block;
+      flex: 1 1 0;
+      max-width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .page-contacts__contacts-container {
+      flex-direction: column;
+      margin-top: var(--ts-spacing-2);
+    }
+
+    ts-office-map {
+      min-height: 240px;
+      margin-bottom: var(--ts-spacing-7);
     }
   }
 </style>
