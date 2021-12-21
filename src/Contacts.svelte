@@ -165,14 +165,18 @@
     <h1 class="title-2">Contatti</h1>
     <ol class="page-contacts__contacts">
       <li id="page-contacts__contacts__email">
-        <img src="img/icons/mail.svg" alt="" />info@topsolution.it
+        <img src="img/icons/mail.svg" alt="" /><a
+          href="mailto:info@topsolution.it">info@topsolution.it</a
+        >
       </li>
       <li>
         <img src="img/icons/pin.svg" alt="" />Sede Legale: Corso Regina
         Margherita, 254 10144 Torino TO
       </li>
       <li id="page-contacts__contacts__phone">
-        <img src="img/icons/phone.svg" alt="" />+39 0112488280
+        <img src="img/icons/phone.svg" alt="" /><a href="tel:+39 0112488280"
+          >+39 0112488280</a
+        >
       </li>
       <li>
         <img src="img/icons/pin.svg" alt="" />Sede Operativa: Via Livorno, 60
@@ -241,6 +245,9 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: var(--ts-spacing-1-5);
+  }
+  .page-contacts__contacts li a {
+    font-weight: inherit;
   }
 
   .page-contacts__contacts img {
