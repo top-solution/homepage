@@ -52,8 +52,8 @@
         >
       </li>
       <li>
-        <img src="img/icons/pin.svg" alt="" />Sede Operativa: Via Livorno, 60
-        10144 Torino TO
+        <img src="img/icons/pin.svg" alt="" />Sede Operativa Via Livorno, 60 B2
+        Lab, 10144 Torino TO
       </li>
     </ol>
   </div>
