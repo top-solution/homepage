@@ -245,6 +245,7 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: var(--ts-spacing-1-5);
+    order: 4;
   }
   .page-contacts__contacts li a {
     font-weight: inherit;
@@ -253,8 +254,12 @@
   .page-contacts__contacts img {
     width: 20px;
     height: 20px;
-    margin-right: var(--ts-spacing-2);
+    margin-right: var(--ts-spacing-3);
     margin-top: 2px;
+  }
+
+  #page-contacts__contacts__phone {
+    order: 1;
   }
 
   ts-request-info {
