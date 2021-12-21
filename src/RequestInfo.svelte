@@ -243,9 +243,9 @@
           }}
           options={[
             { value: "", text: "" },
-            { value: "1", text: "1-9" },
-            { value: "10", text: "10-99" },
-            { value: "100", text: "100-1000" },
+            { value: "1", text: "1-15" },
+            { value: "16", text: "16-50" },
+            { value: "50", text: "Oltre 50" },
           ]}
         />
         <ts-select
