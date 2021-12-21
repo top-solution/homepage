@@ -5,7 +5,7 @@
 
   let mapElement = null;
 
-  const mapCenter = { lat: 45.0876111, lng: 7.6729824 };
+  const mapCenter = { lat: 45.088044, lng: 7.673456 };
   let map = null;
 
   onMount(async () => {
@@ -23,6 +23,8 @@
         // zoomControl: true,
         // fullscreenControl: true,
         gestureHandling: "none",
+        maxZoom: 18,
+        minZoom: 10,
         styles: [
           {
             featureType: "all",
@@ -42,22 +44,25 @@
           {
             featureType: "landscape",
             elementType: "geometry",
-            stylers: [{ color: "#1b2742" }],
+            stylers: [{ color: "#29416e" }],
+          },
+
+          {
+            featureType: "landscape.man_made",
+            elementType: "geometry.fill",
+            stylers: [
+              {
+                visibility: "on",
+              },
+              {
+                color: "#1b2742",
+              },
+            ],
           },
           {
             featureType: "landscape.man_made",
             elementType: "geometry",
-            stylers: [{ visibility: "off" }],
-          },
-          {
-            featureType: "landscape.man_made",
-            elementType: "geometry",
-            stylers: [{ visibility: "on" }],
-          },
-          {
-            featureType: "landscape.man_made.buildings",
-            elementType: "geometry",
-            stylers: [{ stroke: "#2a416f" }],
+            stylers: [{ visibility: "on" }, { stroke: "#f6f6f6" }],
           },
           {
             featureType: "landscape.natural",
@@ -123,7 +128,7 @@
       });
 
       new google.maps.Marker({
-        position: { lat: 45.0876111, lng: 7.6729824 },
+        position: mapCenter,
         icon: "img/icons/pin-map.svg",
         map: map,
       });
@@ -145,22 +150,22 @@
       mapElement.requestFullscreen();
     }}><img src="img/icons/center-map.svg" alt="center map" /></ts-button
   >
-  <!-- <ts-button
-      id="office-map__zoom-in-button"
-      variant="secondary"
-      icon={true}
-      on:click={() => {
-        map.setZoom(map.zoom + 1);
-      }}><img src="img/icons/zoom-in-map.svg" alt="zoom in map" /></ts-button
-    >
-    <ts-button
-      id="office-map__zoom-out-button"
-      variant="secondary"
-      icon={true}
-      on:click={() => {
-        map.setZoom(map.zoom - 1);
-      }}><img src="img/icons/zoom-out-map.svg" alt="zoom out map" /></ts-button
-    > -->
+  <ts-button
+    id="office-map__zoom-in-button"
+    variant="secondary"
+    icon={true}
+    on:click={() => {
+      map.setZoom(map.zoom + 1);
+    }}><img src="img/icons/zoom-in-map.svg" alt="zoom in map" /></ts-button
+  >
+  <ts-button
+    id="office-map__zoom-out-button"
+    variant="secondary"
+    icon={true}
+    on:click={() => {
+      map.setZoom(map.zoom - 1);
+    }}><img src="img/icons/zoom-out-map.svg" alt="zoom out map" /></ts-button
+  >
 </div>
 
 <style>
@@ -170,7 +175,7 @@
 
   #office-map__container,
   #office-map {
-    height: 600px;
+    height: 100%;
     width: 100%;
   }
 
@@ -199,7 +204,7 @@
     width: 42px;
   }
 
-  /* #office-map__zoom-in-button {
+  #office-map__zoom-in-button {
     position: absolute;
     bottom: calc(var(--ts-spacing-4) + 42px);
     right: var(--ts-spacing-2);
@@ -211,15 +216,19 @@
     bottom: var(--ts-spacing-3);
     right: var(--ts-spacing-2);
     width: 42px;
-  } */
+  }
 
-  /* #office-map__zoom-in-button img,
-  #office-map__zoom-out-button img, */
+  #office-map__zoom-in-button img,
+  #office-map__zoom-out-button img,
   #office-map__center-button img {
     width: 24px;
     height: 24px;
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 600px) {
+    #office-map__container,
+    #office-map {
+      min-height: 240px;
+    }
   }
 </style>

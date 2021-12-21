@@ -59,6 +59,10 @@
   @import "css/normalize.css";
   @import "css/style.css";
 
+  .button {
+    user-select: none;
+  }
+
   .button--primary {
     color: white;
     background-color: var(--ts-blue-color);
