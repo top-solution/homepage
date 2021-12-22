@@ -128,6 +128,7 @@
     display: block;
     flex: 1 1 0;
     max-width: 50%;
+    margin-right: auto;
   }
 
   @media only screen and (max-width: 900px) {
