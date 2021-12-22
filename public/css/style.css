@@ -13,6 +13,19 @@
   --ts-size-24: 24px;
 
   --ts-mobile: 600px;
+  --ts-tablet-max: 960px;
+
+  /* FIXME: any better alternative to this? */
+  --ts-spacing-1: 8px;
+  --ts-spacing-2: 16px;
+  --ts-spacing-3: 24px;
+  --ts-spacing-4: 32px;
+  --ts-spacing-5: 40px;
+  --ts-spacing-6: 48px;
+  --ts-spacing-7: 56px;
+  --ts-spacing-8: 64px;
+  --ts-spacing-9: 72px;
+  --ts-spacing-10: 80px;
 
   --ts-transition-timing-quick: 200ms;
   --ts-transition-function-default: ease-in-out;
@@ -32,6 +45,32 @@ a {
 
 hr {
   margin: 0;
+}
+
+h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: var(--ts-spacing-1);
+  text-transform: capitalize;
+
+  color: var(--ts-blue-color);
+}
+
+p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 140%;
+
+  color: var(--ts-blue-color);
+}
+
+b {
+  font-weight: 500;
 }
 
 .container {
