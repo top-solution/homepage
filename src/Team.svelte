@@ -48,7 +48,12 @@
     <ts-team-person name="Matteo Marsala" companyrole="Frontend Developer" />
     <ts-team-person name="Martina Bilancieri" companyrole="UX/UI Designer" />
     <ts-team-person src="img/question_mark.svg" name="Vuoi far parte del team?">
-      <button on:click={(e) => (contactUsOpen = true)}>Contattaci</button>
+      <ts-button
+        id="people__contact-us-button"
+        variant="primary"
+        component="button"
+        on:click={(e) => (contactUsOpen = true)}>Candidati</ts-button
+      >
     </ts-team-person>
   </div>
 
@@ -95,6 +100,10 @@
     .people__spacer {
       display: none;
     }
+  }
+
+  #people__contact-us-button {
+    margin-top: var(--ts-spacing-2);
   }
 
   .giga-blob {

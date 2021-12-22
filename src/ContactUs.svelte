@@ -14,7 +14,7 @@
     experience: "",
     email: "",
     phone: "",
-    attachment: null,
+    curriculum: null,
   };
 
   let nameElement;
@@ -25,6 +25,8 @@
   let experienceElement;
   let emailElement;
   let phoneElement;
+  let curriculumInputElement;
+  let curriculumError;
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -61,6 +63,11 @@
       phoneElement.blur();
     }
 
+    if (!form.curriculum || from.curriculum.length === "") {
+      curriculumError = "Allegare un CV in formato PDF";
+      return false;
+    }
+
     if (!form.surname || form.name.length === 0) {
       return false;
     }
@@ -82,9 +89,8 @@
     if (!form.phone || form.name.length === 0) {
       return false;
     }
-    if (!form.attachment || form.name.length === 0) {
-      return false;
-    }
+
+    form = {};
 
     console.log(event, form, nameElement);
   }
@@ -272,26 +278,59 @@
         on:change={(e) => (form.phone = e.target.value)}
         bind:this={phoneElement}
       />
-      <!-- TODO: use button component -->
-      <label
-        id="contact-us__curriculum-upload-label"
-        for="contact-us__curriculum-upload"
-      >
-        ALLEGA FILE
-        <img src="img/icons/attachment.svg" alt="" style="height: 22px;" />
-      </label>
-
+    </div>
+    {#if form.curriculum}
+      <div id="contact-us__cv-form-row">
+        <p>
+          {`${form.curriculum}`
+            .replace("/", "\\")
+            .substring(`${form.curriculum}`.lastIndexOf("\\") + 1)}
+        </p>
+        <img
+          src="../img/icons/delete.svg"
+          alt="remove icon"
+          on:click={(e) => {
+            form.curriculum = null;
+            curriculumInputElement.value = "";
+          }}
+        />
+      </div>
+    {/if}
+    <div id="contact-us__cv-button-form-row">
       <input
         type="file"
         id="contact-us__curriculum-upload"
         name="curriculum"
-        accept="application/msword, application/pdf"
-        value={form.attachment}
-        on:change={(e) => (form.attachment = e.target.value)}
+        accept="application/pdf"
+        bind:this={curriculumInputElement}
+        on:change={(e) => {
+          form.curriculum = e.target.value;
+          curriculumError = null;
+        }}
       />
+      {#if curriculumError}
+        <p id="contact-us__cv-error-text">{curriculumError}</p>
+      {/if}
+      <label
+        class="button"
+        id="contact-us__curriculum-upload-label"
+        for="contact-us__curriculum-upload"
+      >
+        ALLEGA CV
+        <img src="img/icons/attachment.svg" alt="" />
+      </label>
     </div>
-    <!-- TODO: use button component -->
-    <button type="submit">Invia</button>
+    <div id="contact-us__submit-button-form-row">
+      <ts-button
+        id="contact-us__submit"
+        component="button"
+        variant="secondary"
+        type="submit"
+        on:click={handleSubmit}
+      >
+        Invia
+      </ts-button>
+    </div>
   </div>
 </form>
 
@@ -302,7 +341,6 @@
 
   .contact-us {
     position: relative;
-    margin-bottom: var(--ts-spacing-15);
   }
 
   .contact-us h2 {
@@ -331,10 +369,10 @@
   .contact-us__form-row {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -8px var(--ts-spacing-3);
   }
 
-  mwc-textfield,
-  #contact-us__curriculum-upload-label {
+  mwc-textfield {
     margin: 0 var(--ts-spacing-1);
   }
 
@@ -342,34 +380,71 @@
     display: none;
   }
 
-  #contact-us__curriculum-upload-label {
-    background: #312783;
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-      0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
-    color: #fff;
-    border-radius: 4px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
+  #contact-us__cv-form-row {
+    align-items: center;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: var(--ts-spacing-4);
+    border-radius: 2px;
+    display: flex;
+    margin: 0 0 var(--ts-spacing-2) 0;
+  }
+
+  #contact-us__cv-form-row p {
+    color: black;
     font-size: 15px;
-    line-height: 40px;
-    letter-spacing: 0.46px;
-    text-transform: uppercase;
-    color: #ffffff;
-    padding: 8px 22px;
-    box-sizing: border-box;
+    font-weight: 300;
     margin: 0;
   }
 
-  button[type="submit"] {
-    margin: var(--ts-spacing-3) auto;
+  #contact-us__cv-form-row img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    margin-left: auto;
+  }
+
+  #contact-us__cv-form-row img:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  #contact-us__cv-button-form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--ts-spacing-3);
+  }
+
+  #contact-us__curriculum-upload-label {
+    /* Fake button, can't use component due to WebComponents limitations */
+    color: white;
+    background-color: var(--ts-blue-color);
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  #contact-us__curriculum-upload-label img {
+    height: 18px;
+    margin-left: var(--ts-spacing-1);
+  }
+
+  #contact-us__curriculum-upload-label:hover {
+    background-color: var(--ts-blue-color-light);
+  }
+
+  #contact-us__cv-error-text {
+    color: var(--mdc-theme-error, #b00020);
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
   }
 
   mwc-textfield,
   #contact-us__curriculum-upload-label {
     flex: 1 0 100%;
-    margin: 0;
-    margin-bottom: var(--ts-spacing-3);
   }
 
   #contact-us__graduation-grade-textfield,
@@ -381,12 +456,21 @@
     margin-right: var(--ts-spacing-1);
   }
 
+  #contact-us__submit-button-form-row {
+    display: flex;
+  }
+
+  #contact-us__submit {
+    margin: 0 auto;
+  }
+
+  /* var(--mdc-theme-error, #b00020); */
+
   @media only screen and (min-width: 900px) {
     #contact-us__name-textfield,
     #contact-us__surname-textfield,
     #contact-us__graduation-textfield,
-    #contact-us__email-textfield,
-    #contact-us__phone-textfield {
+    #contact-us__email-textfield {
       flex: 1 1 0;
       margin-right: var(--ts-spacing-1);
     }
@@ -395,7 +479,11 @@
     #contact-us__graduation-grade-textfield,
     #contact-us__experience-textfield,
     #contact-us__curriculum-upload-label {
-      flex: 0 0 166px;
+      flex: 0 0 172px;
+    }
+
+    #contact-us__phone-textfield {
+      flex: 0 0 360px;
     }
   }
 </style>
