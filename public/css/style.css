@@ -88,9 +88,23 @@ p {
   font-style: normal;
   font-weight: 300;
   font-size: 28px;
-  line-height: 140%;
+  line-height: 39px;
 
   color: var(--ts-blue-color);
+
+}
+
+@media only screen and (max-width: 960px) {
+  p {
+    line-height: 33px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  p {
+    line-height: 30px;
+    font-size: 25px;
+  }
 }
 
 b {

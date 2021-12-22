@@ -30,14 +30,15 @@
 </script>
 
 <ts-layout class="page-team">
-  <div
-    slot="external"
-    class="giga-blob"
-    style=" position: absolute; width: 1400px;  overflow: visible;"
-  >
-    <img src="img/giga-blob.svg" alt="" />
+  <div slot="external">
+    <div class="page-team__giga-blob">
+      <img src="img/giga-blob.svg" alt="" />
+    </div>
+    <div class="page-team__giga-blob-mobile">
+      <img src="img/giga-blob-mobile.svg" alt="" />
+    </div>
   </div>
-  <div class="copy">
+  <div class="page-team__copy">
     <h1>Team</h1>
     <p>
       Top Solution nasce dall’associazione di una grande <b>expertise</b> nel
@@ -109,25 +110,12 @@
     max-width: 33.3333%;
   }
 
-  @media only screen and (max-width: 900px) {
-    ts-team-person {
-      margin: var(--ts-spacing-3) 0;
-      flex: 0 1 calc(50% - 16px);
-      max-width: calc(50% - 16px);
-      margin-left: 8px;
-      margin-right: 8px;
-    }
-
-    .people__spacer {
-      display: none;
-    }
-  }
-
   #people__contact-us-button {
     margin-top: var(--ts-spacing-2);
   }
 
-  .giga-blob {
+  .page-team__giga-blob {
+    display: block;
     position: absolute;
     width: 1400px;
     overflow: visible;
@@ -136,7 +124,50 @@
     z-index: -1;
   }
 
+  .page-team__giga-blob-mobile {
+    display: none;
+  }
+
   .contact-us {
     margin-bottom: var(--ts-spacing-10);
+  }
+
+  @media only screen and (max-width: 900px) {
+    .page-team__copy {
+      max-width: 80%;
+    }
+
+    .page-team__copy h1 {
+      text-align: left;
+      margin: var(--ts-spacing-2) 0 var(--ts-spacing-1);
+    }
+
+    .people {
+      margin: var(--ts-spacing-3) 0;
+    }
+
+    .page-team__giga-blob {
+      display: none;
+    }
+
+    .page-team__giga-blob-mobile {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -130px;
+      left: -270px;
+      z-index: -1;
+    }
+
+    ts-team-person {
+      margin: var(--ts-spacing-1) 2px;
+      flex: 0 1 calc(50% - 4px);
+      max-width: calc(50% - 4px);
+    }
+
+    .people__spacer {
+      display: none;
+    }
   }
 </style>
