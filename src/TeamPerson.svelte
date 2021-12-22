@@ -37,7 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 var(--ts-spacing-3);
+    margin: 0 var(--ts-spacing-1);
   }
 
   .team-person__name,

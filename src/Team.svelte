@@ -88,7 +88,7 @@
   }
 
   .people {
-    margin: var(--ts-spacing-10) 0;
+    margin: var(--ts-spacing-15) 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -100,13 +100,14 @@
   }
 
   ts-team-person {
-    margin-bottom: var(--ts-spacing-7);
+    margin: var(--ts-spacing-7) 0;
     flex: 0 1 33.3333%;
     max-width: 33.3333%;
   }
 
   @media only screen and (max-width: 900px) {
     ts-team-person {
+      margin: var(--ts-spacing-3) 0;
       flex: 0 1 calc(50% - 16px);
       max-width: calc(50% - 16px);
       margin-left: 8px;
@@ -126,8 +127,8 @@
     position: absolute;
     width: 1400px;
     overflow: visible;
-    top: -45px;
-    left: -300px;
+    top: -450px;
+    left: -700px;
     z-index: -1;
   }
 
