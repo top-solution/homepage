@@ -327,11 +327,7 @@
   }px;`}
 >
   <div class="content">
-    {#if src}
-      <div style="min-width: 300px; min-height: 320px;" />
-    {:else}
-      <slot />
-    {/if}
+    <slot />
   </div>
   <svg
     viewBox="0 0 210 210"
