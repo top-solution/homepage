@@ -7,9 +7,15 @@
   import ContactUs from "./ContactUs.svelte";
 
   let contactUsOpen = false;
+  let contactUsElement = null;
 
   function handleClick() {
     contactUsOpen = true;
+  }
+
+  function handleContactUsSubmit() {
+    debugger;
+    contactUsOpen = false;
   }
 </script>
 
@@ -19,7 +25,7 @@
     class="giga-blob"
     style=" position: absolute; width: 1400px;  overflow: visible;"
   >
-    <!-- <img src="img/giga-blob.svg" alt="" /> -->
+    <img src="img/giga-blob.svg" alt="" />
   </div>
   <div class="copy">
     <h1>Team</h1>
@@ -52,13 +58,23 @@
         id="people__contact-us-button"
         variant="primary"
         component="button"
-        on:click={(e) => (contactUsOpen = true)}>Candidati</ts-button
+        on:click={(e) => {
+          contactUsOpen = true;
+
+          setTimeout(() => {
+            contactUsElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest",
+            });
+          }, 200);
+        }}>Candidati</ts-button
       >
     </ts-team-person>
   </div>
 
-  <div class="contact-us" class:contact-us--open={contactUsOpen}>
-    <ts-contact-us />
+  <div bind:this={contactUsElement} class="contact-us">
+    <ts-contact-us open={contactUsOpen} on:formsubmit={handleContactUsSubmit} />
   </div>
 </ts-layout>
 
@@ -116,13 +132,6 @@
   }
 
   .contact-us {
-    max-height: 0;
-    transition: max-height 250ms;
-    overflow: hidden;
     margin-bottom: var(--ts-spacing-10);
-  }
-
-  .contact-us--open {
-    max-height: 4000px;
   }
 </style>

@@ -29,6 +29,7 @@
   --ts-spacing-15: 120px;
 
   --ts-transition-timing-quick: 200ms;
+  --ts-transition-timing-default: 400ms;
   --ts-transition-function-default: ease-in-out;
 }
 

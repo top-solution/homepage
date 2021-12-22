@@ -3,7 +3,19 @@
 <script>
   import "@material/mwc-textfield";
   import { onMount } from "svelte";
-  let submitted = false;
+  import { createEventDispatcher } from "svelte";
+  import { get_current_component } from "svelte/internal";
+
+  export let open = false;
+
+  const component = get_current_component();
+  const svelteDispatch = createEventDispatcher();
+
+  const dispatch = (name, detail) => {
+    svelteDispatch(name, detail);
+    component.dispatchEvent &&
+      component.dispatchEvent(new CustomEvent(name, { detail }));
+  };
 
   let form = {
     name: "",
@@ -25,8 +37,8 @@
   let experienceElement;
   let emailElement;
   let phoneElement;
-  let curriculumInputElement;
   let curriculumError;
+  let curriculumInputElement;
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -63,7 +75,7 @@
       phoneElement.blur();
     }
 
-    if (!form.curriculum || from.curriculum.length === "") {
+    if (!form.curriculum) {
       curriculumError = "Allegare un CV in formato PDF";
       return false;
     }
@@ -86,13 +98,20 @@
     if (!form.email || form.name.length === 0) {
       return false;
     }
-    if (!form.phone || form.name.length === 0) {
-      return false;
-    }
-
-    form = {};
+    form = {
+      name: "",
+      surname: "",
+      age: "",
+      graduation: "",
+      graduationGrade: "",
+      experience: "",
+      email: "",
+      phone: "",
+      curriculum: null,
+    };
 
     console.log(event, form, nameElement);
+    dispatch("formsubmit", {});
   }
 
   onMount(() => {
@@ -100,7 +119,7 @@
   });
 </script>
 
-<form class="contact-us" on:submit={handleSubmit}>
+<form class="contact-us" class:contact-us--open={open} on:submit={handleSubmit}>
   <!-- TODO: Use hexagon component -->
   <svg
     fill="none"
@@ -341,6 +360,14 @@
 
   .contact-us {
     position: relative;
+    max-height: 0;
+    transition: max-height var(--ts-transition-timing-default)
+      var(--ts-transition-function-default);
+    overflow: hidden;
+  }
+
+  .contact-us--open {
+    max-height: 4000px;
   }
 
   .contact-us h2 {
