@@ -19,7 +19,7 @@
     class="giga-blob"
     style=" position: absolute; width: 1400px;  overflow: visible;"
   >
-    <img src="img/giga-blob.svg" alt="" />
+    <!-- <img src="img/giga-blob.svg" alt="" /> -->
   </div>
   <div class="copy">
     <h1>Team</h1>
@@ -114,6 +114,6 @@
   }
 
   .contact-us--open {
-    max-height: 950px;
+    max-height: 4000px;
   }
 </style>

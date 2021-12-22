@@ -177,8 +177,9 @@
     <b>Inviaci</b> la tua <b>candidatura spontanea</b>
   </p>
   <div class="contact-us__form">
-    <div class="contact-us__form__row">
+    <div class="contact-us__form-row">
       <mwc-textfield
+        id="contact-us__name-textfield"
         outlined
         required
         name="name"
@@ -186,9 +187,9 @@
         value={form.name}
         on:change={(e) => (form.name = e.target.value)}
         bind:this={nameElement}
-        style="flex: 1 1 0"
       />
       <mwc-textfield
+        id="contact-us__surname-textfield"
         outlined
         required
         name="surname"
@@ -196,9 +197,9 @@
         value={form.surname}
         bind:this={surnameElement}
         on:change={(e) => (form.surname = e.target.value)}
-        style="flex: 1 1 0"
       />
       <mwc-textfield
+        id="contact-us__age-textfield"
         outlined
         required
         name="age"
@@ -209,11 +210,11 @@
         value={form.age}
         on:change={(e) => (form.age = e.target.value)}
         bind:this={ageElement}
-        style="flex: 0 1 130px"
       />
     </div>
-    <div class="contact-us__form__row">
+    <div class="contact-us__form-row">
       <mwc-textfield
+        id="contact-us__graduation-textfield"
         outlined
         required
         name="graduation"
@@ -221,9 +222,9 @@
         value={form.graduation}
         on:change={(e) => (form.graduation = e.target.value)}
         bind:this={graduationElement}
-        style="flex: 1 1 0"
       />
       <mwc-textfield
+        id="contact-us__graduation-grade-textfield"
         outlined
         required
         name="graduation-grade"
@@ -234,9 +235,9 @@
         value={form.graduationGrade}
         on:change={(e) => (form.graduationGrade = e.target.value)}
         bind:this={graduationGradeElement}
-        style="flex: 0 1 130px"
       />
       <mwc-textfield
+        id="contact-us__experience-textfield"
         outlined
         required
         name="experience"
@@ -247,11 +248,12 @@
         value={form.experience}
         on:change={(e) => (form.experience = e.target.value)}
         bind:this={experienceElement}
-        style="flex: 0 1 180px"
       />
     </div>
-    <div class="contact-us__form__row">
+
+    <div class="contact-us__form-row">
       <mwc-textfield
+        id="contact-us__email-textfield"
         outlined
         required
         name="email"
@@ -260,16 +262,15 @@
         value={form.email}
         on:change={(e) => (form.email = e.target.value)}
         bind:this={emailElement}
-        style="flex: 1 1 0"
       />
       <mwc-textfield
+        id="contact-us__phone-textfield"
         outlined
         name="phone"
         label="Cellulare"
         value={form.phone}
         on:change={(e) => (form.phone = e.target.value)}
         bind:this={phoneElement}
-        style="flex: 1 1 0"
       />
       <!-- TODO: use button component -->
       <label
@@ -279,6 +280,7 @@
         ALLEGA FILE
         <img src="img/icons/attachment.svg" alt="" style="height: 22px;" />
       </label>
+
       <input
         type="file"
         id="contact-us__curriculum-upload"
@@ -288,10 +290,8 @@
         on:change={(e) => (form.attachment = e.target.value)}
       />
     </div>
-    <div class="contact-us__form__row">
-      <!-- TODO: use button component -->
-      <button type="submit">Invia</button>
-    </div>
+    <!-- TODO: use button component -->
+    <button type="submit">Invia</button>
   </div>
 </form>
 
@@ -328,9 +328,9 @@
     display: block;
   }
 
-  .contact-us__form__row {
+  .contact-us__form-row {
     display: flex;
-    margin-bottom: var(--ts-spacing-3);
+    flex-wrap: wrap;
   }
 
   mwc-textfield,
@@ -357,13 +357,45 @@
     text-transform: uppercase;
     color: #ffffff;
     padding: 8px 22px;
+    box-sizing: border-box;
+    margin: 0;
   }
 
   button[type="submit"] {
     margin: var(--ts-spacing-3) auto;
   }
 
-  mwc-textfield[name="name"] {
-    flex: 1 1 0;
+  mwc-textfield,
+  #contact-us__curriculum-upload-label {
+    flex: 1 0 100%;
+    margin: 0;
+    margin-bottom: var(--ts-spacing-3);
+  }
+
+  #contact-us__graduation-grade-textfield,
+  #contact-us__experience-textfield {
+    flex: 1 1 auto;
+  }
+
+  #contact-us__graduation-grade-textfield {
+    margin-right: var(--ts-spacing-1);
+  }
+
+  @media only screen and (min-width: 900px) {
+    #contact-us__name-textfield,
+    #contact-us__surname-textfield,
+    #contact-us__graduation-textfield,
+    #contact-us__email-textfield,
+    #contact-us__phone-textfield {
+      flex: 1 1 0;
+      margin-right: var(--ts-spacing-1);
+    }
+
+    #contact-us__age-textfield,
+    #contact-us__graduation-grade-textfield,
+    #contact-us__experience-textfield,
+    #contact-us__curriculum-upload-label {
+      flex: 0 0 166px;
+    }
   }
 </style>
