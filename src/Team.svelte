@@ -4,6 +4,7 @@
   import Blob from "./Blob.svelte";
   import Layout from "./Layout.svelte";
   import TeamPerson from "./TeamPerson.svelte";
+  import ContactUs from "./ContactUs.svelte";
 
   let contactUsOpen = false;
 
@@ -62,7 +63,7 @@
   </div>
 
   <div class="contact-us" class:contact-us--open={contactUsOpen}>
-    <div style="min-height: 480px; width: 100%" />
+    <ts-contact-us />
   </div>
 </ts-layout>
 
@@ -97,9 +98,10 @@
   .contact-us {
     max-height: 0;
     transition: max-height 250ms;
+    overflow: hidden;
   }
 
   .contact-us--open {
-    max-height: 450px;
+    max-height: 950px;
   }
 </style>

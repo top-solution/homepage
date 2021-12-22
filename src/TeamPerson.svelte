@@ -15,8 +15,6 @@
       ? src
       : `img/team/${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
   });
-
-  console.log(src, personSrc);
 </script>
 
 <div class="team-person">

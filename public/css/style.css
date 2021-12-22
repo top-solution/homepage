@@ -26,9 +26,14 @@
   --ts-spacing-8: 64px;
   --ts-spacing-9: 72px;
   --ts-spacing-10: 80px;
+  --ts-spacing-15: 120px;
 
   --ts-transition-timing-quick: 200ms;
   --ts-transition-function-default: ease-in-out;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 body {
@@ -58,6 +63,23 @@ h1 {
 
   color: var(--ts-blue-color);
 }
+
+h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: var(--ts-spacing-1);
+  text-transform: capitalize;
+
+  color: var(--ts-blue-color);
+}
+
+h1, h2 > * {
+  text-transform: none;
+}
+
 
 p {
   font-family: Roboto;
