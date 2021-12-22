@@ -167,3 +167,25 @@ h1 {
     border-color var(--ts-transition-timing-quick)
       var(--ts-transition-function-default);
 }
+
+.title-2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: capitalize;
+  text-align: left;
+  margin-bottom: var(--ts-spacing-4);
+
+  color: var(--ts-blue-color);
+}
+
+
+@media only screen and (max-width: 900px) {
+  .title-2 {
+    font-size: 28px;
+    line-height: 33px;
+    margin-bottom: var(--ts-spacing-1);
+  }
+}

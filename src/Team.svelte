@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="page-team__copy">
-    <h1>Team</h1>
+    <h1 class="title-2">Team</h1>
     <p>
       Top Solution nasce dall’associazione di una grande <b>expertise</b> nel
       settore della <b>consulenza informatica</b> e della
@@ -135,11 +135,6 @@
   @media only screen and (max-width: 900px) {
     .page-team__copy {
       max-width: 80%;
-    }
-
-    .page-team__copy h1 {
-      text-align: left;
-      margin: var(--ts-spacing-2) 0 var(--ts-spacing-1);
     }
 
     .people {
