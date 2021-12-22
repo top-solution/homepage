@@ -9,8 +9,9 @@
     <ts-blob
       interactive="true"
       shape="rectangle"
-      style="max-width: 230px;"
+      style="max-width: 270px;"
       fill="#E9E8F2"
+      padding="24"
     >
       <div class="center">
         <p>
@@ -28,8 +29,9 @@
     <ts-blob
       interactive="true"
       shape="rectangle"
-      style="max-width: 230px;"
+      style="max-width: 270px;"
       fill="#E9E8F2"
+      padding="24"
     >
       <div class="center">
         <p>
@@ -47,8 +49,9 @@
     <ts-blob
       interactive="true"
       shape="rectangle"
-      style="max-width: 230px;"
+      style="max-width: 270px;"
       fill="#E9E8F2"
+      padding="24"
     >
       <div class="center">
         <p>
@@ -84,5 +87,18 @@
   .button-container {
     display: flex;
     justify-content: center;
+  }
+
+  ts-blob p {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    margin-top: 0;
+  }
+
+  ts-blob b {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 8px;
   }
 </style>
