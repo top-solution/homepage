@@ -1,6 +1,7 @@
 <svelte:options tag="ts-page-team" />
 
 <script>
+  import "@material/mwc-snackbar";
   import Blob from "./Blob.svelte";
   import Layout from "./Layout.svelte";
   import TeamPerson from "./TeamPerson.svelte";
@@ -8,14 +9,23 @@
 
   let contactUsOpen = false;
   let contactUsElement = null;
+  let snackbarElement = null;
 
   function handleClick() {
     contactUsOpen = true;
+
+    setTimeout(() => {
+      contactUsElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }, 200);
   }
 
   function handleContactUsSubmit() {
-    debugger;
     contactUsOpen = false;
+    snackbarElement.show();
   }
 </script>
 
@@ -58,17 +68,7 @@
         id="people__contact-us-button"
         variant="primary"
         component="button"
-        on:click={(e) => {
-          contactUsOpen = true;
-
-          setTimeout(() => {
-            contactUsElement.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-              inline: "nearest",
-            });
-          }, 200);
-        }}>Candidati</ts-button
+        on:click={handleClick}>Candidati</ts-button
       >
     </ts-team-person>
   </div>
@@ -76,6 +76,10 @@
   <div bind:this={contactUsElement} class="contact-us">
     <ts-contact-us open={contactUsOpen} on:formsubmit={handleContactUsSubmit} />
   </div>
+  <mwc-snackbar
+    bind:this={snackbarElement}
+    labelText="Grazie per aver inviato la tua candidatura spontanea!"
+  />
 </ts-layout>
 
 <style>
@@ -127,7 +131,7 @@
     position: absolute;
     width: 1400px;
     overflow: visible;
-    top: -450px;
+    top: -430px;
     left: -700px;
     z-index: -1;
   }

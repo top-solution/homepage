@@ -113,10 +113,6 @@
     console.log(event, form, nameElement);
     dispatch("formsubmit", {});
   }
-
-  onMount(() => {
-    console.log(nameElement);
-  });
 </script>
 
 <form class="contact-us" on:submit={handleSubmit}>
