@@ -39,14 +39,6 @@
     email: null,
   };
 
-  let nameElement;
-  let surnameElement;
-  let roleElement;
-  let companyNameElement;
-  let employeesElement;
-  let industryElement;
-  let emailElement;
-  let messageElement;
   let formElement;
 
   function handleSubmit(event) {
@@ -161,7 +153,7 @@
           error={formErrors.name}
           value={form.name}
           on:change={(e) => (form.name = e.target.value)}
-          on:keydown={(e) => {
+          on:keyup={(e) => {
             if (e.target.value.length) {
               formErrors.name = null;
             }
@@ -174,7 +166,7 @@
           error={formErrors.surname}
           value={form.surname}
           on:change={(e) => (form.surname = e.target.value)}
-          on:keydown={(e) => {
+          on:keyup={(e) => {
             if (e.target.value.length) {
               formErrors.surname = null;
             }
@@ -187,7 +179,7 @@
           error={formErrors.role}
           value={form.role}
           on:change={(e) => (form.role = e.target.value)}
-          on:keydown={(e) => {
+          on:keyup={(e) => {
             if (e.target.value.length) {
               formErrors.role = null;
             }
@@ -202,8 +194,7 @@
           error={formErrors.companyName}
           value={form.companyName}
           on:change={(e) => (form.companyName = e.target.value)}
-          bind:this={companyNameElement}
-          on:keydown={(e) => {
+          on:keyup={(e) => {
             if (e.target.value.length) {
               formErrors.companyName = null;
             }
@@ -217,8 +208,7 @@
           error={formErrors.email}
           value={form.email}
           on:change={(e) => (form.email = e.target.value)}
-          bind:this={emailElement}
-          on:keydown={(e) => {
+          on:keyup={(e) => {
             if (e.target.value.length) {
               formErrors.email = null;
             }
