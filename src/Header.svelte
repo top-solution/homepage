@@ -27,7 +27,7 @@
         <li><a href="about.html"><strong>HR</strong></a></li>
         <li><a href="about.html"><strong>DEV</strong></a></li>
         <li><a href="about.html"><strong>L'AZIENDA</strong></a></li>
-        <li><a href="work.html"><strong>IL TEAM</strong></a></li>
+        <li><a href="team.html"><strong>IL TEAM</strong></a></li>
         <li><a href="contact.html"><strong>CONTATTI</strong></a></li>
       </ul>
     </div>

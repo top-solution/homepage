@@ -179,6 +179,7 @@
   <div class="contact-us__form">
     <div class="contact-us__form__row">
       <mwc-textfield
+        outlined
         required
         name="name"
         label="Nome"
@@ -188,6 +189,7 @@
         style="flex: 1 1 0"
       />
       <mwc-textfield
+        outlined
         required
         name="surname"
         label="Cognome"
@@ -197,6 +199,7 @@
         style="flex: 1 1 0"
       />
       <mwc-textfield
+        outlined
         required
         name="age"
         type="number"
@@ -211,15 +214,17 @@
     </div>
     <div class="contact-us__form__row">
       <mwc-textfield
+        outlined
         required
         name="graduation"
-        label="Tipologia di laurea"
+        label="Titolo di studio"
         value={form.graduation}
         on:change={(e) => (form.graduation = e.target.value)}
         bind:this={graduationElement}
         style="flex: 1 1 0"
       />
       <mwc-textfield
+        outlined
         required
         name="graduation-grade"
         type="number"
@@ -232,6 +237,7 @@
         style="flex: 0 1 130px"
       />
       <mwc-textfield
+        outlined
         required
         name="experience"
         type="number"
@@ -246,6 +252,7 @@
     </div>
     <div class="contact-us__form__row">
       <mwc-textfield
+        outlined
         required
         name="email"
         type="email"
@@ -256,6 +263,7 @@
         style="flex: 1 1 0"
       />
       <mwc-textfield
+        outlined
         name="phone"
         label="Cellulare"
         value={form.phone}
@@ -353,5 +361,9 @@
 
   button[type="submit"] {
     margin: var(--ts-spacing-3) auto;
+  }
+
+  mwc-textfield[name="name"] {
+    flex: 1 1 0;
   }
 </style>
