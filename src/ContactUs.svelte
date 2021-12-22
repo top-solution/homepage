@@ -1,8 +1,6 @@
 <svelte:options tag="ts-contact-us" />
 
 <script>
-  import "@material/mwc-textfield";
-  import { onMount } from "svelte";
   import { createEventDispatcher } from "svelte";
   import { get_current_component } from "svelte/internal";
 
@@ -29,6 +27,18 @@
     curriculum: null,
   };
 
+  let formErrors = {
+    name: null,
+    surname: null,
+    age: null,
+    graduation: null,
+    graduationGrade: null,
+    experience: null,
+    email: null,
+    phone: null,
+    curriculum: null,
+  };
+
   let nameElement;
   let surnameElement;
   let ageElement;
@@ -43,61 +53,41 @@
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (nameElement) {
-      nameElement.blur();
+    if (!form.name || form.name.length === 0) {
+      formErrors.name = " ";
     }
-
-    if (surnameElement) {
-      surnameElement.blur();
+    if (!form.surname || form.surname.length === 0) {
+      formErrors.surname = " ";
     }
-
-    if (ageElement) {
-      ageElement.blur();
+    if (!form.age || form.age.length === 0) {
+      formErrors.age = " ";
     }
-
-    if (graduationElement) {
-      graduationElement.blur();
+    if (!form.graduation || form.graduation.length === 0) {
+      formErrors.graduation = " ";
     }
-
-    if (graduationGradeElement) {
-      graduationGradeElement.blur();
+    if (!form.graduationGrade || form.graduationGrade.length === 0) {
+      formErrors.graduationGrade = " ";
     }
-
-    if (experienceElement) {
-      experienceElement.blur();
+    if (!form.experience || form.experience.length === 0) {
+      formErrors.experience = " ";
     }
-
-    if (emailElement) {
-      emailElement.blur();
+    if (!form.email || form.email.length === 0) {
+      formErrors.email = " ";
     }
-
-    if (phoneElement) {
-      phoneElement.blur();
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) == false) {
+      formErrors.email = "Indirizzo email non valido";
     }
-
     if (!form.curriculum) {
-      curriculumError = "Allegare un CV in formato PDF";
-      return false;
+      formErrors.curriculum = "Allegare un CV in formato PDF";
     }
 
-    if (!form.surname || form.name.length === 0) {
-      return false;
+    if (Object.values(formErrors).find((err) => err !== null)) {
+      console.log(formErrors);
+      return;
     }
-    if (!form.age || form.name.length === 0) {
-      return false;
-    }
-    if (!form.graduation || form.name.length === 0) {
-      return false;
-    }
-    if (!form.graduationGrade || form.name.length === 0) {
-      return false;
-    }
-    if (!form.experience || form.name.length === 0) {
-      return false;
-    }
-    if (!form.email || form.name.length === 0) {
-      return false;
-    }
+
+    console.log(event, form);
+
     form = {
       name: "",
       surname: "",
@@ -110,7 +100,6 @@
       curriculum: null,
     };
 
-    console.log(event, form, nameElement);
     dispatch("formsubmit", {});
   }
 </script>
@@ -169,99 +158,141 @@
     </p>
     <div class="contact-us__form">
       <div class="contact-us__form-row">
-        <mwc-textfield
+        <ts-textfield
           id="contact-us__name-textfield"
           outlined
           required
           name="name"
+          error={formErrors.name}
           label="Nome"
           value={form.name}
           on:change={(e) => (form.name = e.target.value)}
-          bind:this={nameElement}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.name = null;
+            }
+          }}
         />
-        <mwc-textfield
+        <ts-textfield
           id="contact-us__surname-textfield"
           outlined
           required
           name="surname"
+          error={formErrors.surname}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.surname = null;
+            }
+          }}
           label="Cognome"
           value={form.surname}
-          bind:this={surnameElement}
           on:change={(e) => (form.surname = e.target.value)}
         />
-        <mwc-textfield
+        <ts-textfield
           id="contact-us__age-textfield"
           outlined
           required
           name="age"
+          error={formErrors.age}
+          on:keyup={(e) => {
+            console.log(e.target.value);
+
+            if (e.target.value.length) {
+              formErrors.age = null;
+            }
+          }}
           type="number"
           min="0"
           max="99"
           label="Età"
           value={form.age}
           on:change={(e) => (form.age = e.target.value)}
-          bind:this={ageElement}
         />
       </div>
       <div class="contact-us__form-row">
-        <mwc-textfield
+        <ts-textfield
           id="contact-us__graduation-textfield"
           outlined
           required
           name="graduation"
+          error={formErrors.graduation}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.graduation = null;
+            }
+          }}
           label="Titolo di studio"
           value={form.graduation}
           on:change={(e) => (form.graduation = e.target.value)}
-          bind:this={graduationElement}
         />
-        <mwc-textfield
+        <ts-textfield
           id="contact-us__graduation-grade-textfield"
           outlined
           required
           name="graduation-grade"
+          error={formErrors.graduationGrade}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.graduationGrade = null;
+            }
+          }}
           type="number"
           label="Votazione"
           min="0"
           max="110"
           value={form.graduationGrade}
           on:change={(e) => (form.graduationGrade = e.target.value)}
-          bind:this={graduationGradeElement}
         />
-        <mwc-textfield
+        <ts-textfield
           id="contact-us__experience-textfield"
           outlined
           required
           name="experience"
+          error={formErrors.experience}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.experience = null;
+            }
+          }}
           type="number"
           min="0"
           max="99"
           label="Anni di esperienza"
           value={form.experience}
           on:change={(e) => (form.experience = e.target.value)}
-          bind:this={experienceElement}
         />
       </div>
 
       <div class="contact-us__form-row">
-        <mwc-textfield
+        <ts-textfield
           id="contact-us__email-textfield"
           outlined
           required
           name="email"
+          error={formErrors.email}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.email = null;
+            }
+          }}
           type="email"
           label="Email"
           value={form.email}
           on:change={(e) => (form.email = e.target.value)}
-          bind:this={emailElement}
         />
-        <mwc-textfield
+        <ts-textfield
           id="contact-us__phone-textfield"
           outlined
           name="phone"
+          error={formErrors.phone}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.phone = null;
+            }
+          }}
           label="Cellulare"
           value={form.phone}
           on:change={(e) => (form.phone = e.target.value)}
-          bind:this={phoneElement}
         />
       </div>
       {#if form.curriculum}
@@ -287,14 +318,13 @@
           id="contact-us__curriculum-upload"
           name="curriculum"
           accept="application/pdf"
-          bind:this={curriculumInputElement}
           on:change={(e) => {
             form.curriculum = e.target.value;
-            curriculumError = null;
+            formErrors.curriculum = null;
           }}
         />
-        {#if curriculumError}
-          <p id="contact-us__cv-error-text">{curriculumError}</p>
+        {#if formErrors.curriculum}
+          <p id="contact-us__cv-error-text">{formErrors.curriculum}</p>
         {/if}
         <label
           class="button"
@@ -377,7 +407,7 @@
     margin: 0 -8px 0;
   }
 
-  mwc-textfield {
+  ts-textfield {
     margin: 0 var(--ts-spacing-1) var(--ts-spacing-3);
   }
 
@@ -447,7 +477,7 @@
     font-weight: 400;
   }
 
-  mwc-textfield,
+  ts-textfield,
   #contact-us__curriculum-upload-label {
     flex: 1 0 100%;
   }
@@ -469,8 +499,6 @@
     margin: 0 auto;
   }
 
-  /* var(--mdc-theme-error, #b00020); */
-
   @media only screen and (min-width: 960px) {
     .contact-us {
       margin-top: 0;
@@ -480,7 +508,7 @@
       max-height: 1100px;
     }
 
-    mwc-textfield {
+    ts-textfield {
       margin: 0 var(--ts-spacing-1) 0;
     }
 
