@@ -32,9 +32,9 @@
   --ts-transition-function-default: ease-in-out;
 }
 
-html, body {
+/* html {
   overflow-x: hidden;
-}
+} */
 
 body {
   font-family: "Roboto", sans-serif;

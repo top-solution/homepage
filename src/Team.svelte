@@ -34,32 +34,22 @@
     </p>
   </div>
   <div class="people">
-    <div class="people__row">
-      <ts-team-person name="Paolo Andruetto" companyrole="CEO" />
-      <ts-team-person name="Gabriele Destefanis" companyrole="CTO" />
-    </div>
-    <div class="people__row">
-      <ts-team-person name="Luca Osti" companyrole="Backend Developer" />
-      <ts-team-person name="Gabriele Spada" companyrole="Frontend Developer" />
-      <ts-team-person name="Luca Barbetti" companyrole="Frontend Developer" />
-    </div>
-    <div class="people__row">
-      <ts-team-person name="Elisa Solinas" companyrole="Backend Developer" />
-      <ts-team-person
-        name="Federico Valetti"
-        companyrole="Analista Funzionale"
-      />
-    </div>
-    <div class="people__row">
-      <ts-team-person name="Matteo Marsala" companyrole="Frontend Developer" />
-      <ts-team-person name="Martina Bilancieri" companyrole="UX/UI Designer" />
-      <ts-team-person
-        src="img/question_mark.svg"
-        name="Vuoi far parte del team?"
-      >
-        <button on:click={(e) => (contactUsOpen = true)}>Contattaci</button>
-      </ts-team-person>
-    </div>
+    <div class="people__spacer" />
+    <ts-team-person name="Paolo Andruetto" companyrole="CEO" />
+    <ts-team-person name="Gabriele Destefanis" companyrole="CTO" />
+    <div class="people__spacer" />
+    <ts-team-person name="Luca Osti" companyrole="Backend Developer" />
+    <ts-team-person name="Gabriele Spada" companyrole="Frontend Developer" />
+    <ts-team-person name="Luca Barbetti" companyrole="Frontend Developer" />
+    <div class="people__spacer" />
+    <ts-team-person name="Elisa Solinas" companyrole="Backend Developer" />
+    <ts-team-person name="Federico Valetti" companyrole="Analista Funzionale" />
+    <div class="people__spacer" />
+    <ts-team-person name="Matteo Marsala" companyrole="Frontend Developer" />
+    <ts-team-person name="Martina Bilancieri" companyrole="UX/UI Designer" />
+    <ts-team-person src="img/question_mark.svg" name="Vuoi far parte del team?">
+      <button on:click={(e) => (contactUsOpen = true)}>Contattaci</button>
+    </ts-team-person>
   </div>
 
   <div class="contact-us" class:contact-us--open={contactUsOpen}>
@@ -78,12 +68,33 @@
 
   .people {
     margin: var(--ts-spacing-10) 0;
-  }
-
-  .people__row {
-    margin: var(--ts-spacing-9) 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .people__spacer {
+    flex: 0 1 16.6666%;
+    max-width: 16.6666%;
+  }
+
+  ts-team-person {
+    margin-bottom: var(--ts-spacing-7);
+    flex: 0 1 33.3333%;
+    max-width: 33.3333%;
+  }
+
+  @media only screen and (max-width: 900px) {
+    ts-team-person {
+      flex: 0 1 calc(50% - 16px);
+      max-width: calc(50% - 16px);
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+
+    .people__spacer {
+      display: none;
+    }
   }
 
   .giga-blob {
@@ -99,6 +110,7 @@
     max-height: 0;
     transition: max-height 250ms;
     overflow: hidden;
+    margin-bottom: var(--ts-spacing-10);
   }
 
   .contact-us--open {

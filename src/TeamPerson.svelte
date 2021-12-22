@@ -19,7 +19,7 @@
 
 <div class="team-person">
   <ts-blob interactive="false" shape="hexagon" src={personSrc}>
-    <div class="team-person__image-sizer" />
+    <!-- <div class="team-person__image-sizer" /> -->
   </ts-blob>
   <div class="team-person__name">{name}</div>
   {#if companyrole}
@@ -37,7 +37,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 280px;
     margin: 0 var(--ts-spacing-3);
   }
 
@@ -45,6 +44,7 @@
   .team-person__role {
     font-weight: 300;
     font-size: 24px;
+    text-align: center;
   }
 
   .team-person__name {
@@ -55,13 +55,18 @@
     font-weight: 500;
   }
 
-  .team-person__image-sizer {
-    width: 220px;
-    height: 220px;
+  ts-blob {
+    width: 100%;
   }
 
-  ts-blob {
-    max-width: 280px;
-    max-height: 280px;
+  @media only screen and (max-width: 600px) {
+    .team-person {
+      margin: 0 var(--ts-spacing-1);
+    }
+
+    .team-person__name,
+    .team-person__role {
+      font-size: 15px;
+    }
   }
 </style>
