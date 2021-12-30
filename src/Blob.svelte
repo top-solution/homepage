@@ -19,6 +19,7 @@
   export let interactive = false;
   export let padding = 0;
   export let src = null;
+  let paddingStyle = "";
 
   /**
    * See https://francoisromain.medium.com/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
@@ -315,6 +316,12 @@
         transform = `${transform} rotate(${rotate}deg)`;
       }
     }
+
+    if (padding) {
+      paddingStyle = `padding: ${8 + Number(padding || 0)}px ${Number(
+        padding || 0
+      )}px;`;
+    }
   });
 </script>
 
@@ -322,16 +329,9 @@
   class="blob"
   on:mouseenter={interactive === "true" && debouncedHandleMouseEnter}
   on:mouseleave={interactive === "true" && debouncedHandleMouseLeave}
-  style={`padding: ${26 + Number(padding || 0)}px ${
-    24 + Number(padding || 0)
-  }px;`}
 >
-  <div class="content">
-    {#if src}
-      <div style="min-width: 300px; min-height: 320px;" />
-    {:else}
-      <slot />
-    {/if}
+  <div class="content" style={paddingStyle}>
+    <slot />
   </div>
   <svg
     viewBox="0 0 210 210"
@@ -381,6 +381,9 @@
 
   .blob {
     position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
   }
 
   path {

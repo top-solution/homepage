@@ -13,10 +13,30 @@
   --ts-size-24: 24px;
 
   --ts-mobile: 600px;
+  --ts-tablet-max: 960px;
+
+  /* FIXME: any better alternative to this? */
+  --ts-spacing-1: 8px;
+  --ts-spacing-2: 16px;
+  --ts-spacing-3: 24px;
+  --ts-spacing-4: 32px;
+  --ts-spacing-5: 40px;
+  --ts-spacing-6: 48px;
+  --ts-spacing-7: 56px;
+  --ts-spacing-8: 64px;
+  --ts-spacing-9: 72px;
+  --ts-spacing-10: 80px;
+  --ts-spacing-15: 120px;
+  --ts-spacing-20: 160px;
 
   --ts-transition-timing-quick: 200ms;
+  --ts-transition-timing-default: 400ms;
   --ts-transition-function-default: ease-in-out;
 }
+
+/* html {
+  overflow-x: hidden;
+} */
 
 body {
   font-family: "Roboto", sans-serif;
@@ -32,6 +52,63 @@ a {
 
 hr {
   margin: 0;
+}
+
+h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: var(--ts-spacing-1);
+  text-transform: capitalize;
+
+  color: var(--ts-blue-color);
+}
+
+h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: var(--ts-spacing-1);
+  text-transform: capitalize;
+
+  color: var(--ts-blue-color);
+}
+
+h1, h2 > * {
+  text-transform: none;
+}
+
+
+p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 39px;
+
+  color: var(--ts-blue-color);
+
+}
+
+@media only screen and (max-width: 960px) {
+  p {
+    line-height: 33px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  p {
+    line-height: 30px;
+    font-size: 25px;
+  }
+}
+
+b {
+  font-weight: 500;
 }
 
 .container {
@@ -89,4 +166,26 @@ h1 {
       var(--ts-transition-function-default),
     border-color var(--ts-transition-timing-quick)
       var(--ts-transition-function-default);
+}
+
+.title-2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: capitalize;
+  text-align: left;
+  margin-bottom: var(--ts-spacing-4);
+
+  color: var(--ts-blue-color);
+}
+
+
+@media only screen and (max-width: 900px) {
+  .title-2 {
+    font-size: 28px;
+    line-height: 33px;
+    margin-bottom: var(--ts-spacing-1);
+  }
 }
