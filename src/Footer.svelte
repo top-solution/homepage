@@ -29,7 +29,7 @@
       <div>+39 0112488280</div>
       <div>info@topsolution.it</div>
       <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
-      <div>Sede Operativa Via Livorno, 60, 10144 Torino TO</div>
+      <div>Sede Operativa Via Livorno, 60 B2 Lab, 10144 Torino TO</div>
     </div>
   </div>
   <hr />

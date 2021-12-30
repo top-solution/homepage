@@ -8,6 +8,7 @@
 
   export let href;
   export let type;
+  export let icon;
 </script>
 
 {#if component === null || component === "a"}
@@ -16,6 +17,7 @@
     class:button--primary={variant === "primary"}
     class:button--secondary={variant === "secondary"}
     class:button--outlined={variant === "outlined"}
+    class:button--icon={icon === true}
     {href}
   >
     <slot />
@@ -37,6 +39,7 @@
     class:button--primary={variant === "primary"}
     class:button--secondary={variant === "secondary"}
     class:button--outlined={variant === "outlined"}
+    class:button--icon={icon === true}
   >
     <slot />
     {#if variant === "outlined"}
@@ -55,6 +58,10 @@
   @import "css/main.css";
   @import "css/normalize.css";
   @import "css/style.css";
+
+  .button {
+    user-select: none;
+  }
 
   .button--primary {
     color: white;
@@ -88,6 +95,11 @@
     color: var(--ts-blue-color);
     border: 1px solid var(--ts-blue-color);
     background-color: transparent;
+  }
+
+  .button--icon {
+    padding-left: var(--ts-spacing-1);
+    padding-right: var(--ts-spacing-1);
   }
 
   .button__icon {
