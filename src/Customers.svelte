@@ -7,7 +7,7 @@
 <div class="component-container">
   <h1>I NOSTRI CLIENTI</h1>
   <div class="flex-container">
-    <Picture base="customers" src="sky" alt="Sky"  />
+    <Picture base="customers" src="sky" alt="Sky" />
     <Picture base="customers" src="reply" alt="Reply" />
     <Picture base="customers" src="collins" alt="Collins" />
     <Picture base="customers" src="sanMarco" alt="San Marco" />
@@ -48,6 +48,9 @@
       alt="Associazione Italiana per la Direzione del Personale"
     />
   </div>
+  <div class="customers-hexs">
+    <img class="hex" src="img/hexagons/hex_small.svg" alt="small hex" />
+  </div>
 </div>
 
 <style>
@@ -61,5 +64,16 @@
     align-items: center;
     margin-bottom: 24px;
     flex-wrap: wrap;
+  }
+
+  .customers-hexs {
+    position: relative;
+    height: 100px;
+  }
+
+  .hex {
+    position: absolute;
+    top: 20px;
+    left: 455px;
   }
 </style>
