@@ -52,8 +52,8 @@
     <h2>Scegli tra i <b>SERVIZI</b></h2>
     <ol class="page-haka__services-list">
       <li><a href="#performance">Valutazione performance</a></li>
-      <li><a href="#competenza">Bilancio di competenza</a></li>
-      <li><a href="#potenziale">Valutazione del potenziale</a></li>
+      <li><a href="#expertise">Bilancio di competenza</a></li>
+      <li><a href="#potential">Valutazione del potenziale</a></li>
     </ol>
     <ts-button
       class="page-haka__services-brochure-button"
@@ -62,9 +62,9 @@
       target="_blank">SCARICA BROCHURE</ts-button
     >
   </div>
-  <div class="page-haka__who-choose-haka">
+  <div class="page-haka__who-chooses-haka">
     <h3>Chi ha scelto <b>HAKA</b></h3>
-    <div class="page-haka__who-choose-haka__customers">
+    <div class="page-haka__who-chooses-haka__customers">
       <ts-picture
         base="customers"
         src="unioneIndustriale"
@@ -72,7 +72,7 @@
       />
       <ts-picture base="customers" src="confindustria" alt="Confindustria" />
     </div>
-    <div class="page-haka__who-choose-haka__customers">
+    <div class="page-haka__who-chooses-haka__customers">
       <ts-picture base="customers" src="carrefour" alt="Carrefour" />
       <ts-picture base="customers" src="sanMarco" alt="San Marco" />
       <ts-picture base="customers" src="euroSearch" alt="Euro Search" />
@@ -88,8 +88,95 @@
       bind:this={snackbarElement}
       labelText="Grazie per aver inviato la tua candidatura spontanea!"
     />
-  </div></ts-layout
->
+  </div>
+  <div id="page-haka__service-performance" class="page-haka__service">
+    <h4>Valutazione delle performance</h4>
+    <p>
+      Permette di <b>comprendere</b> quali <b>risultati professionali</b> ha
+      raggiunto la persona nel corso del tempo e come ha espresso il proprio
+      <b>contributo</b> all’interno dell’organizzazione.
+    </p>
+    <div class="page-haka__service-blob page-haka__service-blob--flipped">
+      <ts-blob
+        shape="snail"
+        variance="0.25"
+        style="min-width: 900px;"
+        fade="x"
+        flip="true"
+        fill="#EBEAF3"
+      >
+        <div style="min-width: 900px; height: 500px; " />
+      </ts-blob>
+    </div>
+    <div class="page-haka__service-subservices">
+      <ol>
+        <li>AUTO VALUTAZIONE</li>
+        <li>ETERO VALUTAZIONE</li>
+      </ol>
+      <ts-button id="page-haka__free-trial" variant="secondary" href=""
+        >PROVA GRATUITA</ts-button
+      >
+    </div>
+  </div>
+  <div id="page-haka__service-expertise" class="page-haka__service">
+    <h4>Bilancio di competenza</h4>
+    <p>
+      Permette di comprendere come le persone <b>esprimono</b> professionalmente
+      <b>le conoscenze</b>, le capacità e le qualità professionali nella
+      realizzazione quotidiana del loro lavoro e come esse impattano nel sistema
+      azienda. La metodologia consiste nel far <b>valutare</b> il candidato da
+      più persone che interagiscono lavorativamente con lui in modo
+      <b>diretto</b>
+      o <b>indiretto</b>
+      (responsabili, colleghi e riporti).
+    </p>
+    <div class="page-haka__service-blob">
+      <ts-blob
+        shape="snail"
+        variance="0.25"
+        style="min-width: 900px;"
+        fade="x"
+        fill="#EBEAF3"
+      >
+        <div style="min-width: 900px; height: 500px; " />
+      </ts-blob>
+    </div>
+    <div class="page-haka__service-subservices">
+      <ol>
+        <li>VALUTAZIONE 180°</li>
+        <li>VALUTAZIONE 360°</li>
+      </ol>
+    </div>
+  </div>
+  <div id="page-haka__service-potential" class="page-haka__service">
+    <h4>Valutazione del potenziale</h4>
+    <p>
+      È un processo attraverso il quale è possibile comprendere quali sono le
+      logiche e gli <b>schemi mentali</b> utilizzati dalle persone nella
+      realizzazione delle attività lavorative. È incentrata sull’analisi delle
+      <b>capacità manageriali</b>, gestionali ed organizzative ed è finalizzata
+      a comprendere se la persona possiede i <b>requisiti</b> per ricoprire una posizione
+      organizzativa diversa o superiore a quella attuale.
+    </p>
+    <div class="page-haka__service-blob page-haka__service-blob--flipped">
+      <ts-blob
+        shape="snail"
+        variance="0.25"
+        style="min-width: 900px;"
+        fade="x"
+        flip="true"
+        fill="#EBEAF3"
+      >
+        <div style="min-width: 900px; height: 500px; " />
+      </ts-blob>
+    </div>
+    <div class="page-haka__service-subservices">
+      <ol>
+        <li>ASSESSMENT CENTER</li>
+      </ol>
+    </div>
+  </div>
+</ts-layout>
 
 <style>
   @import "css/main.css";
@@ -138,7 +225,8 @@
     margin-bottom: var(--ts-spacing-6);
   }
 
-  .page-haka__services-list {
+  .page-haka__services-list,
+  .page-haka__service-subservices ol {
     margin: 0 auto;
     padding: 0;
     list-style: none;
@@ -146,9 +234,11 @@
     line-height: 28px;
     width: 390px;
     margin: 0 auto;
+    text-align: left;
   }
 
-  .page-haka__services-list li {
+  .page-haka__services-list li,
+  .page-haka__service-subservices li {
     margin-bottom: var(--ts-spacing-3);
   }
 
@@ -160,7 +250,8 @@
     text-decoration: underline;
   }
 
-  .page-haka__services-list li::before {
+  .page-haka__services-list li::before,
+  .page-haka__service-subservices li::before {
     content: "";
     display: inline-block;
     height: 28px;
@@ -176,15 +267,15 @@
     margin-top: var(--ts-spacing-4);
   }
 
-  .page-haka__who-choose-haka__customers {
+  .page-haka__who-chooses-haka__customers {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: var(--ts-spacing-15);
     flex-wrap: wrap;
   }
 
-  .page-haka__who-choose-haka__customers ts-picture {
+  .page-haka__who-chooses-haka__customers ts-picture {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -193,12 +284,69 @@
     margin: 0 var(--ts-spacing-9);
   }
 
-  .page-haka__who-choose-haka h3 {
+  .page-haka__who-chooses-haka h3 {
     font-weight: 300;
     font-size: 28px;
     line-height: 33px;
     text-align: center;
     margin-bottom: var(--ts-spacing-4);
+  }
+
+  .page-haka__service {
+    position: relative;
+  }
+  .page-haka__service + .page-haka__service {
+    margin-top: 280px;
+  }
+
+  .page-haka__service p {
+    width: 100%;
+    max-width: 580px;
+  }
+
+  .page-haka__service h4 {
+    margin-bottom: var(--ts-spacing-3);
+    font-style: normal;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .page-haka__service-blob {
+    position: absolute;
+    width: 1450px;
+    transform: scaleY(0.6);
+    bottom: -500px;
+    left: -500px;
+    z-index: -1;
+  }
+
+  .page-haka__service-blob.page-haka__service-blob--flipped {
+    right: -500px;
+    left: unset;
+  }
+
+  #page-haka__service-expertise {
+    text-align: right;
+  }
+
+  #page-haka__service-expertise p {
+    margin-left: auto;
+  }
+
+  .page-haka__service-subservices {
+    margin: var(--ts-spacing-4) 0;
+    position: relative;
+  }
+
+  .page-haka__service-subservices li {
+    font-weight: 500;
+    margin-bottom: var(--ts-spacing-4);
+  }
+
+  #page-haka__free-trial {
+    position: absolute;
+    right: 0;
   }
 
   .contact-us {
