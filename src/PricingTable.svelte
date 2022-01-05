@@ -2,13 +2,22 @@
 
 <script>
   import { createEventDispatcher } from "svelte";
-  import { get_current_component } from "svelte/internal";
+  import { get_current_component, onDestroy, onMount } from "svelte/internal";
 
   export let title = "";
   export let rows = [];
   export let columns = [];
   export let subcolumns = null;
   export let expanded = null;
+
+  let tableElement = null;
+  let headerElement = null;
+  let headerSpyElement = null;
+
+  const stickyHeader = {
+    sticky: false,
+    width: 0,
+  };
 
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
@@ -18,6 +27,46 @@
     component.dispatchEvent &&
       component.dispatchEvent(new CustomEvent(name, { detail }));
   };
+
+  /**
+   * Poor man's sticky header, built with javascript & tears.
+   * The native position: sticky doesn't work because an ancestor
+   * element (body) has overflow-x: hidden. The overflow is vital
+   * on this site because all graphical elements (blobs, hexagonx)
+   * are absolute-positioned and will be hidden if the screen is
+   * too small. Without the overflow on body the would make the page
+   * scroll horizontally, which is not acceptable. So here is a
+   * custom sticky implementation. At least it should work on
+   * Safari...
+   */
+  function setSticky() {
+    if (expanded && tableElement && headerElement && headerSpyElement) {
+      const tableRect = tableElement.getBoundingClientRect();
+      const headerRect = headerElement.getBoundingClientRect();
+      const rect = headerSpyElement?.getBoundingClientRect();
+
+      if (
+        tableRect.height + tableRect.y > headerRect.height + 68 &&
+        rect.top < 0
+      ) {
+        stickyHeader.sticky = true;
+        stickyHeader.width = rect.width;
+        stickyHeader.height = headerRect.height;
+      } else {
+        stickyHeader.sticky = false;
+        stickyHeader.width = 0;
+        stickyHeader.height = 1;
+      }
+    }
+  }
+
+  onMount(() => {
+    window.addEventListener("scroll", setSticky);
+  });
+
+  onDestroy(() => {
+    window.removeEventListener("scroll", setSticky);
+  });
 </script>
 
 <ts-collapsible-section
@@ -32,8 +81,14 @@
   }}
   {title}
 >
-  <div class="pricing-table__table">
-    <div class="pricing-table__header">
+  <div class="pricing-table__table" bind:this={tableElement}>
+    <div
+      bind:this={headerElement}
+      class="pricing-table__header"
+      style={stickyHeader.sticky
+        ? `position: fixed; top: 0; width: ${stickyHeader.width}px`
+        : ""}
+    >
       <div class="pricing-table__header__row">
         <div class="pricing-table__col" />
         {#each columns as column, i}
@@ -43,7 +98,9 @@
               Number(i) !== columns.length - 1}
             colspan={subcolumns ? subcolumns.length : undefined}
           >
-            {column}
+            <span class="pricing-table__col__text">
+              {column}
+            </span>
           </div>
         {/each}
       </div>
@@ -59,13 +116,19 @@
                   columns.length &&
                   Number(j) === subcolumns.length - 1}
               >
-                {subColumn}
+                <span class="pricing-table__col__text">
+                  {subColumn}
+                </span>
               </div>
             {/each}
           {/each}
         </div>
       {/if}
     </div>
+    <div
+      bind:this={headerSpyElement}
+      style={`width: 100%; height: ${stickyHeader.height}px;`}
+    />
     <div class="pricing-table__body">
       {#each rows as row}
         <div class="pricing-table__body__row">
@@ -159,6 +222,13 @@
 
   .pricing-table__col.pricing-table__last-col {
     border-right: 1px solid #000;
+  }
+
+  .pricing-table__header .pricing-table__col__text {
+    background-color: var(--ts-azure-color-light);
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 4px;
   }
 
   @media only screen and (min-width: 900px) {
