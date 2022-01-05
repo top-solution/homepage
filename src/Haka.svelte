@@ -1,11 +1,18 @@
 <svelte:options tag="ts-page-haka" />
 
 <script>
-  import { onDestroy, onMount } from "svelte/internal";
   import "@material/mwc-snackbar";
+  import {
+    performanceTable,
+    performanceColumns,
+    expertiseTable,
+    expertiseColumns,
+    expertiseSubColumns,
+    mobileExpertiseTables,
+    mobileExpertiseColumns,
+  } from "./haka/tablesDefinition";
 
   let contactUsOpen = false;
-  let contactUsElement = null;
   let snackbarElement = null;
 
   const collapsibleHeights = {
@@ -14,144 +21,6 @@
     expertise360: 0,
     potential: 0,
   };
-
-  const performanceTable = [
-    [
-      "Fino a 15",
-      "€ 30.00 / valutato",
-      "€ 45.00 / valutato",
-      "€ 65.00 / valutato",
-    ],
-    ["Da 16 a 50", false, "€ 38,00 / valutato", "€ 55,00 / valutato"],
-    ["Oltre i 50", false, "€ 33,00 / valutato", "€ 47,00 / valutato"],
-    // ["Nome azienda", true, true, true],
-    // ["Logo azienda", true, true, true],
-    ["Monitoraggio compilazioni", true, true, true],
-    ["Recall automatici", true, true, true],
-    // ["Piattaforma web", true, true, true],
-    // ["Accesso tramite token", true, true, true],
-    ["Competenze trasversali", true, true, true],
-    ["Competenze manageriali", true, true, true],
-    ["Competenze specifiche di funzione", false, true, true],
-    ["Questionario modificabile", false, false, true],
-    // ["Competenze trasversali modificabili", false, false, true],
-    // ["Competenze manageriali modificabili", false, false, true],
-    // ["Competenze specifiche di funzione modificabili", false, false, true],
-    ["Commenti dei compilatori", true, true, true],
-    // ["Auto valutazione", true, true, true],
-    // ["Valutazione responsabile diretto", true, true, true],
-    ["Report singola valutazione", true, true, true],
-    ["Report complessivo azienda", false, true, true],
-    ["Report per funzione", false, false, true],
-  ];
-
-  const performanceColumns = ["Basic", "Professional", "Business"];
-
-  const expertiseTable = [
-    [
-      "Tariffa valutato",
-      "€ 40,00",
-      "€ 50,00",
-      "€ 75,00",
-      "€ 52,00",
-      "€ 65,00",
-      "€ 97,50",
-    ],
-    // ["Piattaforma web", true, true, true, true, true, true],
-    // ["Accesso tramite token", true, true, true, true, true, true],
-    // ["Nome azienda", true, true, true, true, true, true],
-    // ["Logo azienda", true, true, true, true, true, true],
-    ["Monitoraggio compilazioni", true, true, true, true, true, true],
-    ["Recall automatici", true, true, true, true, true, true],
-    ["Competenze trasversali", true, true, true, true, true, true],
-    ["Competenze manageriali", true, true, true, true, true, true],
-    ["Competenze specifiche di funzione", true, true, true, true, true, true],
-    ["Questionario modificabile", false, true, true, false, true, true],
-    // [
-    //   "Competenze trasversali modificabili",
-    //   false,
-    //   true,
-    //   true,
-    //   false,
-    //   true,
-    //   true,
-    // ],
-    // [
-    //   "Competenze manageriali modificabili",
-    //   false,
-    //   true,
-    //   true,
-    //   false,
-    //   true,
-    //   true,
-    // ],
-    // [
-    //   "Competenze specifiche di funzione modificabili",
-    //   false,
-    //   true,
-    //   true,
-    //   false,
-    //   true,
-    //   true,
-    // ],
-    ["Auto valutazione", true, true, true, true, true, true],
-    ["Valutazione responsabile diretto", 1, "fino a 3", 1, 1, "fino a 3", 1],
-    [
-      "Valutazione responsabile indiretto",
-      false,
-      false,
-      "fino a 3",
-      false,
-      false,
-      "fino a 3",
-    ],
-    [
-      "Valutazione parigrado diretti",
-      "fino a 3",
-      "fino a 3",
-      "fino a 4",
-      "fino a 3",
-      "fino a 3",
-      "fino a 5",
-    ],
-    [
-      "Valutazione parigrado indiretti",
-      false,
-      false,
-      "fino a 4",
-      false,
-      false,
-      "fino a 5",
-    ],
-    [
-      "Valutazione collaboratori (riporti)",
-      false,
-      false,
-      false,
-      "fino a 3",
-      "fino a 6",
-      "fino a 6",
-    ],
-    ["Report individuale", true, true, true, true, true, true],
-    [
-      "Commento analitico del report",
-      "su richiesta",
-      "su richiesta",
-      "su richiesta",
-      "su richiesta",
-      "su richiesta",
-      "su richiesta",
-    ],
-  ];
-
-  const expertiseColumns = ["180°", "360°"];
-  const expertiseSubColumns = ["Basic", "Professional", "Business"];
-
-  const mobileExpertiseTables = [
-    expertiseTable.map((row) => [row[0], row[1], row[2], row[3]]),
-    expertiseTable.map((row) => [row[0], row[4], row[5], row[6]]),
-  ];
-  const mobileExpertiseColumns = ["Basic", "Professional", "Business"];
 
   let expandedSection = null;
 
@@ -214,7 +83,7 @@
       <ts-picture base="customers" src="euroSearch" alt="Euro Search" />
     </div>
 
-    <div bind:this={contactUsElement} class="contact-us">
+    <div class="contact-us">
       <ts-contact-us
         open={contactUsOpen}
         on:formsubmit={handleContactUsSubmit}
