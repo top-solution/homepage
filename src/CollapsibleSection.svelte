@@ -83,6 +83,7 @@
     align-items: flex-end;
     justify-content: space-between;
     padding: 0 16px;
+    cursor: pointer;
   }
 
   .collapsible-section-header h5 {
@@ -98,7 +99,6 @@
     height: 30px;
     width: 30px;
     margin-bottom: -4px;
-    cursor: pointer;
     transform: rotate(45deg);
     transition: transform var(--ts-transition-timing-quick)
       var(--ts-transition-function-default);

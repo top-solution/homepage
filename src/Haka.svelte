@@ -356,7 +356,30 @@
       rows={expertiseTable}
       columns={expertiseColumns}
       subcolumns={expertiseSubColumns}
-    />
+    >
+      <div class="page-haka__enterprise-blob">
+        <ts-blob
+          interactive="true"
+          shape="hexagon"
+          style="display: inline-block; max-width: 560px;"
+          fill="#EBEAF3"
+          padding="48"
+          variance="1.2"
+        >
+          <div class="page-haka__enterprise-blob__content">
+            <p>Desideri un <b>piano custom</b>?</p>
+            <p>
+              Scegli il piano <b>ENTREPRISE</b>
+            </p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
+      </div>
+    </ts-pricing-table>
     <ts-pricing-table
       class="page-haka__expertise-pricing-table-mobile"
       title="Bilancio di competenza 180°"
@@ -374,15 +397,55 @@
       class="pricing-table"
       title="Valutazione del potenziale"
     >
-      <p>
-        Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
-        progettiamo assessment personalizzati con un numero variabile di prove e
-        scenari. A seguito dell’emergenza sanitaria abbiamo riprogettato gli assessment
-        in modalità <b>online</b>, mantenendo comunque inalterati il rapporto
-        con gli assessor e le dinamiche di gruppo. Abbiamo progettato una
-        piattaforma web ad uso degli assessor per standardizzare le valutazioni,
-        e uniformare i giudizi.
-      </p>
+      <div class="page-haka__service-potential-copy">
+        <p>
+          Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
+          progettiamo assessment personalizzati con un numero variabile di
+          <b>prove</b>
+          e scenari. A seguito dell’emergenza sanitaria abbiamo riprogettato gli
+          assessment in modalità <b>online</b>, mantenendo comunque inalterati
+          il rapporto con gli assessor e le dinamiche di gruppo. Abbiamo
+          progettato una piattaforma web ad uso degli assessor per
+          standardizzare le valutazioni, e uniformare i giudizi.
+        </p>
+      </div>
+      <div class="page-haka__service-potential-test">
+        <h4>Tra le prove:</h4>
+        <ol>
+          <li>Colloqui in call conference con psicologi</li>
+          <li>
+            Prove a tempo cronometrate con segnalazione di eventuale overtime
+          </li>
+          <li>
+            Incident e inbasket online con la possibilità di avere assistenza
+            remoto
+          </li>
+          <li>
+            Prove di gruppo in call conference con tutti i partecipanti e gli
+            psicologi che verificano l’andamento e valutano i comportamenti
+          </li>
+        </ol>
+      </div>
+
+      <div class="page-haka__more-info-blob">
+        <ts-blob
+          interactive="true"
+          shape="hexagon"
+          style="display: inline-block; max-width: 560px;"
+          fill="#EBEAF3"
+          padding="48"
+          variance="1.2"
+        >
+          <div class="page-haka__more-info-blob__content">
+            <p>Desideri maggiori <b>informazioni</b>?</p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
+      </div>
     </ts-collapsible-section>
   </div>
 </ts-layout>
@@ -589,8 +652,68 @@
     text-align: center;
   }
 
+  .page-haka__more-info-blob {
+    margin: var(--ts-spacing-4) auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-haka__more-info-blob__content {
+    padding: var(--ts-spacing-6) 0;
+    text-align: center;
+  }
+
   .page-haka__expertise-pricing-table-mobile {
     display: none;
+    font-size: 20px;
+  }
+
+  .page-haka__more-info-blob__content p {
+    font-size: 20px;
+  }
+
+  .page-haka__service-potential-copy {
+    padding-left: 30%;
+    padding-right: var(--ts-spacing-8);
+  }
+
+  .page-haka__service-potential-copy p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 150%;
+    margin: 0;
+  }
+
+  .page-haka__service-potential-test h4 {
+    line-height: 14px;
+    border-bottom: 1px solid black;
+    padding-bottom: var(--ts-spacing-1);
+    margin: var(--ts-spacing-2) 0;
+  }
+
+  .page-haka__service-potential-test ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .page-haka__service-potential-test ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .page-haka__service-potential-test li {
+    font-weight: 300;
+    font-size: 18px;
+    height: 68px;
+    border-bottom: 1px solid #404040;
+    display: flex;
+    align-items: center;
+  }
+
+  .page-haka__service-potential-test li:last-child {
+    border-bottom: 0;
   }
 
   @media only screen and (max-width: 900px) {
