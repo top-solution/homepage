@@ -3,11 +3,16 @@
 <script>
   export let title = "";
   export let azure = "";
+  export let mobilealignleft = "";
 </script>
 
-<div class="top-banner" class:top-banner--azure={Boolean(azure)}>
+<div
+  class="top-banner"
+  class:top-banner--azure={Boolean(azure)}
+  class:top-banner--mobile-align-left={Boolean(mobilealignleft)}
+>
   <div class="top-banner__content">
-    <h1>{title}</h1>
+    <h1 class="top-banner__title">{title}</h1>
     <div class="top-banner__text">
       <slot name="text" />
     </div>
@@ -39,7 +44,7 @@
     padding: var(--ts-spacing-4) var(--ts-spacing-8);
   }
 
-  h1 {
+  .top-banner__title {
     margin: 0 0 var(--ts-spacing-3) 0;
   }
 
@@ -59,5 +64,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  @media screen and (max-width: 900px) {
+    .top-banner__title {
+      font-size: 28px;
+    }
+
+    .top-banner__text {
+      font-size: 25px;
+    }
+
+    .top-banner.top-banner--mobile-align-left .top-banner__text,
+    .top-banner.top-banner--mobile-align-left .top-banner__title {
+      text-align: left;
+    }
   }
 </style>

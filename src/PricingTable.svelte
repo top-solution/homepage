@@ -92,6 +92,10 @@
     border-bottom: 1px solid var(--ts-blue-color);
   }
 
+  .pricing-table--collapsed .pricing-table-header img {
+    transform: rotate(0deg);
+  }
+
   .pricing-table__collapsible {
     max-height: 0;
     transition: max-height var(--ts-transition-timing-default)
@@ -122,6 +126,9 @@
     height: 30px;
     width: 30px;
     cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform var(--ts-transition-timing-quick)
+      var(--ts-transition-function-default);
   }
 
   table {
@@ -171,5 +178,22 @@
   }
 
   @media only screen and (max-width: 900px) {
+    .pricing-table-header h5 {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    .pricing-table thead {
+      font-size: 15px;
+      text-transform: none;
+    }
+    .pricing-table td {
+      max-width: 56px;
+      font-weight: normal;
+      font-size: 15px;
+    }
+    .pricing-table img {
+      width: 20px;
+      height: 20px;
+    }
   }
 </style>

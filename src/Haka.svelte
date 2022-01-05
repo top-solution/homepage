@@ -8,9 +8,14 @@
   let snackbarElement = null;
 
   const performanceTable = [
-    ["Fino a 15", "€ 30.00/valutato", "€ 45.00/valutato", "€ 65.00/valutato"],
-    ["Da 16 a 50", false, "€ 38.00/valutato", "€ 55.00/valutato"],
-    ["Oltre i 50", false, "€ 33.00/valutato", "€ 47.00/valutato"],
+    [
+      "Fino a 15",
+      "€ 30.00 / valutato",
+      "€ 45.00 / valutato",
+      "€ 65.00 / valutato",
+    ],
+    ["Da 16 a 50", false, "€ 38.00 / valutato", "€ 55.00 / valutato"],
+    ["Oltre i 50", false, "€ 33.00 / valutato", "€ 47.00 / valutato"],
     // ["Nome azienda", true, true, true],
     // ["Logo azienda", true, true, true],
     ["Monitoraggio compilazioni", true, true, true],
@@ -126,6 +131,12 @@
   const expertiseColumns = ["180°", "360°"];
   const expertiseSubColumns = ["Basic", "Professional", "Business"];
 
+  const mobileExpertiseTables = [
+    expertiseTable.map((row) => [row[0], row[1], row[2], row[3]]),
+    expertiseTable.map((row) => [row[0], row[4], row[5], row[6]]),
+  ];
+  const mobileExpertiseColumns = ["Basic", "Professional", "Business"];
+
   function handleClick() {
     contactUsOpen = true;
 
@@ -232,9 +243,9 @@
         <li>AUTO VALUTAZIONE</li>
         <li>ETERO VALUTAZIONE</li>
       </ol>
-      <ts-button id="page-haka__free-trial" variant="secondary" href=""
-        >PROVA GRATUITA</ts-button
-      >
+      <div id="page-haka__free-trial">
+        <ts-button variant="secondary" href="">PROVA GRATUITA</ts-button>
+      </div>
     </div>
   </div>
   <div id="page-haka__service-expertise" class="page-haka__service">
@@ -314,7 +325,7 @@
           shape="hexagon"
           style="display: inline-block; max-width: 560px;"
           fill="#EBEAF3"
-          padding="64"
+          padding="48"
           variance="1.2"
         >
           <div class="page-haka__enterprise-blob__content">
@@ -332,10 +343,23 @@
       </div>
     </ts-pricing-table>
     <ts-pricing-table
+      id="page-haka__expertise-pricing-table"
       title="Bilancio di competenza"
       rows={expertiseTable}
       columns={expertiseColumns}
       subcolumns={expertiseSubColumns}
+    />
+    <ts-pricing-table
+      class="page-haka__expertise-pricing-table-mobile"
+      title="Bilancio di competenza 180°"
+      rows={mobileExpertiseTables[0]}
+      columns={mobileExpertiseColumns}
+    />
+    <ts-pricing-table
+      title="Bilancio di competenza 360°"
+      class="page-haka__expertise-pricing-table-mobile"
+      rows={mobileExpertiseTables[1]}
+      columns={mobileExpertiseColumns}
     />
   </div>
 </ts-layout>
@@ -346,6 +370,7 @@
   @import "css/style.css";
 
   .page-haka {
+    display: block;
     color: var(--ts-blue-color);
   }
 
@@ -540,9 +565,97 @@
     text-align: center;
   }
 
+  .page-haka__expertise-pricing-table-mobile {
+    display: none;
+  }
+
   @media only screen and (max-width: 900px) {
-    .page-haka__copy {
-      max-width: 80%;
+    .page-haka {
+      padding: 0 var(--ts-spacing-3);
+    }
+
+    .page-haka__services-blob {
+      width: 1100px;
+      position: absolute;
+      top: -120px;
+      left: -450px;
+      z-index: -1;
+    }
+
+    .page-haka__services-list,
+    .page-haka__service-subservices ol {
+      font-size: 18px;
+      width: 250px;
+    }
+
+    .page-haka__services-list li::before,
+    .page-haka__service-subservices li::before {
+      height: 24px;
+      width: 24px;
+      margin-right: var(--ts-spacing-2);
+    }
+
+    .page-haka__who-chooses-haka__customers {
+      margin: 0 -24px 0;
+    }
+
+    .page-haka__who-chooses-haka__customers ts-picture {
+      margin: 0 var(--ts-spacing-3) var(--ts-spacing-2);
+    }
+
+    .page-haka__service + .page-haka__service {
+      margin-top: var(--ts-spacing-10);
+    }
+
+    .page-haka__service h4 {
+      margin-bottom: var(--ts-spacing-3);
+      font-style: normal;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .page-haka__service-blob {
+      position: absolute;
+      width: 950px;
+      transform: scaleY(0.6);
+      bottom: -300px;
+      left: -400px;
+      z-index: -1;
+    }
+
+    .page-haka__service-subservices ol {
+      margin: var(--ts-spacing-7) auto;
+    }
+
+    #page-haka__free-trial {
+      position: static;
+      display: flex;
+    }
+
+    #page-haka__free-trial ts-button {
+      margin: auto;
+    }
+
+    .page-haka__our-plans {
+      margin-top: 120px;
+    }
+
+    ts-pricing-table {
+      margin: var(--ts-spacing-1-5) -8px;
+      display: block;
+    }
+
+    .page-haka__enterprise-blob__content {
+      padding: var(--ts-spacing-3) 0;
+    }
+
+    #page-haka__expertise-pricing-table {
+      display: none;
+    }
+
+    .page-haka__expertise-pricing-table-mobile {
+      display: block;
     }
   }
 </style>
