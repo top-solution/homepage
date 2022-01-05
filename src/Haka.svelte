@@ -37,6 +37,32 @@
       <source src="videos/haka.mp4" type="video/mp4" />
     </video>
   </div>
+  <div class="page-haka__services">
+    <div class="page-haka__services-blob">
+      <ts-blob
+        shape="potato"
+        variance="0.25"
+        style="min-width: 900px;"
+        rotate="10"
+        flip="true"
+        fill="#E3F1FA"
+      >
+        <div style="min-width: 900px; height: 500px; " />
+      </ts-blob>
+    </div>
+    <h2>Scegli tra i <b>SERVIZI</b></h2>
+    <ol class="page-haka__services-list">
+      <li><a href="#performance">Valutazione performance</a></li>
+      <li><a href="#competenza">Bilancio di competenza</a></li>
+      <li><a href="#potenziale">Valutazione del potenziale</a></li>
+    </ol>
+    <ts-button
+      class="page-haka__services-brochure-button"
+      variant="primary"
+      href="https://www.example.com"
+      target="_blank">SCARICA BROCHURE</ts-button
+    >
+  </div>
 
   <div bind:this={contactUsElement} class="contact-us">
     <ts-contact-us open={contactUsOpen} on:formsubmit={handleContactUsSubmit} />
@@ -69,6 +95,67 @@
     width: 100%;
     height: auto;
     margin: var(--ts-spacing-3) 0;
+  }
+
+  .page-haka__services {
+    margin-top: var(--ts-spacing-15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: var(--ts-spacing-15);
+  }
+
+  .page-haka__services-blob {
+    width: 1100px;
+    position: absolute;
+    top: -70px;
+    left: -130px;
+    z-index: -1;
+  }
+
+  .page-haka__services h2 {
+    text-transform: none;
+    text-align: center;
+    margin-bottom: var(--ts-spacing-6);
+  }
+
+  .page-haka__services-list {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font-size: 28px;
+    line-height: 28px;
+    width: 390px;
+    margin: 0 auto;
+  }
+
+  .page-haka__services-list li {
+    margin-bottom: var(--ts-spacing-3);
+  }
+
+  .page-haka__services-list a {
+    font-weight: 400;
+  }
+
+  .page-haka__services-list a:hover {
+    text-decoration: underline;
+  }
+
+  .page-haka__services-list li::before {
+    content: "";
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    background-image: url("img/icons/hexagon-list-item.svg");
+    background-size: cover;
+    margin: 0 var(--ts-spacing-4) 0 auto;
+    padding: 0;
+  }
+
+  .page-haka__services-brochure-button {
+    display: inline-block;
+    margin-top: var(--ts-spacing-4);
   }
 
   .contact-us {
