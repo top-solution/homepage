@@ -1,11 +1,19 @@
 <svelte:options tag="ts-page-haka" />
 
 <script>
+  import { onDestroy, onMount } from "svelte/internal";
   import "@material/mwc-snackbar";
 
   let contactUsOpen = false;
   let contactUsElement = null;
   let snackbarElement = null;
+
+  const collapsibleHeights = {
+    performance: 0,
+    expertise180: 0,
+    expertise360: 0,
+    potential: 0,
+  };
 
   const performanceTable = [
     [
@@ -145,17 +153,7 @@
   ];
   const mobileExpertiseColumns = ["Basic", "Professional", "Business"];
 
-  function handleClick() {
-    contactUsOpen = true;
-
-    setTimeout(() => {
-      contactUsElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      });
-    }, 200);
-  }
+  let expandedSection = null;
 
   function handleContactUsSubmit() {
     contactUsOpen = false;
@@ -321,11 +319,31 @@
       utilizzare il servizio <b>senza</b> effettuare <b>abbonamenti</b>
     </p>
   </div>
-  <div class="page-haka__our-plans-accordion">
+  <div class="page-haka__our-plans-accordion" style="position: relative;">
+    <!-- TODO: Use hexagon component -->
+    <div
+      style=" position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: 0;top: -150px;"
+    >
+      <img
+        class="page-haka__our-plans-accordion-hexagon"
+        src="../img/hexagon-secondary-temp.svg"
+        alt=""
+        style={expandedSection === null
+          ? undefined
+          : `height: ${collapsibleHeights[expandedSection] + 100}px !important`}
+      />
+    </div>
     <ts-pricing-table
       title="Valutazione delle performance"
       rows={performanceTable}
       columns={performanceColumns}
+      expanded={expandedSection === "performance"}
+      on:expand={() =>
+        expandedSection === "performance"
+          ? (expandedSection = null)
+          : (expandedSection = "performance")}
+      on:collapsible-height-change={(e) =>
+        (collapsibleHeights.performance = e.detail.height - 260)}
     >
       <div class="page-haka__enterprise-blob">
         <ts-blob
@@ -356,6 +374,13 @@
       rows={expertiseTable}
       columns={expertiseColumns}
       subcolumns={expertiseSubColumns}
+      expanded={expandedSection === "expertise"}
+      on:expand={() =>
+        expandedSection === "expertise"
+          ? (expandedSection = null)
+          : (expandedSection = "expertise")}
+      on:collapsible-height-change={(e) =>
+        (collapsibleHeights.expertise = e.detail.height - 240)}
     >
       <div class="page-haka__enterprise-blob">
         <ts-blob
@@ -385,17 +410,85 @@
       title="Bilancio di competenza 180°"
       rows={mobileExpertiseTables[0]}
       columns={mobileExpertiseColumns}
-    />
+      expanded={expandedSection === "expertise180"}
+      on:expand={() =>
+        expandedSection === "expertise180"
+          ? (expandedSection = null)
+          : (expandedSection = "expertise180")}
+      on:collapsible-height-change={(e) =>
+        (collapsibleHeights.expertise180 = e.detail.height - 180)}
+    >
+      <div class="page-haka__enterprise-blob">
+        <ts-blob
+          interactive="true"
+          shape="hexagon"
+          style="display: inline-block; max-width: 560px;"
+          fill="#EBEAF3"
+          padding="48"
+          variance="1.2"
+        >
+          <div class="page-haka__enterprise-blob__content">
+            <p>Desideri un <b>piano custom</b>?</p>
+            <p>
+              Scegli il piano <b>ENTREPRISE</b>
+            </p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
+      </div>
+    </ts-pricing-table>
     <ts-pricing-table
       title="Bilancio di competenza 360°"
       class="page-haka__expertise-pricing-table-mobile"
       rows={mobileExpertiseTables[1]}
       columns={mobileExpertiseColumns}
-    />
-
+      expanded={expandedSection === "expertise360"}
+      on:expand={() => {
+        expandedSection === "expertise360"
+          ? (expandedSection = null)
+          : (expandedSection = "expertise360");
+      }}
+      on:collapsible-height-change={(e) =>
+        (collapsibleHeights.expertise360 = e.detail.height - 140)}
+    >
+      <div class="page-haka__enterprise-blob">
+        <!-- {ptH} -->
+        <ts-blob
+          interactive="true"
+          shape="hexagon"
+          style="display: inline-block; max-width: 560px;"
+          fill="#EBEAF3"
+          padding="48"
+          variance="1.2"
+        >
+          <div class="page-haka__enterprise-blob__content">
+            <p>Desideri un <b>piano custom</b>?</p>
+            <p>
+              Scegli il piano <b>ENTREPRISE</b>
+            </p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
+      </div>
+    </ts-pricing-table>
     <ts-collapsible-section
       class="pricing-table"
       title="Valutazione del potenziale"
+      expanded={expandedSection === "potential"}
+      on:expand={() =>
+        expandedSection === "potential"
+          ? (expandedSection = null)
+          : (expandedSection = "potential")}
+      on:collapsible-height-change={(e) =>
+        (collapsibleHeights.potential = e.detail.height)}
     >
       <div class="page-haka__service-potential-copy">
         <p>
@@ -448,6 +541,7 @@
       </div>
     </ts-collapsible-section>
   </div>
+  <div style="width: 100%; height: 50vh" />
 </ts-layout>
 
 <style>
@@ -637,12 +731,17 @@
   }
 
   ts-pricing-table {
+    margin: var(--ts-spacing-1-5) 0 0;
+    display: block;
+  }
+
+  .page-haka__our-plans-accordion ts-collapsible-section {
     margin: var(--ts-spacing-1-5) 0;
     display: block;
   }
 
   .page-haka__enterprise-blob {
-    margin: var(--ts-spacing-4) auto;
+    margin: 320px auto var(--ts-spacing-4);
     display: flex;
     justify-content: center;
   }
@@ -653,7 +752,7 @@
   }
 
   .page-haka__more-info-blob {
-    margin: var(--ts-spacing-4) auto;
+    margin: 200px auto;
     display: flex;
     justify-content: center;
   }
@@ -706,7 +805,7 @@
   .page-haka__service-potential-test li {
     font-weight: 300;
     font-size: 18px;
-    height: 68px;
+    padding: var(--ts-spacing-3) 0;
     border-bottom: 1px solid #404040;
     display: flex;
     align-items: center;
@@ -716,9 +815,24 @@
     border-bottom: 0;
   }
 
+  .page-haka__our-plans-accordion-hexagon {
+    width: auto;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0) scaleY(1);
+    transition: height var(--ts-transition-timing-default)
+        var(--ts-transition-function-default),
+      width var(--ts-transition-timing-default)
+        var(--ts-transition-function-default),
+      transform var(--ts-transition-timing-default)
+        var(--ts-transition-function-default);
+  }
+
   @media only screen and (max-width: 900px) {
     .page-haka {
       padding: 0 var(--ts-spacing-3);
+      overflow-x: hidden;
     }
 
     .page-haka__services-blob {
@@ -788,13 +902,14 @@
       margin-top: 120px;
     }
 
-    ts-pricing-table {
+    .page-haka__our-plans-accordion ts-pricing-table,
+    .page-haka__our-plans-accordion ts-collapsible-section {
       margin: var(--ts-spacing-1-5) 0;
       display: block;
     }
 
     .page-haka__enterprise-blob__content {
-      padding: var(--ts-spacing-3) 0;
+      padding: var(--ts-spacing-2) 0;
     }
 
     #page-haka__expertise-pricing-table {
@@ -803,6 +918,24 @@
 
     .page-haka__expertise-pricing-table-mobile {
       display: block;
+    }
+
+    .page-haka__service-potential-copy {
+      padding: var(--ts-spacing-3) var(--ts-spacing-1);
+    }
+
+    .page-haka__service-potential-test {
+      padding: 0 var(--ts-spacing-1);
+    }
+
+    .page-haka__enterprise-blob {
+      margin-top: var(--ts-spacing-8);
+      height: 350px !important;
+    }
+
+    .page-haka__more-info-blob {
+      margin-top: var(--ts-spacing-5);
+      height: 350px !important;
     }
   }
 </style>

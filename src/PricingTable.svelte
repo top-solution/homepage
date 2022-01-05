@@ -1,23 +1,35 @@
 <svelte:options tag="ts-pricing-table" />
 
 <script>
-  import { onMount } from "svelte";
+  import { createEventDispatcher } from "svelte";
+  import { get_current_component } from "svelte/internal";
 
   export let title = "";
   export let rows = [];
   export let columns = [];
   export let subcolumns = null;
+  export let expanded = null;
 
-  let expanded = false;
+  const component = get_current_component();
+  const svelteDispatch = createEventDispatcher();
 
-  onMount(() => {
-    console.log(subcolumns);
-  });
+  const dispatch = (name, detail) => {
+    svelteDispatch(name, detail);
+    component.dispatchEvent &&
+      component.dispatchEvent(new CustomEvent(name, { detail }));
+  };
 </script>
 
 <ts-collapsible-section
   class="pricing-table"
   class:pricing-table--subcolumns={Boolean(subcolumns)}
+  {expanded}
+  on:expand={() => {
+    dispatch("expand");
+  }}
+  on:collapsible-height-change={(e) => {
+    dispatch("collapsible-height-change", e.detail);
+  }}
   {title}
 >
   <div class="pricing-table__table">

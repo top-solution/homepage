@@ -1,9 +1,40 @@
 <svelte:options tag="ts-collapsible-section" />
 
 <script>
-  export let title = "";
+  import { createEventDispatcher } from "svelte";
+  import { get_current_component, onDestroy, onMount } from "svelte/internal";
 
-  let expanded = false;
+  export let title = "";
+  export let expanded = false;
+
+  let collapsedElement = null;
+  let collapsedElementHeight = null;
+
+  const component = get_current_component();
+  const svelteDispatch = createEventDispatcher();
+
+  const dispatch = (name, detail) => {
+    svelteDispatch(name, detail);
+    component.dispatchEvent &&
+      component.dispatchEvent(new CustomEvent(name, { detail }));
+  };
+
+  function updateCollapsedElementHeight() {
+    setTimeout(() => {
+      collapsedElementHeight = collapsedElement.getBoundingClientRect().height;
+      dispatch("collapsible-height-change", { height: collapsedElementHeight });
+    }, 200);
+  }
+
+  onMount(() => {
+    window.addEventListener("resize", updateCollapsedElementHeight);
+
+    updateCollapsedElementHeight();
+  });
+
+  onDestroy(() => {
+    window.removeEventListener(updateCollapsedElementHeight);
+  });
 </script>
 
 <div
@@ -12,8 +43,8 @@
 >
   <div
     class="collapsible-section-header"
-    on:mousedown={() => {
-      expanded = !expanded;
+    on:mouseup={() => {
+      dispatch("expand");
     }}
   >
     <h5>
@@ -24,8 +55,13 @@
   <div
     class="collapsible-section__collapsible"
     class:collapsible-section__collapsible--expanded={expanded}
+    style={expanded
+      ? `max-height: ${collapsedElementHeight}px`
+      : "max-height: 0;"}
   >
-    <slot />
+    <div class="d" bind:this={collapsedElement}>
+      <slot />
+    </div>
   </div>
   <div class="collapsible-section__divider">
     <hr />
@@ -44,23 +80,27 @@
   .collapsible-section {
     width: calc(100% + 16px);
     margin-left: -8px;
+    display: block;
   }
 
   .collapsible-section__divider {
-    display: none;
-    padding: var(--ts-spacing-1) 16px;
+    display: block;
+    margin-top: var(--ts-spacing-1-5);
+  }
+
+  .collapsible-section__divider hr {
+    padding: var(--ts-spacing-1) 8px;
+    border-top: 1px solid transparent;
+    transition: border-color var(--ts-transition-timing-default)
+      var(--ts-transition-function-default);
   }
 
   .collapsible-section--collapsed {
     padding-bottom: var(--ts-spacing-3);
   }
 
-  .collapsible-section--collapsed .collapsible-section__divider {
-    display: block;
-  }
-
   .collapsible-section--collapsed .collapsible-section__divider hr {
-    border-top: 1px solid var(--ts-blue-color);
+    border-color: var(--ts-blue-color);
   }
 
   .collapsible-section--collapsed .collapsible-section-header img {
@@ -68,21 +108,16 @@
   }
 
   .collapsible-section__collapsible {
-    max-height: 0;
     transition: max-height var(--ts-transition-timing-default)
       var(--ts-transition-function-default);
     overflow: hidden;
-  }
-
-  .collapsible-section__collapsible.collapsible-section__collapsible--expanded {
-    max-height: 400vh;
   }
 
   .collapsible-section-header {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 8px;
     cursor: pointer;
   }
 
@@ -92,12 +127,11 @@
     font-size: 28px;
     line-height: 39px;
     margin: 0;
-    max-width: 220px;
   }
 
   .collapsible-section-header img {
-    height: 30px;
-    width: 30px;
+    height: 34px;
+    width: 34px;
     margin-bottom: -4px;
     transform: rotate(45deg);
     transition: transform var(--ts-transition-timing-quick)
@@ -110,8 +144,8 @@
       line-height: 21px;
     }
     .collapsible-section img {
-      width: 20px;
-      height: 20px;
+      width: 26px;
+      height: 26px;
       margin-bottom: 0;
     }
   }
