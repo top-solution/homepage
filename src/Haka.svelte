@@ -24,8 +24,7 @@
 
   let expandedSection = null;
 
-  function handleContactUsSubmit() {
-    contactUsOpen = false;
+  function handleRequestTrialSubmit() {
     snackbarElement.show();
   }
 </script>
@@ -86,12 +85,12 @@
     <div class="contact-us">
       <ts-contact-us
         open={contactUsOpen}
-        on:formsubmit={handleContactUsSubmit}
+        on:formsubmit={handleRequestTrialSubmit}
       />
     </div>
     <mwc-snackbar
       bind:this={snackbarElement}
-      labelText="Grazie per aver inviato la tua candidatura spontanea!"
+      labelText="La tua richiesta è stata presa in carico dal nostro team"
     />
   </div>
   <div id="page-haka__service-performance" class="page-haka__service">
@@ -410,7 +409,12 @@
       </div>
     </ts-collapsible-section>
   </div>
-  <div style="width: 100%; height: 50vh" />
+  <ts-request-trial on:formsubmit={handleRequestTrialSubmit} />
+  <mwc-snackbar
+    bind:this={snackbarElement}
+    labelText="La tua richiesta è stata presa in carico dal nostro team"
+  />
+  <!-- <div style="width: 100%; height: 50vh" /> -->
 </ts-layout>
 
 <style>
@@ -696,6 +700,12 @@
         var(--ts-transition-function-default),
       transform var(--ts-transition-timing-default)
         var(--ts-transition-function-default);
+  }
+
+  ts-request-trial {
+    display: block;
+    margin: 200px auto 0;
+    max-width: 720px;
   }
 
   @media only screen and (max-width: 900px) {
