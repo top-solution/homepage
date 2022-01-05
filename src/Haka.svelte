@@ -7,6 +7,125 @@
   let contactUsElement = null;
   let snackbarElement = null;
 
+  const performanceTable = [
+    ["Fino a 15", "€ 30.00/valutato", "€ 45.00/valutato", "€ 65.00/valutato"],
+    ["Da 16 a 50", false, "€ 38.00/valutato", "€ 55.00/valutato"],
+    ["Oltre i 50", false, "€ 33.00/valutato", "€ 47.00/valutato"],
+    // ["Nome azienda", true, true, true],
+    // ["Logo azienda", true, true, true],
+    ["Monitoraggio compilazioni", true, true, true],
+    ["Recall automatici", true, true, true],
+    // ["Piattaforma web", true, true, true],
+    // ["Accesso tramite token", true, true, true],
+    ["Competenze trasversali", true, true, true],
+    ["Competenze manageriali", true, true, true],
+    ["Competenze specifiche di funzione", false, true, true],
+    ["Questionario modificabile", false, false, true],
+    // ["Competenze trasversali modificabili", false, false, true],
+    // ["Competenze manageriali modificabili", false, false, true],
+    // ["Competenze specifiche di funzione modificabili", false, false, true],
+    ["Commenti dei compilatori", true, true, true],
+    // ["Auto valutazione", true, true, true],
+    // ["Valutazione responsabile diretto", true, true, true],
+    ["Report singola valutazione", true, true, true],
+    ["Report complessivo azienda", false, true, true],
+    ["Report per funzione", false, false, true],
+  ];
+
+  const performanceColumns = ["Basic", "Professional", "Business"];
+
+  const expertiseTable = [
+    ["Tariffa valutato", "€ 40", "€ 50", "€ 75", "€ 52", "€ 65", "€ 97,5"],
+    // ["Piattaforma web", true, true, true, true, true, true],
+    // ["Accesso tramite token", true, true, true, true, true, true],
+    // ["Nome azienda", true, true, true, true, true, true],
+    // ["Logo azienda", true, true, true, true, true, true],
+    ["Monitoraggio compilazioni", true, true, true, true, true, true],
+    ["Recall automatici", true, true, true, true, true, true],
+    ["Competenze trasversali", true, true, true, true, true, true],
+    ["Competenze manageriali", true, true, true, true, true, true],
+    ["Competenze specifiche di funzione", true, true, true, true, true, true],
+    ["Questionario modificabile", false, true, true, false, true, true],
+    // [
+    //   "Competenze trasversali modificabili",
+    //   false,
+    //   true,
+    //   true,
+    //   false,
+    //   true,
+    //   true,
+    // ],
+    // [
+    //   "Competenze manageriali modificabili",
+    //   false,
+    //   true,
+    //   true,
+    //   false,
+    //   true,
+    //   true,
+    // ],
+    // [
+    //   "Competenze specifiche di funzione modificabili",
+    //   false,
+    //   true,
+    //   true,
+    //   false,
+    //   true,
+    //   true,
+    // ],
+    ["Auto valutazione", true, true, true, true, true, true],
+    ["Valutazione responsabile diretto", 1, "fino a 3", 1, 1, "fino a 3", 1],
+    [
+      "Valutazione responsabile indiretto",
+      false,
+      false,
+      "fino a 3",
+      false,
+      false,
+      "fino a 3",
+    ],
+    [
+      "Valutazione parigrado diretti",
+      "fino a 3",
+      "fino a 3",
+      "fino a 4",
+      "fino a 3",
+      "fino a 3",
+      "fino a 5",
+    ],
+    [
+      "Valutazione parigrado indiretti",
+      false,
+      false,
+      "fino a 4",
+      false,
+      false,
+      "fino a 5",
+    ],
+    [
+      "Valutazione collaboratori (riporti)",
+      false,
+      false,
+      false,
+      "fino a 3",
+      "fino a 6",
+      "fino a 6",
+    ],
+    ["Report individuale", true, true, true, true, true, true],
+    [
+      "Commento analitico del report",
+      "su richiesta",
+      "su richiesta",
+      "su richiesta",
+      "su richiesta",
+      "su richiesta",
+      "su richiesta",
+    ],
+  ];
+
+  const expertiseColumns = ["180°", "360°"];
+  const expertiseSubColumns = ["Basic", "Professional", "Business"];
+
   function handleClick() {
     contactUsOpen = true;
 
@@ -175,6 +294,49 @@
         <li>ASSESSMENT CENTER</li>
       </ol>
     </div>
+  </div>
+  <div class="page-haka__our-plans">
+    <h2>I nostri <b>PIANI</b></h2>
+    <p>
+      Ogni piano è <b>one shot</b>, scegliendo <b>Haka</b> sei libero di <br />
+      utilizzare il servizio <b>senza</b> effettuare <b>abbonamenti</b>
+    </p>
+  </div>
+  <div class="page-haka__our-plans-accordion">
+    <ts-pricing-table
+      title="Valutazione delle performance"
+      rows={performanceTable}
+      columns={performanceColumns}
+    >
+      <div class="page-haka__enterprise-blob">
+        <ts-blob
+          interactive="true"
+          shape="hexagon"
+          style="display: inline-block; max-width: 560px;"
+          fill="#EBEAF3"
+          padding="64"
+          variance="1.2"
+        >
+          <div class="page-haka__enterprise-blob__content">
+            <p>Desideri un <b>piano custom</b>?</p>
+            <p>
+              Scegli il piano <b>ENTREPRISE</b>
+            </p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
+      </div>
+    </ts-pricing-table>
+    <ts-pricing-table
+      title="Bilancio di competenza"
+      rows={expertiseTable}
+      columns={expertiseColumns}
+      subcolumns={expertiseSubColumns}
+    />
   </div>
 </ts-layout>
 
@@ -351,6 +513,31 @@
 
   .contact-us {
     margin-bottom: var(--ts-spacing-10);
+  }
+
+  .page-haka__our-plans {
+    margin-top: 300px;
+    text-align: center;
+  }
+
+  .page-haka__our-plans h2 {
+    text-transform: none;
+  }
+
+  ts-pricing-table {
+    margin: var(--ts-spacing-1-5) 0;
+    display: block;
+  }
+
+  .page-haka__enterprise-blob {
+    margin: var(--ts-spacing-4) auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-haka__enterprise-blob__content {
+    padding: var(--ts-spacing-6) 0;
+    text-align: center;
   }
 
   @media only screen and (max-width: 900px) {
