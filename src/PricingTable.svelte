@@ -85,7 +85,7 @@
     <div
       bind:this={headerElement}
       class="pricing-table__header"
-      style={stickyHeader.sticky
+      style={stickyHeader.sticky && expanded
         ? `position: fixed; top: 0; width: ${stickyHeader.width}px`
         : ""}
     >

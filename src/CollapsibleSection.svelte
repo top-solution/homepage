@@ -7,6 +7,7 @@
   export let title = "";
   export let expanded = false;
 
+  let collapsibleHeaderElement = null;
   let collapsedElement = null;
   let collapsedElementHeight = null;
 
@@ -42,9 +43,16 @@
   class:collapsible-section--collapsed={!expanded}
 >
   <div
+    bind:this={collapsibleHeaderElement}
     class="collapsible-section-header"
     on:mouseup={() => {
       dispatch("expand");
+      setTimeout(() => {
+        collapsibleHeaderElement.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+      setTimeout(() => {
+        collapsibleHeaderElement.scrollIntoView({ behavior: "smooth" });
+      }, 400);
     }}
   >
     <h5>
