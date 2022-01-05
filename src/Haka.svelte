@@ -43,7 +43,6 @@
         shape="potato"
         variance="0.25"
         style="min-width: 900px;"
-        rotate="10"
         flip="true"
         fill="#E3F1FA"
       >
@@ -63,15 +62,34 @@
       target="_blank">SCARICA BROCHURE</ts-button
     >
   </div>
+  <div class="page-haka__who-choose-haka">
+    <h3>Chi ha scelto <b>HAKA</b></h3>
+    <div class="page-haka__who-choose-haka__customers">
+      <ts-picture
+        base="customers"
+        src="unioneIndustriale"
+        alt="Unione Industriale"
+      />
+      <ts-picture base="customers" src="confindustria" alt="Confindustria" />
+    </div>
+    <div class="page-haka__who-choose-haka__customers">
+      <ts-picture base="customers" src="carrefour" alt="Carrefour" />
+      <ts-picture base="customers" src="sanMarco" alt="San Marco" />
+      <ts-picture base="customers" src="euroSearch" alt="Euro Search" />
+    </div>
 
-  <div bind:this={contactUsElement} class="contact-us">
-    <ts-contact-us open={contactUsOpen} on:formsubmit={handleContactUsSubmit} />
-  </div>
-  <mwc-snackbar
-    bind:this={snackbarElement}
-    labelText="Grazie per aver inviato la tua candidatura spontanea!"
-  />
-</ts-layout>
+    <div bind:this={contactUsElement} class="contact-us">
+      <ts-contact-us
+        open={contactUsOpen}
+        on:formsubmit={handleContactUsSubmit}
+      />
+    </div>
+    <mwc-snackbar
+      bind:this={snackbarElement}
+      labelText="Grazie per aver inviato la tua candidatura spontanea!"
+    />
+  </div></ts-layout
+>
 
 <style>
   @import "css/main.css";
@@ -103,14 +121,14 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-bottom: var(--ts-spacing-15);
+    margin-bottom: 310px;
   }
 
   .page-haka__services-blob {
     width: 1100px;
     position: absolute;
     top: -70px;
-    left: -130px;
+    left: -150px;
     z-index: -1;
   }
 
@@ -149,13 +167,38 @@
     width: 28px;
     background-image: url("img/icons/hexagon-list-item.svg");
     background-size: cover;
-    margin: 0 var(--ts-spacing-4) 0 auto;
+    margin: 0 var(--ts-spacing-4) -4px auto;
     padding: 0;
   }
 
   .page-haka__services-brochure-button {
     display: inline-block;
     margin-top: var(--ts-spacing-4);
+  }
+
+  .page-haka__who-choose-haka__customers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .page-haka__who-choose-haka__customers ts-picture {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    margin: 0 var(--ts-spacing-9);
+  }
+
+  .page-haka__who-choose-haka h3 {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+    margin-bottom: var(--ts-spacing-4);
   }
 
   .contact-us {
