@@ -32,7 +32,8 @@ function serve() {
 }
 
 /* Generate configuration for each svelte file found in src folder */
-const files = readdirSync('./src')
+const files = readdirSync('./src').filter(fileName => fileName.endsWith('.svelte'))
+
 export default files.map((name, index) => ({
   input: `src/${name}`,
   output: {
