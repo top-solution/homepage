@@ -15,134 +15,90 @@
   });
 </script>
 
-<div class="pricing-table" class:pricing-table--collapsed={!expanded}>
-  <div
-    class="pricing-table-header"
-    on:mousedown={() => {
-      expanded = !expanded;
-    }}
-  >
-    <h5>
-      {title}
-    </h5>
-    <img href="" src="img/icons/expand.svg" alt="" />
-  </div>
-  <div
-    class="pricing-table__collapsible"
-    class:pricing-table__collapsible--expanded={expanded}
-  >
-    <table>
-      <thead>
-        <tr>
-          <td />
-          {#each columns as column}
-            <td colspan={subcolumns ? subcolumns.length : undefined}
-              >{column}</td
-            >
-          {/each}
-        </tr>
-        {#if subcolumns}
-          <tr class="pricing-table__subheader">
-            <td />
-            {#each columns as column, i}
-              {#each subcolumns as subColumn, j}
-                <td
-                  class:pricing-table__last-td-col={Number(i) !==
-                    columns.length - 1 &&
-                    columns.length &&
-                    Number(j) === subcolumns.length - 1}>{subColumn}</td
-                >
-              {/each}
-            {/each}
-          </tr>
-        {/if}
-      </thead>
-      <tbody>
-        {#each rows as row}
-          <tr>
-            {#each row as column, i}
-              <td
-                class:pricing-table__last-td-col={subcolumns &&
-                  Number(i) === subcolumns.length}
-              >
-                {#if column === true}
-                  <img src="img/icons/check-true.svg" alt="SI" />
-                {:else if column === false}
-                  <img src="img/icons/check-false.svg" alt="NO" />
-                {:else}
-                  {column}
-                {/if}
-              </td>
-            {/each}
-          </tr>
+<ts-collapsible-section
+  class="pricing-table"
+  class:pricing-table--subcolumns={Boolean(subcolumns)}
+  {title}
+>
+  <div class="pricing-table__table">
+    <div class="pricing-table__header">
+      <div class="pricing-table__header__row">
+        <div class="pricing-table__col" />
+        {#each columns as column, i}
+          <div
+            class="pricing-table__col"
+            class:pricing-table__last-col={subcolumns &&
+              Number(i) !== columns.length - 1}
+            colspan={subcolumns ? subcolumns.length : undefined}
+          >
+            {column}
+          </div>
         {/each}
-      </tbody>
-    </table>
-    <slot />
+      </div>
+      {#if subcolumns}
+        <div class="pricing-table__subheader__row">
+          <div class="pricing-table__col" />
+          {#each columns as column, i}
+            {#each subcolumns as subColumn, j}
+              <div
+                class="pricing-table__col"
+                class:pricing-table__last-col={Number(i) !==
+                  columns.length - 1 &&
+                  columns.length &&
+                  Number(j) === subcolumns.length - 1}
+              >
+                {subColumn}
+              </div>
+            {/each}
+          {/each}
+        </div>
+      {/if}
+    </div>
+    <div class="pricing-table__body">
+      {#each rows as row}
+        <div class="pricing-table__body__row">
+          {#each row as column, i}
+            <div
+              class="pricing-table__col pricing-table__body__col"
+              class:pricing-table__last-col={subcolumns &&
+                Number(i) === subcolumns.length}
+            >
+              {#if column === true}
+                <img src="img/icons/check-true.svg" alt="SI" />
+              {:else if column === false}
+                <img src="img/icons/check-false.svg" alt="NO" />
+              {:else}
+                {column}
+              {/if}
+            </div>
+          {/each}
+        </div>
+      {/each}
+    </div>
   </div>
-</div>
+  <slot />
+</ts-collapsible-section>
 
 <style>
   @import "css/main.css";
   @import "css/normalize.css";
   @import "css/style.css";
 
-  .pricing-table--collapsed {
-    padding-bottom: var(--ts-spacing-3);
-    border-bottom: 1px solid var(--ts-blue-color);
+  * {
+    box-sizing: border-box;
   }
 
-  .pricing-table--collapsed .pricing-table-header img {
-    transform: rotate(0deg);
-  }
-
-  .pricing-table__collapsible {
-    max-height: 0;
-    transition: max-height var(--ts-transition-timing-default)
-      var(--ts-transition-function-default);
-    overflow: hidden;
-  }
-
-  .pricing-table__collapsible.pricing-table__collapsible--expanded {
-    max-height: 400vh;
-  }
-
-  .pricing-table-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-
-  .pricing-table-header h5 {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 39px;
-    margin: 0;
-    max-width: 220px;
-  }
-
-  .pricing-table-header img {
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    transform: rotate(45deg);
-    transition: transform var(--ts-transition-timing-quick)
-      var(--ts-transition-function-default);
-  }
-
-  table {
+  .pricing-table__table {
     width: 100%;
     font-size: 18px;
     border-collapse: collapse;
   }
 
-  .pricing-table__subheader {
+  .pricing-table__subheader__row {
     font-size: 15px;
   }
 
-  .pricing-table td {
-    height: var(--ts-spacing-9);
+  .pricing-table__header .pricing-table__col {
     font-weight: 500;
     text-align: center;
     border-right: 0;
@@ -150,50 +106,86 @@
     padding: 0;
   }
 
-  .pricing-table thead {
+  .pricing-table__header {
     font-size: 24px;
     text-transform: uppercase;
-    margin-bottom: 1px solid var(--ts-blue-color);
+    border-bottom: 1px solid black;
   }
 
-  .pricing-table thead td {
-    height: 30px;
+  .pricing-table__header__row,
+  .pricing-table__subheader__row,
+  .pricing-table__body__row {
+    display: flex;
   }
 
-  .pricing-table thead tr:last-child td {
-    border-bottom: 1px solid #000;
+  .pricing-table__col {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
   }
 
-  .pricing-table tbody td {
+  .pricing-table__col:first-child {
+    flex: 0 0 30%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .pricing-table__col img {
+    width: 30px;
+  }
+
+  .pricing-table__body__col {
     border-bottom: 1px solid #acacac;
   }
 
-  .pricing-table td:first-child {
+  .pricing-table__body__col:first-child {
     font-weight: 300;
     text-align: left;
   }
 
-  .pricing-table td.pricing-table__last-td-col {
+  .pricing-table__col.pricing-table__last-col {
     border-right: 1px solid #000;
   }
 
-  @media only screen and (max-width: 900px) {
-    .pricing-table-header h5 {
-      font-size: 18px;
-      line-height: 21px;
+  @media only screen and (min-width: 900px) {
+    .pricing-table__header__row .pricing-table__col {
+      height: var(--ts-spacing-9);
     }
-    .pricing-table thead {
+
+    .pricing-table--subcolumns .pricing-table__header__row .pricing-table__col {
+      height: 54px;
+    }
+
+    .pricing-table__subheader__row .pricing-table__col {
+      height: var(--ts-spacing-4);
+    }
+
+    .pricing-table__col {
+      height: 68px;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .pricing-table__header {
       font-size: 15px;
       text-transform: none;
+      padding: var(--ts-spacing-1) 0 var(--ts-spacing-2);
     }
-    .pricing-table td {
-      max-width: 56px;
+
+    .pricing-table__col {
       font-weight: normal;
       font-size: 15px;
     }
-    .pricing-table img {
+
+    .pricing-table__col img {
       width: 20px;
       height: 20px;
+    }
+
+    .pricing-table__col {
+      padding: var(--ts-spacing-1) 0;
     }
   }
 </style>

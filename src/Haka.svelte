@@ -14,8 +14,8 @@
       "€ 45.00 / valutato",
       "€ 65.00 / valutato",
     ],
-    ["Da 16 a 50", false, "€ 38.00 / valutato", "€ 55.00 / valutato"],
-    ["Oltre i 50", false, "€ 33.00 / valutato", "€ 47.00 / valutato"],
+    ["Da 16 a 50", false, "€ 38,00 / valutato", "€ 55,00 / valutato"],
+    ["Oltre i 50", false, "€ 33,00 / valutato", "€ 47,00 / valutato"],
     // ["Nome azienda", true, true, true],
     // ["Logo azienda", true, true, true],
     ["Monitoraggio compilazioni", true, true, true],
@@ -40,7 +40,15 @@
   const performanceColumns = ["Basic", "Professional", "Business"];
 
   const expertiseTable = [
-    ["Tariffa valutato", "€ 40", "€ 50", "€ 75", "€ 52", "€ 65", "€ 97,5"],
+    [
+      "Tariffa valutato",
+      "€ 40,00",
+      "€ 50,00",
+      "€ 75,00",
+      "€ 52,00",
+      "€ 65,00",
+      "€ 97,50",
+    ],
     // ["Piattaforma web", true, true, true, true, true, true],
     // ["Accesso tramite token", true, true, true, true, true, true],
     // ["Nome azienda", true, true, true, true, true, true],
@@ -361,6 +369,21 @@
       rows={mobileExpertiseTables[1]}
       columns={mobileExpertiseColumns}
     />
+
+    <ts-collapsible-section
+      class="pricing-table"
+      title="Valutazione del potenziale"
+    >
+      <p>
+        Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
+        progettiamo assessment personalizzati con un numero variabile di prove e
+        scenari. A seguito dell’emergenza sanitaria abbiamo riprogettato gli assessment
+        in modalità <b>online</b>, mantenendo comunque inalterati il rapporto
+        con gli assessor e le dinamiche di gruppo. Abbiamo progettato una
+        piattaforma web ad uso degli assessor per standardizzare le valutazioni,
+        e uniformare i giudizi.
+      </p>
+    </ts-collapsible-section>
   </div>
 </ts-layout>
 
@@ -372,6 +395,7 @@
   .page-haka {
     display: block;
     color: var(--ts-blue-color);
+    box-sizing: border-box;
   }
 
   .page-haka__copy,
@@ -642,7 +666,7 @@
     }
 
     ts-pricing-table {
-      margin: var(--ts-spacing-1-5) -8px;
+      margin: var(--ts-spacing-1-5) 0;
       display: block;
     }
 
