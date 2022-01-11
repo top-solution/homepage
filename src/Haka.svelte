@@ -22,7 +22,7 @@
     potential: 0,
   };
 
-  let expandedSection = null;
+  let expandedSections = {};
 
   function handleRequestTrialSubmit() {
     snackbarElement.show();
@@ -190,232 +190,300 @@
   <div class="page-haka__our-plans-accordion" style="position: relative;">
     <!-- TODO: Use hexagon component -->
     <div
-      style=" position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: 0;top: -150px;"
+      style="position: absolute; z-index: -1; left: 0; right: 0; bottom: 0;top: -150px;"
     >
       <img
         class="page-haka__our-plans-accordion-hexagon"
         src="../img/hexagon-secondary-temp.svg"
         alt=""
-        style={expandedSection === null
+        style={!Object.values(expandedSections).find((s) => s === true)
           ? undefined
-          : `height: ${collapsibleHeights[expandedSection] + 100}px !important`}
+          : `height: 0`}
       />
     </div>
-    <ts-pricing-table
-      title="Valutazione delle performance"
-      rows={performanceTable}
-      columns={performanceColumns}
-      expanded={expandedSection === "performance"}
-      on:expand={() =>
-        expandedSection === "performance"
-          ? (expandedSection = null)
-          : (expandedSection = "performance")}
-      on:collapsible-height-change={(e) =>
-        (collapsibleHeights.performance = e.detail.height - 260)}
-    >
-      <div class="page-haka__enterprise-blob">
-        <ts-blob
-          interactive="true"
-          shape="hexagon"
-          style="display: inline-block; max-width: 560px;"
-          fill="#EBEAF3"
-          padding="48"
-          variance="1.2"
-        >
-          <div class="page-haka__enterprise-blob__content">
-            <p>Desideri un <b>piano custom</b>?</p>
-            <p>
-              Scegli il piano <b>ENTREPRISE</b>
-            </p>
-            <ts-button
-              variant="primary"
-              href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
-            >
-          </div>
-        </ts-blob>
+    <div class="page-haka__our-plans-accordion" style="position: relative;">
+      <div class="page-haka__pricing-table-exagon-container">
+        <!-- TODO: Use hexagon component -->
+        <div>
+          <img
+            class="page-haka__pricing-table-exagon"
+            src="../img/hexagon-secondary-temp.svg"
+            alt=""
+            style={expandedSections["performance"]
+              ? `height: ${
+                  collapsibleHeights.performance * 1.6
+                }px; margin-top: ${-collapsibleHeights.performance * 0.3}px`
+              : "height: 0"}
+          />
+        </div>
       </div>
-    </ts-pricing-table>
-    <ts-pricing-table
-      id="page-haka__expertise-pricing-table"
-      title="Bilancio di competenza"
-      rows={expertiseTable}
-      columns={expertiseColumns}
-      subcolumns={expertiseSubColumns}
-      expanded={expandedSection === "expertise"}
-      on:expand={() =>
-        expandedSection === "expertise"
-          ? (expandedSection = null)
-          : (expandedSection = "expertise")}
-      on:collapsible-height-change={(e) =>
-        (collapsibleHeights.expertise = e.detail.height - 240)}
-    >
-      <div class="page-haka__enterprise-blob">
-        <ts-blob
-          interactive="true"
-          shape="hexagon"
-          style="display: inline-block; max-width: 560px;"
-          fill="#EBEAF3"
-          padding="48"
-          variance="1.2"
-        >
-          <div class="page-haka__enterprise-blob__content">
-            <p>Desideri un <b>piano custom</b>?</p>
-            <p>
-              Scegli il piano <b>ENTREPRISE</b>
-            </p>
-            <ts-button
-              variant="primary"
-              href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
-            >
-          </div>
-        </ts-blob>
+      <ts-pricing-table
+        title="Valutazione delle performance"
+        rows={performanceTable}
+        columns={performanceColumns}
+        expanded={expandedSections["performance"]}
+        on:expand={() =>
+          (expandedSections["performance"] = !expandedSections["performance"])}
+        on:collapsible-height-change={(e) =>
+          (collapsibleHeights.performance = e.detail.height)}
+      >
+        <div class="page-haka__enterprise-blob">
+          <ts-blob
+            interactive="true"
+            shape="hexagon"
+            style="display: inline-block; max-width: 560px;"
+            fill="#EBEAF3"
+            padding="48"
+            variance="1.2"
+          >
+            <div class="page-haka__enterprise-blob__content">
+              <p>Desideri un <b>piano custom</b>?</p>
+              <p>
+                Scegli il piano <b>ENTREPRISE</b>
+              </p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block;">Contattaci</ts-button
+              >
+            </div>
+          </ts-blob>
+        </div>
+      </ts-pricing-table>
+      <div class="page-haka__pricing-table-exagon-container">
+        <!-- TODO: Use hexagon component -->
+        <div>
+          <img
+            class="page-haka__pricing-table-exagon"
+            src="../img/hexagon-secondary-temp.svg"
+            alt=""
+            style={expandedSections["expertise"]
+              ? `height: ${
+                  collapsibleHeights.expertise * 1.45
+                }px; margin-top: ${-collapsibleHeights.expertise * 0.22}px`
+              : "height: 0"}
+          />
+        </div>
       </div>
-    </ts-pricing-table>
-    <ts-pricing-table
-      class="page-haka__expertise-pricing-table-mobile"
-      title="Bilancio di competenza 180°"
-      rows={mobileExpertiseTables[0]}
-      columns={mobileExpertiseColumns}
-      expanded={expandedSection === "expertise180"}
-      on:expand={() =>
-        expandedSection === "expertise180"
-          ? (expandedSection = null)
-          : (expandedSection = "expertise180")}
-      on:collapsible-height-change={(e) =>
-        (collapsibleHeights.expertise180 = e.detail.height - 180)}
-    >
-      <div class="page-haka__enterprise-blob">
-        <ts-blob
-          interactive="true"
-          shape="hexagon"
-          style="display: inline-block; max-width: 560px;"
-          fill="#EBEAF3"
-          padding="48"
-          variance="1.2"
-        >
-          <div class="page-haka__enterprise-blob__content">
-            <p>Desideri un <b>piano custom</b>?</p>
-            <p>
-              Scegli il piano <b>ENTREPRISE</b>
-            </p>
-            <ts-button
-              variant="primary"
-              href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
-            >
-          </div>
-        </ts-blob>
+      <ts-pricing-table
+        id="page-haka__expertise-pricing-table"
+        title="Bilancio di competenza"
+        rows={expertiseTable}
+        columns={expertiseColumns}
+        subcolumns={expertiseSubColumns}
+        expanded={expandedSections["expertise"]}
+        on:expand={() =>
+          (expandedSections["expertise"] = !expandedSections["expertise"])}
+        on:collapsible-height-change={(e) =>
+          (collapsibleHeights.expertise = e.detail.height)}
+      >
+        <div class="page-haka__enterprise-blob">
+          <ts-blob
+            interactive="true"
+            shape="hexagon"
+            style="display: inline-block; max-width: 560px;"
+            fill="#EBEAF3"
+            padding="48"
+            variance="1.2"
+          >
+            <div class="page-haka__enterprise-blob__content">
+              <p>Desideri un <b>piano custom</b>?</p>
+              <p>
+                Scegli il piano <b>ENTREPRISE</b>
+              </p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block;">Contattaci</ts-button
+              >
+            </div>
+          </ts-blob>
+        </div>
+      </ts-pricing-table>
+      <div class="page-haka__pricing-table-exagon-container">
+        <!-- TODO: Use hexagon component -->
+        <div>
+          <img
+            class="page-haka__pricing-table-exagon"
+            src="../img/hexagon-secondary-temp.svg"
+            alt=""
+            style={expandedSections["expertise180"]
+              ? `height: ${
+                  collapsibleHeights.expertise180 * 1.6
+                }px; margin-top: ${-collapsibleHeights.expertise180 * 0.3}px`
+              : "height: 0"}
+          />
+        </div>
       </div>
-    </ts-pricing-table>
-    <ts-pricing-table
-      title="Bilancio di competenza 360°"
-      class="page-haka__expertise-pricing-table-mobile"
-      rows={mobileExpertiseTables[1]}
-      columns={mobileExpertiseColumns}
-      expanded={expandedSection === "expertise360"}
-      on:expand={() => {
-        expandedSection === "expertise360"
-          ? (expandedSection = null)
-          : (expandedSection = "expertise360");
-      }}
-      on:collapsible-height-change={(e) =>
-        (collapsibleHeights.expertise360 = e.detail.height - 140)}
-    >
-      <div class="page-haka__enterprise-blob">
-        <!-- {ptH} -->
-        <ts-blob
-          interactive="true"
-          shape="hexagon"
-          style="display: inline-block; max-width: 560px;"
-          fill="#EBEAF3"
-          padding="48"
-          variance="1.2"
-        >
-          <div class="page-haka__enterprise-blob__content">
-            <p>Desideri un <b>piano custom</b>?</p>
-            <p>
-              Scegli il piano <b>ENTREPRISE</b>
-            </p>
-            <ts-button
-              variant="primary"
-              href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
-            >
-          </div>
-        </ts-blob>
+      <ts-pricing-table
+        class="page-haka__expertise-pricing-table-mobile"
+        title="Bilancio di competenza 180°"
+        rows={mobileExpertiseTables[0]}
+        columns={mobileExpertiseColumns}
+        expanded={expandedSections["expertise180"]}
+        on:expand={() =>
+          (expandedSections["expertise180"] =
+            !expandedSections["expertise180"])}
+        on:collapsible-height-change={(e) =>
+          (collapsibleHeights.expertise180 = e.detail.height)}
+      >
+        <div class="page-haka__enterprise-blob">
+          <ts-blob
+            interactive="true"
+            shape="hexagon"
+            style="display: inline-block; max-width: 560px;"
+            fill="#EBEAF3"
+            padding="48"
+            variance="1.2"
+          >
+            <div class="page-haka__enterprise-blob__content">
+              <p>Desideri un <b>piano custom</b>?</p>
+              <p>
+                Scegli il piano <b>ENTREPRISE</b>
+              </p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block;">Contattaci</ts-button
+              >
+            </div>
+          </ts-blob>
+        </div>
+      </ts-pricing-table>
+      <div class="page-haka__pricing-table-exagon-container">
+        <!-- TODO: Use hexagon component -->
+        <div>
+          <img
+            class="page-haka__pricing-table-exagon"
+            src="../img/hexagon-secondary-temp.svg"
+            alt=""
+            style={expandedSections["expertise360"]
+              ? `height: ${
+                  collapsibleHeights.expertise360 * 1.6
+                }px; margin-top: ${-collapsibleHeights.expertise360 * 0.3}px`
+              : "height: 0"}
+          />
+        </div>
       </div>
-    </ts-pricing-table>
-    <ts-collapsible-section
-      class="pricing-table"
-      title="Valutazione del potenziale"
-      expanded={expandedSection === "potential"}
-      on:expand={() =>
-        expandedSection === "potential"
-          ? (expandedSection = null)
-          : (expandedSection = "potential")}
-      on:collapsible-height-change={(e) =>
-        (collapsibleHeights.potential = e.detail.height)}
-    >
-      <div class="page-haka__service-potential-copy">
-        <p>
-          Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
-          progettiamo assessment personalizzati con un numero variabile di
-          <b>prove</b>
-          e scenari. A seguito dell’emergenza sanitaria abbiamo riprogettato gli
-          assessment in modalità <b>online</b>, mantenendo comunque inalterati
-          il rapporto con gli assessor e le dinamiche di gruppo. Abbiamo
-          progettato una piattaforma web ad uso degli assessor per
-          standardizzare le valutazioni, e uniformare i giudizi.
-        </p>
+      <ts-pricing-table
+        title="Bilancio di competenza 360°"
+        class="page-haka__expertise-pricing-table-mobile"
+        rows={mobileExpertiseTables[1]}
+        columns={mobileExpertiseColumns}
+        expanded={expandedSections["expertise360"]}
+        on:expand={() =>
+          (expandedSections["expertise360"] =
+            !expandedSections["expertise360"])}
+        on:collapsible-height-change={(e) =>
+          (collapsibleHeights.expertise360 = e.detail.height)}
+      >
+        <div class="page-haka__enterprise-blob">
+          <!-- {ptH} -->
+          <ts-blob
+            interactive="true"
+            shape="hexagon"
+            style="display: inline-block; max-width: 560px;"
+            fill="#EBEAF3"
+            padding="48"
+            variance="1.2"
+          >
+            <div class="page-haka__enterprise-blob__content">
+              <p>Desideri un <b>piano custom</b>?</p>
+              <p>
+                Scegli il piano <b>ENTREPRISE</b>
+              </p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block;">Contattaci</ts-button
+              >
+            </div>
+          </ts-blob>
+        </div>
+      </ts-pricing-table>
+      <div class="page-haka__pricing-table-exagon-container">
+        <!-- TODO: Use hexagon component -->
+        <div>
+          <img
+            class="page-haka__pricing-table-exagon"
+            src="../img/hexagon-secondary-temp.svg"
+            alt=""
+            style={expandedSections["potential"]
+              ? `height: ${collapsibleHeights.potential * 0.9}px; margin-top: ${
+                  -collapsibleHeights.potential * 0.2
+                }px`
+              : "height: 0"}
+          />
+        </div>
       </div>
-      <div class="page-haka__service-potential-test">
-        <h4>Tra le prove:</h4>
-        <ol>
-          <li>Colloqui in call conference con psicologi</li>
-          <li>
-            Prove a tempo cronometrate con segnalazione di eventuale overtime
-          </li>
-          <li>
-            Incident e inbasket online con la possibilità di avere assistenza
-            remoto
-          </li>
-          <li>
-            Prove di gruppo in call conference con tutti i partecipanti e gli
-            psicologi che verificano l’andamento e valutano i comportamenti
-          </li>
-        </ol>
-      </div>
+      <ts-collapsible-section
+        class="pricing-table"
+        title="Valutazione del potenziale"
+        expanded={expandedSections["potential"]}
+        on:expand={() =>
+          (expandedSections["potential"] = !expandedSections["potential"])}
+        on:collapsible-height-change={(e) =>
+          (collapsibleHeights.potential = e.detail.height)}
+      >
+        <div class="page-haka__service-potential-copy">
+          <p>
+            Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
+            progettiamo assessment personalizzati con un numero variabile di
+            <b>prove</b>
+            e scenari. A seguito dell’emergenza sanitaria abbiamo riprogettato gli
+            assessment in modalità <b>online</b>, mantenendo comunque inalterati
+            il rapporto con gli assessor e le dinamiche di gruppo. Abbiamo
+            progettato una piattaforma web ad uso degli assessor per
+            standardizzare le valutazioni, e uniformare i giudizi.
+          </p>
+        </div>
+        <div class="page-haka__service-potential-test">
+          <h4>Tra le prove:</h4>
+          <ol>
+            <li>Colloqui in call conference con psicologi</li>
+            <li>
+              Prove a tempo cronometrate con segnalazione di eventuale overtime
+            </li>
+            <li>
+              Incident e inbasket online con la possibilità di avere assistenza
+              remoto
+            </li>
+            <li>
+              Prove di gruppo in call conference con tutti i partecipanti e gli
+              psicologi che verificano l’andamento e valutano i comportamenti
+            </li>
+          </ol>
+        </div>
 
-      <div class="page-haka__more-info-blob">
-        <ts-blob
-          interactive="true"
-          shape="hexagon"
-          style="display: inline-block; max-width: 560px;"
-          fill="#EBEAF3"
-          padding="48"
-          variance="1.2"
-        >
-          <div class="page-haka__more-info-blob__content">
-            <p>Desideri maggiori <b>informazioni</b>?</p>
-            <ts-button
-              variant="primary"
-              href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
-            >
-          </div>
-        </ts-blob>
-      </div>
-    </ts-collapsible-section>
-  </div>
-  <ts-request-trial on:formsubmit={handleRequestTrialSubmit} />
-  <mwc-snackbar
-    bind:this={snackbarElement}
-    labelText="La tua richiesta è stata presa in carico dal nostro team"
-  />
-  <!-- <div style="width: 100%; height: 50vh" /> -->
-</ts-layout>
+        <div class="page-haka__more-info-blob">
+          <ts-blob
+            interactive="true"
+            shape="hexagon"
+            style="display: inline-block; max-width: 560px;"
+            fill="#EBEAF3"
+            padding="48"
+            variance="1.2"
+          >
+            <div class="page-haka__more-info-blob__content">
+              <p>Desideri maggiori <b>informazioni</b>?</p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block;">Contattaci</ts-button
+              >
+            </div>
+          </ts-blob>
+        </div>
+      </ts-collapsible-section>
+    </div>
+    <ts-request-trial on:formsubmit={handleRequestTrialSubmit} />
+    <mwc-snackbar
+      bind:this={snackbarElement}
+      labelText="La tua richiesta è stata presa in carico dal nostro team"
+    />
+    <!-- <div style="width: 100%; height: 50vh" /> -->
+  </div></ts-layout
+>
 
 <style>
   @import "css/main.css";
@@ -556,7 +624,7 @@
   .page-haka__service-blob {
     position: absolute;
     width: 1450px;
-    transform: scaleY(0.6);
+    transform: scale(0.6);
     bottom: -500px;
     left: -500px;
     z-index: -1;
@@ -614,7 +682,8 @@
   }
 
   .page-haka__enterprise-blob {
-    margin: 320px auto var(--ts-spacing-4);
+    margin: 0 auto;
+    padding: 280px 0 180px;
     display: flex;
     justify-content: center;
   }
@@ -693,7 +762,33 @@
     height: 500px;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 0) scaleY(1);
+    transform: translate(-50%, 0) scale(1);
+    transition: height var(--ts-transition-timing-default)
+        var(--ts-transition-function-default),
+      width var(--ts-transition-timing-default)
+        var(--ts-transition-function-default),
+      transform var(--ts-transition-timing-default)
+        var(--ts-transition-function-default);
+  }
+
+  .page-haka__pricing-table-exagon-container {
+    position: relative;
+  }
+
+  .page-haka__pricing-table-exagon-container > div {
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0px;
+  }
+
+  .page-haka__pricing-table-exagon {
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1);
     transition: height var(--ts-transition-timing-default)
         var(--ts-transition-function-default),
       width var(--ts-transition-timing-default)
@@ -758,7 +853,7 @@
     .page-haka__service-blob {
       position: absolute;
       width: 950px;
-      transform: scaleY(0.6);
+      transform: scale(0.6);
       bottom: -300px;
       left: -400px;
       z-index: -1;
@@ -815,6 +910,28 @@
     .page-haka__more-info-blob {
       margin-top: var(--ts-spacing-5);
       height: 350px !important;
+    }
+
+    .page-haka__pricing-table-exagon {
+      transform: translate(-50%, 0) scale(1);
+    }
+  }
+
+  @media only screen and (min-width: 700px) and (max-width: 800px) {
+    .page-haka__pricing-table-exagon {
+      transform: translate(-50%, 0) scale(1.1);
+    }
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 900px) {
+    .page-haka__pricing-table-exagon {
+      transform: translate(-50%, 0) scale(1.3);
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .page-haka__pricing-table-exagon {
+      transform: translate(-50%, 0) scale(0.8);
     }
   }
 </style>

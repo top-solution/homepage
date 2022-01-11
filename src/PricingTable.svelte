@@ -13,6 +13,7 @@
   let tableElement = null;
   let headerElement = null;
   let headerSpyElement = null;
+  let collapsedElementHeight = 0;
 
   const stickyHeader = {
     sticky: false,
@@ -27,6 +28,13 @@
     component.dispatchEvent &&
       component.dispatchEvent(new CustomEvent(name, { detail }));
   };
+
+  function updateCollapsedElementHeight() {
+    setTimeout(() => {
+      collapsedElementHeight = tableElement.getBoundingClientRect().height;
+      dispatch("collapsible-height-change", { height: collapsedElementHeight });
+    }, 200);
+  }
 
   /**
    * Poor man's sticky header, built with javascript & tears.
@@ -62,10 +70,14 @@
 
   onMount(() => {
     window.addEventListener("scroll", setSticky);
+    window.addEventListener("resize", updateCollapsedElementHeight);
+
+    updateCollapsedElementHeight();
   });
 
   onDestroy(() => {
     window.removeEventListener("scroll", setSticky);
+    window.removeEventListener(updateCollapsedElementHeight);
   });
 </script>
 
@@ -75,9 +87,6 @@
   {expanded}
   on:expand={() => {
     dispatch("expand");
-  }}
-  on:collapsible-height-change={(e) => {
-    dispatch("collapsible-height-change", e.detail);
   }}
   {title}
 >
@@ -224,8 +233,11 @@
     border-right: 1px solid #000;
   }
 
-  .pricing-table__header .pricing-table__col__text {
+  .pricing-table__header {
     background-color: var(--ts-azure-color-light);
+  }
+
+  .pricing-table__header .pricing-table__col__text {
     padding: 4px;
     box-sizing: border-box;
     border-radius: 4px;
