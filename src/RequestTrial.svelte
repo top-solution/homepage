@@ -242,8 +242,8 @@
       <div class="request-trial__form-row">
         <p>
           Inserisci l’email del valutato e del valutatore, in questo modo potrai
-          fruire e ottenere in autonomia le <b>credenziali</b> per accedere alla
-          piattaforma e usufruire della <b>prova gratuita</b>.
+          ottenere in autonomia le <b>credenziali</b> per accedere alla
+          piattaforma e fruire della <b>prova gratuita</b>.
         </p>
       </div>
       <div class="request-trial__form-row">
