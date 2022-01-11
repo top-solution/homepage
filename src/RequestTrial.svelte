@@ -9,6 +9,8 @@
 
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
+  const drawerElement = null;
+  let drawerOpen = true;
 
   const dispatch = (name, detail) => {
     svelteDispatch(name, detail);
@@ -91,11 +93,19 @@
       industry: "",
     };
     dispatch("formsubmit", {});
+
+    drawerOpen = false;
   }
 </script>
 
 <form class="request-trial" on:submit={handleSubmit}>
-  <div class="request-trial__drawer" class:request-trial__drawer--open={true}>
+  <div
+    class="request-trial__drawer"
+    class:request-trial__drawer--open={drawerOpen}
+    style={drawerElement
+      ? `max-height: ${drawerElement.getBoundingClientRect().height}`
+      : undefined}
+  >
     <div class="request-trial__title-hexagon">
       <!-- TODO: Use hexagon component -->
       <svg
