@@ -54,6 +54,10 @@
     background-color: transparent;
   }
 
+  .nav__blob {
+    display: initial;
+  }
+
   ul {
     padding: 0;
     display: flex;

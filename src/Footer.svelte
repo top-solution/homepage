@@ -134,4 +134,16 @@
   .logo-img {
     margin-right: 18px;
   }
+
+  @media only screen and (max-width: 760px) {
+    footer {
+      background-color: red;
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    footer {
+      background-color: purple;
+    }
+  }
 </style>
