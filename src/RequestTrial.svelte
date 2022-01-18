@@ -12,6 +12,8 @@
   const drawerElement = null;
   let drawerOpen = true;
 
+  const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   const dispatch = (name, detail) => {
     svelteDispatch(name, detail);
     component.dispatchEvent &&
@@ -62,16 +64,16 @@
     if (!form.email || form.email.length === 0) {
       formErrors.email = " ";
     }
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) == false) {
+    if (emailRegexp.test(form.email) == false) {
       formErrors.email = "Indirizzo email non valido";
     }
-    if (form.emailAssessee && form.emailAssessee.length === 0) {
-      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.emailAssessee) == false) {
+    if (form.emailAssessee && form.emailAssessee.length !== 0) {
+      if (emailRegexp.test(form.emailAssessee) == false) {
         formErrors.emailAssessee = "Indirizzo email non valido";
       }
     }
-    if (form.emailAssessor && form.emailAssessor.length === 0) {
-      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.emailAssessor) == false) {
+    if (form.emailAssessor && form.emailAssessor.length !== 0) {
+      if (emailRegexp.test(form.emailAssessor) == false) {
         formErrors.emailAssessor = "Indirizzo email non valido";
       }
     }
