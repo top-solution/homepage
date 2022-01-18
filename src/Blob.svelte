@@ -276,6 +276,67 @@
     ];
   }
 
+  function createPointsPotato() {
+    return [
+      {
+        x: 0,
+        y: 67,
+        originX: 0,
+        originY: 67,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 50,
+        y: 15,
+        originX: 50,
+        originY: 15,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 100,
+        y: 0,
+        originX: 100,
+        originY: 0,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 160,
+        y: 50,
+        originX: 160,
+        originY: 50,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 200,
+        y: 90,
+        originX: 200,
+        originY: 90,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 152,
+        y: 134,
+        originX: 152,
+        originY: 134,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 85,
+        y: 100,
+        originX: 85,
+        originY: 100,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+    ];
+  }
+
   function handleMouseEnter() {
     mouseOver = true;
     noiseAccelStep = 0.003;
@@ -305,6 +366,9 @@
         break;
       case "snail":
         points = createPointsSnail();
+        break;
+      case "potato":
+        points = createPointsPotato();
         break;
     }
     animate();

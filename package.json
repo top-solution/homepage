@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "chokidar 'src/**/*.svelte' -c 'npm run build'",
-    "start": "npx http-server ./public"
+    "start": "npx http-server -c-1 ./public"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@material/mwc-snackbar": "^0.25.3",
+    "@material/mwc-textfield": "^0.25.3",
     "chokidar-cli": "^3.0.0",
     "http-server": "^14.0.0",
     "lodash.debounce": "^4.0.8",
