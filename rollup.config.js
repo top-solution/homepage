@@ -19,6 +19,17 @@ export default files.map((name, index) => ({
   },
   plugins: [
     svelte({
+      onwarn: (warning, handler) => {
+        const {
+           code,
+           frame
+        } = warning;
+        if (code === "css-unused-selector") {
+          return;
+        }
+
+        handler(warning);
+     },
       compilerOptions: {
         // enable run-time checks when not in production
         dev: !production,
