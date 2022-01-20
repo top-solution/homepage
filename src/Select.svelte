@@ -100,10 +100,10 @@
   </div>
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .ts-select {
     width: 25ch;
@@ -148,11 +148,11 @@
     transform: translate(14px, -10px) scale(0.75);
   }
   .ts-select--focused label {
-    color: var(--ts-blue-color);
+    color: variables.$ts-blue-color;
     transform: translate(14px, -10px) scale(0.75);
   }
   .ts-select--error label {
-    color: var(--ts-error);
+    color: variables.$ts-error;
   }
 
   .ts-select__input select {
@@ -208,11 +208,11 @@
     border-radius: 4px;
   }
   .ts-select--focused .ts-select__fieldset {
-    border-color: var(--ts-blue-color);
+    border-color: variables.$ts-blue-color;
     border-width: 2px;
   }
   .ts-select--error .ts-select__fieldset {
-    border-color: var(--ts-error);
+    border-color: variables.$ts-error;
     border-width: 2px;
   }
 

@@ -76,10 +76,10 @@
   </div>
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .ts-textfield {
     width: 25ch;
@@ -123,11 +123,11 @@
     transform: translate(14px, -10px) scale(0.75);
   }
   .ts-textfield--focused label {
-    color: var(--ts-blue-color);
+    color: variables.$ts-blue-color;
     transform: translate(14px, -10px) scale(0.75);
   }
   .ts-textfield--error label {
-    color: var(--ts-error);
+    color: variables.$ts-error;
   }
 
   .ts-textfield__input input,
@@ -166,11 +166,11 @@
     border-radius: 4px;
   }
   .ts-textfield--focused .ts-textfield__fieldset {
-    border-color: var(--ts-blue-color);
+    border-color: variables.$ts-blue-color;
     border-width: 2px;
   }
   .ts-textfield--error .ts-textfield__fieldset {
-    border-color: var(--ts-error);
+    border-color: variables.$ts-error;
     border-width: 2px;
   }
 
