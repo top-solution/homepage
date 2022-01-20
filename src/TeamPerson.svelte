@@ -28,16 +28,16 @@
   <slot />
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .team-person {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 var(--ts-spacing-1);
+    margin: 0 variables.$ts-spacing-1;
   }
 
   .team-person__name,
@@ -48,7 +48,7 @@
   }
 
   .team-person__name {
-    margin-top: var(--ts-spacing-3);
+    margin-top: variables.$ts-spacing-3;
   }
 
   .team-person__role {
@@ -61,7 +61,7 @@
 
   @media only screen and (max-width: 600px) {
     .team-person {
-      margin: 0 var(--ts-spacing-1);
+      margin: 0 variables.$ts-spacing-1;
     }
 
     .team-person__name,
