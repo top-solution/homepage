@@ -7,31 +7,6 @@ import preprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
-function serve() {
-  let server;
-
-  function toExit() {
-    if (server) server.kill(0);
-  }
-
-  return {
-    writeBundle() {
-      if (server) return;
-      server = require("child_process").spawn(
-        "npm",
-        ["run", "start", "--", "--dev"],
-        {
-          stdio: ["ignore", "inherit", "inherit"],
-          shell: true,
-        }
-      );
-
-      process.on("SIGTERM", toExit);
-      process.on("exit", toExit);
-    },
-  };
-}
-
 /* Generate configuration for each svelte file found in src folder */
 const files = readdirSync('./src').filter(fileName => fileName.endsWith('.svelte'))
 
