@@ -19,7 +19,7 @@
         src="img/topsolution_logo_{color}.svg"
         alt="top Solution"
         width="150"
-        height="70"
+        height="45"
       />
     </div>
     <div class="nav__link">
@@ -27,8 +27,8 @@
         <li><a href="about.html"><strong>HR</strong></a></li>
         <li><a href="about.html"><strong>DEV</strong></a></li>
         <li><a href="about.html"><strong>L'AZIENDA</strong></a></li>
-        <li><a href="team.html"><strong>IL TEAM</strong></a></li>
-        <li><a href="contacts.html"><strong>CONTATTI</strong></a></li>
+        <li><a href="../pages/team.html"><strong>IL TEAM</strong></a></li>
+        <li><a href="./contacts.html"><strong>CONTATTI</strong></a></li>
       </ul>
     </div>
   </nav>
@@ -41,17 +41,21 @@
 
   .sub-header {
     display: flex;
-    min-height: 50px;
     justify-content: flex-end;
+    height: 30px;
     align-items: center;
+    margin-top: 12px;
   }
 
   nav {
-    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: transparent;
+  }
+
+  .nav__blob {
+    display: initial;
   }
 
   ul {
@@ -86,9 +90,9 @@
   .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
-    margin: 0 8px;
+    width: 34px;
+    height: 14px;
+    margin: 0 16px;
   }
 
   .switch input {
@@ -104,7 +108,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: rgba(49, 39, 131, 0.4);
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -114,15 +118,16 @@
     content: "";
     height: 26px;
     width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
+    /* left: 4px; */
+    right: 20px;
+    bottom: -7px;
     -webkit-transition: 0.4s;
     transition: 0.4s;
+    background-image: url("img/languageSwitcher/en.svg");
   }
 
-  input:checked + .slider {
-    background-color: #2196f3;
+  input:checked + .slider:before {
+    background-image: url("img/languageSwitcher/it.svg");
   }
 
   input:focus + .slider {

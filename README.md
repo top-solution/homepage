@@ -30,7 +30,7 @@ This is the source code for Top Solution srl homepage, hosted at [https://topsol
 
 3. **Component style**
 
-    Each component have his own style inside, not accessible from the outside. You can found the common css in the `css/style.css` file.
+   Each component have his own style inside, not accessible from the outside. You can found the common css in the `css/style.css` file.
 
 ## 💫 Deploy
 
@@ -47,3 +47,8 @@ To build, upload to Amazon S3 and invalidate the Cloudfront cache run:
 
 - `npm run deploy:dev` to deploy to [development website](https://www.topsolution.dev)
 - `npm run deploy:prod` to deploy to [production website](https://www.topsolution.it)
+
+#### Figma file
+
+- [Figma sito](https://www.figma.com/file/ML7gW0hjLLrSC2pCLTL3hb/Restyling-Sito-Top-Solution)
+- [Prototipo di utilizzo](https://www.figma.com/proto/ML7gW0hjLLrSC2pCLTL3hb/Restyling-Sito-Top-Solution?node[…]aling=min-zoom&page-id=0%3A1&starting-point-node-id=175%3A1061)

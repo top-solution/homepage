@@ -30,6 +30,27 @@
       <div>info@topsolution.it</div>
       <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
       <div>Sede Operativa Via Livorno, 60 B2 Lab, 10144 Torino TO</div>
+      <a target="_blank" href="https://twitter.com">
+        <ts-picture base="footer" src="twitter" alt="Twitter" extension="svg" />
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/">
+        <ts-picture
+          class="spacing"
+          base="footer"
+          src="linkedin"
+          alt="Linkedin"
+          extension="svg"
+        />
+      </a>
+      <a target="_blank" href="https://www.instagram.com/">
+        <ts-picture
+          class="spacing"
+          base="footer"
+          src="instagram"
+          alt="Instagram"
+          extension="svg"
+        />
+      </a>
     </div>
   </div>
   <hr />
@@ -73,6 +94,7 @@
     margin: 0 auto;
     padding: 24px 0;
     max-width: 960px;
+    line-height: 28px;
   }
 
   .footer-title {
@@ -105,7 +127,9 @@
   }
 
   .footer-bottom {
-    margin: 28px 0 16px 0;
+    margin-top: 28px;
+    min-height: 180px;
+    background-color: #1e1e65;
   }
 
   .footer-bottom__text {
@@ -133,5 +157,52 @@
 
   .logo-img {
     margin-right: 18px;
+  }
+
+  .spacing {
+    margin-left: 18px;
+  }
+
+  @media only screen and (max-width: 760px) {
+    footer {
+      height: auto;
+    }
+    .footer-top__bordered-box {
+      flex: 0 0 10%;
+    }
+  }
+
+  @media only screen and (max-width: 570px) {
+    /* 375px? */
+
+    .footer-top {
+      flex-wrap: wrap;
+      padding: 24px;
+      justify-content: flex-start;
+      line-height: 28px;
+    }
+
+    .footer-top__link-box {
+      flex: 0 0 50%;
+    }
+
+    .footer-top__box {
+      flex: 0 0 50%;
+    }
+
+    .footer-top__bordered-box {
+      flex: 0 0 100%;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-left: none;
+      padding: 28px 0;
+      margin-left: 0;
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    hr {
+      display: none;
+    }
   }
 </style>
