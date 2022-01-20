@@ -29,10 +29,26 @@
   }
 </script>
 
+<ts-top-banner title="Audit competenze" mobilealignleft="true" title2={true}>
+  <div class="claim" slot="text">
+    Rileva il <b>Know-how</b> professionale dei dipendenti e <b>scopri</b> il
+    punto di partenza per sviluppare e rafforzare le loro competenze con
+    <b>Haka</b>
+  </div>
+  <div
+    slot="actions"
+    style="display: flex; flex-direction: column; max-width: 175px; margin: auto;"
+  >
+    <ts-button variant="secondary" href="#tariffe" style="margin-bottom: 48px"
+      >Prova gratuita
+    </ts-button>
+    <ts-button variant="primary" href="#tariffe">Tariffe</ts-button>
+  </div>
+</ts-top-banner>
 <ts-layout class="page-haka">
   <div class="page-haka__copy">
-    <h1 class="title-2">測 HAKA</h1>
-    <p>
+    <h2 class="title-3">測 HAKA</h2>
+    <p class="body-1">
       Le <b>Risorse Umane</b> sono il cardine delle organizzazioni: le idee
       guidano il
       <b>cambiamento</b>, le <b>persone</b> lo realizzano.
@@ -53,7 +69,9 @@
         <div style="min-width: 900px; height: 500px; " />
       </ts-blob>
     </div>
-    <h2>Scegli tra i <b>SERVIZI</b></h2>
+    <h3 class="title-3 title-form page-haka__choose-services">
+      Scegli tra i <b>SERVIZI</b>
+    </h3>
     <ol class="page-haka__services-list">
       <li><a href="#performance">Valutazione performance</a></li>
       <li><a href="#expertise">Bilancio di competenza</a></li>
@@ -67,7 +85,7 @@
     >
   </div>
   <div class="page-haka__who-chooses-haka">
-    <h3>Chi ha scelto <b>HAKA</b></h3>
+    <h3 class="title-3 title-form">Chi ha scelto <b>HAKA</b></h3>
     <div class="page-haka__who-chooses-haka__customers">
       <ts-picture
         base="customers"
@@ -94,8 +112,8 @@
     />
   </div>
   <div id="page-haka__service-performance" class="page-haka__service">
-    <h4>Valutazione delle performance</h4>
-    <p>
+    <h4 class="title-4">Valutazione delle performance</h4>
+    <p class="body-2">
       Permette di <b>comprendere</b> quali <b>risultati professionali</b> ha
       raggiunto la persona nel corso del tempo e come ha espresso il proprio
       <b>contributo</b> all’interno dell’organizzazione.
@@ -112,7 +130,7 @@
         <div style="min-width: 900px; height: 500px; " />
       </ts-blob>
     </div>
-    <div class="page-haka__service-subservices">
+    <div class="page-haka__service-subservices body-2">
       <ol>
         <li>AUTO VALUTAZIONE</li>
         <li>ETERO VALUTAZIONE</li>
@@ -123,8 +141,8 @@
     </div>
   </div>
   <div id="page-haka__service-expertise" class="page-haka__service">
-    <h4>Bilancio di competenza</h4>
-    <p>
+    <h4 class="title-4">Bilancio di competenza</h4>
+    <p class="body-2">
       Permette di comprendere come le persone <b>esprimono</b> professionalmente
       <b>le conoscenze</b>, le capacità e le qualità professionali nella
       realizzazione quotidiana del loro lavoro e come esse impattano nel sistema
@@ -145,7 +163,7 @@
         <div style="min-width: 900px; height: 500px; " />
       </ts-blob>
     </div>
-    <div class="page-haka__service-subservices">
+    <div class="page-haka__service-subservices body-2">
       <ol>
         <li>VALUTAZIONE 180°</li>
         <li>VALUTAZIONE 360°</li>
@@ -153,8 +171,8 @@
     </div>
   </div>
   <div id="page-haka__service-potential" class="page-haka__service">
-    <h4>Valutazione del potenziale</h4>
-    <p>
+    <h4 class="title-4">Valutazione del potenziale</h4>
+    <p class="body-2">
       È un processo attraverso il quale è possibile comprendere quali sono le
       logiche e gli <b>schemi mentali</b> utilizzati dalle persone nella
       realizzazione delle attività lavorative. È incentrata sull’analisi delle
@@ -174,15 +192,15 @@
         <div style="min-width: 900px; height: 500px; " />
       </ts-blob>
     </div>
-    <div class="page-haka__service-subservices">
+    <div class="page-haka__service-subservices body-2">
       <ol>
         <li>ASSESSMENT CENTER</li>
       </ol>
     </div>
   </div>
   <div class="page-haka__our-plans">
-    <h2>I nostri <b>PIANI</b></h2>
-    <p>
+    <h3 class="title-3 title-form">I nostri <b>PIANI</b></h3>
+    <p class="body-2">
       Ogni piano è <b>one shot</b>, scegliendo <b>Haka</b> sei libero di <br />
       utilizzare il servizio <b>senza</b> effettuare <b>abbonamenti</b>
     </p>
@@ -237,8 +255,8 @@
             variance="1.2"
           >
             <div class="page-haka__enterprise-blob__content">
-              <p>Desideri un <b>piano custom</b>?</p>
-              <p>
+              <p class="title-6">Desideri un <b>piano custom</b>?</p>
+              <p class="body-2">
                 Scegli il piano <b>ENTREPRISE</b>
               </p>
               <ts-button
@@ -287,8 +305,8 @@
             variance="1.2"
           >
             <div class="page-haka__enterprise-blob__content">
-              <p>Desideri un <b>piano custom</b>?</p>
-              <p>
+              <p class="title-6">Desideri un <b>piano custom</b>?</p>
+              <p class="body-2">
                 Scegli il piano <b>ENTREPRISE</b>
               </p>
               <ts-button
@@ -337,8 +355,8 @@
             variance="1.2"
           >
             <div class="page-haka__enterprise-blob__content">
-              <p>Desideri un <b>piano custom</b>?</p>
-              <p>
+              <p class="title-6">Desideri un <b>piano custom</b>?</p>
+              <p class="body-2">
                 Scegli il piano <b>ENTREPRISE</b>
               </p>
               <ts-button
@@ -388,8 +406,8 @@
             variance="1.2"
           >
             <div class="page-haka__enterprise-blob__content">
-              <p>Desideri un <b>piano custom</b>?</p>
-              <p>
+              <p class="title-6">Desideri un <b>piano custom</b>?</p>
+              <p class="body-2">
                 Scegli il piano <b>ENTREPRISE</b>
               </p>
               <ts-button
@@ -465,7 +483,7 @@
             variance="1.2"
           >
             <div class="page-haka__more-info-blob__content">
-              <p>Desideri maggiori <b>informazioni</b>?</p>
+              <p class="body-2">Desideri maggiori <b>informazioni</b>?</p>
               <ts-button
                 variant="primary"
                 href="/contacts.html"
@@ -506,13 +524,19 @@
     box-sizing: border-box;
   }
 
-  .page-haka__copy,
-  .page-haka__copy h1 {
-    text-align: center;
-  }
+  .page-haka__copy {
+    &,
+    & h2 {
+      text-align: center;
+    }
 
-  .page-haka__copy h1 {
-    margin-top: variables.$ts-spacing-15;
+    & h2 {
+      margin: variables.$ts-spacing-15 0 variables.$ts-spacing-6;
+    }
+
+    & p {
+      margin-bottom: variables.$ts-spacing-6;
+    }
   }
 
   .page-haka__video {
@@ -544,12 +568,15 @@
     margin-bottom: variables.$ts-spacing-6;
   }
 
+  .page-haka__choose-services {
+    margin-bottom: variables.$ts-spacing-6;
+  }
+
   .page-haka__services-list,
   .page-haka__service-subservices ol {
     margin: 0 auto;
     padding: 0;
     list-style: none;
-    font-size: 28px;
     line-height: 28px;
     width: 390px;
     margin: 0 auto;
@@ -625,9 +652,6 @@
 
   .page-haka__service h4 {
     margin-bottom: variables.$ts-spacing-3;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 28px;
     line-height: 33px;
   }
 
@@ -675,10 +699,10 @@
   .page-haka__our-plans {
     margin-top: 300px;
     text-align: center;
-  }
 
-  .page-haka__our-plans h2 {
-    text-transform: none;
+    .body-2 {
+      margin-bottom: variables.$ts-spacing-6;
+    }
   }
 
   ts-pricing-table {
@@ -700,6 +724,14 @@
   .page-haka__enterprise-blob__content {
     padding: variables.$ts-spacing-6 0;
     text-align: center;
+
+    & .title-6 {
+      font-weight: 300;
+    }
+
+    .body-2 {
+      margin: variables.$ts-spacing-3 0;
+    }
   }
 
   .page-haka__more-info-blob {
@@ -709,8 +741,12 @@
   }
 
   .page-haka__more-info-blob__content {
-    padding: variables.$ts-spacing-6 0;
+    padding: variables.$ts-spacing-8 0;
     text-align: center;
+
+    .body-2 {
+      margin: variables.$ts-spacing-3 0;
+    }
   }
 
   .page-haka__expertise-pricing-table-mobile {
@@ -854,8 +890,6 @@
     .page-haka__service h4 {
       margin-bottom: variables.$ts-spacing-3;
       font-style: normal;
-      font-weight: 900;
-      font-size: 20px;
       line-height: 24px;
     }
 

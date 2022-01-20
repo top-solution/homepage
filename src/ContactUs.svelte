@@ -39,15 +39,6 @@
     curriculum: null,
   };
 
-  let nameElement;
-  let surnameElement;
-  let ageElement;
-  let graduationElement;
-  let graduationGradeElement;
-  let experienceElement;
-  let emailElement;
-  let phoneElement;
-  let curriculumError;
   let curriculumInputElement;
 
   function handleSubmit(event) {
@@ -149,11 +140,11 @@
         </defs>
       </svg>
     </div>
-    <h2>Candidatura <b>spontanea</b></h2>
-    <p class="contact-us__subtitle">
+    <h2 class="title-3 title-form">Candidatura <b>spontanea</b></h2>
+    <p class="contact-us__subtitle body-1">
       Vuoi far parte del <b>nostro team</b>?
     </p>
-    <p class="contact-us__subtitle">
+    <p class="contact-us__subtitle body-1">
       <b>Inviaci</b> la tua <b>candidatura spontanea</b>
     </p>
     <div class="contact-us__form">
@@ -357,14 +348,14 @@
 
   .contact-us {
     position: relative;
-    margin-top: var(--ts-spacing-8);
+    margin-top: variables.$ts-spacing-8;
   }
 
   .contact-us__drawer {
     position: relative;
     max-height: 0;
-    transition: max-height var(--ts-transition-timing-default)
-      var(--ts-transition-function-default);
+    transition: max-height variables.$ts-transition-timing-default
+      variables.$ts-transition-function-default;
     overflow: hidden;
   }
 
@@ -374,7 +365,11 @@
 
   .contact-us h2 {
     text-align: center;
-    margin-bottom: var(--ts-spacing-4);
+    margin-bottom: variables.$ts-spacing-4;
+  }
+
+  .contact-us__title {
+    margin: variables.$ts-spacing-6 0;
   }
 
   .contact-us__subtitle {
@@ -397,7 +392,7 @@
   }
 
   .contact-us__form {
-    margin: var(--ts-spacing-6) 0;
+    margin: variables.$ts-spacing-6 0;
     display: block;
   }
 

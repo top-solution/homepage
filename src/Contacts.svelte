@@ -12,10 +12,10 @@
 
 <ts-layout class="page-contacts">
   <div class="page-contacts__copy">
-    <h1 class="title-2">Contatti</h1>
+    <h1 class="title-1">Contatti</h1>
     <div class="page-contacts__contacts-container">
       <ts-office-map />
-      <ol class="page-contacts__contacts">
+      <ol class="page-contacts__contacts body-1">
         <li id="page-contacts__contacts__email">
           <img src="img/icons/mail.svg" alt="" /><a
             href="mailto:info@topsolution.it">info@topsolution.it</a
@@ -52,10 +52,6 @@
 
   @import "./styles/main.scss";
 
-  .page-contacts {
-    color: var(--ts-blue-color);
-  }
-
   .page-contacts__contacts-container {
     display: flex;
     margin-top: variables.$ts-spacing-8;
@@ -65,11 +61,11 @@
   .page-contacts__contacts {
     flex: 0 0 224px;
     list-style: none;
-    font-size: 18px;
     padding-left: 0;
     padding-left: variables.$ts-spacing-3;
-    border-left: 1px solid var(--ts-blue-color);
+    border-left: 1px solid variables.$ts-blue-color;
     margin: 0;
+    font-weight: 400;
   }
 
   .page-contacts__contacts li {
@@ -113,13 +109,7 @@
   }
 
   @media only screen and (max-width: variables.$ts-tablet-max) {
-    .page-contacts__copy h1 {
-      text-align: left;
-      margin: variables.$ts-spacing-2 0 variables.$ts-spacing-1;
-    }
-
     .page-contacts__contacts {
-      font-size: 20px;
       border-left: 0;
     }
 
@@ -144,6 +134,7 @@
       display: block;
       flex: 1 1 0;
       max-width: 100%;
+      margin-right: 0;
     }
   }
 
