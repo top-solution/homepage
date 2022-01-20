@@ -83,17 +83,17 @@
   />
 </ts-layout>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss" global>
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .page-team {
-    color: var(--ts-blue-color);
+    color: variables.$ts-blue-color;
   }
 
   .people {
-    margin: var(--ts-spacing-15) 0;
+    margin: variables.$ts-spacing-15 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -105,13 +105,13 @@
   }
 
   ts-team-person {
-    margin: var(--ts-spacing-7) 0;
+    margin: variables.$ts-spacing-7 0;
     flex: 0 1 33.3333%;
     max-width: 33.3333%;
   }
 
   #people__contact-us-button {
-    margin-top: var(--ts-spacing-2);
+    margin-top: variables.$ts-spacing-2;
   }
 
   .page-team__giga-blob {
@@ -129,7 +129,7 @@
   }
 
   .contact-us {
-    margin-bottom: var(--ts-spacing-10);
+    margin-bottom: variables.$ts-spacing-10;
   }
 
   @media only screen and (max-width: 900px) {
@@ -138,7 +138,7 @@
     }
 
     .people {
-      margin: var(--ts-spacing-3) 0;
+      margin: variables.$ts-spacing-3 0;
     }
 
     .page-team__giga-blob {
@@ -156,7 +156,7 @@
     }
 
     ts-team-person {
-      margin: var(--ts-spacing-1) 2px;
+      margin: variables.$ts-spacing-1 2px;
       flex: 0 1 calc(50% - 4px);
       max-width: calc(50% - 4px);
     }

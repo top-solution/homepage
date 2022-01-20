@@ -7,15 +7,15 @@
   </div>
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .layout {
-    max-width: var(--ts-tablet-max);
+    max-width: variables.$ts-tablet-max;
     margin: 0 auto;
-    padding: 0 var(--ts-spacing-3);
+    padding: 0 variables.$ts-spacing-3;
     position: relative;
   }
 

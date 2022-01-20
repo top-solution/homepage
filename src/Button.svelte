@@ -1,8 +1,6 @@
 <svelte:options tag="ts-button" />
 
 <script>
-  import debounce from "lodash.debounce";
-
   export let variant = "primary"; // "primary" | "secondary" | "outlined"
   export let component = null; // null | "a" | "button"
 
@@ -54,10 +52,10 @@
   </button>
 {/if}
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main";
 
   .button {
     user-select: none;
@@ -65,23 +63,23 @@
 
   .button--primary {
     color: white;
-    background-color: var(--ts-blue-color);
+    background-color: variables.$ts-blue-color;
   }
 
   .button--primary:hover {
-    background-color: var(--ts-blue-color-light);
+    background-color: variables.$ts-blue-color-light;
   }
 
   .button--secondary {
-    color: var(--ts-blue-color);
+    color: variables.$ts-blue-color;
     border: 1px solid transparent;
-    background-color: var(--ts-azure-color);
+    background-color: variables.$ts-azure-color;
   }
 
   .button--secondary:hover {
-    color: var(--ts-blue-color);
-    border-color: var(--ts-blue-color);
-    background-color: var(--ts-azure-color-light);
+    color: variables.$ts-blue-color;
+    border-color: variables.$ts-blue-color;
+    background-color: variables.$ts-azure-color-light;
   }
 
   .button--primary,
@@ -92,26 +90,26 @@
   }
 
   .button--outlined {
-    color: var(--ts-blue-color);
-    border: 1px solid var(--ts-blue-color);
+    color: variables.$ts-blue-color;
+    border: 1px solid variables.$ts-blue-color;
     background-color: transparent;
   }
 
   .button--icon {
-    padding-left: var(--ts-spacing-1);
-    padding-right: var(--ts-spacing-1);
+    padding-left: variables.$ts-spacing-1;
+    padding-right: variables.$ts-spacing-1;
   }
 
   .button__icon {
     width: 0;
     margin-left: 0;
     opacity: 0;
-    transition: width var(--ts-transition-timing-quick)
-        var(--ts-transition-function-default),
-      opacity var(--ts-transition-timing-quick)
-        var(--ts-transition-function-default),
-      margin-left var(--ts-transition-timing-quick)
-        var(--ts-transition-function-default);
+    transition: width variables.$ts-transition-timing-quick
+        variables.$ts-transition-function-default,
+      opacity variables.$ts-transition-timing-quick
+        variables.$ts-transition-function-default,
+      margin-left variables.$ts-transition-timing-quick
+        variables.$ts-transition-function-default;
   }
 
   .button--outlined:hover .button__icon {

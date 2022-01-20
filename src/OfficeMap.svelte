@@ -168,10 +168,10 @@
   >
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   #office-map__container,
   #office-map {
@@ -185,36 +185,36 @@
 
   #office-map__center-button {
     position: absolute;
-    top: var(--ts-spacing-2);
-    right: var(--ts-spacing-2);
+    top: variables.$ts-spacing-2;
+    right: variables.$ts-spacing-2;
     width: 42px;
   }
 
   #office-map__center-button {
     position: absolute;
-    top: var(--ts-spacing-2);
-    right: var(--ts-spacing-2);
+    top: variables.$ts-spacing-2;
+    right: variables.$ts-spacing-2;
     width: 42px;
   }
 
   #office-map__center-button {
     position: absolute;
-    top: var(--ts-spacing-2);
-    right: var(--ts-spacing-2);
+    top: variables.$ts-spacing-2;
+    right: variables.$ts-spacing-2;
     width: 42px;
   }
 
   #office-map__zoom-in-button {
     position: absolute;
-    bottom: calc(var(--ts-spacing-4) + 42px);
-    right: var(--ts-spacing-2);
+    bottom: calc(variables.$ts-spacing-4 + 42px);
+    right: variables.$ts-spacing-2;
     width: 42px;
   }
 
   #office-map__zoom-out-button {
     position: absolute;
-    bottom: var(--ts-spacing-3);
-    right: var(--ts-spacing-2);
+    bottom: variables.$ts-spacing-3;
+    right: variables.$ts-spacing-2;
     width: 42px;
   }
 
@@ -225,7 +225,7 @@
     height: 24px;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: variables.$ts-mobile-max) {
     #office-map__container,
     #office-map {
       min-height: 240px;

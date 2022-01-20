@@ -1,0 +1,38 @@
+$ts-blue-color: #312783;
+$ts-blue-color-light: #4857A3;
+$ts-blue-color-dark: #221b5c;
+$ts-blue-background: #ebeaf3;
+$ts-azure-color: #75bae5;
+$ts-azure-color-light: #e3f1fa;
+$ts-white-color: #fff;
+$ts-error: #d32f2f;
+
+$ts-blue-color-hovering: #8D88BA;
+
+// Breakpoints
+$ts-mobile-max: 600px;
+$ts-tablet-min: $ts-mobile-max + 1px;
+$ts-tablet-max: 900px;
+$ts-destop-min: $ts-tablet-max + 1px;
+
+// Spacing
+$ts-spacing: 8px;
+$ts-spacing-1: $ts-spacing;
+$ts-spacing-1-5: $ts-spacing * 1.5;
+$ts-spacing-2: $ts-spacing * 2;
+$ts-spacing-3: $ts-spacing * 3;
+$ts-spacing-3: $ts-spacing * 3;
+$ts-spacing-4: $ts-spacing * 4;
+$ts-spacing-5: $ts-spacing * 5;
+$ts-spacing-6: $ts-spacing * 6;
+$ts-spacing-7: $ts-spacing * 7;
+$ts-spacing-8: $ts-spacing * 8;
+$ts-spacing-9: $ts-spacing * 9;
+$ts-spacing-10: $ts-spacing * 10;
+$ts-spacing-15: $ts-spacing * 15;
+$ts-spacing-20: $ts-spacing * 20;
+
+// Transitions
+$ts-transition-timing-quick: 200ms;
+$ts-transition-timing-default: 400ms;
+$ts-transition-function-default: ease-in-out;

@@ -20,10 +20,10 @@
   </div>
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .flex-container {
     display: flex;
@@ -48,6 +48,6 @@
   .hero-title {
     font-size: 48px;
     line-height: 67px;
-    color: var(--ts-blue-color);
+    color: variables.$ts-blue-color;
   }
 </style>

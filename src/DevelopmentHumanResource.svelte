@@ -72,10 +72,8 @@
   </div>
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @import "./styles/main.scss";
 
   .flex-container {
     display: flex;

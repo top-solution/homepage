@@ -76,14 +76,10 @@
   </div>
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
 
-  * {
-    box-sizing: border-box;
-  }
+  @import "./styles/main.scss";
 
   .collapsible-section {
     width: calc(100% + 16px);
@@ -93,22 +89,23 @@
 
   .collapsible-section__divider {
     display: block;
-    margin-top: var(--ts-spacing-1-5);
+    margin-top: variables.$ts-spacing-1-5;
   }
 
   .collapsible-section__divider hr {
-    padding: var(--ts-spacing-1) 8px;
+    padding: variables.$ts-spacing-1 8px;
+    border: 0;
     border-top: 1px solid transparent;
-    transition: border-color var(--ts-transition-timing-default)
-      var(--ts-transition-function-default);
+    transition: border-color variables.$ts-transition-timing-default
+      variables.$ts-transition-function-default;
   }
 
   .collapsible-section--collapsed {
-    padding-bottom: var(--ts-spacing-3);
+    padding-bottom: variables.$ts-spacing-3;
   }
 
   .collapsible-section--collapsed .collapsible-section__divider hr {
-    border-color: var(--ts-blue-color);
+    border-color: variables.$ts-blue-color;
   }
 
   .collapsible-section--collapsed .collapsible-section-header img {
@@ -116,8 +113,8 @@
   }
 
   .collapsible-section__collapsible {
-    transition: max-height var(--ts-transition-timing-default)
-      var(--ts-transition-function-default);
+    transition: max-height variables.$ts-transition-timing-default
+      variables.$ts-transition-function-default;
     overflow: hidden;
   }
 
@@ -142,11 +139,11 @@
     width: 34px;
     margin-bottom: -4px;
     transform: rotate(45deg);
-    transition: transform var(--ts-transition-timing-quick)
-      var(--ts-transition-function-default);
+    transition: transform variables.$ts-transition-timing-quick
+      variables.$ts-transition-function-default;
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: variables.$ts-tablet-max) {
     .collapsible-section-header h5 {
       font-size: 18px;
       line-height: 21px;

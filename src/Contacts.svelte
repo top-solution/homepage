@@ -2,26 +2,7 @@
 
 <script>
   import "@material/mwc-snackbar";
-  import RequestInfo from "./RequestInfo.svelte";
-
-  let contactUsOpen = false;
-  let contactUsElement = null;
   let snackbarElement = null;
-
-  const mapCenter = { lat: 45.0876111, lng: 7.6729824 };
-  let map = null;
-
-  function handleClick() {
-    contactUsOpen = true;
-
-    setTimeout(() => {
-      contactUsElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      });
-    }, 200);
-  }
 
   function handleContactUsSubmit() {
     contactUsOpen = false;
@@ -57,7 +38,7 @@
     </div>
   </div>
 
-  <div bind:this={contactUsElement} class="contact-us">
+  <div class="contact-us">
     <ts-request-info open={true} on:formsubmit={handleContactUsSubmit} />
   </div>
   <mwc-snackbar
@@ -66,10 +47,10 @@
   />
 </ts-layout>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .page-contacts {
     color: var(--ts-blue-color);
@@ -77,8 +58,8 @@
 
   .page-contacts__contacts-container {
     display: flex;
-    margin-top: var(--ts-spacing-8);
-    margin-bottom: var(--ts-spacing-15);
+    margin-top: variables.$ts-spacing-8;
+    margin-bottom: variables.$ts-spacing-15;
   }
 
   .page-contacts__contacts {
@@ -86,7 +67,7 @@
     list-style: none;
     font-size: 18px;
     padding-left: 0;
-    padding-left: var(--ts-spacing-3);
+    padding-left: variables.$ts-spacing-3;
     border-left: 1px solid var(--ts-blue-color);
     margin: 0;
   }
@@ -95,7 +76,7 @@
     flex: 1 0 50%;
     display: flex;
     align-items: flex-start;
-    margin-bottom: var(--ts-spacing-3);
+    margin-bottom: variables.$ts-spacing-3;
     order: 4;
   }
 
@@ -110,7 +91,7 @@
   .page-contacts__contacts img {
     width: 20px;
     height: 20px;
-    margin-right: var(--ts-spacing-3);
+    margin-right: variables.$ts-spacing-3;
     margin-top: 2px;
   }
 
@@ -119,7 +100,7 @@
   }
 
   ts-request-info {
-    margin-top: var(--ts-spacing-15);
+    margin-top: variables.$ts-spacing-15;
     display: block;
   }
 
@@ -131,10 +112,10 @@
     margin-right: auto;
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: variables.$ts-tablet-max) {
     .page-contacts__copy h1 {
       text-align: left;
-      margin: var(--ts-spacing-2) 0 var(--ts-spacing-1);
+      margin: variables.$ts-spacing-2 0 variables.$ts-spacing-1;
     }
 
     .page-contacts__contacts {
@@ -150,11 +131,11 @@
       width: 22px;
       height: 22px;
       margin-top: 3px;
-      margin-right: var(--ts-spacing-3);
+      margin-right: variables.$ts-spacing-3;
     }
 
     ts-request-info {
-      margin-top: var(--ts-spacing-10);
+      margin-top: variables.$ts-spacing-10;
       display: block;
     }
 
@@ -166,15 +147,15 @@
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: variables.$ts-mobile-max) {
     .page-contacts__contacts-container {
       flex-direction: column;
-      margin-top: var(--ts-spacing-2);
+      margin-top: variables.$ts-spacing-2;
     }
 
     ts-office-map {
       min-height: 240px;
-      margin-bottom: var(--ts-spacing-7);
+      margin-bottom: variables.$ts-spacing-7;
     }
   }
 </style>

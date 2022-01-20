@@ -350,10 +350,10 @@
   </div>
 </form>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .contact-us {
     position: relative;
@@ -408,7 +408,7 @@
   }
 
   ts-textfield {
-    margin: 0 var(--ts-spacing-1) var(--ts-spacing-3);
+    margin: 0 variables.$ts-spacing-1 variables.$ts-spacing-3;
   }
 
   #contact-us__curriculum-upload {
@@ -421,10 +421,10 @@
     display: flex;
     justify-content: space-between;
     padding: 0 24px;
-    height: var(--ts-spacing-4);
+    height: variables.$ts-spacing-4;
     border-radius: 2px;
     display: flex;
-    margin: 0 0 var(--ts-spacing-2) 0;
+    margin: 0 0 variables.$ts-spacing-2 0;
   }
 
   #contact-us__cv-form-row p {
@@ -449,13 +449,13 @@
   #contact-us__cv-button-form-row {
     display: flex;
     align-items: center;
-    margin-bottom: var(--ts-spacing-3);
+    margin-bottom: variables.$ts-spacing-3;
   }
 
   #contact-us__curriculum-upload-label {
     /* Fake button, can't use component due to WebComponents limitations */
     color: white;
-    background-color: var(--ts-blue-color);
+    background-color: variables.$ts-blue-color;
     margin-left: auto;
     display: flex;
     align-items: center;
@@ -463,15 +463,15 @@
 
   #contact-us__curriculum-upload-label img {
     height: 18px;
-    margin-left: var(--ts-spacing-1);
+    margin-left: variables.$ts-spacing-1;
   }
 
   #contact-us__curriculum-upload-label:hover {
-    background-color: var(--ts-blue-color-light);
+    background-color: variables.$ts-blue-color-light;
   }
 
   #contact-us__cv-error-text {
-    color: var(--mdc-theme-error, #b00020);
+    color: var(--mdc-theme-error), #b00020;
     font-size: 16px;
     margin: 0;
     font-weight: 400;
@@ -488,7 +488,7 @@
   }
 
   #contact-us__graduation-grade-textfield {
-    margin-right: var(--ts-spacing-1);
+    margin-right: variables.$ts-spacing-1;
   }
 
   #contact-us__submit-button-form-row {
@@ -499,7 +499,7 @@
     margin: 0 auto;
   }
 
-  @media only screen and (min-width: 960px) {
+  @media only screen and (min-width: variables.$ts-tablet-min) {
     .contact-us {
       margin-top: 0;
     }
@@ -509,11 +509,11 @@
     }
 
     ts-textfield {
-      margin: 0 var(--ts-spacing-1) 0;
+      margin: 0 variables.$ts-spacing-1 0;
     }
 
     .contact-us__form-row {
-      margin: 0 -8px var(--ts-spacing-3);
+      margin: 0 -8px variables.$ts-spacing-3;
     }
 
     #contact-us__name-textfield,
@@ -521,7 +521,7 @@
     #contact-us__graduation-textfield,
     #contact-us__email-textfield {
       flex: 1 1 0;
-      margin-right: var(--ts-spacing-1);
+      margin-right: variables.$ts-spacing-1;
     }
 
     #contact-us__age-textfield,
