@@ -1,0 +1,38 @@
+{{>head-start}}
+<title>Top Solution</title>
+<meta name="description" content="" />
+
+<meta property="og:title" content="" />
+<meta property="og:type" content="" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+
+<script src="./build/Blob.js"></script>
+<script src="./build/Button.js"></script>
+<script src="./build/CollapsibleSection.js"></script>
+<script src="./build/Haka.js"></script>
+<script src="./build/Picture.js"></script>
+<script src="./build/PricingTable.js"></script>
+<script src="./build/RequestTrial.js"></script>
+<script src="./build/TextField.js"></script>
+<script src="./build/Select.js"></script>
+<script src="./build/TopBanner.js"></script>
+{{>head-end}}
+
+{{>body-start}}
+<ts-top-banner title="Audit competenze" mobilealignleft="true">
+  <div slot="text">
+    Rileva il <b>Know-how</b> professionale dei dipendenti e <b>scopri</b> il
+    punto di partenza per sviluppare e rafforzare le loro competenze con
+    <b>Haka</b>
+  </div>
+  <div slot="actions" style="display: flex; flex-direction: column; max-width: 175px; margin: auto;">
+    <ts-button variant="secondary" href="#tariffe" style="margin-bottom: var(--ts-spacing-6);">Prova gratuita
+    </ts-button>
+    <ts-button variant="primary" href="#tariffe">Tariffe</ts-button>
+  </div>
+</ts-top-banner>
+<div style="max-width: 960px; margin: 0 auto">
+  <ts-page-haka></ts-page-haka>
+</div>
+{{>body-end}}

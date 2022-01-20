@@ -4,15 +4,20 @@ This is the source code for Top Solution srl homepage, hosted at [https://topsol
 
 ## 🚀 Quick start
 
-1. **Start developing.**
+### Start developing
 
    ```sh
    npm install
-   npm run dev #watch svelte files and build when any of them change
-   npm start #start a simple web server on public directory
+   npm run start
    ```
 
-2. **Create a new component**
+   #### Explanation
+   The `start` npm task launches concurrently three other npm tasks:
+   1. `watch`: Watches all `.svelte` files in the `src` directory and rebuilds a single component when it changes.
+   2. `watch-pages`: Watches all `.html` page templates in the `src/pages` directory and rebuilds a single page when it changes.
+   3. `serve`: serve all the content in the `/public` directory on `0.0.0.0:8080`. Cache should be disabled by default.
+
+### Create a new component
 
    To implement a new component you need to create a `.svelte` file. Don't forget to include the necessary tag at line 1 of the file:
 
@@ -20,17 +25,28 @@ This is the source code for Top Solution srl homepage, hosted at [https://topsol
    <svelte:options tag="svelte-component" />
    ```
 
-   You need to import the common style in your component:
+### Components style
 
-   ```css
-   @import "css/main.css";
-   @import "css/normalize.css";
-   @import "css/style.css";
-   ```
+All site style is written with [SCSS](https://sass-lang.com/). The only exception is the small CSS snippet to style the `html` and `body` page elements, which is injected in each page template (see below).
 
-3. **Component style**
+Due to the WebComponents CSS isolation, all common styles must be included in each web component. Usually adding
 
-   Each component have his own style inside, not accessible from the outside. You can found the common css in the `css/style.css` file.
+```scss
+  @import "./styles/main";
+```
+
+at the top of the component style tag does the trick. `main.scss` conveniently includes all common styles.
+
+Each component has his own style inside, not accessible from the outside.
+
+
+### Page templates
+
+In order to reduce duplicated code to a minimum, the common code shared by them is injected on build time with the help of the [Handlebar](https://handlebarsjs.com/) template engine.
+
+Each site page should contain only the page metadata, the WebComponents imports, and the bare minimum page code (most of it should be in a Svelte component anyway).
+
+The common page parts are in the `/build-page.js` file.
 
 ## 💫 Deploy
 

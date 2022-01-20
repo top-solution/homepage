@@ -1,9 +1,13 @@
 @use './variables';
 
+
+* {
+  box-sizing: border-box;
+}
+
 hr {
   margin: 0;
 }
-
 
 .container {
   max-width: 960px;
