@@ -348,7 +348,7 @@
     flex-wrap: wrap;
     margin: 0;
 
-    & .body-2 {
+    .body-2 {
       font-size: 18px;
       margin: 0 variables.$ts-spacing-2 variables.$ts-spacing-2;
 

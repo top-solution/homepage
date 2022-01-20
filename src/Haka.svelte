@@ -700,7 +700,7 @@
     margin-top: 300px;
     text-align: center;
 
-    & .body-2 {
+    .body-2 {
       margin-bottom: variables.$ts-spacing-6;
     }
   }
@@ -729,7 +729,7 @@
       font-weight: 300;
     }
 
-    & .body-2 {
+    .body-2 {
       margin: variables.$ts-spacing-3 0;
     }
   }
@@ -744,7 +744,7 @@
     padding: variables.$ts-spacing-8 0;
     text-align: center;
 
-    & .body-2 {
+    .body-2 {
       margin: variables.$ts-spacing-3 0;
     }
   }
