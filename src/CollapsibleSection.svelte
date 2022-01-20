@@ -55,7 +55,7 @@
       }, 400);
     }}
   >
-    <h5>
+    <h5 class="title-5">
       {title}
     </h5>
     <img href="" src="img/icons/expand.svg" alt="" />

@@ -21,9 +21,9 @@
   <ts-blob interactive="false" shape="hexagon" src={personSrc}>
     <!-- <div class="team-person__image-sizer" /> -->
   </ts-blob>
-  <div class="team-person__name">{name}</div>
+  <div class="team-person__name body-2">{name}</div>
   {#if companyrole}
-    <div class="team-person__role">{companyrole}</div>
+    <div class="team-person__role body-2"><b>{companyrole}</b></div>
   {/if}
   <slot />
 </div>
@@ -42,8 +42,6 @@
 
   .team-person__name,
   .team-person__role {
-    font-weight: 300;
-    font-size: 24px;
     text-align: center;
   }
 

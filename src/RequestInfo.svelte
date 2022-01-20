@@ -135,13 +135,13 @@
         </defs>
       </svg>
     </div>
-    <h2 class="title-3">Richiedi <b>informazioni</b></h2>
-    <p class="request-info__subtitle">
+    <h2 class="title-3 title-form">Richiedi <b>informazioni</b></h2>
+    <p class="request-info__subtitle body-1">
       <b>Compila</b> e <b>invia</b> il form per avere maggiori
       <b>informazioni</b>
       sui nostri <b>servizi</b>
     </p>
-    <p class="request-info__subtitle">
+    <p class="request-info__subtitle body-1">
       <b>Inviaci</b> la tua <b>candidatura spontanea</b>
     </p>
     <div class="request-info__form">

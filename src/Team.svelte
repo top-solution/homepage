@@ -38,9 +38,9 @@
       <img src="img/giga-blob-mobile.svg" alt="" />
     </div>
   </div>
+  <h1 class="title-1">Team</h1>
   <div class="page-team__copy">
-    <h1 class="title-2">Team</h1>
-    <p>
+    <p class="body-1">
       Top Solution nasce dall’associazione di una grande <b>expertise</b> nel
       settore della <b>consulenza informatica</b> e della
       <b>gestione delle risorse umane</b>. Il team di informatici è affiancato
@@ -130,6 +130,11 @@
 
   .contact-us {
     margin-bottom: variables.$ts-spacing-10;
+  }
+
+  ts-contact-us {
+    margin-top: 200px;
+    display: block;
   }
 
   @media only screen and (max-width: 900px) {

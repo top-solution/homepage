@@ -136,8 +136,8 @@
         </defs>
       </svg>
     </div>
-    <h2 class="title-3">Richiedi una <b>prova gratuita</b></h2>
-    <p class="request-trial__subtitle">
+    <h2 class="title-3 title-form">Richiedi una <b>prova gratuita</b></h2>
+    <p class="request-trial__subtitle body-2">
       <b>Compila</b> e <b>invia</b> il form, il nostro team ti invierà il
       modello per la valutazione delle performance <b>gratuitamente</b>
     </p>
@@ -242,7 +242,7 @@
         />
       </div>
       <div class="request-trial__form-row">
-        <p>
+        <p class="body-2">
           Inserisci l’email del valutato e del valutatore, in questo modo potrai
           ottenere in autonomia le <b>credenziali</b> per accedere alla
           piattaforma e fruire della <b>prova gratuita</b>.
@@ -347,12 +347,15 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-  }
 
-  .request-trial__form-row p {
-    font-size: 18px;
-    line-height: 21px;
-    margin: 0 variables.$ts-spacing-2 variables.$ts-spacing-2;
+    & .body-2 {
+      font-size: 18px;
+      margin: 0 variables.$ts-spacing-2 variables.$ts-spacing-2;
+
+      b {
+        font-weight: 400;
+      }
+    }
   }
 
   ts-textfield,

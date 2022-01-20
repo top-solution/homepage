@@ -2,6 +2,7 @@
 
 <script>
   export let title = "";
+  export let title2 = false;
   export let azure = "";
   export let mobilealignleft = "";
 </script>
@@ -12,7 +13,13 @@
   class:top-banner--mobile-align-left={Boolean(mobilealignleft)}
 >
   <div class="top-banner__content">
-    <h1 class="top-banner__title">{title}</h1>
+    <h1
+      class:title-1={!title2}
+      class:title-2={title2}
+      class="top-banner__title"
+    >
+      {title}
+    </h1>
     <div class="top-banner__text">
       <slot name="text" />
     </div>
@@ -46,15 +53,10 @@
 
   .top-banner__title {
     margin: 0 0 variables.$ts-spacing-3 0;
+    text-align: center;
   }
 
   .top-banner__text {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 39px;
-    text-align: center;
     max-width: 600px;
     margin: 0 auto variables.$ts-spacing-3;
   }
@@ -69,10 +71,6 @@
   @media screen and (max-width: variables.$ts-tablet-max) {
     .top-banner__title {
       font-size: 28px;
-    }
-
-    .top-banner__text {
-      font-size: 25px;
     }
 
     .top-banner.top-banner--mobile-align-left .top-banner__text,
