@@ -22,30 +22,30 @@
   </div>
 </div>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .top-banner {
-    background-color: var(--ts-blue-background);
+    background-color: variables.$ts-blue-background;
 
-    color: var(--ts-blue-color);
+    color: variables.$ts-blue-color;
   }
 
   .top-banner.top-banner--azure {
-    background-color: var(--ts-azure-color-light);
+    background-color: variables.$ts-azure-color-light;
   }
 
   .top-banner__content {
     box-sizing: border-box;
     max-width: 960px;
     margin: auto;
-    padding: var(--ts-spacing-4) var(--ts-spacing-8);
+    padding: variables.$ts-spacing-4 variables.$ts-spacing-8;
   }
 
   .top-banner__title {
-    margin: 0 0 var(--ts-spacing-3) 0;
+    margin: 0 0 variables.$ts-spacing-3 0;
   }
 
   .top-banner__text {
@@ -56,17 +56,17 @@
     line-height: 39px;
     text-align: center;
     max-width: 600px;
-    margin: 0 auto var(--ts-spacing-3);
+    margin: 0 auto variables.$ts-spacing-3;
   }
 
   .top-banner__actions {
-    margin: var(--ts-spacing-9) auto var(--ts-spacing-5);
+    margin: variables.$ts-spacing-9 auto variables.$ts-spacing-5;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: variables.$ts-tablet-max) {
     .top-banner__title {
       font-size: 28px;
     }
