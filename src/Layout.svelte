@@ -10,6 +10,8 @@
 <style lang="scss">
   @use "./styles/variables";
 
+  @import "./styles/main.scss";
+
   .layout {
     max-width: variables.$ts-tablet-max;
     margin: 0 auto;
