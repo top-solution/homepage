@@ -163,14 +163,10 @@
   <slot />
 </ts-collapsible-section>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
 
-  * {
-    box-sizing: border-box;
-  }
+  @import "./styles/main.scss";
 
   .pricing-table__table {
     width: 100%;
@@ -243,9 +239,9 @@
     border-radius: 4px;
   }
 
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: variables.$ts-tablet-max) {
     .pricing-table__header__row .pricing-table__col {
-      height: var(--ts-spacing-9);
+      height: variables.$ts-spacing-9;
     }
 
     .pricing-table--subcolumns .pricing-table__header__row .pricing-table__col {
@@ -253,7 +249,7 @@
     }
 
     .pricing-table__subheader__row .pricing-table__col {
-      height: var(--ts-spacing-4);
+      height: variables.$ts-spacing-4;
     }
 
     .pricing-table__col {
@@ -261,11 +257,11 @@
     }
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: variables.$ts-tablet-max) {
     .pricing-table__header {
       font-size: 15px;
       text-transform: none;
-      padding: var(--ts-spacing-1) 0 var(--ts-spacing-2);
+      padding: variables.$ts-spacing-1 0 variables.$ts-spacing-2;
     }
 
     .pricing-table__col {
@@ -279,7 +275,7 @@
     }
 
     .pricing-table__col {
-      padding: var(--ts-spacing-1) 0;
+      padding: variables.$ts-spacing-1 0;
     }
   }
 </style>

@@ -293,10 +293,10 @@
   </div>
 </form>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .title-3 {
     text-transform: none;
@@ -304,14 +304,14 @@
 
   .request-trial {
     position: relative;
-    margin-top: var(--ts-spacing-8);
+    margin-top: variables.$ts-spacing-8;
   }
 
   .request-trial__drawer {
     position: relative;
     max-height: 0;
-    transition: max-height var(--ts-transition-timing-default)
-      var(--ts-transition-function-default);
+    transition: max-height variables.$ts-transition-timing-default
+      variables.$ts-transition-function-default;
     overflow: hidden;
   }
 
@@ -321,7 +321,7 @@
 
   .request-trial h2 {
     text-align: center;
-    margin-bottom: var(--ts-spacing-4);
+    margin-bottom: variables.$ts-spacing-4;
   }
 
   .request-trial__subtitle {
@@ -339,7 +339,7 @@
   }
 
   .request-trial__form {
-    margin: var(--ts-spacing-6) 0;
+    margin: variables.$ts-spacing-6 0;
     display: block;
   }
 
@@ -352,12 +352,12 @@
   .request-trial__form-row p {
     font-size: 18px;
     line-height: 21px;
-    margin: 0 var(--ts-spacing-2) var(--ts-spacing-2);
+    margin: 0 variables.$ts-spacing-2 variables.$ts-spacing-2;
   }
 
   ts-textfield,
   ts-select {
-    margin: 0 0 var(--ts-spacing-3);
+    margin: 0 0 variables.$ts-spacing-3;
   }
 
   ts-textfield,
@@ -366,7 +366,7 @@
   }
 
   #request-trial__employees-textfield {
-    margin-right: var(--ts-spacing-1);
+    margin-right: variables.$ts-spacing-1;
   }
 
   #request-trial__submit-button-form-row {
@@ -377,7 +377,7 @@
     margin: 0 auto;
   }
 
-  @media only screen and (min-width: 960px) {
+  @media only screen and (min-width: variables.$ts-tablet-max) {
     .request-trial {
       margin-top: 0;
     }
@@ -388,11 +388,11 @@
 
     ts-textfield,
     ts-select {
-      margin: 0 var(--ts-spacing-2) 0;
+      margin: 0 variables.$ts-spacing-2 0;
     }
 
     .request-trial__form-row {
-      margin: 0 -8px var(--ts-spacing-3);
+      margin: 0 -8px variables.$ts-spacing-3;
     }
 
     #request-trial__name-textfield,
@@ -400,7 +400,7 @@
     #request-trial__employees-textfield,
     #request-trial__assessee-email-textfield {
       flex: 1 1 0;
-      margin-right: var(--ts-spacing-1);
+      margin-right: variables.$ts-spacing-1;
     }
 
     #request-trial__companyName-textfield,

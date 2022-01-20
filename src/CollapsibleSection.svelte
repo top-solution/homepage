@@ -94,6 +94,7 @@
 
   .collapsible-section__divider hr {
     padding: variables.$ts-spacing-1 8px;
+    border: 0;
     border-top: 1px solid transparent;
     transition: border-color variables.$ts-transition-timing-default
       variables.$ts-transition-function-default;
