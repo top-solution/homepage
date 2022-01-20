@@ -75,10 +75,10 @@
   </div>
 </footer>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   footer {
     height: 477px;
@@ -93,7 +93,7 @@
     justify-content: space-evenly;
     margin: 0 auto;
     padding: 24px 0;
-    max-width: 960px;
+    max-width: variables.$ts-tablet-max;
     line-height: 28px;
   }
 
