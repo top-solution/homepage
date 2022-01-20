@@ -1,0 +1,63 @@
+@use './variables';
+
+hr {
+  margin: 0;
+}
+
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.component-container {
+  margin-top: 70px;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 42px;
+  color: variables.$ts-blue-color;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.spacing-margin-8 {
+  margin: 8px;
+}
+
+.center {
+  text-align: center;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.ml-12 {
+  margin-left: 12px;
+}
+
+.button {
+  align-items: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  height: 42px;
+  justify-content: center;
+  letter-spacing: 0.46px;
+  line-height: 26px;
+  padding: 8px 22px;
+  text-transform: uppercase;
+
+  border: 0;
+
+  transition: background-color variables.$ts-transition-timing-quick
+      variables.$ts-transition-function-default,
+    border-color variables.$ts-transition-timing-quick
+      variables.$ts-transition-function-default;
+}

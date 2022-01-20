@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import { readdirSync } from "fs";
 import { terser } from "rollup-plugin-terser";
+import preprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -48,6 +49,7 @@ export default files.map((name, index) => ({
         dev: !production,
         customElement: true,
       },
+      preprocess: preprocess(),
     }),
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
