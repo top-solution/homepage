@@ -499,7 +499,7 @@
     margin: 0 auto;
   }
 
-  @media only screen and (min-width: 960px) {
+  @media only screen and (min-width: variables.$ts-tablet-min) {
     .contact-us {
       margin-top: 0;
     }

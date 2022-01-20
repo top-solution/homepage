@@ -9,28 +9,30 @@ $ts-error: #d32f2f;
 
 $ts-blue-color-hovering: #8D88BA;
 
-$ts-size-18: 18px;
-$ts-size-24: 24px;
-
+// Breakpoints
 $ts-mobile-max: 600px;
 $ts-tablet-min: $ts-mobile-max + 1px;
-$ts-tablet-max: 960px;
+$ts-tablet-max: 900px;
+$ts-destop-min: $ts-tablet-max + 1px;
 
-/* FIXME: any better alternative to this? */
-$ts-spacing-1: 8px;
-$ts-spacing-1-5: 12px;
-$ts-spacing-2: 16px;
-$ts-spacing-3: 24px;
-$ts-spacing-4: 32px;
-$ts-spacing-5: 40px;
-$ts-spacing-6: 48px;
-$ts-spacing-7: 56px;
-$ts-spacing-8: 64px;
-$ts-spacing-9: 72px;
-$ts-spacing-10: 80px;
-$ts-spacing-15: 120px;
-$ts-spacing-20: 160px;
+// Spacing
+$ts-spacing: 8px;
+$ts-spacing-1: $ts-spacing;
+$ts-spacing-1-5: $ts-spacing * 1.5;
+$ts-spacing-2: $ts-spacing * 2;
+$ts-spacing-3: $ts-spacing * 3;
+$ts-spacing-3: $ts-spacing * 3;
+$ts-spacing-4: $ts-spacing * 4;
+$ts-spacing-5: $ts-spacing * 5;
+$ts-spacing-6: $ts-spacing * 6;
+$ts-spacing-7: $ts-spacing * 7;
+$ts-spacing-8: $ts-spacing * 8;
+$ts-spacing-9: $ts-spacing * 9;
+$ts-spacing-10: $ts-spacing * 10;
+$ts-spacing-15: $ts-spacing * 15;
+$ts-spacing-20: $ts-spacing * 20;
 
+// Transitions
 $ts-transition-timing-quick: 200ms;
 $ts-transition-timing-default: 400ms;
 $ts-transition-function-default: ease-in-out;
