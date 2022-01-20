@@ -34,10 +34,10 @@
   </nav>
 </header>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .sub-header {
     display: flex;
@@ -62,7 +62,7 @@
     padding: 0;
     display: flex;
     list-style-type: none;
-    color: var(--ts-blue-color);
+    color: variables.$ts-blue-color;
   }
 
   li {
@@ -71,7 +71,7 @@
   }
 
   li:hover {
-    color: var(--ts-blue-color-hovering);
+    color: variables.$ts-blue-color-hovering;
     text-decoration: underline;
   }
 
