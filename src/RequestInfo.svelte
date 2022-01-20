@@ -286,21 +286,21 @@
   </div>
 </form>
 
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
+<style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
 
   .request-info {
     position: relative;
-    margin-top: var(--ts-spacing-8);
+    margin-top: variables.$ts-spacing-8;
   }
 
   .request-info__drawer {
     position: relative;
     max-height: 0;
-    transition: max-height var(--ts-transition-timing-default)
-      var(--ts-transition-function-default);
+    transition: max-height variables.$ts-transition-timing-default
+      variables.$ts-transition-function-default;
     overflow: hidden;
   }
 
@@ -310,7 +310,7 @@
 
   .request-info h2 {
     text-align: center;
-    margin-bottom: var(--ts-spacing-4);
+    margin-bottom: variables.$ts-spacing-4;
   }
 
   .request-info__subtitle {
@@ -333,7 +333,7 @@
   }
 
   .request-info__form {
-    margin: var(--ts-spacing-6) 0;
+    margin: variables.$ts-spacing-6 0;
     display: block;
   }
 
@@ -345,7 +345,7 @@
 
   ts-textfield,
   ts-select {
-    margin: 0 0 var(--ts-spacing-3);
+    margin: 0 0 variables.$ts-spacing-3;
   }
 
   ts-textfield,
@@ -354,7 +354,7 @@
   }
 
   #request-info__employees-textfield {
-    margin-right: var(--ts-spacing-1);
+    margin-right: variables.$ts-spacing-1;
   }
 
   #request-info__submit-button-form-row {
@@ -367,7 +367,7 @@
 
   /* var(--mdc-theme-error, #b00020); */
 
-  @media only screen and (min-width: 960px) {
+  @media only screen and (min-width: variables.$ts-tablet-max) {
     .request-info {
       margin-top: 0;
     }
@@ -378,11 +378,11 @@
 
     ts-textfield,
     ts-select {
-      margin: 0 var(--ts-spacing-2) 0;
+      margin: 0 variables.$ts-spacing-2 0;
     }
 
     .request-info__form-row {
-      margin: 0 -8px var(--ts-spacing-3);
+      margin: 0 -8px variables.$ts-spacing-3;
     }
 
     #request-info__name-textfield,
@@ -390,7 +390,7 @@
     #request-info__companyName-textfield,
     #request-info__employees-textfield {
       flex: 1 1 0;
-      margin-right: var(--ts-spacing-1);
+      margin-right: variables.$ts-spacing-1;
     }
 
     #request-info__role-textfield,
