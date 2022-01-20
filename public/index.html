@@ -37,31 +37,29 @@
   </head>
 
   <body style="overflow-x: hidden">
-    <div style="max-width: 960px; margin: 0 auto">
-      <ts-layout>
-        <div slot="external">
-          <div class="home__header-blob">
-            <img src="img/blob-header-homepage.svg" alt="" />
-          </div>
-          <div class="home__header-mobile">
-            <img src="img/blob-header-homepage.svg" alt="" />
-          </div>
+    <div
+      style="max-width: 960px; margin: 0 auto; position: relative; width: 100%"
+    >
+      <div slot="external">
+        <div class="home__header-blob">
+          <img src="img/blob-header-homepage.svg" alt="" />
         </div>
-      </ts-layout>
+        <div class="home__header-mobile">
+          <img src="img/blob-header-homepage.svg" alt="" />
+        </div>
+      </div>
       <ts-header color="light"></ts-header>
       <ts-home-hero></ts-home-hero>
       <ts-development-hr></ts-development-hr>
       <ts-development-software></ts-development-software>
-      <ts-layout>
-        <div slot="external">
-          <div class="home__middle-blob">
-            <img src="img/blob-middle-homepage.svg" alt="" />
-          </div>
-          <div class="home__middle-mobile">
-            <img src="img/blob-middle-homepage.svg" alt="" />
-          </div>
+      <div slot="external">
+        <div class="home__middle-blob">
+          <img src="img/blob-middle-homepage.svg" alt="" />
         </div>
-      </ts-layout>
+        <div class="home__middle-mobile">
+          <img src="img/blob-middle-homepage.svg" alt="" />
+        </div>
+      </div>
       <ts-customers></ts-customers>
     </div>
     <ts-footer></ts-footer>
@@ -82,8 +80,8 @@
     position: absolute;
     width: 1400px;
     overflow: visible;
-    top: -130px;
-    left: -270px;
+    top: -180px;
+    left: -870px;
     z-index: -1;
   }
 
@@ -96,8 +94,8 @@
     position: absolute;
     width: 1400px;
     overflow: visible;
-    right: -940px;
-    top: 1550px;
+    right: -1125px;
+    top: 1450px;
     z-index: -1;
   }
 </style>
