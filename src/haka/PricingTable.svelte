@@ -164,9 +164,9 @@
 </ts-collapsible-section>
 
 <style lang="scss">
-  @use "./styles/variables";
+  @use "../styles/variables";
 
-  @import "./styles/main.scss";
+  @import "../styles/main.scss";
 
   .pricing-table__table {
     width: 100%;

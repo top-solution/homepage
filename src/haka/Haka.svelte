@@ -10,7 +10,7 @@
     expertiseSubColumns,
     mobileExpertiseTables,
     mobileExpertiseColumns,
-  } from "./haka/tablesDefinition";
+  } from "./tablesDefinition";
 
   let contactUsOpen = false;
   let snackbarElement = null;
@@ -504,9 +504,9 @@
 >
 
 <style lang="scss" global>
-  @use "./styles/variables";
+  @use "../styles/variables";
 
-  @use "./styles/main.scss";
+  @use "../styles/main.scss";
 
   body {
     background-color: red;
