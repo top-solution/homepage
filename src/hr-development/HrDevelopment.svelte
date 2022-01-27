@@ -32,20 +32,36 @@
     <h2 class="title-3 title-form">I nostri <b>servizi</b></h2>
     <ol>
       <li>
-        <span class="title-5">AUDIT COMPETENZE</span><ts-button
+        <span class="title-5">AUDIT COMPETENZE</span>
+        <ts-button variant="outlined" href="haka.html">Scopri</ts-button>
+        <ts-button
+          class="page-hr-development__button-small"
           variant="outlined"
+          small="true"
           href="haka.html">Scopri</ts-button
         >
       </li>
       <li>
-        <span class="title-5">SVILUPPO ORGANIZZATIVO</span><ts-button
+        <span class="title-5">SVILUPPO ORGANIZZATIVO</span>
+        <ts-button variant="outlined" href="company-development.html"
+          >Scopri</ts-button
+        >
+        <ts-button
+          class="page-hr-development__button-small"
           variant="outlined"
+          small="true"
           href="company-development.html">Scopri</ts-button
         >
       </li>
       <li>
-        <span class="title-5">SVILUPPO INDIVIDUALE</span><ts-button
+        <span class="title-5">SVILUPPO INDIVIDUALE</span>
+        <ts-button variant="outlined" href="self-development.html"
+          >Scopri</ts-button
+        >
+        <ts-button
+          class="page-hr-development__button-small"
           variant="outlined"
+          small="true"
           href="self-development.html">Scopri</ts-button
         >
       </li>
@@ -136,6 +152,10 @@
       ts-button {
         display: inline-block;
         margin-left: variables.$ts-spacing-8;
+
+        &.page-hr-development__button-small {
+          display: none;
+        }
       }
     }
 
@@ -167,6 +187,10 @@
     .page-hr-development__copy {
       align-items: flex-start;
 
+      .claim {
+        font-size: 20px;
+      }
+
       ts-hr-svg {
         max-width: 160px;
         flex: 0 1 160px;
@@ -179,10 +203,24 @@
     }
 
     .page-hr-development__our-services {
+      align-items: stretch;
+
       li {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        ts-button {
+          display: none;
+
+          &.page-hr-development__button-small {
+            display: block;
+            margin-left: auto;
+          }
+        }
+      }
+      .page-hr-development__hexagon {
+        width: 125%;
       }
     }
   }

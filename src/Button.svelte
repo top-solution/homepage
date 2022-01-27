@@ -3,6 +3,7 @@
 <script>
   export let variant = "primary"; // "primary" | "secondary" | "outlined"
   export let component = null; // null | "a" | "button"
+  export let small = false; // false | true
 
   export let href;
   export let type;
@@ -16,17 +17,18 @@
     class:button--secondary={variant === "secondary"}
     class:button--outlined={variant === "outlined"}
     class:button--icon={icon === true}
+    class:button--small={small === true || small === "true"}
     {href}
   >
     <slot />
     {#if variant === "outlined"}
-      <img
+      <svg
         class="button__icon"
-        src="../img/icons/rightArrow.svg"
-        alt="arrow icon"
-        width="16"
-        height="16"
-      />
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
+      </svg>
     {/if}
   </a>
 {/if}
@@ -38,16 +40,17 @@
     class:button--secondary={variant === "secondary"}
     class:button--outlined={variant === "outlined"}
     class:button--icon={icon === true}
+    class:button--small={small === true}
   >
     <slot />
     {#if variant === "outlined"}
-      <img
+      <svg
         class="button__icon"
-        src="../img/icons/rightArrow.svg"
-        alt="arrow icon"
-        width="16"
-        height="16"
-      />
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
+      </svg>
     {/if}
   </button>
 {/if}
@@ -110,11 +113,23 @@
         variables.$ts-transition-function-default,
       margin-left variables.$ts-transition-timing-quick
         variables.$ts-transition-function-default;
+    fill: variables.$ts-blue-color;
   }
 
   .button--outlined:hover .button__icon {
     width: 16px;
     opacity: 1;
     margin-left: 12px;
+  }
+
+  .button--small {
+    height: 30px;
+    padding: 4px 10px;
+    color: variables.$ts-blue-color-light;
+    border: 1px solid rgba(63, 81, 181, 0.5);
+
+    .button__icon {
+      fill: variables.$ts-blue-color-light;
+    }
   }
 </style>
