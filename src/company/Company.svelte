@@ -1,25 +1,6 @@
 <svelte:options tag="ts-page-company" />
 
 <script>
-  import "@material/mwc-snackbar";
-
-  let contactUsOpen = false;
-  let snackbarElement = null;
-
-  const collapsibleHeights = {
-    performance: 0,
-    expertise180: 0,
-    expertise360: 0,
-    potential: 0,
-  };
-
-  let expandedSections = {};
-
-  function handleRequestTrialSubmit() {
-    snackbarElement.show();
-  }
-
-  console.log(window.innerWith);
 </script>
 
 <ts-layout class="page-company">
@@ -46,7 +27,9 @@
       </ts-blob>
     </div>
   </div>
-  <div class="page-company__row">
+  <ts-company-hex-1 />
+  <ts-company-hex-1-mobile />
+  <div class="page-company__row page-company__row--flipped">
     <div
       class="page-company__logo"
       style="background-image: url(./img/i3p.png)"
@@ -61,13 +44,15 @@
       >
         <div class="page-company__blob__content">
           <p class="body-1">
-            Nel 2012 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
+            Nel 212 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
             siamo usciti dall'incubatore e abbiamo aperto il nostro primo ufficio
           </p>
         </div>
       </ts-blob>
     </div>
   </div>
+  <ts-company-hex-2 />
+  <ts-company-hex-2-mobile />
   <div class="page-company__row">
     <div
       class="page-company__logo"
@@ -95,9 +80,9 @@
 </ts-layout>
 
 <style lang="scss">
-  @use "./styles/variables";
+  @use "../styles/variables";
 
-  @use "./styles/main.scss";
+  @use "../styles/main.scss";
 
   .page-company {
     display: block;
@@ -128,7 +113,7 @@
       width: auto;
     }
 
-    &:nth-child(2n + 1) {
+    &.page-company__row--flipped {
       flex-direction: row-reverse;
       padding-right: variables.$ts-spacing-3;
       padding-left: 0;
@@ -153,6 +138,27 @@
     & .body-2 {
       margin: variables.$ts-spacing-3 0;
     }
+  }
+
+  ts-company-hex-1,
+  ts-company-hex-2,
+  ts-company-hex-1-mobile,
+  ts-company-hex-2-mobile {
+    width: 200px;
+    display: block;
+  }
+
+  ts-company-hex-1 {
+    margin: variables.$ts-spacing-4 15% 0 auto;
+  }
+
+  ts-company-hex-2 {
+    margin: variables.$ts-spacing-4 auto 0 40%;
+  }
+
+  ts-company-hex-1-mobile,
+  ts-company-hex-2-mobile {
+    display: none;
   }
 
   @media only screen and (max-width: variables.$ts-mobile-max) {
@@ -181,7 +187,7 @@
     }
 
     .page-company__row {
-      &:nth-child(2n + 1) {
+      &.page-company__row--flipped {
         .page-company__blob__content {
           padding: variables.$ts-spacing-2 variables.$ts-spacing-8
             variables.$ts-spacing-2 variables.$ts-spacing-4;
@@ -193,6 +199,25 @@
     .page-company__row {
       padding-left: variables.$ts-spacing-3;
       padding-right: variables.$ts-spacing-3;
+    }
+
+    ts-company-hex-1,
+    ts-company-hex-2 {
+      display: none;
+    }
+
+    ts-company-hex-1-mobile,
+    ts-company-hex-2-mobile {
+      width: 60vw;
+      display: block;
+    }
+
+    ts-company-hex-1-mobile {
+      margin: variables.$ts-spacing-4 auto 0 40%;
+    }
+
+    ts-company-hex-2-mobile {
+      margin: variables.$ts-spacing-4 auto 0 40%;
     }
   }
 
