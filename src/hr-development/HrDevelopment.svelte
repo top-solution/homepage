@@ -1,8 +1,5 @@
 <svelte:options tag="ts-page-hr-development" />
 
-<script>
-</script>
-
 <ts-top-banner
   title="Sviluppo delle Risorse Umane"
   mobilealignleft="true"
@@ -22,7 +19,7 @@
     <ts-header-hexagons-desktop />
     <ts-header-hexagons-mobile />
     <svg
-      class="page-company_floating-hex-1"
+      class="page-hr-development_floating-hex-1"
       viewBox="0 0 85 95"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +33,7 @@
 </ts-top-banner>
 <ts-layout class="page-hr-development">
   <svg
-    class="page-company_floating-hex-2"
+    class="page-hr-development_floating-hex-2"
     viewBox="0 0 82 90"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +51,7 @@
     </p>
     <ts-hr-svg />
     <svg
-      class="page-company_floating-hex-3"
+      class="page-hr-development_floating-hex-3"
       viewBox="0 0 130 145"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -70,9 +67,13 @@
     <ol>
       <li>
         <span class="title-5">AUDIT COMPETENZE</span>
-        <ts-button variant="outlined" href="haka.html">Scopri</ts-button>
         <ts-button
-          class="page-hr-development__button-small"
+          class="page-hr-development__our-services__button"
+          variant="outlined"
+          href="haka.html">Scopri</ts-button
+        >
+        <ts-button
+          class="page-hr-development__our-services__button--small"
           variant="outlined"
           small="true"
           href="haka.html">Scopri</ts-button
@@ -80,11 +81,13 @@
       </li>
       <li>
         <span class="title-5">SVILUPPO ORGANIZZATIVO</span>
-        <ts-button variant="outlined" href="company-development.html"
-          >Scopri</ts-button
+        <ts-button
+          class="page-hr-development__our-services__button"
+          variant="outlined"
+          href="company-development.html">Scopri</ts-button
         >
         <ts-button
-          class="page-hr-development__button-small"
+          class="page-hr-development__our-services__button--small"
           variant="outlined"
           small="true"
           href="company-development.html">Scopri</ts-button
@@ -92,11 +95,13 @@
       </li>
       <li>
         <span class="title-5">SVILUPPO INDIVIDUALE</span>
-        <ts-button variant="outlined" href="self-development.html"
-          >Scopri</ts-button
+        <ts-button
+          class="page-hr-development__our-services__button"
+          variant="outlined"
+          href="self-development.html">Scopri</ts-button
         >
         <ts-button
-          class="page-hr-development__button-small"
+          class="page-hr-development__our-services__button--small"
           variant="outlined"
           small="true"
           href="self-development.html">Scopri</ts-button
@@ -104,7 +109,7 @@
       </li>
     </ol>
     <svg
-      class="page-hr-development__hexagon"
+      class="page-hr-development__our-services__hexagon"
       viewBox="0 0 616 573"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +142,7 @@
     </div>
   </ts-blob>
   <svg
-    class="page-company_floating-hex-4"
+    class="page-hr-development_floating-hex-4"
     viewBox="0 0 75 83"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -154,32 +159,32 @@
 
   @use "../styles/main.scss";
 
+  ts-header-hexagons-desktop {
+    right: 0px;
+    width: 100%;
+    top: 0px;
+  }
+
+  ts-header-hexagons-mobile {
+    display: none;
+  }
+
+  ts-header-hexagons-desktop,
+  ts-header-hexagons-mobile {
+    position: absolute;
+  }
+
+  .page-hr-development_floating-hex-1 {
+    width: 85px;
+    position: absolute;
+    bottom: -50px;
+    right: 30px;
+  }
+
   .page-hr-development {
     display: block;
     color: variables.$ts-blue-color;
     box-sizing: border-box;
-
-    ts-header-hexagons-desktop,
-    ts-header-hexagons-mobile {
-      position: absolute;
-    }
-
-    ts-header-hexagons-desktop {
-      right: 0px;
-      width: 100%;
-      top: 0px;
-    }
-
-    ts-header-hexagons-mobile {
-      display: none;
-    }
-
-    & {
-      width: 85px;
-      position: absolute;
-      bottom: -50px;
-      right: 30px;
-    }
 
     &_floating-hex-2 {
       width: 82px;
@@ -241,15 +246,15 @@
       li {
         min-width: 500px;
         margin-bottom: variables.$ts-spacing-3;
-
-        ts-button {
-          display: inline-block;
-          margin-left: variables.$ts-spacing-8;
-        }
       }
 
-      &__button-small {
-        display: none;
+      &__button {
+        display: inline-block;
+        margin-left: variables.$ts-spacing-8;
+
+        &--small {
+          display: none;
+        }
       }
 
       &__hexagon {
@@ -283,21 +288,6 @@
     }
 
     @media only screen and (max-width: variables.$ts-mobile-max) {
-      ts-header-hexagons-desktop {
-        display: none;
-      }
-
-      ts-header-hexagons-mobile {
-        display: block;
-        right: 72px;
-        width: 100%;
-        top: 30px;
-      }
-
-      & {
-        width: 58px;
-      }
-
       &_floating-hex-2 {
         right: unset;
         left: 33%;
@@ -340,20 +330,38 @@
           align-items: center;
           justify-content: space-between;
           min-width: 0;
+        }
 
-          ts-button {
-            display: none;
+        &__button {
+          display: none;
+
+          &--small {
+            display: block;
+            margin-left: auto;
           }
         }
+
         &__hexagon {
           width: 125%;
         }
       }
+    }
+  }
 
-      &__button-small {
-        display: block;
-        margin-left: auto;
-      }
+  @media only screen and (max-width: variables.$ts-mobile-max) {
+    ts-header-hexagons-desktop {
+      display: none;
+    }
+
+    ts-header-hexagons-mobile {
+      display: block;
+      right: 72px;
+      width: 100%;
+      top: 30px;
+    }
+
+    .page-hr-development_floating-hex-1 {
+      width: 58px;
     }
   }
 </style>
