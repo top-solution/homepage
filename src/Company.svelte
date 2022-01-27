@@ -18,19 +18,24 @@
   function handleRequestTrialSubmit() {
     snackbarElement.show();
   }
+
+  console.log(window.innerWith);
 </script>
 
 <ts-layout class="page-company">
   <h1 class="title-1">Azienda</h1>
   <div class="page-company__row">
-    <img src="./img/start_cup.png" alt="" />
+    <div
+      class="page-company__logo"
+      style="background-image: url(./img/start_cup.png)"
+    />
     <div class="page-company__blob">
       <ts-blob
         interactive="true"
-        shape="rectanglehr"
+        shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
         fill="#EBEAF3"
         padding="24"
-        variance="1.4"
+        variance={window.innerWith > 900 ? 1.4 : 1.2}
       >
         <div class="page-company__blob__content">
           <p class="body-1">
@@ -42,14 +47,17 @@
     </div>
   </div>
   <div class="page-company__row">
-    <img src="./img/i3p.png" alt="" />
+    <div
+      class="page-company__logo"
+      style="background-image: url(./img/i3p.png)"
+    />
     <div class="page-company__blob">
       <ts-blob
         interactive="true"
-        shape="rectanglehr"
+        shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
         fill="#EBEAF3"
         padding="24"
-        variance="1.4"
+        variance={window.innerWith > 900 ? 1.4 : 1.2}
       >
         <div class="page-company__blob__content">
           <p class="body-1">
@@ -61,14 +69,17 @@
     </div>
   </div>
   <div class="page-company__row">
-    <img src="./img/logo_name.svg" alt="" />
+    <div
+      class="page-company__logo"
+      style="background-image: url(./img/logo_name.svg)"
+    />
     <div class="page-company__blob">
       <ts-blob
         interactive="true"
-        shape="rectanglehr"
+        shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
         fill="#EBEAF3"
         padding="24"
-        variance="1.4"
+        variance={window.innerWith > 900 ? 1.4 : 1.2}
       >
         <div class="page-company__blob__content">
           <p class="body-1">
@@ -101,35 +112,37 @@
     flex-direction: row;
     max-height: 600px;
     justify-content: space-between;
+    margin: 0 (variables.$ts-spacing-3 * -1);
+    padding-left: variables.$ts-spacing-3;
+    flex: 1 1 0;
 
-    ts-picture,
-    img {
-      max-height: 200px;
-      height: auto;
+    .page-company__logo {
+      flex: 1 0 auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-width: 130px;
       max-width: 320px;
-      width: auto;
 
+      height: 190px;
       width: auto;
     }
-  }
 
-  .page-company__row:nth-child(2n + 1) {
-    flex-direction: row-reverse;
-
-    ts-blob {
-      margin-left: -(variables.$ts-spacing-6);
-      margin-right: 0;
+    &:nth-child(2n + 1) {
+      flex-direction: row-reverse;
+      padding-right: variables.$ts-spacing-3;
+      padding-left: 0;
     }
   }
 
   .page-company__blob {
-    margin: 200px auto;
     display: flex;
     justify-content: center;
+    min-width: 0;
 
     ts-blob {
       width: 520px;
-      margin-right: -(variables.$ts-spacing-10);
+      // margin-right: -(variables.$ts-spacing-10);
     }
   }
 
@@ -142,6 +155,58 @@
     }
   }
 
-  @media only screen and (max-width: variables.$ts-tablet-max) {
+  @media only screen and (max-width: variables.$ts-mobile-max) {
+    .page-company__row {
+      max-height: 600px;
+
+      img {
+        max-width: 120px;
+      }
+    }
+
+    .page-company__blob {
+      min-width: 0;
+
+      ts-blob {
+        min-width: 80vw;
+        margin-right: 0;
+        // margin-left: -(variables.$ts-spacing-8);
+      }
+    }
+
+    .page-company__blob__content {
+      padding: variables.$ts-spacing-2 variables.$ts-spacing-4
+        variables.$ts-spacing-2 variables.$ts-spacing-8;
+      text-align: left;
+    }
+
+    .page-company__row {
+      &:nth-child(2n + 1) {
+        .page-company__blob__content {
+          padding: variables.$ts-spacing-2 variables.$ts-spacing-8
+            variables.$ts-spacing-2 variables.$ts-spacing-4;
+          text-align: right;
+        }
+      }
+    }
+
+    .page-company__row {
+      padding-left: variables.$ts-spacing-3;
+      padding-right: variables.$ts-spacing-3;
+    }
+  }
+
+  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+    .page-company__row {
+      img {
+        max-width: 200px;
+      }
+    }
+
+    .page-company__blob {
+      ts-blob {
+        min-width: 60vw;
+      }
+    }
   }
 </style>
