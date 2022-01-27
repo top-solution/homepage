@@ -18,8 +18,34 @@
   >
     <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
   </div>
+  <div slot="external">
+    <ts-header-hexagons-desktop />
+    <ts-header-hexagons-mobile />
+  </div>
 </ts-top-banner>
 <ts-layout class="page-hr-development">
+  <svg
+    class="page-company_floating-hex-1"
+    viewBox="0 0 85 95"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M84.5619 27.0231L83.007 50.3464L81.3611 73.6634L60.3851 83.9785L39.3691 94.2116L19.948 81.2034L0.577766 68.1196L2.13268 44.7963L3.77851 21.4793L24.7545 11.1642L45.7706 0.931033L65.1917 13.9393L84.5619 27.0231Z"
+      fill="#312783"
+    />
+  </svg>
+  <svg
+    class="page-company_floating-hex-2"
+    viewBox="0 0 82 90"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.02874 20.2452L24.1346 10.3419L44.2788 0.517134L62.9082 12.9777L81.4888 25.5107L80.0124 47.8745L78.4488 70.2323L58.343 80.1356L38.1987 89.9604L19.5693 77.4998L0.988672 64.9668L2.46512 42.603L4.02874 20.2452Z"
+      fill="#d6d4e6"
+    />
+  </svg>
   <div class="page-hr-development__copy">
     <p class="claim">
       Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
@@ -27,6 +53,17 @@
       attività del <b>personale</b> interno ed esterno
     </p>
     <ts-hr-svg />
+    <svg
+      class="page-company_floating-hex-3"
+      viewBox="0 0 130 145"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M129.306 41.0613L126.913 76.9547L124.381 112.839L92.0994 128.713L59.7567 144.461L29.8685 124.442L0.0585764 104.307L2.45153 68.4134L4.98438 32.5295L37.2655 16.6551L69.6083 0.906706L99.4965 20.9258L129.306 41.0613Z"
+        fill="#4758a3"
+      />
+    </svg>
   </div>
   <div class="page-hr-development__our-services">
     <h2 class="title-3 title-form">I nostri <b>servizi</b></h2>
@@ -99,6 +136,17 @@
       >
     </div>
   </ts-blob>
+  <svg
+    class="page-company_floating-hex-4"
+    viewBox="0 0 75 83"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M71.3761 18.4619L52.9801 9.40085L34.549 0.411597L17.5039 11.8124L0.503459 23.2796L1.85434 43.7415L3.28498 64.198L21.6809 73.259L40.1121 82.2483L57.1571 70.8474L74.1576 59.3802L72.8067 38.9183L71.3761 18.4619Z"
+      fill="#312783"
+    />
+  </svg>
 </ts-layout>
 
 <style lang="scss">
@@ -112,10 +160,55 @@
     box-sizing: border-box;
   }
 
+  ts-header-hexagons-desktop,
+  ts-header-hexagons-mobile {
+    position: absolute;
+  }
+
+  ts-header-hexagons-desktop {
+    right: -710px;
+    width: 2445px;
+    top: -440px;
+  }
+
+  ts-header-hexagons-mobile {
+    display: none;
+  }
+
+  .page-company_floating-hex-1 {
+    width: 85px;
+    position: absolute;
+    top: -120px;
+    right: 0;
+  }
+
+  .page-company_floating-hex-2 {
+    width: 82px;
+    position: absolute;
+    top: -40px;
+    right: calc(50% - 41px);
+  }
+
+  .page-company_floating-hex-3 {
+    width: 130px;
+    position: absolute;
+    top: 350px;
+    left: 12%;
+  }
+
+  .page-company_floating-hex-4 {
+    width: 75px;
+    display: block;
+    margin-left: auto;
+    margin-right: variables.$ts-spacing-3;
+    margin-bottom: variables.$ts-spacing-8;
+  }
+
   .page-hr-development__copy {
     display: flex;
     align-items: center;
     margin-top: variables.$ts-spacing-8;
+    position: relative;
 
     p {
       flex: 1 1 0;
@@ -184,8 +277,41 @@
   }
 
   @media only screen and (max-width: variables.$ts-mobile-max) {
+    ts-header-hexagons-desktop {
+      display: none;
+    }
+
+    ts-header-hexagons-mobile {
+      display: block;
+      right: 0;
+      width: 100%;
+      top: 0;
+    }
+
+    .page-company_floating-hex-1 {
+      right: variables.$ts-spacing-2;
+      width: 58px;
+      top: -156px;
+    }
+
+    .page-company_floating-hex-2 {
+      right: unset;
+      left: 33%;
+      top: -82px;
+      width: 55px;
+    }
+
+    .page-company_floating-hex-3 {
+      display: none;
+    }
+
+    .page-company_floating-hex-4 {
+      width: 45px;
+    }
+
     .page-hr-development__copy {
       align-items: flex-start;
+      margin-top: variables.$ts-spacing-15;
 
       .claim {
         font-size: 20px;
