@@ -1,8 +1,5 @@
 <svelte:options tag="ts-page-company" />
 
-<script>
-</script>
-
 <ts-layout class="page-company">
   <ts-header-hexagons-desktop />
   <ts-header-hexagons-mobile />
