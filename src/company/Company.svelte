@@ -273,6 +273,11 @@
   }
 
   @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+    ts-header-hexagons-desktop {
+      right: -380px;
+      top: -660px;
+    }
+
     .page-company__row {
       img {
         max-width: 200px;
