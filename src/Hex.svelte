@@ -29,19 +29,21 @@
       </defs>
     {/if}
     <g {fill}>
-      <path
-        fill-opacity={Number(opacity)}
-        style:transform={`rotate(${Number(rotation)}deg)`}
-        d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
-      />
       {#if shadow === "true"}
-        <path
-          fill-opacity={0.4 * Number(opacity)}
-          style:transform={`rotate(${Number(rotation)}deg)`}
-          d="m22.692 33.867-7.332-4.234v-8.466l7.332-4.234 7.333 4.234v8.466z"
-          filter={shadow === "true" ? "url(#hex__filter)" : ""}
-        />
+        <g transform={`rotate(${Number(rotation)}) translate(0 14)`}>
+          <path
+            fill-opacity={0.4 * Number(opacity)}
+            d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
+            filter={shadow === "true" ? "url(#hex__filter)" : ""}
+          />
+        </g>
       {/if}
+      <g transform={`rotate(${Number(rotation)})`}>
+        <path
+          fill-opacity={Number(opacity)}
+          d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
+        />
+      </g>
     </g>
   </svg>
 </div>
