@@ -18,31 +18,21 @@
   <div slot="external">
     <ts-header-hexagons-desktop />
     <ts-header-hexagons-mobile />
-    <svg
-      class="page-hr-development_floating-hex-1"
-      viewBox="0 0 85 95"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M84.5619 27.0231L83.007 50.3464L81.3611 73.6634L60.3851 83.9785L39.3691 94.2116L19.948 81.2034L0.577766 68.1196L2.13268 44.7963L3.77851 21.4793L24.7545 11.1642L45.7706 0.931033L65.1917 13.9393L84.5619 27.0231Z"
-        fill="#312783"
-      />
-    </svg>
+    <ts-hex
+      class="page-hr-development__floating-hex-1"
+      width="85"
+      fill="#312783"
+      shadow="true"
+    />
   </div>
 </ts-top-banner>
 <ts-layout class="page-hr-development">
-  <svg
-    class="page-hr-development_floating-hex-2"
-    viewBox="0 0 82 90"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M4.02874 20.2452L24.1346 10.3419L44.2788 0.517134L62.9082 12.9777L81.4888 25.5107L80.0124 47.8745L78.4488 70.2323L58.343 80.1356L38.1987 89.9604L19.5693 77.4998L0.988672 64.9668L2.46512 42.603L4.02874 20.2452Z"
-      fill="#d6d4e6"
-    />
-  </svg>
+  <ts-hex
+    class="page-hr-development__floating-hex-2"
+    width="85"
+    fill="#d6d4e6"
+    shadow="false"
+  />
   <div class="page-hr-development__copy">
     <p class="claim">
       Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
@@ -50,17 +40,12 @@
       attività del <b>personale</b> interno ed esterno
     </p>
     <ts-hr-svg />
-    <svg
-      class="page-hr-development_floating-hex-3"
-      viewBox="0 0 130 145"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M129.306 41.0613L126.913 76.9547L124.381 112.839L92.0994 128.713L59.7567 144.461L29.8685 124.442L0.0585764 104.307L2.45153 68.4134L4.98438 32.5295L37.2655 16.6551L69.6083 0.906706L99.4965 20.9258L129.306 41.0613Z"
-        fill="#4758a3"
-      />
-    </svg>
+    <ts-hex
+      class="page-hr-development__floating-hex-3"
+      width="130"
+      fill="#4758a3"
+      shadow="true"
+    />
   </div>
   <div class="page-hr-development__our-services">
     <h2 class="title-3 title-form">I nostri <b>servizi</b></h2>
@@ -141,17 +126,13 @@
       >
     </div>
   </ts-blob>
-  <svg
-    class="page-hr-development_floating-hex-4"
-    viewBox="0 0 75 83"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M71.3761 18.4619L52.9801 9.40085L34.549 0.411597L17.5039 11.8124L0.503459 23.2796L1.85434 43.7415L3.28498 64.198L21.6809 73.259L40.1121 82.2483L57.1571 70.8474L74.1576 59.3802L72.8067 38.9183L71.3761 18.4619Z"
-      fill="#312783"
-    />
-  </svg>
+  <ts-hex
+    class="page-hr-development__floating-hex-4"
+    width="75"
+    fill="#312783"
+    shadow="false"
+    rotation="-4"
+  />
 </ts-layout>
 
 <style lang="scss">
@@ -174,7 +155,7 @@
     position: absolute;
   }
 
-  .page-hr-development_floating-hex-1 {
+  .page-hr-development__floating-hex-1 {
     width: 85px;
     position: absolute;
     bottom: -50px;
@@ -186,26 +167,31 @@
     color: variables.$ts-blue-color;
     box-sizing: border-box;
 
-    &_floating-hex-2 {
+    &__floating-hex-1 {
+      position: absolute;
+      bottom: -230px;
+      right: -90px;
+    }
+
+    &__floating-hex-2 {
       width: 82px;
       position: absolute;
       top: -60px;
-      right: calc(50% - 41px);
+      right: calc(50% + 48px);
     }
 
-    &_floating-hex-3 {
+    &__floating-hex-3 {
       width: 130px;
       position: absolute;
-      top: 350px;
-      left: 12%;
+      top: 300px;
+      left: -30;
     }
 
-    &_floating-hex-4 {
-      width: 75px;
+    &__floating-hex-4 {
+      width: 225px;
       display: block;
       margin-left: auto;
       margin-right: variables.$ts-spacing-3;
-      margin-bottom: variables.$ts-spacing-8;
     }
 
     &__copy {
@@ -282,24 +268,24 @@
     }
 
     @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
-      &_floating-hex-3 {
+      &__floating-hex-3 {
         display: none;
       }
     }
 
     @media only screen and (max-width: variables.$ts-mobile-max) {
-      &_floating-hex-2 {
+      &__floating-hex-2 {
         right: unset;
         left: 33%;
         top: -80px;
         width: 55px;
       }
 
-      &_floating-hex-3 {
+      &__floating-hex-3 {
         display: none;
       }
 
-      &_floating-hex-4 {
+      &__floating-hex-4 {
         width: 45px;
       }
 
@@ -360,7 +346,7 @@
       top: 30px;
     }
 
-    .page-hr-development_floating-hex-1 {
+    .page-hr-development__floating-hex-1 {
       width: 58px;
     }
   }
