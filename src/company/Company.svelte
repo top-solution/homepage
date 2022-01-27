@@ -4,6 +4,8 @@
 </script>
 
 <ts-layout class="page-company">
+  <ts-header-hexagons-desktop />
+  <ts-header-hexagons-mobile />
   <h1 class="title-1">Azienda</h1>
   <div class="page-company__row">
     <div
@@ -27,6 +29,17 @@
       </ts-blob>
     </div>
   </div>
+  <svg
+    viewBox="0 0 100 109"
+    class="page-company_floating-hex-1"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6.10979 22.8979L30.8094 11.5447L55.5531 0.287793L77.7351 16.0017L99.8557 31.8019L97.3381 58.869L94.715 85.9261L70.0154 97.2794L45.2717 108.536L23.0897 92.8224L0.969092 77.0222L3.48669 49.955L6.10979 22.8979Z"
+      fill="#312783"
+    />
+  </svg>
   <ts-company-hex-1 />
   <ts-company-hex-1-mobile />
   <div class="page-company__row page-company__row--flipped">
@@ -89,6 +102,29 @@
     color: variables.$ts-blue-color;
     box-sizing: border-box;
     margin-bottom: variables.$ts-spacing-4;
+  }
+
+  ts-header-hexagons-desktop,
+  ts-header-hexagons-mobile {
+    position: absolute;
+    z-index: -1;
+  }
+
+  ts-header-hexagons-desktop {
+    right: -680px;
+    width: 830px;
+    top: -640px;
+  }
+
+  ts-header-hexagons-mobile {
+    display: none;
+  }
+
+  .page-company_floating-hex-1 {
+    position: absolute;
+    left: 17%;
+    top: -40px;
+    width: 100px;
   }
 
   .page-company__row {
@@ -162,6 +198,21 @@
   }
 
   @media only screen and (max-width: variables.$ts-mobile-max) {
+    ts-header-hexagons-desktop {
+      display: none;
+    }
+
+    ts-header-hexagons-mobile {
+      display: block;
+      right: -110px;
+      width: 414px;
+      top: -330px;
+    }
+
+    .page-company_floating-hex-1 {
+      display: none;
+    }
+
     .page-company__row {
       max-height: 600px;
 
