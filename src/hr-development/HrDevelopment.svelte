@@ -34,19 +34,19 @@
       <li>
         <span class="title-5">AUDIT COMPETENZE</span><ts-button
           variant="outlined"
-          href="randompage.html">Scopri</ts-button
+          href="haka.html">Scopri</ts-button
         >
       </li>
       <li>
         <span class="title-5">SVILUPPO ORGANIZZATIVO</span><ts-button
           variant="outlined"
-          href="randompage.html">Scopri</ts-button
+          href="company-development.html">Scopri</ts-button
         >
       </li>
       <li>
         <span class="title-5">SVILUPPO INDIVIDUALE</span><ts-button
           variant="outlined"
-          href="randompage.html">Scopri</ts-button
+          href="self-development.html">Scopri</ts-button
         >
       </li>
     </ol>
@@ -105,8 +105,6 @@
       flex: 1 1 0;
     }
 
-    img,
-    svg,
     ts-hr-svg {
       display: block;
       max-width: 320px;
@@ -119,6 +117,9 @@
     max-width: 540px;
     margin: variables.$ts-spacing-20 auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .title-3 {
       text-align: center;
@@ -126,6 +127,7 @@
 
     ol {
       list-style: none;
+      padding: 0;
     }
 
     li {
@@ -158,6 +160,30 @@
 
     ts-button {
       margin-top: variables.$ts-spacing-3;
+    }
+  }
+
+  @media only screen and (max-width: variables.$ts-mobile-max) {
+    .page-hr-development__copy {
+      align-items: flex-start;
+
+      ts-hr-svg {
+        max-width: 160px;
+        flex: 0 1 160px;
+        margin-left: variables.$ts-spacing-1;
+      }
+    }
+
+    .page-hr-development__blob {
+      margin-top: 100px;
+    }
+
+    .page-hr-development__our-services {
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
   }
 </style>
