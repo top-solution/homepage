@@ -21,20 +21,20 @@
   <div slot="external">
     <ts-header-hexagons-desktop />
     <ts-header-hexagons-mobile />
+    <svg
+      class="page-company_floating-hex-1"
+      viewBox="0 0 85 95"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M84.5619 27.0231L83.007 50.3464L81.3611 73.6634L60.3851 83.9785L39.3691 94.2116L19.948 81.2034L0.577766 68.1196L2.13268 44.7963L3.77851 21.4793L24.7545 11.1642L45.7706 0.931033L65.1917 13.9393L84.5619 27.0231Z"
+        fill="#312783"
+      />
+    </svg>
   </div>
 </ts-top-banner>
 <ts-layout class="page-hr-development">
-  <svg
-    class="page-company_floating-hex-1"
-    viewBox="0 0 85 95"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M84.5619 27.0231L83.007 50.3464L81.3611 73.6634L60.3851 83.9785L39.3691 94.2116L19.948 81.2034L0.577766 68.1196L2.13268 44.7963L3.77851 21.4793L24.7545 11.1642L45.7706 0.931033L65.1917 13.9393L84.5619 27.0231Z"
-      fill="#312783"
-    />
-  </svg>
   <svg
     class="page-company_floating-hex-2"
     viewBox="0 0 82 90"
@@ -166,9 +166,9 @@
   }
 
   ts-header-hexagons-desktop {
-    right: -710px;
-    width: 2445px;
-    top: -440px;
+    right: 0px;
+    width: 100%;
+    top: 0px;
   }
 
   ts-header-hexagons-mobile {
@@ -178,14 +178,14 @@
   .page-company_floating-hex-1 {
     width: 85px;
     position: absolute;
-    top: -120px;
-    right: 0;
+    bottom: -50px;
+    right: 30px;
   }
 
   .page-company_floating-hex-2 {
     width: 82px;
     position: absolute;
-    top: -40px;
+    top: -60px;
     right: calc(50% - 41px);
   }
 
@@ -206,12 +206,12 @@
 
   .page-hr-development__copy {
     display: flex;
-    align-items: center;
-    margin-top: variables.$ts-spacing-8;
+    margin-top: variables.$ts-spacing-10;
     position: relative;
 
     p {
       flex: 1 1 0;
+      margin-top: variables.$ts-spacing-5;
     }
 
     ts-hr-svg {
@@ -240,6 +240,7 @@
     }
 
     li {
+      min-width: 500px;
       margin-bottom: variables.$ts-spacing-3;
 
       ts-button {
@@ -276,6 +277,12 @@
     }
   }
 
+  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+    .page-company_floating-hex-3 {
+      display: none;
+    }
+  }
+
   @media only screen and (max-width: variables.$ts-mobile-max) {
     ts-header-hexagons-desktop {
       display: none;
@@ -283,21 +290,19 @@
 
     ts-header-hexagons-mobile {
       display: block;
-      right: 0;
+      right: 72px;
       width: 100%;
-      top: 0;
+      top: 30px;
     }
 
     .page-company_floating-hex-1 {
-      right: variables.$ts-spacing-2;
       width: 58px;
-      top: -156px;
     }
 
     .page-company_floating-hex-2 {
       right: unset;
       left: 33%;
-      top: -82px;
+      top: -80px;
       width: 55px;
     }
 
@@ -335,6 +340,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        min-width: 0;
 
         ts-button {
           display: none;

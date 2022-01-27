@@ -208,7 +208,7 @@
   }
 
   .hexagons--left {
-    left: -240px;
+    left: -110px;
   }
 
   .hexagons--right {
