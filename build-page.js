@@ -1,5 +1,5 @@
-const {join} = require('path');
-const {readFileSync, writeFileSync} = require('fs');
+const { join } = require('path');
+const { readFileSync, writeFileSync } = require('fs');
 const Handlebars = require('handlebars');
 
 
@@ -27,6 +27,11 @@ Handlebars.registerPartial(
     <style>
       html, body {
         margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      body {
+        overflow-y: hidden;
       }
     </style>
 
@@ -39,14 +44,14 @@ Handlebars.registerPartial(
 Handlebars.registerPartial(
   "body-start",
   `
-  <body style="overflow-x: hidden;">
-    <div style="max-width: 960px; margin: 0 auto">
+  <body>
+    <div style="max-width: 900px; margin: 0 auto">
       <ts-header />
     </div>
 `)
 
 Handlebars.registerPartial(
-  "body-end",`
+  "body-end", `
     <ts-footer />
   </body>
 </html>

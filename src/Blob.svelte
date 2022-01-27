@@ -337,6 +337,59 @@
     ];
   }
 
+  function createPointsRectangle() {
+    return [
+      {
+        x: 0,
+        y: 100,
+        originX: 0,
+        originY: 100,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 50,
+        y: 160,
+        originX: 50,
+        originY: 160,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 150,
+        y: 160,
+        originX: 150,
+        originY: 160,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 200,
+        y: 100,
+        originX: 200,
+        originY: 100,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 150,
+        y: 40,
+        originX: 150,
+        originY: 40,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+      {
+        x: 50,
+        y: 40,
+        originX: 50,
+        originY: 40,
+        noiseOffsetX: Math.random() * 1000,
+        noiseOffsetY: Math.random() * 1000,
+      },
+    ];
+  }
+
   function handleMouseEnter() {
     mouseOver = true;
     noiseAccelStep = 0.003;
@@ -369,6 +422,9 @@
         break;
       case "potato":
         points = createPointsPotato();
+        break;
+      case "rectanglehr":
+        points = createPointsRectangle();
         break;
     }
     animate();
@@ -436,7 +492,7 @@
   </svg>
 </div>
 
-<style>
+<style lang="scss">
   * {
     margin: 0;
     padding: 0;
@@ -446,12 +502,24 @@
   .blob {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 100%;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
   }
 
   path {
     cursor: pointer;
+  }
+
+  .content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   .content > * {

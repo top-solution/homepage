@@ -71,6 +71,7 @@ a {
 .claim {
   font-size: 28px;
   font-weight: 300;
+  line-height: 38px;
 
   b {
     font-weight: 500;
@@ -147,7 +148,7 @@ a {
 // Titles of many pages
 h1.title-1 {
   text-align: center;
-  margin-top: variables.$ts-spacing-9 + variables.$ts-spacing-2;
+  margin-top: variables.$ts-spacing-10;
   margin-bottom: variables.$ts-spacing-4;
 
   @media (max-width: variables.$ts-mobile-max) {
