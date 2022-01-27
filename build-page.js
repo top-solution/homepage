@@ -27,6 +27,11 @@ Handlebars.registerPartial(
     <style>
       html, body {
         margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      body {
+        overflow-y: hidden;
       }
     </style>
 
@@ -39,7 +44,7 @@ Handlebars.registerPartial(
 Handlebars.registerPartial(
   "body-start",
   `
-  <body style="overflow-x: hidden;">
+  <body>
     <div style="max-width: 900px; margin: 0 auto">
       <ts-header />
     </div>
