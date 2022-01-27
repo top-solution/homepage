@@ -39,6 +39,33 @@
 
   @import "./styles/main.scss";
 
+  // FIXME: fixini per evitare che l'header spacchi il layout delle pagine
+  header {
+    max-width: variables.$ts-tablet-max;
+    overflow: hidden;
+  }
+
+  @media only screen and (max-width: variables.$ts-mobile-max) {
+    header {
+      height: 92px;
+    }
+    .sub-header,
+    .nav__link {
+      display: none !important;
+    }
+  }
+
+  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+    header {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+    .sub-header {
+      margin-right: 80px;
+    }
+  }
+  // FIXME: fine fixini
+
   .sub-header {
     display: flex;
     justify-content: flex-end;

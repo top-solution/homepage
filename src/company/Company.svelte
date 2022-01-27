@@ -206,7 +206,11 @@
       display: block;
       right: -110px;
       width: 414px;
-      top: -330px;
+      top: -285px;
+    }
+
+    h1.title-1 {
+      margin-bottom: variables.$ts-spacing-10;
     }
 
     .page-company_floating-hex-1 {

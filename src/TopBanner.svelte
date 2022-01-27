@@ -46,7 +46,7 @@
 
   .top-banner__content {
     box-sizing: border-box;
-    max-width: 960px;
+    max-width: variables.$ts-tablet-max;
     margin: auto;
     padding: variables.$ts-spacing-4 variables.$ts-spacing-8;
   }
