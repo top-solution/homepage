@@ -1,9 +1,9 @@
 <svelte:options tag="ts-picture" />
 
 <script>
-  export let base;
-  export let src;
-  export let alt;
+  export let base = "";
+  export let src = "";
+  export let alt = "";
   export let extension = "png";
 </script>
 

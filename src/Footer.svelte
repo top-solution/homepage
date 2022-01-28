@@ -3,20 +3,20 @@
 <footer>
   <div class="footer-top">
     <div class="footer-top__link-box">
-      <div class="footer-title">Informazioni</div>
+      <div class="title-6">Informazioni</div>
       <div><a href="about.html">Azienda</a></div>
       <div><a href="about.html">Team</a></div>
       <div><a href="about.html">Clienti</a></div>
     </div>
     <div class="footer-top__link-box">
-      <div class="footer-title">Link utili</div>
+      <div class="title-6">Link utili</div>
       <div><a href="about.html">HR</a></div>
       <div><a href="about.html">DEV</a></div>
       <div><a href="about.html">Tariffe</a></div>
       <div><a href="about.html">Privacy Policy</a></div>
     </div>
     <div class="footer-top__box">
-      <div class="footer-title">Servizi</div>
+      <div class="title-6">Servizi</div>
       <div><a href="about.html">Audit competenze</a></div>
       <div><a href="about.html">Sviluppo organizzativo</a></div>
       <div><a href="about.html">Sviluppo individuale</a></div>
@@ -25,7 +25,7 @@
       <div><a href="about.html">Cloud computing</a></div>
     </div>
     <div class="footer-top__bordered-box">
-      <div class="footer-title">Contatti</div>
+      <div class="title-6">Contatti</div>
       <div>+39 0112488280</div>
       <div>info@topsolution.it</div>
       <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
@@ -35,7 +35,7 @@
       </a>
       <a target="_blank" href="https://www.linkedin.com/">
         <ts-picture
-          class="spacing"
+          class="footer-top--spacing"
           base="footer"
           src="linkedin"
           alt="Linkedin"
@@ -44,7 +44,7 @@
       </a>
       <a target="_blank" href="https://www.instagram.com/">
         <ts-picture
-          class="spacing"
+          class="footer-top--spacing"
           base="footer"
           src="instagram"
           alt="Instagram"
@@ -55,13 +55,13 @@
   </div>
   <hr />
   <div class="footer-bottom">
-    <div class="flex-container">
+    <div class="footer-bottom__container">
       <img
         src="img/topsolution_footer_logo_dark.svg"
         alt="top-solution_logo"
         width="79"
         height="79"
-        class="logo-img"
+        class="footer-bottom__img"
       />
       <div class="footer-bottom__text">
         Entra in contatto con noi Scopri le opportunità per il tuo business
@@ -81,128 +81,126 @@
   @import "./styles/main.scss";
 
   footer {
-    height: 477px;
-    background-color: #1e1e65;
+    background-color: variables.$ts-blue-color-footer;
     width: 100%;
     font-weight: 300;
-    color: white;
+    color: variables.$ts-white-color;
+
+    .footer-top {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0 auto;
+      padding: variables.$ts-spacing-3 0;
+      max-width: variables.$ts-tablet-max;
+      line-height: 28px;
+
+      &__box,
+      &__link-box {
+        flex: 0 0 20%;
+
+        & > div {
+          margin: variables.$ts-spacing 0;
+
+          & > a {
+            color: variables.$ts-white-color;
+          }
+        }
+      }
+
+      &__bordered-box {
+        flex: 0 0 32%;
+        border-left: 1px solid variables.$ts-white-color;
+        padding-left: variables.$ts-spacing-3;
+        margin-left: variables.$ts-spacing-3;
+
+        & > div {
+          margin: variables.$ts-spacing 0;
+        }
+      }
+
+      &--spacing {
+        margin-left: variables.$ts-spacing-2;
+      }
+    }
+
+    .footer-title {
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .footer-bottom {
+      margin-top: 28px;
+      min-height: 180px;
+      background-color: variables.$ts-blue-color-footer;
+
+      &__text {
+        border-left: 1px solid variables.$ts-white-color;
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 16px;
+        width: 173px;
+      }
+
+      &__iva {
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+      }
+
+      &__company {
+        margin-right: 20px;
+      }
+
+      &__container {
+        display: flex;
+        margin-bottom: variables.$ts-spacing-5;
+        justify-content: center;
+      }
+
+      &__img {
+        margin-right: 18px;
+      }
+    }
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      .footer-top {
+        flex-wrap: wrap;
+        padding: variables.$ts-spacing-3;
+        justify-content: flex-start;
+        line-height: 28px;
+
+        &__link-box {
+          flex: 0 0 50%;
+        }
+        &__box {
+          flex: 0 0 50%;
+        }
+
+        &__bordered-box {
+          flex: 0 0 100%;
+          border-top: 1px solid variables.$ts-white-color;
+          border-bottom: 1px solid variables.$ts-white-color;
+          border-left: none;
+          padding: variables.$ts-spacing-3 0;
+          margin-left: 0;
+          margin-top: variables.$ts-spacing-3;
+          text-align: center;
+        }
+      }
+      hr {
+        display: none !important;
+      }
+    }
   }
 
-  .footer-top {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    padding: 24px 0;
-    max-width: variables.$ts-tablet-max;
-    line-height: 28px;
-  }
-
-  .footer-title {
-    font-weight: 500;
-    font-size: 20px;
-  }
-
-  .footer-top__link-box {
-    flex: 0 0 20%;
-  }
-  .footer-top__box {
-    flex: 0 0 20%;
-  }
-
-  .footer-top__bordered-box {
-    flex: 0 0 32%;
-    border-left: 1px solid #fff;
-    padding-left: 28px;
-    margin-left: 28px;
-  }
-
-  .footer-top__link-box > div {
-    margin: 8px 0;
-  }
-  .footer-top__box > div {
-    margin: 8px 0;
-  }
-  .footer-top__bordered-box > div {
-    margin: 8px 0;
-  }
-
-  .footer-bottom {
-    margin-top: 28px;
-    min-height: 180px;
-    background-color: #1e1e65;
-  }
-
-  .footer-bottom__text {
-    border-left: 1px solid #fff;
-    font-size: 15px;
-    line-height: 18px;
-    padding-left: 16px;
-    width: 173px;
-  }
-  .footer-bottom__iva {
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-  }
-
-  .footer-bottom__company {
-    margin-right: 20px;
-  }
-
-  .flex-container {
-    display: flex;
-    margin-bottom: 42px;
-    justify-content: center;
-  }
-
-  .logo-img {
-    margin-right: 18px;
-  }
-
-  .spacing {
-    margin-left: 18px;
-  }
-
-  @media only screen and (max-width: 760px) {
+  @media only screen and (max-width: variables.$ts-tablet-max) {
     footer {
       height: auto;
     }
-    .footer-top__bordered-box {
-      flex: 0 0 10%;
-    }
-  }
-
-  @media only screen and (max-width: 570px) {
-    /* 375px? */
-
     .footer-top {
-      flex-wrap: wrap;
-      padding: 24px;
-      justify-content: flex-start;
-      line-height: 28px;
-    }
-
-    .footer-top__link-box {
-      flex: 0 0 50%;
-    }
-
-    .footer-top__box {
-      flex: 0 0 50%;
-    }
-
-    .footer-top__bordered-box {
-      flex: 0 0 100%;
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-      border-left: none;
-      padding: 28px 0;
-      margin-left: 0;
-      margin-top: 28px;
-      text-align: center;
-    }
-
-    hr {
-      display: none;
+      &__bordered-box {
+        flex: 0 0 10%;
+      }
     }
   }
 </style>
