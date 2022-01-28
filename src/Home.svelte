@@ -59,38 +59,34 @@
 </script>
 
 <ts-layout class="homepage">
-  <div
-    style="max-width: 960px; margin: 0 auto; position: relative; width: 100%"
-  >
-    <div slot="external">
-      <div class="home__header-blob">
-        <img src="img/blob-header-homepage.svg" alt="" />
-      </div>
-      <div class="home__header-mobile">
-        <img src="img/blob-header-homepage.svg" alt="" />
-      </div>
+  <div slot="external">
+    <div class="homepage__header-blob">
+      <img src="img/blob-header-homepage.svg" alt="" />
     </div>
-    <ts-home-hero />
-    <ts-triple-blob
-      title="SVILUPPO DELLE RISORSE UMANE"
-      buttonLink="random.html"
-      blobs={developmentHumanResourceBlobs}
-    />
-    <ts-triple-blob
-      title="SVILUPPO SOFTWARE"
-      buttonLink="random.html"
-      blobs={developmentSoftwareBlobs}
-    />
-    <div slot="external">
-      <div class="home__middle-blob">
-        <img src="img/blob-middle-homepage.svg" alt="" />
-      </div>
-      <div class="home__middle-mobile">
-        <img src="img/blob-middle-homepage.svg" alt="" />
-      </div>
+    <div class="homepage__header-mobile">
+      <img src="img/blob-header-homepage.svg" alt="" />
     </div>
-    <ts-customers />
   </div>
+  <ts-home-hero />
+  <ts-triple-blob
+    title="SVILUPPO DELLE RISORSE UMANE"
+    buttonLink="random.html"
+    blobs={developmentHumanResourceBlobs}
+  />
+  <ts-triple-blob
+    title="SVILUPPO SOFTWARE"
+    buttonLink="random.html"
+    blobs={developmentSoftwareBlobs}
+  />
+  <div slot="external">
+    <div class="homepage__middle-blob">
+      <img src="img/blob-middle-homepage.svg" alt="" />
+    </div>
+    <div class="homepage__middle-mobile">
+      <img src="img/blob-middle-homepage.svg" alt="" />
+    </div>
+  </div>
+  <ts-customers />
 </ts-layout>
 
 <style lang="scss" global>
@@ -100,33 +96,33 @@
 
   .homepage {
     color: variables.$ts-blue-color;
-  }
 
-  .home__header-blob {
-    display: none;
-  }
+    &__header-blob {
+      display: none;
+    }
 
-  .home__header-mobile {
-    display: block;
-    position: absolute;
-    width: 1400px;
-    overflow: visible;
-    top: -180px;
-    left: -870px;
-    z-index: -1;
-  }
+    &__header-mobile {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -400px;
+      left: -1000px;
+      z-index: -1;
+    }
 
-  .home__middle-blob {
-    display: none;
-  }
+    &__middle-blob {
+      display: none;
+    }
 
-  .home__middle-mobile {
-    display: block;
-    position: absolute;
-    width: 1400px;
-    overflow: visible;
-    right: -1125px;
-    top: 1450px;
-    z-index: -1;
+    &__middle-mobile {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1125px;
+      top: 1350px;
+      z-index: -1;
+    }
   }
 </style>
