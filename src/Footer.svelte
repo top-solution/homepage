@@ -4,36 +4,40 @@
   <div class="footer-top">
     <div class="footer-top__link-box">
       <div class="title-6">Informazioni</div>
-      <div><a href="about.html">Azienda</a></div>
-      <div><a href="about.html">Team</a></div>
-      <div><a href="about.html">Clienti</a></div>
+      <div><a href="company.html">Azienda</a></div>
+      <div><a href="team.html">Team</a></div>
+      <div><a href="error.html">Clienti</a></div>
     </div>
     <div class="footer-top__link-box">
       <div class="title-6">Link utili</div>
-      <div><a href="about.html">HR</a></div>
-      <div><a href="about.html">DEV</a></div>
-      <div><a href="about.html">Tariffe</a></div>
-      <div><a href="about.html">Privacy Policy</a></div>
+      <div><a href="error.html">HR</a></div>
+      <div><a href="error.html">DEV</a></div>
+      <div><a href="error.html">Tariffe</a></div>
+      <div><a href="error.html">Privacy Policy</a></div>
     </div>
     <div class="footer-top__box">
       <div class="title-6">Servizi</div>
-      <div><a href="about.html">Audit competenze</a></div>
-      <div><a href="about.html">Sviluppo organizzativo</a></div>
-      <div><a href="about.html">Sviluppo individuale</a></div>
-      <div><a href="about.html">Applicazioni web e mobile</a></div>
-      <div><a href="about.html">Consulenza sviluppo software</a></div>
-      <div><a href="about.html">Cloud computing</a></div>
+      <div><a href="error.html">Audit competenze</a></div>
+      <div><a href="error.html">Sviluppo organizzativo</a></div>
+      <div><a href="error.html">Sviluppo individuale</a></div>
+      <div><a href="error.html">Applicazioni web e mobile</a></div>
+      <div><a href="error.html">Consulenza sviluppo software</a></div>
+      <div><a href="error.html">Cloud computing</a></div>
     </div>
     <div class="footer-top__bordered-box">
       <div class="title-6">Contatti</div>
-      <div>+39 0112488280</div>
-      <div>info@topsolution.it</div>
+      <div><a href="tel:+39 0112488280">+39 0112488280</a></div>
+      <div><a href="mailto:info@topsolution.it">info@topsolution.it</a></div>
       <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
       <div>Sede Operativa Via Livorno, 60 B2 Lab, 10144 Torino TO</div>
-      <a target="_blank" href="https://twitter.com">
+      <a target="_blank" href="https://twitter.com" rel="noopener noreferrer">
         <ts-picture base="footer" src="twitter" alt="Twitter" extension="svg" />
       </a>
-      <a target="_blank" href="https://www.linkedin.com/">
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/"
+        rel="noopener noreferrer"
+      >
         <ts-picture
           class="footer-top--spacing"
           base="footer"
@@ -42,7 +46,11 @@
           extension="svg"
         />
       </a>
-      <a target="_blank" href="https://www.instagram.com/">
+      <a
+        target="_blank"
+        href="https://www.instagram.com/"
+        rel="noopener noreferrer"
+      >
         <ts-picture
           class="footer-top--spacing"
           base="footer"
@@ -85,6 +93,10 @@
     width: 100%;
     font-weight: 300;
     color: variables.$ts-white-color;
+
+    a {
+      color: variables.$ts-white-color;
+    }
 
     .footer-top {
       display: flex;
@@ -185,6 +197,10 @@
           margin-left: 0;
           margin-top: variables.$ts-spacing-3;
           text-align: center;
+
+          a {
+            color: variables.$ts-white-color;
+          }
         }
       }
       hr {

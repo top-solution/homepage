@@ -4,7 +4,7 @@
   import Button from "./Button.svelte";
   import Layout from "./Layout.svelte";
 
-  export let title;
+  export let title = "";
   export let blobs = [];
   export let buttonLink = "";
 </script>
@@ -57,6 +57,15 @@
       justify-content: space-between;
       margin-bottom: variables.$ts-spacing-10;
       color: variables.$ts-blue-color;
+
+      @media only screen and (max-width: variables.$ts-tablet-max) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        ts-blob {
+          margin: variables.$ts-spacing-2 0;
+        }
+      }
     }
 
     &__text {
