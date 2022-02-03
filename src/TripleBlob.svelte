@@ -75,6 +75,22 @@
     ts-blob {
       margin: 0 variables.$ts-spacing-2 !important;
       min-width: 260px;
+
+      &:first-of-type {
+        margin-left: 0 !important;
+      }
+      &:last-of-type {
+        margin-right: 0 !important;
+      }
+
+      @media only screen and (max-width: variables.$ts-tablet-max) {
+        &:first-of-type {
+          margin-left: variables.$ts-spacing-6 !important;
+        }
+        &:last-of-type {
+          margin-right: variables.$ts-spacing-6 !important;
+        }
+      }
     }
 
     &__text {
