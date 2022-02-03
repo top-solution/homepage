@@ -75,6 +75,11 @@
       }
     }
 
+    ts-blob {
+      margin: 0 variables.$ts-spacing-2 !important;
+      min-width: 260px;
+    }
+
     &__text {
       text-align: center;
     }

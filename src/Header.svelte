@@ -261,7 +261,7 @@
     }
 
     &__contacts {
-      margin-top: variables.$ts-spacing-15;
+      margin-top: variables.$ts-spacing-10;
       color: variables.$ts-blue-color;
       transition: opacity variables.$ts-transition-timing-slow
         variables.$ts-transition-function-default;
