@@ -4,13 +4,16 @@
   export let color = "light"; //light, dark
 
   let menuIsOpened = false;
-
   let headerHeight = "height: 0px";
   function handleOpenMenu(event) {
     menuIsOpened = !menuIsOpened;
     if (menuIsOpened) {
       headerHeight = "height: 100vh;";
-    } else headerHeight = "height: 0px";
+      document.body.style.position = "fixed";
+    } else {
+      headerHeight = "height: 0px";
+      document.body.style.position = "";
+    }
   }
 </script>
 
@@ -52,13 +55,7 @@
         height="70"
       /></a
     >
-    <img
-      src="img/header/hexMenu.svg"
-      alt="Hex"
-      width="158"
-      height="175"
-      class="header-mobile__hex"
-    />
+    <img src="img/header/hexMenu.svg" alt="Hex" class="header-mobile__hex" />
     <img
       src="img/header/hamburgerClose.svg"
       alt="top Solution"
@@ -195,8 +192,6 @@
       z-index: -1;
       margin-left: 50%;
       transform: translate(-50%, 0);
-      max-width: 480px;
-      max-height: 480px;
     }
 
     &__blob {
@@ -219,17 +214,16 @@
 
     &__hex {
       position: absolute;
-      top: -40px;
-      right: -50px;
-      transform: rotate(-10deg);
+      top: -35px;
+      right: -130px;
       overflow: hidden;
     }
 
     &__hamburger {
       z-index: 1;
       position: absolute;
-      top: 35px;
-      right: 30px;
+      top: 30px;
+      right: 15px;
       cursor: pointer;
       transition: opacity variables.$ts-transition-timing-default
         variables.$ts-transition-function-default;
@@ -261,7 +255,7 @@
     }
 
     &__contacts {
-      margin-top: variables.$ts-spacing-10;
+      margin-top: variables.$ts-spacing-5;
       color: variables.$ts-blue-color;
       transition: opacity variables.$ts-transition-timing-slow
         variables.$ts-transition-function-default;
@@ -375,5 +369,9 @@
 
   .hide {
     opacity: 0;
+  }
+
+  .body-fixed {
+    position: fixed;
   }
 </style>

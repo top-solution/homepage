@@ -1,15 +1,12 @@
 <svelte:options tag="ts-triple-blob" />
 
 <script>
-  import Button from "./Button.svelte";
-  import Layout from "./Layout.svelte";
-
   export let title = "";
   export let blobs = [];
   export let buttonLink = "";
 </script>
 
-<ts-layout class="triple-blob">
+<div class="triple-blob">
   <h1 class="title-2 triple-blob__title">{title}</h1>
   <div class="triple-blob__container">
     {#each blobs as blob}
@@ -44,7 +41,7 @@
       >Scopri</ts-button
     >
   </div>
-</ts-layout>
+</div>
 
 <style lang="scss">
   @use "./styles/variables";
@@ -88,6 +85,10 @@
       text-align: center;
       margin-bottom: variables.$ts-spacing-10;
       margin-top: variables.$ts-spacing-10;
+
+      @media only screen and (max-width: variables.$ts-mobile-max) {
+        margin-bottom: variables.$ts-spacing-5;
+      }
     }
 
     &__icon,
