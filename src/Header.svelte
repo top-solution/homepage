@@ -279,7 +279,7 @@
       &--item {
         display: flex;
         justify-content: flex-start;
-        margin: 0 variables.$ts-spacing-2;
+        margin: variables.$ts-spacing-1 variables.$ts-spacing-2;
         align-items: center;
         min-height: 44px;
         font-size: 20px;
