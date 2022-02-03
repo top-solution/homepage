@@ -167,36 +167,38 @@
     color: variables.$ts-blue-color;
     box-sizing: border-box;
 
-    &__floating-hex-1 {
-      position: absolute;
-      bottom: -230px;
-      right: -90px;
-    }
+    &__floating-hex {
+      &-1 {
+        position: absolute;
+        bottom: -230px;
+        right: -90px;
+      }
 
-    &__floating-hex-2 {
-      width: 82px;
-      position: absolute;
-      top: -60px;
-      right: calc(50% + 48px);
-    }
+      &-2 {
+        width: 82px;
+        position: absolute;
+        top: -70px;
+        right: calc(50% + 48px);
+      }
 
-    &__floating-hex-3 {
-      width: 130px;
-      position: absolute;
-      top: 300px;
-      left: -30;
-    }
+      &-3 {
+        width: 130px;
+        position: absolute;
+        top: 300px;
+        left: -30;
+      }
 
-    &__floating-hex-4 {
-      width: 225px;
-      display: block;
-      margin-left: auto;
-      margin-right: variables.$ts-spacing-3;
+      &-4 {
+        width: 225px;
+        display: block;
+        margin-left: auto;
+        margin-right: variables.$ts-spacing-3;
+      }
     }
 
     &__copy {
       display: flex;
-      margin-top: variables.$ts-spacing-10;
+      margin-top: variables.$ts-spacing-15;
       position: relative;
 
       p {
@@ -268,39 +270,49 @@
     }
 
     @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
-      &__floating-hex-3 {
-        display: none;
+      &__floating-hex {
+        &-2 {
+          top: -90px;
+        }
+        &-3 {
+          display: none;
+        }
       }
     }
 
     @media only screen and (max-width: variables.$ts-mobile-max) {
-      &__floating-hex-2 {
-        right: unset;
-        left: 33%;
-        top: -80px;
-        width: 55px;
-      }
+      &__floating-hex {
+        &-2 {
+          right: unset;
+          left: 15%;
+          top: -130px;
+          width: 55px;
+        }
 
-      &__floating-hex-3 {
-        display: none;
-      }
+        &-3 {
+          display: none;
+        }
 
-      &__floating-hex-4 {
-        width: 45px;
+        &-4 {
+          width: 45px;
+          margin-right: 134px;
+        }
       }
 
       &__copy {
         align-items: flex-start;
-        margin-top: variables.$ts-spacing-15;
+        margin-top: variables.$ts-spacing-20;
 
         .claim {
           font-size: 20px;
+          margin-top: 0;
         }
 
         ts-hr-svg {
           max-width: 160px;
           flex: 0 1 160px;
           margin-left: variables.$ts-spacing-1;
+          margin-top: variables.$ts-spacing-1;
         }
       }
 

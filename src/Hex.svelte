@@ -50,6 +50,8 @@
 
 <style lang="scss">
   svg {
+    overflow: visible;
+
     path {
       transform-origin: center;
       transform-box: fill-box;
