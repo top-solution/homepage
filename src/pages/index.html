@@ -8,69 +8,13 @@
 <meta property="og:url" content="" />
 <meta property="og:image" content="" />
 
-<script src="./build/Customers.js"></script>
-<script src="./build/Blob.js"></script>
+
+<script src="./build/Home.js"></script>
 <script src="./build/Button.js"></script>
-<script src="./build/DevelopmentSoftware.js"></script>
-<script src="./build/DevelopmentHumanResource.js"></script>
-<script src="./build/HomeHero.js"></script>
+<script src="./build/Picture.js"></script>
+<script src="./build/TripleBlob.js"></script>
 {{>head-end}}
 
 {{>body-start}}
-<div style="max-width: 960px; margin: 0 auto; position: relative; width: 100%">
-  <div slot="external">
-    <div class="home__header-blob">
-      <img src="img/blob-header-homepage.svg" alt="" />
-    </div>
-    <div class="home__header-mobile">
-      <img src="img/blob-header-homepage.svg" alt="" />
-    </div>
-  </div>
-  <ts-home-hero></ts-home-hero>
-  <ts-development-hr></ts-development-hr>
-  <ts-development-software></ts-development-software>
-  <div slot="external">
-    <div class="home__middle-blob">
-      <img src="img/blob-middle-homepage.svg" alt="" />
-    </div>
-    <div class="home__middle-mobile">
-      <img src="img/blob-middle-homepage.svg" alt="" />
-    </div>
-  </div>
-  <ts-customers></ts-customers>
-</div>
+<ts-page-home></ts-page-home>
 {{>body-end}}
-
-<style>
-  @import "css/main.css";
-  @import "css/normalize.css";
-  @import "css/style.css";
-
-  .home__header-blob {
-    display: none;
-  }
-
-  .home__header-mobile {
-    display: block;
-    position: absolute;
-    width: 1400px;
-    overflow: visible;
-    top: -180px;
-    left: -870px;
-    z-index: -1;
-  }
-
-  .home__middle-blob {
-    display: none;
-  }
-
-  .home__middle-mobile {
-    display: block;
-    position: absolute;
-    width: 1400px;
-    overflow: visible;
-    right: -1125px;
-    top: 1450px;
-    z-index: -1;
-  }
-</style>

@@ -966,7 +966,7 @@
     }
   }
 
-  @media only screen and (min-width: 800px) and (max-width: 900px) {
+  @ only screen and (min-width: 800px) and (max-width: 900px) {
     .page-haka__pricing-table-exagon {
       transform: translate(-50%, 0) scale(1.3);
     }

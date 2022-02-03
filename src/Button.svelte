@@ -5,9 +5,9 @@
   export let component = null; // null | "a" | "button"
   export let small = false; // false | true
 
-  export let href;
-  export let type;
-  export let icon;
+  export let href = "";
+  export let type = "";
+  export let icon = "";
 </script>
 
 {#if component === null || component === "a"}

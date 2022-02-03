@@ -1,8 +1,8 @@
 <svelte:options tag="ts-customers" />
 
-<div class="component-container">
-  <h1>I NOSTRI CLIENTI</h1>
-  <div class="flex-container">
+<div class="customer-container" id="customers">
+  <div class="customer-container__title title-2 center">I NOSTRI CLIENTI</div>
+  <div class="customer-container__images">
     <ts-picture base="customers" src="sky" alt="Sky" />
     <ts-picture base="customers" src="reply" alt="Reply" />
     <ts-picture base="customers" src="collins" alt="Collins" />
@@ -54,12 +54,23 @@
 
   @import "./styles/main.scss";
 
-  .flex-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
+  .customer-container {
+    margin-top: variables.$ts-spacing-9 * 2;
+
+    &__title {
+      margin-bottom: variables.$ts-spacing-9;
+    }
+    &__images {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+
+      & > ts-picture {
+        margin: variables.$ts-spacing-2;
+      }
+    }
   }
 
   .customers-hexs {
@@ -71,5 +82,9 @@
     position: absolute;
     top: 20px;
     left: 455px;
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      left: 155px;
+    }
   }
 </style>
