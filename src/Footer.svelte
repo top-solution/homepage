@@ -6,11 +6,11 @@
       <div class="title-6">Informazioni</div>
       <div><a href="company.html">Azienda</a></div>
       <div><a href="team.html">Team</a></div>
-      <div><a href="error.html">Clienti</a></div>
+      <div><a href="index.html#customers">Clienti</a></div>
     </div>
     <div class="footer-top__link-box">
       <div class="title-6">Link utili</div>
-      <div><a href="error.html">HR</a></div>
+      <div><a href="error.html">HR</a></div> <!-- FIXME: LINKS -->
       <div><a href="error.html">DEV</a></div>
       <div><a href="error.html">Tariffe</a></div>
       <div><a href="error.html">Privacy Policy</a></div>
@@ -22,7 +22,7 @@
       <div><a href="error.html">Sviluppo individuale</a></div>
       <div><a href="error.html">Applicazioni web e mobile</a></div>
       <div><a href="error.html">Consulenza sviluppo software</a></div>
-      <div><a href="error.html">Cloud computing</a></div>
+      <div><a href="error.html">Cloud computing</a></div> <!-- FIXME: LINKS -->
     </div>
     <div class="footer-top__bordered-box">
       <div class="title-6">Contatti</div>

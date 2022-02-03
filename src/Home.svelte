@@ -109,6 +109,11 @@
       top: -400px;
       left: -1000px;
       z-index: -1;
+
+      @media only screen and (max-width: variables.$ts-mobile-max) {
+        transform: scaleX(-1);
+        left: -50px;
+      }
     }
 
     &__middle-blob {
@@ -121,8 +126,12 @@
       width: 1400px;
       overflow: visible;
       right: -1125px;
-      top: 1350px;
+      top: 2450px;
       z-index: -1;
+
+      @media only screen and (min-width: variables.$ts-mobile-max) {
+        top: 1350px;
+      }
     }
   }
 </style>

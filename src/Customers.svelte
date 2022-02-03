@@ -1,6 +1,6 @@
 <svelte:options tag="ts-customers" />
 
-<div class="customer-container">
+<div class="customer-container" id="customers">
   <div class="customer-container__title title-2 center">I NOSTRI CLIENTI</div>
   <div class="customer-container__images">
     <ts-picture base="customers" src="sky" alt="Sky" />
