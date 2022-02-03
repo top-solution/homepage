@@ -1,8 +1,6 @@
 <svelte:options tag="ts-page-company-development" />
 
 <script>
-  let el;
-
   let managementDiagnosticElement = null;
   let climaOrganizzativoElement = null;
   let employeesEngagementElement = null;
@@ -14,7 +12,6 @@
   title="Sviluppo Organizzativo"
   mobilealignleft="true"
   title2={true}
-  bind:this={el}
 >
   <div class="claim" slot="text">
     È necessario <b>ascoltare</b> la voce delle proprie persone per
