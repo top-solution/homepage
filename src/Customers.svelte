@@ -82,5 +82,9 @@
     position: absolute;
     top: 20px;
     left: 455px;
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      left: 155px;
+    }
   }
 </style>

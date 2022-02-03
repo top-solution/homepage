@@ -13,7 +13,7 @@
       <div><a href="error.html">HR</a></div> <!-- FIXME: LINKS -->
       <div><a href="error.html">DEV</a></div>
       <div><a href="error.html">Tariffe</a></div>
-      <div><a href="error.html">Privacy Policy</a></div>
+      <div><a href="privacyPolicy.html">Privacy Policy</a></div>
     </div>
     <div class="footer-top__box">
       <div class="title-6">Servizi</div>

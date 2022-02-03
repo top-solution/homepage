@@ -222,6 +222,7 @@
 
     &__logo {
       margin: 24px;
+      max-width: 220px;
     }
 
     &__hex {

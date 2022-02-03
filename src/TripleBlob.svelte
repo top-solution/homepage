@@ -59,11 +59,18 @@
       color: variables.$ts-blue-color;
 
       @media only screen and (max-width: variables.$ts-tablet-max) {
-        flex-wrap: wrap;
-        justify-content: center;
+        overflow-x: auto;
+        align-items: center;
+        min-height: 400px;
+        margin-bottom: variables.$ts-spacing-1;
+        margin-left: -(variables.$ts-spacing-6);
+        margin-right: -(variables.$ts-spacing-6);
 
         ts-blob {
-          margin: variables.$ts-spacing-2 0;
+          margin: 0 variables.$ts-spacing-2 !important;
+          height: 100%;
+          min-width: 260px;
+          flex-basis: 100%;
         }
       }
     }
@@ -92,5 +99,10 @@
       display: flex;
       justify-content: center;
     }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
   }
 </style>

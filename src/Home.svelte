@@ -113,6 +113,7 @@
       @media only screen and (max-width: variables.$ts-mobile-max) {
         transform: scaleX(-1);
         left: -50px;
+        display: none;
       }
     }
 
@@ -131,6 +132,12 @@
 
       @media only screen and (min-width: variables.$ts-mobile-max) {
         top: 1350px;
+        display: none;
+      }
+
+      @media only screen and (max-width: variables.$ts-tablet-max) {
+        top: 1700px;
+        display: none;
       }
     }
   }
