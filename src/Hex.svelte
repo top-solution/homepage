@@ -52,7 +52,7 @@
   svg {
     overflow: visible;
 
-    path {
+    g {
       transform-origin: center;
       transform-box: fill-box;
     }
