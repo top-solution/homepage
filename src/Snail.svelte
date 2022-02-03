@@ -82,6 +82,8 @@
 </div>
 
 <style lang="scss">
+  @use "./styles/variables";
+
   .snail {
     position: relative;
     margin-left: -480px;
@@ -108,14 +110,64 @@
       z-index: -2;
       left: 0;
       transform: scaleX(-1);
+      height: 580px;
     }
 
     .snail__hexagon {
       position: absolute;
-      bottom: -180px;
+      bottom: -120px;
       z-index: 1;
       height: 800px;
-      left: -250px;
+      left: -290px;
+    }
+
+    @media screen and (max-width: variables.$ts-tablet-max) {
+      .snail__hexagon {
+        bottom: -240px;
+        left: -290px;
+      }
+
+      .snail__snail {
+        height: 435px;
+      }
+
+      .snail__hexagon {
+        height: 600px;
+        left: -80px;
+      }
+
+      &.snail--flip {
+        .snail__snail {
+          right: 0;
+        }
+
+        .snail__hexagon {
+          right: -80px;
+        }
+      }
+    }
+
+    @media screen and (max-width: variables.$ts-mobile-max) {
+      .snail__snail {
+        height: 290px;
+        bottom: 0;
+      }
+
+      .snail__hexagon {
+        height: 400px;
+        bottom: -90px;
+        left: 90px;
+      }
+
+      &.snail--flip {
+        .snail__snail {
+          right: 0;
+        }
+
+        .snail__hexagon {
+          right: 60px;
+        }
+      }
     }
   }
 </style>

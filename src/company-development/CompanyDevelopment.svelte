@@ -549,6 +549,18 @@
       line-height: 24px;
     }
 
+    .page-company-development__service p {
+      padding-right: 60px;
+    }
+
+    #page-company-development__clima_organizzativo,
+    #page-company-development__stress_lavoro_correlato {
+      p {
+        padding-left: 60px;
+        padding-right: 0;
+      }
+    }
+
     .page-company-development__service-subservices ol {
       margin: variables.$ts-spacing-7 auto;
     }
