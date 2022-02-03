@@ -1,0 +1,235 @@
+<svelte:options tag="ts-header-hexagons-desktop" />
+
+<div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="header-hexagons-desktop__left"
+    fill="none"
+    width="819.072"
+    height="911.27"
+    viewBox="0 0 819.072 911.27"
+  >
+    <g
+      filter="url(#header-hexagons-desktop__la)"
+      transform="translate(-80.158 -159.614)"
+    >
+      <path
+        fill="#312783"
+        d="m564.166 886.457-56.723 12.325-56.779 12.102-41.143-43.136-40.981-43.288 15.579-55.461 15.799-55.392 56.722-12.324 56.78-12.103 41.143 43.136 40.981 43.288-15.579 55.461z"
+      />
+    </g>
+    <g
+      filter="url(#header-hexagons-desktop__lb)"
+      transform="translate(-80.158 -159.614)"
+    >
+      <path
+        fill="#3d3d3d"
+        d="m211.778 213.867 98.553-27.319 98.658-26.934 72.935 71.689 72.655 71.974-25.617 99.008-26.003 98.908-98.553 27.319-98.658 26.934-72.935-71.689-72.655-71.973 25.617-99.009z"
+      />
+      <path
+        fill="#312783"
+        fill-opacity=".67"
+        d="m160.352 411.611 25.759-98.971 26.145-98.871 98.592-27.177 98.697-26.793 72.832 71.794 72.552 72.077-25.76 98.972-26.145 98.87-98.591 27.178-98.697 26.793-72.832-71.794z"
+      />
+    </g>
+    <g
+      filter="url(#header-hexagons-desktop__lc)"
+      transform="translate(-80.158 -159.614)"
+    >
+      <path
+        fill="#9792c0"
+        d="m784.724 603.59-65.694 18.155-65.764 17.898-48.569-47.815-48.383-48.004 17.125-65.97 17.381-65.902 65.694-18.155 65.764-17.898 48.569 47.815 48.383 48.004-17.125 65.97z"
+      />
+    </g>
+    <defs>
+      <filter
+        id="header-hexagons-desktop__la"
+        width="387.003"
+        height="381.704"
+        x="288.54"
+        y="689.18"
+        color-interpolation-filters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          result="hardAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        />
+        <feOffset dy="80" />
+        <feGaussianBlur stdDeviation="40" />
+        <feColorMatrix
+          values="0 0 0 0 0.117647 0 0 0 0 0.117647 0 0 0 0 0.396078 0 0 0 0.25 0"
+        />
+        <feBlend
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_1628_12220"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_1628_12220"
+          result="shape"
+        />
+      </filter>
+      <filter
+        id="header-hexagons-desktop__lb"
+        width="554.771"
+        height="555.869"
+        x="80.158"
+        y="159.614"
+        color-interpolation-filters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          result="hardAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        />
+        <feOffset dy="80" />
+        <feGaussianBlur stdDeviation="40" />
+        <feColorMatrix
+          values="0 0 0 0 0.117647 0 0 0 0 0.117647 0 0 0 0 0.396078 0 0 0 0.25 0"
+        />
+        <feBlend
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_1628_12220"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_1628_12220"
+          result="shape"
+        />
+      </filter>
+      <filter
+        id="header-hexagons-desktop__lc"
+        width="422.916"
+        height="423.745"
+        x="476.314"
+        y="375.899"
+        color-interpolation-filters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          result="hardAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        />
+        <feOffset dy="80" />
+        <feGaussianBlur stdDeviation="40" />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix
+          values="0 0 0 0 0.192157 0 0 0 0 0.152941 0 0 0 0 0.513726 0 0 0 0.25 0"
+        />
+        <feBlend
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_1628_12220"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_1628_12220"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="header-hexagons-desktop__right"
+    fill="none"
+    viewBox="0 0 554.771 555.869"
+    width="554.771"
+    height="555.869"
+  >
+    <g
+      fill="#312783"
+      filter="url(#header-hexagons-desktop__ra)"
+      transform="translate(-1809.35 -172.614)"
+    >
+      <path
+        d="m2232.5 226.867-98.55-27.319-98.66-26.934-72.93 71.689-72.66 71.974 25.62 99.008 26 98.908 98.56 27.319 98.65 26.934 72.94-71.689 72.65-71.973-25.61-99.009z"
+      />
+      <path
+        fill-opacity=".67"
+        d="m2283.93 424.611-25.76-98.971-26.15-98.871-98.59-27.177-98.69-26.793-72.84 71.794-72.55 72.077 25.76 98.972 26.15 98.87 98.59 27.178 98.69 26.793 72.84-71.794z"
+      />
+    </g>
+    <defs>
+      <filter
+        id="header-hexagons-desktop__ra"
+        width="554.771"
+        height="555.869"
+        x="1809.35"
+        y="172.614"
+        color-interpolation-filters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          result="hardAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        />
+        <feOffset dy="80" />
+        <feGaussianBlur stdDeviation="40" />
+        <feColorMatrix
+          values="0 0 0 0 0.117647 0 0 0 0 0.117647 0 0 0 0 0.396078 0 0 0 0.25 0"
+        />
+        <feBlend
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_1628_12220"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_1628_12220"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+</div>
+
+<style lang="scss">
+  @use "../styles/variables";
+
+  div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  #header-hexagons-desktop__left,
+  #header-hexagons-desktop__right {
+    position: absolute;
+  }
+
+  #header-hexagons-desktop__left {
+    left: -720px;
+    top: -300px;
+  }
+
+  #header-hexagons-desktop__right {
+    right: -630px;
+    top: -280px;
+  }
+
+  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+    svg {
+      transform: scale(0.33);
+    }
+
+    #header-hexagons-desktop__left {
+      transform-origin: left;
+      left: -110px;
+      top: -420px;
+    }
+
+    #header-hexagons-desktop__right {
+      transform-origin: right;
+      right: -60px;
+      top: -280px;
+    }
+  }
+</style>

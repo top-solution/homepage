@@ -1,0 +1,60 @@
+<svelte:options tag="ts-hex" />
+
+<script>
+  export let width = 64;
+  export let fill = "#312783";
+  export let shadow = "false";
+  export let rotation = 4;
+  export let opacity = 1;
+</script>
+
+<div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={Number(width) * 3}
+    viewBox="0 0 45.385 49.227"
+  >
+    {#if shadow === "true"}
+      <defs>
+        <filter
+          id="hex__filter"
+          width="3.095"
+          height="2.814"
+          x="-1.047"
+          y="-.907"
+          color-interpolation-filters="sRGB"
+        >
+          <feGaussianBlur result="blur" stdDeviation="6.4 6.4" />
+        </filter>
+      </defs>
+    {/if}
+    <g {fill}>
+      {#if shadow === "true"}
+        <g transform={`rotate(${Number(rotation)}) translate(0 14)`}>
+          <path
+            fill-opacity={0.4 * Number(opacity)}
+            d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
+            filter={shadow === "true" ? "url(#hex__filter)" : ""}
+          />
+        </g>
+      {/if}
+      <g transform={`rotate(${Number(rotation)})`}>
+        <path
+          fill-opacity={Number(opacity)}
+          d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+
+<style lang="scss">
+  svg {
+    overflow: visible;
+
+    path {
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+  }
+</style>
