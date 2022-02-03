@@ -95,20 +95,7 @@
       reale, i modelli di comunicazione e la qualità delle politiche
       organizzative.
     </p>
-    <div
-      class="page-company-development__service-blob page-company-development__service-blob--flipped"
-    >
-      <ts-blob
-        shape="snail"
-        variance="0.25"
-        style="min-width: 900px;"
-        fade="x"
-        flip="true"
-        fill="#EBEAF3"
-      >
-        <div style="min-width: 900px; height: 400px; " />
-      </ts-blob>
-    </div>
+    <ts-snail color="#8D88BA" flip="true" />
   </div>
   <div
     id="page-company-development__clima_organizzativo"
@@ -123,17 +110,7 @@
         >ambiente lavorativo</b
       >.
     </p>
-    <div class="page-company-development__service-blob">
-      <ts-blob
-        shape="snail"
-        variance="0.25"
-        style="min-width: 900px;"
-        fade="x"
-        fill="#EBEAF3"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
+    <ts-snail color="#4C429C" />
   </div>
   <div
     id="page-company-development__service-potential"
@@ -148,20 +125,7 @@
       quali sono gli elementi sui quali occorre sviluppare la
       <b>partecipazione</b>.
     </p>
-    <div
-      class="page-company-development__service-blob page-company-development__service-blob--flipped"
-    >
-      <ts-blob
-        shape="snail"
-        variance="0.25"
-        style="min-width: 900px;"
-        fade="x"
-        flip="true"
-        fill="#EBEAF3"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
+    <ts-snail color="#4857A3" flip="true" />
   </div>
   <div
     id="page-company-development__stress_lavoro_correlato"
@@ -175,17 +139,7 @@
       quindi l’organizzazione a mettere a disposizione le adeguate risorse per
       <b>fronteggiarle</b>.
     </p>
-    <div class="page-company-development__service-blob">
-      <ts-blob
-        shape="snail"
-        variance="0.25"
-        style="min-width: 900px;"
-        fade="x"
-        fill="#EBEAF3"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
+    <ts-snail color="#312783" />
   </div>
   <div
     id="page-company-development__employees_engagement"
@@ -200,20 +154,7 @@
       utilizzatori e a creare una mappa delle priorità per <b>ottimizzare</b>
       gli interventi con le <b>risorse disponibili</b>.
     </p>
-    <div
-      class="page-company-development__service-blob page-company-development__service-blob--flipped"
-    >
-      <ts-blob
-        shape="snail"
-        variance="0.25"
-        style="min-width: 900px;"
-        fade="x"
-        flip="true"
-        fill="#EBEAF3"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
+    <ts-snail color="#211A58" flip="true" />
   </div>
 </ts-layout>
 
@@ -363,20 +304,6 @@
   .page-company-development__service h4 {
     margin-bottom: variables.$ts-spacing-3;
     line-height: 33px;
-  }
-
-  .page-company-development__service-blob {
-    position: absolute;
-    width: 1450px;
-    transform: scale(0.6);
-    bottom: -450px;
-    left: -500px;
-    z-index: -1;
-  }
-
-  .page-company-development__service-blob.page-company-development__service-blob--flipped {
-    right: -500px;
-    left: unset;
   }
 
   #page-company-development__clima_organizzativo {
@@ -530,14 +457,6 @@
       overflow-x: hidden;
     }
 
-    .page-company-development__services-blob {
-      width: 1100px;
-      position: absolute;
-      top: -120px;
-      left: -450px;
-      z-index: -1;
-    }
-
     .page-company-development__services-list,
     .page-company-development__service-subservices ol {
       font-size: 18px;
@@ -568,15 +487,6 @@
       margin-bottom: variables.$ts-spacing-3;
       font-style: normal;
       line-height: 24px;
-    }
-
-    .page-company-development__service-blob {
-      position: absolute;
-      width: 950px;
-      transform: scale(0.6);
-      bottom: -300px;
-      left: -400px;
-      z-index: -1;
     }
 
     .page-company-development__service-subservices ol {

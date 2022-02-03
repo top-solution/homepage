@@ -215,67 +215,6 @@
     ];
   }
 
-  function createPointsSnail() {
-    return [
-      {
-        x: 0,
-        y: 150,
-        originX: 0,
-        originY: 150,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-      {
-        x: 25,
-        y: 100,
-        originX: 25,
-        originY: 100,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-      {
-        x: 50,
-        y: 50,
-        originX: 50,
-        originY: 50,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-      {
-        x: 100,
-        y: 100,
-        originX: 100,
-        originY: 100,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-      {
-        x: 200,
-        y: 150,
-        originX: 200,
-        originY: 150,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-      {
-        x: 100,
-        y: 200,
-        originX: 100,
-        originY: 200,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-      {
-        x: 50,
-        y: 170,
-        originX: 50,
-        originY: 170,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-    ];
-  }
-
   function createPointsPotato() {
     return [
       {
@@ -416,9 +355,6 @@
         break;
       case "rectangle":
         points = createPointsAlt();
-        break;
-      case "snail":
-        points = createPointsSnail();
         break;
       case "potato":
         points = createPointsPotato();
