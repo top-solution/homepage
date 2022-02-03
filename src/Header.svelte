@@ -59,11 +59,10 @@
       height="175"
       class="header-mobile__hex"
     />
-
     <img
       src="img/header/hamburgerClose.svg"
       alt="top Solution"
-      width="150"
+      width="50"
       height="45"
       class="header-mobile__hamburger"
       class:hide={menuIsOpened === false}
@@ -72,13 +71,14 @@
     <img
       src="img/header/hamburger.svg"
       alt="top Solution"
-      width="150"
+      width="50"
       height="45"
       class="header-mobile__hamburger"
       class:hide={menuIsOpened === true}
       on:click={handleOpenMenu}
     />
   </div>
+
   <div class="header-mobile__wrapper" class:hide={menuIsOpened === false}>
     <div class="white">
       <img
@@ -90,8 +90,6 @@
         src="img/header/hexMenuMobile.svg"
         alt="Main Hex Mobile"
         class="header-mobile__main-hex"
-        width="500"
-        height="500"
       />
       <div class="header-mobile__links">
         <a href="index.html">HOME</a>
@@ -195,7 +193,6 @@
 
     &__wrapper {
       position: relative;
-      max-height: 0;
       transition: opacity variables.$ts-transition-timing-default
         variables.$ts-transition-function-default;
     }
@@ -205,6 +202,8 @@
       z-index: -1;
       margin-left: 50%;
       transform: translate(-50%, 0);
+      max-width: 480px;
+      max-height: 480px;
     }
 
     &__blob {
@@ -230,13 +229,14 @@
       top: -40px;
       right: -50px;
       transform: rotate(-10deg);
+      overflow: hidden;
     }
 
     &__hamburger {
       z-index: 1;
       position: absolute;
       top: 35px;
-      right: -30px;
+      right: 30px;
       cursor: pointer;
       transition: opacity variables.$ts-transition-timing-default
         variables.$ts-transition-function-default;
