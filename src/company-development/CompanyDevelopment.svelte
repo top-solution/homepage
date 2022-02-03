@@ -1,12 +1,20 @@
 <svelte:options tag="ts-page-company-development" />
 
 <script>
+  let el;
+
+  let managementDiagnosticElement = null;
+  let climaOrganizzativoElement = null;
+  let employeesEngagementElement = null;
+  let stressLavoroCorrelatoElement = null;
+  let customerSatisfactionElement = null;
 </script>
 
 <ts-top-banner
   title="Sviluppo Organizzativo"
   mobilealignleft="true"
   title2={true}
+  bind:this={el}
 >
   <div class="claim" slot="text">
     È necessario <b>ascoltare</b> la voce delle proprie persone per
@@ -49,11 +57,56 @@
       Scegli tra i <b>SERVIZI</b>
     </h3>
     <ol class="page-company-development__services-list">
-      <li><a href="#management_diagnostic">Management diagnostic</a></li>
-      <li><a href="#clima_organizzativo">Clima organizzativo</a></li>
-      <li><a href="#employees_engagement">Employees engagement</a></li>
-      <li><a href="#stress_lavoro_correlato">Stress lavoro correlato</a></li>
-      <li><a href="#customer_satisfaction">Customer satisfaction</a></li>
+      <li>
+        <a
+          class="body-2"
+          href="#page-company-development__management_diagnostic"
+          on:mouseup={() =>
+            managementDiagnosticElement.scrollIntoView({ behavior: "smooth" })}
+        >
+          Management diagnostic
+        </a>
+      </li>
+      <li>
+        <a
+          class="body-2"
+          href="#page-company-development__clima_organizzativo"
+          on:mouseup={() =>
+            climaOrganizzativoElement.scrollIntoView({ behavior: "smooth" })}
+        >
+          Clima organizzativo
+        </a>
+      </li>
+      <li>
+        <a
+          class="body-2"
+          href="#page-company-development__employees_engagement"
+          on:mouseup={() =>
+            employeesEngagementElement.scrollIntoView({ behavior: "smooth" })}
+        >
+          Employees engagement
+        </a>
+      </li>
+      <li>
+        <a
+          class="body-2"
+          href="#page-company-development__stress_lavoro_correlato"
+          on:mouseup={() =>
+            stressLavoroCorrelatoElement.scrollIntoView({ behavior: "smooth" })}
+        >
+          Stress lavoro correlato
+        </a>
+      </li>
+      <li>
+        <a
+          class="body-2"
+          href="#page-company-development__customer_satisfaction"
+          on:mouseup={() =>
+            customerSatisfactionElement.scrollIntoView({ behavior: "smooth" })}
+        >
+          Customer satisfaction
+        </a>
+      </li>
     </ol>
     <ts-button
       class="page-company-development__services-contact-us-button"
@@ -83,10 +136,12 @@
     </div>
   </div>
   <div
-    id="page-company-development__service-performance"
+    id="page-company-development__management_diagnostic"
     class="page-company-development__service"
   >
-    <h4 class="title-4">Management diagnostic</h4>
+    <h4 bind:this={managementDiagnosticElement} class="title-4">
+      Management diagnostic
+    </h4>
     <p class="body-2">
       È un’attività di <b>analisi organizzativa</b>, veloce e dinamica, centrata
       sullo studio delle relazioni professionali, funzionali e interfunzionali
@@ -101,7 +156,9 @@
     id="page-company-development__clima_organizzativo"
     class="page-company-development__service"
   >
-    <h4 class="title-4">Clima organizzativo</h4>
+    <h4 bind:this={climaOrganizzativoElement} class="title-4">
+      Clima organizzativo
+    </h4>
     <p class="body-2">
       <b>Analisi</b> che permette di comprendere “come le persone vivono” in
       azienda, attraverso l’<b>osservazione</b> “dell’aria che si respira”
@@ -113,10 +170,12 @@
     <ts-snail color="#4C429C" />
   </div>
   <div
-    id="page-company-development__service-potential"
+    id="page-company-development__employees_engagement"
     class="page-company-development__service"
   >
-    <h4 class="title-4">Employees engagement</h4>
+    <h4 bind:this={employeesEngagementElement} class="title-4">
+      Employees engagement
+    </h4>
     <p class="body-2">
       Esprime il livello di <b>coinvolgimento emotivo</b> e <b>professionale</b>
       vissuto dal dipendente nel lavoro e per l’organizzazione. Si focalizza sul
@@ -131,7 +190,9 @@
     id="page-company-development__stress_lavoro_correlato"
     class="page-company-development__service"
   >
-    <h4 class="title-4">Stress lavoro correlato</h4>
+    <h4 bind:this={stressLavoroCorrelatoElement} class="title-4">
+      Stress lavoro correlato
+    </h4>
     <p class="body-2">
       Può essere definito come lo <b>squilibrio percepito</b> dal lavoratore
       quando le richieste dell’ambiente di lavoro sono eccessive rispetto alla
@@ -142,10 +203,12 @@
     <ts-snail color="#312783" />
   </div>
   <div
-    id="page-company-development__employees_engagement"
+    id="page-company-development__customer_satisfaction"
     class="page-company-development__service"
   >
-    <h4 class="title-4">Employees engagement</h4>
+    <h4 bind:this={customerSatisfactionElement} class="title-4">
+      Customer satisfaction
+    </h4>
     <p class="body-2">
       La soddisfazione è intesa come <b>stato psicologico</b> derivante da un
       gap tra la <b>valutazione</b> dell’avvenuta <b>esperienza</b> di consumo e
