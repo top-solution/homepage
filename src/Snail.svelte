@@ -86,10 +86,10 @@
 
   .snail {
     position: relative;
-    margin-left: -480px;
+    margin-left: -495px;
 
     &.snail--flip {
-      margin-right: -380px;
+      margin-right: -410px;
       margin-left: unset;
 
       .snail__snail {
