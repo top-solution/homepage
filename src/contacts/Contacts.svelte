@@ -87,12 +87,12 @@
           margin-bottom: 0;
         }
 
-        & a {
+        a {
           font-weight: inherit;
         }
       }
 
-      & img {
+      img {
         width: 20px;
         height: 20px;
         margin-right: variables.$ts-spacing-3;
@@ -138,7 +138,7 @@
           margin-top: variables.$ts-spacing-2;
         }
 
-        & img {
+        img {
           width: 22px;
           height: 22px;
           margin-top: 3px;
