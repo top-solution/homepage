@@ -281,7 +281,7 @@
           <div class="page-haka__enterprise-blob__content">
             <p class="title-6">Desideri un <b>piano custom</b>?</p>
             <p class="body-2">
-              Scegli il piano <b>ENTREPRISE</b>
+              Scegli il piano <b>ENTERPRISE</b>
             </p>
             <ts-button
               variant="primary"
@@ -329,7 +329,7 @@
           <div class="page-haka__enterprise-blob__content">
             <p class="title-6">Desideri un <b>piano custom</b>?</p>
             <p class="body-2">
-              Scegli il piano <b>ENTREPRISE</b>
+              Scegli il piano <b>ENTERPRISE</b>
             </p>
             <ts-button
               variant="primary"
@@ -377,7 +377,7 @@
           <div class="page-haka__enterprise-blob__content">
             <p class="title-6">Desideri un <b>piano custom</b>?</p>
             <p class="body-2">
-              Scegli il piano <b>ENTREPRISE</b>
+              Scegli il piano <b>ENTERPRISE</b>
             </p>
             <ts-button
               variant="primary"
@@ -425,7 +425,7 @@
           <div class="page-haka__enterprise-blob__content">
             <p class="title-6">Desideri un <b>piano custom</b>?</p>
             <p class="body-2">
-              Scegli il piano <b>ENTREPRISE</b>
+              Scegli il piano <b>ENTERPRISE</b>
             </p>
             <ts-button
               variant="primary"
