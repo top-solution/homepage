@@ -115,6 +115,8 @@
         margin-right: auto;
         width: 480px;
         height: 300px;
+        position: relative;
+        z-index: 2000;
       }
     }
 
