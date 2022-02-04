@@ -98,7 +98,7 @@
       target="_blank">Contattaci</ts-button
     >
     <ts-hex
-      class="page-company-development__floating-hex-2"
+      class="page-self-development__floating-hex-2"
       width="44"
       fill="#312783"
       opacity=".7"
@@ -121,7 +121,7 @@
     <ts-snail color="#8D88BA" flip="true" />
 
     <ts-hex
-      class="page-company-development__floating-hex-3"
+      class="page-self-development__floating-hex-3"
       width="90"
       fill="#211A58"
       shadow="true"
@@ -169,16 +169,6 @@
 
   @use "../styles/main.scss";
 
-  body {
-    background-color: red;
-    color: #0084f6;
-    transition: background-color 0.3s;
-  }
-  html {
-    background-color: #1d3040;
-    color: #bfc2c7;
-  }
-
   ts-header-hexagons-desktop,
   ts-header-hexagons-mobile {
     position: absolute;
@@ -194,226 +184,234 @@
     display: none;
   }
 
-  .page-company-development__floating-hex-1 {
+  .page-self-development__floating-hex-1 {
     position: absolute;
-    bottom: -250px;
+    bottom: -200px;
     left: 50%;
-  }
-
-  .page-company-development__floating-hex-2 {
-    position: absolute;
-    bottom: -130px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .page-company-development__floating-hex-3 {
-    position: absolute;
-    left: 70%;
-    top: -230px;
   }
 
   .page-self-development {
-    display: block;
-    color: variables.$ts-blue-color;
-    box-sizing: border-box;
-  }
-
-  .page-self-development__copy {
-    & p {
-      text-align: center;
-      margin: variables.$ts-spacing-15 0 variables.$ts-spacing-6;
-    }
-  }
-
-  .page-self-development__services {
-    margin-top: variables.$ts-spacing-15;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-bottom: 310px;
-  }
-
-  .page-self-development__services-blob {
-    width: 1000px;
-    position: absolute;
-    top: 120%;
-    left: 42%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-  }
-
-  .page-self-development__services h2 {
-    text-transform: none;
-    text-align: center;
-    margin-bottom: variables.$ts-spacing-6;
-  }
-
-  .page-self-development__choose-services {
-    margin-bottom: variables.$ts-spacing-6;
-  }
-
-  .page-self-development__services-list,
-  .page-self-development__service-subservices ol {
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    line-height: 28px;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  .page-self-development__services-list li,
-  .page-self-development__service-subservices li {
-    margin-bottom: variables.$ts-spacing-3;
-  }
-
-  .page-self-development__services-list a {
-    font-weight: 400;
-  }
-
-  .page-self-development__services-list a:hover {
-    text-decoration: underline;
-  }
-
-  .page-self-development__services-list li::before,
-  .page-self-development__service-subservices li::before {
-    content: "";
-    display: inline-block;
-    height: 28px;
-    width: 28px;
-    background-image: url("img/icons/hexagon-list-item.svg");
-    background-size: cover;
-    margin: 0 variables.$ts-spacing-4 -4px auto;
-    padding: 0;
-  }
-
-  .page-self-development__services-contact-us-button {
-    display: inline-block;
-    margin-top: variables.$ts-spacing-4;
-  }
-
-  .page-self-development__service {
-    position: relative;
-  }
-  .page-self-development__service + .page-self-development__service {
-    margin-top: 280px;
-  }
-
-  .page-self-development__service p {
-    width: 100%;
-    max-width: 580px;
-  }
-
-  .page-self-development__service h4 {
-    margin-bottom: variables.$ts-spacing-3;
-    line-height: 33px;
-  }
-
-  #page-self-development__sentieri-di-carriera {
-    text-align: right;
-  }
-
-  #page-self-development__sentieri-di-carriera p {
-    margin-left: auto;
-  }
-
-  .page-self-development__service-subservices {
-    margin: variables.$ts-spacing-4 0;
-    position: relative;
-  }
-
-  .page-self-development__service-subservices li {
-    font-weight: 500;
-    margin-bottom: variables.$ts-spacing-4;
-  }
-
-  #page-self-development__free-trial {
-    position: absolute;
-    right: 0;
-  }
-
-  #page-self-development__stress_lavoro_correlato {
-    &,
-    p {
-      text-align: right;
-      margin-left: auto;
-    }
-  }
-
-  .contact-us {
-    margin-bottom: variables.$ts-spacing-10;
-  }
-
-  .page-self-development__our-plans {
-    margin-top: 300px;
-    text-align: center;
-
-    .body-2 {
-      margin-bottom: variables.$ts-spacing-6;
-    }
-  }
-
-  #page-self-development__coaching {
-    margin-bottom: 200px;
-  }
-
-  @media only screen and (max-width: variables.$ts-tablet-max) {
-    .page-self-development {
-      padding: 0 variables.$ts-spacing-3;
+    &__floating-hex-2 {
+      position: absolute;
+      bottom: -220px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .page-self-development__services-list,
-    .page-self-development__service-subservices ol {
-      font-size: 18px;
-      width: 250px;
+    &__floating-hex-3 {
+      position: absolute;
+      left: 73%;
+      top: -220px;
     }
 
-    .page-self-development__services-list li::before,
-    .page-self-development__service-subservices li::before {
-      height: 24px;
-      width: 24px;
-      margin-right: variables.$ts-spacing-2;
+    & {
+      display: block;
+      color: variables.$ts-blue-color;
+      box-sizing: border-box;
     }
 
-    .page-self-development__service + .page-self-development__service {
-      margin-top: variables.$ts-spacing-10;
-    }
-
-    .page-self-development__service h4 {
-      margin-bottom: variables.$ts-spacing-3;
-      font-style: normal;
-      line-height: 24px;
-    }
-
-    .page-self-development__service p {
-      padding-right: 60px;
-    }
-
-    .page-self-development__services-blob {
-      top: 105%;
-    }
-
-    #page-self-development__sentieri-di-carriera,
-    #page-self-development__stress_lavoro_correlato {
-      p {
-        padding-left: 60px;
-        padding-right: 0;
+    &__copy {
+      & p {
+        text-align: center;
+        margin: variables.$ts-spacing-15 0 variables.$ts-spacing-6;
       }
     }
 
-    .page-self-development__service-subservices ol {
-      margin: variables.$ts-spacing-7 auto;
+    &__services {
+      margin-top: variables.$ts-spacing-15;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      margin-bottom: 310px;
+    }
+
+    &__services-blob {
+      width: 1000px;
+      position: absolute;
+      top: 120%;
+      left: 42%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    &__services h2 {
+      text-transform: none;
+      text-align: center;
+      margin-bottom: variables.$ts-spacing-6;
+    }
+
+    &__choose-services {
+      margin-bottom: variables.$ts-spacing-6;
+    }
+
+    &__services-list,
+    &__service-subservices ol {
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      line-height: 28px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    &__services-list li,
+    &__service-subservices li {
+      margin-bottom: variables.$ts-spacing-3;
+    }
+
+    &__services-list a {
+      font-weight: 400;
+    }
+
+    &__services-list a:hover {
+      text-decoration: underline;
+    }
+
+    &__services-list li::before,
+    &__service-subservices li::before {
+      content: "";
+      display: inline-block;
+      height: 28px;
+      width: 28px;
+      background-image: url("img/icons/hexagon-list-item.svg");
+      background-size: cover;
+      margin: 0 variables.$ts-spacing-4 -4px auto;
+      padding: 0;
+    }
+
+    &__services-contact-us-button {
+      display: inline-block;
+      margin-top: variables.$ts-spacing-4;
+    }
+
+    &__service {
+      position: relative;
+    }
+    &__service + &__service {
+      margin-top: 280px;
+    }
+
+    &__service p {
+      width: 100%;
+      max-width: 580px;
+    }
+
+    &__service h4 {
+      margin-bottom: variables.$ts-spacing-3;
+      line-height: 33px;
+    }
+
+    #page-self-development__sentieri-di-carriera {
+      text-align: right;
+    }
+
+    #page-self-development__sentieri-di-carriera p {
+      margin-left: auto;
+    }
+
+    &__service-subservices {
+      margin: variables.$ts-spacing-4 0;
+      position: relative;
+    }
+
+    &__service-subservices li {
+      font-weight: 500;
+      margin-bottom: variables.$ts-spacing-4;
     }
 
     #page-self-development__free-trial {
-      position: static;
-      display: flex;
+      position: absolute;
+      right: 0;
     }
 
-    #page-self-development__free-trial ts-button {
-      margin: auto;
+    #page-self-development__stress_lavoro_correlato {
+      &,
+      p {
+        text-align: right;
+        margin-left: auto;
+      }
+    }
+
+    .contact-us {
+      margin-bottom: variables.$ts-spacing-10;
+    }
+
+    &__our-plans {
+      margin-top: 300px;
+      text-align: center;
+
+      .body-2 {
+        margin-bottom: variables.$ts-spacing-6;
+      }
+    }
+
+    #page-self-development__coaching {
+      margin-bottom: 200px;
+    }
+
+    @media only screen and (max-width: variables.$ts-tablet-max) {
+      & {
+        padding: 0 variables.$ts-spacing-3;
+      }
+
+      &__services-list,
+      &__service-subservices ol {
+        font-size: 18px;
+        width: 250px;
+      }
+
+      &__services-list li::before,
+      &__service-subservices li::before {
+        height: 24px;
+        width: 24px;
+        margin-right: variables.$ts-spacing-2;
+      }
+
+      &__service + &__service {
+        margin-top: variables.$ts-spacing-10;
+      }
+
+      &__service h4 {
+        margin-bottom: variables.$ts-spacing-3;
+        font-style: normal;
+        line-height: 24px;
+      }
+
+      &__service p {
+        padding-right: 60px;
+      }
+
+      &__services-blob {
+        top: 105%;
+      }
+
+      #page-self-development__sentieri-di-carriera,
+      #page-self-development__stress_lavoro_correlato {
+        p {
+          padding-left: 60px;
+          padding-right: 0;
+        }
+      }
+
+      &__service-subservices ol {
+        margin: variables.$ts-spacing-7 auto;
+      }
+
+      #page-self-development__free-trial {
+        position: static;
+        display: flex;
+      }
+
+      #page-self-development__free-trial ts-button {
+        margin: auto;
+      }
+    }
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      &__services-blob {
+        top: 130%;
+      }
     }
   }
 
@@ -425,10 +423,6 @@
     ts-header-hexagons-mobile {
       display: block;
       width: 100%;
-    }
-
-    .page-self-development__services-blob {
-      top: 130%;
     }
   }
 </style>
