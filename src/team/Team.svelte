@@ -26,6 +26,8 @@
 </script>
 
 <ts-layout class="page-team">
+  <ts-header-hexagons-desktop />
+  <ts-header-hexagons-mobile />
   <div slot="external">
     <div class="page-team__giga-blob">
       <img src="img/giga-blob.svg" alt="" />
@@ -87,6 +89,11 @@
   .page-team {
     color: variables.$ts-blue-color;
 
+    ts-header-hexagons-desktop,
+    ts-header-hexagons-mobile {
+      z-index: -1;
+    }
+
     &__people {
       margin: variables.$ts-spacing-15 0;
       display: flex;
@@ -115,7 +122,7 @@
       width: 1400px;
       overflow: visible;
       top: -430px;
-      left: -700px;
+      right: 300px;
       z-index: -1;
     }
 
@@ -132,7 +139,27 @@
       display: block;
     }
 
-    @media only screen and (max-width: 900px) {
+    @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+      .title-1 {
+        max-width: 60%;
+        text-align: left;
+      }
+
+      &__giga-blob {
+        right: 600px;
+        top: -530px;
+      }
+
+      &__people {
+        margin: variables.$ts-spacing-4 0;
+      }
+
+      &__copy {
+        max-width: 60%;
+      }
+    }
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
       &__copy {
         max-width: 80%;
       }

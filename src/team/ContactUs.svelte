@@ -96,20 +96,13 @@
 </script>
 
 <form class="contact-us" on:submit={handleSubmit}>
-  <!-- TODO: Use hexagon component -->
-  <div class="contact-us__separator-hexagon">
-    <svg
+  <div class="contact-us__floating-hex-1">
+    <ts-hex
+      class="page-hr-development__floating-hex-3"
       width="111"
-      height="123"
-      viewBox="0 0 111 123"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0.495259 87.8533L2.85383 57.3628L5.33124 26.8817L32.9161 13.679L60.5522 0.584007L85.7784 17.8718L110.937 35.2579L108.579 65.7484L106.101 96.2295L78.5163 109.432L50.8802 122.527L25.6539 105.239L0.495259 87.8533Z"
-        fill="#312783"
-      />
-    </svg>
+      fill="#312783"
+      shadow="true"
+    />
   </div>
   <div class="contact-us__drawer" class:contact-us__drawer--open={open}>
     <div class="contact-us__title-hexagon">
@@ -377,10 +370,10 @@
     margin: 0;
   }
 
-  .contact-us__separator-hexagon {
+  .contact-us__floating-hex-1 {
     position: absolute;
-    left: -200px;
-    top: -500px;
+    left: -330px;
+    top: -580px;
   }
 
   .contact-us__title-hexagon {
