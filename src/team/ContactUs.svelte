@@ -99,34 +99,7 @@
     shadow="true"
   />
   <div class="contact-us__drawer" class:contact-us__drawer--open={open}>
-    <div class="contact-us__title-hexagon">
-      <!-- TODO: Use hexagon component -->
-      <svg
-        width="659"
-        height="647"
-        viewBox="0 0 659 647"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M508.47 350.156L478.849 267.932L448.894 185.832L359.579 172.096L270.198 158.7L210.504 227.188L151.078 295.892L180.698 378.116L210.654 460.216L299.968 473.951L389.35 487.348L449.044 418.859L508.47 350.156Z"
-          fill="url(#paint0_linear_811_22064)"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear_811_22064"
-            x1="350.037"
-            y1="173.06"
-            x2="302.936"
-            y2="400.972"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#EBEAF3" />
-            <stop offset="1" stop-color="#EBEAF3" stop-opacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
+    <form-title-hex />
     <h2 class="title-3 title-form">Candidatura <b>spontanea</b></h2>
     <p class="contact-us__subtitle body-1">
       Vuoi far parte del <b>nostro team</b>?
@@ -326,12 +299,16 @@
       position: relative;
       max-height: 0;
       transition: max-height variables.$ts-transition-timing-default
-        variables.$ts-transition-function-default;
+          variables.$ts-transition-function-default,
+        padding-top variables.$ts-transition-timing-default
+          variables.$ts-transition-function-default;
       overflow: hidden;
+      padding-top: 0px;
     }
 
     &__drawer--open {
       max-height: 900px;
+      padding-top: 100px;
     }
 
     & h2 {
