@@ -256,6 +256,19 @@
     max-width: 80%;
   }
 
+  .page-company-development__floating-hex-2 {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .page-company-development__floating-hex-3 {
+    position: absolute;
+    left: 73%;
+    top: -60px;
+  }
+
   .page-company-development {
     display: block;
     color: variables.$ts-blue-color;
