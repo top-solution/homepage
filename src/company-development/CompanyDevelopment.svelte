@@ -248,33 +248,8 @@
 
   @use "../styles/main.scss";
 
-  body {
-    background-color: red;
-    color: #0084f6;
-    transition: background-color 0.3s;
-  }
-  html {
-    background-color: #1d3040;
-    color: #bfc2c7;
-  }
-
   ts-layout {
     margin-bottom: variables.$ts-spacing-15;
-  }
-
-  ts-header-hexagons-desktop,
-  ts-header-hexagons-mobile {
-    position: absolute;
-  }
-
-  ts-header-hexagons-desktop {
-    right: 0px;
-    width: 100%;
-    top: 0px;
-  }
-
-  ts-header-hexagons-mobile {
-    display: none;
   }
 
   .page-company-development__floating-hex-1 {
@@ -323,24 +298,45 @@
       align-items: center;
       position: relative;
       margin-bottom: 310px;
+
+      &-blob {
+        width: 1100px;
+        position: absolute;
+        top: -90px;
+        left: -150px;
+        z-index: -1;
+      }
+
+      & h2 {
+        text-transform: none;
+        text-align: center;
+        margin-bottom: variables.$ts-spacing-6;
+      }
+
+      &-list a {
+        font-weight: 400;
+      }
+
+      &-list a:hover {
+        text-decoration: underline;
+      }
+
+      &-contact-us-button {
+        display: inline-block;
+        margin-top: variables.$ts-spacing-4;
+      }
     }
 
-    &__services-blob {
-      width: 1100px;
-      position: absolute;
-      top: -90px;
-      left: -150px;
-      z-index: -1;
-    }
-
-    &__services h2 {
-      text-transform: none;
-      text-align: center;
-      margin-bottom: variables.$ts-spacing-6;
-    }
-
-    &__choose-services {
-      margin-bottom: variables.$ts-spacing-6;
+    &__services-list li::before,
+    &__service-subservices li::before {
+      content: "";
+      display: inline-block;
+      height: 28px;
+      width: 28px;
+      background-image: url("img/icons/hexagon-list-item.svg");
+      background-size: cover;
+      margin: 0 variables.$ts-spacing-4 -4px auto;
+      padding: 0;
     }
 
     &__services-list,
@@ -358,95 +354,80 @@
       margin-bottom: variables.$ts-spacing-3;
     }
 
-    &__services-list a {
-      font-weight: 400;
+    &__choose-services {
+      margin-bottom: variables.$ts-spacing-6;
     }
 
-    &__services-list a:hover {
-      text-decoration: underline;
-    }
+    &__who-chooses-company {
+      &-development {
+        position: relative;
+        overflow: visible;
+        margin-bottom: 200px;
 
-    &__services-list li::before,
-    &__service-subservices li::before {
-      content: "";
-      display: inline-block;
-      height: 28px;
-      width: 28px;
-      background-image: url("img/icons/hexagon-list-item.svg");
-      background-size: cover;
-      margin: 0 variables.$ts-spacing-4 -4px auto;
-      padding: 0;
-    }
+        &__customers {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: variables.$ts-spacing-8;
+          flex-wrap: wrap;
+        }
 
-    &__services-contact-us-button {
-      display: inline-block;
-      margin-top: variables.$ts-spacing-4;
-    }
+        &__customers ts-picture {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 24px;
+          flex-wrap: wrap;
+          margin: 0 variables.$ts-spacing-6;
+        }
 
-    &__who-chooses-company-development {
-      position: relative;
-      overflow: visible;
-      margin-bottom: 200px;
-    }
-
-    &__who-chooses-company-development__customers {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: variables.$ts-spacing-8;
-      flex-wrap: wrap;
-    }
-
-    &__who-chooses-company-development__customers ts-picture {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-      margin: 0 variables.$ts-spacing-6;
-    }
-
-    &__who-chooses-company-development h3 {
-      font-weight: 300;
-      font-size: 28px;
-      line-height: 33px;
-      text-align: center;
-      margin-bottom: variables.$ts-spacing-4;
+        & h3 {
+          font-weight: 300;
+          font-size: 28px;
+          line-height: 33px;
+          text-align: center;
+          margin-bottom: variables.$ts-spacing-4;
+        }
+      }
     }
 
     &__service {
       position: relative;
-    }
-    &__service + &__service {
-      margin-top: 280px;
+
+      & + & {
+        margin-top: 280px;
+      }
+
+      & p {
+        width: 100%;
+        max-width: 580px;
+      }
+
+      & h4 {
+        margin-bottom: variables.$ts-spacing-3;
+        line-height: 33px;
+      }
     }
 
-    &__service p {
-      width: 100%;
-      max-width: 580px;
+    #page-company-development {
+      &__clima_organizzativo {
+        text-align: right;
+      }
+      &__clima_organizzativo p {
+        margin-left: auto;
+      }
     }
 
-    &__service h4 {
-      margin-bottom: variables.$ts-spacing-3;
-      line-height: 33px;
-    }
+    &__service {
+      &-subservices {
+        margin: variables.$ts-spacing-4 0;
+        position: relative;
+      }
 
-    #page-company-development__clima_organizzativo {
-      text-align: right;
-    }
-
-    #page-company-development__clima_organizzativo p {
-      margin-left: auto;
-    }
-
-    &__service-subservices {
-      margin: variables.$ts-spacing-4 0;
-      position: relative;
-    }
-
-    &__service-subservices li {
-      font-weight: 500;
-      margin-bottom: variables.$ts-spacing-4;
+      &-subservices li {
+        font-weight: 500;
+        margin-bottom: variables.$ts-spacing-4;
+      }
     }
 
     #page-company-development__stress_lavoro_correlato {
@@ -455,10 +436,6 @@
         text-align: right;
         margin-left: auto;
       }
-    }
-
-    .contact-us {
-      margin-bottom: variables.$ts-spacing-10;
     }
 
     &__our-plans {
@@ -485,44 +462,64 @@
         left: -260px;
       }
 
-      &__who-chooses-company-development__customers {
-        margin: 0 -24px 0;
-      }
+      &__who-chooses-company {
+        &-development__customers {
+          margin: 0 -24px 0;
+        }
 
-      &__who-chooses-company-development__customers ts-picture {
-        margin: 0 variables.$ts-spacing-3 variables.$ts-spacing-2;
-      }
-
-      &__service + &__service {
-        margin-top: variables.$ts-spacing-10;
-      }
-
-      &__service h4 {
-        margin-bottom: variables.$ts-spacing-3;
-        font-style: normal;
-        line-height: 24px;
-      }
-
-      &__service p {
-        padding-right: 60px;
-      }
-
-      #page-company-development__clima_organizzativo,
-      #page-company-development__stress_lavoro_correlato {
-        p {
-          padding-left: 60px;
-          padding-right: 0;
+        &-development__customers ts-picture {
+          margin: 0 variables.$ts-spacing-3 variables.$ts-spacing-2;
         }
       }
 
-      &__service-subservices ol {
-        margin: variables.$ts-spacing-7 auto;
+      &__service {
+        & + & {
+          margin-top: variables.$ts-spacing-10;
+        }
+
+        & h4 {
+          margin-bottom: variables.$ts-spacing-3;
+          font-style: normal;
+          line-height: 24px;
+        }
+
+        & p {
+          padding-right: 60px;
+        }
+
+        &-subservices ol {
+          margin: variables.$ts-spacing-7 auto;
+        }
+      }
+
+      #page-company-development {
+        &__clima_organizzativo,
+        &__stress_lavoro_correlato {
+          p {
+            padding-left: 60px;
+            padding-right: 0;
+          }
+        }
       }
     }
 
     @media only screen and (max-width: variables.$ts-mobile-max) {
       &__services {
         margin-bottom: 180px;
+
+        &-blob {
+          left: -480px;
+        }
+      }
+
+      &__floating {
+        &-hex-2 {
+          top: 480px;
+        }
+
+        &-hex-3 {
+          display: none;
+        }
       }
 
       &__services-list,
@@ -531,19 +528,7 @@
         width: 250px;
       }
 
-      &__services-blob {
-        left: -480px;
-      }
-
-      &__floating-hex-2 {
-        top: 480px;
-      }
-
-      &__floating-hex-3 {
-        display: none;
-      }
-
-      .page-company-development__who-chooses-company-development {
+      &__who-chooses-company-development {
         margin-bottom: 120px;
       }
     }
