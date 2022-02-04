@@ -50,23 +50,23 @@
       <b>risorse umane</b>.
     </p>
   </div>
-  <div class="people">
-    <div class="people__spacer" />
+  <div class="page-team__people">
+    <div class="page-team__people__spacer" />
     <ts-team-person name="Paolo Andruetto" companyrole="CEO" />
     <ts-team-person name="Gabriele Destefanis" companyrole="CTO" />
-    <div class="people__spacer" />
+    <div class="page-team__people__spacer" />
     <ts-team-person name="Luca Osti" companyrole="Backend Developer" />
     <ts-team-person name="Gabriele Spada" companyrole="Frontend Developer" />
     <ts-team-person name="Luca Barbetti" companyrole="Frontend Developer" />
-    <div class="people__spacer" />
+    <div class="page-team__people__spacer" />
     <ts-team-person name="Elisa Solinas" companyrole="Backend Developer" />
     <ts-team-person name="Federico Valetti" companyrole="Analista Funzionale" />
-    <div class="people__spacer" />
+    <div class="page-team__people__spacer" />
     <ts-team-person name="Matteo Marsala" companyrole="Frontend Developer" />
     <ts-team-person name="Martina Bilancieri" companyrole="UX/UI Designer" />
     <ts-team-person src="img/question_mark.svg" name="Vuoi far parte del team?">
       <ts-button
-        id="people__contact-us-button"
+        class="page-team__people__contact-us-button"
         variant="primary"
         component="button"
         on:click={handleClick}>Candidati</ts-button
@@ -74,7 +74,7 @@
     </ts-team-person>
   </div>
 
-  <div bind:this={contactUsElement} class="contact-us">
+  <div bind:this={contactUsElement} class="page-team__contact-us">
     <ts-contact-us open={contactUsOpen} on:formsubmit={handleContactUsSubmit} />
   </div>
   <mwc-snackbar
@@ -90,84 +90,84 @@
 
   .page-team {
     color: variables.$ts-blue-color;
-  }
 
-  .people {
-    margin: variables.$ts-spacing-15 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    &__people {
+      margin: variables.$ts-spacing-15 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
 
-  .people__spacer {
-    flex: 0 1 16.6666%;
-    max-width: 16.6666%;
-  }
+      &__spacer {
+        flex: 0 1 16.6666%;
+        max-width: 16.6666%;
+      }
 
-  ts-team-person {
-    margin: variables.$ts-spacing-7 0;
-    flex: 0 1 33.3333%;
-    max-width: 33.3333%;
-  }
-
-  #people__contact-us-button {
-    margin-top: variables.$ts-spacing-2;
-  }
-
-  .page-team__giga-blob {
-    display: block;
-    position: absolute;
-    width: 1400px;
-    overflow: visible;
-    top: -430px;
-    left: -700px;
-    z-index: -1;
-  }
-
-  .page-team__giga-blob-mobile {
-    display: none;
-  }
-
-  .contact-us {
-    margin-bottom: variables.$ts-spacing-10;
-  }
-
-  ts-contact-us {
-    margin-top: 200px;
-    display: block;
-  }
-
-  @media only screen and (max-width: 900px) {
-    .page-team__copy {
-      max-width: 80%;
+      &__contact-us-button {
+        margin-top: variables.$ts-spacing-2;
+      }
     }
 
-    .people {
-      margin: variables.$ts-spacing-3 0;
+    ts-team-person {
+      margin: variables.$ts-spacing-7 0;
+      flex: 0 1 33.3333%;
+      max-width: 33.3333%;
     }
 
-    .page-team__giga-blob {
-      display: none;
-    }
-
-    .page-team__giga-blob-mobile {
+    &__giga-blob {
       display: block;
       position: absolute;
       width: 1400px;
       overflow: visible;
-      top: -130px;
-      left: -270px;
+      top: -430px;
+      left: -700px;
       z-index: -1;
     }
 
-    ts-team-person {
-      margin: variables.$ts-spacing-1 2px;
-      flex: 0 1 calc(50% - 4px);
-      max-width: calc(50% - 4px);
+    &__giga-blob-mobile {
+      display: none;
     }
 
-    .people__spacer {
-      display: none;
+    &__contact-us {
+      margin-bottom: variables.$ts-spacing-10;
+    }
+
+    ts-contact-us {
+      margin-top: 200px;
+      display: block;
+    }
+
+    @media only screen and (max-width: 900px) {
+      &__copy {
+        max-width: 80%;
+      }
+
+      &__people {
+        margin: variables.$ts-spacing-3 0;
+
+        &__spacer {
+          display: none;
+        }
+      }
+
+      &__giga-blob {
+        display: none;
+      }
+
+      &__giga-blob-mobile {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        top: -130px;
+        left: -270px;
+        z-index: -1;
+      }
+
+      ts-team-person {
+        margin: variables.$ts-spacing-1 2px;
+        flex: 0 1 calc(50% - 4px);
+        max-width: calc(50% - 4px);
+      }
     }
   }
 </style>
