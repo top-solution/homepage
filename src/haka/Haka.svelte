@@ -752,7 +752,7 @@
     }
 
     &__expertise-pricing-table-mobile {
-      display: none;
+      display: none !important;
       font-size: 20px;
     }
 
@@ -852,7 +852,7 @@
 
     ts-request-trial {
       display: block;
-      margin: 200px auto 0;
+      margin: 200px auto variables.$ts-spacing-15;
       max-width: 720px;
     }
   }
