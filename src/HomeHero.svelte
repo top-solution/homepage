@@ -24,7 +24,7 @@
     margin-top: variables.$ts-spacing-9;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 24px;
+    margin-bottom: variables.$ts-spacing-25;
     font-size: 48px;
     line-height: 67px;
     color: variables.$ts-blue-color;
