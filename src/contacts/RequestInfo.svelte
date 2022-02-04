@@ -7,8 +7,6 @@
   import { createEventDispatcher } from "svelte";
   import { get_current_component } from "svelte/internal";
 
-  export let open = false;
-
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
 
@@ -31,7 +29,6 @@
 
   let formErrors = {
     name: null,
-    surname: null,
     role: null,
     companyName: null,
     employees: null,
@@ -39,16 +36,11 @@
     email: null,
   };
 
-  let formElement;
-
   function handleSubmit(event) {
     event.preventDefault();
 
     if (!form.name || form.name.length === 0) {
       formErrors.name = " ";
-    }
-    if (!form.surname || form.surname.length === 0) {
-      formErrors.surname = " ";
     }
     if (!form.role || form.role.length === 0) {
       formErrors.role = " ";
@@ -90,23 +82,14 @@
   }
 </script>
 
-<form bind:this={formElement} class="request-info" on:submit={handleSubmit}>
-  <!-- TODO: Use hexagon component -->
-  <div class="request-info__separator-hexagon">
-    <svg
-      width="111"
-      height="123"
-      viewBox="0 0 111 123"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0.495259 87.8533L2.85383 57.3628L5.33124 26.8817L32.9161 13.679L60.5522 0.584007L85.7784 17.8718L110.937 35.2579L108.579 65.7484L106.101 96.2295L78.5163 109.432L50.8802 122.527L25.6539 105.239L0.495259 87.8533Z"
-        fill="#312783"
-      />
-    </svg>
-  </div>
-  <div class="request-info__drawer" class:request-info__drawer--open={open}>
+<form class="request-info" on:submit={handleSubmit}>
+  <ts-hex
+    class="request-info__floating-hex-1"
+    width="40"
+    fill="#352E6C"
+    shadow="true"
+  />
+  <div class="request-info__drawer">
     <div class="request-info__title-hexagon">
       <!-- TODO: Use hexagon component -->
       <svg
@@ -137,19 +120,16 @@
     </div>
     <h2 class="title-3 title-form">Richiedi <b>informazioni</b></h2>
     <p class="request-info__subtitle body-1">
-      <b>Compila</b> e <b>invia</b> il form per avere maggiori
+      <b>Compila</b> e <b>invia</b> il form per avere<br /> maggiori
       <b>informazioni</b>
       sui nostri <b>servizi</b>
-    </p>
-    <p class="request-info__subtitle body-1">
-      <b>Inviaci</b> la tua <b>candidatura spontanea</b>
     </p>
     <div class="request-info__form">
       <div class="request-info__form-row">
         <ts-textfield
-          id="request-info__name-textfield"
+          class="request-info__textfield request-info__textfield-name"
           name="name"
-          label="Nome*"
+          label="Nome Cognome *"
           error={formErrors.name}
           value={form.name}
           on:change={(e) => (form.name = e.target.value)}
@@ -160,35 +140,7 @@
           }}
         />
         <ts-textfield
-          id="request-info__surname-textfield"
-          name="surname"
-          label="Cognome*"
-          error={formErrors.surname}
-          value={form.surname}
-          on:change={(e) => (form.surname = e.target.value)}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.surname = null;
-            }
-          }}
-        />
-        <ts-textfield
-          id="request-info__role-textfield"
-          name="role"
-          label="Ruolo*"
-          error={formErrors.role}
-          value={form.role}
-          on:change={(e) => (form.role = e.target.value)}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.role = null;
-            }
-          }}
-        />
-      </div>
-      <div class="request-info__form-row">
-        <ts-textfield
-          id="request-info__companyName-textfield"
+          class="request-info__textfield request-info__textfield-companyName"
           name="companyName"
           label="Nome azienda*"
           error={formErrors.companyName}
@@ -200,11 +152,13 @@
             }
           }}
         />
+      </div>
+      <div class="request-info__form-row">
         <ts-textfield
-          id="request-info__email-textfield"
+          class="request-info__textfield request-info__textfield-email"
           name="email"
           type="email"
-          label="Email*"
+          label="Email *"
           error={formErrors.email}
           value={form.email}
           on:change={(e) => (form.email = e.target.value)}
@@ -214,14 +168,25 @@
             }
           }}
         />
+        <ts-textfield
+          class="request-info__textfield request-info__textfield-role"
+          name="role"
+          label="Ruolo *"
+          error={formErrors.role}
+          value={form.role}
+          on:change={(e) => (form.role = e.target.value)}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.role = null;
+            }
+          }}
+        />
       </div>
-      <!-- value={form.employees}
-      on:change={(e) => (form.employees = e.target.value)} -->
       <div class="request-info__form-row">
         <ts-select
-          id="request-info__employees-textfield"
+          class="request-info__textfield request-info__textfield-employees"
           name="employees"
-          label="Numero di dipendenti*"
+          label="Numero di dipendenti"
           error={formErrors.employees}
           value={form.employees}
           on:change={(e) => {
@@ -239,9 +204,9 @@
           ]}
         />
         <ts-select
-          id="request-info__industry-textfield"
+          class="request-info__textfield request-info__textfield-industry"
           name="industry"
-          label="Settore*"
+          label="Settore"
           error={formErrors.industry}
           value={form.industry}
           on:change={(e) => {
@@ -262,7 +227,7 @@
 
       <div class="request-info__form-row">
         <ts-textfield
-          id="request-info__message-textfield"
+          class="request-info__textfield request-info__textfield-message"
           textarea
           name="message"
           label="Messaggio"
@@ -271,9 +236,9 @@
           on:change={(e) => (form.message = e.target.value)}
         />
       </div>
-      <div id="request-info__submit-button-form-row">
+      <div class="request-info__submit-button-form-row">
         <ts-button
-          id="request-info__submit"
+          class="request-info__submit"
           component="button"
           variant="secondary"
           type="submit"
@@ -293,114 +258,95 @@
 
   .request-info {
     position: relative;
-    margin-top: variables.$ts-spacing-8;
-  }
+    margin-top: variables.$ts-spacing-15;
 
-  .request-info__drawer {
-    position: relative;
-    max-height: 0;
-    transition: max-height variables.$ts-transition-timing-default
-      variables.$ts-transition-function-default;
-    overflow: hidden;
-  }
-
-  .request-info__drawer--open {
-    max-height: 1200px;
-  }
-
-  .request-info h2 {
-    text-align: center;
-    margin-bottom: variables.$ts-spacing-4;
-  }
-
-  .request-info__subtitle {
-    text-align: center;
-    margin: 0;
-  }
-
-  .request-info__separator-hexagon {
-    position: absolute;
-    left: -200px;
-    top: -500px;
-  }
-
-  .request-info__title-hexagon {
-    position: absolute;
-    z-index: -1;
-    top: -160px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
-  }
-
-  .request-info__form {
-    margin: variables.$ts-spacing-6 0;
-    display: block;
-  }
-
-  .request-info__form-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-  }
-
-  ts-textfield,
-  ts-select {
-    margin: 0 0 variables.$ts-spacing-3;
-  }
-
-  ts-textfield,
-  ts-select {
-    flex: 1 0 100%;
-  }
-
-  #request-info__employees-textfield {
-    margin-right: variables.$ts-spacing-1;
-  }
-
-  #request-info__submit-button-form-row {
-    display: flex;
-  }
-
-  #request-info__submit {
-    margin: 0 auto;
-  }
-
-  /* var(--mdc-theme-error, #b00020); */
-
-  @media only screen and (min-width: variables.$ts-tablet-max) {
-    .request-info {
-      margin-top: 0;
+    &__floating-hex-1 {
+      position: absolute;
+      top: -50px;
+      right: 15%;
     }
 
-    .request-info__drawer--open {
-      max-height: 700px;
+    &__drawer {
+      position: relative;
     }
 
-    ts-textfield,
-    ts-select {
-      margin: 0 variables.$ts-spacing-2 0;
+    & h2 {
+      text-align: center;
+      margin-bottom: variables.$ts-spacing-4;
     }
 
-    .request-info__form-row {
-      margin: 0 -8px variables.$ts-spacing-3;
+    &__subtitle {
+      text-align: center;
+      margin: 0;
     }
 
-    #request-info__name-textfield,
-    #request-info__surname-textfield,
-    #request-info__companyName-textfield,
-    #request-info__employees-textfield {
-      flex: 1 1 0;
-      margin-right: variables.$ts-spacing-1;
+    &__title-hexagon {
+      position: absolute;
+      z-index: -1;
+      top: -220px;
+      margin-left: 50%;
+      transform: translate(-50%, 0);
     }
 
-    #request-info__role-textfield,
-    #request-info__email-textfield,
-    #request-info__industry-textfield {
-      flex: 1 1 0;
+    &__form {
+      margin: variables.$ts-spacing-6 0 variables.$ts-spacing-15;
+      display: block;
     }
 
-    #request-info__message-textfield {
-      flex: 0 1 100%;
+    &__form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 (variables.$ts-spacing-1 * -1) 0;
+    }
+
+    &__textfield {
+      margin: 0 variables.$ts-spacing-1 variables.$ts-spacing-3;
+
+      flex: 1 1 100%;
+
+      &__employees {
+        margin-right: variables.$ts-spacing-1;
+      }
+    }
+
+    .request-info__submit-button-form-row {
+      display: flex;
+    }
+
+    .request-info__submit {
+      margin: 0 auto;
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-max) {
+      & {
+        margin-top: 0;
+      }
+
+      &__form-row {
+        margin: 0 (variables.$ts-spacing-1 * -1) variables.$ts-spacing-3;
+      }
+
+      &__textfield {
+        margin: 0 variables.$ts-spacing-1 0;
+
+        &-name,
+        &-surname,
+        &-companyName,
+        &-employees {
+          flex: 1 1 0;
+          margin-right: variables.$ts-spacing-1;
+        }
+
+        &-role,
+        &-email,
+        &-industry {
+          flex: 1 1 0;
+        }
+
+        &-message {
+          flex: 0 1 100%;
+        }
+      }
     }
   }
 </style>
