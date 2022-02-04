@@ -146,15 +146,23 @@
 
   @use "../styles/main.scss";
 
-  #header-hexagons-mobile__right {
-    position: absolute;
-    top: -130px;
-    right: -120px;
-  }
+  div {
+    #header-hexagons-mobile {
+      &__right {
+        position: absolute;
+        top: -130px;
+        right: -120px;
+      }
 
-  #header-hexagons-mobile__hex {
-    position: absolute;
-    bottom: -770px;
-    left: -70px;
+      &__hex {
+        position: absolute;
+        bottom: -770px;
+        left: -70px;
+      }
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-min) {
+      display: none;
+    }
   }
 </style>

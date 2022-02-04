@@ -252,30 +252,33 @@
     margin-bottom: variables.$ts-spacing-15;
   }
 
-  .page-company-development__floating-hex-1 {
-    position: absolute;
-    bottom: -200px;
-    left: 50%;
+  .claim {
+    max-width: 80%;
   }
 
   .page-company-development {
-    &__floating-hex-2 {
-      position: absolute;
-      bottom: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    display: block;
+    color: variables.$ts-blue-color;
+    box-sizing: border-box;
 
-    &__floating-hex-3 {
-      position: absolute;
-      left: 73%;
-      top: -60px;
-    }
+    &__floating-hex {
+      &-1 {
+        position: absolute;
+        bottom: -200px;
+        left: 50%;
+      }
+      &-2 {
+        position: absolute;
+        bottom: -200px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-    & {
-      display: block;
-      color: variables.$ts-blue-color;
-      box-sizing: border-box;
+      &-3 {
+        position: absolute;
+        left: 73%;
+        top: -60px;
+      }
     }
 
     &__copy {
