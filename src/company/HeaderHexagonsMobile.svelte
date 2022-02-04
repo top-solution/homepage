@@ -13,7 +13,7 @@
       fill="#312783"
     />
   </g>
-  <g filter="url(#filter1_d_1628_12489)">
+  <g filter="url(#header-hexagons-mobile__a)">
     <path
       d="M200.451 255.079L209.434 261.423L218.393 267.803L217.39 278.755L216.344 289.703L206.358 294.31L196.354 298.879L187.371 292.534L178.412 286.155L179.415 275.203L180.461 264.255L190.447 259.647L200.451 255.079Z"
       fill="#75BAE5"
@@ -24,7 +24,7 @@
       fill-opacity="0.67"
     />
   </g>
-  <g filter="url(#filter2_d_1628_12489)">
+  <g filter="url(#header-hexagons-mobile__b)">
     <path
       d="M292.189 257.164L313.036 271.888L333.826 286.692L331.499 312.108L329.072 337.514L305.898 348.207L282.682 358.809L261.835 344.085L241.046 329.281L243.373 303.865L245.799 278.459L268.973 267.766L292.189 257.164Z"
       fill="#3D3D3D"
@@ -35,7 +35,7 @@
       fill-opacity="0.67"
     />
   </g>
-  <g filter="url(#filter3_d_1628_12489)">
+  <g filter="url(#header-hexagons-mobile__c)">
     <path
       d="M95.3229 360.542L101.461 364.878L107.583 369.237L106.898 376.72L106.183 384.201L99.3595 387.35L92.5236 390.471L86.3852 386.136L80.2638 381.777L80.949 374.293L81.6634 366.812L88.4871 363.664L95.3229 360.542Z"
       fill="#3D3D3D"
@@ -49,12 +49,6 @@
   <g filter="url(#filter4_d_1628_12489)">
     <path
       d="M142.576 218.034L131.447 212.44L120.297 206.889L109.977 213.706L99.6828 220.563L100.491 232.974L101.347 245.382L112.475 250.976L123.625 256.527L133.946 249.71L144.24 242.853L143.432 230.442L142.576 218.034Z"
-      fill="#312783"
-    />
-  </g>
-  <g filter="url(#filter5_d_1628_12489)" class="hide-tablet">
-    <path
-      d="M230.929 70.8151L201.514 97.1934L172.208 123.705L181.472 166.538L190.888 209.348L229.566 225.803L268.288 242.102L297.702 215.724L327.009 189.212L317.745 146.379L308.329 103.569L269.651 87.114L230.929 70.8151Z"
       fill="#312783"
     />
   </g>
@@ -94,7 +88,7 @@
       />
     </filter>
     <filter
-      id="filter1_d_1628_12489"
+      id="header-hexagons-mobile__a"
       x="98.4067"
       y="255.079"
       width="200.007"
@@ -128,7 +122,7 @@
       />
     </filter>
     <filter
-      id="filter2_d_1628_12489"
+      id="header-hexagons-mobile__b"
       x="161.036"
       y="257.164"
       width="252.842"
@@ -162,7 +156,7 @@
       />
     </filter>
     <filter
-      id="filter3_d_1628_12489"
+      id="header-hexagons-mobile__c"
       x="0.260742"
       y="360.542"
       width="187.337"
@@ -201,40 +195,6 @@
       y="206.889"
       width="204.557"
       height="209.638"
-      filterUnits="userSpaceOnUse"
-      color-interpolation-filters="sRGB"
-    >
-      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-      <feColorMatrix
-        in="SourceAlpha"
-        type="matrix"
-        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-        result="hardAlpha"
-      />
-      <feOffset dy="80" />
-      <feGaussianBlur stdDeviation="40" />
-      <feColorMatrix
-        type="matrix"
-        values="0 0 0 0 0.117647 0 0 0 0 0.117647 0 0 0 0 0.396078 0 0 0 0.25 0"
-      />
-      <feBlend
-        mode="normal"
-        in2="BackgroundImageFix"
-        result="effect1_dropShadow_1628_12489"
-      />
-      <feBlend
-        mode="normal"
-        in="SourceGraphic"
-        in2="effect1_dropShadow_1628_12489"
-        result="shape"
-      />
-    </filter>
-    <filter
-      id="filter5_d_1628_12489"
-      x="92.2083"
-      y="70.8149"
-      width="314.8"
-      height="331.287"
       filterUnits="userSpaceOnUse"
       color-interpolation-filters="sRGB"
     >

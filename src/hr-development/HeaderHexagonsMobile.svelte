@@ -116,12 +116,6 @@
         fill="#312783"
       />
     </g>
-    <g filter="url(#filter3_d_1628_12524)">
-      <path
-        d="M510.928 70.8151L481.514 97.1934L452.208 123.705L461.471 166.538L470.888 209.348L509.565 225.803L548.288 242.102L577.702 215.724L607.008 189.212L597.745 146.379L588.329 103.569L549.651 87.114L510.928 70.8151Z"
-        fill="#312783"
-      />
-    </g>
     <defs>
       <filter
         id="filter2_d_1628_12524"
@@ -129,40 +123,6 @@
         y="206.935"
         width="204.47"
         height="209.548"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          type="matrix"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          result="hardAlpha"
-        />
-        <feOffset dy="80" />
-        <feGaussianBlur stdDeviation="40" />
-        <feColorMatrix
-          type="matrix"
-          values="0 0 0 0 0.117647 0 0 0 0 0.117647 0 0 0 0 0.396078 0 0 0 0.25 0"
-        />
-        <feBlend
-          mode="normal"
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_1628_12524"
-        />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="effect1_dropShadow_1628_12524"
-          result="shape"
-        />
-      </filter>
-      <filter
-        id="filter3_d_1628_12524"
-        x="372.208"
-        y="70.8149"
-        width="314.8"
-        height="331.287"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >

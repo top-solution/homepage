@@ -27,12 +27,6 @@
         d="m162.583 218.024-11.127-5.588-11.148-5.544-10.325 6.822-10.297 6.862.803 12.409.851 12.407 11.127 5.587 11.149 5.544 10.324-6.822 10.298-6.862-.803-12.409-.852-12.406Z"
       />
     </g>
-    <g filter="url(#header-hexagons-mobile__d)">
-      <path
-        fill="#312783"
-        d="m250.928 70.815-29.414 26.378-29.306 26.512 9.263 42.833 9.417 42.81 38.677 16.455 38.723 16.299 29.414-26.378 29.306-26.512-9.263-42.833-9.416-42.81-38.678-16.455-38.723-16.299Z"
-      />
-    </g>
     <defs>
       <filter
         id="header-hexagons-mobile__b"
@@ -70,36 +64,6 @@
         height="209.63"
         x="39.685"
         y="206.893"
-        color-interpolation-filters="sRGB"
-        filterUnits="userSpaceOnUse"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          result="hardAlpha"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-        />
-        <feOffset dy="80" />
-        <feGaussianBlur stdDeviation="40" />
-        <feColorMatrix
-          values="0 0 0 0 0.117647 0 0 0 0 0.117647 0 0 0 0 0.396078 0 0 0 0.25 0"
-        />
-        <feBlend
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_1628_12514"
-        />
-        <feBlend
-          in="SourceGraphic"
-          in2="effect1_dropShadow_1628_12514"
-          result="shape"
-        />
-      </filter>
-      <filter
-        id="header-hexagons-mobile__d"
-        width="314.8"
-        height="331.287"
-        x="112.208"
-        y="70.815"
         color-interpolation-filters="sRGB"
         filterUnits="userSpaceOnUse"
       >
