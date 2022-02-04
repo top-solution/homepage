@@ -151,6 +151,7 @@
 
   div {
     position: relative;
+    pointer-events: none;
   }
 
   #header-hexagons-mobile__left {

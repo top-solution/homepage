@@ -101,6 +101,7 @@
 
   div {
     position: relative;
+    pointer-events: none;
   }
 
   svg {

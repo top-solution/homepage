@@ -147,6 +147,8 @@
   @use "../styles/main.scss";
 
   div {
+    pointer-events: none;
+
     #header-hexagons-mobile {
       &__right {
         position: absolute;

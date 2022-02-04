@@ -160,18 +160,24 @@
 
   @use "../styles/main.scss";
 
-  .hexagons--left,
-  .hexagons--right {
-    width: 646px;
-    top: -220px;
-    position: absolute;
+  div {
+    pointer-events: none;
   }
 
-  .hexagons--left {
-    left: -110px;
-  }
+  .hexagons {
+    &--left,
+    &--right {
+      width: 646px;
+      top: -220px;
+      position: absolute;
+    }
 
-  .hexagons--right {
-    right: -180px;
+    &--left {
+      left: -110px;
+    }
+
+    &--right {
+      right: -180px;
+    }
   }
 </style>

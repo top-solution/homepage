@@ -237,4 +237,10 @@
       }
     }
   }
+
+  @media only screen and (max-width: variables.$ts-mobile-max) {
+    svg {
+      display: none;
+    }
+  }
 </style>
