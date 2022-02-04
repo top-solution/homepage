@@ -48,6 +48,16 @@
     </ts-button>
     <ts-button variant="primary" href="#tariffe">Tariffe</ts-button>
   </div>
+  <div slot="external">
+    <ts-header-hexagons-desktop />
+    <ts-header-hexagons-mobile />
+    <ts-hex
+      class="page-self-development__floating-hex-1"
+      width="56"
+      fill="#9893c1"
+      shadow="true"
+    />
+  </div>
 </ts-top-banner>
 <ts-layout class="page-haka">
   <div class="page-haka__copy">

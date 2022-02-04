@@ -97,7 +97,7 @@
       &.title-2 {
         margin-top: variables.$ts-spacing-4;
         text-align: left;
-        max-width: 80%;
+        max-width: 50%;
       }
     }
 
