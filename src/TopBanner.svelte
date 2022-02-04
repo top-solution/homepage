@@ -118,4 +118,10 @@
       }
     }
   }
+
+  @media screen and (min-width: variables.$ts-mobile-max) {
+    .top-banner__text {
+      text-align: center;
+    }
+  }
 </style>

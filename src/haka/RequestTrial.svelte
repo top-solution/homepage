@@ -309,14 +309,6 @@
 
   .request-trial__drawer {
     position: relative;
-    max-height: 0;
-    transition: max-height variables.$ts-transition-timing-default
-      variables.$ts-transition-function-default;
-    overflow: hidden;
-  }
-
-  .request-trial__drawer--open {
-    max-height: 1200px;
   }
 
   .request-trial h2 {

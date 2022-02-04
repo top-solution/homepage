@@ -234,6 +234,12 @@
     }
   }
 
+  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: 840px) {
+    #header-hexagons-desktop__right {
+      right: -230px;
+    }
+  }
+
   @media only screen and (max-width: variables.$ts-mobile-max) {
     svg {
       display: none;

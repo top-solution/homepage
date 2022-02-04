@@ -93,7 +93,7 @@
       margin-left: unset;
 
       .snail__snail {
-        right: 0;
+        right: -120px;
         left: unset;
         transform: scaleX(1);
       }
@@ -123,12 +123,14 @@
 
     @media screen and (max-width: variables.$ts-tablet-max) {
       .snail__hexagon {
-        bottom: -240px;
+        bottom: -100px;
         left: -290px;
       }
 
       .snail__snail {
         height: 435px;
+        left: 60px;
+        bottom: -40px;
       }
 
       .snail__hexagon {
@@ -138,7 +140,7 @@
 
       &.snail--flip {
         .snail__snail {
-          right: 0;
+          right: -60px;
         }
 
         .snail__hexagon {
@@ -165,7 +167,7 @@
         }
 
         .snail__hexagon {
-          right: 60px;
+          right: 120px;
         }
       }
     }

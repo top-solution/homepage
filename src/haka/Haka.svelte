@@ -52,9 +52,11 @@
     <ts-header-hexagons-desktop />
     <ts-header-hexagons-mobile />
     <ts-hex
-      class="page-self-development__floating-hex-1"
-      width="56"
-      fill="#9893c1"
+      class="page-haka__floating-hex-1"
+      width="140"
+      fill="#312783"
+      opacity="0.5"
+      rotation="-20"
       shadow="true"
     />
   </div>
@@ -72,17 +74,15 @@
     </video>
   </div>
   <div class="page-haka__services">
-    <div class="page-haka__services-blob">
-      <ts-blob
-        shape="potato"
-        variance="0.25"
-        style="min-width: 900px;"
-        flip="true"
-        fill="#E3F1FA"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
+    <ts-blob
+      class="page-haka__services-blob"
+      shape="potato"
+      variance="0.25"
+      flip="true"
+      fill="#E3F1FA"
+    >
+      <div style="min-width: 900px; height: 500px; " />
+    </ts-blob>
     <h3 class="title-3 title-form page-haka__choose-services">
       Scegli tra i <b>SERVIZI</b>
     </h3>
@@ -124,6 +124,14 @@
       href="https://www.example.com"
       target="_blank">SCARICA BROCHURE</ts-button
     >
+    <ts-hex
+      class="page-haka__floating-hex-2"
+      width="44"
+      fill="#312783"
+      opacity=".7"
+      shadow="false"
+      rotation="-20"
+    />
   </div>
   <div class="page-haka__who-chooses-haka">
     <h3 class="title-3 title-form">Chi ha scelto <b>HAKA</b></h3>
@@ -141,7 +149,7 @@
       <ts-picture base="customers" src="euroSearch" alt="Euro Search" />
     </div>
 
-    <div class="contact-us">
+    <div class="page-haka__contact-us">
       <ts-contact-us
         open={contactUsOpen}
         on:formsubmit={handleRequestTrialSubmit}
@@ -152,7 +160,7 @@
       labelText="La tua richiesta è stata presa in carico dal nostro team"
     />
   </div>
-  <div id="page-haka__service-performance" class="page-haka__service">
+  <div class="page-haka__service-performance page-haka__service">
     <h4 class="title-4" bind:this={performanceElement}>
       Valutazione delle performance
     </h4>
@@ -166,13 +174,13 @@
         <li>AUTO VALUTAZIONE</li>
         <li>ETERO VALUTAZIONE</li>
       </ol>
-      <div id="page-haka__free-trial">
+      <div class="page-haka__free-trial">
         <ts-button variant="secondary" href="">PROVA GRATUITA</ts-button>
       </div>
     </div>
     <ts-snail color="#8D88BA" flip="true" />
   </div>
-  <div id="page-haka__service-expertise" class="page-haka__service">
+  <div class="page-haka__service-expertise page-haka__service">
     <h4 class="title-4" bind:this={expertiseElement}>Bilancio di competenza</h4>
     <p class="body-2">
       Permette di comprendere come le persone <b>esprimono</b> professionalmente
@@ -192,7 +200,7 @@
     </div>
     <ts-snail color="#211A58" flip="false" />
   </div>
-  <div id="page-haka__service-potential" class="page-haka__service">
+  <div class="page-haka__service-potential page-haka__service">
     <h4 class="title-4" bind:this={potentialElement}>
       Valutazione del potenziale
     </h4>
@@ -258,28 +266,26 @@
         on:collapsible-height-change={(e) =>
           (collapsibleHeights.performance = e.detail.height)}
       >
-        <div class="page-haka__enterprise-blob">
-          <ts-blob
-            interactive="true"
-            shape="hexagon"
-            style="display: inline-block; max-width: 560px;"
-            fill="#EBEAF3"
-            padding="48"
-            variance="1.2"
-          >
-            <div class="page-haka__enterprise-blob__content">
-              <p class="title-6">Desideri un <b>piano custom</b>?</p>
-              <p class="body-2">
-                Scegli il piano <b>ENTREPRISE</b>
-              </p>
-              <ts-button
-                variant="primary"
-                href="/contacts.html"
-                style="display: inline-block;">Contattaci</ts-button
-              >
-            </div>
-          </ts-blob>
-        </div>
+        <ts-blob
+          class="page-haka__enterprise-blob"
+          interactive="true"
+          shape="hexagon"
+          fill="#EBEAF3"
+          padding="16"
+          variance="1.2"
+        >
+          <div class="page-haka__enterprise-blob__content">
+            <p class="title-6">Desideri un <b>piano custom</b>?</p>
+            <p class="body-2">
+              Scegli il piano <b>ENTREPRISE</b>
+            </p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
       </ts-pricing-table>
       <div class="page-haka__pricing-table-exagon-container">
         <!-- TODO: Use hexagon component -->
@@ -297,7 +303,7 @@
         </div>
       </div>
       <ts-pricing-table
-        id="page-haka__expertise-pricing-table"
+        class="page-haka__expertise-pricing-table"
         title="Bilancio di competenza"
         rows={expertiseTable}
         columns={expertiseColumns}
@@ -308,28 +314,26 @@
         on:collapsible-height-change={(e) =>
           (collapsibleHeights.expertise = e.detail.height)}
       >
-        <div class="page-haka__enterprise-blob">
-          <ts-blob
-            interactive="true"
-            shape="hexagon"
-            style="display: inline-block; max-width: 560px;"
-            fill="#EBEAF3"
-            padding="48"
-            variance="1.2"
-          >
-            <div class="page-haka__enterprise-blob__content">
-              <p class="title-6">Desideri un <b>piano custom</b>?</p>
-              <p class="body-2">
-                Scegli il piano <b>ENTREPRISE</b>
-              </p>
-              <ts-button
-                variant="primary"
-                href="/contacts.html"
-                style="display: inline-block;">Contattaci</ts-button
-              >
-            </div>
-          </ts-blob>
-        </div>
+        <ts-blob
+          class="page-haka__enterprise-blob"
+          interactive="true"
+          shape="hexagon"
+          fill="#EBEAF3"
+          padding="16"
+          variance="1.2"
+        >
+          <div class="page-haka__enterprise-blob__content">
+            <p class="title-6">Desideri un <b>piano custom</b>?</p>
+            <p class="body-2">
+              Scegli il piano <b>ENTREPRISE</b>
+            </p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
       </ts-pricing-table>
       <div class="page-haka__pricing-table-exagon-container">
         <!-- TODO: Use hexagon component -->
@@ -358,28 +362,26 @@
         on:collapsible-height-change={(e) =>
           (collapsibleHeights.expertise180 = e.detail.height)}
       >
-        <div class="page-haka__enterprise-blob">
-          <ts-blob
-            interactive="true"
-            shape="hexagon"
-            style="display: inline-block; max-width: 560px;"
-            fill="#EBEAF3"
-            padding="48"
-            variance="1.2"
-          >
-            <div class="page-haka__enterprise-blob__content">
-              <p class="title-6">Desideri un <b>piano custom</b>?</p>
-              <p class="body-2">
-                Scegli il piano <b>ENTREPRISE</b>
-              </p>
-              <ts-button
-                variant="primary"
-                href="/contacts.html"
-                style="display: inline-block;">Contattaci</ts-button
-              >
-            </div>
-          </ts-blob>
-        </div>
+        <ts-blob
+          class="page-haka__enterprise-blob"
+          interactive="true"
+          shape="hexagon"
+          fill="#EBEAF3"
+          padding="16"
+          variance="1.2"
+        >
+          <div class="page-haka__enterprise-blob__content">
+            <p class="title-6">Desideri un <b>piano custom</b>?</p>
+            <p class="body-2">
+              Scegli il piano <b>ENTREPRISE</b>
+            </p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
       </ts-pricing-table>
       <div class="page-haka__pricing-table-exagon-container">
         <!-- TODO: Use hexagon component -->
@@ -408,29 +410,26 @@
         on:collapsible-height-change={(e) =>
           (collapsibleHeights.expertise360 = e.detail.height)}
       >
-        <div class="page-haka__enterprise-blob">
-          <!-- {ptH} -->
-          <ts-blob
-            interactive="true"
-            shape="hexagon"
-            style="display: inline-block; max-width: 560px;"
-            fill="#EBEAF3"
-            padding="48"
-            variance="1.2"
-          >
-            <div class="page-haka__enterprise-blob__content">
-              <p class="title-6">Desideri un <b>piano custom</b>?</p>
-              <p class="body-2">
-                Scegli il piano <b>ENTREPRISE</b>
-              </p>
-              <ts-button
-                variant="primary"
-                href="/contacts.html"
-                style="display: inline-block;">Contattaci</ts-button
-              >
-            </div>
-          </ts-blob>
-        </div>
+        <ts-blob
+          class="page-haka__enterprise-blob"
+          interactive="true"
+          shape="hexagon"
+          fill="#EBEAF3"
+          padding="16"
+          variance="1.2"
+        >
+          <div class="page-haka__enterprise-blob__content">
+            <p class="title-6">Desideri un <b>piano custom</b>?</p>
+            <p class="body-2">
+              Scegli il piano <b>ENTREPRISE</b>
+            </p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
       </ts-pricing-table>
       <div class="page-haka__pricing-table-exagon-container">
         <!-- TODO: Use hexagon component -->
@@ -456,7 +455,7 @@
         on:collapsible-height-change={(e) =>
           (collapsibleHeights.potential = e.detail.height)}
       >
-        <div class="page-haka__service-potential-copy">
+        <div class="page-haka__pricing-table__service-potential-copy">
           <p>
             Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
             progettiamo assessment personalizzati con un numero variabile di
@@ -468,7 +467,7 @@
             standardizzare le valutazioni, e uniformare i giudizi.
           </p>
         </div>
-        <div class="page-haka__service-potential-test">
+        <div class="page-haka__pricing-table__service-potential-test">
           <h4>Tra le prove:</h4>
           <ol>
             <li>Colloqui in call conference con psicologi</li>
@@ -486,25 +485,25 @@
           </ol>
         </div>
 
-        <div class="page-haka__more-info-blob">
-          <ts-blob
-            interactive="true"
-            shape="hexagon"
-            style="display: inline-block; max-width: 560px;"
-            fill="#EBEAF3"
-            padding="48"
-            variance="1.2"
+        <ts-blob
+          class="page-haka__enterprise-blob page-haka__more-info-blob"
+          interactive="true"
+          shape="hexagon"
+          fill="#EBEAF3"
+          padding="16"
+          variance="1.2"
+        >
+          <div
+            class="page-haka__enterprise-blob__content page-haka__more-info-blob__content"
           >
-            <div class="page-haka__more-info-blob__content">
-              <p class="body-2">Desideri maggiori <b>informazioni</b>?</p>
-              <ts-button
-                variant="primary"
-                href="/contacts.html"
-                style="display: inline-block;">Contattaci</ts-button
-              >
-            </div>
-          </ts-blob>
-        </div>
+            <p class="body-2">Desideri maggiori <b>informazioni</b>?</p>
+            <ts-button
+              variant="primary"
+              href="/contacts.html"
+              style="display: inline-block;">Contattaci</ts-button
+            >
+          </div>
+        </ts-blob>
       </ts-collapsible-section>
     </div>
     <ts-request-trial on:formsubmit={handleRequestTrialSubmit} />
@@ -521,432 +520,485 @@
 
   @use "../styles/main.scss";
 
-  body {
-    background-color: red;
-    color: #0084f6;
-    transition: background-color 0.3s;
-  }
-  html {
-    background-color: #1d3040;
-    color: #bfc2c7;
-  }
-
   .page-haka {
     display: block;
     color: variables.$ts-blue-color;
     box-sizing: border-box;
-  }
 
-  .page-haka__copy {
-    &,
-    & h2 {
+    &__floating-hex-1 {
+      position: absolute;
+      bottom: -430px;
+    }
+
+    &__copy {
+      &,
+      & h2 {
+        text-align: center;
+      }
+
+      & h2 {
+        margin: variables.$ts-spacing-15 0 variables.$ts-spacing-6;
+      }
+
+      & p {
+        margin-bottom: variables.$ts-spacing-6;
+      }
+    }
+
+    &__video {
+      width: 100%;
+      height: auto;
+      margin: variables.$ts-spacing-3 0;
+    }
+
+    &__services {
+      margin-top: variables.$ts-spacing-15;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      margin-bottom: 310px;
+    }
+
+    &__services-blob {
+      width: 1100px;
+      position: absolute;
+      top: -70px;
+      left: 42%;
+      transform: translate(-50%, 0);
+      z-index: -1;
+    }
+
+    &__services {
+      h2 {
+        text-transform: none;
+        text-align: center;
+        margin-bottom: variables.$ts-spacing-6;
+      }
+    }
+    &__floating-hex-2 {
+      display: none;
+    }
+
+    &__choose-services {
+      margin-bottom: variables.$ts-spacing-6;
+    }
+
+    &__services-list,
+    &__service-subservices ol {
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      line-height: 28px;
+      width: 390px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    &__services-list li,
+    &__service-subservices li {
+      margin-bottom: variables.$ts-spacing-3;
+    }
+
+    &__services-list a {
+      font-weight: 400;
+    }
+
+    &__services-list a:hover {
+      text-decoration: underline;
+    }
+
+    &__services-list li::before,
+    &__service-subservices li::before {
+      content: "";
+      display: inline-block;
+      height: 28px;
+      width: 28px;
+      background-image: url("img/icons/hexagon-list-item.svg");
+      background-size: cover;
+      margin: 0 variables.$ts-spacing-4 -4px auto;
+      padding: 0;
+    }
+
+    &__services-brochure-button {
+      display: inline-block;
+      margin-top: variables.$ts-spacing-4;
+    }
+
+    &__who-chooses-haka {
+      h3 {
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 33px;
+        text-align: center;
+        margin-bottom: variables.$ts-spacing-4;
+      }
+
+      &__customers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: variables.$ts-spacing-15;
+        flex-wrap: wrap;
+      }
+
+      &__customers ts-picture {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        margin: 0 variables.$ts-spacing-9;
+      }
+    }
+
+    &__service {
+      position: relative;
+
+      & + & {
+        margin-top: 280px;
+      }
+
+      & p {
+        width: 100%;
+        max-width: 580px;
+      }
+
+      & h4 {
+        margin-bottom: variables.$ts-spacing-3;
+        line-height: 33px;
+      }
+    }
+
+    &__service-subservices {
+      margin: variables.$ts-spacing-4 0;
+      position: relative;
+
+      li {
+        font-weight: 500;
+        margin-bottom: variables.$ts-spacing-4;
+      }
+    }
+
+    &__service-expertise {
+      text-align: right;
+
+      p {
+        margin-left: auto;
+      }
+    }
+
+    &__service-potential {
+      .body-2 {
+        padding-right: 60px;
+      }
+    }
+
+    &__free-trial {
+      position: absolute;
+      right: 0;
+    }
+
+    &__contact-us {
+      margin-bottom: variables.$ts-spacing-10;
+    }
+
+    &__our-plans {
+      margin-top: 300px;
       text-align: center;
+
+      .body-2 {
+        margin-bottom: variables.$ts-spacing-6;
+      }
     }
 
-    & h2 {
-      margin: variables.$ts-spacing-15 0 variables.$ts-spacing-6;
+    ts-pricing-table {
+      margin: variables.$ts-spacing-1-5 0 0;
+      display: block;
     }
 
-    & p {
-      margin-bottom: variables.$ts-spacing-6;
-    }
-  }
-
-  .page-haka__video {
-    width: 100%;
-    height: auto;
-    margin: variables.$ts-spacing-3 0;
-  }
-
-  .page-haka__services {
-    margin-top: variables.$ts-spacing-15;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-bottom: 310px;
-  }
-
-  .page-haka__services-blob {
-    width: 1100px;
-    position: absolute;
-    top: -70px;
-    left: -150px;
-    z-index: -1;
-  }
-
-  .page-haka__services h2 {
-    text-transform: none;
-    text-align: center;
-    margin-bottom: variables.$ts-spacing-6;
-  }
-
-  .page-haka__choose-services {
-    margin-bottom: variables.$ts-spacing-6;
-  }
-
-  .page-haka__services-list,
-  .page-haka__service-subservices ol {
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    line-height: 28px;
-    width: 390px;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  .page-haka__services-list li,
-  .page-haka__service-subservices li {
-    margin-bottom: variables.$ts-spacing-3;
-  }
-
-  .page-haka__services-list a {
-    font-weight: 400;
-  }
-
-  .page-haka__services-list a:hover {
-    text-decoration: underline;
-  }
-
-  .page-haka__services-list li::before,
-  .page-haka__service-subservices li::before {
-    content: "";
-    display: inline-block;
-    height: 28px;
-    width: 28px;
-    background-image: url("img/icons/hexagon-list-item.svg");
-    background-size: cover;
-    margin: 0 variables.$ts-spacing-4 -4px auto;
-    padding: 0;
-  }
-
-  .page-haka__services-brochure-button {
-    display: inline-block;
-    margin-top: variables.$ts-spacing-4;
-  }
-
-  .page-haka__who-chooses-haka__customers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: variables.$ts-spacing-15;
-    flex-wrap: wrap;
-  }
-
-  .page-haka__who-chooses-haka__customers ts-picture {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-    margin: 0 variables.$ts-spacing-9;
-  }
-
-  .page-haka__who-chooses-haka h3 {
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 33px;
-    text-align: center;
-    margin-bottom: variables.$ts-spacing-4;
-  }
-
-  .page-haka__service {
-    position: relative;
-  }
-  .page-haka__service + .page-haka__service {
-    margin-top: 280px;
-  }
-
-  .page-haka__service p {
-    width: 100%;
-    max-width: 580px;
-  }
-
-  .page-haka__service h4 {
-    margin-bottom: variables.$ts-spacing-3;
-    line-height: 33px;
-  }
-
-  #page-haka__service-expertise {
-    text-align: right;
-  }
-
-  #page-haka__service-expertise p {
-    margin-left: auto;
-  }
-
-  .page-haka__service-subservices {
-    margin: variables.$ts-spacing-4 0;
-    position: relative;
-  }
-
-  .page-haka__service-subservices li {
-    font-weight: 500;
-    margin-bottom: variables.$ts-spacing-4;
-  }
-
-  #page-haka__free-trial {
-    position: absolute;
-    right: 0;
-  }
-
-  .contact-us {
-    margin-bottom: variables.$ts-spacing-10;
-  }
-
-  .page-haka__our-plans {
-    margin-top: 300px;
-    text-align: center;
-
-    .body-2 {
-      margin-bottom: variables.$ts-spacing-6;
-    }
-  }
-
-  ts-pricing-table {
-    margin: variables.$ts-spacing-1-5 0 0;
-    display: block;
-  }
-
-  .page-haka__our-plans-accordion ts-collapsible-section {
-    margin: variables.$ts-spacing-1-5 0;
-    display: block;
-  }
-
-  .page-haka__enterprise-blob {
-    margin: 280px auto 180px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .page-haka__enterprise-blob__content {
-    padding: variables.$ts-spacing-6 0;
-    text-align: center;
-
-    & .title-6 {
-      font-weight: 300;
+    &__our-plans-accordion ts-collapsible-section {
+      margin: variables.$ts-spacing-1-5 0;
+      display: block;
     }
 
-    .body-2 {
-      margin: variables.$ts-spacing-3 0;
+    &__enterprise-blob {
+      margin: 280px auto 180px;
+      display: flex;
+      justify-content: center;
+      width: 400px;
+
+      &__content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 350px;
+
+        & .title-6 {
+          font-weight: 300;
+        }
+
+        .body-2 {
+          margin: variables.$ts-spacing-3 0;
+        }
+      }
     }
-  }
 
-  .page-haka__more-info-blob {
-    margin: 200px auto;
-    display: flex;
-    justify-content: center;
-  }
-
-  .page-haka__more-info-blob__content {
-    padding: variables.$ts-spacing-8 0;
-    text-align: center;
-
-    .body-2 {
-      margin: variables.$ts-spacing-3 0;
+    &__more-info-blob {
+      margin: 200px auto;
     }
-  }
 
-  .page-haka__expertise-pricing-table-mobile {
-    display: none;
-    font-size: 20px;
-  }
+    &__expertise-pricing-table-mobile {
+      display: none;
+      font-size: 20px;
+    }
 
-  .page-haka__more-info-blob__content p {
-    font-size: 20px;
-  }
+    &__more-info-blob__content p {
+      font-size: 20px;
+    }
 
-  .page-haka__service-potential-copy {
-    padding-left: 30%;
-    padding-right: variables.$ts-spacing-8;
-  }
+    &__pricing-table {
+      &__service-potential {
+        &-copy {
+          padding-left: 30%;
+          padding-right: variables.$ts-spacing-8;
 
-  .page-haka__service-potential-copy p {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 150%;
-    margin: 0;
-  }
+          p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 150%;
+            margin: 0;
+          }
+        }
 
-  .page-haka__service-potential-test h4 {
-    line-height: 14px;
-    border-bottom: 1px solid black;
-    padding-bottom: variables.$ts-spacing-1;
-    margin: variables.$ts-spacing-2 0;
-  }
+        &-test {
+          h4 {
+            line-height: 14px;
+            border-bottom: 1px solid black;
+            padding-bottom: variables.$ts-spacing-1;
+            margin: variables.$ts-spacing-2 0;
+          }
 
-  .page-haka__service-potential-test ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+          & ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          }
 
-  .page-haka__service-potential-test ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+          & ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          }
 
-  .page-haka__service-potential-test li {
-    font-weight: 300;
-    font-size: 18px;
-    padding: variables.$ts-spacing-3 0;
-    border-bottom: 1px solid #404040;
-    display: flex;
-    align-items: center;
-  }
+          & li {
+            font-weight: 300;
+            font-size: 18px;
+            padding: variables.$ts-spacing-3 0;
+            border-bottom: 1px solid #404040;
+            display: flex;
+            align-items: center;
+          }
 
-  .page-haka__service-potential-test li:last-child {
-    border-bottom: 0;
-  }
+          & li:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
 
-  .page-haka__our-plans-accordion-hexagon {
-    width: auto;
-    height: 500px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0) scale(1);
-    transition: height var(--ts-transition-timing-default)
-        var(--ts-transition-function-default),
-      width var(--ts-transition-timing-default)
-        var(--ts-transition-function-default),
-      transform var(--ts-transition-timing-default)
-        var(--ts-transition-function-default);
-  }
+    &__our-plans-accordion-hexagon {
+      width: auto;
+      height: 500px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0) scale(1);
+      transition: height var(--ts-transition-timing-default)
+          var(--ts-transition-function-default),
+        width var(--ts-transition-timing-default)
+          var(--ts-transition-function-default),
+        transform var(--ts-transition-timing-default)
+          var(--ts-transition-function-default);
+    }
 
-  .page-haka__pricing-table-exagon-container {
-    position: relative;
-  }
+    &__pricing-table-exagon-container {
+      position: relative;
 
-  .page-haka__pricing-table-exagon-container > div {
-    position: absolute;
-    z-index: -2;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0px;
-  }
+      & > div {
+        position: absolute;
+        z-index: -2;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0px;
+      }
+    }
 
-  .page-haka__pricing-table-exagon {
-    width: auto;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0) scale(1);
-    transition: height variables.$ts-transition-timing-default
-        variables.$ts-transition-function-default,
-      width variables.$ts-transition-timing-default
-        variables.$ts-transition-function-default,
-      transform variables.$ts-transition-timing-default
-        variables.$ts-transition-function-default;
-  }
+    &__pricing-table-exagon {
+      width: auto;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0) scale(1);
+      transition: height variables.$ts-transition-timing-default
+          variables.$ts-transition-function-default,
+        width variables.$ts-transition-timing-default
+          variables.$ts-transition-function-default,
+        transform variables.$ts-transition-timing-default
+          variables.$ts-transition-function-default;
+    }
 
-  ts-request-trial {
-    display: block;
-    margin: 200px auto 0;
-    max-width: 720px;
+    ts-request-trial {
+      display: block;
+      margin: 200px auto 0;
+      max-width: 720px;
+    }
   }
 
   @media only screen and (max-width: variables.$ts-tablet-max) {
     .page-haka {
       padding: 0 variables.$ts-spacing-3;
       overflow-x: hidden;
-    }
 
-    .page-haka__services-blob {
-      width: 1100px;
-      position: absolute;
-      top: -120px;
-      left: -450px;
-      z-index: -1;
-    }
+      &__floating-hex-1 {
+        display: none;
+      }
 
-    .page-haka__services-list,
-    .page-haka__service-subservices ol {
-      font-size: 18px;
-      width: 250px;
-    }
+      &__copy {
+        h2 {
+          margin: variables.$ts-spacing-8 0 variables.$ts-spacing-6;
+        }
+      }
 
-    .page-haka__services-list li::before,
-    .page-haka__service-subservices li::before {
-      height: 24px;
-      width: 24px;
-      margin-right: variables.$ts-spacing-2;
-    }
+      &__services,
+      &__who-chooses-haka {
+        margin-top: variables.$ts-spacing-8;
+      }
 
-    .page-haka__who-chooses-haka__customers {
-      margin: 0 -24px 0;
-    }
+      &__who-chooses-haka {
+        margin-bottom: variables.$ts-spacing-15;
+      }
 
-    .page-haka__who-chooses-haka__customers ts-picture {
-      margin: 0 variables.$ts-spacing-3 variables.$ts-spacing-2;
-    }
+      &__services-list,
+      &__service-subservices ol {
+        font-size: 18px;
+        width: 350px;
+      }
 
-    .page-haka__service + .page-haka__service {
-      margin-top: variables.$ts-spacing-10;
-    }
+      &__services-list li::before,
+      &__service-subservices li::before {
+        height: 24px;
+        width: 24px;
+        margin-right: variables.$ts-spacing-2;
+      }
 
-    .page-haka__service h4 {
-      margin-bottom: variables.$ts-spacing-3;
-      font-style: normal;
-      line-height: 24px;
-    }
+      &__who-chooses-haka__customers {
+        margin: 0 -24px 0;
+      }
 
-    .page-haka__service-subservices ol {
-      margin: variables.$ts-spacing-7 auto;
-    }
+      &__who-chooses-haka__customers ts-picture {
+        margin: 0 variables.$ts-spacing-3 variables.$ts-spacing-2;
+      }
 
-    #page-haka__free-trial {
-      position: static;
-      display: flex;
-    }
+      &__service + &__service {
+        margin-top: variables.$ts-spacing-10;
+      }
 
-    #page-haka__free-trial ts-button {
-      margin: auto;
-    }
+      &__floating-hex-2 {
+        display: block;
+        position: absolute;
+        bottom: -260px;
+      }
 
-    .page-haka__our-plans {
-      margin-top: 120px;
-    }
+      &__enterprise-blob {
+        width: 92%;
+        max-width: 350px;
+        padding-bottom: variables.$ts-spacing-4;
+        margin: auto;
 
-    .page-haka__our-plans-accordion ts-pricing-table,
-    .page-haka__our-plans-accordion ts-collapsible-section {
-      margin: variables.$ts-spacing-1-5 0;
-      display: block;
-    }
+        &__content {
+          width: unset;
+          height: unset;
+          padding: variables.$ts-spacing-2 variables.$ts-spacing-3;
+        }
+      }
 
-    .page-haka__enterprise-blob__content {
-      padding: variables.$ts-spacing-2 0;
-    }
+      &__service {
+        h4 {
+          margin-bottom: variables.$ts-spacing-3;
+          font-style: normal;
+          line-height: 24px;
+        }
 
-    #page-haka__expertise-pricing-table {
-      display: none;
-    }
+        ts-snail {
+          margin-bottom: 100px;
+        }
+      }
 
-    .page-haka__expertise-pricing-table-mobile {
-      display: block;
-    }
+      &__service-subservices ol {
+        margin: variables.$ts-spacing-7 auto;
+      }
 
-    .page-haka__service-potential-copy {
-      padding: variables.$ts-spacing-3 variables.$ts-spacing-1;
-    }
+      &__free-trial {
+        position: static;
+        display: flex;
+      }
 
-    .page-haka__service-potential-test {
-      padding: 0 variables.$ts-spacing-1;
-    }
+      &__free-trial ts-button {
+        margin: auto;
+      }
 
-    .page-haka__enterprise-blob {
-      margin-top: variables.$ts-spacing-8;
-      height: 350px !important;
-    }
+      &__our-plans {
+        margin-top: 120px;
+      }
 
-    .page-haka__more-info-blob {
-      margin-top: variables.$ts-spacing-5;
-      height: 350px !important;
-    }
+      &__our-plans-accordion ts-pricing-table,
+      &__our-plans-accordion ts-collapsible-section {
+        margin: variables.$ts-spacing-1-5 0;
+        display: block;
+      }
 
-    .page-haka__pricing-table-exagon {
-      transform: translate(-50%, 0) scale(1);
+      &__expertise-pricing-table {
+        display: none !important;
+      }
+
+      &__expertise-pricing-table-mobile {
+        display: block;
+      }
+
+      &__pricing-table__service-potential-copy {
+        padding: variables.$ts-spacing-3 variables.$ts-spacing-1;
+      }
+
+      &__pricing-table__service-potential-test {
+        padding: 0 variables.$ts-spacing-1;
+      }
+
+      &__enterprise-blob {
+        margin-top: variables.$ts-spacing-8;
+        height: 350px !important;
+      }
+
+      &__more-info-blob {
+        margin-top: variables.$ts-spacing-5;
+        height: 350px;
+      }
+
+      &__pricing-table-exagon {
+        transform: translate(-50%, 0) scale(1);
+      }
+
+      ts-request-trial {
+        margin-top: variables.$ts-spacing-15;
+      }
+    }
+  }
+
+  @media only screen and (max-width: variables.$ts-mobile-max) {
+    .page-haka__services-list {
+      max-width: 250px;
     }
   }
 
