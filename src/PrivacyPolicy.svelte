@@ -5,7 +5,7 @@
 </script>
 
 <ts-layout class="privacy-policy">
-  <div>Privacy policy page</div>
+  <div class="privacy-policy__container">Privacy policy page</div>
 </ts-layout>
 
 <style lang="scss" global>
@@ -15,5 +15,13 @@
 
   .privacy-policy {
     color: variables.$ts-blue-color;
+
+    &__container {
+      padding: variables.$ts-spacing-5;
+      margin-top: variables.$ts-spacing-10;
+      background-color: variables.$ts-azure-color-light;
+      border: 1px solid variables.$ts-azure-color;
+      border-radius: 4px;
+    }
   }
 </style>

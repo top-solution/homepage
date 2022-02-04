@@ -36,8 +36,9 @@
       /></a
     >
     <div class="header__link">
-      <a href="about.html"><strong>HR</strong></a>
+      <a href="hr-development.html"><strong>HR</strong></a>
       <a href="about.html"><strong>DEV</strong></a>
+      <!-- FIXME: LINKS -->
       <a href="company.html"><strong>AZIENDA</strong></a>
       <a href="team.html"><strong>TEAM</strong></a>
       <a href="contacts.html"><strong>CONTATTI</strong></a>
@@ -89,15 +90,16 @@
     />
     <div class="header-mobile__links">
       <a href="index.html">HOME</a>
-      <a href="about.html"
+      <a href="hr-development.html"
         >HR
         <span class="header-mobile__links--slime">Risorse Umane</span></a
       >
+      <!-- FIXME: LINKS -->
       <a href="about.html"
         >DEV
         <span class="header-mobile__links--slime">Sviluppo Software</span></a
       >
-      <a href="index.html#customers">TARIFFE</a>
+      <a href="haka.html#tariffe">TARIFFE</a>
       <a href="company.html">AZIENDA</a>
       <a href="team.html">TEAM</a>
       <a href="contacts.html">CONTATTI</a>
@@ -333,10 +335,10 @@
     &:before {
       position: absolute;
       content: "";
-      height: 26px;
-      width: 26px;
+      height: 23px;
+      width: 23px;
       right: 20px;
-      bottom: -7px;
+      bottom: -5px;
       -webkit-transition: 0.4s;
       transition: 0.4s;
       background-image: url("img/languageSwitcher/en.svg");

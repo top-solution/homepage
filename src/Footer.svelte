@@ -10,19 +10,24 @@
     </div>
     <div class="footer-top__link-box">
       <div class="title-6">Link utili</div>
-      <div><a href="error.html">HR</a></div> <!-- FIXME: LINKS -->
+      <div><a href="hr-development.html">HR</a></div>
       <div><a href="error.html">DEV</a></div>
-      <div><a href="error.html">Tariffe</a></div>
-      <div><a href="privacyPolicy.html">Privacy Policy</a></div>
+      <!-- FIXME: LINKS -->
+      <div><a href="haka.html#tariffe">Tariffe</a></div>
+      <div><a href="privacy-policy.html">Privacy Policy</a></div>
     </div>
     <div class="footer-top__box">
       <div class="title-6">Servizi</div>
-      <div><a href="error.html">Audit competenze</a></div>
-      <div><a href="error.html">Sviluppo organizzativo</a></div>
+      <div><a href="haka.html">Audit competenze</a></div>
+      <div><a href="company-development.html">Sviluppo organizzativo</a></div>
       <div><a href="error.html">Sviluppo individuale</a></div>
+      <!-- FIXME: LINKS -->
       <div><a href="error.html">Applicazioni web e mobile</a></div>
+      <!-- FIXME: LINKS -->
       <div><a href="error.html">Consulenza sviluppo software</a></div>
-      <div><a href="error.html">Cloud computing</a></div> <!-- FIXME: LINKS -->
+      <!-- FIXME: LINKS -->
+      <div><a href="error.html">Cloud computing</a></div>
+      <!-- FIXME: LINKS -->
     </div>
     <div class="footer-top__bordered-box">
       <div class="title-6">Contatti</div>

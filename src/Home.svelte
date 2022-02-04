@@ -66,6 +66,12 @@
     <div class="homepage__header-mobile">
       <img src="img/blob-header-homepage.svg" alt="" />
     </div>
+    <div class="homepage__header-hex">
+      <img src="img/homepage/group-hex-header-homepage.svg" alt="" />
+    </div>
+    <div class="homepage__header-hex-mobile">
+      <img src="img/homepage/group-hex-header-homepage.svg" alt="" />
+    </div>
   </div>
   <ts-home-hero />
   <ts-triple-blob
@@ -84,6 +90,12 @@
     </div>
     <div class="homepage__middle-mobile">
       <img src="img/blob-middle-homepage.svg" alt="" />
+    </div>
+    <div class="homepage__middle-hex">
+      <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
+    </div>
+    <div class="homepage__middle-hex">
+      <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
     </div>
   </div>
   <ts-customers />
@@ -113,8 +125,22 @@
       @media only screen and (max-width: variables.$ts-mobile-max) {
         transform: scaleX(-1);
         left: -50px;
-        display: none;
+        top: -350px;
       }
+    }
+
+    &__header-hex {
+      display: none;
+    }
+
+    &__header-hex-mobile {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -400px;
+      left: -1000px;
+      z-index: -1;
     }
 
     &__middle-blob {
@@ -127,18 +153,36 @@
       width: 1400px;
       overflow: visible;
       right: -1125px;
-      top: 2450px;
+      top: 1400px;
       z-index: -1;
+    }
 
-      @media only screen and (min-width: variables.$ts-mobile-max) {
-        top: 1350px;
-        display: none;
-      }
+    &__middle-hex {
+      display: none;
+    }
 
-      @media only screen and (max-width: variables.$ts-tablet-max) {
-        top: 1700px;
-        display: none;
-      }
+    &__middle-hex {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1125px;
+      top: 1400px;
+      z-index: -1;
+    }
+
+    &__middle-hex {
+      display: none;
+    }
+
+    &__middle-hex {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1155px;
+      top: 1075px;
+      z-index: -1;
     }
   }
 </style>
