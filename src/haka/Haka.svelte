@@ -160,7 +160,9 @@
       labelText="La tua richiesta è stata presa in carico dal nostro team"
     />
   </div>
-  <div class="page-haka__service-performance page-haka__service">
+  <div
+    class="page-haka__service-performance page-haka__service page-haka__service--flip"
+  >
     <h4 class="title-4" bind:this={performanceElement}>
       Valutazione delle performance
     </h4>
@@ -169,16 +171,16 @@
       raggiunto la persona nel corso del tempo e come ha espresso il proprio
       <b>contributo</b> all’interno dell’organizzazione.
     </p>
+    <ts-snail color="#8D88BA" flip="true" />
     <div class="page-haka__service-subservices body-2">
       <ol>
         <li>AUTO VALUTAZIONE</li>
         <li>ETERO VALUTAZIONE</li>
       </ol>
-      <div class="page-haka__free-trial">
-        <ts-button variant="secondary" href="">PROVA GRATUITA</ts-button>
-      </div>
     </div>
-    <ts-snail color="#8D88BA" flip="true" />
+    <div class="page-haka__free-trial">
+      <ts-button variant="secondary" href="">PROVA GRATUITA</ts-button>
+    </div>
   </div>
   <div class="page-haka__service-expertise page-haka__service">
     <h4 class="title-4" bind:this={expertiseElement}>Bilancio di competenza</h4>
@@ -192,15 +194,17 @@
       o <b>indiretto</b>
       (responsabili, colleghi e riporti).
     </p>
+    <ts-snail color="#211A58" flip="false" />
     <div class="page-haka__service-subservices body-2">
       <ol>
         <li>VALUTAZIONE 180°</li>
         <li>VALUTAZIONE 360°</li>
       </ol>
     </div>
-    <ts-snail color="#211A58" flip="false" />
   </div>
-  <div class="page-haka__service-potential page-haka__service">
+  <div
+    class="page-haka__service-potential page-haka__service page-haka__service--flip"
+  >
     <h4 class="title-4" bind:this={potentialElement}>
       Valutazione del potenziale
     </h4>
@@ -212,12 +216,12 @@
       a comprendere se la persona possiede i <b>requisiti</b> per ricoprire una posizione
       organizzativa diversa o superiore a quella attuale.
     </p>
+    <ts-snail color="#312783" flip="true" />
     <div class="page-haka__service-subservices body-2">
       <ol>
         <li>ASSESSMENT CENTER</li>
       </ol>
     </div>
-    <ts-snail color="#312783" flip="true" />
   </div>
   <div class="page-haka__our-plans">
     <h3 class="title-3 title-form">I nostri <b>PIANI</b></h3>
@@ -654,6 +658,16 @@
 
     &__service {
       position: relative;
+      .body-2 {
+        padding-left: 20%;
+      }
+
+      &--flip {
+        .body-2 {
+          padding-right: 20%;
+          padding-left: 0;
+        }
+      }
 
       & + & {
         margin-top: 280px;
@@ -930,10 +944,6 @@
           font-style: normal;
           line-height: 24px;
         }
-
-        ts-snail {
-          margin-bottom: 100px;
-        }
       }
 
       &__service-subservices ol {
@@ -1007,7 +1017,7 @@
     }
   }
 
-  @ only screen and (min-width: 800px) and (max-width: 900px) {
+  @media only screen and (min-width: 800px) and (max-width: 900px) {
     .page-haka__pricing-table-exagon {
       transform: translate(-50%, 0) scale(1.3);
     }

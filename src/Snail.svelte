@@ -3,171 +3,188 @@
 <script>
   export let flip = "false";
   export let color = "#8D88BA";
+  export let paddingtop = "false";
 </script>
 
-<div class="snail" class:snail--flip={flip === "true"}>
-  <svg
-    class="snail__snail"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 200 96"
-    ><path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M199.233 42.496c-1.39-6.522-5.283-12.948-34.537-11.94-31.563 1.088-13.246-59.94-48.523-12.429C97.316 43.524 21.65 49.031 8.37 59.184c-8.713 6.66-13.367 24.002 0 26.223 13.658 2.27 47.534-4.871 62.516 4.603 30.805 19.48 71.243-13.965 101.457-23.593 31.12-9.918 28.292-17.352 26.89-23.92Z"
-      fill="url(#snail__filter-a)"
-    />
-    <defs>
-      <linearGradient
-        id="snail__filter-a"
-        x1="190"
-        y1="80"
-        x2="100"
-        y2="160"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stop-color="#EBEAF3" />
-        <stop offset="1" stop-color="#EBEAF3" stop-opacity="0" />
-      </linearGradient>
-    </defs>
-  </svg>
-  <svg
-    class="snail__hexagon"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 1427 1148"
+<div
+  class="snail"
+  class:snail--flip={flip === "true"}
+  class:snail--padding-top={paddingtop === "true"}
+>
+  <div
+    class="snail__layout-shift"
+    class:snail--flip__layout-shift={flip === "true"}
   >
-    <g
-      filter="url(#snail__snail-filter-b)"
-      transform="translate(-448.54 -19.607)"
+    <svg
+      class="snail__snail"
+      class:snail--flip__snail={flip === "true"}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 200 96"
     >
       <path
-        d="m1529.46 275.276-148.75-73.263-149.02-72.683-137.82 92.182-137.458 92.719 10.923 165.445 11.567 165.401 148.738 73.263 149.03 72.683 137.82-92.181 137.46-92.719-10.93-165.445z"
-        fill={color}
+        fill="url(#snail__filter-a)"
+        fill-rule="evenodd"
+        d="M.767 42.496c1.39-6.522 5.283-12.948 34.537-11.94 31.563 1.088 13.246-59.94 48.523-12.429 18.857 25.397 94.523 30.904 107.803 41.057 8.713 6.66 13.367 24.002 0 26.223-13.658 2.27-47.534-4.871-62.516 4.603C98.31 109.49 57.871 76.045 27.657 66.417-3.463 56.499-.635 49.065.767 42.497Z"
+        clip-rule="evenodd"
       />
-    </g>
-    <defs>
-      <filter
-        id="snail__snail-filter-b"
-        x="876.412"
-        y="129.33"
-        width="755.533"
-        height="821.693"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+      <defs>
+        <linearGradient
+          id="snail__filter-a"
+          x1="190"
+          x2="100"
+          y1="80"
+          y2="160"
+          gradientTransform="matrix(-1 0 0 1 200 0)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#EBEAF3" />
+          <stop offset="1" stop-color="#EBEAF3" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <svg
+      class="snail__hexagon"
+      class:snail--flip__hexagon={flip === "true"}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1427 1148"
+    >
+      <g
+        filter="url(#snail__snail-filter-b)"
+        transform="translate(-448.54 -19.607)"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          result="hardAlpha"
+        <path
+          d="m1529.46 275.276-148.75-73.263-149.02-72.683-137.82 92.182-137.458 92.719 10.923 165.445 11.567 165.401 148.738 73.263 149.03 72.683 137.82-92.181 137.46-92.719-10.93-165.445z"
+          fill={color}
         />
-        <feOffset dy="80" />
-        <feGaussianBlur stdDeviation="40" />
-        <feComposite in2="hardAlpha" operator="out" />
-        <feColorMatrix
-          values="0 0 0 0 0.192157 0 0 0 0 0.152941 0 0 0 0 0.513726 0 0 0 0.25 0"
-        />
-        <feBlend
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_1579_39065"
-        />
-        <feBlend
-          in="SourceGraphic"
-          in2="effect1_dropShadow_1579_39065"
-          result="shape"
-        />
-      </filter>
-    </defs>
-  </svg>
+      </g>
+      <defs>
+        <filter
+          id="snail__snail-filter-b"
+          x="876.412"
+          y="129.33"
+          width="755.533"
+          height="821.693"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy="80" />
+          <feGaussianBlur stdDeviation="40" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix
+            values="0 0 0 0 0.192157 0 0 0 0 0.152941 0 0 0 0 0.513726 0 0 0 0.25 0"
+          />
+          <feBlend
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_1579_39065"
+          />
+          <feBlend
+            in="SourceGraphic"
+            in2="effect1_dropShadow_1579_39065"
+            result="shape"
+          />
+        </filter>
+      </defs>
+    </svg>
+  </div>
 </div>
 
 <style lang="scss">
   @use "./styles/variables";
 
+  $width: 1210px;
+  $layout-width: variables.$ts-tablet-max - (2 * variables.$ts-spacing-3);
+  $x-margin: -470px;
+
   .snail {
     position: relative;
-    margin-left: -495px;
+    display: flex;
+    justify-content: flex-start;
+    z-index: -1;
 
-    &.snail--flip {
-      margin-right: -410px;
-      margin-left: unset;
-
-      .snail__snail {
-        right: -120px;
-        left: unset;
-        transform: scaleX(1);
-      }
-
-      .snail__hexagon {
-        right: -250px;
-        left: unset;
+    &--padding-top {
+      .snail__layout-shift {
+        padding-top: 40px;
       }
     }
 
-    .snail__snail {
+    &__layout-shift {
       position: absolute;
-      bottom: -100px;
-      z-index: -2;
-      left: 0;
-      transform: scaleX(-1);
+      width: $width;
+      left: $x-margin;
+      top: -300px;
       height: 580px;
     }
 
-    .snail__hexagon {
+    &__snail {
       position: absolute;
-      bottom: -120px;
-      z-index: 1;
-      height: 800px;
-      left: -290px;
+      z-index: -2;
+      width: $width;
+      left: 0;
+      bottom: 0px;
     }
 
-    @media screen and (max-width: variables.$ts-tablet-max) {
-      .snail__hexagon {
-        bottom: -100px;
-        left: -290px;
+    &__hexagon {
+      position: absolute;
+      z-index: 1;
+      height: 800px;
+      left: -310px;
+      bottom: 0px;
+    }
+
+    &--flip {
+      &__layout-shift {
+        right: $x-margin;
+        left: unset;
       }
 
-      .snail__snail {
-        height: 435px;
-        left: 60px;
-        bottom: -40px;
+      &__snail {
+        transform: scaleX(-1);
       }
 
-      .snail__hexagon {
-        height: 600px;
-        left: -80px;
+      &__hexagon {
+        left: 400px;
+      }
+    }
+
+    @media screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+      $x-margin: -500px;
+
+      &__layout-shift {
+        transform: scale(0.75);
+        transform-origin: center;
+        left: $x-margin;
+        top: -250px;
       }
 
-      &.snail--flip {
-        .snail__snail {
-          right: -60px;
-        }
-
-        .snail__hexagon {
-          right: -80px;
+      &--flip {
+        &__layout-shift {
+          right: $x-margin;
+          left: unset;
         }
       }
     }
 
     @media screen and (max-width: variables.$ts-mobile-max) {
-      .snail__snail {
-        height: 290px;
-        bottom: 0;
+      $x-margin: -500px;
+
+      &__layout-shift {
+        transform: scale(0.5);
+        transform-origin: center;
+        left: $x-margin;
+        top: -250px;
       }
 
-      .snail__hexagon {
-        height: 400px;
-        bottom: -90px;
-        left: 90px;
-      }
-
-      &.snail--flip {
-        .snail__snail {
-          right: 0;
-        }
-
-        .snail__hexagon {
-          right: 120px;
+      &--flip {
+        &__layout-shift {
+          right: $x-margin;
+          left: unset;
         }
       }
     }
