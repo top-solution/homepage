@@ -24,55 +24,12 @@
   <div slot="external">
     <ts-header-hexagons-desktop />
     <ts-header-hexagons-mobile />
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      id="page-company-development__hex-1"
-      fill="none"
-      width="219"
-      height="225"
-      viewBox="0 0 219 225"
-    >
-      <g filter="url(#page-company-development__hex-1__filter-a)">
-        <path
-          fill="#312783"
-          fill-opacity=".5"
-          d="m135.983 14.568-14.356-7.071L107.244.482 93.943 9.38l-13.266 8.949 1.054 15.967 1.116 15.964 14.356 7.07 14.383 7.015 13.301-8.896 13.266-8.949-1.054-15.968-1.116-15.963Z"
-        />
-      </g>
-      <defs>
-        <filter
-          id="page-company-development__hex-1__filter-a"
-          width="217.477"
-          height="223.862"
-          x=".676"
-          y=".482"
-          color-interpolation-filters="sRGB"
-          filterUnits="userSpaceOnUse"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            result="hardAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feOffset dy="80" />
-          <feGaussianBlur stdDeviation="40" />
-          <feComposite in2="hardAlpha" operator="out" />
-          <feColorMatrix
-            values="0 0 0 0 0.192157 0 0 0 0 0.152941 0 0 0 0 0.513726 0 0 0 0.25 0"
-          />
-          <feBlend
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_750_11774"
-          />
-          <feBlend
-            in="SourceGraphic"
-            in2="effect1_dropShadow_750_11774"
-            result="shape"
-          />
-        </filter>
-      </defs>
-    </svg>
+    <ts-hex
+      class="page-self-development__floating-hex-1"
+      width="56"
+      fill="#9893c1"
+      shadow="true"
+    />
   </div>
 </ts-top-banner>
 <ts-layout class="page-self-development">
@@ -140,20 +97,14 @@
       href="/contacts.html"
       target="_blank">Contattaci</ts-button
     >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      id="page-company-development__hex-2"
-      fill="none"
+    <ts-hex
+      class="page-company-development__floating-hex-2"
       width="44"
-      height="49"
-      viewBox="0 0 44 49"
-    >
-      <path
-        fill="#312783"
-        fill-opacity=".7"
-        d="m20.421.892-10.088 6.5L.27 13.93l.72 11.783.766 11.78 10.807 5.282 10.83 5.242 10.087-6.5 10.063-6.538-.72-11.783-.766-11.78L31.25 6.133 20.42.892Z"
-      />
-    </svg>
+      fill="#312783"
+      opacity=".7"
+      shadow="false"
+      rotation="-4"
+    />
   </div>
   <div
     id="page-self-development__formazione-su-misura"
@@ -168,53 +119,14 @@
       business. Il <b>Training che offriamo è di tipo <b>esperienziale</b>. </b>
     </p>
     <ts-snail color="#8D88BA" flip="true" />
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      id="page-company-development__hex-3"
-      fill="none"
-      width="250"
-      height="297"
-      viewBox="0 0 250 297"
-    >
-      <g filter="url(#page-company-development__hex-3__filter-a)">
-        <path
-          fill="#211A58"
-          d="M164.489 59.284 142.268 49.07l-22.26-10.127-19.956 14.137-19.9 14.214 2.265 24.35 2.36 24.342 22.22 10.213 22.261 10.128 19.955-14.137 19.901-14.215-2.265-24.35-2.36-24.341Z"
-        />
-      </g>
-      <defs>
-        <filter
-          id="page-company-development__hex-3__filter-a"
-          width="248.961"
-          height="257.384"
-          x=".152"
-          y="38.943"
-          color-interpolation-filters="sRGB"
-          filterUnits="userSpaceOnUse"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            result="hardAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feOffset dy="80" />
-          <feGaussianBlur stdDeviation="40" />
-          <feColorMatrix
-            values="0 0 0 0 0.117647 0 0 0 0 0.117647 0 0 0 0 0.396078 0 0 0 0.25 0"
-          />
-          <feBlend
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_830_13347"
-          />
-          <feBlend
-            in="SourceGraphic"
-            in2="effect1_dropShadow_830_13347"
-            result="shape"
-          />
-        </filter>
-      </defs>
-    </svg>
+
+    <ts-hex
+      class="page-company-development__floating-hex-3"
+      width="90"
+      fill="#211A58"
+      shadow="true"
+      rotation="-4"
+    />
   </div>
   <div
     id="page-self-development__sentieri-di-carriera"
@@ -282,20 +194,20 @@
     display: none;
   }
 
-  #page-company-development__hex-1 {
+  .page-company-development__floating-hex-1 {
     position: absolute;
     bottom: -250px;
     left: 50%;
   }
 
-  #page-company-development__hex-2 {
+  .page-company-development__floating-hex-2 {
     position: absolute;
     bottom: -130px;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  #page-company-development__hex-3 {
+  .page-company-development__floating-hex-3 {
     position: absolute;
     left: 70%;
     top: -230px;
