@@ -235,8 +235,8 @@
 
     &__floating-hex-1 {
       position: absolute;
-      top: -50px;
-      right: 15%;
+      top: -140px;
+      right: 10%;
     }
 
     &__drawer {
@@ -322,7 +322,14 @@
       }
 
       &__floating-hex-1 {
-        top: -150px;
+        top: -50px;
+        right: 5%;
+      }
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+      &__floating-hex-1 {
+        top: -140px;
         right: 5%;
       }
     }
