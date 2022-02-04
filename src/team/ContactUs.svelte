@@ -17,7 +17,6 @@
 
   let form = {
     name: "",
-    surname: "",
     age: "",
     graduation: "",
     graduationGrade: "",
@@ -29,7 +28,6 @@
 
   let formErrors = {
     name: null,
-    surname: null,
     age: null,
     graduation: null,
     graduationGrade: null,
@@ -46,9 +44,6 @@
 
     if (!form.name || form.name.length === 0) {
       formErrors.name = " ";
-    }
-    if (!form.surname || form.surname.length === 0) {
-      formErrors.surname = " ";
     }
     if (!form.age || form.age.length === 0) {
       formErrors.age = " ";
@@ -81,7 +76,6 @@
 
     form = {
       name: "",
-      surname: "",
       age: "",
       graduation: "",
       graduationGrade: "",
@@ -92,18 +86,18 @@
     };
 
     dispatch("formsubmit", {});
+
+    window.scrollTo(0, 0);
   }
 </script>
 
 <form class="contact-us" on:submit={handleSubmit}>
-  <div class="contact-us__floating-hex-1">
-    <ts-hex
-      class="page-hr-development__floating-hex-3"
-      width="111"
-      fill="#312783"
-      shadow="true"
-    />
-  </div>
+  <ts-hex
+    class="contact-us__floating-hex-1"
+    width="111"
+    fill="#312783"
+    shadow="true"
+  />
   <div class="contact-us__drawer" class:contact-us__drawer--open={open}>
     <div class="contact-us__title-hexagon">
       <!-- TODO: Use hexagon component -->
@@ -143,12 +137,12 @@
     <div class="contact-us__form">
       <div class="contact-us__form-row">
         <ts-textfield
-          id="contact-us__name-textfield"
+          class="contact-us__textfield contact-us__textfield-name"
           outlined
           required
           name="name"
           error={formErrors.name}
-          label="Nome"
+          label="Nome Cognome *"
           value={form.name}
           on:change={(e) => (form.name = e.target.value)}
           on:keyup={(e) => {
@@ -158,29 +152,12 @@
           }}
         />
         <ts-textfield
-          id="contact-us__surname-textfield"
-          outlined
-          required
-          name="surname"
-          error={formErrors.surname}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.surname = null;
-            }
-          }}
-          label="Cognome"
-          value={form.surname}
-          on:change={(e) => (form.surname = e.target.value)}
-        />
-        <ts-textfield
-          id="contact-us__age-textfield"
+          class="contact-us__textfield contact-us__textfield-age"
           outlined
           required
           name="age"
           error={formErrors.age}
           on:keyup={(e) => {
-            console.log(e.target.value);
-
             if (e.target.value.length) {
               formErrors.age = null;
             }
@@ -188,47 +165,12 @@
           type="number"
           min="0"
           max="99"
-          label="Età"
+          label="Età *"
           value={form.age}
           on:change={(e) => (form.age = e.target.value)}
         />
-      </div>
-      <div class="contact-us__form-row">
         <ts-textfield
-          id="contact-us__graduation-textfield"
-          outlined
-          required
-          name="graduation"
-          error={formErrors.graduation}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.graduation = null;
-            }
-          }}
-          label="Titolo di studio"
-          value={form.graduation}
-          on:change={(e) => (form.graduation = e.target.value)}
-        />
-        <ts-textfield
-          id="contact-us__graduation-grade-textfield"
-          outlined
-          required
-          name="graduation-grade"
-          error={formErrors.graduationGrade}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.graduationGrade = null;
-            }
-          }}
-          type="number"
-          label="Votazione"
-          min="0"
-          max="110"
-          value={form.graduationGrade}
-          on:change={(e) => (form.graduationGrade = e.target.value)}
-        />
-        <ts-textfield
-          id="contact-us__experience-textfield"
+          class="contact-us__textfield contact-us__textfield-experience"
           outlined
           required
           name="experience"
@@ -241,15 +183,50 @@
           type="number"
           min="0"
           max="99"
-          label="Anni di esperienza"
+          label="Anni di esperienza *"
           value={form.experience}
           on:change={(e) => (form.experience = e.target.value)}
+        />
+      </div>
+      <div class="contact-us__form-row">
+        <ts-textfield
+          class="contact-us__textfield contact-us__textfield-graduation"
+          outlined
+          required
+          name="graduation"
+          error={formErrors.graduation}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.graduation = null;
+            }
+          }}
+          label="Titolo di studio *"
+          value={form.graduation}
+          on:change={(e) => (form.graduation = e.target.value)}
+        />
+        <ts-textfield
+          class="contact-us__textfield contact-us__textfield-graduation-grade"
+          outlined
+          required
+          name="graduation-grade"
+          error={formErrors.graduationGrade}
+          on:keyup={(e) => {
+            if (e.target.value.length) {
+              formErrors.graduationGrade = null;
+            }
+          }}
+          type="number"
+          label="Votazione *"
+          min="0"
+          max="110"
+          value={form.graduationGrade}
+          on:change={(e) => (form.graduationGrade = e.target.value)}
         />
       </div>
 
       <div class="contact-us__form-row">
         <ts-textfield
-          id="contact-us__email-textfield"
+          class="contact-us__textfield contact-us__textfield-email"
           outlined
           required
           name="email"
@@ -260,12 +237,12 @@
             }
           }}
           type="email"
-          label="Email"
+          label="Email *"
           value={form.email}
           on:change={(e) => (form.email = e.target.value)}
         />
         <ts-textfield
-          id="contact-us__phone-textfield"
+          class="contact-us__textfield contact-us__textfield-phone"
           outlined
           name="phone"
           error={formErrors.phone}
@@ -280,7 +257,7 @@
         />
       </div>
       {#if form.curriculum}
-        <div id="contact-us__cv-form-row">
+        <div class="contact-us__cv-form-row">
           <p>
             {`${form.curriculum}`
               .replace("/", "\\")
@@ -296,10 +273,11 @@
           />
         </div>
       {/if}
-      <div id="contact-us__cv-button-form-row">
+      <div class="contact-us__cv-button-form-row">
         <input
           type="file"
           id="contact-us__curriculum-upload"
+          class="contact-us__curriculum-upload"
           name="curriculum"
           accept="application/pdf"
           on:change={(e) => {
@@ -308,20 +286,19 @@
           }}
         />
         {#if formErrors.curriculum}
-          <p id="contact-us__cv-error-text">{formErrors.curriculum}</p>
+          <p class="contact-us__cv-error-text">{formErrors.curriculum}</p>
         {/if}
         <label
-          class="button"
-          id="contact-us__curriculum-upload-label"
+          class="button contact-us__curriculum-upload-label"
           for="contact-us__curriculum-upload"
         >
           ALLEGA CV
           <img src="img/icons/attachment.svg" alt="" />
         </label>
       </div>
-      <div id="contact-us__submit-button-form-row">
+      <div class="contact-us__submit-button-form-row">
         <ts-button
-          id="contact-us__submit"
+          class="contact-us__submit"
           component="button"
           variant="secondary"
           type="submit"
@@ -342,185 +319,201 @@
   .contact-us {
     position: relative;
     margin-top: variables.$ts-spacing-8;
-  }
+    max-width: variables.$ts-mobile-max;
+    margin: auto;
 
-  .contact-us__drawer {
-    position: relative;
-    max-height: 0;
-    transition: max-height variables.$ts-transition-timing-default
-      variables.$ts-transition-function-default;
-    overflow: hidden;
-  }
-
-  .contact-us__drawer--open {
-    max-height: 700px;
-  }
-
-  .contact-us h2 {
-    text-align: center;
-    margin-bottom: variables.$ts-spacing-4;
-  }
-
-  .contact-us__title {
-    margin: variables.$ts-spacing-6 0;
-  }
-
-  .contact-us__subtitle {
-    text-align: center;
-    margin: 0;
-  }
-
-  .contact-us__floating-hex-1 {
-    position: absolute;
-    left: -330px;
-    top: -580px;
-  }
-
-  .contact-us__title-hexagon {
-    position: absolute;
-    z-index: -1;
-    top: -160px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
-  }
-
-  .contact-us__form {
-    margin: variables.$ts-spacing-6 0;
-    display: block;
-  }
-
-  .contact-us__form-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -8px 0;
-  }
-
-  ts-textfield {
-    margin: 0 variables.$ts-spacing-1 variables.$ts-spacing-3;
-  }
-
-  #contact-us__curriculum-upload {
-    display: none;
-  }
-
-  #contact-us__cv-form-row {
-    align-items: center;
-    background-color: #f1f1f1;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 24px;
-    height: variables.$ts-spacing-4;
-    border-radius: 2px;
-    display: flex;
-    margin: 0 0 variables.$ts-spacing-2 0;
-  }
-
-  #contact-us__cv-form-row p {
-    color: black;
-    font-size: 15px;
-    font-weight: 300;
-    margin: 0;
-  }
-
-  #contact-us__cv-form-row img {
-    width: 18px;
-    height: 18px;
-    opacity: 0.8;
-    margin-left: auto;
-  }
-
-  #contact-us__cv-form-row img:hover {
-    cursor: pointer;
-    opacity: 1;
-  }
-
-  #contact-us__cv-button-form-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: variables.$ts-spacing-3;
-  }
-
-  #contact-us__curriculum-upload-label {
-    /* Fake button, can't use component due to WebComponents limitations */
-    color: white;
-    background-color: variables.$ts-blue-color;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-  }
-
-  #contact-us__curriculum-upload-label img {
-    height: 18px;
-    margin-left: variables.$ts-spacing-1;
-  }
-
-  #contact-us__curriculum-upload-label:hover {
-    background-color: variables.$ts-blue-color-light;
-  }
-
-  #contact-us__cv-error-text {
-    color: var(--mdc-theme-error), #b00020;
-    font-size: 16px;
-    margin: 0;
-    font-weight: 400;
-  }
-
-  ts-textfield,
-  #contact-us__curriculum-upload-label {
-    flex: 1 0 100%;
-  }
-
-  #contact-us__graduation-grade-textfield,
-  #contact-us__experience-textfield {
-    flex: 1 1 auto;
-  }
-
-  #contact-us__graduation-grade-textfield {
-    margin-right: variables.$ts-spacing-1;
-  }
-
-  #contact-us__submit-button-form-row {
-    display: flex;
-  }
-
-  #contact-us__submit {
-    margin: 0 auto;
-  }
-
-  @media only screen and (min-width: variables.$ts-tablet-min) {
-    .contact-us {
-      margin-top: 0;
+    &__drawer {
+      position: relative;
+      max-height: 0;
+      transition: max-height variables.$ts-transition-timing-default
+        variables.$ts-transition-function-default;
+      overflow: hidden;
     }
 
-    .contact-us__drawer--open {
-      max-height: 1100px;
+    &__drawer--open {
+      max-height: 900px;
     }
 
-    ts-textfield {
-      margin: 0 variables.$ts-spacing-1 0;
+    & h2 {
+      text-align: center;
+      margin-bottom: variables.$ts-spacing-4;
     }
 
-    .contact-us__form-row {
-      margin: 0 -8px variables.$ts-spacing-3;
+    &__title {
+      margin: variables.$ts-spacing-6 0;
     }
 
-    #contact-us__name-textfield,
-    #contact-us__surname-textfield,
-    #contact-us__graduation-textfield,
-    #contact-us__email-textfield {
-      flex: 1 1 0;
-      margin-right: variables.$ts-spacing-1;
+    &__subtitle {
+      text-align: center;
+      margin: 0;
     }
 
-    #contact-us__age-textfield,
-    #contact-us__graduation-grade-textfield,
-    #contact-us__experience-textfield,
-    #contact-us__curriculum-upload-label {
-      flex: 0 0 172px;
+    &__floating-hex-1 {
+      position: absolute;
+      left: -420px;
+      top: -580px;
     }
 
-    #contact-us__phone-textfield {
-      flex: 0 0 360px;
+    &__title-hexagon {
+      position: absolute;
+      z-index: -1;
+      top: -160px;
+      margin-left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &__form {
+      margin: variables.$ts-spacing-6 0;
+      display: block;
+    }
+
+    &__form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 (variables.$ts-spacing-1 * -1) 0;
+    }
+
+    &__curriculum-upload {
+      display: none;
+    }
+
+    &__cv-form-row {
+      align-items: center;
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: variables.$ts-spacing-4;
+      border-radius: 2px;
+      display: flex;
+      margin: 0 0 variables.$ts-spacing-2 0;
+    }
+
+    &__cv-form-row p {
+      color: black;
+      font-size: 15px;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    &__cv-form-row img {
+      width: 18px;
+      height: 18px;
+      opacity: 0.8;
+      margin-left: auto;
+    }
+
+    &__cv-form-row img:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    &__cv-button-form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: variables.$ts-spacing-3;
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+
+    &__curriculum-upload-label {
+      /* Fake button, can't use component due to WebComponents limitations */
+      color: white;
+      background-color: variables.$ts-blue-color;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    &__curriculum-upload-label img {
+      height: 18px;
+      margin-left: variables.$ts-spacing-1;
+    }
+
+    &__curriculum-upload-label:hover {
+      background-color: variables.$ts-blue-color-light;
+    }
+
+    &__cv-error-text {
+      color: variables.$ts-error-text;
+      font-size: 16px;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    &__curriculum-upload-label {
+      margin-left: 0;
+      margin-bottom: variables.$ts-spacing-2;
+    }
+
+    &__textfield {
+      margin: 0 variables.$ts-spacing-1 variables.$ts-spacing-3;
+
+      &-name,
+      &-phone,
+      &-graduation,
+      &-graduation-grade,
+      &-email {
+        flex: 1 1 100%;
+      }
+
+      &-age,
+      &-experience {
+        flex: 0 1 calc(50% - variables.$ts-spacing-2);
+      }
+    }
+
+    &__submit-button-form-row {
+      display: flex;
+    }
+
+    &__submit {
+      margin: 0 auto;
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-min) {
+      & {
+        margin-top: 0;
+      }
+
+      &__drawer--open {
+        max-height: 1100px;
+      }
+
+      &__form-row {
+        margin: 0 (variables.$ts-spacing-1 * -1) variables.$ts-spacing-3;
+      }
+
+      &__textfield {
+        margin: 0 variables.$ts-spacing-1 0;
+
+        &-name,
+        &-graduation,
+        &-email,
+        &-phone {
+          flex: 1 1 0;
+        }
+
+        &-age,
+        &-graduation-grade {
+          flex: 0 0 110px;
+        }
+
+        &-experience {
+          flex: 0 0 172px;
+        }
+      }
+
+      &__cv-button-form-row {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      &__curriculum-upload-label {
+        flex: 0 0 172px;
+        margin-left: auto;
+        margin-bottom: 0;
+      }
     }
   }
 </style>
