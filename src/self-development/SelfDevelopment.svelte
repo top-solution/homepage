@@ -116,7 +116,7 @@
     <p class="body-2">
       Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali delle
       persone è l’elemento centrale per la continuità e/o la crescita del
-      business. Il <b>Training che offriamo è di tipo <b>esperienziale</b>. </b>
+      business. Il Training che offriamo è di tipo <b>esperienziale</b>.
     </p>
     <ts-snail color="#8D88BA" flip="true" />
 
