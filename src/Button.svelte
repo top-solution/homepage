@@ -62,74 +62,74 @@
 
   .button {
     user-select: none;
-  }
 
-  .button--primary {
-    color: white;
-    background-color: variables.$ts-blue-color;
-  }
+    &--primary,
+    &--secondary {
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+        rgba(0, 0, 0, 0.14) 0px 4px 5px 0px,
+        rgba(240, 177, 177, 0.12) 0px 1px 10px 0px;
+    }
 
-  .button--primary:hover {
-    background-color: variables.$ts-blue-color-light;
-  }
+    &--primary {
+      color: white;
+      background-color: variables.$ts-blue-color;
 
-  .button--secondary {
-    color: variables.$ts-blue-color;
-    border: 1px solid transparent;
-    background-color: variables.$ts-azure-color;
-  }
+      &:hover {
+        background-color: variables.$ts-blue-color-light;
+      }
+    }
 
-  .button--secondary:hover {
-    color: variables.$ts-blue-color;
-    border-color: variables.$ts-blue-color;
-    background-color: variables.$ts-azure-color-light;
-  }
+    &--secondary {
+      color: variables.$ts-blue-color;
+      border: 1px solid transparent;
+      background-color: variables.$ts-azure-color;
 
-  .button--primary,
-  .button--secondary {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
-      rgba(0, 0, 0, 0.14) 0px 4px 5px 0px,
-      rgba(240, 177, 177, 0.12) 0px 1px 10px 0px;
-  }
+      &:hover {
+        color: variables.$ts-blue-color;
+        border-color: variables.$ts-blue-color;
+        background-color: variables.$ts-azure-color-light;
+      }
+    }
 
-  .button--outlined {
-    color: variables.$ts-blue-color;
-    border: 1px solid variables.$ts-blue-color;
-    background-color: transparent;
-  }
+    &--outlined {
+      color: variables.$ts-blue-color;
+      border: 1px solid variables.$ts-blue-color;
+      background-color: transparent;
+    }
 
-  .button--icon {
-    padding-left: variables.$ts-spacing-1;
-    padding-right: variables.$ts-spacing-1;
-  }
+    &--icon {
+      padding-left: variables.$ts-spacing-1;
+      padding-right: variables.$ts-spacing-1;
+    }
 
-  .button__icon {
-    width: 0;
-    margin-left: 0;
-    opacity: 0;
-    transition: width variables.$ts-transition-timing-quick
-        variables.$ts-transition-function-default,
-      opacity variables.$ts-transition-timing-quick
-        variables.$ts-transition-function-default,
-      margin-left variables.$ts-transition-timing-quick
-        variables.$ts-transition-function-default;
-    fill: variables.$ts-blue-color;
-  }
+    &__icon {
+      width: 0;
+      margin-left: 0;
+      opacity: 0;
+      transition: width variables.$ts-transition-timing-quick
+          variables.$ts-transition-function-default,
+        opacity variables.$ts-transition-timing-quick
+          variables.$ts-transition-function-default,
+        margin-left variables.$ts-transition-timing-quick
+          variables.$ts-transition-function-default;
+      fill: variables.$ts-blue-color;
+    }
 
-  .button--outlined:hover .button__icon {
-    width: 16px;
-    opacity: 1;
-    margin-left: 12px;
-  }
+    &--outlined:hover &__icon {
+      width: 16px;
+      opacity: 1;
+      margin-left: 12px;
+    }
 
-  .button--small {
-    height: 30px;
-    padding: 4px 10px;
-    color: variables.$ts-blue-color-light;
-    border: 1px solid rgba(63, 81, 181, 0.5);
+    &--small {
+      height: 30px;
+      padding: 4px 10px;
+      color: variables.$ts-blue-color-light;
+      border: 1px solid rgba(63, 81, 181, 0.5);
 
-    .button__icon {
-      fill: variables.$ts-blue-color-light;
+      &__icon {
+        fill: variables.$ts-blue-color-light;
+      }
     }
   }
 </style>
