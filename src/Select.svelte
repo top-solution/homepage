@@ -116,181 +116,192 @@
     vertical-align: top;
     width: 100%;
     position: relative;
-  }
 
-  .ts-select label {
-    color: rgba(0, 0, 0, 0.6);
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.4375em;
-    letter-spacing: 0.00938em;
-    padding: 0px;
-    display: block;
-    transform-origin: center top;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: calc(100% - 24px);
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    transform: translate(14px, 16px) scale(1);
-    transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
-      transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
-      max-width 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-    z-index: 1;
-    pointer-events: none;
-    box-sizing: border-box;
-    transform-origin: left center;
-  }
-  .ts-select--shrink label {
-    transform: translate(14px, -10px) scale(0.75);
-  }
-  .ts-select--focused label {
-    color: variables.$ts-blue-color;
-    transform: translate(14px, -10px) scale(0.75);
-  }
-  .ts-select--error label {
-    color: variables.$ts-error;
-  }
+    & label {
+      color: rgba(0, 0, 0, 0.6);
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.4375em;
+      letter-spacing: 0.00938em;
+      padding: 0px;
+      display: block;
+      transform-origin: center top;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 24px);
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      transform: translate(14px, 16px) scale(1);
+      transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+        transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+        max-width 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      z-index: 1;
+      pointer-events: none;
+      box-sizing: border-box;
+      transform-origin: left center;
+    }
 
-  .ts-select__input select {
-    box-sizing: content-box;
-    color: black;
-    border-color: currentcolor;
-    font: inherit;
-    letter-spacing: inherit;
-    border: 0px none;
-    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
-    margin: 0px;
-    display: block;
-    min-width: 0px;
-    width: 100%;
-    animation-name: mui-auto-fill-cancel;
-    animation-duration: 10ms;
-    padding: 16.5px 14px;
-    outline: none;
-    box-sizing: border-box;
-    -moz-appearance: none; /* Firefox */
-    -webkit-appearance: none; /* Safari and Chrome */
-    appearance: none;
-    cursor: pointer;
-  }
+    &--shrink {
+      label {
+        transform: translate(14px, -10px) scale(0.75);
+      }
 
-  .ts-select__arrow {
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    right: 16px;
-    top: 16px;
-    opacity: 0.6;
-    pointer-events: none;
-  }
+      legend {
+        visibility: visible;
+        max-width: 100%;
 
-  .ts-select__arrow.ts-select__arrow--open {
-    transform: rotate(180deg);
-  }
+        span {
+          padding-left: 5px;
+          padding-right: 5px;
+          display: inline-block;
+        }
+      }
+    }
 
-  .ts-select__fieldset {
-    text-align: left;
-    position: absolute;
-    inset: -5px 0px 0px;
-    margin: 0px;
-    padding: 0px 8px;
-    pointer-events: none;
-    border-radius: inherit;
-    border-style: solid;
-    border-width: 1px;
-    overflow: hidden;
-    min-width: 0%;
-    border-color: rgba(0, 0, 0, 0.38);
-    border-radius: 4px;
-  }
-  .ts-select--focused .ts-select__fieldset {
-    border-color: variables.$ts-blue-color;
-    border-width: 2px;
-  }
-  .ts-select--error .ts-select__fieldset {
-    border-color: variables.$ts-error;
-    border-width: 2px;
-  }
+    &--focused {
+      label {
+        color: variables.$ts-blue-color;
+        transform: translate(14px, -10px) scale(0.75);
+      }
+    }
 
-  .ts-select__fieldset legend {
-    float: unset;
-    display: block;
-    width: auto;
-    padding: 0px;
-    height: 11px;
-    font-size: 0.75em;
-    visibility: hidden;
-    max-width: 0.01px;
-    transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-    white-space: nowrap;
-    background-color: #fff;
-  }
-  .ts-select--shrink legend {
-    visibility: visible;
-    max-width: 100%;
-  }
+    &--focused &__fieldset {
+      border-color: variables.$ts-blue-color;
+      border-width: 2px;
+    }
 
-  .ts-select__fieldset legend span {
-    padding-left: 5px;
-    padding-right: 5px;
-    display: inline-block;
-    visibility: hidden;
-  }
+    &--error label {
+      color: variables.$ts-error;
+    }
 
-  .ts-select--shrink legend span {
-    padding-left: 5px;
-    padding-right: 5px;
-    display: inline-block;
-  }
+    &--error &__fieldset {
+      border-color: variables.$ts-error;
+      border-width: 2px;
+    }
 
-  .ts-select__menu {
-    border-radius: 2px;
-    min-width: 120px;
-    transition: opacity 251ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-      transform 167ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-      box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    transform-origin: 60px 0px;
-    background-color: rgb(255, 255, 255);
-    color: rgba(0, 0, 0, 0.87);
-    border-radius: 4px;
-    box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -3px,
-      rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px;
-    position: absolute;
-    overflow: hidden auto;
-    min-height: 16px;
-    outline: 0px;
-    width: 100%;
-    z-index: 10;
-    opacity: 0;
-    transform: scale(90%, 50%);
-    top: 56px;
-    pointer-events: none;
-  }
+    &__input select {
+      box-sizing: content-box;
+      color: black;
+      border-color: currentcolor;
+      font: inherit;
+      letter-spacing: inherit;
+      border: 0px none;
+      background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+      margin: 0px;
+      display: block;
+      min-width: 0px;
+      width: 100%;
+      animation-name: mui-auto-fill-cancel;
+      animation-duration: 10ms;
+      padding: 16.5px 14px;
+      outline: none;
+      box-sizing: border-box;
+      -moz-appearance: none; /* Firefox */
+      -webkit-appearance: none; /* Safari and Chrome */
+      appearance: none;
+      cursor: pointer;
+    }
 
-  .ts-select__menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    &__arrow {
+      width: 26px;
+      height: 26px;
+      position: absolute;
+      right: 16px;
+      top: 14px;
+      opacity: 0.6;
+      pointer-events: none;
 
-  .ts-select__menu li {
-    padding: 6px 16px;
-    cursor: pointer;
-    min-height: 22px;
-    vertical-align: middle;
-  }
+      &--open {
+        transform: rotate(180deg);
+      }
+    }
 
-  .ts-select__menu li:hover {
-    background-color: rgba(0, 0, 0, 0.04);
-  }
+    &__fieldset {
+      text-align: left;
+      position: absolute;
+      inset: -5px 0px 0px;
+      margin: 0px;
+      padding: 0px 8px;
+      pointer-events: none;
+      border-radius: inherit;
+      border-style: solid;
+      border-width: 1px;
+      overflow: hidden;
+      min-width: 0%;
+      border-color: rgba(0, 0, 0, 0.38);
+      border-radius: 4px;
 
-  .ts-select__menu.ts-select__menu--open {
-    opacity: 1;
-    transform: scale(100%, 100%);
-    pointer-events: all;
+      legend {
+        float: unset;
+        display: block;
+        width: auto;
+        padding: 0px;
+        height: 11px;
+        font-size: 0.75em;
+        visibility: hidden;
+        max-width: 0.01px;
+        transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        white-space: nowrap;
+        background-color: #fff;
+
+        span {
+          padding-left: 5px;
+          padding-right: 5px;
+          display: inline-block;
+          visibility: hidden;
+        }
+      }
+    }
+
+    &__menu {
+      border-radius: 2px;
+      min-width: 120px;
+      transition: opacity 251ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        transform 167ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      transform-origin: 60px 0px;
+      background-color: rgb(255, 255, 255);
+      color: rgba(0, 0, 0, 0.87);
+      border-radius: 4px;
+      box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -3px,
+        rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px;
+      position: absolute;
+      overflow: hidden auto;
+      min-height: 16px;
+      outline: 0px;
+      width: 100%;
+      z-index: 10;
+      opacity: 0;
+      transform: scale(90%, 50%);
+      top: 56px;
+      pointer-events: none;
+
+      &--open {
+        opacity: 1;
+        transform: scale(100%, 100%);
+        pointer-events: all;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        color: #000;
+        padding: 6px 16px;
+        cursor: pointer;
+        min-height: 36px;
+        vertical-align: middle;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+      }
+    }
   }
 </style>
