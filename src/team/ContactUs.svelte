@@ -342,9 +342,9 @@
 </form>
 
 <style lang="scss">
-  @use "./styles/variables";
+  @use "../styles/variables";
 
-  @import "./styles/main.scss";
+  @import "../styles/main.scss";
 
   .contact-us {
     position: relative;

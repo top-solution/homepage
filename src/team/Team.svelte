@@ -2,10 +2,6 @@
 
 <script>
   import "@material/mwc-snackbar";
-  import Blob from "./Blob.svelte";
-  import Layout from "./Layout.svelte";
-  import TeamPerson from "./TeamPerson.svelte";
-  import ContactUs from "./ContactUs.svelte";
 
   let contactUsOpen = false;
   let contactUsElement = null;
@@ -83,10 +79,10 @@
   />
 </ts-layout>
 
-<style lang="scss" global>
-  @use "./styles/variables";
+<style lang="scss">
+  @use "../styles/variables";
 
-  @import "./styles/main.scss";
+  @import "../styles/main.scss";
 
   .page-team {
     color: variables.$ts-blue-color;
