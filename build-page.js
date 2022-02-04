@@ -10,7 +10,7 @@ Handlebars.registerPartial(
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="shortcut icon" type="image/svg" href="./img/logo.svg" />
 
