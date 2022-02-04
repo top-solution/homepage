@@ -11,6 +11,8 @@
 </script>
 
 <ts-layout class="page-contacts">
+  <ts-header-hexagons-desktop />
+  <ts-header-hexagons-mobile />
   <div class="page-contacts__copy">
     <h1 class="title-1">Contatti</h1>
     <div class="page-contacts__contacts-container">
