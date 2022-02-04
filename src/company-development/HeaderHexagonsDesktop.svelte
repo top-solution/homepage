@@ -194,21 +194,24 @@
     position: relative;
     width: 100%;
     height: 100%;
+    pointer-events: none;
   }
 
-  #header-hexagons-desktop__left,
-  #header-hexagons-desktop__right {
-    position: absolute;
-  }
+  #header-hexagons-desktop {
+    &__left,
+    &__right {
+      position: absolute;
+    }
 
-  #header-hexagons-desktop__left {
-    left: -500px;
-    top: 0;
-  }
+    &__left {
+      left: -500px;
+      top: 0;
+    }
 
-  #header-hexagons-desktop__right {
-    right: -630px;
-    top: -280px;
+    &__right {
+      right: -630px;
+      top: -280px;
+    }
   }
 
   @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
@@ -216,16 +219,18 @@
       transform: scale(0.33);
     }
 
-    #header-hexagons-desktop__left {
-      transform-origin: left;
-      left: 0px;
-      top: 50px;
-    }
+    #header-hexagons-desktop {
+      &__left {
+        transform-origin: left;
+        left: 0px;
+        top: 50px;
+      }
 
-    #header-hexagons-desktop__right {
-      transform-origin: right;
-      right: -100px;
-      top: -328px;
+      &__right {
+        transform-origin: right;
+        right: -100px;
+        top: -328px;
+      }
     }
   }
 </style>
