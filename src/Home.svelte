@@ -72,29 +72,35 @@
     <div class="homepage__header-hex-mobile">
       <img src="img/homepage/group-hex-header-homepage.svg" alt="" />
     </div>
+    <div class="homepage__header-hex-logo">
+      <img src="img/homepage/hex-logo-header.svg" alt="" />
+    </div>
+    <div class="homepage__header-hex-logo-mobile">
+      <img src="img/homepage/hex-logo-header.svg" alt="" />
+    </div>
   </div>
   <ts-home-hero />
   <ts-triple-blob
     title="SVILUPPO DELLE RISORSE UMANE"
-    buttonLink="random.html"
+    buttonLink="hr-development.html"
     blobs={developmentHumanResourceBlobs}
   />
   <ts-triple-blob
     title="SVILUPPO SOFTWARE"
-    buttonLink="random.html"
+    buttonLink="error.html"
     blobs={developmentSoftwareBlobs}
   />
   <div slot="external">
     <div class="homepage__middle-blob">
       <img src="img/blob-middle-homepage.svg" alt="" />
     </div>
-    <div class="homepage__middle-mobile">
+    <div class="homepage__middle-blob-mobile">
       <img src="img/blob-middle-homepage.svg" alt="" />
     </div>
     <div class="homepage__middle-hex">
       <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
     </div>
-    <div class="homepage__middle-hex">
+    <div class="homepage__middle-hex-mobile">
       <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
     </div>
   </div>
@@ -138,8 +144,22 @@
       position: absolute;
       width: 1400px;
       overflow: visible;
-      top: -400px;
-      left: -1000px;
+      top: -650px;
+      left: -1150px;
+      z-index: -1;
+    }
+
+    &__header-hex-logo {
+      display: none;
+    }
+
+    &__header-hex-logo-mobile {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -480px;
+      left: -400px;
       z-index: -1;
     }
 
@@ -147,13 +167,13 @@
       display: none;
     }
 
-    &__middle-mobile {
+    &__middle-blob-mobile {
       display: block;
       position: absolute;
       width: 1400px;
       overflow: visible;
       right: -1125px;
-      top: 1400px;
+      top: 1525px;
       z-index: -1;
     }
 
@@ -161,27 +181,13 @@
       display: none;
     }
 
-    &__middle-hex {
+    &__middle-hex-mobile {
       display: block;
       position: absolute;
       width: 1400px;
       overflow: visible;
       right: -1125px;
-      top: 1400px;
-      z-index: -1;
-    }
-
-    &__middle-hex {
-      display: none;
-    }
-
-    &__middle-hex {
-      display: block;
-      position: absolute;
-      width: 1400px;
-      overflow: visible;
-      right: -1155px;
-      top: 1075px;
+      top: 1225px;
       z-index: -1;
     }
   }

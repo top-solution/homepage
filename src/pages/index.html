@@ -8,13 +8,15 @@
 <meta property="og:url" content="" />
 <meta property="og:image" content="" />
 
-
 <script src="./build/Home.js"></script>
 <script src="./build/Button.js"></script>
 <script src="./build/Picture.js"></script>
 <script src="./build/TripleBlob.js"></script>
 {{>head-end}}
-
-{{>body-start}}
-<ts-page-home></ts-page-home>
-{{>body-end}}
+<body>
+  <div style="max-width: 900px; margin: 0 auto">
+    <ts-header color="dark" />
+  </div>
+  <ts-page-home></ts-page-home>
+  {{>body-end}}
+</body>

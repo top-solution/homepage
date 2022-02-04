@@ -140,11 +140,6 @@
       }
     }
 
-    .footer-title {
-      font-weight: 500;
-      font-size: 20px;
-    }
-
     .footer-bottom {
       margin-top: 28px;
       min-height: 180px;
