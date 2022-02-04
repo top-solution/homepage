@@ -17,7 +17,6 @@
         fill="#312783"
         fill-opacity=".5"
         d="m303.204 389.447 30.18 20.044 30.251 19.926 30.842-16.174 30.775-16.3.663-36.217.524-36.226-30.18-20.044-30.25-19.925-30.842 16.173-30.776 16.3-.662 36.218z"
-        shape-rendering="crispEdges"
       />
     </g>
     <g
@@ -27,15 +26,6 @@
       <path
         fill="#312783"
         d="m298.486 218.128-11.145-5.658-11.167-5.614-10.275 6.77-10.249 6.811.87 12.428.917 12.425 11.145 5.658 11.167 5.614 10.276-6.77 10.248-6.811-.869-12.428z"
-      />
-    </g>
-    <g
-      filter="url(##header-hexagons-mobile__c)"
-      transform="translate(-175.65 -70.815)"
-    >
-      <path
-        fill="#312783"
-        d="m386.926 70.815-29.414 26.378-29.306 26.512 9.263 42.833 9.417 42.81 38.677 16.455 38.723 16.299 29.414-26.378 29.306-26.512-9.263-42.833-9.416-42.81-38.678-16.455z"
       />
     </g>
     <defs>
@@ -76,36 +66,6 @@
         height="209.706"
         x="175.65"
         y="206.856"
-        color-interpolation-filters="sRGB"
-        filterUnits="userSpaceOnUse"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          result="hardAlpha"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-        />
-        <feOffset dy="80" />
-        <feGaussianBlur stdDeviation="40" />
-        <feColorMatrix
-          values="0 0 0 0 0.117647 0 0 0 0 0.117647 0 0 0 0 0.396078 0 0 0 0.25 0"
-        />
-        <feBlend
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_1628_12550"
-        />
-        <feBlend
-          in="SourceGraphic"
-          in2="effect1_dropShadow_1628_12550"
-          result="shape"
-        />
-      </filter>
-      <filter
-        id="#header-hexagons-mobile__c"
-        width="314.801"
-        height="331.287"
-        x="248.206"
-        y="70.815"
         color-interpolation-filters="sRGB"
         filterUnits="userSpaceOnUse"
       >
