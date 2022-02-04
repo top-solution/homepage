@@ -168,131 +168,130 @@
 
   @import "../styles/main.scss";
 
-  .pricing-table__table {
-    width: 100%;
-    font-size: 18px;
-    border-collapse: collapse;
-  }
-
-  .pricing-table__subheader__row {
-    font-size: 15px;
-  }
-
-  .pricing-table__header .pricing-table__col {
-    font-weight: 500;
-    text-align: center;
-    border-right: 0;
-    border-left: 0;
-    padding: 0;
-  }
-
-  .pricing-table__header {
-    font-size: 24px;
-    text-transform: uppercase;
-    border-bottom: 1px solid black;
-  }
-
-  .pricing-table__header__row,
-  .pricing-table__subheader__row,
-  .pricing-table__body__row {
-    display: flex;
-  }
-
-  .pricing-table__col {
-    flex: 1 1 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
-
-  .pricing-table__col:first-child {
-    flex: 0 0 30%;
-    justify-content: flex-start;
-    text-align: left;
-  }
-
-  .pricing-table__col img {
-    width: 30px;
-  }
-
-  .pricing-table__body__col {
-    border-bottom: 1px solid #acacac;
-  }
-
-  .pricing-table__body__col:first-child {
-    font-weight: 300;
-    text-align: left;
-  }
-
-  .pricing-table__col.pricing-table__last-col {
-    border-right: 1px solid #000;
-  }
-
-  .pricing-table__header {
-    background-color: var(--ts-azure-color-light);
-  }
-
-  .pricing-table__header .pricing-table__col__text {
-    padding: 4px;
-    box-sizing: border-box;
-    border-radius: 4px;
-  }
-
-  @media only screen and (min-width: variables.$ts-mobile-max) {
-    .pricing-table__header__row .pricing-table__col {
-      height: variables.$ts-spacing-9;
-    }
-
-    .pricing-table--subcolumns .pricing-table__header__row .pricing-table__col {
-      height: 54px;
-    }
-
-    .pricing-table__subheader__row .pricing-table__col {
-      height: variables.$ts-spacing-4;
-    }
-
-    .pricing-table__col {
-      height: 68px;
-    }
-  }
-
-  @media only screen and (max-width: variables.$ts-mobile-max) {
-    .pricing-table__header {
-      font-size: 15px;
-      text-transform: none;
-      padding: variables.$ts-spacing-1 0 variables.$ts-spacing-2;
-    }
-
-    .pricing-table__col {
-      font-weight: normal;
-      font-size: 15px;
-    }
-
-    .pricing-table__col img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .pricing-table__col {
-      padding: variables.$ts-spacing-1 0;
-    }
-  }
-
-  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
-    .pricing-table__header {
-      text-transform: none;
+  .pricing-table {
+    &__table {
+      width: 100%;
       font-size: 18px;
-      background-color: #e3f1fa;
+      border-collapse: collapse;
+    }
+
+    &__subheader__row {
+      font-size: 15px;
+    }
+
+    &__header {
+      font-size: 24px;
+      text-transform: uppercase;
+      border-bottom: 1px solid black;
 
       .pricing-table__col {
-        height: 32px;
+        font-weight: 500;
+        text-align: center;
+        border-right: 0;
+        border-left: 0;
+        padding: 0;
       }
     }
 
-    .pricing-table__col img {
-      width: 20px;
-      height: 20px;
+    &__header__row,
+    &__subheader__row,
+    &__body__row {
+      display: flex;
+    }
+
+    &__col {
+      flex: 1 1 0;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+
+      &:first-child {
+        flex: 0 0 30%;
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      img {
+        width: 30px;
+      }
+    }
+
+    &__body__col {
+      border-bottom: 1px solid #acacac;
+
+      &:first-child {
+        font-weight: 300;
+        text-align: left;
+      }
+    }
+
+    &__header {
+      background-color: var(--ts-azure-color-light);
+
+      &__col__text {
+        padding: 4px;
+        box-sizing: border-box;
+        border-radius: 4px;
+      }
+    }
+
+    &__last-col {
+      border-right: 1px solid #000;
+    }
+
+    @media only screen and (min-width: variables.$ts-mobile-max) {
+      &__header__row &__col {
+        height: variables.$ts-spacing-9;
+      }
+
+      &--subcolumns &__header__row &__col {
+        height: 54px;
+      }
+
+      &__subheader__row &__col {
+        height: variables.$ts-spacing-4;
+      }
+
+      &__col {
+        height: 68px;
+      }
+    }
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      &__header {
+        font-size: 15px;
+        text-transform: none;
+        padding: variables.$ts-spacing-1 0 variables.$ts-spacing-2;
+      }
+
+      &__col {
+        font-weight: normal;
+        font-size: 15px;
+        padding: variables.$ts-spacing-1 0;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+      &__header {
+        text-transform: none;
+        font-size: 18px;
+        background-color: #e3f1fa;
+
+        &__col {
+          height: 32px;
+        }
+      }
+
+      &__col img {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 </style>
