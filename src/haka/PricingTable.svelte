@@ -239,7 +239,7 @@
     border-radius: 4px;
   }
 
-  @media only screen and (min-width: variables.$ts-tablet-max) {
+  @media only screen and (min-width: variables.$ts-mobile-max) {
     .pricing-table__header__row .pricing-table__col {
       height: variables.$ts-spacing-9;
     }
@@ -257,7 +257,7 @@
     }
   }
 
-  @media only screen and (max-width: variables.$ts-tablet-max) {
+  @media only screen and (max-width: variables.$ts-mobile-max) {
     .pricing-table__header {
       font-size: 15px;
       text-transform: none;
@@ -276,6 +276,23 @@
 
     .pricing-table__col {
       padding: variables.$ts-spacing-1 0;
+    }
+  }
+
+  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+    .pricing-table__header {
+      text-transform: none;
+      font-size: 18px;
+      background-color: #e3f1fa;
+
+      .pricing-table__col {
+        height: 32px;
+      }
+    }
+
+    .pricing-table__col img {
+      width: 20px;
+      height: 20px;
     }
   }
 </style>

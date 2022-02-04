@@ -714,7 +714,6 @@
 
     ts-pricing-table {
       margin: variables.$ts-spacing-1-5 0 0;
-      display: block;
     }
 
     &__our-plans-accordion ts-collapsible-section {
@@ -752,7 +751,7 @@
     }
 
     &__expertise-pricing-table-mobile {
-      display: none !important;
+      display: none;
       font-size: 20px;
     }
 

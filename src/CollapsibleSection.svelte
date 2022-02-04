@@ -147,6 +147,7 @@
     .collapsible-section-header h5 {
       font-size: 18px;
       line-height: 21px;
+      max-width: 150px;
     }
     .collapsible-section img {
       width: 26px;
