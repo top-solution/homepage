@@ -290,7 +290,7 @@
       margin: 0 auto;
     }
 
-    @media only screen and (min-width: variables.$ts-tablet-max) {
+    @media only screen and (min-width: variables.$ts-mobile-max) {
       & {
         margin-top: 0;
       }
@@ -319,6 +319,11 @@
         &-message {
           flex: 0 1 100%;
         }
+      }
+
+      &__floating-hex-1 {
+        top: -150px;
+        right: 5%;
       }
     }
   }

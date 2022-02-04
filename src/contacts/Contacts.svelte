@@ -20,21 +20,25 @@
         <ts-office-map />
       </div>
       <ol class="page-contacts__contacts body-1">
-        <li class="page-contacts__contacts__email">
+        <li
+          class="page-contacts__contacts__contact page-contacts__contacts__contact-email"
+        >
           <img src="img/icons/mail.svg" alt="" /><a
             href="mailto:info@topsolution.it">info@topsolution.it</a
           >
         </li>
-        <li>
+        <li class="page-contacts__contacts__contact">
           <img src="img/icons/pin.svg" alt="" />
           Sede Legale: Corso Regina Margherita, 254 10144 Torino TO
         </li>
-        <li class="page-contacts__contacts__phone">
+        <li
+          class="page-contacts__contacts__contact page-contacts__contacts__contact-phone"
+        >
           <img src="img/icons/phone.svg" alt="" /><a href="tel:+39 0112488280"
             >+39 0112488280</a
           >
         </li>
-        <li>
+        <li class="page-contacts__contacts__contact">
           <img src="img/icons/pin.svg" alt="" />Sede Operativa: Via Livorno, 60
           B2 Lab, 10144 Torino TO
         </li>
@@ -71,33 +75,29 @@
       padding-left: variables.$ts-spacing-3;
       margin: 0;
       font-weight: 400;
-    }
 
-    &__contacts li {
-      flex: 1 0 50%;
-      display: flex;
-      margin-bottom: variables.$ts-spacing-2;
-      order: 4;
-      line-height: 35px;
-    }
+      &__contact {
+        flex: 1 0 50%;
+        display: flex;
+        margin-bottom: variables.$ts-spacing-2;
+        order: 4;
+        line-height: 35px;
 
-    &__contacts li:last-of-type {
-      margin-bottom: 0;
-    }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
 
-    &__contacts li a {
-      font-weight: inherit;
-    }
+        & a {
+          font-weight: inherit;
+        }
+      }
 
-    &__contacts img {
-      width: 20px;
-      height: 20px;
-      margin-right: variables.$ts-spacing-3;
-      margin-top: 8px;
-    }
-
-    &__contacts__phone {
-      order: 1;
+      & img {
+        width: 20px;
+        height: 20px;
+        margin-right: variables.$ts-spacing-3;
+        margin-top: 8px;
+      }
     }
 
     ts-request-info {
@@ -120,43 +120,56 @@
 
     @media only screen and (max-width: variables.$ts-tablet-max) {
       &__contacts {
-        border-left: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        &__contact {
+          flex: 0 0 auto;
+
+          &-phone {
+            order: 1;
+          }
+        }
+
+        &-container {
+          flex-direction: column;
+          align-items: stretch;
+          margin-top: variables.$ts-spacing-2;
+        }
+
+        & img {
+          width: 22px;
+          height: 22px;
+          margin-top: 3px;
+          margin-right: variables.$ts-spacing-3;
+        }
       }
 
-      &__contacts li {
-        flex: 1 0 100%;
-      }
+      &__office-map-container {
+        border-right: 0;
+        max-height: 320px;
+        margin-bottom: variables.$ts-spacing-7;
 
-      &__contacts img {
-        width: 22px;
-        height: 22px;
-        margin-top: 3px;
-        margin-right: variables.$ts-spacing-3;
+        ts-office-map {
+          height: auto;
+          display: block;
+          flex: 1 1 0;
+          max-width: 100%;
+          margin-right: 0;
+          width: 100%;
+        }
       }
+    }
 
+    @media only screen and (max-width: variables.$ts-mobile-max) {
       ts-request-info {
         margin-top: variables.$ts-spacing-10;
         display: block;
       }
 
-      ts-office-map {
-        height: auto;
-        display: block;
-        flex: 1 1 0;
-        max-width: 100%;
-        margin-right: 0;
-      }
-    }
-
-    @media only screen and (max-width: variables.$ts-mobile-max) {
-      &__contacts-container {
-        flex-direction: column;
-        margin-top: variables.$ts-spacing-2;
-      }
-
-      ts-office-map {
-        min-height: 240px;
-        margin-bottom: variables.$ts-spacing-7;
+      &__office-map-container {
+        max-height: 240px;
       }
     }
   }
