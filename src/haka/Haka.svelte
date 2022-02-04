@@ -15,6 +15,10 @@
   let contactUsOpen = false;
   let snackbarElement = null;
 
+  let performanceElement = null;
+  let expertiseElement = null;
+  let potentialElement = null;
+
   const collapsibleHeights = {
     performance: 0,
     expertise180: 0,
@@ -73,9 +77,36 @@
       Scegli tra i <b>SERVIZI</b>
     </h3>
     <ol class="page-haka__services-list">
-      <li><a href="#performance">Valutazione performance</a></li>
-      <li><a href="#expertise">Bilancio di competenza</a></li>
-      <li><a href="#potential">Valutazione del potenziale</a></li>
+      <li>
+        <a
+          class="body-2"
+          href="#page-haka__service-performance"
+          on:mouseup={() =>
+            performanceElement.scrollIntoView({ behavior: "smooth" })}
+        >
+          Valutazione performance
+        </a>
+      </li>
+      <li>
+        <a
+          class="body-2"
+          href="#page-haka__service-expertise"
+          on:mouseup={() =>
+            expertiseElement.scrollIntoView({ behavior: "smooth" })}
+        >
+          Bilancio di competenza
+        </a>
+      </li>
+      <li>
+        <a
+          class="body-2"
+          href="#page-haka__service-potential"
+          on:mouseup={() =>
+            potentialElement.scrollIntoView({ behavior: "smooth" })}
+        >
+          Valutazione del potenziale
+        </a>
+      </li>
     </ol>
     <ts-button
       class="page-haka__services-brochure-button"
@@ -112,24 +143,14 @@
     />
   </div>
   <div id="page-haka__service-performance" class="page-haka__service">
-    <h4 class="title-4">Valutazione delle performance</h4>
+    <h4 class="title-4" bind:this={performanceElement}>
+      Valutazione delle performance
+    </h4>
     <p class="body-2">
       Permette di <b>comprendere</b> quali <b>risultati professionali</b> ha
       raggiunto la persona nel corso del tempo e come ha espresso il proprio
       <b>contributo</b> all’interno dell’organizzazione.
     </p>
-    <div class="page-haka__service-blob page-haka__service-blob--flipped">
-      <ts-blob
-        shape="snail"
-        variance="0.25"
-        style="min-width: 900px;"
-        fade="x"
-        flip="true"
-        fill="#EBEAF3"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
     <div class="page-haka__service-subservices body-2">
       <ol>
         <li>AUTO VALUTAZIONE</li>
@@ -139,9 +160,10 @@
         <ts-button variant="secondary" href="">PROVA GRATUITA</ts-button>
       </div>
     </div>
+    <ts-snail color="#8D88BA" flip="true" />
   </div>
   <div id="page-haka__service-expertise" class="page-haka__service">
-    <h4 class="title-4">Bilancio di competenza</h4>
+    <h4 class="title-4" bind:this={expertiseElement}>Bilancio di competenza</h4>
     <p class="body-2">
       Permette di comprendere come le persone <b>esprimono</b> professionalmente
       <b>le conoscenze</b>, le capacità e le qualità professionali nella
@@ -152,26 +174,18 @@
       o <b>indiretto</b>
       (responsabili, colleghi e riporti).
     </p>
-    <div class="page-haka__service-blob">
-      <ts-blob
-        shape="snail"
-        variance="0.25"
-        style="min-width: 900px;"
-        fade="x"
-        fill="#EBEAF3"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
     <div class="page-haka__service-subservices body-2">
       <ol>
         <li>VALUTAZIONE 180°</li>
         <li>VALUTAZIONE 360°</li>
       </ol>
     </div>
+    <ts-snail color="#211A58" flip="false" />
   </div>
   <div id="page-haka__service-potential" class="page-haka__service">
-    <h4 class="title-4">Valutazione del potenziale</h4>
+    <h4 class="title-4" bind:this={potentialElement}>
+      Valutazione del potenziale
+    </h4>
     <p class="body-2">
       È un processo attraverso il quale è possibile comprendere quali sono le
       logiche e gli <b>schemi mentali</b> utilizzati dalle persone nella
@@ -180,23 +194,12 @@
       a comprendere se la persona possiede i <b>requisiti</b> per ricoprire una posizione
       organizzativa diversa o superiore a quella attuale.
     </p>
-    <div class="page-haka__service-blob page-haka__service-blob--flipped">
-      <ts-blob
-        shape="snail"
-        variance="0.25"
-        style="min-width: 900px;"
-        fade="x"
-        flip="true"
-        fill="#EBEAF3"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
     <div class="page-haka__service-subservices body-2">
       <ol>
         <li>ASSESSMENT CENTER</li>
       </ol>
     </div>
+    <ts-snail color="#312783" flip="true" />
   </div>
   <div class="page-haka__our-plans">
     <h3 class="title-3 title-form">I nostri <b>PIANI</b></h3>
@@ -655,20 +658,6 @@
     line-height: 33px;
   }
 
-  .page-haka__service-blob {
-    position: absolute;
-    width: 1450px;
-    transform: scale(0.6);
-    bottom: -500px;
-    left: -500px;
-    z-index: -1;
-  }
-
-  .page-haka__service-blob.page-haka__service-blob--flipped {
-    right: -500px;
-    left: unset;
-  }
-
   #page-haka__service-expertise {
     text-align: right;
   }
@@ -891,15 +880,6 @@
       margin-bottom: variables.$ts-spacing-3;
       font-style: normal;
       line-height: 24px;
-    }
-
-    .page-haka__service-blob {
-      position: absolute;
-      width: 950px;
-      transform: scale(0.6);
-      bottom: -300px;
-      left: -400px;
-      z-index: -1;
     }
 
     .page-haka__service-subservices ol {
