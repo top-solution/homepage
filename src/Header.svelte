@@ -144,6 +144,8 @@
 
   @import "./styles/main.scss";
 
+  $hamburger-z-index: 1000;
+
   header {
     @media only screen and (max-width: variables.$ts-mobile-max) {
       display: none;
@@ -219,10 +221,11 @@
       top: -35px;
       right: -130px;
       overflow: hidden;
+      z-index: $hamburger-z-index;
     }
 
     &__hamburger {
-      z-index: 1;
+      z-index: $hamburger-z-index + 10;
       position: absolute;
       top: 30px;
       right: 15px;
