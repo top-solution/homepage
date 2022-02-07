@@ -53,8 +53,8 @@
     <ts-header-hexagons-mobile />
     <ts-hex
       class="page-haka__floating-hex-1"
-      width="140"
-      fill="#312783"
+      width="56"
+      fill="#9893c1"
       opacity="0.5"
       rotation="-20"
       shadow="true"

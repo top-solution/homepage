@@ -156,7 +156,7 @@
 
   #header-hexagons-mobile__left {
     position: absolute;
-    right: 66%;
+    right: 260px;
     top: -240px;
   }
 
