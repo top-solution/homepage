@@ -26,6 +26,7 @@ Handlebars.registerPartial(
             url('./fonts/manrope-v8-latin-300.woff') format('woff'), /* Modern Browsers */
             url('./fonts/manrope-v8-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
             url('./fonts/manrope-v8-latin-300.svg#Manrope') format('svg'); /* Legacy iOS */
+        font-display: swap;
       }
 
       /* manrope-regular - latin */
@@ -40,6 +41,7 @@ Handlebars.registerPartial(
             url('./fonts/manrope-v8-latin-regular.woff') format('woff'), /* Modern Browsers */
             url('./fonts/manrope-v8-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
             url('./fonts/manrope-v8-latin-regular.svg#Manrope') format('svg'); /* Legacy iOS */
+        font-display: swap;
       }
 
       /* manrope-500 - latin */
@@ -54,6 +56,7 @@ Handlebars.registerPartial(
             url('./fonts/manrope-v8-latin-500.woff') format('woff'), /* Modern Browsers */
             url('./fonts/manrope-v8-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
             url('./fonts/manrope-v8-latin-500.svg#Manrope') format('svg'); /* Legacy iOS */
+        font-display: swap;
       }
 
       /* manrope-700 - latin */
@@ -68,6 +71,7 @@ Handlebars.registerPartial(
             url('./fonts/manrope-v8-latin-700.woff') format('woff'), /* Modern Browsers */
             url('./fonts/manrope-v8-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
             url('./fonts/manrope-v8-latin-700.svg#Manrope') format('svg'); /* Legacy iOS */
+        font-display: swap;
       }
     </style>
 `)
