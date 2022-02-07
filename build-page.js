@@ -40,13 +40,41 @@ Handlebars.registerPartial(
 </html>
 `)
 
+Handlebars.registerPartial("metadata", `
+    <title>{{#if title}}{{ title }} - {{ siteName }}{{else}}{{ siteName }} - {{siteSlogan}}{{/if}}</title>
+    <meta name="description" content="{{ description }}" />
+
+    <meta property="og:title" content="{{#if title}}{{ title }}{{else}}{{ siteName }} - {{siteSlogan}}{{/if}}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="{{ url }}" />
+    <meta property="og:locale" content="{{ locale }}" />
+    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:site_name" content="{{ siteName }}" />
+    <meta name="twitter:card" content="summary"></meta>
+    <meta name="twitter:site" content="{{ url }}"></meta>
+    <meta name="twitter:description" content="{{ description }}"></meta>
+    <meta name="twitter:title" content="{{#if title}}{{ title }}{{else}}{{ siteName }} - {{siteSlogan}}{{/if}}"></meta>
+    <meta name="twitter:image" content="{{ image }}" />
+    <meta name="twitter:image:alt" content="{{ siteName }} - {{ siteSlogan }}" />
+    <link rel="canonical" href="{{ url }}" />
+    <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}noindex, nofollow, noarchive, noodp{{/if}}" />
+`);
+
+
 const fileName = process.argv[2];
 const fileSourcePath = join(__dirname, fileName);
 const fileDestPath = join(__dirname, 'public', fileName.substr(fileName.lastIndexOf('/')));
 const fileSource = readFileSync(fileSourcePath, 'utf-8');
 const template = Handlebars.compile(fileSource);
 
-writeFileSync(fileDestPath, template({}));
+writeFileSync(fileDestPath, template({
+  siteName: "Top Solution",
+  siteSlogan: "Ideas for the future",
+  url: `https://topsolution.it/${fileName}`,
+  locale: 'it_IT',
+  image: 'http://localhost:8080/img/topsolution_og_logo.png'
+}));
 
 
 const sass = require('sass');
