@@ -61,6 +61,21 @@
   @import "./styles/main";
 
   .button {
+    align-items: center;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    height: 42px;
+    justify-content: center;
+    letter-spacing: 0.46px;
+    line-height: 26px;
+    padding: 8px 22px;
+    text-transform: uppercase;
+    white-space: nowrap;
     user-select: none;
 
     &--primary,
@@ -72,7 +87,7 @@
 
     &--primary {
       color: white;
-      background-color: variables.$ts-blue-color;
+      background-color: #211a58;
 
       &:hover {
         background-color: variables.$ts-blue-color-light;

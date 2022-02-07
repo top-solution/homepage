@@ -262,7 +262,7 @@
           <p class="contact-us__cv-error-text">{formErrors.curriculum}</p>
         {/if}
         <label
-          class="button contact-us__curriculum-upload-label"
+          class="contact-us__curriculum-upload-label"
           for="contact-us__curriculum-upload"
         >
           ALLEGA CV
@@ -396,19 +396,41 @@
     &__curriculum-upload-label {
       /* Fake button, can't use component due to WebComponents limitations */
       color: white;
-      background-color: variables.$ts-blue-color;
+      background-color: #211a58;
       margin-left: auto;
-      display: flex;
+      margin-bottom: variables.$ts-spacing-2;
       align-items: center;
-    }
+      border-radius: 4px;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      height: 42px;
+      justify-content: center;
+      letter-spacing: 0.46px;
+      line-height: 26px;
+      padding: 8px 22px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      user-select: none;
 
-    &__curriculum-upload-label img {
-      height: 18px;
-      margin-left: variables.$ts-spacing-1;
-    }
+      border: 0;
 
-    &__curriculum-upload-label:hover {
-      background-color: variables.$ts-blue-color-light;
+      transition: background-color variables.$ts-transition-timing-quick
+          variables.$ts-transition-function-default,
+        border-color variables.$ts-transition-timing-quick
+          variables.$ts-transition-function-default;
+
+      & img {
+        height: 18px;
+        margin-left: variables.$ts-spacing-1;
+      }
+
+      &:hover {
+        background-color: variables.$ts-blue-color-light;
+      }
     }
 
     &__cv-error-text {
@@ -416,11 +438,6 @@
       font-size: 16px;
       margin: 0;
       font-weight: 400;
-    }
-
-    &__curriculum-upload-label {
-      margin-left: 0;
-      margin-bottom: variables.$ts-spacing-2;
     }
 
     &__textfield {
