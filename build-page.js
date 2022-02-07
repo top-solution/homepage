@@ -73,7 +73,7 @@ writeFileSync(fileDestPath, template({
   siteSlogan: "Ideas for the future",
   url: `https://topsolution.it/${fileName}`,
   locale: 'it_IT',
-  image: 'http://localhost:8080/img/topsolution_og_logo.png'
+  image: './img/topsolution_og_logo.png'
 }));
 
 
