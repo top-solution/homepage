@@ -7,6 +7,7 @@ $ts-azure-color: #75bae5;
 $ts-azure-color-light: #e3f1fa;
 $ts-white-color: #fff;
 $ts-error: #d32f2f;
+$ts-error-text: #b00020;
 
 $ts-blob-development-color: #e9e8f2;
 
@@ -15,7 +16,7 @@ $ts-blue-color-hovering: #8d88ba;
 // Breakpoints
 $ts-mobile-max: 600px;
 $ts-tablet-min: $ts-mobile-max + 1px;
-$ts-tablet-max: 900px;
+$ts-tablet-max: 960px;
 $ts-destop-min: $ts-tablet-max + 1px;
 
 // Spacing

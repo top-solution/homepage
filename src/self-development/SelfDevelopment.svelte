@@ -113,13 +113,12 @@
     <h4 bind:this={formazioneSuMisuraElement} class="title-4">
       Formazione su misura
     </h4>
+    <ts-snail color="#8D88BA" flip="true" paddingtop="true" />
     <p class="body-2">
       Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali delle
       persone è l’elemento centrale per la continuità e/o la crescita del
       business. Il Training che offriamo è di tipo <b>esperienziale</b>.
     </p>
-    <ts-snail color="#8D88BA" flip="true" />
-
     <ts-hex
       class="page-self-development__floating-hex-3"
       width="90"
@@ -135,6 +134,7 @@
     <h4 bind:this={sentieriDiCarrieraElement} class="title-4">
       Sentieri di carriera
     </h4>
+    <ts-snail color="#4C429C" paddingtop="true" />
     <p class="body-2">
       Nell’ottica del <b>miglioramento continuo</b>, lo sviluppo delle
       competenze professionali evolve con la maturità professionale dei singoli.
@@ -144,13 +144,13 @@
       gli
       <b>obiettivi d’impresa</b>.
     </p>
-    <ts-snail color="#4C429C" />
   </div>
   <div
     id="page-self-development__coaching"
     class="page-self-development__service"
   >
     <h4 bind:this={coachingElement} class="title-4">Coaching</h4>
+    <ts-snail color="#4857A3" flip="true" paddingtop="true" />
     <p class="body-2">
       Il Coaching è una metodologia formativa che <b>permette</b> ai manager e
       ai responsabili di funzione di apprendere tecniche e strumenti innovativi
@@ -160,7 +160,6 @@
       potenzialità individuali di <b>guida</b> e di <b>orientamento</b> al
       <b>business</b>.
     </p>
-    <ts-snail color="#4857A3" flip="true" />
   </div>
 </ts-layout>
 
@@ -190,7 +189,7 @@
       &-3 {
         position: absolute;
         left: 73%;
-        top: -220px;
+        top: -140px;
       }
     }
 

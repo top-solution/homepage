@@ -10,7 +10,7 @@
     viewBox="0 0 387.357 518.602"
   >
     <g
-      filter="url(##header-hexagons-mobile__a)"
+      filter="url(#header-hexagons-mobile__a)"
       transform="translate(-175.65 -70.815)"
     >
       <path
@@ -20,7 +20,7 @@
       />
     </g>
     <g
-      filter="url(##header-hexagons-mobile__b)"
+      filter="url(#header-hexagons-mobile__b)"
       transform="translate(-175.65 -70.815)"
     >
       <path
@@ -30,7 +30,7 @@
     </g>
     <defs>
       <filter
-        id="#header-hexagons-mobile__a"
+        id="header-hexagons-mobile__a"
         width="283.235"
         height="304.886"
         x="223.204"
@@ -61,7 +61,7 @@
         />
       </filter>
       <filter
-        id="#header-hexagons-mobile__b"
+        id="header-hexagons-mobile__b"
         width="204.623"
         height="209.706"
         x="175.65"
@@ -147,6 +147,8 @@
   @use "../styles/main.scss";
 
   div {
+    pointer-events: none;
+
     #header-hexagons-mobile {
       &__right {
         position: absolute;

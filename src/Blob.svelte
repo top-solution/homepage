@@ -392,37 +392,46 @@
   <svg
     viewBox="0 0 210 210"
     preserveAspectRatio="none"
-    id="mask00"
     style={flip ? "transform: scaleX(-1)" : undefined}
   >
-    <defs>
-      <linearGradient id="Gradient1">
-        <stop
-          stop-color={fill}
-          offset="0%"
-          stop-opacity={fade === "x-reverse" ? 0 : undefined}
-        />
-        <stop
-          stop-color={fill2 || fill}
-          offset="100%"
-          stop-opacity={fade === "x" ? 0 : undefined}
-        />
-      </linearGradient>
-      <pattern
-        id="image"
-        patternUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width="210"
-        height="210"
-      >
-        <image href={src} width="210" height="210" />
-      </pattern>
-    </defs>
+    {#if fill2}
+      <defs>
+        <linearGradient id="blob__gradient">
+          <stop
+            stop-color={fill}
+            offset="0%"
+            stop-opacity={fade === "x-reverse" ? 0 : undefined}
+          />
+          <stop
+            stop-color={fill2 || fill}
+            offset="100%"
+            stop-opacity={fade === "x" ? 0 : undefined}
+          />
+        </linearGradient>
+      </defs>
+    {/if}
+    {#if src}
+      <defs>
+        <pattern
+          id="blob__image"
+          patternUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="210"
+          height="210"
+        >
+          <image href={src} width="210" height="210" />
+        </pattern>
+      </defs>
+    {/if}
     <path
       id="path"
       d={path}
-      fill={`url(${src ? "#image" : "#Gradient1"})`}
+      fill={src
+        ? `url(#blob__image)`
+        : fill2
+        ? `url(#blob__gradient)`
+        : fill ?? "#EBEAF3"}
       style={`box-shadow: 5px 10px #888888; ${transform}; transform-box: fill-box; transform-origin: center;`}
     />
   </svg>

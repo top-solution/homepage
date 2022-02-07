@@ -145,8 +145,8 @@
     variant="secondary"
     icon={true}
     title="Mostra a schermo intero"
-    on:click={() => {
-      console.log(mapElement);
+    on:click={(e) => {
+      e.preventDefault();
       mapElement.requestFullscreen();
     }}><img src="img/icons/center-map.svg" alt="center map" /></ts-button
   >
@@ -154,7 +154,8 @@
     id="office-map__zoom-in-button"
     variant="secondary"
     icon={true}
-    on:click={() => {
+    on:click={(e) => {
+      e.preventDefault();
       map.setZoom(map.zoom + 1);
     }}><img src="img/icons/zoom-in-map.svg" alt="zoom in map" /></ts-button
   >
@@ -162,16 +163,17 @@
     id="office-map__zoom-out-button"
     variant="secondary"
     icon={true}
-    on:click={() => {
+    on:click={(e) => {
+      e.preventDefault();
       map.setZoom(map.zoom - 1);
     }}><img src="img/icons/zoom-out-map.svg" alt="zoom out map" /></ts-button
   >
 </div>
 
 <style lang="scss">
-  @use "./styles/variables";
+  @use "../styles/variables";
 
-  @import "./styles/main.scss";
+  @import "../styles/main.scss";
 
   #office-map__container,
   #office-map {

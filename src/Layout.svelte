@@ -17,9 +17,9 @@
     margin: 0 auto;
     padding: 0 variables.$ts-spacing-3;
     position: relative;
-  }
 
-  .layout__content {
-    min-height: calc(100vh - 621px);
+    &__content {
+      min-height: calc(100vh - 621px);
+    }
   }
 </style>

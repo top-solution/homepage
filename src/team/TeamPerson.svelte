@@ -1,7 +1,7 @@
 <svelte:options tag="ts-team-person" />
 
 <script>
-  import Blob from "./Blob.svelte";
+  import Blob from "../Blob.svelte";
   import { onMount } from "svelte";
 
   export let src;
@@ -29,9 +29,9 @@
 </div>
 
 <style lang="scss">
-  @use "./styles/variables";
+  @use "../styles/variables";
 
-  @import "./styles/main.scss";
+  @import "../styles/main.scss";
 
   .team-person {
     display: flex;

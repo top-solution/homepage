@@ -164,6 +164,7 @@
     <h4 bind:this={managementDiagnosticElement} class="title-4">
       Management diagnostic
     </h4>
+    <ts-snail color="#8D88BA" flip="true" paddingtop="true" />
     <p class="body-2">
       È un’attività di <b>analisi organizzativa</b>, veloce e dinamica, centrata
       sullo studio delle relazioni professionali, funzionali e interfunzionali
@@ -172,7 +173,6 @@
       reale, i modelli di comunicazione e la qualità delle politiche
       organizzative.
     </p>
-    <ts-snail color="#8D88BA" flip="true" />
   </div>
   <div
     id="page-company-development__clima_organizzativo"
@@ -181,6 +181,7 @@
     <h4 bind:this={climaOrganizzativoElement} class="title-4">
       Clima organizzativo
     </h4>
+    <ts-snail color="#4C429C" paddingtop="true" />
     <p class="body-2">
       <b>Analisi</b> che permette di comprendere “come le persone vivono” in
       azienda, attraverso l’<b>osservazione</b> “dell’aria che si respira”
@@ -189,7 +190,6 @@
         >ambiente lavorativo</b
       >.
     </p>
-    <ts-snail color="#4C429C" />
   </div>
   <div
     id="page-company-development__employees_engagement"
@@ -198,6 +198,7 @@
     <h4 bind:this={employeesEngagementElement} class="title-4">
       Employees engagement
     </h4>
+    <ts-snail color="#4857A3" flip="true" paddingtop="true" />
     <p class="body-2">
       Esprime il livello di <b>coinvolgimento emotivo</b> e <b>professionale</b>
       vissuto dal dipendente nel lavoro e per l’organizzazione. Si focalizza sul
@@ -206,7 +207,6 @@
       quali sono gli elementi sui quali occorre sviluppare la
       <b>partecipazione</b>.
     </p>
-    <ts-snail color="#4857A3" flip="true" />
   </div>
   <div
     id="page-company-development__stress_lavoro_correlato"
@@ -215,6 +215,7 @@
     <h4 bind:this={stressLavoroCorrelatoElement} class="title-4">
       Stress lavoro correlato
     </h4>
+    <ts-snail color="#312783" paddingtop="true" />
     <p class="body-2">
       Può essere definito come lo <b>squilibrio percepito</b> dal lavoratore
       quando le richieste dell’ambiente di lavoro sono eccessive rispetto alla
@@ -222,7 +223,6 @@
       quindi l’organizzazione a mettere a disposizione le adeguate risorse per
       <b>fronteggiarle</b>.
     </p>
-    <ts-snail color="#312783" />
   </div>
   <div
     id="page-company-development__customer_satisfaction"
@@ -231,6 +231,7 @@
     <h4 bind:this={customerSatisfactionElement} class="title-4">
       Customer satisfaction
     </h4>
+    <ts-snail color="#211A58" flip="true" paddingtop="true" />
     <p class="body-2">
       La soddisfazione è intesa come <b>stato psicologico</b> derivante da un
       gap tra la <b>valutazione</b> dell’avvenuta <b>esperienza</b> di consumo e
@@ -239,7 +240,6 @@
       utilizzatori e a creare una mappa delle priorità per <b>ottimizzare</b>
       gli interventi con le <b>risorse disponibili</b>.
     </p>
-    <ts-snail color="#211A58" flip="true" />
   </div>
 </ts-layout>
 
@@ -254,19 +254,6 @@
 
   .claim {
     max-width: 80%;
-  }
-
-  .page-company-development__floating-hex-2 {
-    position: absolute;
-    bottom: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .page-company-development__floating-hex-3 {
-    position: absolute;
-    left: 73%;
-    top: -60px;
   }
 
   .page-company-development {

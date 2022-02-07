@@ -209,6 +209,10 @@
 <style lang="scss">
   @use "../styles/variables";
 
+  svg {
+    pointer-events: none;
+  }
+
   @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
     svg {
       transform: scale(0.5);

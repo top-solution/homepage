@@ -41,80 +41,87 @@
     position: relative;
     background-color: variables.$ts-blue-background;
     color: variables.$ts-blue-color;
-  }
 
-  .top-banner.top-banner--azure {
-    background-color: variables.$ts-azure-color-light;
-  }
-
-  .top-banner__content {
-    box-sizing: border-box;
-    max-width: variables.$ts-tablet-max;
-    margin: auto;
-    padding: variables.$ts-spacing-4 variables.$ts-spacing-8;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .top-banner__title {
-    text-align: center;
-
-    &,
-    &.title-1 {
-      margin: 0 0 variables.$ts-spacing-3 0;
+    &--azure {
+      background-color: variables.$ts-azure-color-light;
     }
-  }
 
-  .top-banner__text {
-    max-width: variables.$ts-mobile-max;
-    margin: 0 auto variables.$ts-spacing-3;
-  }
+    &__content {
+      box-sizing: border-box;
+      max-width: variables.$ts-tablet-max;
+      margin: auto;
+      padding: variables.$ts-spacing-4 variables.$ts-spacing-8;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .top-banner__actions {
-    margin: variables.$ts-spacing-9 auto variables.$ts-spacing-5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+    &__title {
+      text-align: center;
 
-  .top-banner__external {
-    max-width: variables.$ts-tablet-max;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media screen and (max-width: variables.$ts-mobile-max) {
-    .top-banner__title {
+      &,
       &.title-1 {
-        margin-top: variables.$ts-spacing-9;
-        text-align: center;
+        margin: 0 0 variables.$ts-spacing-3 0;
       }
-      &.title-2 {
-        margin-top: variables.$ts-spacing-4;
-        text-align: left;
+    }
+
+    &__text {
+      max-width: variables.$ts-mobile-max;
+      margin: 0 auto variables.$ts-spacing-3;
+    }
+
+    &__actions {
+      margin: variables.$ts-spacing-9 auto variables.$ts-spacing-5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__external {
+      max-width: variables.$ts-tablet-max;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    @media screen and (max-width: variables.$ts-mobile-max) {
+      &__title {
+        &.title-1 {
+          margin-top: variables.$ts-spacing-9;
+          text-align: center;
+        }
+        &.title-2 {
+          margin-top: variables.$ts-spacing-4;
+          text-align: left;
+          max-width: 50%;
+        }
+      }
+
+      &__content {
+        align-items: flex-start;
+        padding: variables.$ts-spacing-5 variables.$ts-spacing-4;
+      }
+
+      &__text {
         max-width: 80%;
+        margin-left: 0;
+      }
+
+      &--mobile-align-left &__text,
+      &--mobile-align-left &__title {
+        &.title-2 {
+          text-align: left;
+        }
       }
     }
 
-    .top-banner__content {
-      align-items: flex-start;
-      padding: variables.$ts-spacing-5 variables.$ts-spacing-4;
-    }
-
-    .top-banner__text {
-      max-width: 80%;
-      margin-left: 0;
-    }
-
-    .top-banner.top-banner--mobile-align-left .top-banner__text,
-    .top-banner.top-banner--mobile-align-left .top-banner__title {
-      &.title-2 {
-        text-align: left;
+    @media screen and (min-width: variables.$ts-mobile-max) {
+      &__text {
+        text-align: center;
       }
     }
   }
