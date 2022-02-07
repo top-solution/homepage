@@ -73,6 +73,21 @@ Handlebars.registerPartial(
             url('./fonts/manrope-v8-latin-700.svg#Manrope') format('svg'); /* Legacy iOS */
         font-display: swap;
       }
+
+      /* manrope-800 - latin */
+      @font-face {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 800;
+        src: url('./fonts/manrope-v8-latin-800.eot'); /* IE9 Compat Modes */
+        src: local(''),
+            url('./fonts/manrope-v8-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('./fonts/manrope-v8-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+            url('./fonts/manrope-v8-latin-800.woff') format('woff'), /* Modern Browsers */
+            url('./fonts/manrope-v8-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+            url('./fonts/manrope-v8-latin-800.svg#Manrope') format('svg'); /* Legacy iOS */
+        font-display: swap;
+      }
     </style>
 `)
 
