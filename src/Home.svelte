@@ -252,7 +252,7 @@
       }
       &__hex-mobile-3 {
         top: 170px;
-        left: 475px;
+        left: 450px;
       }
       &__hex-mobile-4 {
         top: 170px;
