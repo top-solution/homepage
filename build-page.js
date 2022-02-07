@@ -7,35 +7,18 @@ Handlebars.registerPartial(
   "head-start",
   `
 <!DOCTYPE html />
-<html class="no-js" lang="">
+<html class="no-js" lang="it">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="shortcut icon" type="image/svg" href="./img/logo.svg" />
-
-    <link
-      href="http://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700,900|Work+Sans:100,200,300,400,500,600,700,800,900&display=swap"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="./global.css">
 `)
 
 Handlebars.registerPartial(
   "head-end",
-  `
-    <style>
-      html, body {
-        margin: 0;
-        width: 100%;
-        overflow-x: hidden;
-      }
-      body {
-        overflow-y: hidden;
-      }
-    </style>
-
-    <script src="./build/Footer.js"></script>
+  ` <script src="./build/Footer.js"></script>
     <script src="./build/Header.js"></script>
   </head>
 `)
@@ -64,3 +47,12 @@ const fileSource = readFileSync(fileSourcePath, 'utf-8');
 const template = Handlebars.compile(fileSource);
 
 writeFileSync(fileDestPath, template({}));
+
+
+const sass = require('sass');
+
+const result = sass.compile(join(__dirname, 'src', 'styles', 'global.scss'), {
+  style: "compressed"
+});
+
+writeFileSync(join(__dirname, 'public', 'global.css'), result.css);

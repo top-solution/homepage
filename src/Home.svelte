@@ -1,12 +1,6 @@
 <svelte:options tag="ts-page-home" />
 
 <script>
-  import Blob from "./Blob.svelte";
-  import Layout from "./Layout.svelte";
-  import HomeHero from "./HomeHero.svelte";
-  import TripleBlob from "./TripleBlob.svelte";
-  import Customers from "./Customers.svelte";
-
   let developmentHumanResourceBlobs = [
     {
       icon: "devices.svg",
