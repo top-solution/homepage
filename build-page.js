@@ -46,7 +46,7 @@ Handlebars.registerPartial("metadata", `
 
     <meta property="og:title" content="{{#if title}}{{ title }}{{else}}{{ siteName }} - {{siteSlogan}}{{/if}}" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:type" content="" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ url }}" />
     <meta property="og:locale" content="{{ locale }}" />
     <meta property="og:image" content="{{ image }}" />
