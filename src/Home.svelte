@@ -146,10 +146,6 @@
   .homepage {
     color: variables.$ts-blue-color;
 
-    &__header-blob {
-      display: none;
-    }
-
     &__header-blob-mobile {
       display: block;
       position: absolute;
@@ -166,10 +162,6 @@
       }
     }
 
-    &__header-hex {
-      display: none;
-    }
-
     &__header-hex-mobile {
       display: block;
       position: absolute;
@@ -178,10 +170,6 @@
       top: -650px;
       left: -1150px;
       z-index: -1;
-    }
-
-    &__header-hex-logo {
-      display: none;
     }
 
     &__header-hex-logo-mobile {
@@ -214,11 +202,11 @@
       z-index: -1;
     }
 
-    &__middle-hex-tablet {
-      display: none;
-    }
-
-    &__middle-hex-mobile {
+    &__middle-hex-tablet,
+    &__middle-hex-mobile,
+    &__header-hex,
+    &__header-hex-logo,
+    &__header-blob {
       display: none;
     }
 
@@ -243,44 +231,40 @@
         overflow: visible;
         z-index: -1;
       }
-      &__hex-mobile-1 {
-        top: -100px;
-        left: 300px;
-      }
-      &__hex-mobile-2 {
-        top: -70px;
-        left: 380px;
-      }
-      &__hex-mobile-3 {
-        top: 170px;
-        left: 450px;
-      }
-      &__hex-mobile-4 {
-        top: 170px;
-        left: 275px;
-      }
-      &__hex-mobile-5 {
-        top: 175px;
-        left: 25px;
-      }
-      &__hex-mobile-6 {
-        top: 300px;
-        left: 250px;
+      &__hex-mobile {
+        &-1 {
+          top: -100px;
+          left: 300px;
+        }
+        &-2 {
+          top: -70px;
+          left: 380px;
+        }
+        &-3 {
+          top: 170px;
+          left: 450px;
+        }
+        &-4 {
+          top: 170px;
+          left: 275px;
+        }
+        &-5 {
+          top: 175px;
+          left: 25px;
+        }
+        &-6 {
+          top: 300px;
+          left: 250px;
+        }
       }
 
       &__header-hex-mobile,
-      &__header-hex-logo-mobile {
-        display: none;
-      }
+      &__header-hex-logo-mobile,
       &__middle-blob,
-      &__middle-hex {
-        display: none;
-      }
-
+      &__middle-hex,
       &__middle-hex-tablet {
         display: none;
       }
-
       &__middle-blob-mobile {
         display: block;
         position: absolute;
