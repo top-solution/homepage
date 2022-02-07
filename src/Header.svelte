@@ -47,8 +47,7 @@
     >
     <div class="header__link">
       <a href="hr-development.html"><strong>HR</strong></a>
-      <a href="about.html"><strong>DEV</strong></a>
-      <!-- FIXME: LINKS -->
+      <!-- <a href="about.html"><strong>DEV</strong></a> -->
       <a href="company.html"><strong>AZIENDA</strong></a>
       <a href="team.html"><strong>TEAM</strong></a>
       <a href="contacts.html"><strong>CONTATTI</strong></a>
@@ -110,11 +109,10 @@
         >HR
         <span class="header-mobile__links--slime">Risorse Umane</span></a
       >
-      <!-- FIXME: LINKS -->
-      <a href="about.html"
+      <!-- <a href="about.html"
         >DEV
         <span class="header-mobile__links--slime">Sviluppo Software</span></a
-      >
+      > -->
       <a href="haka.html#plans">TARIFFE</a>
       <a href="company.html">AZIENDA</a>
       <a href="team.html">TEAM</a>
