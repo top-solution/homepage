@@ -6,6 +6,7 @@
   import "@material/mwc-textarea";
   import { createEventDispatcher } from "svelte";
   import { get_current_component } from "svelte/internal";
+  import RecaptchaTOS from "../RecaptchaTOS.svelte";
 
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
@@ -66,19 +67,27 @@
       return;
     }
 
-    console.log(event, form);
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute(gRecaptchaSiteKey, { action: "submit" })
+        .then(function (token) {
+          // Add your logic to submit to your backend server here.
+          console.log(event, { ...form, gRecaptchaToken: token });
 
-    form = {
-      name: "",
-      surname: "",
-      role: "",
-      companyName: "",
-      email: "",
-      message: "",
-      employees: "",
-      industry: "",
-    };
-    dispatch("formsubmit", {});
+          form = {
+            name: "",
+            surname: "",
+            role: "",
+            companyName: "",
+            email: "",
+            message: "",
+            employees: "",
+            industry: "",
+          };
+
+          dispatch("formsubmit", {});
+        });
+    });
   }
 </script>
 
@@ -209,6 +218,7 @@
           on:change={(e) => (form.message = e.target.value)}
         />
       </div>
+      <RecaptchaTOS />
       <div class="request-info__submit-button-form-row">
         <ts-button
           class="request-info__submit"

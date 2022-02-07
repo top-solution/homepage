@@ -88,3 +88,11 @@ body {
       url('./fonts/manrope-v8-latin-800.svg#Manrope') format('svg'); /* Legacy iOS */
   font-display: swap;
 }
+
+.recaptcha-tos {
+  color: #000;
+}
+
+.grecaptcha-badge {
+  display: none;
+}

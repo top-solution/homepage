@@ -20,6 +20,7 @@ Handlebars.registerPartial(
   "head-end",
   ` <script src="./build/Footer.js"></script>
     <script src="./build/Header.js"></script>
+    <script>var gRecaptchaSiteKey="{{ recaptchaSiteKey }}"</script>
   </head>
 `)
 
@@ -75,7 +76,8 @@ writeFileSync(fileDestPath, template({
   url: process.env.DEPLOY_TO === 'prod' ? `https://topsolution.it` : `https://www.topsolution.dev`,
   fileName: fileName,
   locale: 'it_IT',
-  image: 'img/topsolution_og_logo.png'
+  image: 'img/topsolution_og_logo.png',
+  recaptchaSiteKey: '6LecL1IeAAAAACM3Y8SxTdz1QJJgAuLNP1lMSe_Y'
 }));
 
 
