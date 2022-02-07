@@ -78,10 +78,10 @@
       <img src="img/blob-header-homepage.svg" alt="" />
     </div>
     <div class="homepage__header-hex">
-      <img src="img/homepage/group-hex-header-homepage.svg" alt="" />
+      <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
     </div>
     <div class="homepage__header-hex-mobile">
-      <img src="img/homepage/group-hex-header-homepage.svg" alt="" />
+      <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
     </div>
     <div class="homepage__header-hex-logo">
       <img src="img/homepage/hex-logo-header.svg" alt="" />
@@ -105,14 +105,14 @@
     <div class="homepage__middle-blob">
       <img src="img/blob-middle-homepage.svg" alt="" />
     </div>
-    <div class="homepage__middle-blob-mobile">
-      <img src="img/blob-middle-homepage.svg" alt="" />
-    </div>
     <div class="homepage__middle-hex">
-      <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
+      <img src="img/homepage/group-hex-middle-desktop.svg" alt="" />
     </div>
     <div class="homepage__middle-hex-mobile">
-      <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
+      <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
+    </div>
+    <div class="homepage__middle-hex-tablet">
+      <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
     </div>
   </div>
   <ts-customers bind:this={customersElement} />
@@ -175,10 +175,6 @@
     }
 
     &__middle-blob {
-      display: none;
-    }
-
-    &__middle-blob-mobile {
       display: block;
       position: absolute;
       width: 1400px;
@@ -189,10 +185,6 @@
     }
 
     &__middle-hex {
-      display: none;
-    }
-
-    &__middle-hex-mobile {
       display: block;
       position: absolute;
       width: 1400px;
@@ -200,6 +192,66 @@
       right: -1125px;
       top: 1225px;
       z-index: -1;
+    }
+
+    &__middle-hex-tablet {
+      display: none;
+    }
+
+    &__middle-hex-mobile {
+      display: none;
+    }
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      &__middle-blob,
+      &__middle-hex {
+        display: none;
+      }
+
+      &__middle-hex-tablet {
+        display: none;
+      }
+
+      &__middle-blob-mobile {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        right: -1125px;
+        top: 1275px;
+        z-index: -1;
+      }
+
+      &__middle-hex-mobile {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        right: -1155px;
+        top: 1425px;
+        z-index: -1;
+      }
+    }
+
+    @media only screen and (max-width: variables.$ts-tablet-max) {
+      &__middle-blob,
+      &__middle-hex {
+        display: none;
+      }
+
+      &__middle-hex-tablet {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        right: -1155px;
+        top: 1975px;
+        z-index: -1;
+
+        @media only screen and (max-width: variables.$ts-mobile-max) {
+          display: none;
+        }
+      }
     }
   }
 </style>
