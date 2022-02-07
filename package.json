@@ -7,7 +7,7 @@
     "build-pages": "sh build-pages.sh",
     "build": "npm run build-components && npm run build-pages",
     "watch-components": "rollup -c -w",
-    "watch-pages": "npm run build-pages && chokidar 'src/pages/*.html' -c 'node build-page.js {path}'",
+    "watch-pages": "npm run build-pages && chokidar 'src/pages/*.html src/styles/*.scss' -c 'node build-page.js {path}'",
     "serve": "npx http-server -s -c-1 ./public",
     "start": "concurrently \"npm run watch-components\" \"npm run watch-pages\" \"npm run serve\""
   },
