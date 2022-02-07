@@ -72,22 +72,42 @@
 <ts-layout class="homepage">
   <div slot="external">
     <div class="homepage__header-blob">
-      <img src="img/blob-header-homepage.svg" alt="" />
+      <img src="img/homepage/blob-header-homepage.svg" alt="" />
     </div>
-    <div class="homepage__header-mobile">
-      <img src="img/blob-header-homepage.svg" alt="" />
+    <div class="homepage__header-blob-mobile">
+      <img src="img/homepage/blob-header-homepage.svg" alt="" />
     </div>
     <div class="homepage__header-hex">
-      <img src="img/homepage/group-hex-header-homepage.svg" alt="" />
+      <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
     </div>
     <div class="homepage__header-hex-mobile">
-      <img src="img/homepage/group-hex-header-homepage.svg" alt="" />
+      <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
     </div>
     <div class="homepage__header-hex-logo">
       <img src="img/homepage/hex-logo-header.svg" alt="" />
     </div>
     <div class="homepage__header-hex-logo-mobile">
       <img src="img/homepage/hex-logo-header.svg" alt="" />
+    </div>
+
+    <!-- FIXME: Update it with a group-->
+    <div class="homepage__hex-mobile-1">
+      <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-2">
+      <img src="img/homepage/homepage-mobile-hex-2.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-3">
+      <img src="img/homepage/homepage-mobile-hex-3.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-4">
+      <img src="img/homepage/homepage-mobile-hex-4.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-5">
+      <img src="img/homepage/homepage-mobile-hex-5.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-6">
+      <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
     </div>
   </div>
   <ts-home-hero />
@@ -103,16 +123,16 @@
   />
   <div slot="external">
     <div class="homepage__middle-blob">
-      <img src="img/blob-middle-homepage.svg" alt="" />
-    </div>
-    <div class="homepage__middle-blob-mobile">
-      <img src="img/blob-middle-homepage.svg" alt="" />
+      <img src="img/homepage/blob-middle-homepage.svg" alt="" />
     </div>
     <div class="homepage__middle-hex">
-      <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
+      <img src="img/homepage/group-hex-middle-desktop.svg" alt="" />
     </div>
     <div class="homepage__middle-hex-mobile">
-      <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
+      <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
+    </div>
+    <div class="homepage__middle-hex-tablet">
+      <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
     </div>
   </div>
   <ts-customers bind:this={customersElement} />
@@ -126,17 +146,13 @@
   .homepage {
     color: variables.$ts-blue-color;
 
-    &__header-blob {
-      display: none;
-    }
-
-    &__header-mobile {
+    &__header-blob-mobile {
       display: block;
       position: absolute;
       width: 1400px;
       overflow: visible;
       top: -400px;
-      left: -1000px;
+      left: -900px;
       z-index: -1;
 
       @media only screen and (max-width: variables.$ts-mobile-max) {
@@ -144,10 +160,6 @@
         left: -50px;
         top: -350px;
       }
-    }
-
-    &__header-hex {
-      display: none;
     }
 
     &__header-hex-mobile {
@@ -158,10 +170,6 @@
       top: -650px;
       left: -1150px;
       z-index: -1;
-    }
-
-    &__header-hex-logo {
-      display: none;
     }
 
     &__header-hex-logo-mobile {
@@ -175,10 +183,6 @@
     }
 
     &__middle-blob {
-      display: none;
-    }
-
-    &__middle-blob-mobile {
       display: block;
       position: absolute;
       width: 1400px;
@@ -189,10 +193,6 @@
     }
 
     &__middle-hex {
-      display: none;
-    }
-
-    &__middle-hex-mobile {
       display: block;
       position: absolute;
       width: 1400px;
@@ -200,6 +200,119 @@
       right: -1125px;
       top: 1225px;
       z-index: -1;
+    }
+
+    &__middle-hex-tablet,
+    &__middle-hex-mobile,
+    &__header-hex,
+    &__header-hex-logo,
+    &__header-blob {
+      display: none;
+    }
+
+    &__hex-mobile-1,
+    &__hex-mobile-2,
+    &__hex-mobile-3,
+    &__hex-mobile-4,
+    &__hex-mobile-5,
+    &__hex-mobile-6 {
+      display: none;
+    }
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      &__hex-mobile-1,
+      &__hex-mobile-2,
+      &__hex-mobile-3,
+      &__hex-mobile-4,
+      &__hex-mobile-5,
+      &__hex-mobile-6 {
+        display: block;
+        position: absolute;
+        overflow: visible;
+        z-index: -1;
+      }
+      &__hex-mobile {
+        &-1 {
+          top: -100px;
+          left: 300px;
+        }
+        &-2 {
+          top: -70px;
+          left: 380px;
+        }
+        &-3 {
+          top: 170px;
+          left: 450px;
+        }
+        &-4 {
+          top: 170px;
+          left: 300px;
+        }
+        &-5 {
+          top: 175px;
+          left: 25px;
+        }
+        &-6 {
+          top: 300px;
+          left: 275px;
+        }
+      }
+
+      &__header-hex-mobile,
+      &__header-hex-logo-mobile,
+      &__middle-blob,
+      &__middle-hex,
+      &__middle-hex-tablet {
+        display: none;
+      }
+      &__middle-blob-mobile {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        right: -1125px;
+        top: 1275px;
+        z-index: -1;
+      }
+
+      &__middle-hex-mobile {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        right: -1155px;
+        top: 1450px;
+        z-index: -1;
+      }
+    }
+
+    @media only screen and (max-width: variables.$ts-tablet-max) {
+      &__header-hex-logo-mobile {
+        left: -450px;
+      }
+
+      &__header-hex-mobile {
+        left: -1350px;
+      }
+
+      &__middle-blob,
+      &__middle-hex {
+        display: none;
+      }
+
+      &__middle-hex-tablet {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        right: -1155px;
+        top: 1975px;
+        z-index: -1;
+
+        @media only screen and (max-width: variables.$ts-mobile-max) {
+          display: none;
+        }
+      }
     }
   }
 </style>
