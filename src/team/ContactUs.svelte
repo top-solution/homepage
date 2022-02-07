@@ -3,6 +3,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import { get_current_component } from "svelte/internal";
+  import RecaptchaTOS from "../RecaptchaTOS.svelte";
 
   export let open = false;
 
@@ -66,28 +67,36 @@
     if (!form.curriculum) {
       formErrors.curriculum = "Allegare un CV in formato PDF";
     }
+    console.log(event, { ...form });
 
     if (Object.values(formErrors).find((err) => err !== null)) {
       console.log(formErrors);
       return;
     }
 
-    console.log(event, form);
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute(gRecaptchaSiteKey, { action: "submit" })
+        .then(function (token) {
+          // Add your logic to submit to your backend server here.
+          console.log(event, { ...form, gRecaptchaToken: token });
 
-    form = {
-      name: "",
-      age: "",
-      graduation: "",
-      graduationGrade: "",
-      experience: "",
-      email: "",
-      phone: "",
-      curriculum: null,
-    };
+          form = {
+            name: "",
+            age: "",
+            graduation: "",
+            graduationGrade: "",
+            experience: "",
+            email: "",
+            phone: "",
+            curriculum: null,
+          };
 
-    dispatch("formsubmit", {});
+          dispatch("formsubmit", {});
 
-    window.scrollTo(0, 0);
+          window.scrollTo(0, 0);
+        });
+    });
   }
 </script>
 
@@ -98,7 +107,10 @@
     fill="#312783"
     shadow="true"
   />
-  <div class="contact-us__drawer" class:contact-us__drawer--open={open}>
+  <div
+    class="contact-us__drawer"
+    class:contact-us__drawer--open={open === true}
+  >
     <form-title-hex />
     <h2 class="title-3 title-form">Candidatura <b>spontanea</b></h2>
     <p class="contact-us__subtitle body-1">
@@ -269,6 +281,7 @@
           <img src="img/icons/attachment.svg" alt="" />
         </label>
       </div>
+      <RecaptchaTOS />
       <div class="contact-us__submit-button-form-row">
         <ts-button
           class="contact-us__submit"
