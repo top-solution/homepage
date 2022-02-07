@@ -72,10 +72,10 @@
 <ts-layout class="homepage">
   <div slot="external">
     <div class="homepage__header-blob">
-      <img src="img/blob-header-homepage.svg" alt="" />
+      <img src="img/homepage/blob-header-homepage.svg" alt="" />
     </div>
-    <div class="homepage__header-mobile">
-      <img src="img/blob-header-homepage.svg" alt="" />
+    <div class="homepage__header-blob-mobile">
+      <img src="img/homepage/blob-header-homepage.svg" alt="" />
     </div>
     <div class="homepage__header-hex">
       <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
@@ -88,6 +88,25 @@
     </div>
     <div class="homepage__header-hex-logo-mobile">
       <img src="img/homepage/hex-logo-header.svg" alt="" />
+    </div>
+
+    <div class="homepage__hex-mobile-1">
+      <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-2">
+      <img src="img/homepage/homepage-mobile-hex-2.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-3">
+      <img src="img/homepage/homepage-mobile-hex-3.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-4">
+      <img src="img/homepage/homepage-mobile-hex-4.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-5">
+      <img src="img/homepage/homepage-mobile-hex-5.svg" alt="" />
+    </div>
+    <div class="homepage__hex-mobile-6">
+      <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
     </div>
   </div>
   <ts-home-hero />
@@ -130,13 +149,13 @@
       display: none;
     }
 
-    &__header-mobile {
+    &__header-blob-mobile {
       display: block;
       position: absolute;
       width: 1400px;
       overflow: visible;
       top: -400px;
-      left: -1000px;
+      left: -900px;
       z-index: -1;
 
       @media only screen and (max-width: variables.$ts-mobile-max) {
@@ -202,7 +221,56 @@
       display: none;
     }
 
+    &__hex-mobile-1,
+    &__hex-mobile-2,
+    &__hex-mobile-3,
+    &__hex-mobile-4,
+    &__hex-mobile-5,
+    &__hex-mobile-6 {
+      display: none;
+    }
+
     @media only screen and (max-width: variables.$ts-mobile-max) {
+      &__hex-mobile-1,
+      &__hex-mobile-2,
+      &__hex-mobile-3,
+      &__hex-mobile-4,
+      &__hex-mobile-5,
+      &__hex-mobile-6 {
+        display: block;
+        position: absolute;
+        overflow: visible;
+        z-index: -1;
+      }
+      &__hex-mobile-1 {
+        top: -100px;
+        left: 300px;
+      }
+      &__hex-mobile-2 {
+        top: -70px;
+        left: 400px;
+      }
+      &__hex-mobile-3 {
+        top: 170px;
+        left: 475px;
+      }
+      &__hex-mobile-4 {
+        top: 170px;
+        left: 275px;
+      }
+      &__hex-mobile-5 {
+        top: 175px;
+        left: 25px;
+      }
+      &__hex-mobile-6 {
+        top: 300px;
+        left: 250px;
+      }
+
+      &__header-hex-mobile,
+      &__header-hex-logo-mobile {
+        display: none;
+      }
       &__middle-blob,
       &__middle-hex {
         display: none;
@@ -234,6 +302,14 @@
     }
 
     @media only screen and (max-width: variables.$ts-tablet-max) {
+      &__header-hex-logo-mobile {
+        left: -450px;
+      }
+
+      &__header-hex-mobile {
+        left: -1350px;
+      }
+
       &__middle-blob,
       &__middle-hex {
         display: none;

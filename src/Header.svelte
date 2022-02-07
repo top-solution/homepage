@@ -51,7 +51,7 @@
     <a href="index.html">
       <img
         class="header-mobile__logo"
-        src="img/topsolution_logo_{color}.svg"
+        src="img/topsolution_logo_light.svg"
         alt="top Solution"
         height="70"
       /></a
@@ -88,6 +88,12 @@
       alt="Main Hex Mobile"
       class="header-mobile__main-hex"
     />
+    <img
+      src="img/header/header-mobile-hex.svg"
+      alt="Hex"
+      class="header-mobile__hex-group"
+    />
+
     <div class="header-mobile__links">
       <a href="index.html">HOME</a>
       <a href="hr-development.html"
@@ -185,8 +191,16 @@
       display: none;
     }
 
+    &__hex-group {
+      position: absolute;
+      z-index: -1;
+      top: -200;
+      left: -175;
+    }
+
     &__wrapper {
       position: relative;
+      top: -35px;
       transition: opacity variables.$ts-transition-timing-default
         variables.$ts-transition-function-default;
     }
