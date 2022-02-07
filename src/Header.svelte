@@ -15,6 +15,16 @@
       document.body.style.position = "";
     }
   }
+
+  function closeHeaderMobileMenu() {
+    if (window.innerWidth < 600) {
+      menuIsOpened = false;
+      headerHeight = "height: 0px";
+      document.body.style.position = "";
+    }
+  }
+
+  window.onresize = closeHeaderMobileMenu;
 </script>
 
 <header>

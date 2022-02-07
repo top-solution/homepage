@@ -122,7 +122,7 @@
   />
   <div slot="external">
     <div class="homepage__middle-blob">
-      <img src="img/blob-middle-homepage.svg" alt="" />
+      <img src="img/homepage/blob-middle-homepage.svg" alt="" />
     </div>
     <div class="homepage__middle-hex">
       <img src="img/homepage/group-hex-middle-desktop.svg" alt="" />
@@ -248,7 +248,7 @@
       }
       &__hex-mobile-2 {
         top: -70px;
-        left: 400px;
+        left: 380px;
       }
       &__hex-mobile-3 {
         top: 170px;
