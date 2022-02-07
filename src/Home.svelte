@@ -90,6 +90,7 @@
       <img src="img/homepage/hex-logo-header.svg" alt="" />
     </div>
 
+    <!-- FIXME: Update it with a group-->
     <div class="homepage__hex-mobile-1">
       <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
     </div>
