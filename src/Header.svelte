@@ -99,7 +99,7 @@
         >DEV
         <span class="header-mobile__links--slime">Sviluppo Software</span></a
       >
-      <a href="haka.html#tariffe">TARIFFE</a>
+      <a href="haka.html#plans">TARIFFE</a>
       <a href="company.html">AZIENDA</a>
       <a href="team.html">TEAM</a>
       <a href="contacts.html">CONTATTI</a>

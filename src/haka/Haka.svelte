@@ -2,6 +2,7 @@
 
 <script>
   import "@material/mwc-snackbar";
+  import { onMount } from "svelte";
   import {
     performanceTable,
     performanceColumns,
@@ -18,6 +19,7 @@
   let performanceElement = null;
   let expertiseElement = null;
   let potentialElement = null;
+  let plansElement = null;
 
   const collapsibleHeights = {
     performance: 0,
@@ -27,6 +29,16 @@
   };
 
   let expandedSections = {};
+
+  onMount(() => {
+    if (window.location.hash === "#plans") {
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          plansElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 500);
+      });
+    }
+  });
 
   function handleRequestTrialSubmit() {
     snackbarElement.show();
@@ -227,8 +239,10 @@
       </ol>
     </div>
   </div>
-  <div class="page-haka__our-plans">
-    <h3 id="plans" class="title-3 title-form">I nostri <b>PIANI</b></h3>
+  <div bind:this={plansElement} class="page-haka__our-plans">
+    <h3 id="plans" class="title-3 title-form">
+      I nostri <b>PIANI</b>
+    </h3>
     <p class="body-2">
       Ogni piano è <b>one shot</b>, scegliendo <b>Haka</b> sei libero di <br />
       utilizzare il servizio <b>senza</b> effettuare <b>abbonamenti</b>
@@ -725,7 +739,8 @@
     }
 
     &__our-plans {
-      margin-top: 300px;
+      margin-top: 250px;
+      padding-top: variables.$ts-spacing-6;
       text-align: center;
 
       .body-2 {

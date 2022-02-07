@@ -13,7 +13,7 @@
       <div><a href="hr-development.html">HR</a></div>
       <div><a href="error.html">DEV</a></div>
       <!-- FIXME: LINKS -->
-      <div><a href="haka.html#tariffe">Tariffe</a></div>
+      <div><a href="haka.html#plans">Tariffe</a></div>
       <div><a href="privacy-policy.html">Privacy Policy</a></div>
     </div>
     <div class="footer-top__box">

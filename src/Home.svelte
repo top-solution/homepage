@@ -1,6 +1,10 @@
 <svelte:options tag="ts-page-home" />
 
 <script>
+  import { onMount } from "svelte";
+
+  let customersElement = null;
+
   let developmentHumanResourceBlobs = [
     {
       icon: "devices.svg",
@@ -50,6 +54,19 @@
       width: "260px",
     },
   ];
+
+  onMount(() => {
+    if (window.location.hash === "#customers") {
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          customersElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 500);
+      });
+    }
+  });
 </script>
 
 <ts-layout class="homepage">
@@ -98,7 +115,7 @@
       <img src="img/homepage/group-hex-middle-homepage.svg" alt="" />
     </div>
   </div>
-  <ts-customers />
+  <ts-customers bind:this={customersElement} />
 </ts-layout>
 
 <style lang="scss" global>
