@@ -246,7 +246,7 @@
         }
         &-4 {
           top: 170px;
-          left: 275px;
+          left: 300px;
         }
         &-5 {
           top: 175px;
@@ -254,7 +254,7 @@
         }
         &-6 {
           top: 300px;
-          left: 250px;
+          left: 275px;
         }
       }
 
@@ -281,7 +281,7 @@
         width: 1400px;
         overflow: visible;
         right: -1155px;
-        top: 1425px;
+        top: 1450px;
         z-index: -1;
       }
     }
