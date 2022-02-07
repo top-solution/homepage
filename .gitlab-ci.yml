@@ -16,7 +16,7 @@ build:
   cache: *webappcache
   script:
     - npm install
-    - npm run build
+    - DEPLOY_TO=$DEPLOY_TO npm run build
   artifacts:
     paths:
       - public

@@ -43,10 +43,14 @@
     slot="actions"
     style="display: flex; flex-direction: column; max-width: 175px; margin: auto;"
   >
-    <ts-button variant="secondary" href="#tariffe" style="margin-bottom: 48px"
-      >Prova gratuita
+    <ts-button
+      variant="secondary"
+      href="#free-trial"
+      style="margin-bottom: 48px"
+    >
+      Prova gratuita
     </ts-button>
-    <ts-button variant="primary" href="#tariffe">Tariffe</ts-button>
+    <ts-button variant="primary" href="#plans">Tariffe</ts-button>
   </div>
   <div slot="external">
     <ts-header-hexagons-desktop />
@@ -224,7 +228,7 @@
     </div>
   </div>
   <div class="page-haka__our-plans">
-    <h3 class="title-3 title-form">I nostri <b>PIANI</b></h3>
+    <h3 id="plans" class="title-3 title-form">I nostri <b>PIANI</b></h3>
     <p class="body-2">
       Ogni piano è <b>one shot</b>, scegliendo <b>Haka</b> sei libero di <br />
       utilizzare il servizio <b>senza</b> effettuare <b>abbonamenti</b>
@@ -510,7 +514,10 @@
         </ts-blob>
       </ts-collapsible-section>
     </div>
-    <ts-request-trial on:formsubmit={handleRequestTrialSubmit} />
+    <ts-request-trial
+      id="free-trial"
+      on:formsubmit={handleRequestTrialSubmit}
+    />
     <mwc-snackbar
       bind:this={snackbarElement}
       labelText="La tua richiesta è stata presa in carico dal nostro team"
