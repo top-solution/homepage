@@ -6,6 +6,7 @@
   import "@material/mwc-textarea";
   import { createEventDispatcher } from "svelte";
   import { get_current_component } from "svelte/internal";
+  import RecaptchaTOS from "../RecaptchaTOS.svelte";
 
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
@@ -83,20 +84,27 @@
       return;
     }
 
-    console.log(event, form);
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute(gRecaptchaSiteKey, { action: "submit" })
+        .then(function (token) {
+          console.log(event, { ...form, gRecaptchaToken: token });
 
-    form = {
-      name: "",
-      role: "",
-      companyName: "",
-      email: "",
-      message: "",
-      employees: "",
-      industry: "",
-    };
-    dispatch("formsubmit", {});
+          form = {
+            name: "",
+            role: "",
+            companyName: "",
+            email: "",
+            message: "",
+            employees: "",
+            industry: "",
+          };
 
-    drawerOpen = false;
+          dispatch("formsubmit", {});
+
+          drawerOpen = false;
+        });
+    });
   }
 </script>
 
@@ -251,6 +259,7 @@
           }}
         />
       </div>
+      <RecaptchaTOS />
       <div id="request-trial__submit-button-form-row">
         <ts-button
           id="request-trial__submit"
