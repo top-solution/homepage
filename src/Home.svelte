@@ -178,7 +178,7 @@
       width: 1400px;
       overflow: visible;
       top: -480px;
-      left: -400px;
+      left: -390px;
       z-index: -1;
     }
 
