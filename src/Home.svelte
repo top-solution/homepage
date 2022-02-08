@@ -167,8 +167,8 @@
       position: absolute;
       width: 1400px;
       overflow: visible;
-      top: -650px;
-      left: -1150px;
+      top: -630px;
+      left: -1040px;
       z-index: -1;
     }
 
@@ -178,7 +178,7 @@
       width: 1400px;
       overflow: visible;
       top: -480px;
-      left: -390px;
+      left: -320px;
       z-index: -1;
     }
 
