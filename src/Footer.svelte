@@ -11,8 +11,7 @@
     <div class="footer-top__link-box">
       <div class="title-6">Link utili</div>
       <div><a href="hr-development.html">HR</a></div>
-      <div><a href="error.html">DEV</a></div>
-      <!-- FIXME: LINKS -->
+      <!-- <div><a href="error.html">DEV</a></div> -->
       <div><a href="haka.html#plans">Tariffe</a></div>
       <div><a href="privacy-policy.html">Privacy Policy</a></div>
     </div>
@@ -20,14 +19,10 @@
       <div class="title-6">Servizi</div>
       <div><a href="haka.html">Audit competenze</a></div>
       <div><a href="company-development.html">Sviluppo organizzativo</a></div>
-      <div><a href="error.html">Sviluppo individuale</a></div>
-      <!-- FIXME: LINKS -->
+      <!-- <div><a href="error.html">Sviluppo individuale</a></div>
       <div><a href="error.html">Applicazioni web e mobile</a></div>
-      <!-- FIXME: LINKS -->
       <div><a href="error.html">Consulenza sviluppo software</a></div>
-      <!-- FIXME: LINKS -->
-      <div><a href="error.html">Cloud computing</a></div>
-      <!-- FIXME: LINKS -->
+      <div><a href="error.html">Cloud computing</a></div> -->
     </div>
     <div class="footer-top__bordered-box">
       <div class="title-6">Contatti</div>
