@@ -38,12 +38,7 @@
   </div>
   <div class="header">
     <a href="index.html">
-      <img
-        src="img/topsolution_logo_{color}.svg"
-        alt="top Solution"
-        width="150"
-        height="45"
-      /></a
+      <img src="img/topsolution_logo_{color}.svg" alt="top Solution" /></a
     >
     <div class="header__link">
       <a href="hr-development.html"><strong>HR</strong></a>
@@ -169,13 +164,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: variables.$ts-spacing-1 0;
+
+    img {
+      height: 50px;
+    }
 
     &__link {
       display: flex;
       flex-wrap: wrap;
 
       a {
-        margin: 0 25px;
+        margin: 0 variables.$ts-spacing-3;
         text-decoration: none;
         font-size: 24px;
         line-height: 28px;
@@ -183,6 +183,10 @@
         &:hover {
           color: variables.$ts-blue-color-hovering;
           text-decoration: underline;
+        }
+
+        &:last-of-type {
+          margin-right: variables.$ts-spacing-2;
         }
       }
     }
@@ -319,7 +323,8 @@
     justify-content: flex-end;
     height: 30px;
     align-items: center;
-    margin-top: 12px;
+    padding: variables.$ts-spacing-3 variables.$ts-spacing-1
+      variables.$ts-spacing-2;
 
     span {
       @media only screen and (max-width: variables.$ts-mobile-max) {
