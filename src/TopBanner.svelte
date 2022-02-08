@@ -72,7 +72,7 @@
     }
 
     &__actions {
-      margin: variables.$ts-spacing-9 auto variables.$ts-spacing-5;
+      margin: variables.$ts-spacing-5 auto variables.$ts-spacing-4;
       display: flex;
       flex-direction: column;
       justify-content: center;
