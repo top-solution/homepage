@@ -12,6 +12,7 @@
       subtitle: "Analisi e mappatura delle competenze professionali",
       color: "#e9e8f2",
       width: "240px",
+      href: "/haka.html",
     },
     {
       icon: "optionPaper.svg",
@@ -19,6 +20,7 @@
       subtitle: "Training, coaching e crescita professionale",
       color: "#e9e8f2",
       width: "245px",
+      href: "/company-development.html",
     },
     {
       icon: "cloud.svg",
@@ -26,6 +28,7 @@
       subtitle: "Management diagnostic e clima organizzativo",
       color: "#e9e8f2",
       width: "240px",
+      href: "/self-development.html",
     },
   ];
 
@@ -37,6 +40,7 @@
         "Single page web applications, rest api, micro-services, hybrid apps",
       color: "#e3f1fa",
       width: "260px",
+      href: "/applications.html",
     },
     {
       icon: "palace.svg",
@@ -44,6 +48,7 @@
       subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
       color: "#e3f1fa",
       width: "260px",
+      html: "/consulting.html",
     },
     {
       icon: "user.svg",
@@ -52,6 +57,7 @@
         "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
       color: "#e3f1fa",
       width: "260px",
+      html: "/cloud.html",
     },
   ];
 

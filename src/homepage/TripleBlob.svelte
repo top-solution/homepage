@@ -10,30 +10,33 @@
   <h1 class="title-2 triple-blob__title">{title}</h1>
   <div class="triple-blob__container">
     {#each blobs as blob}
-      <ts-blob
-        interactive="true"
-        shape="rectangle"
-        style={`max-width: ${blob.width};`}
-        fill={blob.color}
-        padding="20"
-      >
-        <div class="triple-blob__text">
-          <p class="triple-blob__icon">
-            <img
-              src={`../img/icons/${blob.icon}`}
-              alt="devices icon"
-              width="50"
-              height="35"
-            />
-          </p>
-          <div class="claim triple-blob__main-text">
-            <b>{blob.title}</b>
+      <a class="triple-blob__container__link" href={blob.href}>
+        <ts-blob
+          interactive="true"
+          shape="rectangle"
+          style={`max-width: ${blob.width};`}
+          fill={blob.color}
+          padding="20"
+          clickable="true"
+        >
+          <div class="triple-blob__text">
+            <p class="triple-blob__icon">
+              <img
+                src={`../img/icons/${blob.icon}`}
+                alt="devices icon"
+                width="50"
+                height="35"
+              />
+            </p>
+            <div class="claim triple-blob__main-text">
+              <b>{blob.title}</b>
+            </div>
+            <p class="triple-blob__subtitle">
+              {blob.subtitle}
+            </p>
           </div>
-          <p class="triple-blob__subtitle">
-            {blob.subtitle}
-          </p>
-        </div>
-      </ts-blob>
+        </ts-blob>
+      </a>
     {/each}
   </div>
   <div class="triple-blob__button">
@@ -63,7 +66,7 @@
         margin-left: -(variables.$ts-spacing-6);
         margin-right: -(variables.$ts-spacing-6);
 
-        ts-blob {
+        &__link {
           margin: 0 variables.$ts-spacing-2 !important;
           height: 100%;
           min-width: 260px;
@@ -72,7 +75,7 @@
       }
     }
 
-    ts-blob {
+    &__container__link {
       margin: 0 variables.$ts-spacing-2 !important;
       min-width: 260px;
 

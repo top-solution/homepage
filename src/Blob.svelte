@@ -17,6 +17,7 @@
   export let interactive = false;
   export let padding = 0;
   export let src = null;
+  export let clickable = "false";
   let paddingStyle = "";
 
   /**
@@ -381,6 +382,7 @@
 
 <div
   class="blob"
+  class:blob--clickable={clickable !== "false"}
   on:mouseenter={interactive === "true" && debouncedHandleMouseEnter}
   on:mouseleave={interactive === "true" && debouncedHandleMouseLeave}
 >
@@ -416,6 +418,10 @@
 </div>
 
 <style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
+
   * {
     margin: 0;
     padding: 0;
@@ -425,6 +431,20 @@
   .blob {
     position: relative;
     width: 100%;
+
+    &--clickable {
+      cursor: pointer;
+      path {
+        transition: filter variables.$ts-transition-timing-quick
+          variables.$ts-transition-function-default;
+      }
+
+      &:hover {
+        path {
+          filter: brightness(0.9) saturate(1.5);
+        }
+      }
+    }
 
     &:after {
       content: "";
