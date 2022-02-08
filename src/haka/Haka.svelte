@@ -20,6 +20,7 @@
   let expertiseElement = null;
   let potentialElement = null;
   let plansElement = null;
+  let requestTrialElement = null;
 
   const collapsibleHeights = {
     performance: 0,
@@ -59,10 +60,18 @@
       variant="secondary"
       href="#free-trial"
       style="margin-bottom: 48px"
+      on:mouseup={() =>
+        requestTrialElement.scrollIntoView({ behavior: "smooth" })}
     >
       Prova gratuita
     </ts-button>
-    <ts-button variant="primary" href="#plans">Tariffe</ts-button>
+    <ts-button
+      variant="primary"
+      href="#plans"
+      on:mouseup={() => plansElement.scrollIntoView({ behavior: "smooth" })}
+    >
+      Tariffe
+    </ts-button>
   </div>
   <div slot="external">
     <ts-header-hexagons-desktop />
@@ -195,7 +204,14 @@
       </ol>
     </div>
     <div class="page-haka__free-trial">
-      <ts-button variant="secondary" href="">PROVA GRATUITA</ts-button>
+      <ts-button
+        variant="secondary"
+        href="#free-trial"
+        on:mouseup={() =>
+          requestTrialElement.scrollIntoView({ behavior: "smooth" })}
+      >
+        PROVA GRATUITA
+      </ts-button>
     </div>
   </div>
   <div class="page-haka__service-expertise page-haka__service">
@@ -540,6 +556,7 @@
     </div>
     <ts-request-trial
       id="free-trial"
+      bind:this={requestTrialElement}
       on:formsubmit={handleRequestTrialSubmit}
     />
     <mwc-snackbar
@@ -547,8 +564,8 @@
       labelText="La tua richiesta è stata presa in carico dal nostro team"
     />
     <!-- <div style="width: 100%; height: 50vh" /> -->
-  </div></ts-layout
->
+  </div>
+</ts-layout>
 
 <style lang="scss" global>
   @use "../styles/variables";
