@@ -10,11 +10,9 @@
   // import { lineString } from "@turf/helpers";
 
   export let fill = "#E9E8F2";
-  export let fill2;
   export let rotate = null;
   export let flip = false;
   export let shape = "hexagon";
-  export let fade = null;
   export let variance = 1;
   export let interactive = false;
   export let padding = 0;
@@ -394,22 +392,6 @@
     preserveAspectRatio="none"
     style={flip ? "transform: scaleX(-1)" : undefined}
   >
-    {#if fill2}
-      <defs>
-        <linearGradient id="blob__gradient">
-          <stop
-            stop-color={fill}
-            offset="0%"
-            stop-opacity={fade === "x-reverse" ? 0 : undefined}
-          />
-          <stop
-            stop-color={fill2 || fill}
-            offset="100%"
-            stop-opacity={fade === "x" ? 0 : undefined}
-          />
-        </linearGradient>
-      </defs>
-    {/if}
     {#if src}
       <defs>
         <pattern
@@ -427,11 +409,7 @@
     <path
       id="path"
       d={path}
-      fill={src
-        ? `url(#blob__image)`
-        : fill2
-        ? `url(#blob__gradient)`
-        : fill ?? "#EBEAF3"}
+      fill={src ? `url(#blob__image)` : fill ?? "#EBEAF3"}
       style={`box-shadow: 5px 10px #888888; ${transform}; transform-box: fill-box; transform-origin: center;`}
     />
   </svg>
