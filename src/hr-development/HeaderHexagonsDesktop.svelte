@@ -227,13 +227,15 @@
       &__left {
         transform-origin: left;
         left: -110px;
-        top: -420px;
+        //top: -420px;
+        top: -100px;
       }
 
       &__right {
         transform-origin: right;
         right: -60px;
-        top: -280px;
+        //top: -280px;
+        top: 100px;
       }
     }
   }
