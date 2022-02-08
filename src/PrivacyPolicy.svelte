@@ -6,7 +6,8 @@
 
 <ts-layout class="privacy-policy">
   <div class="privacy-policy__container">
-    <div class="title-6">Privacy Policy di <b>www.topsolution.it</b></div>
+    <div class="title-5">Privacy Policy di <b>www.topsolution.it</b></div>
+    <div class="title-6">Privacy Policy Semplificata</div>
     <p>
       Questa Applicazione raccoglie alcuni Dati Personali dei propri Utenti.
     </p>
@@ -15,6 +16,75 @@
       presente nelle impostazioni di qualsiasi browser.
     </p>
     <hr />
+    <div class="title-6">
+      <b
+        >Dati Personali trattati per le seguenti finalità e utilizzando i
+        seguenti servizi:</b
+      >
+    </div>
+    <div class="privacy-policy__flex-container">
+      <div class="privacy-policy__flex-item">
+        <div class="privacy-policy__flex-icon">
+          <img src="img/icons/mail.svg" width="32" height="32" alt="Mail" />
+        </div>
+        <div class="privacy-policy__flex-box">
+          <div>
+            <b>Contattare l'Utente</b>
+          </div>
+          <div>Modulo di contatto</div>
+          <div>
+            <div>
+              Dati Personali: Nome, cognome, data di nascita, email, numero di
+              telefono, anni di esperienza, titolo di studio.
+            </div>
+
+            <div>
+              Dati Aziendali: nome azienda, ruolo, numero di dipendenti,
+              settore.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="privacy-policy__flex-item">
+        <div class="privacy-policy__flex-icon">
+          <img
+            src="img/icons/optionPaper.svg"
+            width="32"
+            height="32"
+            alt="Option Paper"
+          />
+        </div>
+        <div class="privacy-policy__flex-box">
+          <div>
+            <b>Gestione della raccolta dati e dei sondaggi online</b>
+          </div>
+          <div>Dati raccolti tramite moduli online gestiti in proprio</div>
+          <div>Dati Personali: nome; numero di telefono</div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class="title-6">
+      <b>Informazioni di contatto:</b>
+    </div>
+    <div class="privacy-policy__flex-container">
+      <div class="privacy-policy__flex-icon">
+        <img src="img/icons/user.svg" width="32" height="32" alt="User" />
+      </div>
+      <div class="privacy-policy__flex-box">
+        <div>
+          <b>Titolare del Trattamento dei Dati</b>
+        </div>
+        <div>Top Solution s.r.l</div>
+        <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
+        <div>
+          <b>Indirizzo email del Titolare</b>: info@topsolution.it
+        </div>
+      </div>
+    </div>
+
+    <div class="title-6">Privacy Policy Estesa</div>
     <div class="title-6"><b>Titolare del Trattamento dei Dati</b></div>
     <p>Top Solution s.r.l</p>
     <p>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</p>
@@ -431,6 +501,29 @@
 
   .privacy-policy {
     color: variables.$ts-blue-color;
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      &__flex {
+        &-container {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &__flex {
+      &-container {
+        display: flex;
+      }
+
+      &-item {
+        display: flex;
+      }
+
+      &-box {
+        margin-left: variables.$ts-spacing-1;
+      }
+    }
 
     &__container {
       padding: variables.$ts-spacing-5;
