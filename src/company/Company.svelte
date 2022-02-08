@@ -12,10 +12,10 @@
     <div class="page-company__blob">
       <ts-blob
         interactive="true"
-        shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
+        shape="rectanglehr"
         fill="#EBEAF3"
         padding="24"
-        variance={window.innerWith > 900 ? 1.4 : 1.2}
+        variance={window.innerWith > 900 ? 2.0 : 1.2}
       >
         <div class="page-company__blob__content">
           <p class="body-1">
@@ -47,10 +47,11 @@
     <div class="page-company__blob">
       <ts-blob
         interactive="true"
-        shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
+        shape="rectanglehr"
         fill="#EBEAF3"
         padding="24"
-        variance={window.innerWith > 900 ? 1.4 : 1.2}
+        variance={window.innerWith > 900 ? 2.0 : 1.2}
+        flip="true"
       >
         <div class="page-company__blob__content">
           <p class="body-1">
@@ -71,10 +72,10 @@
     <div class="page-company__blob">
       <ts-blob
         interactive="true"
-        shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
+        shape="rectanglehr"
         fill="#EBEAF3"
         padding="24"
-        variance={window.innerWith > 900 ? 1.4 : 1.2}
+        variance={window.innerWith > 900 ? 2.0 : 1.2}
       >
         <div class="page-company__blob__content">
           <p class="body-1">
