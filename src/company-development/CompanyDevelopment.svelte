@@ -252,10 +252,6 @@
     margin-bottom: variables.$ts-spacing-15;
   }
 
-  .claim {
-    max-width: 80%;
-  }
-
   .page-company-development {
     display: block;
     color: variables.$ts-blue-color;
@@ -507,6 +503,10 @@
     }
 
     @media only screen and (max-width: variables.$ts-mobile-max) {
+      .claim {
+        max-width: 80%;
+      }
+
       &__services {
         margin-bottom: 180px;
 
