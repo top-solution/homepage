@@ -3,7 +3,7 @@
 <script>
   export let title = "";
   export let blobs = [];
-  export let buttonLink = "";
+  export let buttonlink = "";
 </script>
 
 <div class="triple-blob">
@@ -40,9 +40,9 @@
     {/each}
   </div>
   <div class="triple-blob__button">
-    <ts-button variant="outlined" href={buttonLink} type="button"
-      >Scopri</ts-button
-    >
+    <ts-button variant="outlined" href={buttonlink} type="button">
+      Scopri
+    </ts-button>
   </div>
 </div>
 

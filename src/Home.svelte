@@ -119,12 +119,12 @@
   <ts-home-hero />
   <ts-triple-blob
     title="SVILUPPO DELLE RISORSE UMANE"
-    buttonLink="hr-development.html"
+    buttonlink="/hr-development.html"
     blobs={developmentHumanResourceBlobs}
   />
   <ts-triple-blob
     title="SVILUPPO SOFTWARE"
-    buttonLink="error.html"
+    buttonlink="/software.html"
     blobs={developmentSoftwareBlobs}
   />
   <div slot="external">
