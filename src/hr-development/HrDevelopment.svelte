@@ -27,12 +27,6 @@
   </div>
 </ts-top-banner>
 <ts-layout class="page-hr-development">
-  <ts-hex
-    class="page-hr-development__floating-hex-2"
-    width="85"
-    fill="#d6d4e6"
-    shadow="false"
-  />
   <div class="page-hr-development__copy">
     <p class="claim">
       Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
@@ -176,13 +170,6 @@
         right: -90px;
       }
 
-      &-2 {
-        width: 82px;
-        position: absolute;
-        top: -70px;
-        right: calc(50% + 48px);
-      }
-
       &-3 {
         width: 130px;
         position: absolute;
@@ -273,9 +260,6 @@
 
     @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
       &__floating-hex {
-        &-2 {
-          top: -90px;
-        }
         &-3 {
           display: none;
         }
@@ -284,13 +268,6 @@
 
     @media only screen and (max-width: variables.$ts-mobile-max) {
       &__floating-hex {
-        &-2 {
-          right: unset;
-          left: 15%;
-          top: -130px;
-          width: 55px;
-        }
-
         &-3 {
           display: none;
         }
