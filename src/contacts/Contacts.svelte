@@ -74,6 +74,8 @@
       padding-left: variables.$ts-spacing-3;
       margin: 0;
       font-weight: 400;
+      display: flex;
+      flex-direction: column;
 
       &__contact {
         flex: 1 0 50%;
@@ -81,6 +83,14 @@
         margin-bottom: variables.$ts-spacing-2;
         order: 4;
         line-height: 35px;
+
+        &-email {
+          order: 1;
+        }
+
+        &-phone {
+          order: 2;
+        }
 
         &:last-of-type {
           margin-bottom: 0;
