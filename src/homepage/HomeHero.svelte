@@ -16,9 +16,9 @@
 </div>
 
 <style lang="scss">
-  @use "./styles/variables";
+  @use "../styles/variables";
 
-  @import "./styles/main.scss";
+  @import "../styles/main.scss";
 
   .home-hero {
     margin-top: variables.$ts-spacing-9;
