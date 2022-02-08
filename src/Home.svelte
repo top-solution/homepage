@@ -32,34 +32,34 @@
     },
   ];
 
-  let developmentSoftwareBlobs = [
-    {
-      icon: "lens.svg",
-      title: "APPLICAZIONI WEB E MOBILE",
-      subtitle:
-        "Single page web applications, rest api, micro-services, hybrid apps",
-      color: "#e3f1fa",
-      width: "260px",
-      href: "/applications.html",
-    },
-    {
-      icon: "palace.svg",
-      title: "CONSULENZA SVILUPPO SW",
-      subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
-      color: "#e3f1fa",
-      width: "260px",
-      html: "/consulting.html",
-    },
-    {
-      icon: "user.svg",
-      title: "CLOUD COMPUTING",
-      subtitle:
-        "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
-      color: "#e3f1fa",
-      width: "260px",
-      html: "/cloud.html",
-    },
-  ];
+  // let developmentSoftwareBlobs = [
+  //   {
+  //     icon: "lens.svg",
+  //     title: "APPLICAZIONI WEB E MOBILE",
+  //     subtitle:
+  //       "Single page web applications, rest api, micro-services, hybrid apps",
+  //     color: "#e3f1fa",
+  //     width: "260px",
+  //     href: "/applications.html",
+  //   },
+  //   {
+  //     icon: "palace.svg",
+  //     title: "CONSULENZA SVILUPPO SW",
+  //     subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
+  //     color: "#e3f1fa",
+  //     width: "260px",
+  //     html: "/consulting.html",
+  //   },
+  //   {
+  //     icon: "user.svg",
+  //     title: "CLOUD COMPUTING",
+  //     subtitle:
+  //       "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
+  //     color: "#e3f1fa",
+  //     width: "260px",
+  //     html: "/cloud.html",
+  //   },
+  // ];
 
   onMount(() => {
     if (window.location.hash === "#customers") {
@@ -122,11 +122,11 @@
     buttonlink="/hr-development.html"
     blobs={developmentHumanResourceBlobs}
   />
-  <ts-triple-blob
+  <!-- <ts-triple-blob
     title="SVILUPPO SOFTWARE"
     buttonlink="/software.html"
     blobs={developmentSoftwareBlobs}
-  />
+  /> -->
   <div slot="external">
     <div class="homepage__middle-blob">
       <img src="img/homepage/blob-middle-homepage.svg" alt="" />
@@ -194,7 +194,8 @@
       width: 1400px;
       overflow: visible;
       right: -1125px;
-      top: 1525px;
+      // top: 1525px; // FIXME: ripristinare con la sezione sviluppo software
+      top: 925px;
       z-index: -1;
     }
 
@@ -204,7 +205,8 @@
       width: 1400px;
       overflow: visible;
       right: -1125px;
-      top: 1225px;
+      // top: 1225px; // FIXME: ripristinare con la sezione sviluppo software
+      top: 625;
       z-index: -1;
     }
 
@@ -271,15 +273,6 @@
       &__middle-hex-tablet {
         display: none;
       }
-      &__middle-blob-mobile {
-        display: block;
-        position: absolute;
-        width: 1400px;
-        overflow: visible;
-        right: -1125px;
-        top: 1275px;
-        z-index: -1;
-      }
 
       &__middle-hex-mobile {
         display: block;
@@ -287,7 +280,8 @@
         width: 1400px;
         overflow: visible;
         right: -1155px;
-        top: 1450px;
+        // top: 1450px; FIXME: ripristinare con la sezione sviluppo software
+        top: 820px;
         z-index: -1;
       }
     }
@@ -312,7 +306,8 @@
         width: 1400px;
         overflow: visible;
         right: -1155px;
-        top: 1975px;
+        // top: 1975px; FIXME: ripristinare con la sezione sviluppo software
+        top: 1225px;
         z-index: -1;
 
         @media only screen and (max-width: variables.$ts-mobile-max) {
