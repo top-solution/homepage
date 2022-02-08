@@ -19,8 +19,8 @@
       <div class="title-6">Servizi</div>
       <div><a href="haka.html">Audit competenze</a></div>
       <div><a href="company-development.html">Sviluppo organizzativo</a></div>
-      <!-- <div><a href="error.html">Sviluppo individuale</a></div>
-      <div><a href="error.html">Applicazioni web e mobile</a></div>
+      <div><a href="self-development.html">Sviluppo individuale</a></div>
+      <!-- <div><a href="error.html">Applicazioni web e mobile</a></div>
       <div><a href="error.html">Consulenza sviluppo software</a></div>
       <div><a href="error.html">Cloud computing</a></div> -->
     </div>
