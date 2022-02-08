@@ -64,13 +64,15 @@
   <hr />
   <div class="footer-bottom">
     <div class="footer-bottom__container">
-      <img
-        src="img/topsolution_footer_logo_dark.svg"
-        alt="top-solution_logo"
-        width="79"
-        height="79"
-        class="footer-bottom__img"
-      />
+      <a href="/index.html">
+        <img
+          src="img/topsolution_footer_logo_dark.svg"
+          alt="top-solution_logo"
+          width="79"
+          height="79"
+          class="footer-bottom__img"
+        />
+      </a>
       <div class="footer-bottom__text">
         Entra in contatto con noi Scopri le opportunità per il tuo business
         offerte dalle nostre soluzioni
