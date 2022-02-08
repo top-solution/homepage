@@ -46,7 +46,7 @@
           extension="svg"
         />
       </a>
-      <a
+      <!-- <a
         target="_blank"
         href="https://www.instagram.com/"
         rel="noopener noreferrer"
@@ -58,7 +58,7 @@
           alt="Instagram"
           extension="svg"
         />
-      </a>
+      </a> -->
     </div>
   </div>
   <hr />
