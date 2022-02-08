@@ -304,8 +304,10 @@
             <ts-button
               variant="primary"
               href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
+              style="display: inline-block;"
             >
+              Contattaci
+            </ts-button>
           </div>
         </ts-blob>
       </ts-pricing-table>
@@ -352,8 +354,10 @@
             <ts-button
               variant="primary"
               href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
+              style="display: inline-block;"
             >
+              Contattaci
+            </ts-button>
           </div>
         </ts-blob>
       </ts-pricing-table>
@@ -400,8 +404,10 @@
             <ts-button
               variant="primary"
               href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
+              style="display: inline-block;"
             >
+              Contattaci
+            </ts-button>
           </div>
         </ts-blob>
       </ts-pricing-table>
@@ -448,8 +454,10 @@
             <ts-button
               variant="primary"
               href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
+              style="display: inline-block;"
             >
+              Contattaci
+            </ts-button>
           </div>
         </ts-blob>
       </ts-pricing-table>
@@ -522,8 +530,10 @@
             <ts-button
               variant="primary"
               href="/contacts.html"
-              style="display: inline-block;">Contattaci</ts-button
+              style="display: inline-block;"
             >
+              Contattaci
+            </ts-button>
           </div>
         </ts-blob>
       </ts-collapsible-section>

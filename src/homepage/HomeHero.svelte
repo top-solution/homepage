@@ -10,7 +10,9 @@
       </p>
     </div>
     <div class="home-hero__button">
-      <ts-button variant="primary" href="randompage.html">Contattaci</ts-button>
+      <ts-button variant="primary" href="/contacts.html">
+        Contattaci
+      </ts-button>
     </div>
   </div>
 </div>

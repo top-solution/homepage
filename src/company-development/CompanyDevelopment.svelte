@@ -119,8 +119,9 @@
       class="page-company-development__services-contact-us-button"
       variant="primary"
       href="/contacts.html"
-      target="_blank">Contattaci</ts-button
     >
+      Contattaci
+    </ts-button>
     <ts-hex
       class="page-company-development__floating-hex-2"
       width="44"

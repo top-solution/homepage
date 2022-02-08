@@ -13,7 +13,7 @@
     slot="actions"
     style="display: flex; flex-direction: column; max-width: 175px; margin: auto;"
   >
-    <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
+    <ts-button variant="primary" href="/contacts.html">Contattaci</ts-button>
   </div>
   <div slot="external">
     <ts-header-hexagons-desktop />
@@ -122,8 +122,10 @@
       <ts-button
         variant="primary"
         href="/contacts.html"
-        style="display: inline-block;">Contattaci</ts-button
+        style="display: inline-block;"
       >
+        Contattaci
+      </ts-button>
     </div>
   </ts-blob>
   <ts-hex
