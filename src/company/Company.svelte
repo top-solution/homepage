@@ -160,7 +160,7 @@
       z-index: -10;
 
       ts-blob {
-        width: 520px;
+        width: 545px;
         // margin-right: -(variables.$ts-spacing-10);
       }
 

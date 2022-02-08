@@ -67,7 +67,7 @@
     }
 
     &__text {
-      max-width: variables.$ts-mobile-max;
+      max-width: variables.$ts-mobile-max + variables.$ts-spacing-2;
       margin: 0 auto variables.$ts-spacing-3;
     }
 

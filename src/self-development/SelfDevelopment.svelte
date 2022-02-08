@@ -12,8 +12,8 @@
   title2={true}
 >
   <div class="claim" slot="text">
-    Il <b>sapere</b> delle<br /> persone rappresenta <br /> il bene immateriale
-    <br /> <b>più importante</b> delle organizzazioni.
+    Il <b>sapere</b> delle persone rappresenta il bene immateriale
+    <b>più importante</b> delle organizzazioni.
   </div>
   <div
     slot="actions"
