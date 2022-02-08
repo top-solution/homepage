@@ -86,6 +86,7 @@
     }
 
     &--primary {
+      border: 0;
       color: white;
       background-color: #211a58;
 

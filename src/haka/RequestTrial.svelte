@@ -1,11 +1,9 @@
 <svelte:options tag="ts-request-trial" />
 
 <script>
-  import "@material/ts-select";
-  import "@material/ts-textfield";
-  import "@material/mwc-textarea";
   import { createEventDispatcher } from "svelte";
   import { get_current_component } from "svelte/internal";
+  import HoneypotField from "../HoneypotField.svelte";
 
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
@@ -20,6 +18,7 @@
       component.dispatchEvent(new CustomEvent(name, { detail }));
   };
 
+  let bot = false;
   let form = {
     name: "",
     role: "",
@@ -45,6 +44,10 @@
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (bot) {
+      return;
+    }
 
     if (!form.name || form.name.length === 0) {
       formErrors.name = " ";
@@ -251,6 +254,7 @@
           }}
         />
       </div>
+      <HoneypotField on:change={() => (bot = true)} />
       <div id="request-trial__submit-button-form-row">
         <ts-button
           id="request-trial__submit"

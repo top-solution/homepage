@@ -5,7 +5,6 @@
   let snackbarElement = null;
 
   function handleContactUsSubmit() {
-    contactUsOpen = false;
     snackbarElement.show();
   }
 </script>

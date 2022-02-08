@@ -122,11 +122,15 @@
     &--shrink {
       label {
         transform: translate(14px, -10px) scale(0.75);
+        max-width: 100%;
+        background: #fff;
+        padding: 0 4px;
       }
 
-      legend {
-        visibility: visible;
-        max-width: 100%;
+      fieldset {
+        legend {
+          visibility: visible;
+        }
       }
     }
 
