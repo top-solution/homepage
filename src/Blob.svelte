@@ -447,6 +447,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    z-index: 1;
   }
 
   .content > * {
@@ -459,7 +460,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    // z-index: -1;
     height: 100%;
   }
 </style>

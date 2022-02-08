@@ -71,7 +71,10 @@
       <slot />
     </div>
   </div>
-  <div class="collapsible-section__divider">
+  <div
+    class="collapsible-section__divider"
+    class:collapsible-section__divider--collapsed={!expanded}
+  >
     <hr />
   </div>
 </div>
@@ -85,74 +88,82 @@
     width: calc(100% + 16px);
     margin-left: -8px;
     display: block;
-  }
 
-  .collapsible-section__divider {
-    display: block;
-    margin-top: variables.$ts-spacing-1-5;
-  }
+    background-color: #e3f1fa;
+    border-radius: 4px;
 
-  .collapsible-section__divider hr {
-    padding: variables.$ts-spacing-1 8px;
-    border: 0;
-    border-top: 1px solid transparent;
-    transition: border-color variables.$ts-transition-timing-default
+    transition: background-color variables.$ts-transition-timing-default
       variables.$ts-transition-function-default;
-  }
 
-  .collapsible-section--collapsed {
-    padding-bottom: variables.$ts-spacing-3;
-  }
+    &__divider {
+      display: block;
+      padding-top: variables.$ts-spacing-1-5;
+      background-color: #fff;
 
-  .collapsible-section--collapsed .collapsible-section__divider hr {
-    border-color: variables.$ts-blue-color;
-  }
+      hr {
+        padding: variables.$ts-spacing-1 8px;
+        border: 0;
+        border-top: 1px solid transparent;
+        transition: border-color variables.$ts-transition-timing-default
+          variables.$ts-transition-function-default;
+      }
 
-  .collapsible-section--collapsed .collapsible-section-header img {
-    transform: rotate(0deg);
-  }
-
-  .collapsible-section__collapsible {
-    transition: max-height variables.$ts-transition-timing-default
-      variables.$ts-transition-function-default;
-    overflow: hidden;
-  }
-
-  .collapsible-section-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 0 8px;
-    cursor: pointer;
-  }
-
-  .collapsible-section-header h5 {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 39px;
-    margin: 0;
-  }
-
-  .collapsible-section-header img {
-    height: 34px;
-    width: 34px;
-    margin-bottom: -4px;
-    transform: rotate(45deg);
-    transition: transform variables.$ts-transition-timing-quick
-      variables.$ts-transition-function-default;
-  }
-
-  @media only screen and (max-width: variables.$ts-tablet-max) {
-    .collapsible-section-header h5 {
-      font-size: 18px;
-      line-height: 21px;
-      max-width: 150px;
+      &--collapsed hr {
+        border-color: variables.$ts-blue-color;
+      }
     }
-    .collapsible-section img {
-      width: 26px;
-      height: 26px;
-      margin-bottom: 0;
+
+    &--collapsed {
+      background-color: transparent;
+      padding-bottom: variables.$ts-spacing-3;
+
+      .collapsible-section-header img {
+        transform: rotate(0deg);
+      }
+    }
+
+    &__collapsible {
+      transition: max-height variables.$ts-transition-timing-default
+        variables.$ts-transition-function-default;
+      overflow: hidden;
+    }
+
+    &-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 8px;
+      cursor: pointer;
+    }
+
+    &-header h5 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 39px;
+      margin: 0;
+    }
+
+    &-header img {
+      height: 34px;
+      width: 34px;
+      margin-bottom: -4px;
+      transform: rotate(45deg);
+      transition: transform variables.$ts-transition-timing-quick
+        variables.$ts-transition-function-default;
+    }
+
+    @media only screen and (max-width: variables.$ts-tablet-max) {
+      &-header h5 {
+        font-size: 18px;
+        line-height: 21px;
+        max-width: 150px;
+      }
+      & img {
+        width: 26px;
+        height: 26px;
+        margin-bottom: 0;
+      }
     }
   }
 </style>

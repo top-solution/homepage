@@ -265,35 +265,7 @@
     </p>
   </div>
   <div class="page-haka__our-plans-accordion" style="position: relative;">
-    <!-- TODO: Use hexagon component -->
-    <div
-      style="position: absolute; z-index: -1; left: 0; right: 0; bottom: 0;top: -150px;"
-    >
-      <img
-        class="page-haka__our-plans-accordion-hexagon"
-        src="../img/hexagon-secondary-temp.svg"
-        alt=""
-        style={!Object.values(expandedSections).find((s) => s === true)
-          ? undefined
-          : `height: 0`}
-      />
-    </div>
     <div class="page-haka__our-plans-accordion" style="position: relative;">
-      <div class="page-haka__pricing-table-exagon-container">
-        <!-- TODO: Use hexagon component -->
-        <div>
-          <img
-            class="page-haka__pricing-table-exagon"
-            src="../img/hexagon-secondary-temp.svg"
-            alt=""
-            style={expandedSections["performance"]
-              ? `height: ${
-                  collapsibleHeights.performance * 1.6
-                }px; margin-top: ${-collapsibleHeights.performance * 0.3}px`
-              : "height: 0"}
-          />
-        </div>
-      </div>
       <ts-pricing-table
         title="Valutazione delle performance"
         rows={performanceTable}
@@ -327,21 +299,6 @@
           </div>
         </ts-blob>
       </ts-pricing-table>
-      <div class="page-haka__pricing-table-exagon-container">
-        <!-- TODO: Use hexagon component -->
-        <div>
-          <img
-            class="page-haka__pricing-table-exagon"
-            src="../img/hexagon-secondary-temp.svg"
-            alt=""
-            style={expandedSections["expertise"]
-              ? `height: ${
-                  collapsibleHeights.expertise * 1.45
-                }px; margin-top: ${-collapsibleHeights.expertise * 0.22}px`
-              : "height: 0"}
-          />
-        </div>
-      </div>
       <ts-pricing-table
         class="page-haka__expertise-pricing-table"
         title="Bilancio di competenza"
@@ -377,21 +334,6 @@
           </div>
         </ts-blob>
       </ts-pricing-table>
-      <div class="page-haka__pricing-table-exagon-container">
-        <!-- TODO: Use hexagon component -->
-        <div>
-          <img
-            class="page-haka__pricing-table-exagon"
-            src="../img/hexagon-secondary-temp.svg"
-            alt=""
-            style={expandedSections["expertise180"]
-              ? `height: ${
-                  collapsibleHeights.expertise180 * 1.6
-                }px; margin-top: ${-collapsibleHeights.expertise180 * 0.3}px`
-              : "height: 0"}
-          />
-        </div>
-      </div>
       <ts-pricing-table
         class="page-haka__expertise-pricing-table-mobile"
         title="Bilancio di competenza 180°"
@@ -427,21 +369,6 @@
           </div>
         </ts-blob>
       </ts-pricing-table>
-      <div class="page-haka__pricing-table-exagon-container">
-        <!-- TODO: Use hexagon component -->
-        <div>
-          <img
-            class="page-haka__pricing-table-exagon"
-            src="../img/hexagon-secondary-temp.svg"
-            alt=""
-            style={expandedSections["expertise360"]
-              ? `height: ${
-                  collapsibleHeights.expertise360 * 1.6
-                }px; margin-top: ${-collapsibleHeights.expertise360 * 0.3}px`
-              : "height: 0"}
-          />
-        </div>
-      </div>
       <ts-pricing-table
         title="Bilancio di competenza 360°"
         class="page-haka__expertise-pricing-table-mobile"
@@ -477,21 +404,6 @@
           </div>
         </ts-blob>
       </ts-pricing-table>
-      <div class="page-haka__pricing-table-exagon-container">
-        <!-- TODO: Use hexagon component -->
-        <div>
-          <img
-            class="page-haka__pricing-table-exagon"
-            src="../img/hexagon-secondary-temp.svg"
-            alt=""
-            style={expandedSections["potential"]
-              ? `height: ${collapsibleHeights.potential * 0.9}px; margin-top: ${
-                  -collapsibleHeights.potential * 0.2
-                }px`
-              : "height: 0"}
-          />
-        </div>
-      </div>
       <ts-collapsible-section
         class="pricing-table"
         title="Valutazione del potenziale"
@@ -530,28 +442,31 @@
             </li>
           </ol>
         </div>
-
-        <ts-blob
-          class="page-haka__enterprise-blob page-haka__more-info-blob"
-          interactive="true"
-          shape="hexagon"
-          fill="#EBEAF3"
-          padding="16"
-          variance="1.2"
+        <div
+          class="page-haka__enterprise-blob page-haka__more-info-blob-container"
         >
-          <div
-            class="page-haka__enterprise-blob__content page-haka__more-info-blob__content"
+          <ts-blob
+            class="page-haka__enterprise-blob page-haka__more-info-blob"
+            interactive="true"
+            shape="hexagon"
+            fill="#EBEAF3"
+            padding="16"
+            variance="1.2"
           >
-            <p class="body-2">Desideri maggiori <b>informazioni</b>?</p>
-            <ts-button
-              variant="primary"
-              href="/contacts.html"
-              style="display: inline-block;"
+            <div
+              class="page-haka__enterprise-blob__content page-haka__more-info-blob__content"
             >
-              Contattaci
-            </ts-button>
-          </div>
-        </ts-blob>
+              <p class="body-2">Desideri maggiori<br /><b>informazioni</b>?</p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block;"
+              >
+                Contattaci
+              </ts-button>
+            </div>
+          </ts-blob>
+        </div>
       </ts-collapsible-section>
     </div>
     <ts-request-trial
@@ -785,7 +700,7 @@
     }
 
     &__enterprise-blob {
-      margin: 280px auto 180px;
+      margin: 0 auto;
       display: flex;
       justify-content: center;
       width: 400px;
@@ -809,24 +724,27 @@
       }
     }
 
-    &__more-info-blob {
-      margin: 200px auto;
-    }
-
     &__expertise-pricing-table-mobile {
       display: none;
       font-size: 20px;
     }
 
-    &__more-info-blob__content p {
-      font-size: 20px;
+    &__more-info-blob {
+      &-container {
+        background-color: #fff;
+        width: 100%;
+        padding: variables.$ts-spacing-10 0;
+      }
+
+      &__more-info-blob__content p {
+        font-size: 20px;
+      }
     }
 
     &__pricing-table {
       &__service-potential {
         &-copy {
-          padding-left: 30%;
-          padding-right: variables.$ts-spacing-8;
+          padding: variables.$ts-spacing-3 variables.$ts-spacing-10;
 
           p {
             font-size: 18px;
@@ -837,6 +755,7 @@
         }
 
         &-test {
+          padding: 0 variables.$ts-spacing-3;
           h4 {
             line-height: 14px;
             border-bottom: 1px solid black;
@@ -974,18 +893,17 @@
         bottom: -260px;
       }
 
-      &__enterprise-blob {
-        width: 92%;
-        max-width: 350px;
-        padding-bottom: variables.$ts-spacing-4;
-        margin: auto;
+      // &__enterprise-blob {
+      //   width: 92%;
+      //   max-width: 350px;
+      //   padding-bottom: variables.$ts-spacing-4;
 
-        &__content {
-          width: unset;
-          height: unset;
-          padding: variables.$ts-spacing-2 variables.$ts-spacing-3;
-        }
-      }
+      //   &__content {
+      //     width: unset;
+      //     height: unset;
+      //     padding: variables.$ts-spacing-2 variables.$ts-spacing-3;
+      //   }
+      // }
 
       &__service {
         h4 {
@@ -1035,13 +953,13 @@
       }
 
       &__enterprise-blob {
-        margin-top: variables.$ts-spacing-8;
-        height: 350px !important;
+        //   margin-top: variables.$ts-spacing-8;
+        //   height: 350px !important;
       }
 
       &__more-info-blob {
-        margin-top: variables.$ts-spacing-5;
-        height: 350px;
+        //   margin-top: variables.$ts-spacing-5;
+        //   height: 350px;
       }
 
       &__pricing-table-exagon {
