@@ -90,6 +90,9 @@
       color: white;
       background-color: #211a58;
 
+      transition: background-color variables.$ts-transition-timing-quick
+        variables.$ts-transition-function-default;
+
       &:hover {
         background-color: variables.$ts-blue-color-light;
       }
