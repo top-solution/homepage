@@ -188,9 +188,9 @@
         noiseOffsetY: Math.random() * 1000,
       },
       {
-        x: 70,
+        x: 170,
         y: 200,
-        originX: 70,
+        originX: 170,
         originY: 200,
         noiseOffsetX: Math.random() * 1000,
         noiseOffsetY: Math.random() * 1000,
