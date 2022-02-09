@@ -258,6 +258,16 @@
       }
     }
 
+    @media only screen and (max-width: variables.$ts-tablet-max) {
+      ts-hr-svg {
+        display: none;
+      }
+
+      .claim {
+        text-align: center;
+      }
+    }
+
     @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
       &__floating-hex {
         &-3 {
@@ -323,9 +333,7 @@
         }
       }
     }
-  }
 
-  @media only screen and (max-width: variables.$ts-mobile-max) {
     ts-header-hexagons-desktop {
       display: none;
     }
