@@ -19,6 +19,13 @@
   let performanceElement = null;
   let expertiseElement = null;
   let potentialElement = null;
+
+  let performancePricingElement = null;
+  let expertisePricingElement = null;
+  let expertisePricing180Element = null;
+  let expertisePricing360Element = null;
+  let potentialPricingElement = null;
+
   let plansElement = null;
   let requestTrialElement = null;
 
@@ -202,8 +209,29 @@
     <ts-snail color="#8D88BA" flip="true" />
     <div class="page-haka__service-subservices body-2">
       <ol>
-        <li>AUTO VALUTAZIONE</li>
-        <li>ETERO VALUTAZIONE</li>
+        <li>
+          <a
+            href="#performance-pricing-table"
+            on:mouseup={() => {
+              console.log(performancePricingElement);
+              performancePricingElement.scrollIntoView({ behavior: "smooth" });
+              expandedSections["performance"] = true;
+            }}
+          >
+            AUTO VALUTAZIONE
+          </a>
+        </li>
+        <li>
+          <a
+            href="#performance-pricing-table"
+            on:mouseup={() => {
+              performancePricingElement.scrollIntoView({ behavior: "smooth" });
+              expandedSections["performance"] = true;
+            }}
+          >
+            ETERO VALUTAZIONE
+          </a>
+        </li>
       </ol>
     </div>
     <div class="page-haka__free-trial">
@@ -232,8 +260,32 @@
     <ts-snail color="#211A58" flip="false" />
     <div class="page-haka__service-subservices body-2">
       <ol>
-        <li>VALUTAZIONE 180°</li>
-        <li>VALUTAZIONE 360°</li>
+        <li>
+          <a
+            href="#expertise-pricing-table-180"
+            on:mouseup={() => {
+              expertisePricingElement.scrollIntoView({ behavior: "smooth" });
+              expertisePricing180Element.scrollIntoView({ behavior: "smooth" });
+              expandedSections["expertise"] = true;
+              expandedSections["expertise180"] = true;
+            }}
+          >
+            VALUTAZIONE 180°
+          </a>
+        </li>
+        <li>
+          <a
+            href="#expertise-pricing-table-360"
+            on:mouseup={() => {
+              expertisePricingElement.scrollIntoView({ behavior: "smooth" });
+              expertisePricing360Element.scrollIntoView({ behavior: "smooth" });
+              expandedSections["expertise"] = true;
+              expandedSections["expertise360"] = true;
+            }}
+          >
+            VALUTAZIONE 360°
+          </a>
+        </li>
       </ol>
     </div>
   </div>
@@ -254,7 +306,17 @@
     <ts-snail color="#312783" flip="true" />
     <div class="page-haka__service-subservices body-2">
       <ol>
-        <li>ASSESSMENT CENTER</li>
+        <li>
+          <a
+            href="#potential-pricing-table"
+            on:mouseup={() => {
+              potentialPricingElement.scrollIntoView({ behavior: "smooth" });
+              expandedSections["potential"] = true;
+            }}
+          >
+            ASSESSMENT CENTER
+          </a>
+        </li>
       </ol>
     </div>
   </div>
@@ -270,6 +332,8 @@
   <div class="page-haka__our-plans-accordion" style="position: relative;">
     <div class="page-haka__our-plans-accordion" style="position: relative;">
       <ts-pricing-table
+        bind:this={performancePricingElement}
+        id="performance-pricing-table"
         title="Valutazione delle performance"
         rows={performanceTable}
         columns={performanceColumns}
@@ -303,6 +367,8 @@
         </ts-blob>
       </ts-pricing-table>
       <ts-pricing-table
+        bind:this={expertisePricingElement}
+        id="expertise-pricing-table"
         class="page-haka__expertise-pricing-table"
         title="Bilancio di competenza"
         rows={expertiseTable}
@@ -338,6 +404,8 @@
         </ts-blob>
       </ts-pricing-table>
       <ts-pricing-table
+        bind:this={expertisePricing180Element}
+        id="expertise-pricing-table-180"
         class="page-haka__expertise-pricing-table-mobile"
         title="Bilancio di competenza 180°"
         rows={mobileExpertiseTables[0]}
@@ -373,6 +441,8 @@
         </ts-blob>
       </ts-pricing-table>
       <ts-pricing-table
+        bind:this={expertisePricing360Element}
+        id="expertise-pricing-table-360"
         title="Bilancio di competenza 360°"
         class="page-haka__expertise-pricing-table-mobile"
         rows={mobileExpertiseTables[1]}
@@ -408,6 +478,8 @@
         </ts-blob>
       </ts-pricing-table>
       <ts-collapsible-section
+        bind:this={potentialPricingElement}
+        id="potential-pricing-table"
         class="pricing-table"
         title="Valutazione del potenziale"
         expanded={expandedSections["potential"]}
@@ -416,34 +488,43 @@
         on:collapsible-height-change={(e) =>
           (collapsibleHeights.potential = e.detail.height)}
       >
-        <div class="page-haka__pricing-table__service-potential-copy">
-          <p>
-            Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
-            progettiamo assessment personalizzati con un numero variabile di
-            <b>prove</b>
-            e scenari. A seguito dell’emergenza sanitaria abbiamo riprogettato gli
-            assessment in modalità <b>online</b>, mantenendo comunque inalterati
-            il rapporto con gli assessor e le dinamiche di gruppo. Abbiamo
-            progettato una piattaforma web ad uso degli assessor per
-            standardizzare le valutazioni, e uniformare i giudizi.
-          </p>
-        </div>
-        <div class="page-haka__pricing-table__service-potential-test">
-          <h4>Tra le prove:</h4>
-          <ol>
-            <li>Colloqui in call conference con psicologi</li>
-            <li>
-              Prove a tempo cronometrate con segnalazione di eventuale overtime
-            </li>
-            <li>
-              Incident e inbasket online con la possibilità di avere assistenza
-              remoto
-            </li>
-            <li>
-              Prove di gruppo in call conference con tutti i partecipanti e gli
-              psicologi che verificano l’andamento e valutano i comportamenti
-            </li>
-          </ol>
+        <div
+          class="page-haka__pricing-table__service-potential"
+          class:page-haka__pricing-table__service-potential--collapsed={!expandedSections[
+            "potential"
+          ]}
+        >
+          <div class="page-haka__pricing-table__service-potential-copy">
+            <p>
+              Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
+              progettiamo assessment personalizzati con un numero variabile di
+              <b>prove</b>
+              e scenari. A seguito dell’emergenza sanitaria abbiamo riprogettato
+              gli assessment in modalità <b>online</b>, mantenendo comunque
+              inalterati il rapporto con gli assessor e le dinamiche di gruppo.
+              Abbiamo progettato una piattaforma web ad uso degli assessor per
+              standardizzare le valutazioni, e uniformare i giudizi.
+            </p>
+          </div>
+          <div class="page-haka__pricing-table__service-potential-test">
+            <h4>Tra le prove:</h4>
+            <ol>
+              <li>Colloqui in call conference con psicologi</li>
+              <li>
+                Prove a tempo cronometrate con segnalazione di eventuale
+                overtime
+              </li>
+              <li>
+                Incident e inbasket online con la possibilità di avere
+                assistenza remoto
+              </li>
+              <li>
+                Prove di gruppo in call conference con tutti i partecipanti e
+                gli psicologi che verificano l’andamento e valutano i
+                comportamenti
+              </li>
+            </ol>
+          </div>
         </div>
         <div
           class="page-haka__enterprise-blob page-haka__more-info-blob-container"
@@ -494,6 +575,15 @@
     display: block;
     color: variables.$ts-blue-color;
     box-sizing: border-box;
+
+    a {
+      font-weight: 400;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
 
     &__floating-hex-1 {
       position: absolute;
@@ -568,14 +658,6 @@
     &__services-list li,
     &__service-subservices li {
       margin-bottom: variables.$ts-spacing-3;
-    }
-
-    &__services-list a {
-      font-weight: 400;
-    }
-
-    &__services-list a:hover {
-      text-decoration: underline;
     }
 
     &__services-list li::before,
@@ -707,6 +789,7 @@
       display: flex;
       justify-content: center;
       width: 400px;
+      max-width: 90%;
 
       &__content {
         text-align: center;
@@ -716,13 +799,14 @@
         align-items: center;
         width: 350px;
         height: 350px;
+        max-width: 80%;
 
         & .title-6 {
           font-weight: 300;
         }
 
         .body-2 {
-          margin: variables.$ts-spacing-3 0;
+          margin: variables.$ts-spacing-1 0 variables.$ts-spacing-3;
         }
       }
     }
@@ -746,6 +830,16 @@
 
     &__pricing-table {
       &__service-potential {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background-color: #e3f1fa;
+        transition: background-color variables.$ts-transition-timing-default
+          variables.$ts-transition-function-default;
+
+        &--collapsed {
+          background-color: transparent;
+        }
+
         &-copy {
           padding: variables.$ts-spacing-3 variables.$ts-spacing-10;
 
@@ -806,32 +900,6 @@
           var(--ts-transition-function-default),
         transform var(--ts-transition-timing-default)
           var(--ts-transition-function-default);
-    }
-
-    &__pricing-table-exagon-container {
-      position: relative;
-
-      & > div {
-        position: absolute;
-        z-index: -2;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0px;
-      }
-    }
-
-    &__pricing-table-exagon {
-      width: auto;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, 0) scale(1);
-      transition: height variables.$ts-transition-timing-default
-          variables.$ts-transition-function-default,
-        width variables.$ts-transition-timing-default
-          variables.$ts-transition-function-default,
-        transform variables.$ts-transition-timing-default
-          variables.$ts-transition-function-default;
     }
 
     ts-request-trial {
@@ -935,7 +1003,7 @@
 
       &__our-plans-accordion ts-pricing-table,
       &__our-plans-accordion ts-collapsible-section {
-        margin: variables.$ts-spacing-1-5 0;
+        margin: variables.$ts-spacing-1-5 (-1 * variables.$ts-spacing-3);
         display: block;
       }
 
@@ -947,26 +1015,14 @@
         display: block;
       }
 
-      &__pricing-table__service-potential-copy {
-        padding: variables.$ts-spacing-3 variables.$ts-spacing-1;
-      }
+      &__pricing-table__service-potential {
+        &-copy {
+          padding: variables.$ts-spacing-3 variables.$ts-spacing-1;
+        }
 
-      &__pricing-table__service-potential-test {
-        padding: 0 variables.$ts-spacing-1;
-      }
-
-      &__enterprise-blob {
-        //   margin-top: variables.$ts-spacing-8;
-        //   height: 350px !important;
-      }
-
-      &__more-info-blob {
-        //   margin-top: variables.$ts-spacing-5;
-        //   height: 350px;
-      }
-
-      &__pricing-table-exagon {
-        transform: translate(-50%, 0) scale(1);
+        &-test {
+          padding: 0 variables.$ts-spacing-1;
+        }
       }
 
       ts-request-trial {
@@ -978,24 +1034,6 @@
   @media only screen and (max-width: variables.$ts-mobile-max) {
     .page-haka__services-list {
       max-width: 250px;
-    }
-  }
-
-  @media only screen and (min-width: 700px) and (max-width: 800px) {
-    .page-haka__pricing-table-exagon {
-      transform: translate(-50%, 0) scale(1.1);
-    }
-  }
-
-  @media only screen and (min-width: 800px) and (max-width: 900px) {
-    .page-haka__pricing-table-exagon {
-      transform: translate(-50%, 0) scale(1.3);
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    .page-haka__pricing-table-exagon {
-      transform: translate(-50%, 0) scale(0.8);
     }
   }
 </style>

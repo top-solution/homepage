@@ -90,7 +90,11 @@
   }}
   {title}
 >
-  <div class="pricing-table__table" bind:this={tableElement}>
+  <div
+    class="pricing-table__table"
+    class:pricing-table__table--collapsed={!Boolean(expanded)}
+    bind:this={tableElement}
+  >
     <div
       bind:this={headerElement}
       class="pricing-table__header"
@@ -174,8 +178,18 @@
     &__table {
       font-size: 18px;
       border-collapse: collapse;
+      padding: variables.$ts-spacing-1 variables.$ts-spacing-3
+        variables.$ts-spacing-2;
 
-      padding: variables.$ts-spacing-1 variables.$ts-spacing-3;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: #e3f1fa;
+      transition: background-color variables.$ts-transition-timing-default
+        variables.$ts-transition-function-default;
+
+      &--collapsed {
+        background-color: transparent;
+      }
     }
 
     &__subheader__row {
@@ -206,6 +220,14 @@
     &__subheader__row,
     &__body__row {
       display: flex;
+    }
+
+    &__body__row {
+      &:last-of-type {
+        .pricing-table__body__col {
+          border-bottom: 0;
+        }
+      }
     }
 
     &__col {
