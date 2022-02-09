@@ -70,6 +70,12 @@
 
       & > ts-picture {
         margin: variables.$ts-spacing-2;
+
+        @media only screen and (max-width: variables.$ts-mobile-max) {
+          margin: variables.$ts-spacing-1;
+          max-width: 25%;
+          height: auto;
+        }
       }
     }
   }

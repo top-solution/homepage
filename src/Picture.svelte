@@ -18,3 +18,10 @@
 {#if extension === "svg"}
   <img loading="lazy" src={`../img/${base}/${src}.${extension}`} {alt} />
 {/if}
+
+<style lang="scss">
+  img,
+  picture {
+    max-width: 100%;
+  }
+</style>
