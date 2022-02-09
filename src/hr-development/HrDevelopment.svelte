@@ -290,7 +290,7 @@
 
       &__copy {
         align-items: flex-start;
-        margin-top: variables.$ts-spacing-20;
+        margin-top: variables.$ts-spacing-6;
 
         .claim {
           font-size: 20px;
@@ -311,6 +311,7 @@
 
       &__our-services {
         align-items: stretch;
+        margin-top: variables.$ts-spacing-10;
 
         li {
           display: flex;
