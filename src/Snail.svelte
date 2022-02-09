@@ -172,7 +172,7 @@
     }
 
     @media screen and (max-width: variables.$ts-mobile-max) {
-      $x-margin: -500px;
+      $x-margin: -540px;
 
       &__layout-shift {
         transform: scale(0.5);

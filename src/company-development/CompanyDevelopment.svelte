@@ -484,6 +484,7 @@
         }
 
         & p {
+          box-sizing: border-box;
           padding-right: 60px;
         }
 

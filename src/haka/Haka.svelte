@@ -707,6 +707,7 @@
     &__service {
       position: relative;
       .body-2 {
+        box-sizing: border-box;
         padding-left: 20%;
       }
 
