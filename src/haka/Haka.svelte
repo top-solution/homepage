@@ -1034,7 +1034,8 @@
 
   @media only screen and (max-width: variables.$ts-mobile-max) {
     .page-haka__services-list {
-      max-width: 250px;
+      max-width: 280px;
+      white-space: nowrap;
     }
   }
 </style>
