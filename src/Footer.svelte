@@ -179,6 +179,12 @@
       }
     }
 
+    ts-picture {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+    }
+
     @media only screen and (max-width: variables.$ts-mobile-max) {
       .footer-top {
         flex-wrap: wrap;
