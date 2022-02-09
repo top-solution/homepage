@@ -106,7 +106,7 @@
       margin-top: variables.$ts-spacing-10;
 
       @media only screen and (max-width: variables.$ts-mobile-max) {
-        margin-bottom: variables.$ts-spacing-5;
+        margin-bottom: 0;
       }
     }
 

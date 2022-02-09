@@ -281,7 +281,7 @@
         overflow: visible;
         right: -1155px;
         // top: 1450px; FIXME: ripristinare con la sezione sviluppo software
-        top: 820px;
+        top: 770px;
         z-index: -1;
       }
     }

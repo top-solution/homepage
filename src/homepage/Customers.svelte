@@ -60,6 +60,10 @@
     &__title {
       margin-bottom: variables.$ts-spacing-9;
       text-align: center;
+
+      @media only screen and (max-width: variables.$ts-mobile-max) {
+        margin-bottom: variables.$ts-spacing-5;
+      }
     }
     &__images {
       display: flex;
