@@ -146,9 +146,12 @@
     <ts-button
       class="page-haka__services-brochure-button"
       variant="primary"
-      href="https://www.example.com"
-      target="_blank">SCARICA BROCHURE</ts-button
+      target="_blank"
+      href="/documents/Brochure%20Top%20Solution.pdf"
+      download="Brochure Top Solution.pdf"
     >
+      SCARICA BROCHURE
+    </ts-button>
     <ts-hex
       class="page-haka__floating-hex-2"
       width="44"
