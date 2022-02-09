@@ -1,6 +1,7 @@
 <svelte:options tag="ts-header" />
 
 <script>
+  import { contacts } from "./contacts";
   export let color = "light"; //light, dark
 
   let menuIsOpened = false;
@@ -122,24 +123,24 @@
       </div>
       <div class="header-mobile__contacts" class:hide={menuIsOpened === false}>
         <div class="header-mobile__contacts--item">
-          <img src="img/icons/phone.svg" alt="" /><a href="tel:+39 0112488280"
-            ><span>+39 0112488280</span></a
-          >
+          <img src="img/icons/phone.svg" alt="" />
+          <a href={`tel:${contacts.phone}`}>
+            <span>{contacts.phone}</span>
+          </a>
         </div>
         <div class="header-mobile__contacts--item">
-          <img src="img/icons/mail.svg" alt="" /><a
-            href="mailto:info@topsolution.it"
-            ><span>info@topsolution.it</span></a
-          >
+          <img src="img/icons/mail.svg" alt="" />
+          <a href={`mailto:${contacts.email}`}>
+            <span>{contacts.email}</span>
+          </a>
         </div>
         <div class="header-mobile__contacts--item">
           <img src="img/icons/pin.svg" alt="" />
-          <span>Sede Legale: Corso Regina Margherita, 254 10144 Torino TO</span>
+          <span>Sede Legale: {contacts.registeredOffice}</span>
         </div>
         <div class="header-mobile__contacts--item">
-          <img src="img/icons/pin.svg" alt="" /><span
-            >Sede Operativa: Via Livorno, 60 B2 Lab, 10144 Torino TO</span
-          >
+          <img src="img/icons/pin.svg" alt="" />
+          <span>Sede Operativa: {contacts.operationalOffice}</span>
         </div>
       </div>
     </div>

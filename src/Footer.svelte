@@ -1,5 +1,9 @@
 <svelte:options tag="ts-footer" />
 
+<script>
+  import { contacts } from "./contacts";
+</script>
+
 <footer>
   <div class="footer-top">
     <div class="footer-top__link-box">
@@ -26,10 +30,10 @@
     </div>
     <div class="footer-top__bordered-box">
       <div class="title-6">Contatti</div>
-      <div><a href="tel:+39 0112488280">+39 0112488280</a></div>
-      <div><a href="mailto:info@topsolution.it">info@topsolution.it</a></div>
-      <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
-      <div>Sede Operativa Via Livorno, 60 B2 Lab, 10144 Torino TO</div>
+      <div><a href={`tel:${contacts.phone}`}>{contacts.phone}</a></div>
+      <div><a href={`mailto:${contacts.email}`}>{contacts.email}</a></div>
+      <div>Sede Legale: {contacts.registeredOffice}</div>
+      <div>Sede Operativa: {contacts.operationalOffice}</div>
       <a target="_blank" href="https://twitter.com" rel="noopener noreferrer">
         <ts-picture base="footer" src="twitter" alt="Twitter" extension="svg" />
       </a>

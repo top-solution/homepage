@@ -2,6 +2,8 @@
 
 <script>
   import "@material/mwc-snackbar";
+  import { contacts } from "../contacts";
+
   let snackbarElement = null;
 
   function handleContactUsSubmit() {
@@ -22,24 +24,21 @@
         <li
           class="page-contacts__contacts__contact page-contacts__contacts__contact-email"
         >
-          <img src="img/icons/mail.svg" alt="" /><a
-            href="mailto:info@topsolution.it">info@topsolution.it</a
-          >
+          <img src="img/icons/mail.svg" alt="" />
+          <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
         </li>
         <li class="page-contacts__contacts__contact">
           <img src="img/icons/pin.svg" alt="" />
-          Sede Legale: Corso Regina Margherita, 254 10144 Torino TO
+          Sede Legale: {contacts.registeredOffice}
         </li>
         <li
           class="page-contacts__contacts__contact page-contacts__contacts__contact-phone"
         >
-          <img src="img/icons/phone.svg" alt="" /><a href="tel:+39 0112488280"
-            >+39 0112488280</a
-          >
+          <img src="img/icons/phone.svg" alt="" />
+          <a href={`tel:${contacts.phone}`}>{contacts.phone}</a>
         </li>
         <li class="page-contacts__contacts__contact">
-          <img src="img/icons/pin.svg" alt="" />Sede Operativa: Via Livorno, 60
-          B2 Lab, 10144 Torino TO
+          <img src="img/icons/pin.svg" alt="" />Sede Operativa: {contacts.operationalOffice}
         </li>
       </ol>
     </div>
