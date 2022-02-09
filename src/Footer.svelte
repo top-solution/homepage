@@ -223,6 +223,10 @@
             max-width: 290px;
             margin: variables.$ts-spacing-1-5 auto;
           }
+
+          .title-6 {
+            max-width: 100vw;
+          }
         }
       }
 
