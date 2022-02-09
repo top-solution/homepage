@@ -288,7 +288,7 @@
 
     @media only screen and (max-width: variables.$ts-tablet-max) {
       &__header-hex-logo-mobile {
-        left: -450px;
+        left: -370px;
       }
 
       &__header-hex-mobile {
@@ -313,6 +313,12 @@
         @media only screen and (max-width: variables.$ts-mobile-max) {
           display: none;
         }
+      }
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: 700px) {
+      &__header-hex-logo-mobile {
+        left: -390px;
       }
     }
   }
