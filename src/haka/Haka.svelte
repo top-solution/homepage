@@ -168,33 +168,17 @@
       rotation="-20"
     />
   </div>
-  <div class="page-haka__who-chooses-haka">
-    <h3 class="title-3 title-form">Chi ha scelto <b>HAKA</b></h3>
-    <div class="page-haka__who-chooses-haka__customers">
-      <ts-picture
-        base="customers"
-        src="unioneIndustriale"
-        alt="Unione Industriale"
-      />
-      <ts-picture base="customers" src="confindustria" alt="Confindustria" />
-    </div>
-    <div class="page-haka__who-chooses-haka__customers">
-      <ts-picture base="customers" src="carrefour" alt="Carrefour" />
-      <ts-picture base="customers" src="sanMarco" alt="San Marco" />
-      <ts-picture base="customers" src="euroSearch" alt="Euro Search" />
-    </div>
-
-    <div class="page-haka__contact-us">
-      <ts-contact-us
-        open={contactUsOpen}
-        on:formsubmit={handleRequestTrialSubmit}
-      />
-    </div>
-    <mwc-snackbar
-      bind:this={snackbarElement}
-      labelText="La tua richiesta è stata presa in carico dal nostro team"
+  <ts-haka-customers />
+  <div class="page-haka__contact-us">
+    <ts-contact-us
+      open={contactUsOpen}
+      on:formsubmit={handleRequestTrialSubmit}
     />
   </div>
+  <mwc-snackbar
+    bind:this={snackbarElement}
+    labelText="La tua richiesta è stata presa in carico dal nostro team"
+  />
   <div
     class="page-haka__service-performance page-haka__service page-haka__service--flip"
   >
@@ -677,33 +661,6 @@
       margin-top: variables.$ts-spacing-4;
     }
 
-    &__who-chooses-haka {
-      h3 {
-        font-weight: 300;
-        font-size: 28px;
-        line-height: 33px;
-        text-align: center;
-        margin-bottom: variables.$ts-spacing-4;
-      }
-
-      &__customers {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: variables.$ts-spacing-15;
-        flex-wrap: wrap;
-      }
-
-      &__customers ts-picture {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 24px;
-        flex-wrap: wrap;
-        margin: 0 variables.$ts-spacing-9;
-      }
-    }
-
     &__service {
       position: relative;
       .body-2 {
@@ -925,13 +882,18 @@
         }
       }
 
-      &__services,
-      &__who-chooses-haka {
+      &__services {
         margin-top: variables.$ts-spacing-8;
-      }
 
-      &__who-chooses-haka {
-        margin-bottom: variables.$ts-spacing-15;
+        &__customers {
+          &__customer {
+            margin: 0 variables.$ts-spacing-2 variables.$ts-spacing-6;
+
+            ts-picture {
+              margin: variables.$ts-spacing-2;
+            }
+          }
+        }
       }
 
       &__services-list,
@@ -947,14 +909,6 @@
         margin-right: variables.$ts-spacing-2;
       }
 
-      &__who-chooses-haka__customers {
-        margin: 0 -24px 0;
-      }
-
-      &__who-chooses-haka__customers ts-picture {
-        margin: 0 variables.$ts-spacing-3 variables.$ts-spacing-2;
-      }
-
       &__service + &__service {
         margin-top: variables.$ts-spacing-10;
       }
@@ -964,18 +918,6 @@
         position: absolute;
         bottom: -260px;
       }
-
-      // &__enterprise-blob {
-      //   width: 92%;
-      //   max-width: 350px;
-      //   padding-bottom: variables.$ts-spacing-4;
-
-      //   &__content {
-      //     width: unset;
-      //     height: unset;
-      //     padding: variables.$ts-spacing-2 variables.$ts-spacing-3;
-      //   }
-      // }
 
       &__service {
         h4 {
@@ -1033,9 +975,11 @@
   }
 
   @media only screen and (max-width: variables.$ts-mobile-max) {
-    .page-haka__services-list {
-      max-width: 280px;
-      white-space: nowrap;
+    .page-haka {
+      &__services-list {
+        max-width: 280px;
+        white-space: nowrap;
+      }
     }
   }
 </style>

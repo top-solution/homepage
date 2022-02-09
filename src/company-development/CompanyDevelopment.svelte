@@ -131,33 +131,7 @@
       rotation="-4"
     />
   </div>
-  <div class="page-company-development__who-chooses-company-development">
-    <h3 class="title-3 title-form">Chi ha scelto <b>HAKA</b></h3>
-    <div
-      class="page-company-development__who-chooses-company-development__customers"
-    >
-      <ts-picture
-        base="customers"
-        src="unioneIndustriale"
-        alt="Unione Industriale"
-      />
-      <ts-picture base="customers" src="confindustria" alt="Confindustria" />
-    </div>
-    <div
-      class="page-company-development__who-chooses-company-development__customers"
-    >
-      <ts-picture base="customers" src="avio" alt="Carrefour" />
-      <ts-picture base="customers" src="sanMarco" alt="San Marco" />
-      <ts-picture base="customers" src="magna" alt="Euro Search" />
-    </div>
-    <ts-hex
-      class="page-company-development__floating-hex-3"
-      width="90"
-      fill="#211A58"
-      shadow="true"
-      rotation="-4"
-    />
-  </div>
+  <ts-company-development-customers />
   <div
     id="page-company-development__management_diagnostic"
     class="page-company-development__service"
@@ -358,37 +332,9 @@
       margin-bottom: variables.$ts-spacing-6;
     }
 
-    &__who-chooses-company {
-      &-development {
-        position: relative;
-        overflow: visible;
-        margin-bottom: 200px;
-
-        &__customers {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: variables.$ts-spacing-8;
-          flex-wrap: wrap;
-        }
-
-        &__customers ts-picture {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 24px;
-          flex-wrap: wrap;
-          margin: 0 variables.$ts-spacing-6;
-        }
-
-        & h3 {
-          font-weight: 300;
-          font-size: 28px;
-          line-height: 33px;
-          text-align: center;
-          margin-bottom: variables.$ts-spacing-4;
-        }
-      }
+    ts-company-development-customers {
+      margin-bottom: variables.$ts-spacing-15;
+      display: block;
     }
 
     &__service {
@@ -531,10 +477,6 @@
       &__service-subservices ol {
         font-size: 18px;
         width: 250px;
-      }
-
-      &__who-chooses-company-development {
-        margin-bottom: 120px;
       }
     }
   }

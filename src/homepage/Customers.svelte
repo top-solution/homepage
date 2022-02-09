@@ -70,6 +70,7 @@
 
       & > ts-picture {
         margin: variables.$ts-spacing-2;
+        max-width: 120px;
 
         @media only screen and (max-width: variables.$ts-mobile-max) {
           margin: variables.$ts-spacing-1;
