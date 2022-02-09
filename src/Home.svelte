@@ -17,7 +17,7 @@
     {
       icon: "optionPaper.svg",
       title: "SVILUPPO ORGANIZZATIVO",
-      subtitle: "Training, coaching e crescita professionale",
+      subtitle: "Management diagnostic e clima organizzativo",
       color: "#e9e8f2",
       width: "245px",
       href: "/company-development.html",
@@ -25,7 +25,7 @@
     {
       icon: "cloud.svg",
       title: "SVILUPPO INDIVIDUALE",
-      subtitle: "Management diagnostic e clima organizzativo",
+      subtitle: "Training, coaching e crescita professionale",
       color: "#e9e8f2",
       width: "240px",
       href: "/self-development.html",
