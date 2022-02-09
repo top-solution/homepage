@@ -665,14 +665,6 @@
       position: relative;
       .body-2 {
         box-sizing: border-box;
-        padding-left: 20%;
-      }
-
-      &--flip {
-        .body-2 {
-          padding-right: 20%;
-          padding-left: 0;
-        }
       }
 
       & + & {
@@ -705,12 +697,6 @@
 
       p {
         margin-left: auto;
-      }
-    }
-
-    &__service-potential {
-      .body-2 {
-        padding-right: 60px;
       }
     }
 
@@ -924,6 +910,17 @@
           margin-bottom: variables.$ts-spacing-3;
           font-style: normal;
           line-height: 24px;
+        }
+
+        .body-2 {
+          padding-left: 20%;
+        }
+
+        &--flip {
+          .body-2 {
+            padding-right: 20%;
+            padding-left: 0;
+          }
         }
       }
 
