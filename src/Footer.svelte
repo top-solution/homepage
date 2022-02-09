@@ -209,10 +209,11 @@
   @media only screen and (max-width: variables.$ts-tablet-max) {
     footer {
       height: auto;
-    }
-    .footer-top {
-      &__bordered-box {
-        flex: 0 0 10%;
+
+      .footer-top {
+        &__bordered-box {
+          flex: 0 0 20%;
+        }
       }
     }
   }
