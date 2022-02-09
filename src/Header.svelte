@@ -134,14 +134,6 @@
             <span>{contacts.email}</span>
           </a>
         </div>
-        <div class="header-mobile__contacts--item">
-          <img src="img/icons/pin.svg" alt="" />
-          <span>Sede Legale: {contacts.registeredOffice}</span>
-        </div>
-        <div class="header-mobile__contacts--item">
-          <img src="img/icons/pin.svg" alt="" />
-          <span>Sede Operativa: {contacts.operationalOffice}</span>
-        </div>
       </div>
     </div>
   </div>
@@ -207,8 +199,8 @@
     &__hex-group {
       position: absolute;
       z-index: -1;
-      top: -200;
-      left: -175;
+      top: -160px;
+      left: -185px;
     }
 
     &__wrapper {
@@ -223,12 +215,13 @@
       z-index: -1;
       margin-left: 50%;
       transform: translate(-50%, 0);
+      top: 10vw;
     }
 
     &__blob {
       position: absolute;
       z-index: -1;
-      top: -100px;
+      top: -30px;
       right: -75px;
     }
 
@@ -267,7 +260,7 @@
       position: absolute;
       z-index: 1;
       width: 100%;
-      margin-top: 56px;
+      margin-top: 25vw;
       align-items: center;
       justify-content: center;
 
@@ -287,10 +280,11 @@
     }
 
     &__contacts {
-      margin-top: variables.$ts-spacing-5;
+      margin-top: variables.$ts-spacing-10;
       color: variables.$ts-blue-color;
       transition: opacity variables.$ts-transition-timing-slow
         variables.$ts-transition-function-default;
+      width: 100%;
 
       a {
         color: variables.$ts-blue-color;
@@ -305,7 +299,7 @@
       &--item {
         display: flex;
         justify-content: flex-start;
-        margin: variables.$ts-spacing-1 variables.$ts-spacing-2;
+        margin: variables.$ts-spacing-1 variables.$ts-spacing-3;
         align-items: center;
         min-height: 44px;
         font-size: 20px;
@@ -315,6 +309,10 @@
           width: 22px;
           height: 22px;
         }
+      }
+
+      @media only screen and (max-height: 780px) {
+        display: none;
       }
     }
   }
