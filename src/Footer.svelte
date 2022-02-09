@@ -113,7 +113,8 @@
         flex: 0 0 20%;
 
         & > div {
-          margin: variables.$ts-spacing 0;
+          margin: variables.$ts-spacing-1-5 0;
+          font-weight: 400;
 
           & > a {
             color: variables.$ts-white-color;
@@ -126,14 +127,21 @@
         border-left: 1px solid variables.$ts-white-color;
         padding-left: variables.$ts-spacing-3;
         margin-left: variables.$ts-spacing-3;
+        font-weight: 400;
 
         & > div {
-          margin: variables.$ts-spacing 0;
+          margin: variables.$ts-spacing-1-5 0;
+          line-height: 18px;
         }
       }
 
       &--spacing {
         margin-left: variables.$ts-spacing-2;
+      }
+
+      .title-6 {
+        margin: 0 0 variables.$ts-spacing-2;
+        font-weight: 500;
       }
     }
 
@@ -180,6 +188,7 @@
 
         &__link-box {
           flex: 0 0 50%;
+          margin-bottom: variables.$ts-spacing-3;
         }
         &__box {
           flex: 0 0 50%;
@@ -198,8 +207,19 @@
           a {
             color: variables.$ts-white-color;
           }
+
+          a,
+          div {
+            max-width: 290px;
+            margin: variables.$ts-spacing-1-5 auto;
+          }
         }
       }
+
+      .title-6 {
+        margin: variables.$ts-spacing-1 0 variables.$ts-spacing-2;
+      }
+
       hr {
         display: none !important;
       }
@@ -209,7 +229,11 @@
   @media only screen and (max-width: variables.$ts-tablet-max) {
     footer {
       height: auto;
+    }
+  }
 
+  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+    footer {
       .footer-top {
         &__bordered-box {
           flex: 0 0 20%;
