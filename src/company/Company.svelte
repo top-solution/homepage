@@ -55,7 +55,7 @@
       >
         <div class="page-company__blob__content">
           <p class="body-1">
-            Nel 212 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
+            Nel 2012 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
             siamo usciti dall'incubatore e abbiamo aperto il nostro primo ufficio
           </p>
         </div>
