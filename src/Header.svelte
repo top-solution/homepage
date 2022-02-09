@@ -201,6 +201,7 @@
       z-index: -1;
       top: -160px;
       left: -185px;
+      pointer-events: none;
     }
 
     &__wrapper {
@@ -223,6 +224,7 @@
       z-index: -1;
       top: -30px;
       right: -75px;
+      pointer-events: none;
     }
 
     &__menu {
