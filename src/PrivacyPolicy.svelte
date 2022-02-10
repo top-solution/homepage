@@ -122,6 +122,9 @@
       il diritto di comunicarli o diffonderli, liberando il Titolare da
       qualsiasi responsabilità verso terzi.
     </p>
+    <p>
+      Quest'applicazione utilizza solamente cookie tecnici, necessari al suo funzionamento.
+    </p>
     <hr />
     <div class="title-6">
       <b>Modalità e luogo del trattamento dei Dati raccolti</b>

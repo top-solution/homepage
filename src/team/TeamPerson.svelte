@@ -16,13 +16,13 @@
   });
 </script>
 
-<div class="team-person">
+<div class="team-person" itemscope itemtype="https://schema.org/Person">
   <ts-blob interactive="false" shape="hexagon" src={personSrc}>
     <!-- <div class="team-person__image-sizer" /> -->
   </ts-blob>
   <div class="team-person__name body-2">{name}</div>
   {#if companyrole}
-    <div class="team-person__role body-2"><b>{companyrole}</b></div>
+    <div class="team-person__role body-2" itemprop="jobTitle"><b>{companyrole}</b></div>
   {/if}
   <slot />
 </div>

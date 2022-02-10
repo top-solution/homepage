@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "@material/mwc-snackbar": "^0.25.3",
-    "@material/tooltip": "^13.0.0",
     "lodash.debounce": "^4.0.8",
     "simplex-noise": "^3.0.1"
   }
