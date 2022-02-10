@@ -20,7 +20,7 @@
   <ts-blob interactive="false" shape="hexagon" src={personSrc}>
     <!-- <div class="team-person__image-sizer" /> -->
   </ts-blob>
-  <div class="team-person__name body-2" itemprop="givenName">{name}</div>
+  <div class="team-person__name body-2">{name}</div>
   {#if companyrole}
     <div class="team-person__role body-2" itemprop="jobTitle"><b>{companyrole}</b></div>
   {/if}
