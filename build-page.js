@@ -58,7 +58,6 @@ Handlebars.registerPartial("metadata", `
     <meta name="twitter:image" content="{{ url }}/{{ image }}" />
     <meta name="twitter:image:alt" content="{{ siteName }} - {{ siteSlogan }}" />
     <link rel="canonical" href="{{ url }}/{{ fileName }}" />
-    <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}noindex, nofollow, noarchive, noodp{{/if}}" />
 `);
 
 
