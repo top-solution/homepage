@@ -152,7 +152,7 @@
   .homepage {
     color: variables.$ts-blue-color;
 
-    &__header-blob-mobile {
+    &__header-blob {
       display: block;
       position: absolute;
       width: 1400px;
@@ -168,7 +168,7 @@
       }
     }
 
-    &__header-hex-mobile {
+    &__header-hex {
       display: block;
       position: absolute;
       width: 1400px;
@@ -178,7 +178,7 @@
       z-index: -1;
     }
 
-    &__header-hex-logo-mobile {
+    &__header-hex-logo {
       display: block;
       position: absolute;
       width: 1400px;
@@ -212,9 +212,9 @@
 
     &__middle-hex-tablet,
     &__middle-hex-mobile,
-    &__header-hex,
-    &__header-hex-logo,
-    &__header-blob {
+    &__header-hex-mobile,
+    &__header-hex-logo-mobile,
+    &__header-blob-mobile {
       display: none;
     }
 
@@ -266,8 +266,8 @@
         }
       }
 
-      &__header-hex-mobile,
-      &__header-hex-logo-mobile,
+      &__header-hex,
+      &__header-hex-logo,
       &__middle-blob,
       &__middle-hex,
       &__middle-hex-tablet {
@@ -287,11 +287,11 @@
     }
 
     @media only screen and (max-width: variables.$ts-tablet-max) {
-      &__header-hex-logo-mobile {
+      &__header-hex-logo {
         left: -370px;
       }
 
-      &__header-hex-mobile {
+      &__header-hex {
         left: -1350px;
       }
 
@@ -317,7 +317,7 @@
     }
 
     @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: 700px) {
-      &__header-hex-logo-mobile {
+      &__header-hex-logo {
         left: -390px;
       }
     }

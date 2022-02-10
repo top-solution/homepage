@@ -4,6 +4,8 @@
   import { contacts } from "./contacts";
   export let color = "light"; //light, dark
 
+  let hovering = true;
+
   let menuIsOpened = false;
   let headerHeight = "height: 0px";
   function handleOpenMenu(event) {
@@ -42,9 +44,14 @@
       <img src="img/topsolution_logo_{color}.svg" alt="top Solution" /></a
     >
     <div class="header__link">
-      <a href="hr-development.html"><strong>HR</strong></a>
-      <!-- <a href="about.html"><strong>DEV</strong></a> -->
-      <a href="company.html"><strong>AZIENDA</strong></a>
+      <a href="hr-development.html" class="header__link--hr-tooltip"
+        ><strong
+          >HR <div class="header__link--tooltips">Risorse Umane</div></strong
+        ></a
+      >
+
+      <!-- <a href="about.html"><strong>DEV <div class="header__link--tooltips">Sviluppo Software</div></strong></a> -->
+      <a href="company.html"><strong>AZIENDA </strong></a>
       <a href="team.html"><strong>TEAM</strong></a>
       <a href="contacts.html"><strong>CONTATTI</strong></a>
     </div>
@@ -127,6 +134,7 @@
           <a href={`tel:${contacts.phone}`}>
             <span>{contacts.phone}</span>
           </a>
+          a
         </div>
         <div class="header-mobile__contacts--item">
           <img src="img/icons/mail.svg" alt="" />
@@ -180,6 +188,27 @@
 
         &:last-of-type {
           margin-right: variables.$ts-spacing-2;
+        }
+      }
+
+      &--tooltips {
+        background: rgba(97, 97, 97, 0.9);
+        border-radius: 4px;
+        color: white;
+        padding: 0 4px;
+        font-weight: 500;
+        position: absolute;
+        margin-left: -20;
+        margin-top: 5;
+        z-index: 10;
+        font-size: 10px;
+        max-height: 26px;
+        display: none;
+      }
+
+      &--hr-tooltip:hover {
+        .header__link--tooltips {
+          display: block;
         }
       }
     }
