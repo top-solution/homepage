@@ -7,7 +7,7 @@
   export let title = "";
   export let expanded = false;
 
-  let collapsibleHeaderElement = null;
+  let collapsibleElement = null;
   let collapsedElement = null;
   let collapsedElementHeight = null;
 
@@ -39,40 +39,46 @@
 </script>
 
 <div
+  bind:this={collapsibleElement}
   class="collapsible-section"
   class:collapsible-section--collapsed={!expanded}
 >
-  <div
-    bind:this={collapsibleHeaderElement}
-    class="collapsible-section-header"
-    on:mouseup={() => {
-      dispatch("expand");
-      setTimeout(() => {
-        collapsibleHeaderElement.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-      setTimeout(() => {
-        collapsibleHeaderElement.scrollIntoView({ behavior: "smooth" });
-      }, 400);
-    }}
-  >
-    <h5 class="title-5">
-      {title}
-    </h5>
-    <img href="" src="img/icons/expand.svg" alt="" />
-  </div>
-  <div
-    class="collapsible-section__collapsible"
-    class:collapsible-section__collapsible--expanded={expanded}
-    style={expanded
-      ? `max-height: ${collapsedElementHeight}px`
-      : "max-height: 0;"}
-  >
-    <div class="d" bind:this={collapsedElement}>
-      <slot />
+  <div class="collapsible-section__background">
+    <div
+      class="collapsible-section-header"
+      class:collapsible-section-header--collapsed={!expanded}
+      on:mouseup={() => {
+        dispatch("expand");
+        setTimeout(() => {
+          collapsibleElement.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+        setTimeout(() => {
+          collapsibleElement.scrollIntoView({ behavior: "smooth" });
+        }, 400);
+      }}
+    >
+      <h5 class="title-5">
+        {title}
+      </h5>
+      <img href="" src="img/icons/expand.svg" alt="" />
     </div>
-  </div>
-  <div class="collapsible-section__divider">
-    <hr />
+    <div
+      class="collapsible-section__collapsible"
+      class:collapsible-section__collapsible--expanded={expanded}
+      style={expanded
+        ? `max-height: ${collapsedElementHeight}px`
+        : "max-height: 0;"}
+    >
+      <div bind:this={collapsedElement}>
+        <slot />
+      </div>
+    </div>
+    <div
+      class="collapsible-section__divider"
+      class:collapsible-section__divider--collapsed={!expanded}
+    >
+      <hr />
+    </div>
   </div>
 </div>
 
@@ -85,74 +91,85 @@
     width: calc(100% + 16px);
     margin-left: -8px;
     display: block;
-  }
-
-  .collapsible-section__divider {
-    display: block;
-    margin-top: variables.$ts-spacing-1-5;
-  }
-
-  .collapsible-section__divider hr {
-    padding: variables.$ts-spacing-1 8px;
-    border: 0;
-    border-top: 1px solid transparent;
-    transition: border-color variables.$ts-transition-timing-default
+    padding-top: variables.$ts-spacing-8;
+    transition: padding-top variables.$ts-transition-timing-default
       variables.$ts-transition-function-default;
-  }
 
-  .collapsible-section--collapsed {
-    padding-bottom: variables.$ts-spacing-3;
-  }
-
-  .collapsible-section--collapsed .collapsible-section__divider hr {
-    border-color: variables.$ts-blue-color;
-  }
-
-  .collapsible-section--collapsed .collapsible-section-header img {
-    transform: rotate(0deg);
-  }
-
-  .collapsible-section__collapsible {
-    transition: max-height variables.$ts-transition-timing-default
-      variables.$ts-transition-function-default;
-    overflow: hidden;
-  }
-
-  .collapsible-section-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 0 8px;
-    cursor: pointer;
-  }
-
-  .collapsible-section-header h5 {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 39px;
-    margin: 0;
-  }
-
-  .collapsible-section-header img {
-    height: 34px;
-    width: 34px;
-    margin-bottom: -4px;
-    transform: rotate(45deg);
-    transition: transform variables.$ts-transition-timing-quick
-      variables.$ts-transition-function-default;
-  }
-
-  @media only screen and (max-width: variables.$ts-tablet-max) {
-    .collapsible-section-header h5 {
-      font-size: 18px;
-      line-height: 21px;
-      max-width: 150px;
+    &--collapsed {
+      padding-top: variables.$ts-spacing-1;
+      .collapsible-section-header img {
+        transform: rotate(0deg);
+      }
     }
-    .collapsible-section img {
-      width: 26px;
-      height: 26px;
-      margin-bottom: 0;
+
+    &-header {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      padding: variables.$ts-spacing-2 variables.$ts-spacing-1 0;
+      background-color: #e3f1fa;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: background-color variables.$ts-transition-timing-default
+        variables.$ts-transition-function-default;
+
+      &--collapsed {
+        background-color: transparent;
+      }
+
+      & h5 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 39px;
+        margin: 0;
+      }
+
+      & img {
+        height: 34px;
+        width: 34px;
+        margin-bottom: -4px;
+        transform: rotate(45deg);
+        transition: transform variables.$ts-transition-timing-quick
+          variables.$ts-transition-function-default;
+      }
+    }
+
+    &__divider {
+      display: block;
+      padding-top: variables.$ts-spacing-1-5;
+      background-color: #fff;
+
+      hr {
+        border: 0;
+        border-top: 1px solid transparent;
+        transition: border-color variables.$ts-transition-timing-default
+          variables.$ts-transition-function-default;
+      }
+
+      &--collapsed hr {
+        border-color: variables.$ts-blue-color;
+      }
+    }
+
+    &__collapsible {
+      transition: max-height variables.$ts-transition-timing-default
+        variables.$ts-transition-function-default;
+      overflow: hidden;
+    }
+
+    @media only screen and (max-width: variables.$ts-tablet-max) {
+      &-header h5 {
+        font-size: 18px;
+        line-height: 21px;
+        max-width: 150px;
+      }
+      & img {
+        width: 26px;
+        height: 26px;
+        margin-bottom: 0;
+      }
     }
   }
 </style>

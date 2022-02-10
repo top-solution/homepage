@@ -44,7 +44,7 @@
         d="m904.248 696.926 57.319-26.347 57.423-26.123 51.48 36.467 51.33 36.666-5.84 62.814-6.09 62.79-57.32 26.347-57.421 26.123-51.476-36.466-51.335-36.667 5.843-62.813 6.087-62.791Z"
       />
     </g>
-    <g filter="url(#header-hexagons-desktop__f)">
+    <g filter="url(#header-hexagons-desktop__f)" class="hide-tablet">
       <path
         fill="#312783"
         d="m621.142 276.276 97.915-48.829L817.162 179l91.245 60.382 91.009 60.738-6.671 109.212-7.096 109.184-97.915 48.83-98.105 48.447-91.245-60.383-91.008-60.738 6.67-109.211 7.096-109.185Z"
@@ -230,9 +230,9 @@
     top: -650px;
 
     @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
-      transform: scale(0.5);
+      transform: scale(0.33);
       right: -750px;
-      top: -720px;
+      top: -680px;
 
       .hide-tablet {
         display: none;

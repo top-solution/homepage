@@ -12,48 +12,54 @@
       subtitle: "Analisi e mappatura delle competenze professionali",
       color: "#e9e8f2",
       width: "240px",
+      href: "/haka.html",
     },
     {
       icon: "optionPaper.svg",
       title: "SVILUPPO ORGANIZZATIVO",
-      subtitle: "Training, coaching e crescita professionale",
+      subtitle: "Management diagnostic e clima organizzativo",
       color: "#e9e8f2",
       width: "245px",
+      href: "/company-development.html",
     },
     {
       icon: "cloud.svg",
       title: "SVILUPPO INDIVIDUALE",
-      subtitle: "Management diagnostic e clima organizzativo",
+      subtitle: "Training, coaching e crescita professionale",
       color: "#e9e8f2",
       width: "240px",
+      href: "/self-development.html",
     },
   ];
 
-  let developmentSoftwareBlobs = [
-    {
-      icon: "lens.svg",
-      title: "APPLICAZIONI WEB E MOBILE",
-      subtitle:
-        "Single page web applications, rest api, micro-services, hybrid apps",
-      color: "#e3f1fa",
-      width: "260px",
-    },
-    {
-      icon: "palace.svg",
-      title: "CONSULENZA SVILUPPO SW",
-      subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
-      color: "#e3f1fa",
-      width: "260px",
-    },
-    {
-      icon: "user.svg",
-      title: "CLOUD COMPUTING",
-      subtitle:
-        "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
-      color: "#e3f1fa",
-      width: "260px",
-    },
-  ];
+  // let developmentSoftwareBlobs = [
+  //   {
+  //     icon: "lens.svg",
+  //     title: "APPLICAZIONI WEB E MOBILE",
+  //     subtitle:
+  //       "Single page web applications, rest api, micro-services, hybrid apps",
+  //     color: "#e3f1fa",
+  //     width: "260px",
+  //     href: "/applications.html",
+  //   },
+  //   {
+  //     icon: "palace.svg",
+  //     title: "CONSULENZA SVILUPPO SW",
+  //     subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
+  //     color: "#e3f1fa",
+  //     width: "260px",
+  //     html: "/consulting.html",
+  //   },
+  //   {
+  //     icon: "user.svg",
+  //     title: "CLOUD COMPUTING",
+  //     subtitle:
+  //       "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
+  //     color: "#e3f1fa",
+  //     width: "260px",
+  //     html: "/cloud.html",
+  //   },
+  // ];
 
   onMount(() => {
     if (window.location.hash === "#customers") {
@@ -113,14 +119,14 @@
   <ts-home-hero />
   <ts-triple-blob
     title="SVILUPPO DELLE RISORSE UMANE"
-    buttonLink="hr-development.html"
+    buttonlink="/hr-development.html"
     blobs={developmentHumanResourceBlobs}
   />
-  <ts-triple-blob
+  <!-- <ts-triple-blob
     title="SVILUPPO SOFTWARE"
-    buttonLink="error.html"
+    buttonlink="/software.html"
     blobs={developmentSoftwareBlobs}
-  />
+  /> -->
   <div slot="external">
     <div class="homepage__middle-blob">
       <img src="img/homepage/blob-middle-homepage.svg" alt="" />
@@ -167,8 +173,8 @@
       position: absolute;
       width: 1400px;
       overflow: visible;
-      top: -650px;
-      left: -1150px;
+      top: -630px;
+      left: -1040px;
       z-index: -1;
     }
 
@@ -178,7 +184,7 @@
       width: 1400px;
       overflow: visible;
       top: -480px;
-      left: -400px;
+      left: -320px;
       z-index: -1;
     }
 
@@ -188,7 +194,8 @@
       width: 1400px;
       overflow: visible;
       right: -1125px;
-      top: 1525px;
+      // top: 1525px; // FIXME: ripristinare con la sezione sviluppo software
+      top: 925px;
       z-index: -1;
     }
 
@@ -198,7 +205,8 @@
       width: 1400px;
       overflow: visible;
       right: -1125px;
-      top: 1225px;
+      // top: 1225px; // FIXME: ripristinare con la sezione sviluppo software
+      top: 625;
       z-index: -1;
     }
 
@@ -265,15 +273,6 @@
       &__middle-hex-tablet {
         display: none;
       }
-      &__middle-blob-mobile {
-        display: block;
-        position: absolute;
-        width: 1400px;
-        overflow: visible;
-        right: -1125px;
-        top: 1275px;
-        z-index: -1;
-      }
 
       &__middle-hex-mobile {
         display: block;
@@ -281,14 +280,15 @@
         width: 1400px;
         overflow: visible;
         right: -1155px;
-        top: 1450px;
+        // top: 1450px; FIXME: ripristinare con la sezione sviluppo software
+        top: 770px;
         z-index: -1;
       }
     }
 
     @media only screen and (max-width: variables.$ts-tablet-max) {
       &__header-hex-logo-mobile {
-        left: -450px;
+        left: -370px;
       }
 
       &__header-hex-mobile {
@@ -306,12 +306,19 @@
         width: 1400px;
         overflow: visible;
         right: -1155px;
-        top: 1975px;
+        // top: 1975px; FIXME: ripristinare con la sezione sviluppo software
+        top: 1225px;
         z-index: -1;
 
         @media only screen and (max-width: variables.$ts-mobile-max) {
           display: none;
         }
+      }
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: 700px) {
+      &__header-hex-logo-mobile {
+        left: -390px;
       }
     }
   }

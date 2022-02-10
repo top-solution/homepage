@@ -1,6 +1,7 @@
 <svelte:options tag="ts-header" />
 
 <script>
+  import { contacts } from "./contacts";
   export let color = "light"; //light, dark
 
   let menuIsOpened = false;
@@ -38,12 +39,7 @@
   </div>
   <div class="header">
     <a href="index.html">
-      <img
-        src="img/topsolution_logo_{color}.svg"
-        alt="top Solution"
-        width="150"
-        height="45"
-      /></a
+      <img src="img/topsolution_logo_{color}.svg" alt="top Solution" /></a
     >
     <div class="header__link">
       <a href="hr-development.html"><strong>HR</strong></a>
@@ -127,24 +123,16 @@
       </div>
       <div class="header-mobile__contacts" class:hide={menuIsOpened === false}>
         <div class="header-mobile__contacts--item">
-          <img src="img/icons/phone.svg" alt="" /><a href="tel:+39 0112488280"
-            ><span>+39 0112488280</span></a
-          >
+          <img src="img/icons/phone.svg" alt="" />
+          <a href={`tel:${contacts.phone}`}>
+            <span>{contacts.phone}</span>
+          </a>
         </div>
         <div class="header-mobile__contacts--item">
-          <img src="img/icons/mail.svg" alt="" /><a
-            href="mailto:info@topsolution.it"
-            ><span>info@topsolution.it</span></a
-          >
-        </div>
-        <div class="header-mobile__contacts--item">
-          <img src="img/icons/pin.svg" alt="" />
-          <span>Sede Legale: Corso Regina Margherita, 254 10144 Torino TO</span>
-        </div>
-        <div class="header-mobile__contacts--item">
-          <img src="img/icons/pin.svg" alt="" /><span
-            >Sede Operativa: Via Livorno, 60 B2 Lab, 10144 Torino TO</span
-          >
+          <img src="img/icons/mail.svg" alt="" />
+          <a href={`mailto:${contacts.email}`}>
+            <span>{contacts.email}</span>
+          </a>
         </div>
       </div>
     </div>
@@ -169,13 +157,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: variables.$ts-spacing-1 0;
+
+    img {
+      height: 50px;
+    }
 
     &__link {
       display: flex;
       flex-wrap: wrap;
 
       a {
-        margin: 0 25px;
+        margin: 0 variables.$ts-spacing-3;
         text-decoration: none;
         font-size: 24px;
         line-height: 28px;
@@ -183,6 +176,10 @@
         &:hover {
           color: variables.$ts-blue-color-hovering;
           text-decoration: underline;
+        }
+
+        &:last-of-type {
+          margin-right: variables.$ts-spacing-2;
         }
       }
     }
@@ -202,8 +199,9 @@
     &__hex-group {
       position: absolute;
       z-index: -1;
-      top: -200;
-      left: -175;
+      top: -160px;
+      left: -185px;
+      pointer-events: none;
     }
 
     &__wrapper {
@@ -218,13 +216,15 @@
       z-index: -1;
       margin-left: 50%;
       transform: translate(-50%, 0);
+      top: 10vw;
     }
 
     &__blob {
       position: absolute;
       z-index: -1;
-      top: -100px;
+      top: -30px;
       right: -75px;
+      pointer-events: none;
     }
 
     &__menu {
@@ -262,7 +262,7 @@
       position: absolute;
       z-index: 1;
       width: 100%;
-      margin-top: 56px;
+      margin-top: 25vw;
       align-items: center;
       justify-content: center;
 
@@ -282,10 +282,11 @@
     }
 
     &__contacts {
-      margin-top: variables.$ts-spacing-5;
+      margin-top: variables.$ts-spacing-10;
       color: variables.$ts-blue-color;
       transition: opacity variables.$ts-transition-timing-slow
         variables.$ts-transition-function-default;
+      width: 100%;
 
       a {
         color: variables.$ts-blue-color;
@@ -300,7 +301,7 @@
       &--item {
         display: flex;
         justify-content: flex-start;
-        margin: variables.$ts-spacing-1 variables.$ts-spacing-2;
+        margin: variables.$ts-spacing-1 variables.$ts-spacing-3;
         align-items: center;
         min-height: 44px;
         font-size: 20px;
@@ -311,6 +312,10 @@
           height: 22px;
         }
       }
+
+      @media only screen and (max-height: 780px) {
+        display: none;
+      }
     }
   }
 
@@ -319,7 +324,8 @@
     justify-content: flex-end;
     height: 30px;
     align-items: center;
-    margin-top: 12px;
+    padding: variables.$ts-spacing-3 variables.$ts-spacing-1
+      variables.$ts-spacing-2;
 
     span {
       @media only screen and (max-width: variables.$ts-mobile-max) {

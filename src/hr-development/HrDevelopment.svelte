@@ -13,7 +13,7 @@
     slot="actions"
     style="display: flex; flex-direction: column; max-width: 175px; margin: auto;"
   >
-    <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
+    <ts-button variant="primary" href="/contacts.html">Contattaci</ts-button>
   </div>
   <div slot="external">
     <ts-header-hexagons-desktop />
@@ -27,12 +27,6 @@
   </div>
 </ts-top-banner>
 <ts-layout class="page-hr-development">
-  <ts-hex
-    class="page-hr-development__floating-hex-2"
-    width="85"
-    fill="#d6d4e6"
-    shadow="false"
-  />
   <div class="page-hr-development__copy">
     <p class="claim">
       Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
@@ -122,8 +116,10 @@
       <ts-button
         variant="primary"
         href="/contacts.html"
-        style="display: inline-block;">Contattaci</ts-button
+        style="display: inline-block;"
       >
+        Contattaci
+      </ts-button>
     </div>
   </ts-blob>
   <ts-hex
@@ -172,13 +168,6 @@
         position: absolute;
         bottom: -230px;
         right: -90px;
-      }
-
-      &-2 {
-        width: 82px;
-        position: absolute;
-        top: -70px;
-        right: calc(50% + 48px);
       }
 
       &-3 {
@@ -269,11 +258,18 @@
       }
     }
 
+    @media only screen and (max-width: variables.$ts-tablet-max) {
+      ts-hr-svg {
+        display: none;
+      }
+
+      .claim {
+        text-align: center;
+      }
+    }
+
     @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
       &__floating-hex {
-        &-2 {
-          top: -90px;
-        }
         &-3 {
           display: none;
         }
@@ -282,13 +278,6 @@
 
     @media only screen and (max-width: variables.$ts-mobile-max) {
       &__floating-hex {
-        &-2 {
-          right: unset;
-          left: 15%;
-          top: -130px;
-          width: 55px;
-        }
-
         &-3 {
           display: none;
         }
@@ -301,7 +290,7 @@
 
       &__copy {
         align-items: flex-start;
-        margin-top: variables.$ts-spacing-20;
+        margin-top: variables.$ts-spacing-6;
 
         .claim {
           font-size: 20px;
@@ -322,6 +311,7 @@
 
       &__our-services {
         align-items: stretch;
+        margin-top: variables.$ts-spacing-10;
 
         li {
           display: flex;
@@ -344,9 +334,7 @@
         }
       }
     }
-  }
 
-  @media only screen and (max-width: variables.$ts-mobile-max) {
     ts-header-hexagons-desktop {
       display: none;
     }

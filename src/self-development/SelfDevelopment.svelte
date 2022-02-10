@@ -12,14 +12,14 @@
   title2={true}
 >
   <div class="claim" slot="text">
-    Il <b>sapere</b> delle<br /> persone rappresenta <br /> il bene immateriale
-    <br /> <b>più importante</b> delle organizzazioni.
+    Il <b>sapere</b> delle persone rappresenta il bene immateriale
+    <b>più importante</b> delle organizzazioni.
   </div>
   <div
     slot="actions"
     style="display: flex; flex-direction: column; max-width: 175px; margin: auto;"
   >
-    <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
+    <ts-button variant="primary" href="/contacts.html">Contattaci</ts-button>
   </div>
   <div slot="external">
     <ts-header-hexagons-desktop />
@@ -95,8 +95,10 @@
       class="page-self-development__services-contact-us-button"
       variant="primary"
       href="/contacts.html"
-      target="_blank">Contattaci</ts-button
+      target="_blank"
     >
+      Contattaci
+    </ts-button>
     <ts-hex
       class="page-self-development__floating-hex-2"
       width="44"
@@ -364,6 +366,7 @@
         }
 
         & p {
+          box-sizing: border-box;
           padding-right: 60px;
         }
 

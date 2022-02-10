@@ -1,7 +1,7 @@
 <svelte:options tag="ts-customers" />
 
 <div class="customer-container" id="customers">
-  <div class="customer-container__title title-2 center">I NOSTRI CLIENTI</div>
+  <div class="customer-container__title title-2">I NOSTRI CLIENTI</div>
   <div class="customer-container__images">
     <ts-picture base="customers" src="sky" alt="Sky" />
     <ts-picture base="customers" src="reply" alt="Reply" />
@@ -50,15 +50,20 @@
 </div>
 
 <style lang="scss">
-  @use "./styles/variables";
+  @use "../styles/variables";
 
-  @import "./styles/main.scss";
+  @import "../styles/main.scss";
 
   .customer-container {
     margin-top: variables.$ts-spacing-9 * 2;
 
     &__title {
       margin-bottom: variables.$ts-spacing-9;
+      text-align: center;
+
+      @media only screen and (max-width: variables.$ts-mobile-max) {
+        margin-bottom: variables.$ts-spacing-5;
+      }
     }
     &__images {
       display: flex;
@@ -69,6 +74,13 @@
 
       & > ts-picture {
         margin: variables.$ts-spacing-2;
+        max-width: 120px;
+
+        @media only screen and (max-width: variables.$ts-mobile-max) {
+          margin: variables.$ts-spacing-1;
+          max-width: 25%;
+          height: auto;
+        }
       }
     }
   }

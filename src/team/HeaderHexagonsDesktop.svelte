@@ -8,7 +8,7 @@
     fill="none"
     viewBox="0 0 1038 1262"
   >
-    <g filter="url(#header-hexagons-desktop__a)">
+    <g class="hide-700" filter="url(#header-hexagons-desktop__a)">
       <path
         fill="#312783"
         d="m80.272 748.901 2.798-25.577 2.897-25.566 23.549-10.365 23.59-10.274 20.751 15.211 20.692 15.292-2.797 25.577-2.898 25.566-23.549 10.366-23.589 10.273-20.752-15.211-20.692-15.292Z"
@@ -186,7 +186,13 @@
     @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
       transform: scale(0.5);
       right: -480px;
-      top: -650px;
+      top: -480px;
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: 700px) {
+      .hide-700 {
+        display: none;
+      }
     }
 
     @media only screen and (max-width: variables.$ts-mobile-max) {

@@ -29,7 +29,7 @@
       fill-opacity=".67"
     />
   </g>
-  <g filter="url(#c)">
+  <g filter="url(#c)" class="hide-tablet">
     <path
       d="m250.143 276.276 97.915-48.829L446.163 179l91.244 60.382 91.009 60.738-6.67 109.212-7.096 109.184-97.915 48.829-98.105 48.447-91.245-60.382-91.009-60.738 6.671-109.211 7.096-109.185Z"
       fill="#312783"
@@ -216,6 +216,7 @@
   @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
     svg {
       transform: scale(0.5);
+      margin-top: 50px;
     }
 
     .hide-tablet {

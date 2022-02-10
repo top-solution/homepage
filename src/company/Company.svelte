@@ -15,7 +15,7 @@
         shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
         fill="#EBEAF3"
         padding="24"
-        variance={window.innerWith > 900 ? 1.4 : 1.2}
+        variance={window.innerWith > 900 ? 2.0 : 1.2}
       >
         <div class="page-company__blob__content">
           <p class="body-1">
@@ -50,11 +50,12 @@
         shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
         fill="#EBEAF3"
         padding="24"
-        variance={window.innerWith > 900 ? 1.4 : 1.2}
+        variance={window.innerWith > 900 ? 2.0 : 1.2}
+        flip="true"
       >
         <div class="page-company__blob__content">
           <p class="body-1">
-            Nel 212 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
+            Nel 2012 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
             siamo usciti dall'incubatore e abbiamo aperto il nostro primo ufficio
           </p>
         </div>
@@ -74,7 +75,7 @@
         shape={window.innerWith > 900 ? "rectanglehr" : "octagon"}
         fill="#EBEAF3"
         padding="24"
-        variance={window.innerWith > 900 ? 1.4 : 1.2}
+        variance={window.innerWith > 900 ? 2.0 : 1.2}
       >
         <div class="page-company__blob__content">
           <p class="body-1">
@@ -159,7 +160,7 @@
       z-index: -10;
 
       ts-blob {
-        width: 520px;
+        width: 545px;
         // margin-right: -(variables.$ts-spacing-10);
       }
 

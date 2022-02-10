@@ -90,12 +90,16 @@
   }}
   {title}
 >
-  <div class="pricing-table__table" bind:this={tableElement}>
+  <div
+    class="pricing-table__table"
+    class:pricing-table__table--collapsed={!Boolean(expanded)}
+    bind:this={tableElement}
+  >
     <div
       bind:this={headerElement}
       class="pricing-table__header"
       style={stickyHeader.sticky && expanded
-        ? `position: fixed; top: 0; width: ${stickyHeader.width}px`
+        ? `position: fixed; top: 0; width: ${stickyHeader.width}px; background-color: #e3f1fa;`
         : ""}
     >
       <div class="pricing-table__header__row">
@@ -160,7 +164,9 @@
       {/each}
     </div>
   </div>
-  <slot />
+  <div class="pricing-table__slot">
+    <slot />
+  </div>
 </ts-collapsible-section>
 
 <style lang="scss">
@@ -170,9 +176,20 @@
 
   .pricing-table {
     &__table {
-      width: 100%;
       font-size: 18px;
       border-collapse: collapse;
+      padding: variables.$ts-spacing-1 variables.$ts-spacing-3
+        variables.$ts-spacing-2;
+
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: #e3f1fa;
+      transition: background-color variables.$ts-transition-timing-default
+        variables.$ts-transition-function-default;
+
+      &--collapsed {
+        background-color: transparent;
+      }
     }
 
     &__subheader__row {
@@ -191,12 +208,26 @@
         border-left: 0;
         padding: 0;
       }
+
+      &__col__text {
+        padding: 4px;
+        box-sizing: border-box;
+        border-radius: 4px;
+      }
     }
 
     &__header__row,
     &__subheader__row,
     &__body__row {
       display: flex;
+    }
+
+    &__body__row {
+      &:last-of-type {
+        .pricing-table__body__col {
+          border-bottom: 0;
+        }
+      }
     }
 
     &__col {
@@ -226,18 +257,13 @@
       }
     }
 
-    &__header {
-      background-color: var(--ts-azure-color-light);
-
-      &__col__text {
-        padding: 4px;
-        box-sizing: border-box;
-        border-radius: 4px;
-      }
-    }
-
     &__last-col {
       border-right: 1px solid #000;
+    }
+
+    &__slot {
+      background: #fff;
+      padding: variables.$ts-spacing-10 variables.$ts-spacing-3;
     }
 
     @media only screen and (min-width: variables.$ts-mobile-max) {
@@ -281,7 +307,6 @@
       &__header {
         text-transform: none;
         font-size: 18px;
-        background-color: #e3f1fa;
 
         &__col {
           height: 32px;

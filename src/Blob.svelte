@@ -10,15 +10,14 @@
   // import { lineString } from "@turf/helpers";
 
   export let fill = "#E9E8F2";
-  export let fill2;
   export let rotate = null;
   export let flip = false;
   export let shape = "hexagon";
-  export let fade = null;
   export let variance = 1;
   export let interactive = false;
   export let padding = 0;
   export let src = null;
+  export let clickable = "false";
   let paddingStyle = "";
 
   /**
@@ -279,50 +278,34 @@
   function createPointsRectangle() {
     return [
       {
-        x: 0,
-        y: 100,
-        originX: 0,
-        originY: 100,
+        x: 20,
+        y: 50,
+        originX: 20,
+        originY: 50,
         noiseOffsetX: Math.random() * 1000,
         noiseOffsetY: Math.random() * 1000,
       },
       {
-        x: 50,
+        x: 40,
         y: 160,
-        originX: 50,
-        originY: 160,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-      {
-        x: 150,
-        y: 160,
-        originX: 150,
+        originX: 40,
         originY: 160,
         noiseOffsetX: Math.random() * 1000,
         noiseOffsetY: Math.random() * 1000,
       },
       {
         x: 200,
-        y: 100,
+        y: 160,
         originX: 200,
-        originY: 100,
+        originY: 160,
         noiseOffsetX: Math.random() * 1000,
         noiseOffsetY: Math.random() * 1000,
       },
       {
-        x: 150,
-        y: 40,
-        originX: 150,
-        originY: 40,
-        noiseOffsetX: Math.random() * 1000,
-        noiseOffsetY: Math.random() * 1000,
-      },
-      {
-        x: 50,
-        y: 40,
-        originX: 50,
-        originY: 40,
+        x: 170,
+        y: 20,
+        originX: 170,
+        originY: 20,
         noiseOffsetX: Math.random() * 1000,
         noiseOffsetY: Math.random() * 1000,
       },
@@ -383,6 +366,7 @@
 
 <div
   class="blob"
+  class:blob--clickable={clickable !== "false"}
   on:mouseenter={interactive === "true" && debouncedHandleMouseEnter}
   on:mouseleave={interactive === "true" && debouncedHandleMouseLeave}
 >
@@ -394,22 +378,6 @@
     preserveAspectRatio="none"
     style={flip ? "transform: scaleX(-1)" : undefined}
   >
-    {#if fill2}
-      <defs>
-        <linearGradient id="blob__gradient">
-          <stop
-            stop-color={fill}
-            offset="0%"
-            stop-opacity={fade === "x-reverse" ? 0 : undefined}
-          />
-          <stop
-            stop-color={fill2 || fill}
-            offset="100%"
-            stop-opacity={fade === "x" ? 0 : undefined}
-          />
-        </linearGradient>
-      </defs>
-    {/if}
     {#if src}
       <defs>
         <pattern
@@ -427,17 +395,17 @@
     <path
       id="path"
       d={path}
-      fill={src
-        ? `url(#blob__image)`
-        : fill2
-        ? `url(#blob__gradient)`
-        : fill ?? "#EBEAF3"}
+      fill={src ? `url(#blob__image)` : fill ?? "#EBEAF3"}
       style={`box-shadow: 5px 10px #888888; ${transform}; transform-box: fill-box; transform-origin: center;`}
     />
   </svg>
 </div>
 
 <style lang="scss">
+  @use "./styles/variables";
+
+  @import "./styles/main.scss";
+
   * {
     margin: 0;
     padding: 0;
@@ -447,6 +415,20 @@
   .blob {
     position: relative;
     width: 100%;
+
+    &--clickable {
+      cursor: pointer;
+      path {
+        transition: filter variables.$ts-transition-timing-quick
+          variables.$ts-transition-function-default;
+      }
+
+      &:hover {
+        path {
+          filter: brightness(0.9) saturate(1.5);
+        }
+      }
+    }
 
     &:after {
       content: "";
@@ -465,6 +447,8 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    z-index: 1;
+    max-width: 100%;
   }
 
   .content > * {
@@ -477,7 +461,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    // z-index: -1;
     height: 100%;
   }
 </style>

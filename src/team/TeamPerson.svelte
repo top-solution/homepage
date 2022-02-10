@@ -1,7 +1,6 @@
 <svelte:options tag="ts-team-person" />
 
 <script>
-  import Blob from "../Blob.svelte";
   import { onMount } from "svelte";
 
   export let src;

@@ -1,5 +1,9 @@
 <svelte:options tag="ts-footer" />
 
+<script>
+  import { contacts } from "./contacts";
+</script>
+
 <footer>
   <div class="footer-top">
     <div class="footer-top__link-box">
@@ -19,17 +23,17 @@
       <div class="title-6">Servizi</div>
       <div><a href="haka.html">Audit competenze</a></div>
       <div><a href="company-development.html">Sviluppo organizzativo</a></div>
-      <!-- <div><a href="error.html">Sviluppo individuale</a></div>
-      <div><a href="error.html">Applicazioni web e mobile</a></div>
+      <div><a href="self-development.html">Sviluppo individuale</a></div>
+      <!-- <div><a href="error.html">Applicazioni web e mobile</a></div>
       <div><a href="error.html">Consulenza sviluppo software</a></div>
       <div><a href="error.html">Cloud computing</a></div> -->
     </div>
     <div class="footer-top__bordered-box">
       <div class="title-6">Contatti</div>
-      <div><a href="tel:+39 0112488280">+39 0112488280</a></div>
-      <div><a href="mailto:info@topsolution.it">info@topsolution.it</a></div>
-      <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
-      <div>Sede Operativa Via Livorno, 60 B2 Lab, 10144 Torino TO</div>
+      <div><a href={`tel:${contacts.phone}`}>{contacts.phone}</a></div>
+      <div><a href={`mailto:${contacts.email}`}>{contacts.email}</a></div>
+      <div>Sede Legale: {contacts.registeredOffice}</div>
+      <div>Sede Operativa: {contacts.operationalOffice}</div>
       <a target="_blank" href="https://twitter.com" rel="noopener noreferrer">
         <ts-picture base="footer" src="twitter" alt="Twitter" extension="svg" />
       </a>
@@ -46,7 +50,7 @@
           extension="svg"
         />
       </a>
-      <a
+      <!-- <a
         target="_blank"
         href="https://www.instagram.com/"
         rel="noopener noreferrer"
@@ -58,19 +62,21 @@
           alt="Instagram"
           extension="svg"
         />
-      </a>
+      </a> -->
     </div>
   </div>
   <hr />
   <div class="footer-bottom">
     <div class="footer-bottom__container">
-      <img
-        src="img/topsolution_footer_logo_dark.svg"
-        alt="top-solution_logo"
-        width="79"
-        height="79"
-        class="footer-bottom__img"
-      />
+      <a href="/index.html">
+        <img
+          src="img/topsolution_footer_logo_dark.svg"
+          alt="top-solution_logo"
+          width="79"
+          height="79"
+          class="footer-bottom__img"
+        />
+      </a>
       <div class="footer-bottom__text">
         Entra in contatto con noi Scopri le opportunità per il tuo business
         offerte dalle nostre soluzioni
@@ -111,7 +117,8 @@
         flex: 0 0 20%;
 
         & > div {
-          margin: variables.$ts-spacing 0;
+          margin: variables.$ts-spacing-1-5 0;
+          font-weight: 400;
 
           & > a {
             color: variables.$ts-white-color;
@@ -124,14 +131,21 @@
         border-left: 1px solid variables.$ts-white-color;
         padding-left: variables.$ts-spacing-3;
         margin-left: variables.$ts-spacing-3;
+        font-weight: 400;
 
         & > div {
-          margin: variables.$ts-spacing 0;
+          margin: variables.$ts-spacing-1-5 0;
+          line-height: 18px;
         }
       }
 
       &--spacing {
         margin-left: variables.$ts-spacing-2;
+      }
+
+      .title-6 {
+        margin: 0 0 variables.$ts-spacing-2;
+        font-weight: 500;
       }
     }
 
@@ -169,6 +183,12 @@
       }
     }
 
+    ts-picture {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+    }
+
     @media only screen and (max-width: variables.$ts-mobile-max) {
       .footer-top {
         flex-wrap: wrap;
@@ -178,6 +198,7 @@
 
         &__link-box {
           flex: 0 0 50%;
+          margin-bottom: variables.$ts-spacing-3;
         }
         &__box {
           flex: 0 0 50%;
@@ -196,8 +217,23 @@
           a {
             color: variables.$ts-white-color;
           }
+
+          a,
+          div {
+            max-width: 290px;
+            margin: variables.$ts-spacing-1-5 auto;
+          }
+
+          .title-6 {
+            max-width: 100vw;
+          }
         }
       }
+
+      .title-6 {
+        margin: variables.$ts-spacing-1 0 variables.$ts-spacing-2;
+      }
+
       hr {
         display: none !important;
       }
@@ -208,9 +244,14 @@
     footer {
       height: auto;
     }
-    .footer-top {
-      &__bordered-box {
-        flex: 0 0 10%;
+  }
+
+  @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+    footer {
+      .footer-top {
+        &__bordered-box {
+          flex: 0 0 20%;
+        }
       }
     }
   }

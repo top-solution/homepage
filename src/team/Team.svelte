@@ -147,7 +147,7 @@
 
       &__giga-blob {
         right: 600px;
-        top: -530px;
+        top: -500px;
       }
 
       &__people {

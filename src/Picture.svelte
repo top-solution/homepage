@@ -18,3 +18,12 @@
 {#if extension === "svg"}
   <img loading="lazy" src={`../img/${base}/${src}.${extension}`} {alt} />
 {/if}
+
+<style lang="scss">
+  img,
+  picture {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+</style>

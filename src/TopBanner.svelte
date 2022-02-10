@@ -67,12 +67,12 @@
     }
 
     &__text {
-      max-width: variables.$ts-mobile-max;
+      max-width: variables.$ts-mobile-max + variables.$ts-spacing-2;
       margin: 0 auto variables.$ts-spacing-3;
     }
 
     &__actions {
-      margin: variables.$ts-spacing-9 auto variables.$ts-spacing-5;
+      margin: variables.$ts-spacing-5 auto variables.$ts-spacing-4;
       display: flex;
       flex-direction: column;
       justify-content: center;

@@ -322,7 +322,7 @@
       margin: 0 variables.$ts-spacing-2 variables.$ts-spacing-2;
 
       b {
-        font-weight: 400;
+        font-weight: 500;
       }
     }
   }
