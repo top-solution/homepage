@@ -149,8 +149,6 @@
 
 <style lang="scss">
   @use "./styles/variables";
-  @use "@material/tooltip";
-  @use "@material/tooltip/styles";
 
   @import "./styles/main.scss";
 
