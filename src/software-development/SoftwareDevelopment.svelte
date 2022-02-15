@@ -20,8 +20,8 @@
     <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
   </div>
   <div slot="external">
-    <ts-header-hexagons-desktop />
-    <ts-header-hexagons-mobile />
+    <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
+    <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
     <ts-hex
       class="software-development__floating-hex-1"
       width="56"

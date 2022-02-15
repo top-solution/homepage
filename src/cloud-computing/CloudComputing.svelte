@@ -17,8 +17,8 @@
     <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
   </div>
   <div slot="external">
-    <ts-header-hexagons-desktop />
-    <ts-header-hexagons-mobile />
+    <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
+    <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
     <ts-hex
       class="cloud-computing__floating-hex-1"
       width="56"
@@ -35,7 +35,7 @@
       quis dolor sit gravida elementum.
     </p>
   </div>
-  <ts-cloud-computing-customers />
+  <ts-cloud-computing-customers></ts-cloud-computing-customers>
 </ts-layout>
 
 <style lang="scss" global>

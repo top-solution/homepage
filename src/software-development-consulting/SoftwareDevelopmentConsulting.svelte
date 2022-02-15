@@ -26,8 +26,8 @@
     <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
   </div>
   <div slot="external">
-    <ts-header-hexagons-desktop />
-    <ts-header-hexagons-mobile />
+    <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
+    <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
     <ts-hex
       class="software-development-consulting__floating-hex-1"
       width="56"
@@ -111,7 +111,7 @@
       rotation="-4"
     />
   </div>
-  <ts-software-development-consulting-customers />
+  <ts-software-development-consulting-customers></ts-software-development-consulting-customers>
   <div
     id="software-development-consulting__anchor-1"
     class="software-development-consulting__service"

@@ -24,8 +24,8 @@
     <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
   </div>
   <div slot="external">
-    <ts-header-hexagons-desktop />
-    <ts-header-hexagons-mobile />
+    <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
+    <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
     <ts-hex
       class="web-application-mobile__floating-hex-1"
       width="56"
@@ -122,7 +122,7 @@
       rotation="-4"
     />
   </div>
-  <ts-web-applications-customers />
+  <ts-web-applications-customers></ts-web-applications-customers>
   <div
     id="web-application-mobile__anchor-1"
     class="web-application-mobile__service"
