@@ -20,22 +20,22 @@
     <ts-header-hexagons-desktop />
     <ts-header-hexagons-mobile />
     <ts-hex
-      class="web-application-mobile__floating-hex-1"
+      class="cloud-computing__floating-hex-1"
       width="56"
       fill="#312783"
       shadow="true"
     />
   </div>
 </ts-top-banner>
-<ts-layout class="web-application-mobile">
-  <div class="web-application-mobile__copy">
+<ts-layout class="cloud-computing">
+  <div class="cloud-computing__copy">
     <p class="body-1">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam adipiscing
       elementum enim nec auctor faucibus dignissim ipsum proin. Pretium, urna
       quis dolor sit gravida elementum.
     </p>
   </div>
-  <ts-software-development-consultancy-customers />
+  <ts-cloud-computing-customers />
 </ts-layout>
 
 <style lang="scss" global>
@@ -47,7 +47,7 @@
     margin-bottom: variables.$ts-spacing-15;
   }
 
-  .web-application-mobile {
+  .cloud-computing {
     display: block;
     color: variables.$ts-blue-color;
     box-sizing: border-box;
@@ -175,7 +175,7 @@
       }
     }
 
-    #web-application-mobile {
+    #cloud-computing {
       &__anchor-2 {
         text-align: right;
       }
@@ -196,7 +196,7 @@
       }
     }
 
-    #web-application-mobile__stress_lavoro_correlato {
+    #cloud-computing__stress_lavoro_correlato {
       &,
       p {
         text-align: right;
@@ -259,7 +259,7 @@
         }
       }
 
-      #web-application-mobile {
+      #cloud-computing {
         &__anchor-2,
         &__stress_lavoro_correlato {
           p {
