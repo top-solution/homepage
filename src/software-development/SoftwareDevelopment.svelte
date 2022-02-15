@@ -1,23 +1,17 @@
-<svelte:options tag="ts-software-development-consultancy" />
-
-<script>
-  let kickOffProjectElement = null;
-  let developmentAndMaintenanceElement = null;
-  let disasterRecoverysElement = null;
-</script>
+<svelte:options tag="ts-software-development" />
 
 <ts-top-banner
-  title="Consulenza sviluppo software"
+  title="Sviluppo Software"
   mobilealignleft="true"
   title2={true}
   azure={true}
 >
   <div class="claim" slot="text">
-    Affrontiamo lo sviluppo dei nostri <b>prodotti</b> e <b>servizi</b> con
-    <b>tecnologie</b>
+    Affrontiamo lo sviluppo dei nostri prodotti e servizi con <b>tecnologie</b>
     sempre
     <b>nuove</b>, perchè la curiosità e la voglia di sperimentare fanno parte
-    del nostro DNA.
+    del nostro DNA. Per questo siamo in grado di offrire una consulenza di
+    <b>sviluppo software chiavi in mano</b> su tecnologie open source all'avanguardia.
   </div>
   <div
     slot="actions"
@@ -29,138 +23,104 @@
     <ts-header-hexagons-desktop />
     <ts-header-hexagons-mobile />
     <ts-hex
-      class="software-development-consultancy__floating-hex-1"
+      class="software-development__floating-hex-1"
       width="56"
       fill="#4857A3"
       shadow="true"
     />
   </div>
 </ts-top-banner>
-<ts-layout class="software-development-consultancy">
-  <div class="software-development-consultancy__copy">
+<ts-layout class="software-development">
+  <div class="software-development__copy">
     <p class="body-1">
-      Siamo in grado di offrire una <b>consulenza</b> di sviluppo
-      <b>software chiavi in mano</b>
-      su tecnologie <b>open source</b> all'avanguardia.
+      Le doti di <b>flessibilità</b> e <b>scalabilità</b> dei nostri sistemi
+      consentono di ottenere: naturale estendibilità a tutta la popolazione
+      aziendale,
+      <b>chiarezza</b> interpretativa, <b>facilità di utilizzo</b> con il minimo
+      disagio organizzativo.
     </p>
   </div>
-  <div class="software-development-consultancy__services">
-    <div class="software-development-consultancy__services-blob">
-      <ts-blob
-        shape="potato"
-        variance="0.25"
-        style="min-width: 900px;"
-        flip="true"
-        fill="#E3F1FA"
-      >
-        <div style="min-width: 900px; height: 500px; " />
-      </ts-blob>
-    </div>
-    <h3 class="title-3 title-form software-development-consultancy__choose-services">
-      Scegli tra i <b>SERVIZI</b>
-    </h3>
-    <ol class="software-development-consultancy__services-list">
+  <div class="software-development__our-services">
+    <h2 class="title-3 title-form">I nostri <b>servizi</b></h2>
+    <ol>
       <li>
-        <a
-          class="body-2"
-          href="#software-development-consultancy__anchor-1"
-          on:mouseup={() =>
-            kickOffProjectElement.scrollIntoView({
-              behavior: "smooth",
-            })}
+        <span class="title-5">APPLICAZIONI WEB E MOBILE</span>
+        <ts-button
+          class="software-development__our-services__button"
+          variant="outlined"
+          href="web-applications-mobile.html">Scopri</ts-button
         >
-          Kick-off progetti
-        </a>
+        <ts-button
+          class="software-development__our-services__button--small"
+          variant="outlined"
+          small="true"
+          href="web-applications-mobile.html">Scopri</ts-button
+        >
       </li>
       <li>
-        <a
-          class="body-2"
-          href="#software-development-consultancy__anchor-2"
-          on:mouseup={() =>
-            developmentAndMaintenanceElement.scrollIntoView({
-              behavior: "smooth",
-            })}
+        <span class="title-5">SVILUPPO SOFTWARE</span>
+        <ts-button
+          class="software-development__our-services__button"
+          variant="outlined"
+          href="software-development-consultancy.html">Scopri</ts-button
         >
-          Sviluppo e manutenzione
-        </a>
+        <ts-button
+          class="software-development__our-services__button--small"
+          variant="outlined"
+          small="true"
+          href="software-development-consultancy.html">Scopri</ts-button
+        >
       </li>
       <li>
-        <a
-          class="body-2"
-          href="#software-development-consultancy__anchor-3"
-          on:mouseup={() =>
-            disasterRecoverysElement.scrollIntoView({ behavior: "smooth" })}
+        <span class="title-5">CLOUD COMPUTING</span>
+        <ts-button
+          class="software-development__our-services__button"
+          variant="outlined"
+          href="cloud-computing.html">Scopri</ts-button
         >
-          Disaster recovery
-        </a>
+        <ts-button
+          class="software-development__our-services__button--small"
+          variant="outlined"
+          small="true"
+          href="cloud-computing.html">Scopri</ts-button
+        >
       </li>
     </ol>
-    <ts-button
-      class="software-development-consultancy__services-contact-us-button"
-      variant="primary"
-      href="/contacts.html"
+    <svg
+      class="software-development__our-services__hexagon"
+      viewBox="0 0 616 573"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      Contattaci
-    </ts-button>
-    <ts-hex
-      class="software-development-consultancy__floating-hex-2"
-      width="44"
-      fill="#312783"
-      opacity=".7"
-      shadow="false"
-      rotation="-4"
-    />
+      <path
+        d="M615.851 371.212L588.675 228.197L560.868 85.3133L407.215 42.7312L253.339 0.697273L126.861 101.13L0.791841 201.98L27.968 344.995L55.7745 487.878L209.428 530.461L363.304 572.495L489.781 472.062L615.851 371.212Z"
+        fill="#E3F1FA"
+      />
+    </svg>
   </div>
-  <ts-software-development-consultancy-customers />
-  <div
-    id="software-development-consultancy__anchor-1"
-    class="software-development-consultancy__service"
+  <ts-blob
+    class="software-development__blob"
+    interactive="true"
+    shape="hexagon"
+    fill="#EBEAF3"
+    padding="48"
+    variance="1.4"
   >
-    <h4 bind:this={kickOffProjectElement} class="title-4">Kick-off progetti</h4>
-    <ts-snail color="#8D88BA" flip="true" paddingtop="true" />
-    <p class="body-2">
-      Hai finito l'analisi e adesso è arrivata l'ora di inziare a scrivere
-      codice ma non sai che tecnologia scegliere? Hai già individuato la
-      tecnologia più adatta ma il tuo team non la conosce a fondo? Nuovi
-      framework e linguaggi possono aiutare a risolvere molti problemi, ma una
-      conoscenza poco approfondita può portare a scegliere una strada sbagliata
-      senza rendersene conto. La nostra esperienza può aiutarti a risparmiare
-      tempo e soldi.
-    </p>
-  </div>
-  <div
-    id="software-development-consultancy__anchor-2"
-    class="software-development-consultancy__service"
-  >
-    <h4 bind:this={developmentAndMaintenanceElement} class="title-4">
-      Sviluppo e manutenzione
-    </h4>
-    <ts-snail color="#4C429C" paddingtop="true" />
-    <p class="body-2">
-      Hai la necessità di aumentare la capacità del tuo team per brevi periodi?
-      Trovare professionisti affidabili non è semplice, la nostra società è in
-      grado di offrire garanzie molto più solide. Hai sviluppato o hai fatto
-      sviluppare un'app in una tecnologia che non padroneggi? A volte affidare
-      la manutenzione in outsourcing è più economico che investire in formazione
-      o in un nuovo team di sviluppo.
-    </p>
-  </div>
-  <div
-    id="software-development-consultancy__anchor-3"
-    class="software-development-consultancy__service"
-  >
-    <h4 bind:this={disasterRecoverysElement} class="title-4">
-      Disaster recovery
-    </h4>
-    <ts-snail color="#4857A3" flip="true" paddingtop="true" />
-    <p class="body-2">
-      Prima o poi a tutti capita di sottostimare le sfide legate ad un nuovo
-      progetto: il rischio di mancare una consegna o perdere un cliente riduce
-      di molto la tua redditività e reputazione. Top Solution può aiutarti a
-      rimanere al passo con le scadenze ed evitare di introdurre debito tecnico
-      che pagherai inevitabilmente in seguito.
-    </p>
-  </div>
+    <div class="software-development__blob-content">
+      <p class="body-2">
+        Il <b>software</b> è in continuo mutamento ed essere <b>aggiornati</b>
+        sulle ultime tecnologie e tendenze richiede un sacco di tempo, un
+        <b>investimento</b> che non tutte le aziende possono permettersi di sostenere.
+      </p>
+      <ts-button
+        variant="primary"
+        href="/contacts.html"
+        style="display: inline-block;"
+      >
+        Contattaci
+      </ts-button>
+    </div>
+  </ts-blob>
 </ts-layout>
 
 <style lang="scss" global>
@@ -172,7 +132,7 @@
     margin-bottom: variables.$ts-spacing-15;
   }
 
-  .software-development-consultancy {
+  .software-development {
     display: block;
     color: variables.$ts-blue-color;
     box-sizing: border-box;
@@ -300,7 +260,7 @@
       }
     }
 
-    #software-development-consultancy {
+    #software-development {
       &__anchor-2 {
         text-align: right;
       }
@@ -321,7 +281,7 @@
       }
     }
 
-    #software-development-consultancy__stress_lavoro_correlato {
+    #software-development__stress_lavoro_correlato {
       &,
       p {
         text-align: right;
@@ -384,7 +344,7 @@
         }
       }
 
-      #software-development-consultancy {
+      #software-development {
         &__anchor-2,
         &__stress_lavoro_correlato {
           p {
@@ -434,6 +394,67 @@
     ts-header-hexagons-mobile {
       display: block;
       width: 100%;
+    }
+  }
+
+  .software-development {
+    display: block;
+    color: variables.$ts-blue-color;
+    box-sizing: border-box;
+
+    &__our-services {
+      max-width: 540px;
+      margin: variables.$ts-spacing-20 auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .title-3 {
+        text-align: center;
+      }
+
+      ol {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        min-width: 500px;
+        margin-bottom: variables.$ts-spacing-3;
+      }
+
+      &__button {
+        display: inline-block;
+        margin-left: variables.$ts-spacing-8;
+
+        &--small {
+          display: none;
+        }
+      }
+
+      &__hexagon {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        width: 110%;
+      }
+    }
+
+    &__blob {
+      display: block;
+      max-width: 540px;
+      margin: 220px auto variables.$ts-spacing-10;
+    }
+
+    &__blob-content {
+      text-align: center;
+
+      ts-button {
+        margin-top: variables.$ts-spacing-3;
+      }
     }
   }
 </style>
