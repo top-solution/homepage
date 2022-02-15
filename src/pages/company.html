@@ -10,11 +10,75 @@ l'efficientamento e l’interazione uomo-macchina."
 
 <script src="./build/Blob.js"></script>
 <script src="./build/Layout.js"></script>
-<script src="./build/company/Company.js"></script>
 {{>head-end}}
 
 {{>body-start}}
-<ts-page-company></ts-page-company>
+<div class="page-company layout">
+  <div class="layout__content">
+    <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
+    <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
+    <h1 class="title-1">Azienda</h1>
+    <div class="page-company__row">
+      <div class="page-company__logo" style="background-image: url(./img/start_cup.png)"></div>
+      <div class="page-company__blob">
+        <ts-blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
+          <div class="page-company__blob__content">
+            <p class="body-1">
+              Nasciamo come <b>vincitori</b> nel 2008 della IV edizione della Start
+              Cup Torino Piemonte
+            </p>
+          </div>
+        </ts-blob>
+      </div>
+    </div>
+    <svg viewBox="0 0 100 109" class="page-company_floating-hex-1" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6.10979 22.8979L30.8094 11.5447L55.5531 0.287793L77.7351 16.0017L99.8557 31.8019L97.3381 58.869L94.715 85.9261L70.0154 97.2794L45.2717 108.536L23.0897 92.8224L0.969092 77.0222L3.48669 49.955L6.10979 22.8979Z"
+        fill="#312783" />
+    </svg>
+    <ts-company-hex-1></ts-company-hex-1>
+    <ts-company-hex-1-mobile></ts-company-hex-1-mobile>
+    <div class="page-company__row page-company__row--flipped">
+      <div class="page-company__logo" style="background-image: url(./img/i3p.png)"></div>
+      <div class="page-company__blob">
+        <ts-blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2" flip="true">
+          <div class="page-company__blob__content">
+            <p class="body-1">
+              Nel 2012 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
+              siamo usciti dall'incubatore e abbiamo aperto il nostro primo ufficio
+            </p>
+          </div>
+        </ts-blob>
+      </div>
+    </div>
+    <ts-company-hex-2></ts-company-hex-2>
+    <ts-company-hex-2-mobile></ts-company-hex-2-mobile>
+    <div class="page-company__row">
+      <div class="page-company__logo" style="background-image: url(./img/logo_name.svg)"></div>
+      <div class="page-company__blob">
+        <ts-blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
+          <div class="page-company__blob__content">
+            <p class="body-1">
+              <b>Oggi</b> siamo proiettati all’<b>industry 4.0</b> e allo sviluppo
+              di applicazioni per l’<b>ottimizzazione</b>, l'<b>efficientamento</b>
+              e l’<b>interazione</b> uomo-macchina
+            </p>
+          </div>
+        </ts-blob>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('ts-blob').forEach(function (el) {
+    if (window.innerWidth < 900) {
+      el.innerWith = "octagon"
+      el.variance = "1.2"
+    }
+  })
+</script>
+
 <script async defer src="./build/CollapsibleSection.js"></script>
 <script async defer src="./build/company/HeaderHexagonsDesktop.js"></script>
 <script async defer src="./build/company/HeaderHexagonsMobile.js"></script>

@@ -1,6 +1,7 @@
 const { join } = require('path');
 const { readFileSync, writeFileSync } = require('fs');
 const Handlebars = require('handlebars');
+const sass = require('sass');
 
 
 Handlebars.registerPartial(
@@ -36,6 +37,9 @@ Handlebars.registerPartial(
 Handlebars.registerPartial(
   "body-end", `
     <ts-footer />
+    <style>
+    {{{css}}}
+    </style>
   </body>
 </html>
 `)
@@ -60,7 +64,6 @@ Handlebars.registerPartial("metadata", `
     <link rel="canonical" href="{{ url }}/{{ fileName }}" />
 `);
 
-
 const fileRelPath = process.argv[2];
 const fileName = fileRelPath.substring(fileRelPath.lastIndexOf('/') + 1)
 const fileSourcePath = join(__dirname, fileRelPath);
@@ -74,11 +77,13 @@ writeFileSync(fileDestPath, template({
   url: process.env.DEPLOY_TO === 'prod' ? `https://topsolution.it` : `https://www.topsolution.dev`,
   fileName: fileName,
   locale: 'it_IT',
-  image: 'img/topsolution_og_logo.png'
+  image: 'img/topsolution_og_logo.png',
+  css: sass.compile(fileSourcePath.replace('.html', '.scss'), {
+    sourceMap: false,
+    verbose: false
+  }).css
 }));
 
-
-const sass = require('sass');
 
 const result = sass.compile(join(__dirname, 'src', 'styles', 'global.scss'), {
   style: "compressed"
