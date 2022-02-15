@@ -25,9 +25,8 @@
       <div><a href="company-development.html">Sviluppo organizzativo</a></div>
       <div><a href="self-development.html">Sviluppo individuale</a></div>
       <div><a href="web-applications-mobile.html">Applicazioni web e mobile</a></div>
-      <!--
-      <div><a href="error.html">Consulenza sviluppo software</a></div>
-      <div><a href="error.html">Cloud computing</a></div> -->
+      <div><a href="software-development-consultancy.html">Consulenza sviluppo software</a></div>
+      <div><a href="cloud-computing.html">Cloud computing</a></div>
     </div>
     <div class="footer-top__bordered-box">
       <div class="title-6">Contatti</div>
