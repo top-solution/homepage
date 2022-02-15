@@ -43,6 +43,7 @@
       dei requisiti allo <b>sviluppo back-end</b> e <b>front-end</b>.
     </p>
     <video class="web-application-mobile__video" controls>
+      <track kind="captions" />
       <source src="videos/test.mp4" type="video/mp4" />
     </video>
   </div>

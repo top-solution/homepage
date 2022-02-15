@@ -102,6 +102,7 @@
       <b>cambiamento</b>, le <b>persone</b> lo realizzano.
     </p>
     <video class="page-haka__video" controls>
+      <track kind="captions" />
       <source src="videos/haka.mp4" type="video/mp4" />
     </video>
   </div>

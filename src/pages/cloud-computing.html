@@ -6,21 +6,66 @@ computing" }}
 <script src="./build/cloud-computing/CloudComputing.js"></script>
 <script src="./build/cloud-computing/Customers.js"></script>
 {{>head-end}} {{>body-start}}
-<ts-cloud-computing></ts-cloud-computing>
-<script async defer src="./build/Blob.js"></script>
-<script async defer src="./build/Button.js"></script>
-<script async defer src="./build/company-development/Customers.js"></script>
-<script
-  async
-  defer
-  src="./build/company-development/HeaderHexagonsDesktop.js"
-></script>
-<script
-  async
-  defer
-  src="./build/company-development/HeaderHexagonsMobile.js"
-></script>
-<script async defer src="./build/Hex.js"></script>
-<script async defer src="./build/Picture.js"></script>
-<script async defer src="./build/Snail.js"></script>
-{{>body-end}}
+  <ts-top-banner
+    title="Cloud Computing"
+    mobilealignleft="true"
+    title2="{true}"
+    azure="{true}"
+  >
+    <div class="claim" slot="text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+      suspendisse consequat elementum nibh ultrices euismod sodales sit.
+    </div>
+    <div
+      slot="actions"
+      style="
+        display: flex;
+        flex-direction: column;
+        max-width: 175px;
+        margin: auto;
+      "
+    >
+      <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
+    </div>
+    <div slot="external">
+      <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
+      <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
+      <ts-hex
+        class="cloud-computing__floating-hex-1"
+        width="56"
+        fill="#312783"
+        shadow="true"
+      />
+    </div>
+  </ts-top-banner>
+  <div class="cloud-computing layout">
+    <div class="layout__content">
+    <div class="cloud-computing__copy">
+      <p class="body-1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam adipiscing
+        elementum enim nec auctor faucibus dignissim ipsum proin. Pretium, urna
+        quis dolor sit gravida elementum.
+      </p>
+    </div>
+    <ts-cloud-computing-customers></ts-cloud-computing-customers>
+    </div>
+  </div>
+
+  <script async defer src="./build/Blob.js"></script>
+  <script async defer src="./build/Button.js"></script>
+  <script async defer src="./build/company-development/Customers.js"></script>
+  <script
+    async
+    defer
+    src="./build/company-development/HeaderHexagonsDesktop.js"
+  ></script>
+  <script
+    async
+    defer
+    src="./build/company-development/HeaderHexagonsMobile.js"
+  ></script>
+  <script async defer src="./build/Hex.js"></script>
+  <script async defer src="./build/Picture.js"></script>
+  <script async defer src="./build/Snail.js"></script>
+  {{>body-end}}
+</lin>

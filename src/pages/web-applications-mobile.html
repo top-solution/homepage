@@ -8,7 +8,198 @@ possibilità di scegliere l'ambiente che preferisci." }}
 <script src="./build/web-applications-mobile/WebApplicationMobile.js"></script>
 <script src="./build/web-applications-mobile/Customers.js"></script>
 {{>head-end}} {{>body-start}}
-<ts-web-application-mobile></ts-web-application-mobile>
+
+<ts-top-banner
+  title="Applicazioni Web e Mobile"
+  mobilealignleft="true"
+  title2={true}
+>
+  <div class="claim" slot="text">
+    Utilizziamo le <b>tecnologie open source</b> più all'avanguardia per
+    offrirti il massimo delle performance, la <b>libertà</b> da <b>licenze</b> e
+    <b>lock-in</b>, la possibilità di scegliere l'ambiente che preferisci.
+  </div>
+  <div
+    slot="actions"
+    style="display: flex; flex-direction: column; max-width: 175px; margin: auto;"
+  >
+    <ts-button variant="primary" href="/contacts.html">Contattaci </ts-button>
+  </div>
+  <div slot="external">
+    <ts-header-hexagons-desktop />
+    <ts-header-hexagons-mobile />
+    <ts-hex
+      class="web-application-mobile__floating-hex-1"
+      width="56"
+      fill="#E3F1FA"
+      shadow="true"
+    />
+  </div>
+</ts-top-banner>
+<div class="web-application-mobile layout">
+  <div class="layout__content">
+    <div class="web-application-mobile__copy">
+      <p class="body-1">
+        Realizziamo <b>web applications</b> e <b>app mobile</b> (iOS e Android) su
+        misura per il tuo business, prendendoci cura di tutto il processo:
+        <b>dall'analisi</b>
+        dei requisiti allo <b>sviluppo back-end</b> e <b>front-end</b>.
+      </p>
+      <video class="web-application-mobile__video" controls>
+        <source src="videos/test.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="web-application-mobile__services">
+      <div class="web-application-mobile__services-blob">
+        <ts-blob
+          shape="potato"
+          variance="0.25"
+          style="min-width: 900px;"
+          flip="true"
+          fill="#E3F1FA"
+        >
+          <div style="min-width: 900px; height: 500px; " />
+        </ts-blob>
+      </div>
+      <h3 class="title-3 title-form web-application-mobile__choose-services">
+        Scegli tra i <b>SERVIZI</b>
+      </h3>
+      <ol class="web-application-mobile__services-list">
+        <li>
+          <a
+            id="anchor-1"
+            class="body-2"
+            href="#web-application-mobile__anchor-1"
+            on:mouseup={() =>
+              singlePageWebApplicationElement.scrollIntoView({
+                behavior: "smooth",
+              })}
+          >
+            Single page web applications
+          </a>
+        </li>
+        <li>
+          <a
+            id="anchor-2"
+            class="body-2"
+            href="#web-application-mobile__anchor-2"
+            on:mouseup={() =>
+              restApiElement.scrollIntoView({ behavior: "smooth" })}
+          >
+            Rest api
+          </a>
+        </li>
+        <li>
+          <a
+            id="anchor-3"
+            class="body-2"
+            href="#web-application-mobile__anchor-3"
+            on:mouseup={() =>
+              microServicesElement.scrollIntoView({ behavior: "smooth" })}
+          >
+            Micro services
+          </a>
+        </li>
+        <li>
+          <a
+            id="anchor-4"
+            class="body-2"
+            href="#web-application-mobile__anchor-4"
+            on:mouseup={() =>
+              hybridAppsElement.scrollIntoView({ behavior: "smooth" })}
+          >
+            Hybrid apps
+          </a>
+        </li>
+      </ol>
+      <ts-button
+        class="web-application-mobile__services-contact-us-button"
+        variant="primary"
+        href="/contacts.html"
+      >
+        Contattaci
+      </ts-button>
+      <ts-hex
+        class="web-application-mobile__floating-hex-2"
+        width="44"
+        fill="#312783"
+        opacity=".7"
+        shadow="false"
+        rotation="-4"
+      />
+    </div>
+    <ts-web-applications-customers />
+    <div
+      id="web-application-mobile__anchor-1"
+      class="web-application-mobile__service"
+    >
+      <h4 bind:this={singlePageWebApplicationElement} class="title-4">
+        Single page web applications
+      </h4>
+      <ts-snail color="#8D88BA" flip="true" paddingtop="true" />
+      <p class="body-2">
+        Sono il nostro pane quotidiano, le tecnologie che utilizziamo sono <b
+          >React</b
+        >
+        (con <b>Redux</b>), <b>Vue.js</b>, <b>Angular.io</b>,
+        <b>Svelte a angularJs</b>. Nella nostra cassetta degli attrezzi c'è anche
+        posto per
+        <b
+          >Babel, Webpack, RxJS, Gulp, Socket.io, Google Material, Material UI,
+          Bootstrap, SASS...</b
+        >
+      </p>
+    </div>
+    <div
+      id="web-application-mobile__anchor-2"
+      class="web-application-mobile__service"
+    >
+      <h4 bind:this={restApiElement} class="title-4">Rest api</h4>
+      <ts-snail color="#4C429C" paddingtop="true" />
+      <p class="body-2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet
+        varius arcu dignissim. Aliquet nisl blandit nibh cursus duis sed.
+        Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
+      </p>
+    </div>
+    <div
+      id="web-application-mobile__anchor-3"
+      class="web-application-mobile__service"
+    >
+      <h4 bind:this={microServicesElement} class="title-4">Micro services</h4>
+      <ts-snail color="#4857A3" flip="true" paddingtop="true" />
+      <p class="body-2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In parturient
+        nulla ultricies faucibus. Adipiscing mauris eget adipiscing maecenas
+        aliquam risus. Rhoncus nulla tempus pharetra augue mauris arcu.
+      </p>
+    </div>
+    <div
+      id="web-application-mobile__anchor-2"
+      class="web-application-mobile__service"
+    >
+      <h4 bind:this={hybridAppsElement} class="title-4">Hybrid apps</h4>
+      <ts-snail color="#4C429C" paddingtop="true" />
+      <p class="body-2">
+        Sviluppiamo applicazioni <b>iOS</b> e <b>Android</b> con prestazioni pari
+        alle app native con <b>Flutter</b>, oppure <b>convertiamo</b> applicazioni
+        web con Ionic e Apache Cordova. Se vuoi un'applicazione per Windows, Linux
+        e Mac OS non ci sono problemi: realizziamo applicazioni desktop utilizzando
+        Electron e le più moderne tecnologie web.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('ts-blob').forEach(function (el) {
+    if (window.innerWidth < 900) {
+      el.innerWith = "octagon"
+      el.variance = "1.2"
+    }
+  })
+</script>
+
 <script async defer src="./build/Blob.js"></script>
 <script async defer src="./build/Button.js"></script>
 <script async defer src="./build/company-development/Customers.js"></script>

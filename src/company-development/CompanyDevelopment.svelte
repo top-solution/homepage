@@ -45,6 +45,7 @@
       <b>azioni</b> correttive ove richiesto.
     </p>
     <video class="page-company-development__video" controls>
+      <track kind="captions" />
       <source src="videos/company-development.mp4" type="video/mp4" />
     </video>
   </div>
