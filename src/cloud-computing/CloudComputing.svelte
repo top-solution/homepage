@@ -311,4 +311,15 @@
       width: 100%;
     }
   }
+
+  .layout {
+    max-width: variables.$ts-tablet-max;
+    margin: 0 auto;
+    padding: 0 variables.$ts-spacing-3;
+    position: relative;
+
+    &__content {
+      min-height: calc(100vh - 621px);
+    }
+  }
 </style>
