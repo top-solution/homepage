@@ -10,6 +10,7 @@ ts-layout {
   display: block;
   color: variables.$ts-blue-color;
   box-sizing: border-box;
+  margin-bottom: variables.$ts-spacing-9;
 
   &__floating-hex {
     &-1 {
@@ -135,10 +136,12 @@ ts-layout {
   }
 
   #web-application-mobile {
-    &__anchor-2 {
+    &__anchor-2,
+    &__anchor-4 {
       text-align: right;
     }
-    &__anchor-2 p {
+    &__anchor-2,
+    &__anchor-4 p {
       margin-left: auto;
     }
   }
