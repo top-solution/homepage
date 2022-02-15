@@ -80,7 +80,8 @@ writeFileSync(fileDestPath, template({
   image: 'img/topsolution_og_logo.png',
   css: sass.compile(fileSourcePath.replace('.html', '.scss'), {
     sourceMap: false,
-    verbose: false
+    verbose: false,
+    style: "compressed"
   }).css
 }));
 
