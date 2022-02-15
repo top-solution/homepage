@@ -1,0 +1,428 @@
+@use "../styles/variables";
+
+@use "../styles/main.scss";
+
+.page-haka {
+  display: block;
+  color: variables.$ts-blue-color;
+  box-sizing: border-box;
+
+  a {
+    font-weight: 400;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__floating-hex-1 {
+    position: absolute;
+    bottom: -430px;
+  }
+
+  &__copy {
+    &,
+    & h2 {
+      text-align: center;
+    }
+
+    & h2 {
+      margin: variables.$ts-spacing-15 0 variables.$ts-spacing-6;
+    }
+
+    & p {
+      margin-bottom: variables.$ts-spacing-6;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: auto;
+    margin: variables.$ts-spacing-3 0;
+  }
+
+  &__services {
+    margin-top: variables.$ts-spacing-15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 310px;
+  }
+
+  &__services-blob {
+    width: 1100px;
+    position: absolute;
+    top: -70px;
+    left: 42%;
+    transform: translate(-50%, 0);
+    z-index: -1;
+  }
+
+  &__services {
+    h2 {
+      text-transform: none;
+      text-align: center;
+      margin-bottom: variables.$ts-spacing-6;
+    }
+  }
+  &__floating-hex-2 {
+    display: none;
+  }
+
+  &__choose-services {
+    margin-bottom: variables.$ts-spacing-6;
+  }
+
+  &__services-list,
+  &__service-subservices ol {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    line-height: 28px;
+    width: 390px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  &__services-list li,
+  &__service-subservices li {
+    margin-bottom: variables.$ts-spacing-3;
+  }
+
+  &__services-list li::before,
+  &__service-subservices li::before {
+    content: "";
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    background-image: url("img/icons/hexagon-list-item.svg");
+    background-size: cover;
+    margin: 0 variables.$ts-spacing-4 -4px auto;
+    padding: 0;
+  }
+
+  &__services-brochure-button {
+    display: inline-block;
+    margin-top: variables.$ts-spacing-4;
+  }
+
+  &__service {
+    position: relative;
+    .body-2 {
+      box-sizing: border-box;
+    }
+
+    & + & {
+      margin-top: 280px;
+    }
+
+    & p {
+      width: 100%;
+      max-width: 580px;
+    }
+
+    & h4 {
+      margin-bottom: variables.$ts-spacing-3;
+      line-height: 33px;
+    }
+  }
+
+  &__service-subservices {
+    margin: variables.$ts-spacing-4 0;
+    position: relative;
+
+    li {
+      font-weight: 500;
+      margin-bottom: variables.$ts-spacing-4;
+    }
+  }
+
+  &__service-expertise {
+    text-align: right;
+
+    p {
+      margin-left: auto;
+    }
+  }
+
+  &__free-trial {
+    position: absolute;
+    right: 0;
+  }
+
+  &__contact-us {
+    margin-bottom: variables.$ts-spacing-10;
+  }
+
+  &__our-plans {
+    margin-top: 250px;
+    padding-top: variables.$ts-spacing-6;
+    text-align: center;
+
+    .body-2 {
+      margin-bottom: variables.$ts-spacing-6;
+    }
+  }
+
+  ts-pricing-table {
+    margin: variables.$ts-spacing-1-5 0 0;
+  }
+
+  &__our-plans-accordion ts-collapsible-section {
+    margin: variables.$ts-spacing-1-5 0;
+    display: block;
+  }
+
+  &__enterprise-blob {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    max-width: 90%;
+
+    &__content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 350px;
+      height: 350px;
+      max-width: 80%;
+
+      & .title-6 {
+        font-weight: 300;
+      }
+
+      .body-2 {
+        margin: variables.$ts-spacing-1 0 variables.$ts-spacing-3;
+      }
+    }
+  }
+
+  &__expertise-pricing-table-mobile {
+    display: none;
+    font-size: 20px;
+  }
+
+  &__more-info-blob {
+    &-container {
+      background-color: #fff;
+      width: 100%;
+      padding: variables.$ts-spacing-10 0;
+    }
+
+    &__more-info-blob__content p {
+      font-size: 20px;
+    }
+  }
+
+  &__pricing-table {
+    &__service-potential {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: #e3f1fa;
+      transition: background-color variables.$ts-transition-timing-default
+        variables.$ts-transition-function-default;
+
+      &--collapsed {
+        background-color: transparent;
+      }
+
+      &-copy {
+        padding: variables.$ts-spacing-3 variables.$ts-spacing-10;
+
+        p {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 150%;
+          margin: 0;
+        }
+      }
+
+      &-test {
+        padding: 0 variables.$ts-spacing-3;
+        h4 {
+          line-height: 14px;
+          border-bottom: 1px solid black;
+          padding-bottom: variables.$ts-spacing-1;
+          margin: variables.$ts-spacing-2 0;
+        }
+
+        & ol {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+
+        & ol {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+
+        & li {
+          font-weight: 300;
+          font-size: 18px;
+          padding: variables.$ts-spacing-3 0;
+          border-bottom: 1px solid #404040;
+          display: flex;
+          align-items: center;
+        }
+
+        & li:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__our-plans-accordion-hexagon {
+    width: auto;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1);
+    transition: height var(--ts-transition-timing-default)
+        var(--ts-transition-function-default),
+      width var(--ts-transition-timing-default)
+        var(--ts-transition-function-default),
+      transform var(--ts-transition-timing-default)
+        var(--ts-transition-function-default);
+  }
+
+  ts-request-trial {
+    display: block;
+    margin: 200px auto variables.$ts-spacing-15;
+    max-width: 720px;
+  }
+}
+
+@media only screen and (max-width: variables.$ts-tablet-max) {
+  .page-haka {
+    padding: 0 variables.$ts-spacing-3;
+    overflow-x: hidden;
+
+    &__floating-hex-1 {
+      display: none;
+    }
+
+    &__copy {
+      h2 {
+        margin: variables.$ts-spacing-8 0 variables.$ts-spacing-6;
+      }
+    }
+
+    &__services {
+      margin-top: variables.$ts-spacing-8;
+
+      &__customers {
+        &__customer {
+          margin: 0 variables.$ts-spacing-2 variables.$ts-spacing-6;
+
+          ts-picture {
+            margin: variables.$ts-spacing-2;
+          }
+        }
+      }
+    }
+
+    &__services-list,
+    &__service-subservices ol {
+      font-size: 18px;
+      width: 350px;
+    }
+
+    &__services-list li::before,
+    &__service-subservices li::before {
+      height: 24px;
+      width: 24px;
+      margin-right: variables.$ts-spacing-2;
+    }
+
+    &__service + &__service {
+      margin-top: variables.$ts-spacing-10;
+    }
+
+    &__floating-hex-2 {
+      display: block;
+      position: absolute;
+      bottom: -260px;
+    }
+
+    &__service {
+      h4 {
+        margin-bottom: variables.$ts-spacing-3;
+        font-style: normal;
+        line-height: 24px;
+      }
+
+      .body-2 {
+        padding-left: 20%;
+      }
+
+      &--flip {
+        .body-2 {
+          padding-right: 20%;
+          padding-left: 0;
+        }
+      }
+    }
+
+    &__service-subservices ol {
+      margin: variables.$ts-spacing-7 auto;
+    }
+
+    &__free-trial {
+      position: static;
+      display: flex;
+    }
+
+    &__free-trial ts-button {
+      margin: auto;
+    }
+
+    &__our-plans {
+      margin-top: 120px;
+    }
+
+    &__our-plans-accordion ts-pricing-table,
+    &__our-plans-accordion ts-collapsible-section {
+      margin: variables.$ts-spacing-1-5 (-1 * variables.$ts-spacing-3);
+      display: block;
+    }
+
+    &__expertise-pricing-table {
+      display: none !important;
+    }
+
+    &__expertise-pricing-table-mobile {
+      display: block;
+    }
+
+    &__pricing-table__service-potential {
+      &-copy {
+        padding: variables.$ts-spacing-3 variables.$ts-spacing-1;
+      }
+
+      &-test {
+        padding: 0 variables.$ts-spacing-1;
+      }
+    }
+
+    ts-request-trial {
+      margin-top: variables.$ts-spacing-15;
+    }
+  }
+}
+
+@media only screen and (max-width: variables.$ts-mobile-max) {
+  .page-haka {
+    &__services-list {
+      max-width: 280px;
+      white-space: nowrap;
+    }
+  }
+}

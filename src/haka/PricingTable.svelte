@@ -5,10 +5,14 @@
   import { get_current_component, onDestroy, onMount } from "svelte/internal";
 
   export let title = "";
-  export let rows = [];
-  export let columns = [];
+  export let rows = "";
+  export let columns = "";
   export let subcolumns = null;
   export let expanded = null;
+
+  let rowsObj = [];
+  let columnsObj = [];
+  let subcolumnsObj = [];
 
   let tableElement = null;
   let headerElement = null;
@@ -48,7 +52,12 @@
    * Safari...
    */
   function setSticky() {
-    if (expanded && tableElement && headerElement && headerSpyElement) {
+    if (
+      expanded === "true" &&
+      tableElement &&
+      headerElement &&
+      headerSpyElement
+    ) {
       const tableRect = tableElement.getBoundingClientRect();
       const headerRect = headerElement.getBoundingClientRect();
       const rect = headerSpyElement?.getBoundingClientRect();
@@ -72,6 +81,15 @@
     window.addEventListener("scroll", setSticky);
     window.addEventListener("resize", updateCollapsedElementHeight);
 
+    setTimeout(() => {
+      rowsObj = JSON.parse(rows);
+      columnsObj = JSON.parse(columns);
+
+      try {
+        subcolumnsObj = JSON.parse(subcolumns);
+      } catch (e) {}
+    }, 500);
+
     updateCollapsedElementHeight();
   });
 
@@ -92,24 +110,24 @@
 >
   <div
     class="pricing-table__table"
-    class:pricing-table__table--collapsed={!Boolean(expanded)}
+    class:pricing-table__table--collapsed={expanded !== "true"}
     bind:this={tableElement}
   >
     <div
       bind:this={headerElement}
       class="pricing-table__header"
-      style={stickyHeader.sticky && expanded
+      style={stickyHeader.sticky && expanded === "true"
         ? `position: fixed; top: 0; width: ${stickyHeader.width}px; background-color: #e3f1fa;`
         : ""}
     >
       <div class="pricing-table__header__row">
         <div class="pricing-table__col" />
-        {#each columns as column, i}
+        {#each columnsObj as column, i}
           <div
             class="pricing-table__col"
             class:pricing-table__last-col={subcolumns &&
-              Number(i) !== columns.length - 1}
-            colspan={subcolumns ? subcolumns.length : undefined}
+              Number(i) !== columnsObj.length - 1}
+            colspan={subcolumns ? subcolumnsObj.length : undefined}
           >
             <span class="pricing-table__col__text">
               {column}
@@ -117,17 +135,17 @@
           </div>
         {/each}
       </div>
-      {#if subcolumns}
+      {#if subcolumnsObj}
         <div class="pricing-table__subheader__row">
           <div class="pricing-table__col" />
-          {#each columns as column, i}
-            {#each subcolumns as subColumn, j}
+          {#each columnsObj as column, i}
+            {#each subcolumnsObj as subColumn, j}
               <div
                 class="pricing-table__col"
                 class:pricing-table__last-col={Number(i) !==
-                  columns.length - 1 &&
-                  columns.length &&
-                  Number(j) === subcolumns.length - 1}
+                  columnsObj.length - 1 &&
+                  columnsObj.length &&
+                  Number(j) === subcolumnsObj.length - 1}
               >
                 <span class="pricing-table__col__text">
                   {subColumn}
@@ -143,13 +161,13 @@
       style={`width: 100%; height: ${stickyHeader.height}px;`}
     />
     <div class="pricing-table__body">
-      {#each rows as row}
+      {#each rowsObj as row}
         <div class="pricing-table__body__row">
           {#each row as column, i}
             <div
               class="pricing-table__col pricing-table__body__col"
-              class:pricing-table__last-col={subcolumns &&
-                Number(i) === subcolumns.length}
+              class:pricing-table__last-col={subcolumnsObj &&
+                Number(i) === subcolumnsObj.length}
             >
               {#if column === true}
                 <img src="img/icons/check-true.svg" alt="SI" />

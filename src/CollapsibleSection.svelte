@@ -5,7 +5,7 @@
   import { get_current_component, onDestroy, onMount } from "svelte/internal";
 
   export let title = "";
-  export let expanded = false;
+  export let expanded = "false";
 
   let collapsibleElement = null;
   let collapsedElement = null;
@@ -41,12 +41,12 @@
 <div
   bind:this={collapsibleElement}
   class="collapsible-section"
-  class:collapsible-section--collapsed={!expanded}
+  class:collapsible-section--collapsed={expanded !== "true"}
 >
   <div class="collapsible-section__background">
     <div
       class="collapsible-section-header"
-      class:collapsible-section-header--collapsed={!expanded}
+      class:collapsible-section-header--collapsed={expanded !== "true"}
       on:mouseup={() => {
         dispatch("expand");
         setTimeout(() => {
@@ -64,8 +64,8 @@
     </div>
     <div
       class="collapsible-section__collapsible"
-      class:collapsible-section__collapsible--expanded={expanded}
-      style={expanded
+      class:collapsible-section__collapsible--expanded={expanded === "true"}
+      style={expanded === "true"
         ? `max-height: ${collapsedElementHeight}px`
         : "max-height: 0;"}
     >
@@ -75,7 +75,7 @@
     </div>
     <div
       class="collapsible-section__divider"
-      class:collapsible-section__divider--collapsed={!expanded}
+      class:collapsible-section__divider--collapsed={expanded !== "true"}
     >
       <hr />
     </div>
