@@ -28,7 +28,7 @@
         <a href="web-applications-mobile.html">Applicazioni web e mobile</a>
       </div>
       <div>
-        <a href="software-development-consultancy.html"
+        <a href="software-development-consulting.html"
           >Consulenza sviluppo software</a
         >
       </div>

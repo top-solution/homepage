@@ -62,13 +62,13 @@
         <ts-button
           class="software-development__our-services__button"
           variant="outlined"
-          href="software-development-consultancy.html">Scopri</ts-button
+          href="software-development-consulting.html">Scopri</ts-button
         >
         <ts-button
           class="software-development__our-services__button--small"
           variant="outlined"
           small="true"
-          href="software-development-consultancy.html">Scopri</ts-button
+          href="software-development-consulting.html">Scopri</ts-button
         >
       </li>
       <li>

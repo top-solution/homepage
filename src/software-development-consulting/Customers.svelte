@@ -1,4 +1,4 @@
-<svelte:options tag="ts-software-development-consultancy-customers" />
+<svelte:options tag="ts-software-development-consulting-customers" />
 
 <div class="main-box">
   <h3 class="title-3 title-form">Chi ci ha <b>scelto</b></h3>

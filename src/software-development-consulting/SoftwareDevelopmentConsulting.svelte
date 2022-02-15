@@ -1,4 +1,4 @@
-<svelte:options tag="ts-software-development-consultancy" />
+<svelte:options tag="ts-software-development-consulting" />
 
 <script>
   let kickOffProjectElement = null;
@@ -29,23 +29,23 @@
     <ts-header-hexagons-desktop />
     <ts-header-hexagons-mobile />
     <ts-hex
-      class="software-development-consultancy__floating-hex-1"
+      class="software-development-consulting__floating-hex-1"
       width="56"
       fill="#4857A3"
       shadow="true"
     />
   </div>
 </ts-top-banner>
-<ts-layout class="software-development-consultancy">
-  <div class="software-development-consultancy__copy">
+<ts-layout class="software-development-consulting">
+  <div class="software-development-consulting__copy">
     <p class="body-1">
       Siamo in grado di offrire una <b>consulenza</b> di sviluppo
       <b>software chiavi in mano</b>
       su tecnologie <b>open source</b> all'avanguardia.
     </p>
   </div>
-  <div class="software-development-consultancy__services">
-    <div class="software-development-consultancy__services-blob">
+  <div class="software-development-consulting__services">
+    <div class="software-development-consulting__services-blob">
       <ts-blob
         shape="potato"
         variance="0.25"
@@ -56,14 +56,14 @@
         <div style="min-width: 900px; height: 500px; " />
       </ts-blob>
     </div>
-    <h3 class="title-3 title-form software-development-consultancy__choose-services">
+    <h3 class="title-3 title-form software-development-consulting__choose-services">
       Scegli tra i <b>SERVIZI</b>
     </h3>
-    <ol class="software-development-consultancy__services-list">
+    <ol class="software-development-consulting__services-list">
       <li>
         <a
           class="body-2"
-          href="#software-development-consultancy__anchor-1"
+          href="#software-development-consulting__anchor-1"
           on:mouseup={() =>
             kickOffProjectElement.scrollIntoView({
               behavior: "smooth",
@@ -75,7 +75,7 @@
       <li>
         <a
           class="body-2"
-          href="#software-development-consultancy__anchor-2"
+          href="#software-development-consulting__anchor-2"
           on:mouseup={() =>
             developmentAndMaintenanceElement.scrollIntoView({
               behavior: "smooth",
@@ -87,7 +87,7 @@
       <li>
         <a
           class="body-2"
-          href="#software-development-consultancy__anchor-3"
+          href="#software-development-consulting__anchor-3"
           on:mouseup={() =>
             disasterRecoverysElement.scrollIntoView({ behavior: "smooth" })}
         >
@@ -96,14 +96,14 @@
       </li>
     </ol>
     <ts-button
-      class="software-development-consultancy__services-contact-us-button"
+      class="software-development-consulting__services-contact-us-button"
       variant="primary"
       href="/contacts.html"
     >
       Contattaci
     </ts-button>
     <ts-hex
-      class="software-development-consultancy__floating-hex-2"
+      class="software-development-consulting__floating-hex-2"
       width="44"
       fill="#312783"
       opacity=".7"
@@ -111,10 +111,10 @@
       rotation="-4"
     />
   </div>
-  <ts-software-development-consultancy-customers />
+  <ts-software-development-consulting-customers />
   <div
-    id="software-development-consultancy__anchor-1"
-    class="software-development-consultancy__service"
+    id="software-development-consulting__anchor-1"
+    class="software-development-consulting__service"
   >
     <h4 bind:this={kickOffProjectElement} class="title-4">Kick-off progetti</h4>
     <ts-snail color="#8D88BA" flip="true" paddingtop="true" />
@@ -129,8 +129,8 @@
     </p>
   </div>
   <div
-    id="software-development-consultancy__anchor-2"
-    class="software-development-consultancy__service"
+    id="software-development-consulting__anchor-2"
+    class="software-development-consulting__service"
   >
     <h4 bind:this={developmentAndMaintenanceElement} class="title-4">
       Sviluppo e manutenzione
@@ -146,8 +146,8 @@
     </p>
   </div>
   <div
-    id="software-development-consultancy__anchor-3"
-    class="software-development-consultancy__service"
+    id="software-development-consulting__anchor-3"
+    class="software-development-consulting__service"
   >
     <h4 bind:this={disasterRecoverysElement} class="title-4">
       Disaster recovery
@@ -172,7 +172,7 @@
     margin-bottom: variables.$ts-spacing-15;
   }
 
-  .software-development-consultancy {
+  .software-development-consulting {
     display: block;
     color: variables.$ts-blue-color;
     box-sizing: border-box;
@@ -300,7 +300,7 @@
       }
     }
 
-    #software-development-consultancy {
+    #software-development-consulting {
       &__anchor-2 {
         text-align: right;
       }
@@ -321,7 +321,7 @@
       }
     }
 
-    #software-development-consultancy__stress_lavoro_correlato {
+    #software-development-consulting__stress_lavoro_correlato {
       &,
       p {
         text-align: right;
@@ -384,7 +384,7 @@
         }
       }
 
-      #software-development-consultancy {
+      #software-development-consulting {
         &__anchor-2,
         &__stress_lavoro_correlato {
           p {
