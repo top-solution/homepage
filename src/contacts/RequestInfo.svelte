@@ -1,18 +1,9 @@
 <svelte:options tag="ts-request-info" />
 
 <script>
-  import { createEventDispatcher } from "svelte";
-  import { get_current_component } from "svelte/internal";
   import HoneypotField from "../HoneypotField.svelte";
 
-  const component = get_current_component();
-  const svelteDispatch = createEventDispatcher();
-
-  const dispatch = (name, detail) => {
-    svelteDispatch(name, detail);
-    component.dispatchEvent &&
-      component.dispatchEvent(new CustomEvent(name, { detail }));
-  };
+  let toastEl = null;
 
   let bot = false;
   let form = {
@@ -81,7 +72,9 @@
       employees: "",
       industry: "",
     };
-    dispatch("formsubmit", {});
+
+    toastEl.show();
+    document.querySelector("body").scrollIntoView({ behavior: "smooth" });
   }
 </script>
 
@@ -226,6 +219,10 @@
       </div>
     </div>
   </div>
+  <ts-toast
+    bind:this={toastEl}
+    message="La tua richiesta è stata presa in carico dal nostro team"
+  />
 </form>
 
 <style lang="scss">

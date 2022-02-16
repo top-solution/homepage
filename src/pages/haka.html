@@ -285,8 +285,6 @@ le loro competenze con Haka."
       </div>
       <ts-request-trial id="free-trial">
       </ts-request-trial>
-      <mwc-snackbar labelText="La tua richiesta è stata presa in carico dal nostro team">
-      </mwc-snackbar>
       <!-- <div style="width: 100%; height: 50vh" /> -->
     </div>
   </div>
@@ -440,13 +438,6 @@ le loro competenze con Haka."
   var mobileExpertiseColumns = ["Basic", "Professional", "Business"];
 
 
-  function handleRequestTrialSubmit() {
-    var snackbarEl = document.querySelector('mwc-snackbar');
-
-    debugger
-    snackbarEl.show();
-  }
-
   function handlePerformancePricingClick() {
     if (performancePricingEl.getAttribute("expanded") === "true") {
       performancePricingEl.setAttribute("expanded", "false")
@@ -505,8 +496,6 @@ le loro competenze con Haka."
   expertisePricing180El.addEventListener("expand", handleExpertisePricing180Click)
   expertisePricing360El.addEventListener("expand", handleExpertisePricing360Click)
   potentialPricingEl.addEventListener("expand", handlePotentialPricingClick)
-
-  requestTrialEl.addEventListener('formsubmit', handleRequestTrialSubmit)
 </script>
 
 <script async defer src="./build/Blob.js"></script>
@@ -519,5 +508,6 @@ le loro competenze con Haka."
 <script async defer src="./build/Hex.js"></script>
 <script async defer src="./build/Picture.js"></script>
 <script async defer src="./build/Snail.js"></script>
+<script async defer src="./build/Toast.js"></script>
 <script async defer src="./build/haka/RequestTrial.js"></script>
 {{>body-end}}

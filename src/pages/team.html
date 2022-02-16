@@ -77,15 +77,11 @@ della gestione delle risorse umane."
       </ts-team-person>
     </div>
   </div>
-</div>
-
-<div class="page-team__contact-us">
   <ts-contact-us open="false" />
 </div>
-<mwc-snackbar labelText="Grazie per aver inviato la tua candidatura spontanea!" />
+
 
 <script>
-  var snackbarEl = document.querySelectorAll('mwc-snackbar')[0];
   var contactUsEl = document.querySelectorAll('ts-contact-us')[0]
 
   function handleApplyClick() {
@@ -103,7 +99,12 @@ della gestione delle risorse umane."
   function handleContactUsSubmit() {
     console.log('handleContactUsSubmit');
     contactUsEl.open = "false";
-    snackbarEl.show();
+    setTimeout(() => {
+      document.querySelector('body').scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }, 500);
   }
 
   contactUsEl.addEventListener('formsubmit', handleContactUsSubmit)
@@ -115,4 +116,5 @@ della gestione delle risorse umane."
 <script async defer src="./build/team/ContactUs.js"></script>
 <script async defer src="./build/FormTitleHex.js"></script>
 <script async defer src="./build/Hex.js"></script>
+<script async defer src="./build/Toast.js"></script>
 {{>body-end}}

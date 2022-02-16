@@ -6,6 +6,7 @@
   import HoneypotField from "../HoneypotField.svelte";
 
   export let open = "false";
+  let toastEl = null;
 
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
@@ -92,8 +93,9 @@
     };
 
     dispatch("formsubmit", {});
+    toastEl.show();
 
-    window.scrollTo(0, 0);
+    document.querySelector("body").scrollIntoView({ behavior: "smooth" });
   }
 </script>
 
@@ -293,6 +295,10 @@
     </div>
   </div>
 </form>
+<ts-toast
+  bind:this={toastEl}
+  message="Grazie per aver inviato la tua candidatura spontanea!"
+/>
 
 <style lang="scss">
   @use "../styles/variables";

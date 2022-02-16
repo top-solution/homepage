@@ -46,23 +46,8 @@ description="Entra in contatto con noi. Scopri le opportunità per il tuo busine
     <div class="contact-us">
       <ts-request-info></ts-request-info>
     </div>
-    <mwc-snackbar labelText="La tua richiesta è stata presa in carico dal nostro team">
-    </mwc-snackbar>
   </div>
 </div>
-
-<script>
-  var snackbarEl = document.querySelectorAll('mwc-snackbar')[0];
-  var requestInfoEl = document.querySelectorAll('ts-request-info')[0]
-
-  function handleContactUsSubmit() {
-    console.log('handleContactUsSubmit');
-    requestInfoEl.open = "false";
-    snackbarEl.show();
-  }
-
-  requestInfoEl.addEventListener('formsubmit', handleContactUsSubmit)
-</script>
 
 <script async defer src="./build/Button.js"></script>
 <script async defer src="./build/contacts/HeaderHexagonsDesktop.js"></script>
@@ -71,4 +56,5 @@ description="Entra in contatto con noi. Scopri le opportunità per il tuo busine
 <script async defer src="./build/contacts/RequestInfo.js"></script>
 <script async defer src="./build/FormTitleHex.js"></script>
 <script async defer src="./build/Hex.js"></script>
+<script async defer src="./build/Toast.js"></script>
 {{>body-end}}
