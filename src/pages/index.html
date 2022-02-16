@@ -53,6 +53,7 @@ opportunità per il tuo business offerte dalle nostre soluzioni." }}
       </div>
       <ts-home-hero></ts-home-hero>
       <ts-triple-blob
+        id="triple-blob-ht-development"
         title="SVILUPPO DELLE RISORSE UMANE"
         buttonlink="/hr-development.html"
         blobs="{developmentHumanResourceBlobs}"
@@ -84,7 +85,7 @@ opportunità per il tuo business offerte dalle nostre soluzioni." }}
     // import { onMount } from "svelte";
 
     let customersElement = null;
-
+    let tripleBlobDevHrElement = document.querySelector('#triple-blob-ht-development');
     let developmentHumanResourceBlobs = [
       {
         icon: "devices.svg",
@@ -111,6 +112,7 @@ opportunità per il tuo business offerte dalle nostre soluzioni." }}
         href: "/self-development.html",
       },
     ];
+    tripleBlobDevHrElement.setAttribute("blobs", JSON.stringify(developmentHumanResourceBlobs))
 
     // let developmentSoftwareBlobs = [
     //   {

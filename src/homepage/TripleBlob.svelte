@@ -4,6 +4,7 @@
   export let title = "";
   export let blobs = [];
   export let buttonlink = "";
+  console.log("new blobs: ", blobs);
 </script>
 
 <div class="triple-blob">
