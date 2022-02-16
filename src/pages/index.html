@@ -1,7 +1,6 @@
 {{>head-start}} {{> metadata description="Entra in contatto con noi. Scopri le
 opportunità per il tuo business offerte dalle nostre soluzioni." }}
 
-<script src="./build/homepage/HomeHero.js"></script>
 <script src="./build/Blob.js"></script>
 <script src="./build/homepage/TripleBlob.js"></script>
 <!-- <script src="../src/tripleBlobs.js"></script> -->
@@ -51,7 +50,22 @@ opportunità per il tuo business offerte dalle nostre soluzioni." }}
           <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
         </div>
       </div>
-      <ts-home-hero></ts-home-hero>
+      <div class="home-hero">
+        <div class="home-hero__banner">
+          <div class="home-hero__text">
+            Entra in <strong>contatto</strong> con noi
+            <p>
+              Scopri le opportunità per il tuo <strong>business</strong> offerte
+              dalle nostre <strong>soluzioni</strong>
+            </p>
+          </div>
+          <div class="home-hero__button">
+            <ts-button variant="primary" href="/contacts.html">
+              Contattaci
+            </ts-button>
+          </div>
+        </div>
+      </div>
       <ts-triple-blob
         id="triple-blob-ht-development"
         title="SVILUPPO DELLE RISORSE UMANE"
