@@ -66,17 +66,17 @@ organizzazioni." }}
         Scegli tra i <b>SERVIZI</b>
       </h3>
       <ol class="page-self-development__services-list">
-        <li>
-          <a class="body-2" href="#page-self-development__formazione-su-misura">
+        <li >
+          <a class="body-2" href="#page-self-development__formazione-su-misura" >
             Formazione su misura
           </a>
         </li>
-        <li>
+        <li itemscope itemtype="https://schema.org/Product">
           <a class="body-2" href="#page-self-development__sentieri-di-carriera">
             Sentieri di carriera
           </a>
         </li>
-        <li>
+        <li itemscope itemtype="https://schema.org/Product">
           <a class="body-2" href="#page-self-development__coaching">
             Coaching
           </a>
@@ -102,8 +102,9 @@ organizzazioni." }}
     <div
       id="page-self-development__formazione-su-misura"
       class="page-self-development__service"
+      itemscope itemtype="https://schema.org/Product"
     >
-      <h4 bind:this="{formazioneSuMisuraElement}" class="title-4">
+      <h4 bind:this="{formazioneSuMisuraElement}" class="title-4" itemprop="offers">
         Formazione su misura
       </h4>
       <ts-snail color="#8D88BA" flip="true" paddingtop="true"></ts-snail>
