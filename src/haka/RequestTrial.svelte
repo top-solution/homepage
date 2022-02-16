@@ -1,22 +1,11 @@
 <svelte:options tag="ts-request-trial" />
 
 <script>
-  import { createEventDispatcher } from "svelte";
-  import { get_current_component } from "svelte/internal";
   import HoneypotField from "../HoneypotField.svelte";
 
-  const component = get_current_component();
-  const svelteDispatch = createEventDispatcher();
-  const drawerElement = null;
-  let drawerOpen = true;
+  let toastEl = null;
 
   const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  const dispatch = (name, detail) => {
-    svelteDispatch(name, detail);
-    component.dispatchEvent &&
-      component.dispatchEvent(new CustomEvent(name, { detail }));
-  };
 
   let bot = false;
   let form = {
@@ -97,177 +86,173 @@
       employees: "",
       industry: "",
     };
-    dispatch("formsubmit", {});
 
-    drawerOpen = false;
+    toastEl.show();
+    document.querySelector("body").scrollIntoView({ behavior: "smooth" });
   }
 </script>
 
 <form class="request-trial" on:submit={handleSubmit}>
-  <div
-    class="request-trial__drawer"
-    class:request-trial__drawer--open={drawerOpen}
-    style={drawerElement
-      ? `max-height: ${drawerElement.getBoundingClientRect().height}`
-      : undefined}
-  >
-    <form-title-hex />
-    <h2 class="title-3 title-form">Richiedi una <b>prova gratuita</b></h2>
-    <p class="request-trial__subtitle body-2">
-      <b>Compila</b> e <b>invia</b> il form, il nostro team ti invierà il
-      modello per la valutazione delle performance <b>gratuitamente</b>
-    </p>
-    <div class="request-trial__form">
-      <div class="request-trial__form-row">
-        <ts-textfield
-          id="request-trial__name-textfield"
-          name="name"
-          label="Nome Cognome*"
-          error={formErrors.name}
-          value={form.name}
-          on:change={(e) => (form.name = e.target.value)}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.name = null;
-            }
-          }}
-        />
-        <ts-textfield
-          id="request-trial__companyName-textfield"
-          name="companyName"
-          label="Nome azienda*"
-          error={formErrors.companyName}
-          value={form.companyName}
-          on:change={(e) => (form.companyName = e.target.value)}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.companyName = null;
-            }
-          }}
-        />
-      </div>
-      <div class="request-trial__form-row">
-        <ts-textfield
-          id="request-trial__email-textfield"
-          name="email"
-          type="email"
-          label="Email*"
-          error={formErrors.email}
-          value={form.email}
-          on:change={(e) => (form.email = e.target.value)}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.email = null;
-            }
-          }}
-        />
-        <ts-textfield
-          id="request-trial__role-textfield"
-          name="role"
-          label="Ruolo*"
-          error={formErrors.role}
-          value={form.role}
-          on:change={(e) => (form.role = e.target.value)}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.role = null;
-            }
-          }}
-        />
-      </div>
-      <div class="request-trial__form-row">
-        <ts-select
-          id="request-trial__employees-textfield"
-          name="employees"
-          label="Numero di dipendenti*"
-          error={formErrors.employees}
-          value={form.employees}
-          on:change={(e) => {
-            form.employees = e.target.value;
+  <form-title-hex />
+  <h2 class="title-3 title-form">Richiedi una <b>prova gratuita</b></h2>
+  <p class="request-trial__subtitle body-2">
+    <b>Compila</b> e <b>invia</b> il form, il nostro team ti invierà il modello
+    per la valutazione delle performance <b>gratuitamente</b>
+  </p>
+  <div class="request-trial__form">
+    <div class="request-trial__form-row">
+      <ts-textfield
+        id="request-trial__name-textfield"
+        name="name"
+        label="Nome Cognome*"
+        error={formErrors.name}
+        value={form.name}
+        on:change={(e) => (form.name = e.target.value)}
+        on:keyup={(e) => {
+          if (e.target.value.length) {
+            formErrors.name = null;
+          }
+        }}
+      />
+      <ts-textfield
+        id="request-trial__companyName-textfield"
+        name="companyName"
+        label="Nome azienda*"
+        error={formErrors.companyName}
+        value={form.companyName}
+        on:change={(e) => (form.companyName = e.target.value)}
+        on:keyup={(e) => {
+          if (e.target.value.length) {
+            formErrors.companyName = null;
+          }
+        }}
+      />
+    </div>
+    <div class="request-trial__form-row">
+      <ts-textfield
+        id="request-trial__email-textfield"
+        name="email"
+        type="email"
+        label="Email*"
+        error={formErrors.email}
+        value={form.email}
+        on:change={(e) => (form.email = e.target.value)}
+        on:keyup={(e) => {
+          if (e.target.value.length) {
+            formErrors.email = null;
+          }
+        }}
+      />
+      <ts-textfield
+        id="request-trial__role-textfield"
+        name="role"
+        label="Ruolo*"
+        error={formErrors.role}
+        value={form.role}
+        on:change={(e) => (form.role = e.target.value)}
+        on:keyup={(e) => {
+          if (e.target.value.length) {
+            formErrors.role = null;
+          }
+        }}
+      />
+    </div>
+    <div class="request-trial__form-row">
+      <ts-select
+        id="request-trial__employees-textfield"
+        name="employees"
+        label="Numero di dipendenti*"
+        error={formErrors.employees}
+        value={form.employees}
+        on:change={(e) => {
+          form.employees = e.target.value;
 
-            if (e.target.value.length) {
-              formErrors.employees = null;
-            }
-          }}
-          options={[
-            { value: "", text: "" },
-            { value: "1", text: "1-15" },
-            { value: "16", text: "16-50" },
-            { value: "50", text: "Oltre 50" },
-          ]}
-        />
-        <ts-select
-          id="request-trial__industry-textfield"
-          name="industry"
-          label="Settore*"
-          error={formErrors.industry}
-          value={form.industry}
-          on:change={(e) => {
-            form.industry = e.target.value;
+          if (e.target.value.length) {
+            formErrors.employees = null;
+          }
+        }}
+        options={[
+          { value: "", text: "" },
+          { value: "1", text: "1-15" },
+          { value: "16", text: "16-50" },
+          { value: "50", text: "Oltre 50" },
+        ]}
+      />
+      <ts-select
+        id="request-trial__industry-textfield"
+        name="industry"
+        label="Settore*"
+        error={formErrors.industry}
+        value={form.industry}
+        on:change={(e) => {
+          form.industry = e.target.value;
 
-            if (e.target.value.length) {
-              formErrors.industry = null;
-            }
-          }}
-          options={[
-            { value: "", text: "" },
-            { value: "it", text: "IT" },
-            { value: "manifacturing", text: "Manifattura" },
-            { value: "servizi", text: "Servizi" },
-          ]}
-        />
-      </div>
-      <div class="request-trial__form-row">
-        <p class="body-2">
-          Inserisci l’email del valutato e del valutatore, in questo modo potrai
-          ottenere in autonomia le <b>credenziali</b> per accedere alla
-          piattaforma e fruire della <b>prova gratuita</b>.
-        </p>
-      </div>
-      <div class="request-trial__form-row">
-        <ts-textfield
-          id="request-trial__assessee-email-textfield"
-          name="email"
-          type="email"
-          label="Email valutato"
-          error={formErrors.emailAssessee}
-          value={form.emailAssessee}
-          on:change={(e) => (form.emailAssessee = e.target.value)}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.emailAssessee = null;
-            }
-          }}
-        />
-        <ts-textfield
-          id="request-trial__assessor-email-textfield"
-          name="email"
-          type="email"
-          label="Email valutatore"
-          error={formErrors.emailAssessor}
-          value={form.emailAssessor}
-          on:change={(e) => (form.emailAssessor = e.target.value)}
-          on:keyup={(e) => {
-            if (e.target.value.length) {
-              formErrors.emailAssessor = null;
-            }
-          }}
-        />
-      </div>
-      <HoneypotField on:change={() => (bot = true)} />
-      <div id="request-trial__submit-button-form-row">
-        <ts-button
-          id="request-trial__submit"
-          component="button"
-          variant="secondary"
-          type="submit"
-          on:click={handleSubmit}
-        >
-          Invia
-        </ts-button>
-      </div>
+          if (e.target.value.length) {
+            formErrors.industry = null;
+          }
+        }}
+        options={[
+          { value: "", text: "" },
+          { value: "it", text: "IT" },
+          { value: "manifacturing", text: "Manifattura" },
+          { value: "servizi", text: "Servizi" },
+        ]}
+      />
+    </div>
+    <div class="request-trial__form-row">
+      <p class="body-2">
+        Inserisci l’email del valutato e del valutatore, in questo modo potrai
+        ottenere in autonomia le <b>credenziali</b> per accedere alla
+        piattaforma e fruire della <b>prova gratuita</b>.
+      </p>
+    </div>
+    <div class="request-trial__form-row">
+      <ts-textfield
+        id="request-trial__assessee-email-textfield"
+        name="email"
+        type="email"
+        label="Email valutato"
+        error={formErrors.emailAssessee}
+        value={form.emailAssessee}
+        on:change={(e) => (form.emailAssessee = e.target.value)}
+        on:keyup={(e) => {
+          if (e.target.value.length) {
+            formErrors.emailAssessee = null;
+          }
+        }}
+      />
+      <ts-textfield
+        id="request-trial__assessor-email-textfield"
+        name="email"
+        type="email"
+        label="Email valutatore"
+        error={formErrors.emailAssessor}
+        value={form.emailAssessor}
+        on:change={(e) => (form.emailAssessor = e.target.value)}
+        on:keyup={(e) => {
+          if (e.target.value.length) {
+            formErrors.emailAssessor = null;
+          }
+        }}
+      />
+    </div>
+    <HoneypotField on:change={() => (bot = true)} />
+    <div id="request-trial__submit-button-form-row">
+      <ts-button
+        id="request-trial__submit"
+        component="button"
+        variant="secondary"
+        type="submit"
+        on:click={handleSubmit}
+      >
+        Invia
+      </ts-button>
     </div>
   </div>
+  <ts-toast
+    bind:this={toastEl}
+    message="La tua richiesta è stata presa in carico dal nostro team"
+  />
 </form>
 
 <style lang="scss">
@@ -282,10 +267,6 @@
   .request-trial {
     position: relative;
     margin-top: variables.$ts-spacing-8;
-  }
-
-  .request-trial__drawer {
-    position: relative;
   }
 
   .request-trial h2 {
@@ -352,10 +333,6 @@
   @media only screen and (min-width: variables.$ts-tablet-max) {
     .request-trial {
       margin-top: 0;
-    }
-
-    .request-trial__drawer--open {
-      max-height: 700px;
     }
 
     ts-textfield,

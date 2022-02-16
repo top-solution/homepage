@@ -90,6 +90,10 @@
   let transform = "";
 
   function animate() {
+    if (!points) {
+      return;
+    }
+
     // for every point...
     for (let i = 0; i < points.length; i++) {
       const point = points[i];

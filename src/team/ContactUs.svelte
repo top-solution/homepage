@@ -5,7 +5,8 @@
   import { get_current_component } from "svelte/internal";
   import HoneypotField from "../HoneypotField.svelte";
 
-  export let open = false;
+  export let open = "false";
+  let toastEl = null;
 
   const component = get_current_component();
   const svelteDispatch = createEventDispatcher();
@@ -92,8 +93,9 @@
     };
 
     dispatch("formsubmit", {});
+    toastEl.show();
 
-    window.scrollTo(0, 0);
+    document.querySelector("body").scrollIntoView({ behavior: "smooth" });
   }
 </script>
 
@@ -104,7 +106,10 @@
     fill="#312783"
     shadow="true"
   />
-  <div class="contact-us__drawer" class:contact-us__drawer--open={open}>
+  <div
+    class="contact-us__drawer"
+    class:contact-us__drawer--open={open === "true"}
+  >
     <form-title-hex />
     <h2 class="title-3 title-form">Candidatura <b>spontanea</b></h2>
     <p class="contact-us__subtitle body-1">
@@ -290,6 +295,10 @@
     </div>
   </div>
 </form>
+<ts-toast
+  bind:this={toastEl}
+  message="Grazie per aver inviato la tua candidatura spontanea!"
+/>
 
 <style lang="scss">
   @use "../styles/variables";

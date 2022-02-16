@@ -22,9 +22,13 @@
   </ts-blob>
   <div class="team-person__name body-2">{name}</div>
   {#if companyrole}
-    <div class="team-person__role body-2" itemprop="jobTitle"><b>{companyrole}</b></div>
+    <div class="team-person__role body-2" itemprop="jobTitle">
+      <b>{companyrole}</b>
+    </div>
   {/if}
-  <slot />
+  {#if !companyrole}
+    <slot />
+  {/if}
 </div>
 
 <style lang="scss">
