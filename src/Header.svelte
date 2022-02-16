@@ -49,8 +49,15 @@
           >HR <div class="header__link--tooltips">Risorse Umane</div></strong
         ></a
       >
-
-      <!-- <a href="about.html"><strong>DEV <div class="header__link--tooltips">Sviluppo Software</div></strong></a> -->
+      <!--
+      <a href="software-development.html"
+        ><strong
+          >DEV <div class="header__link--tooltips">
+            Sviluppo Software
+          </div></strong
+        ></a
+      >
+      -->
       <a href="company.html"><strong>AZIENDA </strong></a>
       <a href="team.html"><strong>TEAM</strong></a>
       <a href="contacts.html"><strong>CONTATTI</strong></a>
@@ -112,7 +119,7 @@
         >HR
         <span class="header-mobile__links--slime">Risorse Umane</span></a
       >
-      <!-- <a href="about.html"
+      <!-- <a href="software-development.html"
         >DEV
         <span class="header-mobile__links--slime">Sviluppo Software</span></a
       > -->

@@ -1,15 +1,24 @@
 <svelte:options tag="ts-triple-blob" />
 
 <script>
+  import { onMount } from "svelte/internal";
   export let title = "";
-  export let blobs = [];
+  export let blobs = "";
   export let buttonlink = "";
+
+  let blobsObj = [];
+  onMount(() => {
+    setTimeout(() => {
+      blobsObj = JSON.parse(blobs);
+    }, 500);
+  });
+
 </script>
 
 <div class="triple-blob">
   <h1 class="title-2 triple-blob__title">{title}</h1>
   <div class="triple-blob__container">
-    {#each blobs as blob}
+    {#each blobsObj as blob}
       <a class="triple-blob__container__link" href={blob.href}>
         <ts-blob
           interactive="true"
