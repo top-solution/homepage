@@ -1,23 +1,170 @@
-{{>head-start}}
+{{>head-start}} {{> metadata description="Entra in contatto con noi. Scopri le
+opportunità per il tuo business offerte dalle nostre soluzioni." }}
 
-{{>
-metadata
-description="Entra in contatto con noi. Scopri le opportunità per il tuo business offerte dalle nostre soluzioni."
-}}
-
-<script src="./build/Layout.js"></script>
 <script src="./build/homepage/HomeHero.js"></script>
 <script src="./build/Blob.js"></script>
 <script src="./build/homepage/TripleBlob.js"></script>
-<script src="./build/Home.js"></script>
+<!-- <script src="../src/tripleBlobs.js"></script> -->
 {{>head-end}}
 
 <body>
   <div style="max-width: 900px; margin: 0 auto">
-    <ts-header color="dark" />
+    <ts-header color="dark"></ts-header>
   </div>
-  <ts-page-home></ts-page-home>
+  <div class="homepage layout">
+    <div class="layout__content">
+      <div slot="external">
+        <div class="homepage__header-blob">
+          <img src="img/homepage/blob-header-homepage.svg" alt="" />
+        </div>
+        <div class="homepage__header-blob-mobile">
+          <img src="img/homepage/blob-header-homepage.svg" alt="" />
+        </div>
+        <div class="homepage__header-hex">
+          <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
+        </div>
+        <div class="homepage__header-hex-mobile">
+          <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
+        </div>
+        <div class="homepage__header-hex-logo">
+          <img src="img/homepage/hex-logo-header.svg" alt="" />
+        </div>
+        <div class="homepage__header-hex-logo-mobile">
+          <img src="img/homepage/hex-logo-header.svg" alt="" />
+        </div>
+        <div class="homepage__hex-mobile-1">
+          <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
+        </div>
+        <div class="homepage__hex-mobile-2">
+          <img src="img/homepage/homepage-mobile-hex-2.svg" alt="" />
+        </div>
+        <div class="homepage__hex-mobile-3">
+          <img src="img/homepage/homepage-mobile-hex-3.svg" alt="" />
+        </div>
+        <div class="homepage__hex-mobile-4">
+          <img src="img/homepage/homepage-mobile-hex-4.svg" alt="" />
+        </div>
+        <div class="homepage__hex-mobile-5">
+          <img src="img/homepage/homepage-mobile-hex-5.svg" alt="" />
+        </div>
+        <div class="homepage__hex-mobile-6">
+          <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
+        </div>
+      </div>
+      <ts-home-hero></ts-home-hero>
+      <ts-triple-blob
+        title="SVILUPPO DELLE RISORSE UMANE"
+        buttonlink="/hr-development.html"
+        blobs="{developmentHumanResourceBlobs}"
+      ></ts-triple-blob>
+      <!-- <ts-triple-blob
+      title="SVILUPPO SOFTWARE"
+      buttonlink="/software.html"
+      blobs={developmentSoftwareBlobs}
+    ></ts-triple-blob> -->
+      <div slot="external">
+        <div class="homepage__middle-blob">
+          <img src="img/homepage/blob-middle-homepage.svg" alt="" />
+        </div>
+        <div class="homepage__middle-hex">
+          <img src="img/homepage/group-hex-middle-desktop.svg" alt="" />
+        </div>
+        <div class="homepage__middle-hex-mobile">
+          <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
+        </div>
+        <div class="homepage__middle-hex-tablet">
+          <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
+        </div>
+      </div>
+      <ts-customers id="customers"></ts-customers>
+    </div>
+  </div>
   {{>body-end}}
+  <script>
+    // import { onMount } from "svelte";
+
+    let customersElement = null;
+
+    let developmentHumanResourceBlobs = [
+      {
+        icon: "devices.svg",
+        title: "AUDIT COMPETENZE",
+        subtitle: "Analisi e mappatura delle competenze professionali",
+        color: "#e9e8f2",
+        width: "240px",
+        href: "/haka.html",
+      },
+      {
+        icon: "optionPaper.svg",
+        title: "SVILUPPO ORGANIZZATIVO",
+        subtitle: "Management diagnostic e clima organizzativo",
+        color: "#e9e8f2",
+        width: "245px",
+        href: "/company-development.html",
+      },
+      {
+        icon: "cloud.svg",
+        title: "SVILUPPO INDIVIDUALE",
+        subtitle: "Training, coaching e crescita professionale",
+        color: "#e9e8f2",
+        width: "240px",
+        href: "/self-development.html",
+      },
+    ];
+
+    // let developmentSoftwareBlobs = [
+    //   {
+    //     icon: "lens.svg",
+    //     title: "APPLICAZIONI WEB E MOBILE",
+    //     subtitle:
+    //       "Single page web applications, rest api, micro-services, hybrid apps",
+    //     color: "#e3f1fa",
+    //     width: "260px",
+    //     href: "/applications.html",
+    //   },
+    //   {
+    //     icon: "palace.svg",
+    //     title: "CONSULENZA SVILUPPO SW",
+    //     subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
+    //     color: "#e3f1fa",
+    //     width: "260px",
+    //     html: "/consulting.html",
+    //   },
+    //   {
+    //     icon: "user.svg",
+    //     title: "CLOUD COMPUTING",
+    //     subtitle:
+    //       "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
+    //     color: "#e3f1fa",
+    //     width: "260px",
+    //     html: "/cloud.html",
+    //   },
+    // ];
+
+    // onMount(() => {
+    //   if (window.location.hash === "#customers") {
+    //     window.addEventListener("load", function () {
+    //       setTimeout(() => {
+    //         customersElement.scrollIntoView({
+    //           behavior: "smooth",
+    //           block: "start",
+    //         });
+    //       }, 500);
+    //     });
+    //   }
+    // });
+
+    window.addEventListener("load", function () {
+      if (window.location.hash === "#customers") {
+        setTimeout(() => {
+          document.getElementById("customers").scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 500);
+      }
+    });
+  </script>
   <script async defer src="./build/Button.js"></script>
   <script async defer src="./build/Picture.js"></script>
   <script async defer src="./build/homepage/Customers.js"></script>
