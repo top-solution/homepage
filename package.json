@@ -5,7 +5,7 @@
   "scripts": {
     "build-components": "rollup -c",
     "build-pages": "sh build-pages.sh",
-    "build": "npm run build-components && npm run build-pages",
+    "build": "npm run build-components && npm run build-pages && sh add-robots.txt.sh",
     "watch-components": "rollup -c -w",
     "watch-pages": "npm run build-pages && chokidar 'src/pages/*.html src/styles/*.scss' -c 'node build-page.js {path}'",
     "serve": "npx http-server -s -c-1 ./public",
