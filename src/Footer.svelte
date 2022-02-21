@@ -2,6 +2,8 @@
 
 <script>
   import { contacts } from "./contacts";
+
+  // This file is no longer used, but don't delete it until we release in prod.
 </script>
 
 <footer itemscope itemtype="https://schema.org/Organization">
