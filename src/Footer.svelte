@@ -2,9 +2,11 @@
 
 <script>
   import { contacts } from "./contacts";
+
+  // This file is no longer used, but don't delete it until we release in prod.
 </script>
 
-<footer>
+<footer itemscope itemtype="https://schema.org/Organization">
   <div class="footer-top">
     <div class="footer-top__link-box">
       <div class="title-6">Informazioni</div>
@@ -81,6 +83,7 @@
           width="79"
           height="79"
           class="footer-bottom__img"
+          itemprop="logo"
         />
       </a>
       <div class="footer-bottom__text">
@@ -89,8 +92,8 @@
       </div>
     </div>
     <div class="footer-bottom__iva">
-      <span class="footer-bottom__company">© Top Solution s.r.l </span>
-      <span><strong>P.IVA/CF </strong> 10031960015</span>
+      <span class="footer-bottom__company" itemprop="legalName">© Top Solution s.r.l </span>
+      <span itemprop="vatID"><strong>P.IVA/CF </strong> 10031960015</span>
     </div>
   </div>
 </footer>

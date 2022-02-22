@@ -102,12 +102,18 @@ organizzazioni." }}
     <div
       id="page-self-development__formazione-su-misura"
       class="page-self-development__service"
+      itemscope
+      itemtype="https://schema.org/Service"
     >
-      <h4 bind:this="{formazioneSuMisuraElement}" class="title-4">
+      <h4
+        bind:this="{formazioneSuMisuraElement}"
+        class="title-4"
+        itemprop="name"
+      >
         Formazione su misura
       </h4>
       <ts-snail color="#8D88BA" flip="true" paddingtop="true"></ts-snail>
-      <p class="body-2">
+      <p class="body-2" itemprop="offers">
         Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali
         delle persone è l’elemento centrale per la continuità e/o la crescita
         del business. Il Training che offriamo è di tipo <b>esperienziale</b>.
@@ -123,12 +129,18 @@ organizzazioni." }}
     <div
       id="page-self-development__sentieri-di-carriera"
       class="page-self-development__service"
+      itemscope
+      itemtype="https://schema.org/Service"
     >
-      <h4 bind:this="{sentieriDiCarrieraElement}" class="title-4">
+      <h4
+        bind:this="{sentieriDiCarrieraElement}"
+        class="title-4"
+        itemprop="name"
+      >
         Sentieri di carriera
       </h4>
       <ts-snail color="#4C429C" paddingtop="true"></ts-snail>
-      <p class="body-2">
+      <p class="body-2" itemprop="offers">
         Nell’ottica del <b>miglioramento continuo</b>, lo sviluppo delle
         competenze professionali evolve con la maturità professionale dei
         singoli. <b>Pianificare</b> la crescita professionale permette
@@ -142,10 +154,14 @@ organizzazioni." }}
     <div
       id="page-self-development__coaching"
       class="page-self-development__service"
+      itemscope
+      itemtype="https://schema.org/Service"
     >
-      <h4 bind:this="{coachingElement}" class="title-4">Coaching</h4>
+      <h4 bind:this="{coachingElement}" class="title-4" itemprop="name">
+        Coaching
+      </h4>
       <ts-snail color="#4857A3" flip="true" paddingtop="true"></ts-snail>
-      <p class="body-2">
+      <p class="body-2" itemprop="offers">
         Il Coaching è una metodologia formativa che <b>permette</b> ai manager e
         ai responsabili di funzione di apprendere tecniche e strumenti
         innovativi per <b>migliorare</b> la <b>performance</b> professionale e

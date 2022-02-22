@@ -1,57 +1,72 @@
-{{>head-start}}
-
-{{>
-metadata
-title="Audit competenze"
-description="Rileva il Know-how professionale dei dipendenti e scopri il punto di partenza per sviluppare e rafforzare
-le loro competenze con Haka."
-}}
+{{>head-start}} {{> metadata title="Audit competenze" description="Rileva il
+Know-how professionale dei dipendenti e scopri il punto di partenza per
+sviluppare e rafforzare le loro competenze con Haka." }}
 
 <script src="./build/Select.js"></script>
 <script src="./build/TextField.js"></script>
 <script src="./build/haka/PricingTable.js"></script>
 <script src="./build/TopBanner.js"></script>
-{{>head-end}}
+{{>head-end}} {{>body-start}}
 
-{{>body-start}}
-
-<ts-top-banner title="Audit competenze" mobilealignleft="true" title2={true}>
+<ts-top-banner title="Audit competenze" mobilealignleft="true" title2="{true}">
   <div class="claim" slot="text">
     Rileva il <b>Know-how</b> professionale dei dipendenti e <b>scopri</b> il
     punto di partenza per sviluppare e rafforzare le loro competenze con
     <b>Haka</b>
   </div>
-  <div slot="actions" style="display: flex; flex-direction: column; max-width: 175px; margin: auto;">
-    <ts-button variant="secondary" href="#free-trial" style="margin-bottom: 48px">
+  <div
+    slot="actions"
+    style="
+      display: flex;
+      flex-direction: column;
+      max-width: 175px;
+      margin: auto;
+    "
+  >
+    <ts-button
+      variant="secondary"
+      href="#free-trial"
+      style="margin-bottom: 48px"
+    >
       Prova gratuita
     </ts-button>
-    <ts-button variant="primary" href="#plans">
-      Tariffe
-    </ts-button>
+    <ts-button variant="primary" href="#plans"> Tariffe </ts-button>
   </div>
   <div slot="external">
     <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
     <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
-    <ts-hex class="page-haka__floating-hex-1" width="56" fill="#9893c1" opacity="0.5" rotation="-20" shadow="true">
+    <ts-hex
+      class="page-haka__floating-hex-1"
+      width="56"
+      fill="#9893c1"
+      opacity="0.5"
+      rotation="-20"
+      shadow="true"
+    >
     </ts-hex>
   </div>
 </ts-top-banner>
-<div class="page-haka layout">
+<div class="page-haka layout" itemscope itemtype="https://schema.org/Product">
   <div class="layout__content">
     <div class="page-haka__copy">
-      <h2 class="title-3">測 HAKA</h2>
-      <p class="body-1">
+      <h2 class="title-3" itemprop="name">測 HAKA</h2>
+      <p class="body-1" itemprop="description">
         Le <b>Risorse Umane</b> sono il cardine delle organizzazioni: le idee
-        guidano il
-        <b>cambiamento</b>, le <b>persone</b> lo realizzano.
+        guidano il <b>cambiamento</b>, le <b>persone</b> lo realizzano.
       </p>
       <video class="page-haka__video" controls>
         <source src="videos/haka.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="page-haka__services">
-      <ts-blob class="page-haka__services-blob" shape="potato" variance="0.25" flip="true" fill="#E3F1FA">
-        <div style="min-width: 900px; height: 500px; "></div>
+      <ts-blob
+        class="page-haka__services-blob"
+        shape="potato"
+        variance="0.25"
+        flip="true"
+        fill="#E3F1FA"
+      >
+        <div style="min-width: 900px; height: 500px"></div>
       </ts-blob>
       <h3 class="title-3 title-form page-haka__choose-services">
         Scegli tra i <b>SERVIZI</b>
@@ -73,19 +88,35 @@ le loro competenze con Haka."
           </a>
         </li>
       </ol>
-      <ts-button class="page-haka__services-brochure-button" variant="primary" target="_blank"
-        href="/documents/Brochure%20Top%20Solution.pdf" download="Brochure Top Solution.pdf">
+      <ts-button
+        class="page-haka__services-brochure-button"
+        variant="primary"
+        target="_blank"
+        href="/documents/Brochure%20Top%20Solution.pdf"
+        download="Brochure Top Solution.pdf"
+      >
         SCARICA BROCHURE
       </ts-button>
-      <ts-hex class="page-haka__floating-hex-2" width="44" fill="#312783" opacity=".7" shadow="false" rotation="-20">
+      <ts-hex
+        class="page-haka__floating-hex-2"
+        width="44"
+        fill="#312783"
+        opacity=".7"
+        shadow="false"
+        rotation="-20"
+      >
       </ts-hex>
     </div>
     <ts-haka-customers></ts-haka-customers>
-    <div class="page-haka__service-performance page-haka__service page-haka__service--flip">
-      <h4 id="page-haka__service-performance" class="title-4">
+    <div
+      class="page-haka__service-performance page-haka__service page-haka__service--flip"
+      itemscope
+      itemtype="https://schema.org/Service"
+    >
+      <h4 id="page-haka__service-performance" class="title-4" itemprop="name">
         Valutazione delle performance
       </h4>
-      <p class="body-2">
+      <p class="body-2" itemprop="description">
         Permette di <b>comprendere</b> quali <b>risultati professionali</b> ha
         raggiunto la persona nel corso del tempo e come ha espresso il proprio
         <b>contributo</b> all’interno dell’organizzazione.
@@ -94,12 +125,20 @@ le loro competenze con Haka."
       <div class="page-haka__service-subservices body-2">
         <ol>
           <li>
-            <a href="#performance-pricing-table" onmouseup="handlePerformancePricingClick()">
+            <a
+              href="#performance-pricing-table"
+              onmouseup="handlePerformancePricingClick()"
+              itemprop="offers"
+            >
               AUTO VALUTAZIONE
             </a>
           </li>
           <li>
-            <a href="#performance-pricing-table" onmouseup="handlePerformancePricingClick()">
+            <a
+              href="#performance-pricing-table"
+              onmouseup="handlePerformancePricingClick()"
+              itemprop="offers"
+            >
               ETERO VALUTAZIONE
             </a>
           </li>
@@ -111,14 +150,21 @@ le loro competenze con Haka."
         </ts-button>
       </div>
     </div>
-    <div class="page-haka__service-expertise page-haka__service">
-      <h4 id="page-haka__service-expertise" class="title-4">Bilancio di competenza</h4>
-      <p class="body-2">
-        Permette di comprendere come le persone <b>esprimono</b> professionalmente
-        <b>le conoscenze</b>, le capacità e le qualità professionali nella
-        realizzazione quotidiana del loro lavoro e come esse impattano nel sistema
-        azienda. La metodologia consiste nel far <b>valutare</b> il candidato da
-        più persone che interagiscono lavorativamente con lui in modo
+    <div
+      class="page-haka__service-expertise page-haka__service"
+      itemscope
+      itemtype="https://schema.org/Service"
+    >
+      <h4 id="page-haka__service-expertise" class="title-4" itemprop="name">
+        Bilancio di competenza
+      </h4>
+      <p class="body-2" itemprop="description">
+        Permette di comprendere come le persone
+        <b>esprimono</b> professionalmente <b>le conoscenze</b>, le capacità e
+        le qualità professionali nella realizzazione quotidiana del loro lavoro
+        e come esse impattano nel sistema azienda. La metodologia consiste nel
+        far <b>valutare</b> il candidato da più persone che interagiscono
+        lavorativamente con lui in modo
         <b>diretto</b>
         o <b>indiretto</b>
         (responsabili, colleghi e riporti).
@@ -126,128 +172,191 @@ le loro competenze con Haka."
       <ts-snail color="#211A58" flip="false"></ts-snail>
       <div class="page-haka__service-subservices body-2">
         <ol>
-          <li>
-            <a href="#expertise-pricing-table-180"
-              onmouseup="handleExpertisePricingClick(); expandExpertisePricing180()">
+          <li itemprop="offers">
+            <a
+              href="#expertise-pricing-table-180"
+              onmouseup="handleExpertisePricingClick(); expandExpertisePricing180()"
+            >
               VALUTAZIONE 180°
             </a>
           </li>
-          <li>
-            <a href="#expertise-pricing-table-360"
-              onmouseup="handleExpertisePricingClick(); expandExpertisePricing360()">
+          <li itemprop="offers">
+            <a
+              href="#expertise-pricing-table-360"
+              onmouseup="handleExpertisePricingClick(); expandExpertisePricing360()"
+            >
               VALUTAZIONE 360°
             </a>
           </li>
         </ol>
       </div>
     </div>
-    <div class="page-haka__service-potential page-haka__service page-haka__service--flip">
-      <h4 id="page-haka__service-potential" class="title-4">
+    <div
+      class="page-haka__service-potential page-haka__service page-haka__service--flip"
+      itemscope
+      itemtype="https://schema.org/Service"
+    >
+      <h4 id="page-haka__service-potential" class="title-4" itemprop="name">
         Valutazione del potenziale
       </h4>
-      <p class="body-2">
+      <p class="body-2" itemprop="description">
         È un processo attraverso il quale è possibile comprendere quali sono le
         logiche e gli <b>schemi mentali</b> utilizzati dalle persone nella
         realizzazione delle attività lavorative. È incentrata sull’analisi delle
-        <b>capacità manageriali</b>, gestionali ed organizzative ed è finalizzata
-        a comprendere se la persona possiede i <b>requisiti</b> per ricoprire una posizione
-        organizzativa diversa o superiore a quella attuale.
+        <b>capacità manageriali</b>, gestionali ed organizzative ed è
+        finalizzata a comprendere se la persona possiede i <b>requisiti</b> per
+        ricoprire una posizione organizzativa diversa o superiore a quella
+        attuale.
       </p>
       <ts-snail color="#312783" flip="true"></ts-snail>
       <div class="page-haka__service-subservices body-2">
         <ol>
           <li>
-            <a href="#potential-pricing-table" onmouseup="handlePotentialPricingClick()">
+            <a
+              href="#potential-pricing-table"
+              onmouseup="handlePotentialPricingClick()"
+              itemprop="offers"
+            >
               ASSESSMENT CENTER
             </a>
           </li>
         </ol>
       </div>
     </div>
-    <div bind:this={plansElement} class="page-haka__our-plans">
-      <h3 id="plans" class="title-3 title-form">
-        I nostri <b>PIANI</b>
-      </h3>
+    <div bind:this="{plansElement}" class="page-haka__our-plans">
+      <h3 id="plans" class="title-3 title-form">I nostri <b>PIANI</b></h3>
       <p class="body-2">
-        Ogni piano è <b>one shot</b>, scegliendo <b>Haka</b> sei libero di <br />
+        Ogni piano è <b>one shot</b>, scegliendo <b>Haka</b> sei libero di
+        <br />
         utilizzare il servizio <b>senza</b> effettuare <b>abbonamenti</b>
       </p>
     </div>
-    <div class="page-haka__our-plans-accordion" style="position: relative;">
-      <div class="page-haka__our-plans-accordion" style="position: relative;">
-        <ts-pricing-table id="performance-pricing-table" title="Valutazione delle performance" expanded="false">
-          <ts-blob class="page-haka__enterprise-blob" interactive="true" shape="hexagon" fill="#EBEAF3" padding="16"
-            variance="1.2">
+    <div class="page-haka__our-plans-accordion" style="position: relative">
+      <div class="page-haka__our-plans-accordion" style="position: relative">
+        <ts-pricing-table
+          id="performance-pricing-table"
+          title="Valutazione delle performance"
+          expanded="false"
+        >
+          <ts-blob
+            class="page-haka__enterprise-blob"
+            interactive="true"
+            shape="hexagon"
+            fill="#EBEAF3"
+            padding="16"
+            variance="1.2"
+          >
             <div class="page-haka__enterprise-blob__content">
               <p class="title-6">Desideri un <b>piano custom</b>?</p>
-              <p class="body-2">
-                Scegli il piano <b>ENTERPRISE</b>
-              </p>
-              <ts-button variant="primary" href="/contacts.html" style="display: inline-block;">
+              <p class="body-2">Scegli il piano <b>ENTERPRISE</b></p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block"
+              >
                 Contattaci
               </ts-button>
             </div>
           </ts-blob>
         </ts-pricing-table>
-        <ts-pricing-table id="expertise-pricing-table" class="page-haka__expertise-pricing-table"
-          title="Bilancio di competenza" expanded="false">
-          <ts-blob class="page-haka__enterprise-blob" interactive="true" shape="hexagon" fill="#EBEAF3" padding="16"
-            variance="1.2">
+        <ts-pricing-table
+          id="expertise-pricing-table"
+          class="page-haka__expertise-pricing-table"
+          title="Bilancio di competenza"
+          expanded="false"
+        >
+          <ts-blob
+            class="page-haka__enterprise-blob"
+            interactive="true"
+            shape="hexagon"
+            fill="#EBEAF3"
+            padding="16"
+            variance="1.2"
+          >
             <div class="page-haka__enterprise-blob__content">
               <p class="title-6">Desideri un <b>piano custom</b>?</p>
-              <p class="body-2">
-                Scegli il piano <b>ENTERPRISE</b>
-              </p>
-              <ts-button variant="primary" href="/contacts.html" style="display: inline-block;">
+              <p class="body-2">Scegli il piano <b>ENTERPRISE</b></p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block"
+              >
                 Contattaci
               </ts-button>
             </div>
           </ts-blob>
         </ts-pricing-table>
-        <ts-pricing-table id="expertise-pricing-table-180" class="page-haka__expertise-pricing-table-mobile"
-          title="Bilancio di competenza 180°">
-          <ts-blob class="page-haka__enterprise-blob" interactive="true" shape="hexagon" fill="#EBEAF3" padding="16"
-            variance="1.2">
+        <ts-pricing-table
+          id="expertise-pricing-table-180"
+          class="page-haka__expertise-pricing-table-mobile"
+          title="Bilancio di competenza 180°"
+        >
+          <ts-blob
+            class="page-haka__enterprise-blob"
+            interactive="true"
+            shape="hexagon"
+            fill="#EBEAF3"
+            padding="16"
+            variance="1.2"
+          >
             <div class="page-haka__enterprise-blob__content">
               <p class="title-6">Desideri un <b>piano custom</b>?</p>
-              <p class="body-2">
-                Scegli il piano <b>ENTERPRISE</b>
-              </p>
-              <ts-button variant="primary" href="/contacts.html" style="display: inline-block;">
+              <p class="body-2">Scegli il piano <b>ENTERPRISE</b></p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block"
+              >
                 Contattaci
               </ts-button>
             </div>
           </ts-blob>
         </ts-pricing-table>
-        <ts-pricing-table bind:this={expertisePricing360Element} id="expertise-pricing-table-360"
-          title="Bilancio di competenza 360°" class="page-haka__expertise-pricing-table-mobile">
-          <ts-blob class="page-haka__enterprise-blob" interactive="true" shape="hexagon" fill="#EBEAF3" padding="16"
-            variance="1.2">
+        <ts-pricing-table
+          bind:this="{expertisePricing360Element}"
+          id="expertise-pricing-table-360"
+          title="Bilancio di competenza 360°"
+          class="page-haka__expertise-pricing-table-mobile"
+        >
+          <ts-blob
+            class="page-haka__enterprise-blob"
+            interactive="true"
+            shape="hexagon"
+            fill="#EBEAF3"
+            padding="16"
+            variance="1.2"
+          >
             <div class="page-haka__enterprise-blob__content">
               <p class="title-6">Desideri un <b>piano custom</b>?</p>
-              <p class="body-2">
-                Scegli il piano <b>ENTERPRISE</b>
-              </p>
-              <ts-button variant="primary" href="/contacts.html" style="display: inline-block;">
+              <p class="body-2">Scegli il piano <b>ENTERPRISE</b></p>
+              <ts-button
+                variant="primary"
+                href="/contacts.html"
+                style="display: inline-block"
+              >
                 Contattaci
               </ts-button>
             </div>
           </ts-blob>
         </ts-pricing-table>
-        <ts-collapsible-section id="potential-pricing-table" class="pricing-table" title="Valutazione del potenziale">
+        <ts-collapsible-section
+          id="potential-pricing-table"
+          class="pricing-table"
+          title="Valutazione del potenziale"
+        >
           <div class="page-haka__pricing-table__service-potential">
-
             <!-- class:page-haka__pricing-table__service-potential--collapsed={!expandedSections[ "potential" ]} -->
             <div class="page-haka__pricing-table__service-potential-copy">
               <p>
                 Per nuove <b>assunzioni</b> o per <b>avanzamenti di carriera</b>
                 progettiamo assessment personalizzati con un numero variabile di
                 <b>prove</b>
-                e scenari. A seguito dell’emergenza sanitaria abbiamo riprogettato
-                gli assessment in modalità <b>online</b>, mantenendo comunque
-                inalterati il rapporto con gli assessor e le dinamiche di gruppo.
-                Abbiamo progettato una piattaforma web ad uso degli assessor per
-                standardizzare le valutazioni, e uniformare i giudizi.
+                e scenari. A seguito dell’emergenza sanitaria abbiamo
+                riprogettato gli assessment in modalità <b>online</b>,
+                mantenendo comunque inalterati il rapporto con gli assessor e le
+                dinamiche di gruppo. Abbiamo progettato una piattaforma web ad
+                uso degli assessor per standardizzare le valutazioni, e
+                uniformare i giudizi.
               </p>
             </div>
             <div class="page-haka__pricing-table__service-potential-test">
@@ -270,12 +379,28 @@ le loro competenze con Haka."
               </ol>
             </div>
           </div>
-          <div class="page-haka__enterprise-blob page-haka__more-info-blob-container">
-            <ts-blob class="page-haka__enterprise-blob page-haka__more-info-blob" interactive="true" shape="hexagon"
-              fill="#EBEAF3" padding="16" variance="1.2">
-              <div class="page-haka__enterprise-blob__content page-haka__more-info-blob__content">
-                <p class="body-2">Desideri maggiori<br /><b>informazioni</b>?</p>
-                <ts-button variant="primary" href="/contacts.html" style="display: inline-block;">
+          <div
+            class="page-haka__enterprise-blob page-haka__more-info-blob-container"
+          >
+            <ts-blob
+              class="page-haka__enterprise-blob page-haka__more-info-blob"
+              interactive="true"
+              shape="hexagon"
+              fill="#EBEAF3"
+              padding="16"
+              variance="1.2"
+            >
+              <div
+                class="page-haka__enterprise-blob__content page-haka__more-info-blob__content"
+              >
+                <p class="body-2">
+                  Desideri maggiori<br /><b>informazioni</b>?
+                </p>
+                <ts-button
+                  variant="primary"
+                  href="/contacts.html"
+                  style="display: inline-block"
+                >
                   Contattaci
                 </ts-button>
               </div>
@@ -283,21 +408,26 @@ le loro competenze con Haka."
           </div>
         </ts-collapsible-section>
       </div>
-      <ts-request-trial id="free-trial">
-      </ts-request-trial>
+      <ts-request-trial id="free-trial"> </ts-request-trial>
       <!-- <div style="width: 100%; height: 50vh" /> -->
     </div>
   </div>
 </div>
 
 <script>
-  var requestTrialEl = document.querySelector('ts-request-trial');
+  var requestTrialEl = document.querySelector("ts-request-trial");
 
-  let performancePricingEl = document.querySelector('#performance-pricing-table');
-  let expertisePricingEl = document.querySelector('#expertise-pricing-table');
-  let expertisePricing180El = document.querySelector('#expertise-pricing-table-180');
-  let expertisePricing360El = document.querySelector('#expertise-pricing-table-360');
-  let potentialPricingEl = document.querySelector('#potential-pricing-table');
+  let performancePricingEl = document.querySelector(
+    "#performance-pricing-table"
+  );
+  let expertisePricingEl = document.querySelector("#expertise-pricing-table");
+  let expertisePricing180El = document.querySelector(
+    "#expertise-pricing-table-180"
+  );
+  let expertisePricing360El = document.querySelector(
+    "#expertise-pricing-table-360"
+  );
+  let potentialPricingEl = document.querySelector("#potential-pricing-table");
 
   var performanceTable = [
     [
@@ -437,65 +567,99 @@ le loro competenze con Haka."
   ];
   var mobileExpertiseColumns = ["Basic", "Professional", "Business"];
 
-
   function handlePerformancePricingClick() {
     if (performancePricingEl.getAttribute("expanded") === "true") {
-      performancePricingEl.setAttribute("expanded", "false")
+      performancePricingEl.setAttribute("expanded", "false");
     } else {
-      performancePricingEl.setAttribute("expanded", "true")
-      performancePricingEl.scrollIntoView({ behavior: "smooth" })
+      performancePricingEl.setAttribute("expanded", "true");
+      performancePricingEl.scrollIntoView({ behavior: "smooth" });
     }
   }
   function handleExpertisePricingClick() {
     if (expertisePricingEl.getAttribute("expanded") === "true") {
-      expertisePricingEl.setAttribute("expanded", "false")
+      expertisePricingEl.setAttribute("expanded", "false");
     } else {
-      expertisePricingEl.setAttribute("expanded", "true")
-      expertisePricingEl.scrollIntoView({ behavior: "smooth" })
+      expertisePricingEl.setAttribute("expanded", "true");
+      expertisePricingEl.scrollIntoView({ behavior: "smooth" });
     }
   }
   function handleExpertisePricing180Click() {
     if (expertisePricing180El.getAttribute("expanded") === "true") {
-      expertisePricing180El.setAttribute("expanded", "false")
+      expertisePricing180El.setAttribute("expanded", "false");
     } else {
-      expertisePricing180El.setAttribute("expanded", "true")
-      expertisePricing180El.scrollIntoView({ behavior: "smooth" })
+      expertisePricing180El.setAttribute("expanded", "true");
+      expertisePricing180El.scrollIntoView({ behavior: "smooth" });
     }
   }
   function handleExpertisePricing360Click() {
     if (expertisePricing360El.getAttribute("expanded") === "true") {
-      expertisePricing360El.setAttribute("expanded", "false")
+      expertisePricing360El.setAttribute("expanded", "false");
     } else {
-      expertisePricing360El.setAttribute("expanded", "true")
-      expertisePricing360El.scrollIntoView({ behavior: "smooth" })
+      expertisePricing360El.setAttribute("expanded", "true");
+      expertisePricing360El.scrollIntoView({ behavior: "smooth" });
     }
   }
   function handlePotentialPricingClick() {
     if (potentialPricingEl.getAttribute("expanded") === "true") {
-      potentialPricingEl.setAttribute("expanded", "false")
-      document.querySelector(".page-haka__pricing-table__service-potential").classList.add("page-haka__pricing-table__service-potential--collapsed")
+      potentialPricingEl.setAttribute("expanded", "false");
+      document
+        .querySelector(".page-haka__pricing-table__service-potential")
+        .classList.add(
+          "page-haka__pricing-table__service-potential--collapsed"
+        );
     } else {
-      potentialPricingEl.setAttribute("expanded", "true")
-      potentialPricingEl.scrollIntoView({ behavior: "smooth" })
-      document.querySelector(".page-haka__pricing-table__service-potential").classList.remove("page-haka__pricing-table__service-potential--collapsed")
+      potentialPricingEl.setAttribute("expanded", "true");
+      potentialPricingEl.scrollIntoView({ behavior: "smooth" });
+      document
+        .querySelector(".page-haka__pricing-table__service-potential")
+        .classList.remove(
+          "page-haka__pricing-table__service-potential--collapsed"
+        );
     }
   }
 
-  performancePricingEl.setAttribute("rows", JSON.stringify(performanceTable))
-  performancePricingEl.setAttribute("columns", JSON.stringify(performanceColumns))
-  expertisePricingEl.setAttribute("rows", JSON.stringify(expertiseTable))
-  expertisePricingEl.setAttribute("columns", JSON.stringify(expertiseColumns))
-  expertisePricingEl.setAttribute("subcolumns", JSON.stringify(expertiseSubColumns))
-  expertisePricing180El.setAttribute("rows", JSON.stringify(mobileExpertiseTables[0]))
-  expertisePricing180El.setAttribute("columns", JSON.stringify(mobileExpertiseColumns))
-  expertisePricing360El.setAttribute("rows", JSON.stringify(mobileExpertiseTables[1]))
-  expertisePricing180El.setAttribute("columns", JSON.stringify(mobileExpertiseColumns))
+  performancePricingEl.setAttribute("rows", JSON.stringify(performanceTable));
+  performancePricingEl.setAttribute(
+    "columns",
+    JSON.stringify(performanceColumns)
+  );
+  expertisePricingEl.setAttribute("rows", JSON.stringify(expertiseTable));
+  expertisePricingEl.setAttribute("columns", JSON.stringify(expertiseColumns));
+  expertisePricingEl.setAttribute(
+    "subcolumns",
+    JSON.stringify(expertiseSubColumns)
+  );
+  expertisePricing180El.setAttribute(
+    "rows",
+    JSON.stringify(mobileExpertiseTables[0])
+  );
+  expertisePricing180El.setAttribute(
+    "columns",
+    JSON.stringify(mobileExpertiseColumns)
+  );
+  expertisePricing360El.setAttribute(
+    "rows",
+    JSON.stringify(mobileExpertiseTables[1])
+  );
+  expertisePricing180El.setAttribute(
+    "columns",
+    JSON.stringify(mobileExpertiseColumns)
+  );
 
-  performancePricingEl.addEventListener("expand", handlePerformancePricingClick)
-  expertisePricingEl.addEventListener("expand", handleExpertisePricingClick)
-  expertisePricing180El.addEventListener("expand", handleExpertisePricing180Click)
-  expertisePricing360El.addEventListener("expand", handleExpertisePricing360Click)
-  potentialPricingEl.addEventListener("expand", handlePotentialPricingClick)
+  performancePricingEl.addEventListener(
+    "expand",
+    handlePerformancePricingClick
+  );
+  expertisePricingEl.addEventListener("expand", handleExpertisePricingClick);
+  expertisePricing180El.addEventListener(
+    "expand",
+    handleExpertisePricing180Click
+  );
+  expertisePricing360El.addEventListener(
+    "expand",
+    handleExpertisePricing360Click
+  );
+  potentialPricingEl.addEventListener("expand", handlePotentialPricingClick);
 </script>
 
 <script async defer src="./build/Blob.js"></script>

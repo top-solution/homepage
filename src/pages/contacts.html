@@ -13,7 +13,7 @@ description="Entra in contatto con noi. Scopri le opportunità per il tuo busine
 {{>head-end}}
 
 {{>body-start}}
-<div class="page-contacts layout">
+<div class="page-contacts layout" itemscope itemtype="https://schema.org/Organization">
   <div class="layout__content">
     <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
     <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
@@ -26,18 +26,18 @@ description="Entra in contatto con noi. Scopri le opportunità per il tuo busine
         <ol class="page-contacts__contacts body-1">
           <li class="page-contacts__contacts__contact page-contacts__contacts__contact-email">
             <img src="img/icons/mail.svg" alt="" />
-            <a href={`mailto:info@topsolution.it`}>info@topsolution.it</a>
+            <a href={`mailto:info@topsolution.it`} itemprop="email">info@topsolution.it</a>
           </li>
-          <li class="page-contacts__contacts__contact">
+          <li class="page-contacts__contacts__contact" >
             <img src="img/icons/pin.svg" alt="" />
-            Sede Legale: Corso Regina Margherita, 254, 10144 Torino TO
+            <span itemprop="address">Sede Legale: Corso Regina Margherita, 254, 10144 Torino TO</span>
           </li>
           <li class="page-contacts__contacts__contact page-contacts__contacts__contact-phone">
             <img src="img/icons/phone.svg" alt="" />
-            <a href={`tel:+390112488280`}>+39 011 248 82 80</a>
+            <a href={`tel:+390112488280`} itemprop="telephone">+39 011 248 82 80</a>
           </li>
           <li class="page-contacts__contacts__contact">
-            <img src="img/icons/pin.svg" alt="" />Sede Operativa: Via Livorno, 60 B2 Lab, 10144 Torino TO
+            <img src="img/icons/pin.svg" alt="" itemprop="location" /><span>Sede Operativa: Via Livorno, 60 B2 Lab, 10144 Torino TO</span>
           </li>
         </ol>
       </div>
