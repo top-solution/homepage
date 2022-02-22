@@ -29,6 +29,7 @@
     "svelte-preprocess": "^4.10.2"
   },
   "dependencies": {
+    "i18n-js": "^3.8.0",
     "lodash.debounce": "^4.0.8",
     "simplex-noise": "^3.0.1"
   }
