@@ -5,13 +5,6 @@
 <div class="customer-container" id="customers">
   <div class="customer-container__title title-2">I NOSTRI CLIENTI</div>
   <div class="customer-container__images">
-  <!-- FIXME -->
-    <picture>
-      <source
-        srcset='/img/customers/sky@2x.png 2x, /img/customers/sky.png 1x'
-      />
-      <img loading="lazy" src='/img/customers/sky.png' />
-    </picture>
     <Picture base="customers" src="sky" alt="Sky" />
     <Picture base="customers" src="reply" alt="Reply" />
     <Picture base="customers" src="collins" alt="Collins" />
@@ -80,17 +73,6 @@
       align-items: center;
       margin-bottom: 24px;
       flex-wrap: wrap;
-
-      & > * { //FIXME
-        margin: variables.$ts-spacing-2;
-        max-width: 120px;
-
-        @media only screen and (max-width: variables.$ts-mobile-max) {
-          margin: variables.$ts-spacing-1;
-          max-width: 25%;
-          height: auto;
-        }
-      }
     }
   }
 
