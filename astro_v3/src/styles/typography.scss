@@ -1,0 +1,157 @@
+@use './variables';
+
+$font-roboto: "Manrope", sans-serif;
+
+
+/**
+############################################
+  Basic Typography (as specified in Figma)
+############################################
+*/
+
+* {
+  font-family: $font-roboto;
+}
+
+a,p,li,h1,h2,h3,h4,h5,h6 {
+  color: variables.$ts-blue-color;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (max-width: variables.$ts-mobile-max) {
+    line-height: 140%;
+  }
+
+  @media (min-width: variables.$ts-tablet-min) {
+    line-height: 150%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.title-1 {
+  font-size: 36px;
+  font-weight: 800;
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 28px;
+  }
+}
+
+.title-2 {
+  font-size: 36px;
+  font-weight: 500;
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 28px;
+  }
+}
+
+.title-3 {
+  font-size: 28px;
+  font-weight: 800;
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 25px;
+  }
+
+  &.title-form {
+    font-weight: 300;
+    margin-bottom: variables.$ts-spacing-6;
+
+    b {
+      font-weight: 500;
+    }
+  }
+}
+
+.claim {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 38px;
+
+  b {
+    font-weight: 500;
+  }
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 25px;
+  }
+}
+
+.title-4 {
+  font-size: 28px;
+  font-weight: 800;
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 20px;
+  }
+}
+
+.body-1 {
+  font-size: 25px;
+  font-weight: 300;
+
+  b {
+    font-weight: 500;
+  }
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 20px;
+  }
+}
+
+.body-2 {
+  font-size: 24px;
+  font-weight: 300;
+
+  em {
+    font-weight: 400;
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 18px;
+  }
+}
+
+.title-5 {
+  font-size: 24px;
+  font-weight: 500;
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 18px;
+  }
+}
+
+.title-6 {
+  font-size: 20px;
+  font-weight: 500;
+
+  @media (max-width: variables.$ts-mobile-max) {
+    font-size: 20px;
+  }
+}
+
+/**
+############################################
+  Typography utilities (less work for us)
+############################################
+*/
+
+// Titles of many pages
+h1.title-1 {
+  text-align: center;
+  margin-top: variables.$ts-spacing-10;
+  margin-bottom: variables.$ts-spacing-4;
+
+  @media (max-width: variables.$ts-mobile-max) {
+    margin-bottom: variables.$ts-spacing-2;
+  }
+}
