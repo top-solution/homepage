@@ -6,6 +6,110 @@ import Button from '../components/Button.astro'
 import TripleBlob from '../components/TripleBlob.astro'
 import Customers from '../components/Customers.astro'
 import Footer from '../components/Footer.astro'
+
+    // let tripleBlobDevHrElement = document.querySelector(
+    //   "#triple-blob-ht-development"
+    // );
+    let developmentHumanResourceBlobs = [
+      {
+        icon: "devices.svg",
+        title: "AUDIT COMPETENZE",
+        subtitle: "Analisi e mappatura delle competenze professionali",
+        color: "#e9e8f2",
+        width: "240px",
+        href: "/haka.html",
+      },
+      {
+        icon: "optionPaper.svg",
+        title: "SVILUPPO ORGANIZZATIVO",
+        subtitle: "Management diagnostic e clima organizzativo",
+        color: "#e9e8f2",
+        width: "245px",
+        href: "/company-development.html",
+      },
+      {
+        icon: "cloud.svg",
+        title: "SVILUPPO INDIVIDUALE",
+        subtitle: "Training, coaching e crescita professionale",
+        color: "#e9e8f2",
+        width: "240px",
+        href: "/self-development.html",
+      },
+    ];
+
+    // let developmentHumanResourceBlobs = {
+    //   blobs: [
+    //     {
+    //       icon: "devices.svg",
+    //       title: "AUDIT COMPETENZE",
+    //       subtitle: "Analisi e mappatura delle competenze professionali",
+    //       color: "#e9e8f2",
+    //       width: "240px",
+    //       href: "/haka.html",
+    //     },
+    //     {
+    //       icon: "optionPaper.svg",
+    //       title: "SVILUPPO ORGANIZZATIVO",
+    //       subtitle: "Management diagnostic e clima organizzativo",
+    //       color: "#e9e8f2",
+    //       width: "245px",
+    //       href: "/company-development.html",
+    //     },
+    //     {
+    //       icon: "cloud.svg",
+    //       title: "SVILUPPO INDIVIDUALE",
+    //       subtitle: "Training, coaching e crescita professionale",
+    //       color: "#e9e8f2",
+    //       width: "240px",
+    //       href: "/self-development.html",
+    //     },
+    //   ],
+    // };
+    // tripleBlobDevHrElement.setAttribute(
+    //   "blobs",
+    //   JSON.stringify(developmentHumanResourceBlobs)
+    // );
+
+    // let developmentSoftwareBlobs = [
+    //   {
+    //     icon: "lens.svg",
+    //     title: "APPLICAZIONI WEB E MOBILE",
+    //     subtitle:
+    //       "Single page web applications, rest api, micro-services, hybrid apps",
+    //     color: "#e3f1fa",
+    //     width: "260px",
+    //     href: "/applications.html",
+    //   },
+    //   {
+    //     icon: "palace.svg",
+    //     title: "CONSULENZA SVILUPPO SW",
+    //     subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
+    //     color: "#e3f1fa",
+    //     width: "260px",
+    //     html: "/consulting.html",
+    //   },
+    //   {
+    //     icon: "user.svg",
+    //     title: "CLOUD COMPUTING",
+    //     subtitle:
+    //       "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
+    //     color: "#e3f1fa",
+    //     width: "260px",
+    //     html: "/cloud.html",
+    //   },
+    // ];
+
+
+    // window.addEventListener("load", function () {
+    //   if (window.location.hash === "#customers") {
+    //     setTimeout(() => {
+    //       document.getElementById("customers").scrollIntoView({
+    //         behavior: "smooth",
+    //         block: "start",
+    //       });
+    //     }, 500);
+    //   }
+    // });
 ---
 <html lang="en">
 <head>
@@ -79,7 +183,7 @@ import Footer from '../components/Footer.astro'
         id="triple-blob-ht-development"
         title="SVILUPPO DELLE RISORSE UMANE"
         buttonlink="/hr-development.html"
-        blobs="{developmentHumanResourceBlobs}"
+        blobs={developmentHumanResourceBlobs}
       ></TripleBlob>
       <!-- <ts-triple-blob
       title="SVILUPPO SOFTWARE"
@@ -104,126 +208,6 @@ import Footer from '../components/Footer.astro'
     </div>
   <!-- </div> -->
   <Footer/>
-  <script>
-    // import { onMount } from "svelte";
-
-    let customersElement = null;
-    let tripleBlobDevHrElement = document.querySelector(
-      "#triple-blob-ht-development"
-    );
-    let developmentHumanResourceBlobs = [
-      {
-        icon: "devices.svg",
-        title: "AUDIT COMPETENZE",
-        subtitle: "Analisi e mappatura delle competenze professionali",
-        color: "#e9e8f2",
-        width: "240px",
-        href: "/haka.html",
-      },
-      {
-        icon: "optionPaper.svg",
-        title: "SVILUPPO ORGANIZZATIVO",
-        subtitle: "Management diagnostic e clima organizzativo",
-        color: "#e9e8f2",
-        width: "245px",
-        href: "/company-development.html",
-      },
-      {
-        icon: "cloud.svg",
-        title: "SVILUPPO INDIVIDUALE",
-        subtitle: "Training, coaching e crescita professionale",
-        color: "#e9e8f2",
-        width: "240px",
-        href: "/self-development.html",
-      },
-    ];
-
-    // let developmentHumanResourceBlobs = {
-    //   blobs: [
-    //     {
-    //       icon: "devices.svg",
-    //       title: "AUDIT COMPETENZE",
-    //       subtitle: "Analisi e mappatura delle competenze professionali",
-    //       color: "#e9e8f2",
-    //       width: "240px",
-    //       href: "/haka.html",
-    //     },
-    //     {
-    //       icon: "optionPaper.svg",
-    //       title: "SVILUPPO ORGANIZZATIVO",
-    //       subtitle: "Management diagnostic e clima organizzativo",
-    //       color: "#e9e8f2",
-    //       width: "245px",
-    //       href: "/company-development.html",
-    //     },
-    //     {
-    //       icon: "cloud.svg",
-    //       title: "SVILUPPO INDIVIDUALE",
-    //       subtitle: "Training, coaching e crescita professionale",
-    //       color: "#e9e8f2",
-    //       width: "240px",
-    //       href: "/self-development.html",
-    //     },
-    //   ],
-    // };
-    tripleBlobDevHrElement.setAttribute(
-      "blobs",
-      JSON.stringify(developmentHumanResourceBlobs)
-    );
-
-    // let developmentSoftwareBlobs = [
-    //   {
-    //     icon: "lens.svg",
-    //     title: "APPLICAZIONI WEB E MOBILE",
-    //     subtitle:
-    //       "Single page web applications, rest api, micro-services, hybrid apps",
-    //     color: "#e3f1fa",
-    //     width: "260px",
-    //     href: "/applications.html",
-    //   },
-    //   {
-    //     icon: "palace.svg",
-    //     title: "CONSULENZA SVILUPPO SW",
-    //     subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
-    //     color: "#e3f1fa",
-    //     width: "260px",
-    //     html: "/consulting.html",
-    //   },
-    //   {
-    //     icon: "user.svg",
-    //     title: "CLOUD COMPUTING",
-    //     subtitle:
-    //       "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
-    //     color: "#e3f1fa",
-    //     width: "260px",
-    //     html: "/cloud.html",
-    //   },
-    // ];
-
-    // onMount(() => {
-    //   if (window.location.hash === "#customers") {
-    //     window.addEventListener("load", function () {
-    //       setTimeout(() => {
-    //         customersElement.scrollIntoView({
-    //           behavior: "smooth",
-    //           block: "start",
-    //         });
-    //       }, 500);
-    //     });
-    //   }
-    // });
-
-    window.addEventListener("load", function () {
-      if (window.location.hash === "#customers") {
-        setTimeout(() => {
-          document.getElementById("customers").scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }, 500);
-      }
-    });
-  </script>
 </body>
 
 <style lang="scss">
@@ -288,7 +272,7 @@ import Footer from '../components/Footer.astro'
     overflow: visible;
     right: -1125px;
     // top: 1225px; // FIXME: ripristinare con la sezione sviluppo software
-    top: 625;
+    top: 625px;
     z-index: -1;
   }
 

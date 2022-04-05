@@ -1,37 +1,15 @@
 ---
-import Button from '../components/Button.astro';
+import Button from './Button.astro';
+import Blob from './Blob.astro';
 const {title, blobs, buttonlink} = Astro.props;
-
-//console.log("json", JSON.parse(blobs)) FIXME
-let blobsObj = [];
-setTimeout(() => {
-  //blobsObj = JSON.parse(blobs);
-}, 500);
 ---
-
-
-<script>
-//import { onMount } from "svelte/internal";
-
-// export let title = "";
-// export let blobs = "";
-// export let buttonlink = "";
-
-
-// let blobsObj = [];
-// onMount(() => {
-//   setTimeout(() => {
-//     blobsObj = JSON.parse(blobs);
-//   }, 500);
-// });
-</script>
 
 <div class="triple-blob">
   <h1 class="title-2 triple-blob__title">{title}</h1>
   <div class="triple-blob__container">
-    {blobsObj.map((blob) => {
+    {blobs.map((blob) => (
       <a class="triple-blob__container__link" href={blob.href}>
-        <ts-blob
+        <Blob
           interactive="true"
           shape="rectangle"
           style={`max-width: ${blob.width};`}
@@ -55,9 +33,9 @@ setTimeout(() => {
               {blob.subtitle}
             </p>
           </div>
-        </ts-blob>
+        </Blob>
       </a>
-    })}
+    ))}
   </div>
   <div class="triple-blob__button">
     <Button variant="outlined" href={buttonlink} type="button">
@@ -79,7 +57,7 @@ setTimeout(() => {
       color: variables.$ts-blue-color;
 
       @media only screen and (max-width: variables.$ts-tablet-max) {
-        overflow-x: auto;
+        overflow-x: hidden;
         align-items: center;
         min-height: 400px;
         margin-bottom: variables.$ts-spacing-1;
