@@ -4,11 +4,11 @@ import Blob from './Blob.astro';
 const {title, blobs, buttonlink} = Astro.props;
 ---
 
-<div class="triple-blob">
-  <h1 class="title-2 triple-blob__title">{title}</h1>
-  <div class="triple-blob__container">
+<section>
+  <h1 class="title-1">{title}</h1>
+  <div class="container">
     {blobs.map((blob) => (
-      <a class="triple-blob__container__link" href={blob.href}>
+      <a href={blob.href}>
         <Blob
           interactive="true"
           shape="rectangle"
@@ -17,8 +17,8 @@ const {title, blobs, buttonlink} = Astro.props;
           padding="20"
           clickable="true"
         >
-          <div class="triple-blob__text">
-            <p class="triple-blob__icon">
+          <div class="text">
+            <p>
               <img
                 src={`../img/icons/${blob.icon}`}
                 alt="devices icon"
@@ -26,27 +26,27 @@ const {title, blobs, buttonlink} = Astro.props;
                 height="35"
               />
             </p>
-            <div class="claim triple-blob__main-text">
+            <p class="claim">
               <b>{blob.title}</b>
-            </div>
-            <p class="triple-blob__subtitle">
-              {blob.subtitle}
             </p>
+            <h6>
+              {blob.subtitle}
+            </h6>
           </div>
         </Blob>
       </a>
     ))}
   </div>
-  <div class="triple-blob__button">
-    <Button variant="outlined" href={buttonlink} type="button">
-      Scopri
-    </Button>
+  <div class="centred-button">
+  <Button variant="outlined" href={buttonlink} type="button">
+    Scopri
+  </Button>
   </div>
-</div>
+</section>
 
 <style lang="scss">
-  .triple-blob {
-    &__container {
+  section {
+    .container {
       display: flex;
       justify-content: space-between;
       margin-bottom: var(--spacing-10);
@@ -60,7 +60,7 @@ const {title, blobs, buttonlink} = Astro.props;
         margin-left: - var(--spacing-6);
         margin-right: - var(--spacing-6);
 
-        &__link {
+        a {
           margin: 0 var(--spacing-2) !important;
           height: 100%;
           min-width: 260px;
@@ -69,7 +69,7 @@ const {title, blobs, buttonlink} = Astro.props;
       }
     }
 
-    &__container__link {
+    a {
       margin: 0 var(--spacing-2) !important;
       min-width: 260px;
 
@@ -90,31 +90,15 @@ const {title, blobs, buttonlink} = Astro.props;
       }
     }
 
-    &__text {
+    .text {
       text-align: center;
     }
 
-    &__title {
-      text-align: center;
-      margin-bottom: var(--spacing-10);
-      margin-top: var(--spacing-10);
-
-      @media only screen and (max-width: var(--breakpoint-tablet-max)) {
-        margin-bottom: 0;
-      }
-    }
-
-    &__icon,
-    &__main-text {
+    p {
       margin-bottom: var(--spacing-1);
     }
 
-    &__subtitle {
-      font-size: 20px;
-      font-weight: 400;
-    }
-
-    &__button {
+    .button {
       display: flex;
       justify-content: center;
     }

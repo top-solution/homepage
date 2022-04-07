@@ -28,7 +28,7 @@
   --spacing-3: calc(var(--spacing) * 3);
   --spacing-4: calc(var(--spacing) * 4);
   --spacing-5: calc(var(--spacing) * 5);
-  --spacing-6: calc(var(--spacing)* 6);
+  --spacing-6: calc(var(--spacing) * 6);
   --spacing-7: calc(var(--spacing) * 7);
   --spacing-8: calc(var(--spacing) * 8);
   --spacing-9: calc(var(--spacing) * 9);
@@ -45,24 +45,24 @@
 
   /* Font-size */
   --font-size--2: clamp(1.12rem, calc(0.35rem + 1.28vw), 0.65rem);
-  --font-size--1: clamp(1.40rem, calc(0.38rem + 1.69vw), 0.78rem);
+  --font-size--1: clamp(1.4rem, calc(0.38rem + 1.69vw), 0.78rem);
   --font-size-0: clamp(0.94rem, calc(0.42rem + 2.22vw), 1.75rem);
   --font-size-1: clamp(1.13rem, calc(0.44rem + 2.91vw), 2.19rem);
   --font-size-2: clamp(1.35rem, calc(0.46rem + 3.79vw), 2.73rem);
   --font-size-3: clamp(1.62rem, calc(0.47rem + 4.92vw), 3.42rem);
   --font-size-4: clamp(1.94rem, calc(0.45rem + 6.37vw), 4.27rem);
-  --font-size-5: clamp(2.33rem, calc(0.40rem + 8.23vw), 5.34rem);
+  --font-size-5: clamp(2.33rem, calc(0.4rem + 8.23vw), 5.34rem);
 
   /* Spacing */
   --space-3xs: clamp(0.25rem, calc(0.13rem + 0.51vw), 0.44rem);
-  --space-2xs: clamp(0.50rem, calc(0.26rem + 1.03vw), 0.88rem);
+  --space-2xs: clamp(0.5rem, calc(0.26rem + 1.03vw), 0.88rem);
   --space-xs: clamp(0.69rem, calc(0.29rem + 1.71vw), 1.31rem);
   --space-s: clamp(0.94rem, calc(0.42rem + 2.22vw), 1.75rem);
   --space-m: clamp(1.44rem, calc(0.68rem + 3.25vw), 2.63rem);
-  --space-l: clamp(1.88rem, calc(0.83rem + 4.44vw), 3.50rem);
+  --space-l: clamp(1.88rem, calc(0.83rem + 4.44vw), 3.5rem);
   --space-xl: clamp(2.81rem, calc(1.25rem + 6.67vw), 5.25rem);
-  --space-2xl: clamp(3.75rem, calc(1.67rem + 8.89vw), 7.00rem);
-  --space-3xl: clamp(5.63rem, calc(2.50rem + 13.33vw), 10.50rem);
+  --space-2xl: clamp(3.75rem, calc(1.67rem + 8.89vw), 7rem);
+  --space-3xl: clamp(5.63rem, calc(2.5rem + 13.33vw), 10.5rem);
 }
 
 .wrapper {
@@ -97,6 +97,15 @@ body {
   margin: 0 auto;
   padding: 0 var(--spacing-3);
   position: relative;
+}
+
+.layout .content {
+  /* min-height: calc(100vh - 621px); */
+}
+
+.centred-button {
+  display: flex;
+  justify-content: center;
 }
 
 /* manrope-300 - latin */
@@ -168,4 +177,3 @@ body {
     /* Safari, Android, iOS */ url("/fonts/manrope-v8-latin-800.svg#Manrope") format("svg"); /* Legacy iOS */
   font-display: swap;
 }
-

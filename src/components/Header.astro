@@ -156,7 +156,7 @@ const { color = "light" } = Astro.props;
   header {
     max-width: 900px;
     margin: 0 auto;
-    @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+    @media only screen and (max-width: 600px) {
       //display: none;
     }
 
@@ -168,7 +168,7 @@ const { color = "light" } = Astro.props;
       padding: var(--spacing-3) var(--spacing-1) var(--spacing-2);
 
       span {
-        @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+        @media only screen and (max-width: 600px) {
           color: var(--color-white);
         }
       }
@@ -230,7 +230,7 @@ const { color = "light" } = Astro.props;
       }
     }
 
-    @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+    @media only screen and (max-width: 600px) {
       display: none;
     }
   }
@@ -239,7 +239,7 @@ const { color = "light" } = Astro.props;
     min-height: 100px;
     display: static !important;
 
-    @media only screen and (min-width: var(--breakpoint-mobile-max)) {
+    @media only screen and (min-width: 600px) {
       display: none;
     }
 
@@ -414,7 +414,7 @@ const { color = "light" } = Astro.props;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 
-    @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+    @media only screen and (max-width: 600px) {
       background-color: var(--color-blue-hovering);
     }
 

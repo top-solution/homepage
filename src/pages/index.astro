@@ -7,85 +7,83 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
 ---
 
 <Layout color="dark">
-  <div class="homepage layout">
-    <div class="layout__content">
-      <div class="homepage__header-blob">
+  <article class="layout">
+    <div class="layout content">
+      <div class="header-blob">
         <img src="img/homepage/blob-header-homepage.svg" alt="" />
       </div>
-      <div class="homepage__header-blob-mobile">
+      <div class="header-blob-mobile">
         <img src="img/homepage/blob-header-homepage.svg" alt="" />
       </div>
-      <div class="homepage__header-hex">
+      <div class="header-hex">
         <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
       </div>
-      <div class="homepage__header-hex-mobile">
+      <div class="header-hex-mobile">
         <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
       </div>
-      <div class="homepage__header-hex-logo">
+      <div class="header-hex-logo">
         <img src="img/homepage/hex-logo-header.svg" alt="" />
       </div>
-      <div class="homepage__header-hex-logo-mobile">
+      <div class="header-hex-logo-mobile">
         <img src="img/homepage/hex-logo-header.svg" alt="" />
       </div>
-      <div class="homepage__hex-mobile-1">
+      <div class="hex-mobile-1">
         <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
       </div>
-      <div class="homepage__hex-mobile-2">
+      <div class="hex-mobile-2">
         <img src="img/homepage/homepage-mobile-hex-2.svg" alt="" />
       </div>
-      <div class="homepage__hex-mobile-3">
+      <div class="hex-mobile-3">
         <img src="img/homepage/homepage-mobile-hex-3.svg" alt="" />
       </div>
-      <div class="homepage__hex-mobile-4">
+      <div class="hex-mobile-4">
         <img src="img/homepage/homepage-mobile-hex-4.svg" alt="" />
       </div>
-      <div class="homepage__hex-mobile-5">
+      <div class="hex-mobile-5">
         <img src="img/homepage/homepage-mobile-hex-5.svg" alt="" />
       </div>
-      <div class="homepage__hex-mobile-6">
+      <div class="hex-mobile-6">
         <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
       </div>
     </div>
-    <div class="home-hero">
-      <div class="home-hero__banner">
-        <div class="home-hero__text">
-          Entra in <strong>contatto</strong> con noi
-          <p>
-            Scopri le opportunità per il tuo <strong>business</strong> offerte dalle nostre <strong>soluzioni</strong>
-          </p>
-        </div>
-        <div class="home-hero__button">
+    <section>
+      <div class="banner">
+        <span>Entra in <strong>contatto</strong> con noi</span>
+        <p>
+          Scopri le opportunità per il tuo <strong>business</strong> offerte dalle nostre <strong>soluzioni</strong>
+        </p>
+        <div class="button">
           <Button variant="primary" href="/contacts.html">Contattaci</Button>
         </div>
       </div>
-    </div>
+    </section>
     <TripleBlob
       id="triple-blob-ht-development"
       title="SVILUPPO DELLE RISORSE UMANE"
       buttonlink="/hr-development.html"
       blobs={developmentHumanResourceBlobs}
     />
-    <div class="homepage__middle-blob">
+    <div class="middle-blob">
       <img src="img/homepage/blob-middle-homepage.svg" alt="" />
     </div>
-    <div class="homepage__middle-hex">
+    <div class="middle-hex">
       <img src="img/homepage/group-hex-middle-desktop.svg" alt="" />
     </div>
-    <div class="homepage__middle-hex-mobile">
+    <div class="middle-hex-mobile">
       <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
     </div>
-    <div class="homepage__middle-hex-tablet">
+    <div class="middle-hex-tablet">
       <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
     </div>
     <Customers id="customers" />
-  </div>
+  </article>
 </Layout>
 
 <style lang="scss">
-  .homepage {
+  article {
     color: var(--color-blue);
 
-    &__header-blob {
+    .header-blob {
       display: block;
       position: absolute;
       width: 1400px;
@@ -101,7 +99,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       }
     }
 
-    &__header-hex {
+    .header-hex {
       display: block;
       position: absolute;
       width: 1400px;
@@ -111,7 +109,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       z-index: -1;
     }
 
-    &__header-hex-logo {
+    .header-hex-logo {
       display: block;
       position: absolute;
       width: 1400px;
@@ -121,7 +119,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       z-index: -1;
     }
 
-    &__middle-blob {
+    .middle-blob {
       display: block;
       position: absolute;
       width: 1400px;
@@ -132,7 +130,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       z-index: -1;
     }
 
-    &__middle-hex {
+    .middle-hex {
       display: block;
       position: absolute;
       width: 1400px;
@@ -143,36 +141,36 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       z-index: -1;
     }
 
-    &__middle-hex-tablet,
-    &__middle-hex-mobile,
-    &__header-hex-mobile,
-    &__header-hex-logo-mobile,
-    &__header-blob-mobile {
+    .middle-hex-tablet,
+    .middle-hex-mobile,
+    .header-hex-mobile,
+    .header-hex-logo-mobile,
+    .header-blob-mobile {
       display: none;
     }
 
-    &__hex-mobile-1,
-    &__hex-mobile-2,
-    &__hex-mobile-3,
-    &__hex-mobile-4,
-    &__hex-mobile-5,
-    &__hex-mobile-6 {
+    .hex-mobile-1,
+    .hex-mobile-2,
+    .hex-mobile-3,
+    .hex-mobile-4,
+    .hex-mobile-5,
+    .hex-mobile-6 {
       display: none;
     }
 
     @media only screen and (max-width: var(--breakpoint-mobile-max)) {
-      &__hex-mobile-1,
-      &__hex-mobile-2,
-      &__hex-mobile-3,
-      &__hex-mobile-4,
-      &__hex-mobile-5,
-      &__hex-mobile-6 {
+      .hex-mobile-1,
+      .hex-mobile-2,
+      .hex-mobile-3,
+      .hex-mobile-4,
+      .hex-mobile-5,
+      .hex-mobile-6 {
         display: block;
         position: absolute;
         overflow: visible;
         z-index: -1;
       }
-      &__hex-mobile {
+      .hex-mobile {
         &-1 {
           top: -100px;
           left: 300px;
@@ -199,15 +197,15 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
         }
       }
 
-      &__header-hex,
-      &__header-hex-logo,
-      &__middle-blob,
-      &__middle-hex,
-      &__middle-hex-tablet {
+      .header-hex,
+      .header-hex-logo,
+      .middle-blob,
+      .middle-hex,
+      .middle-hex-tablet {
         display: none;
       }
 
-      &__middle-hex-mobile {
+      .middle-hex-mobile {
         display: block;
         position: absolute;
         width: 1400px;
@@ -220,20 +218,20 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     }
 
     @media only screen and (max-width: var(--breakpoint-tablet-max)) {
-      &__header-hex-logo {
+      .header-hex-logo {
         left: -370px;
       }
 
-      &__header-hex {
+      .header-hex {
         left: -1350px;
       }
 
-      &__middle-blob,
-      &__middle-hex {
+      .middle-blob,
+      .middle-hex {
         display: none;
       }
 
-      &__middle-hex-tablet {
+      .middle-hex-tablet {
         display: block;
         position: absolute;
         width: 1400px;
@@ -250,13 +248,13 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     }
 
     @media only screen and (min-width: --breakpoint-mobile-min) and (max-width: 700px) {
-      &__header-hex-logo {
+      .header-hex-logo {
         left: -390px;
       }
     }
   }
 
-  .home-hero {
+  section {
     margin-top: var(--spacing-9);
     display: flex;
     justify-content: flex-end;
@@ -265,22 +263,22 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     line-height: 67px;
     color: var(--color-blue);
 
-    &__banner {
+    .banner {
       flex: 0 0 65%;
     }
 
-    &__text {
+    p {
       margin-bottom: 80px;
     }
 
-    &__button {
+    .button {
       display: flex;
       justify-content: center;
     }
   }
 
   @media only screen and (max-width: var(--breakpoint-mobile-max)) {
-    .home-hero {
+    section {
       margin-top: var(--spacing-15);
       display: flex;
       margin-bottom: 24px;

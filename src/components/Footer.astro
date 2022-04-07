@@ -67,9 +67,7 @@ import { contacts } from "../utils/contacts";
         <img src="img/topsolution_footer_logo_dark.svg" alt="top-solution_logo" width="79" height="79" itemprop="logo"
         />
       </a>
-      <p>
-        Entra in contatto con noi. Scopri le opportunità per il tuo business offerte dalle nostre soluzioni
-      </p>
+      <p>Entra in contatto con noi. Scopri le opportunità per il tuo business offerte dalle nostre soluzioni</p>
     </div>
     <div class="iva">
       <span itemprop="legalName">© Top Solution s.r.l </span>
@@ -84,141 +82,132 @@ import { contacts } from "../utils/contacts";
     width: 100%;
     font-weight: 300;
     color: var(--color-white);
+  }
 
-    a {
-      color: var(--color-white);
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: var(--spacing-3) 0;
+    max-width: var(--breakpoint-tablet-max);
+    line-height: 28px;
+
+    ul {
+      flex: 0 0 20%;
+      list-style: none;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-evenly;
-      margin: 0 auto;
-      padding: var(--spacing-3) 0;
-      max-width: var(--breakpoint-tablet-max);
-      line-height: 28px;
-      color: var(--color-white);
+    li {
+      margin: var(--spacing-1-5) 0;
+      font-weight: 400;
+    }
 
-      ul {
-        flex: 0 0 20%;
-        list-style: none;
-      }
+    .bordered-box {
+      flex: 0 0 32%;
+      border-left: 1px solid var(--color-white);
+      padding-left: var(--spacing-3);
+      margin-left: var(--spacing-3);
+      font-weight: 400;
 
       li {
+        color: var(--color-white);
+      }
+
+      div {
         margin: var(--spacing-1-5) 0;
-        font-weight: 400;
-      }
-
-      ul > a {
-        color: var(--color-white);
-      }
-
-      .bordered-box {
-        flex: 0 0 32%;
-        border-left: 1px solid var(--color-white);
-        padding-left: var(--spacing-3);
-        margin-left: var(--spacing-3);
-        font-weight: 400;
-
-        li {
-          color: var(--color-white);
-        }
-
-        div {
-          margin: var(--spacing-1-5) 0;
-          line-height: 18px;
-        }
-      }
-    }
-
-    aside {
-      margin-top: 28px;
-      min-height: 180px;
-      background-color: var(--color-blue-footer);
-
-      .container {
-        display: flex;
-        margin-bottom: var(--spacing-5);
-        justify-content: center;
-      }
-
-      p {
-        color: var(--color-white);
-        border-left: 1px solid var(--color-white);
-        font-size: 15px;
         line-height: 18px;
-        padding-left: 16px;
-        width: 173px;
-      }
-
-      .iva {
-        font-size: 15px;
-        line-height: 18px;
-        text-align: center;
-      }
-
-      .company {
-        margin-right: 20px;
-      }
-
-      img {
-        margin-right: 18px;
       }
     }
+  }
 
-    .picture {
-      width: 20px;
-      height: 20px;
-      display: inline-block;
+  aside {
+    margin-top: 28px;
+    min-height: 180px;
+    background-color: var(--color-blue-footer);
+
+    .container {
+      display: flex;
+      margin-bottom: var(--spacing-5);
+      justify-content: center;
     }
 
-    .spacing {
-      margin-left: var(--spacing-2) !important;
+    p {
+      color: var(--color-white);
+      border-left: 1px solid var(--color-white);
+      font-size: 15px;
+      line-height: 18px;
+      padding-left: 16px;
+      width: 173px;
     }
 
-    @media only screen and (max-width: 600px) {
-      nav {
-        flex-wrap: wrap;
-        padding: var(--spacing-3);
-        justify-content: flex-start;
-        line-height: 28px;
-
-        ul {
-          flex: 0 0 50%;
-          margin-bottom: var(--spacing-3);
-        }
-
-        .bordered-box {
-          flex: 0 0 100%;
-          border-top: 1px solid var(--color-white);
-          border-bottom: 1px solid var(--color-white);
-          border-left: none;
-          padding: var(--spacing-3) 0;
-          margin-left: 0;
-          margin-top: var(--spacing-3);
-          text-align: center;
-
-          a {
-            color: var(--color-white);
-          }
-
-          a,
-          div {
-            max-width: 290px;
-            margin: var(--spacing-1-5) auto;
-          }
-        }
-      }
-
-      hr {
-        display: none !important;
-      }
+    .iva {
+      font-size: 15px;
+      line-height: 18px;
+      text-align: center;
     }
+
+    img {
+      margin-right: 18px;
+    }
+  }
+
+  a {
+    color: var(--color-white);
   }
 
   h3 {
     margin: 0 0 var(--spacing-2);
     font-weight: 500;
     color: var(--color-white);
+  }
+
+  .picture {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+
+  .spacing {
+    margin-left: var(--spacing-2) !important;
+  }
+
+  @media only screen and (max-width: 600px) {
+    nav {
+      flex-wrap: wrap;
+      padding: var(--spacing-3);
+      justify-content: flex-start;
+      line-height: 28px;
+
+      ul {
+        flex: 0 0 50%;
+        margin-bottom: var(--spacing-3);
+      }
+
+      .bordered-box {
+        flex: 0 0 100%;
+        border-top: 1px solid var(--color-white);
+        border-bottom: 1px solid var(--color-white);
+        border-left: none;
+        padding: var(--spacing-3) 0;
+        margin-left: 0;
+        margin-top: var(--spacing-3);
+        text-align: center;
+
+        a {
+          color: var(--color-white);
+        }
+
+        a,
+        div {
+          max-width: 290px;
+          margin: var(--spacing-1-5) auto;
+        }
+      }
+    }
+
+    hr {
+      display: none !important;
+    }
   }
 
   @media only screen and (max-width: 960px) {
