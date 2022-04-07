@@ -45,27 +45,23 @@ const {title, blobs, buttonlink} = Astro.props;
 </div>
 
 <style lang="scss">
-  @use "../styles/variables";
-
-  @import "../styles/main.scss";
-
   .triple-blob {
     &__container {
       display: flex;
       justify-content: space-between;
-      margin-bottom: variables.$ts-spacing-10;
-      color: variables.$ts-blue-color;
+      margin-bottom: var(--spacing-10);
+      color: var(--color-blue);
 
-      @media only screen and (max-width: variables.$ts-tablet-max) {
+      @media only screen and (max-width: var(--breakpoint-tablet-max)) {
         overflow-x: hidden;
         align-items: center;
         min-height: 400px;
-        margin-bottom: variables.$ts-spacing-1;
-        margin-left: -(variables.$ts-spacing-6);
-        margin-right: -(variables.$ts-spacing-6);
+        margin-bottom: var(--spacing-1);
+        margin-left: - var(--spacing-6);
+        margin-right: - var(--spacing-6);
 
         &__link {
-          margin: 0 variables.$ts-spacing-2 !important;
+          margin: 0 var(--spacing-2) !important;
           height: 100%;
           min-width: 260px;
           flex-basis: 100%;
@@ -74,7 +70,7 @@ const {title, blobs, buttonlink} = Astro.props;
     }
 
     &__container__link {
-      margin: 0 variables.$ts-spacing-2 !important;
+      margin: 0 var(--spacing-2) !important;
       min-width: 260px;
 
       &:first-of-type {
@@ -84,12 +80,12 @@ const {title, blobs, buttonlink} = Astro.props;
         margin-right: 0 !important;
       }
 
-      @media only screen and (max-width: variables.$ts-tablet-max) {
+      @media only screen and (max-width: var(--breakpoint-tablet-max)) {
         &:first-of-type {
-          margin-left: variables.$ts-spacing-6 !important;
+          margin-left: var(--spacing-6) !important;
         }
         &:last-of-type {
-          margin-right: variables.$ts-spacing-6 !important;
+          margin-right: var(--spacing-6) !important;
         }
       }
     }
@@ -100,17 +96,17 @@ const {title, blobs, buttonlink} = Astro.props;
 
     &__title {
       text-align: center;
-      margin-bottom: variables.$ts-spacing-10;
-      margin-top: variables.$ts-spacing-10;
+      margin-bottom: var(--spacing-10);
+      margin-top: var(--spacing-10);
 
-      @media only screen and (max-width: variables.$ts-mobile-max) {
+      @media only screen and (max-width: var(--breakpoint-tablet-max)) {
         margin-bottom: 0;
       }
     }
 
     &__icon,
     &__main-text {
-      margin-bottom: variables.$ts-spacing-1;
+      margin-bottom: var(--spacing-1);
     }
 
     &__subtitle {

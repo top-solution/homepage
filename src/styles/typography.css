@@ -1,6 +1,6 @@
-@use "./variables";
-
-$font-roboto: "Manrope", sans-serif;
+:root {
+  --font-roboto: "Manrope", sans-serif;
+}
 
 /**
 ############################################
@@ -9,7 +9,7 @@ $font-roboto: "Manrope", sans-serif;
 */
 
 * {
-  font-family: $font-roboto;
+  font-family: var(--font-roboto);
 }
 
 a,
@@ -21,16 +21,16 @@ h3,
 h4,
 h5,
 h6 {
-  color: variables.$ts-blue-color;
+  color: var(--color-blue);
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: 0;
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     line-height: 140%;
   }
 
-  @media (min-width: variables.$ts-tablet-min) {
+  @media (min-width: var(--breakpoint-mobile-min)) {
     line-height: 150%;
   }
 }
@@ -43,7 +43,7 @@ a {
   font-size: 36px;
   font-weight: 800;
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 28px;
   }
 }
@@ -52,7 +52,7 @@ a {
   font-size: 36px;
   font-weight: 500;
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 28px;
   }
 }
@@ -61,18 +61,18 @@ a {
   font-size: 28px;
   font-weight: 800;
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 25px;
   }
+}
 
-  &.title-form {
-    font-weight: 300;
-    margin-bottom: variables.$ts-spacing-6;
+.title3 .title-form {
+  font-weight: 300;
+  margin-bottom: var(--spacing-6);
+}
 
-    b {
-      font-weight: 500;
-    }
-  }
+.title3 .title-form b {
+  font-weight: 500;
 }
 
 .claim {
@@ -84,7 +84,7 @@ a {
     font-weight: 500;
   }
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 25px;
   }
 }
@@ -93,7 +93,7 @@ a {
   font-size: 28px;
   font-weight: 800;
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 20px;
   }
 }
@@ -106,7 +106,7 @@ a {
     font-weight: 500;
   }
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 20px;
   }
 }
@@ -123,7 +123,7 @@ a {
     font-weight: 500;
   }
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 18px;
   }
 }
@@ -132,7 +132,7 @@ a {
   font-size: 24px;
   font-weight: 500;
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 18px;
   }
 }
@@ -141,7 +141,7 @@ a {
   font-size: 20px;
   font-weight: 500;
 
-  @media (max-width: variables.$ts-mobile-max) {
+  @media (max-width: var(--breakpoint-mobile-max)) {
     font-size: 20px;
   }
 }
@@ -152,13 +152,13 @@ a {
 ############################################
 */
 
-// Titles of many pages
+/* Titles of many pages */
 h1.title-1 {
   text-align: center;
-  margin-top: variables.$ts-spacing-10;
-  margin-bottom: variables.$ts-spacing-4;
+  margin-top: var(--spacing-10);
+  margin-bottom: var(--spacing-4);
 
-  @media (max-width: variables.$ts-mobile-max) {
-    margin-bottom: variables.$ts-spacing-2;
+  @media (max-width: var(--breakpoint-mobile-max)) {
+    margin-bottom: var(--spacing-2);
   }
 }

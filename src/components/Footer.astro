@@ -1,0 +1,235 @@
+---
+import Picture from "../components/Picture.astro";
+import { contacts } from "../utils/contacts";
+---
+
+<footer itemscope itemtype="https://schema.org/Organization">
+  <nav>
+    <ul>
+      <h3>Informazioni</h3>
+      <li><a href="company.html">Azienda</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#customers">Clienti</a></li>
+    </ul>
+    <ul>
+      <h3>Link utili</h3>
+      <li><a href="hr-development.html">HR</a></li>
+      <!-- <div><a href="software-development.html">DEV</a></div> -->
+      <li><a href="haka.html#plans">Tariffe</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+    <ul>
+      <h3>Servizi</h3>
+      <li><a href="haka.html">Audit competenze</a></li>
+      <li><a href="company-development.html">Sviluppo organizzativo</a></li>
+      <li><a href="self-development.html">Sviluppo individuale</a></li>
+      <!-- <div>
+        <a href="web-applications-mobile.html">Applicazioni web e mobile</a>
+      </div>
+      <div>
+        <a href="software-development-consulting.html"
+          >Consulenza sviluppo software</a
+        >
+      </div>
+      <div><a href="cloud-computing.html">Cloud computing</a></div> -->
+    </ul>
+    <ul class="bordered-box">
+      <h3>Contatti</h3>
+      <li><a href={`tel:${contacts.phone}`}>{contacts.phone}</a></li>
+      <li><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
+      <li>Sede Legale: {contacts.registeredOffice}</li>
+      <li>Sede Operativa: {contacts.operationalOffice}</li>
+      <a target="_blank" href="https://twitter.com" rel="noopener noreferrer" class="picture">
+        <Picture base="footer" src="twitter" alt="Twitter" extension="svg" />
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/" rel="noopener noreferrer" class="picture spacing">
+        <Picture base="footer" src="linkedin" alt="Linkedin" extension="svg" />
+      </a>
+      <!-- <a
+        target="_blank"
+        href="https://www.instagram.com/"
+        rel="noopener noreferrer"
+      >
+        <Picture
+          class="footer-top--spacing"
+          base="footer"
+          src="instagram"
+          alt="Instagram"
+          extension="svg"
+        />
+      </a> -->
+    </ul>
+  </nav>
+  <hr />
+  <aside>
+    <div class="container">
+      <a href="/index.html">
+        <img src="img/topsolution_footer_logo_dark.svg" alt="top-solution_logo" width="79" height="79" itemprop="logo"
+        />
+      </a>
+      <p>
+        Entra in contatto con noi. Scopri le opportunità per il tuo business offerte dalle nostre soluzioni
+      </p>
+    </div>
+    <div class="iva">
+      <span itemprop="legalName">© Top Solution s.r.l </span>
+      <span class="spacing" itemprop="vatID"><strong>P.IVA/CF </strong> 10031960015</span>
+    </div>
+  </aside>
+</footer>
+
+<style lang="scss">
+  footer {
+    background-color: var(--color-blue-footer);
+    width: 100%;
+    font-weight: 300;
+    color: var(--color-white);
+
+    a {
+      color: var(--color-white);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0 auto;
+      padding: var(--spacing-3) 0;
+      max-width: var(--breakpoint-tablet-max);
+      line-height: 28px;
+      color: var(--color-white);
+
+      ul {
+        flex: 0 0 20%;
+        list-style: none;
+      }
+
+      li {
+        margin: var(--spacing-1-5) 0;
+        font-weight: 400;
+      }
+
+      ul > a {
+        color: var(--color-white);
+      }
+
+      .bordered-box {
+        flex: 0 0 32%;
+        border-left: 1px solid var(--color-white);
+        padding-left: var(--spacing-3);
+        margin-left: var(--spacing-3);
+        font-weight: 400;
+
+        li {
+          color: var(--color-white);
+        }
+
+        div {
+          margin: var(--spacing-1-5) 0;
+          line-height: 18px;
+        }
+      }
+    }
+
+    aside {
+      margin-top: 28px;
+      min-height: 180px;
+      background-color: var(--color-blue-footer);
+
+      .container {
+        display: flex;
+        margin-bottom: var(--spacing-5);
+        justify-content: center;
+      }
+
+      p {
+        color: var(--color-white);
+        border-left: 1px solid var(--color-white);
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 16px;
+        width: 173px;
+      }
+
+      .iva {
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+      }
+
+      .company {
+        margin-right: 20px;
+      }
+
+      img {
+        margin-right: 18px;
+      }
+    }
+
+    .picture {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+    }
+
+    .spacing {
+      margin-left: var(--spacing-2) !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+      nav {
+        flex-wrap: wrap;
+        padding: var(--spacing-3);
+        justify-content: flex-start;
+        line-height: 28px;
+
+        ul {
+          flex: 0 0 50%;
+          margin-bottom: var(--spacing-3);
+        }
+
+        .bordered-box {
+          flex: 0 0 100%;
+          border-top: 1px solid var(--color-white);
+          border-bottom: 1px solid var(--color-white);
+          border-left: none;
+          padding: var(--spacing-3) 0;
+          margin-left: 0;
+          margin-top: var(--spacing-3);
+          text-align: center;
+
+          a {
+            color: var(--color-white);
+          }
+
+          a,
+          div {
+            max-width: 290px;
+            margin: var(--spacing-1-5) auto;
+          }
+        }
+      }
+
+      hr {
+        display: none !important;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0 0 var(--spacing-2);
+    font-weight: 500;
+    color: var(--color-white);
+  }
+
+  @media only screen and (max-width: 960px) {
+    footer {
+      height: auto;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 960px) {
+    .bordered-box {
+      flex: 0 0 20%;
+    }
+  }
+</style>

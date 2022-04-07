@@ -29,24 +29,20 @@ const { title = "", title2 = false, azure = "", mobilealignleft = "" } = Astro.p
 </div>
 
 <style lang="scss">
-  @use "../styles/variables.scss";
-
-  @import "../styles/main";
-
   .top-banner {
     position: relative;
-    background-color: variables.$ts-blue-background;
-    color: variables.$ts-blue-color;
+    background-color: var(--color-blue-background);
+    color: var(--color-blue);
 
     &--azure {
-      background-color: variables.$ts-azure-color-light;
+      background-color: var(--color-azure-light);
     }
 
     &__content {
       box-sizing: border-box;
-      max-width: variables.$ts-tablet-max;
+      max-width: var(--breakpoint-tablet-max);
       margin: auto;
-      padding: variables.$ts-spacing-4 variables.$ts-spacing-8;
+      padding: var(--spacing-4) var(--spacing-8);
       position: relative;
       display: flex;
       flex-direction: column;
@@ -58,24 +54,24 @@ const { title = "", title2 = false, azure = "", mobilealignleft = "" } = Astro.p
 
       &,
       &.title-1 {
-        margin: 0 0 variables.$ts-spacing-3 0;
+        margin: 0 0 var(--spacing-3) 0;
       }
     }
 
     &__text {
-      max-width: variables.$ts-mobile-max + variables.$ts-spacing-2;
-      margin: 0 auto variables.$ts-spacing-3;
+      max-width: var(--breakpoint-mobile-max) + var(--spacing-2);
+      margin: 0 auto var(--spacing-3);
     }
 
     &__actions {
-      margin: variables.$ts-spacing-5 auto variables.$ts-spacing-4;
+      margin: var(--spacing-5) auto var(--spacing-4);
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
     &__external {
-      max-width: variables.$ts-tablet-max;
+      max-width: var(--breakpoint-tablet-max);
       position: absolute;
       top: 0;
       left: 0;
@@ -84,14 +80,14 @@ const { title = "", title2 = false, azure = "", mobilealignleft = "" } = Astro.p
       pointer-events: none;
     }
 
-    @media screen and (max-width: variables.$ts-mobile-max) {
+    @media screen and (max-width: var(--breakpoint-mobile-max)) {
       &__title {
         &.title-1 {
-          margin-top: variables.$ts-spacing-9;
+          margin-top: var(--spacing-9);
           text-align: center;
         }
         &.title-2 {
-          margin-top: variables.$ts-spacing-4;
+          margin-top: var(--spacing-4);
           text-align: left;
           max-width: 50%;
         }
@@ -99,7 +95,7 @@ const { title = "", title2 = false, azure = "", mobilealignleft = "" } = Astro.p
 
       &__content {
         align-items: flex-start;
-        padding: variables.$ts-spacing-5 variables.$ts-spacing-4;
+        padding: var(--spacing-5) var(--spacing-4);
       }
 
       &__text {
@@ -115,7 +111,7 @@ const { title = "", title2 = false, azure = "", mobilealignleft = "" } = Astro.p
       }
     }
 
-    @media screen and (min-width: variables.$ts-mobile-max) {
+    @media screen and (min-width: var(--breakpoint-mobile-max)) {
       &__text {
         text-align: center;
       }

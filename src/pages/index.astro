@@ -1,0 +1,308 @@
+---
+import Layout from "../components/Layout.astro";
+import Button from "../components/Button.astro";
+import TripleBlob from "../components/TripleBlob.astro";
+import Customers from "../components/Customers.astro";
+import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
+---
+
+<Layout color="dark">
+  <div class="homepage layout">
+    <div class="layout__content">
+      <div class="homepage__header-blob">
+        <img src="img/homepage/blob-header-homepage.svg" alt="" />
+      </div>
+      <div class="homepage__header-blob-mobile">
+        <img src="img/homepage/blob-header-homepage.svg" alt="" />
+      </div>
+      <div class="homepage__header-hex">
+        <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
+      </div>
+      <div class="homepage__header-hex-mobile">
+        <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
+      </div>
+      <div class="homepage__header-hex-logo">
+        <img src="img/homepage/hex-logo-header.svg" alt="" />
+      </div>
+      <div class="homepage__header-hex-logo-mobile">
+        <img src="img/homepage/hex-logo-header.svg" alt="" />
+      </div>
+      <div class="homepage__hex-mobile-1">
+        <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
+      </div>
+      <div class="homepage__hex-mobile-2">
+        <img src="img/homepage/homepage-mobile-hex-2.svg" alt="" />
+      </div>
+      <div class="homepage__hex-mobile-3">
+        <img src="img/homepage/homepage-mobile-hex-3.svg" alt="" />
+      </div>
+      <div class="homepage__hex-mobile-4">
+        <img src="img/homepage/homepage-mobile-hex-4.svg" alt="" />
+      </div>
+      <div class="homepage__hex-mobile-5">
+        <img src="img/homepage/homepage-mobile-hex-5.svg" alt="" />
+      </div>
+      <div class="homepage__hex-mobile-6">
+        <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
+      </div>
+    </div>
+    <div class="home-hero">
+      <div class="home-hero__banner">
+        <div class="home-hero__text">
+          Entra in <strong>contatto</strong> con noi
+          <p>
+            Scopri le opportunità per il tuo <strong>business</strong> offerte dalle nostre <strong>soluzioni</strong>
+          </p>
+        </div>
+        <div class="home-hero__button">
+          <Button variant="primary" href="/contacts.html">Contattaci</Button>
+        </div>
+      </div>
+    </div>
+    <TripleBlob
+      id="triple-blob-ht-development"
+      title="SVILUPPO DELLE RISORSE UMANE"
+      buttonlink="/hr-development.html"
+      blobs={developmentHumanResourceBlobs}
+    />
+    <div class="homepage__middle-blob">
+      <img src="img/homepage/blob-middle-homepage.svg" alt="" />
+    </div>
+    <div class="homepage__middle-hex">
+      <img src="img/homepage/group-hex-middle-desktop.svg" alt="" />
+    </div>
+    <div class="homepage__middle-hex-mobile">
+      <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
+    </div>
+    <div class="homepage__middle-hex-tablet">
+      <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
+    </div>
+    <Customers id="customers" />
+  </div>
+</Layout>
+
+<style lang="scss">
+  .homepage {
+    color: var(--color-blue);
+
+    &__header-blob {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -400px;
+      left: -900px;
+      z-index: -1;
+
+      @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+        transform: scaleX(-1);
+        left: -50px;
+        top: -350px;
+      }
+    }
+
+    &__header-hex {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -630px;
+      left: -1040px;
+      z-index: -1;
+    }
+
+    &__header-hex-logo {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -480px;
+      left: -320px;
+      z-index: -1;
+    }
+
+    &__middle-blob {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1125px;
+      // top: 1525px; // FIXME: ripristinare con la sezione sviluppo software
+      top: 925px;
+      z-index: -1;
+    }
+
+    &__middle-hex {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1125px;
+      // top: 1225px; // FIXME: ripristinare con la sezione sviluppo software
+      top: 625px;
+      z-index: -1;
+    }
+
+    &__middle-hex-tablet,
+    &__middle-hex-mobile,
+    &__header-hex-mobile,
+    &__header-hex-logo-mobile,
+    &__header-blob-mobile {
+      display: none;
+    }
+
+    &__hex-mobile-1,
+    &__hex-mobile-2,
+    &__hex-mobile-3,
+    &__hex-mobile-4,
+    &__hex-mobile-5,
+    &__hex-mobile-6 {
+      display: none;
+    }
+
+    @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+      &__hex-mobile-1,
+      &__hex-mobile-2,
+      &__hex-mobile-3,
+      &__hex-mobile-4,
+      &__hex-mobile-5,
+      &__hex-mobile-6 {
+        display: block;
+        position: absolute;
+        overflow: visible;
+        z-index: -1;
+      }
+      &__hex-mobile {
+        &-1 {
+          top: -100px;
+          left: 300px;
+        }
+        &-2 {
+          top: -70px;
+          left: 380px;
+        }
+        &-3 {
+          top: 170px;
+          left: 450px;
+        }
+        &-4 {
+          top: 170px;
+          left: 300px;
+        }
+        &-5 {
+          top: 175px;
+          left: 25px;
+        }
+        &-6 {
+          top: 300px;
+          left: 275px;
+        }
+      }
+
+      &__header-hex,
+      &__header-hex-logo,
+      &__middle-blob,
+      &__middle-hex,
+      &__middle-hex-tablet {
+        display: none;
+      }
+
+      &__middle-hex-mobile {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        right: -1155px;
+        // top: 1450px; FIXME: ripristinare con la sezione sviluppo software
+        top: 770px;
+        z-index: -1;
+      }
+    }
+
+    @media only screen and (max-width: var(--breakpoint-tablet-max)) {
+      &__header-hex-logo {
+        left: -370px;
+      }
+
+      &__header-hex {
+        left: -1350px;
+      }
+
+      &__middle-blob,
+      &__middle-hex {
+        display: none;
+      }
+
+      &__middle-hex-tablet {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        right: -1155px;
+        // top: 1975px; FIXME: ripristinare con la sezione sviluppo software
+        top: 1225px;
+        z-index: -1;
+
+        @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+          display: none;
+        }
+      }
+    }
+
+    @media only screen and (min-width: --breakpoint-mobile-min) and (max-width: 700px) {
+      &__header-hex-logo {
+        left: -390px;
+      }
+    }
+  }
+
+  .home-hero {
+    margin-top: var(--spacing-9);
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--spacing-25);
+    font-size: 48px;
+    line-height: 67px;
+    color: var(--color-blue);
+
+    &__banner {
+      flex: 0 0 65%;
+    }
+
+    &__text {
+      margin-bottom: 80px;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+    .home-hero {
+      margin-top: var(--spacing-15);
+      display: flex;
+      margin-bottom: 24px;
+      font-size: 25px;
+      color: var(--color-blue);
+      justify-content: center;
+      width: 100%;
+      line-height: 37px;
+
+      &__text {
+        margin-bottom: 80px;
+      }
+
+      &__banner {
+        flex: 0 0 80%;
+        text-align: center;
+      }
+
+      &__button {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+</style>

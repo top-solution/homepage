@@ -1,10 +1,10 @@
 ---
-  import Picture from '../components/Picture.astro';
+import Picture from "../components/Picture.astro";
 ---
 
-<div class="customer-container" id="customers">
-  <div class="customer-container__title title-2">I NOSTRI CLIENTI</div>
-  <div class="customer-container__images">
+<section id="customers">
+  <h1>I NOSTRI CLIENTI</h1>
+  <div class="customers">
     <Picture base="customers" src="sky" alt="Sky" />
     <Picture base="customers" src="reply" alt="Reply" />
     <Picture base="customers" src="collins" alt="Collins" />
@@ -35,60 +35,50 @@
     <Picture base="customers" src="hotelCube" alt="Hotel Cube" />
     <Picture base="customers" src="helsinn" alt="Helsinn" />
     <Picture base="customers" src="torino" alt="Torino" />
-    <Picture
-      base="customers"
-      src="unioneIndustriale"
-      alt="Unione Industriale"
-    />
-    <Picture
-      base="customers"
-      src="aidp"
-      alt="Associazione Italiana per la Direzione del Personale"
-    />
+    <Picture base="customers" src="unioneIndustriale" alt="Unione Industriale" />
+    <Picture base="customers" src="aidp" alt="Associazione Italiana per la Direzione del Personale" />
   </div>
-  <div class="customers-hexs">
-    <img class="hex" src="img/hexagons/hex_small.svg" alt="small hex" />
+  <div class="hex">
+    <img src="img/hexagons/hex_small.svg" alt="small hex" />
   </div>
-</div>
+</section>
 
 <style lang="scss">
-  @use "../styles/variables";
-
-  @import "../styles/main.scss";
-
-  .customer-container {
-    margin-top: variables.$ts-spacing-9 * 2;
-
-    &__title {
-      margin-bottom: variables.$ts-spacing-9;
-      text-align: center;
-
-      @media only screen and (max-width: variables.$ts-mobile-max) {
-        margin-bottom: variables.$ts-spacing-5;
-      }
-    }
-    &__images {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
+  section {
+    margin-top: calc(var(--spacing-9) * 2);
   }
 
-  .customers-hexs {
+  .customers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    margin-bottom: var(--spacing-9);
+    text-align: center;
+  }
+
+  .hex {
     position: relative;
     height: 100px;
   }
 
-  .hex {
+   img {
     position: absolute;
     top: 20px;
     left: 455px;
+  }
 
-    @media only screen and (max-width: variables.$ts-mobile-max) {
+  @media only screen and (max-width:  600px) {
+    h1 {
+      margin-bottom: var(--spacing-5);
+    }
+
+    img {
       left: 155px;
     }
   }
 </style>
-
