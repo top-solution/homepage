@@ -6,20 +6,20 @@ import { contacts } from "../utils/contacts";
 <footer itemscope itemtype="https://schema.org/Organization">
   <nav>
     <ul>
-      <h3>Informazioni</h3>
+      <h5>Informazioni</h5>
       <li><a href="company.html">Azienda</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="index.html#customers">Clienti</a></li>
     </ul>
     <ul>
-      <h3>Link utili</h3>
+      <h5>Link utili</h5>
       <li><a href="hr-development.html">HR</a></li>
       <!-- <div><a href="software-development.html">DEV</a></div> -->
       <li><a href="haka.html#plans">Tariffe</a></li>
       <li><a href="privacy-policy.html">Privacy Policy</a></li>
     </ul>
     <ul>
-      <h3>Servizi</h3>
+      <h5>Servizi</h5>
       <li><a href="haka.html">Audit competenze</a></li>
       <li><a href="company-development.html">Sviluppo organizzativo</a></li>
       <li><a href="self-development.html">Sviluppo individuale</a></li>
@@ -34,7 +34,7 @@ import { contacts } from "../utils/contacts";
       <div><a href="cloud-computing.html">Cloud computing</a></div> -->
     </ul>
     <ul class="bordered-box">
-      <h3>Contatti</h3>
+      <h5>Contatti</h5>
       <li><a href={`tel:${contacts.phone}`}>{contacts.phone}</a></li>
       <li><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
       <li>Sede Legale: {contacts.registeredOffice}</li>
@@ -155,7 +155,7 @@ import { contacts } from "../utils/contacts";
     color: var(--color-white);
   }
 
-  h3 {
+  h5 {
     margin: 0 0 var(--spacing-2);
     font-weight: 500;
     color: var(--color-white);

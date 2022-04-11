@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon'
 import Button from './Button.astro';
 import Blob from './Blob.astro';
 const {title, blobs, buttonlink} = Astro.props;
@@ -37,75 +38,84 @@ const {title, blobs, buttonlink} = Astro.props;
       </a>
     ))}
   </div>
+  <div class="container-mobile">
+    {blobs.map((blob) => (
+      <a href={blob.href} style={`background-color: ${blob.colorMobile}`}>
+        <h5>{blob.title}</h5>
+        <Icon pack="mdi" name="arrow-right" />
+      </a>
+    ))}
+  </div>
   <div class="centred-button">
-  <Button variant="outlined" href={buttonlink} type="button">
-    Scopri
-  </Button>
+    <Button variant="outlined" href={buttonlink} type="button">
+      Scopri
+    </Button>
   </div>
 </section>
 
-<style lang="scss">
-  section {
-    .container {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: var(--spacing-10);
-      color: var(--color-blue);
+<style>
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-10);
+    color: var(--color-blue);
+  }
 
-      @media only screen and (max-width: var(--breakpoint-tablet-max)) {
-        overflow-x: hidden;
-        align-items: center;
-        min-height: 400px;
-        margin-bottom: var(--spacing-1);
-        margin-left: - var(--spacing-6);
-        margin-right: - var(--spacing-6);
+  .container-mobile {
+    display: none;
+  }
 
-        a {
-          margin: 0 var(--spacing-2) !important;
-          height: 100%;
-          min-width: 260px;
-          flex-basis: 100%;
-        }
-      }
+  a {
+    margin: 0 var(--spacing-2);
+    min-width: 260px;
+
+    &:first-of-type {
+      margin-left: 0 !important;
     }
-
-    a {
-      margin: 0 var(--spacing-2) !important;
-      min-width: 260px;
-
-      &:first-of-type {
-        margin-left: 0 !important;
-      }
-      &:last-of-type {
-        margin-right: 0 !important;
-      }
-
-      @media only screen and (max-width: var(--breakpoint-tablet-max)) {
-        &:first-of-type {
-          margin-left: var(--spacing-6) !important;
-        }
-        &:last-of-type {
-          margin-right: var(--spacing-6) !important;
-        }
-      }
-    }
-
-    .text {
-      text-align: center;
-    }
-
-    p {
-      margin-bottom: var(--spacing-1);
-    }
-
-    .button {
-      display: flex;
-      justify-content: center;
+    &:last-of-type {
+      margin-right: 0 !important;
     }
   }
 
-  ::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
+  .text {
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: var(--spacing-1);
+  }
+
+  @media only screen and (max-width: 960px) {
+     .container, .centred-button {
+       display: none;
+     }
+
+     .container-mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     }
+
+    a {
+      display: flex;
+      align-items: center;
+      width: 327px;
+      height: 90px;
+      border-radius: 4px;
+      margin: var(--spacing-2) 0;
+      padding: var(--spacing-2);
+      justify-content: space-between;
+    }
+
+    h5 {
+      color: var(--color-white);
+      flex: 0 0 80%;
+    }
+
+    svg {
+      color: var(--color-white) !important;
+      width: 32px;
+      height: 32px;
+    }
   }
 </style>
