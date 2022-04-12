@@ -14,7 +14,7 @@ const {base = "", src = "", alt = "", extension = "png"} = Astro.props;
   <img loading="lazy" src={`/img/${base}/${src}.${extension}`} {alt} />
 )}
 
-<style lang="scss">
+<style>
   img,
   picture {
     object-fit: contain;
@@ -24,7 +24,7 @@ const {base = "", src = "", alt = "", extension = "png"} = Astro.props;
     max-width: 120px;
   }
 
-  @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+  @media only screen and (max-width: 600px) {
     img,
     picture {
       margin: var(--spacing-1);

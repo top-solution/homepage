@@ -92,7 +92,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       left: -900px;
       z-index: -1;
 
-      @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+      @media only screen and (max-width: 600px) {
         transform: scaleX(-1);
         left: -50px;
         top: -350px;
@@ -158,7 +158,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       display: none;
     }
 
-    @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+    @media only screen and (max-width: 600px) {
       .hex-mobile-1,
       .hex-mobile-2,
       .hex-mobile-3,
@@ -217,13 +217,13 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       }
     }
 
-    @media only screen and (max-width: var(--breakpoint-tablet-max)) {
+    @media only screen and (max-width: 960px) {
       .header-hex-logo {
-        left: -370px;
+        left: -415px;
       }
 
       .header-hex {
-        left: -1350px;
+        left: -1370px;
       }
 
       .middle-blob,
@@ -237,17 +237,16 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
         width: 1400px;
         overflow: visible;
         right: -1155px;
-        // top: 1975px; FIXME: ripristinare con la sezione sviluppo software
-        top: 1225px;
+        top: 1325px;
         z-index: -1;
 
-        @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+        @media only screen and (max-width: 600px) {
           display: none;
         }
       }
     }
 
-    @media only screen and (min-width: --breakpoint-mobile-min) and (max-width: 700px) {
+    @media only screen and (min-width: 961px) and (max-width: 700px) {
       .header-hex-logo {
         left: -390px;
       }
@@ -277,7 +276,13 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     }
   }
 
-  @media only screen and (max-width: var(--breakpoint-mobile-max)) {
+  @media only screen and (max-width: 960px) {
+    section {
+      margin-bottom: var(--spacing-10);
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
     section {
       margin-top: var(--spacing-15);
       display: flex;

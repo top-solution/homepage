@@ -76,7 +76,7 @@ import { contacts } from "../utils/contacts";
   </aside>
 </footer>
 
-<style lang="scss">
+<style>
   footer {
     background-color: var(--color-blue-footer);
     width: 100%;
@@ -91,64 +91,63 @@ import { contacts } from "../utils/contacts";
     padding: var(--spacing-3) 0;
     max-width: var(--breakpoint-tablet-max);
     line-height: 28px;
-
-    ul {
-      flex: 0 0 20%;
-      list-style: none;
-    }
-
-    li {
-      margin: var(--spacing-1-5) 0;
-      font-weight: 400;
-    }
-
-    .bordered-box {
-      flex: 0 0 32%;
-      border-left: 1px solid var(--color-white);
-      padding-left: var(--spacing-3);
-      margin-left: var(--spacing-3);
-      font-weight: 400;
-
-      li {
-        color: var(--color-white);
-      }
-
-      div {
-        margin: var(--spacing-1-5) 0;
-        line-height: 18px;
-      }
-    }
   }
 
+  nav ul {
+    flex: 0 0 20%;
+    list-style: none;
+  }
+
+  nav li {
+    margin: var(--spacing-1-5) 0;
+    font-weight: 400;
+  }
+
+  .bordered-box {
+    flex: 0 0 32%;
+    border-left: 1px solid var(--color-white);
+    padding-left: var(--spacing-3);
+    margin-left: var(--spacing-3);
+    font-weight: 400;
+  }
+
+  .bordered-box li {
+    color: var(--color-white);
+  }
+
+  .bordered-box div {
+    margin: var(--spacing-1-5) 0;
+    line-height: 18px;
+  }
   aside {
     margin-top: 28px;
     min-height: 180px;
     background-color: var(--color-blue-footer);
+  }
 
-    .container {
-      display: flex;
-      margin-bottom: var(--spacing-5);
-      justify-content: center;
-    }
+  aside .container {
+    display: flex;
+    margin-bottom: var(--spacing-5);
+    justify-content: center;
+  }
 
-    p {
-      color: var(--color-white);
-      border-left: 1px solid var(--color-white);
-      font-size: 15px;
-      line-height: 18px;
-      padding-left: 16px;
-      width: 173px;
-    }
+  img {
+    margin-right: 18px;
+  }
 
-    .iva {
-      font-size: 15px;
-      line-height: 18px;
-      text-align: center;
-    }
+  p {
+    color: var(--color-white);
+    border-left: 1px solid var(--color-white);
+    font-size: 15px;
+    line-height: 18px;
+    padding-left: 16px;
+    width: 173px;
+  }
 
-    img {
-      margin-right: 18px;
-    }
+  .iva {
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
   }
 
   a {
@@ -171,38 +170,39 @@ import { contacts } from "../utils/contacts";
     margin-left: var(--spacing-2) !important;
   }
 
+  /* Mobile */
   @media only screen and (max-width: 600px) {
     nav {
       flex-wrap: wrap;
       padding: var(--spacing-3);
       justify-content: flex-start;
       line-height: 28px;
+    }
 
-      ul {
-        flex: 0 0 50%;
-        margin-bottom: var(--spacing-3);
-      }
+    nav ul {
+      flex: 0 0 50%;
+      margin-bottom: var(--spacing-3);
+    }
 
-      .bordered-box {
-        flex: 0 0 100%;
-        border-top: 1px solid var(--color-white);
-        border-bottom: 1px solid var(--color-white);
-        border-left: none;
-        padding: var(--spacing-3) 0;
-        margin-left: 0;
-        margin-top: var(--spacing-3);
-        text-align: center;
+    nav .bordered-box {
+      flex: 0 0 100%;
+      border-top: 1px solid var(--color-white);
+      border-bottom: 1px solid var(--color-white);
+      border-left: none;
+      padding: var(--spacing-3) 0;
+      margin-left: 0;
+      margin-top: var(--spacing-3);
+      text-align: center;
+    }
 
-        a {
-          color: var(--color-white);
-        }
+    .bordered-box a {
+      color: var(--color-white);
+    }
 
-        a,
-        div {
-          max-width: 290px;
-          margin: var(--spacing-1-5) auto;
-        }
-      }
+    .bordered-box a,
+    div {
+      max-width: 290px;
+      margin: var(--spacing-1-5) auto;
     }
 
     hr {

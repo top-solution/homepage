@@ -51,7 +51,7 @@ const { color = "light" } = Astro.props;
 
 <header>
   <div class="sub-header">
-    <span>ENG</span
+    <span>ENG</span>
     <label class="switch">
       <input type="checkbox" checked />
       <span class="slider round"></span>
@@ -61,7 +61,7 @@ const { color = "light" } = Astro.props;
   <nav>
     <a href="/" title="Home page">
       <img src={`img/topsolution_logo_${color}.svg`} alt="top Solution" />
-      </a>
+    </a>
     <ul class="header__link">
       <li>
         <a href="hr-development.html" class="tooltip">
@@ -71,35 +71,25 @@ const { color = "light" } = Astro.props;
           </strong>
         </a>
       </li>
-      <!--
-      <a href="software-development.html"
-        ><strong
-          >DEV <div class="header__link--tooltips">
-            Sviluppo Software
-          </div></strong
-        ></a
-      >
-      -->
+
       <li><a href="company.html"><strong>AZIENDA </strong></a></li>
       <li><a href="team.html"><strong>TEAM</strong></a></li>
       <li><a href="contacts.html"><strong>CONTATTI</strong></a></li>
     </ul>
   </nav>
-</header>
 
-<!--  style={headerHeight} -->
-<header class="header-mobile">
+  <!--  style={headerHeight} -->
+  <div class="header-mobile">
     <div class="menu">
-      <a href="index.html">
-        <img class="logo" src="img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a
-      >
+      <a href="index.html"> <img class="logo" src="img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a>
       <img src="img/header/hexMenu.svg" alt="Hex" class="hex" />
       <!--  class:hide={menuIsOpened === false} FIXME - TRY CLASS // class={!menuIsOpened ? "header-mobile__hamburger hide" : "header-mobile__hamburger"} -->
       <!--        onclick="handleOpenMenu()" -->
-      <img class="hamburger" src="img/header/hamburgerClose.svg" alt="top Solution" width="50" height="45" class="toggle-close" />
+      <img class="hamburger toggle-close" src="img/header/hamburgerClose.svg" alt="top Solution" width="50" height="45"
+      />
       <!-- class:hide={menuIsOpened === true} FIXME - TRY  // class={menuIsOpened ? "header-mobile__hamburger hide" : "header-mobile__hamburger"}-->
       <!--        onclick="handleOpenMenu()" -->
-      <img class="hamburger" src="img/header/hamburger.svg" alt="top Solution" width="50" height="45" class="toggle-open" />
+      <img class="hamburger toggle-open" src="img/header/hamburger.svg" alt="top Solution" width="50" height="45" />
     </div>
 
     <!-- class:hide={menuIsOpened === false} FIXME - TRY  // class={!menuIsOpened ? "hide" : ""}-->
@@ -148,17 +138,13 @@ const { color = "light" } = Astro.props;
         </div>
       </nav>
     </div>
+  </div>
 </header>
 
 <style lang="scss">
-  $hamburger-z-index: 1000;
-
   header {
     max-width: 900px;
     margin: 0 auto;
-    @media only screen and (max-width: 600px) {
-      //display: none;
-    }
 
     .sub-header {
       display: flex;
@@ -288,11 +274,11 @@ const { color = "light" } = Astro.props;
         top: -35px;
         right: -130px;
         overflow: hidden;
-        z-index: $hamburger-z-index;
+        z-index: 1000;
       }
 
       .hamburger {
-        z-index: $hamburger-z-index + 10;
+        z-index: 1000 + 10;
         position: absolute;
         top: 30px;
         right: 15px;
@@ -305,11 +291,11 @@ const { color = "light" } = Astro.props;
       top: -35px;
       right: -130px;
       overflow: hidden;
-      z-index: $hamburger-z-index;
+      z-index: 1000;
     }
 
     &__hamburger {
-      z-index: $hamburger-z-index + 10;
+      z-index: 1000 + 10;
       position: absolute;
       top: 30px;
       right: 15px;
@@ -388,15 +374,16 @@ const { color = "light" } = Astro.props;
     position: unset;
   }
 
-  //Switch
+  /* Switch */
   .switch {
     position: relative;
     display: inline-block;
     width: 34px;
     height: 14px;
     margin: 0 16px;
-
-    & input {
+    background-color: rgba(49, 39, 131, 0.4);
+    border-radius: 14px;
+    input {
       opacity: 0;
       width: 0;
       height: 0;
@@ -447,19 +434,28 @@ const { color = "light" } = Astro.props;
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
+  }
 
-    &:before {
-      border-radius: 50%;
-    }
+  .slider.round:before {
+    border-radius: 50%;
   }
 
   /* Hamburgers */
-
   .hide {
     opacity: 0;
   }
 
   .body-fixed {
     position: fixed;
+  }
+
+  /* Tablet */
+  @media only screen and (max-width: 960px) {
+  }
+  /* Mobile */
+  @media only screen and (max-width: 600px) {
+    header {
+      display: none;
+    }
   }
 </style>

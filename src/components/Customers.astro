@@ -39,11 +39,11 @@ import Picture from "../components/Picture.astro";
     <Picture base="customers" src="aidp" alt="Associazione Italiana per la Direzione del Personale" />
   </div>
   <div class="hex">
-    <img src="img/hexagons/hex_small.svg" alt="small hex" />
+    <img src="img/hexagons/hex_small.svg" alt="small" />
   </div>
 </section>
 
-<style lang="scss">
+<style>
   section {
     margin-top: calc(var(--spacing-9) * 2);
   }
@@ -56,27 +56,18 @@ import Picture from "../components/Picture.astro";
     flex-wrap: wrap;
   }
 
-  h1 {
-    margin-bottom: var(--spacing-9);
-    text-align: center;
-  }
-
   .hex {
     position: relative;
     height: 100px;
   }
 
-   img {
+  img {
     position: absolute;
     top: 20px;
     left: 455px;
   }
 
-  @media only screen and (max-width:  600px) {
-    h1 {
-      margin-bottom: var(--spacing-5);
-    }
-
+  @media only screen and (max-width: 600px) {
     img {
       left: 155px;
     }
