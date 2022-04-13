@@ -99,9 +99,9 @@ body {
   position: relative;
 }
 
-.layout .content {
-  /* min-height: calc(100vh - 621px); */
-}
+/* .layout .content {
+  min-height: calc(100vh - 621px);
+} */
 
 .centred-button {
   display: flex;
