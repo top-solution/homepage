@@ -3,52 +3,6 @@ import { contacts } from "../utils/contacts";
 const { color = "light" } = Astro.props;
 ---
 
-<script>
-  let hovering = true;
-
-  let menuIsOpened = false;
-  let headerHeight = "height: 0px";
-  function handleOpenMenu() {
-    console.log("click");
-    // menuIsOpened = !menuIsOpened;
-    // if (menuIsOpened) {
-    //   headerHeight = "height: 100vh;";
-    //   document.body.style.position = "fixed";
-    // } else {
-    //   headerHeight = "height: 0px";
-    //   document.body.style.position = "";
-    // }
-
-    //menuIsOpened = !menuIsOpened;
-    if (menuIsOpened) {
-      document.getElementById("header-mobile").classList.remove("close");
-      document.getElementById("header-mobile").classList.add("open");
-    } else {
-      document.getElementById("header-mobile").classList.remove("open");
-      document.getElementById("header-mobile").classList.add("close");
-    }
-  }
-
-  function openMenu() {
-    console.log("he", document.getElementById("header-mobile"));
-    document.getElementById("header-mobile").classList.remove("close");
-    document.getElementById("header-mobile").classList.add("open");
-  }
-
-  function closeHeaderMobileMenu() {
-    if (typeof window.innerWidth < "600") {
-      menuIsOpened = false;
-      headerHeight = "height: 0px";
-      document.body.style.position = "";
-    }
-  }
-
-  console.log(document.querySelector("toggle-open"));
-  document.querySelector(".toggle-menu--open").addEventListener("click", openMenu);
-
-  //typeof window.onresize = closeHeaderMobileMenu; FIXME
-</script>
-
 <header>
   <div class="sub-header">
     <span>ENG</span>
@@ -62,7 +16,7 @@ const { color = "light" } = Astro.props;
     <a href="/" title="Home page">
       <img src={`img/topsolution_logo_${color}.svg`} alt="top Solution" />
     </a>
-    <ul class="header__link">
+    <ul>
       <li>
         <a href="hr-development.html" class="tooltip">
           <strong>
@@ -71,47 +25,45 @@ const { color = "light" } = Astro.props;
           </strong>
         </a>
       </li>
-
       <li><a href="company.html"><strong>AZIENDA </strong></a></li>
       <li><a href="team.html"><strong>TEAM</strong></a></li>
       <li><a href="contacts.html"><strong>CONTATTI</strong></a></li>
     </ul>
   </nav>
 
-  <!--  style={headerHeight} -->
   <div class="header-mobile">
     <div class="menu">
       <a href="index.html"> <img class="logo" src="img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a>
       <img src="img/header/hexMenu.svg" alt="Hex" class="hex" />
-      <!--  class:hide={menuIsOpened === false} FIXME - TRY CLASS // class={!menuIsOpened ? "header-mobile__hamburger hide" : "header-mobile__hamburger"} -->
-      <!--        onclick="handleOpenMenu()" -->
-      <img class="hamburger toggle-close" src="img/header/hamburgerClose.svg" alt="top Solution" width="50" height="45"
-      />
-      <!-- class:hide={menuIsOpened === true} FIXME - TRY  // class={menuIsOpened ? "header-mobile__hamburger hide" : "header-mobile__hamburger"}-->
-      <!--        onclick="handleOpenMenu()" -->
+      <img class="hamburger toggle-close" src="img/header/hamburgerClose.svg" alt="top Solution" width="50" height="45"/>
       <img class="hamburger toggle-open" src="img/header/hamburger.svg" alt="top Solution" width="50" height="45" />
     </div>
 
-    <!-- class:hide={menuIsOpened === false} FIXME - TRY  // class={!menuIsOpened ? "hide" : ""}-->
     <div class="wrapper">
-      <img src="img/header/blobHeaderMobile.svg" alt="Main Hex Mobile" class="blob" />
+      <img src="img/header/blobHeaderMobile.svg" alt="Main Hex Mobile" />
       <img src="img/header/hexMenuMobile.svg" alt="Main Hex Mobile" class="main-hex" />
       <img src="img/header/header-mobile-hex.svg" alt="Hex" class="hex-group" />
 
       <nav>
-        <a href="index.html">HOME</a>
-        <a href="hr-development.html"
-          >HR
-          <span class="header-mobile__links--slime">Risorse Umane</span></a
-        >
-        <!-- <a href="software-development.html"
+        <ul>
+          <li>
+            <a href="index.html">HOME</a>
+          </li>
+          <li>
+            <a href="hr-development.html"
+              >HR
+              <span>Risorse Umane</span></a
+            >
+          </li>
+          <!-- <a href="software-development.html"
           >DEV
           <span class="header-mobile__links--slime">Sviluppo Software</span></a
         > -->
-        <a href="haka.html#plans">TARIFFE</a>
-        <a href="company.html">AZIENDA</a>
-        <a href="team.html">TEAM</a>
-        <a href="contacts.html">CONTATTI</a>
+          <li><a href="haka.html#plans">TARIFFE</a></li>
+          <li><a href="company.html">AZIENDA</a></li>
+          <li><a href="team.html">TEAM</a></li>
+          <li><a href="contacts.html">CONTATTI</a></li>
+        </ul>
         <div class="sub-header">
           <span>ENG</span>
           <label class="switch">
@@ -120,249 +72,124 @@ const { color = "light" } = Astro.props;
           </label>
           <span>ITA</span>
         </div>
-        <!-- class:hide={menuIsOpened === false} FIXME - TRY // class={!menuIsOpened ? "hide" : ""}-->
-        <div class="header-mobile__contacts">
-          <div class="header-mobile__contacts--item">
+        <ul class="contacts">
+          <li>
             <img src="img/icons/phone.svg" alt="" />
             <a href={`tel:${contacts.phone}`}>
               <span>{contacts.phone}</span>
             </a>
-            a
-          </div>
-          <div class="header-mobile__contacts--item">
+          </li>
+          <li>
             <img src="img/icons/mail.svg" alt="" />
             <a href={`mailto:${contacts.email}`}>
               <span>{contacts.email}</span>
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </nav>
     </div>
   </div>
 </header>
 
+<script>
+  function openMenu() {
+    document.querySelector(".wrapper").classList.add("nav-visible");
+    document.querySelector("html").style.overflow = "hidden";
+
+    document.querySelector(".toggle-open").classList.add("toggle-close");
+    document.querySelector(".toggle-open").classList.remove("toggle-open");
+
+    document.querySelector(".toggle-close").classList.add("toggle-open");
+    document.querySelector(".toggle-close").classList.remove("toggle-close");
+  }
+
+  function closeMenu() {
+    document.querySelector(".wrapper").classList.remove("nav-visible");
+    document.querySelector("html").style.overflow = "auto";
+
+    document.querySelector(".toggle-close").classList.add("toggle-open");
+    document.querySelector(".toggle-close").classList.remove("toggle-close");
+
+    document.querySelector(".toggle-open").classList.add("toggle-close");
+    document.querySelector(".toggle-open").classList.remove("toggle-open");
+  }
+
+  document.querySelector(".toggle-open").addEventListener("click", openMenu);
+  document.querySelector(".toggle-close").addEventListener("click", closeMenu);
+</script>
+
 <style lang="scss">
   header {
     max-width: 900px;
     margin: 0 auto;
-
-    .sub-header {
-      display: flex;
-      justify-content: flex-end;
-      height: 30px;
-      align-items: center;
-      padding: var(--spacing-3) var(--spacing-1) var(--spacing-2);
-
-      span {
-        @media only screen and (max-width: 600px) {
-          color: var(--color-white);
-        }
-      }
-    }
   }
+
+  header .sub-header {
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
+    align-items: center;
+    padding: var(--spacing-3) var(--spacing-1) var(--spacing-2);
+  }
+
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-1) 0;
+  }
 
-    img {
-      height: 50px;
-    }
+  nav img {
+    height: 50px;
+  }
 
-    ul {
-      display: flex;
-      flex-wrap: wrap;
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
 
-      li {
-        list-style: none;
-      }
+  nav li {
+    list-style: none;
+  }
 
-      a {
-        margin: 0 var(--spacing-3);
-        text-decoration: none;
-        font-size: 24px;
-        line-height: 28px;
+  nav a {
+    margin: 0 var(--spacing-1);
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 28px;
+  }
 
-        &:hover {
-          color: var(--color-blue-hovering);
-          text-decoration: underline;
-        }
+  nav a:hover {
+    color: var(--color-blue-hovering);
+    text-decoration: underline;
+  }
 
-        &:last-of-type {
-          margin-right: var(--spacing-2);
-        }
-      }
+  nav a:last-of-type {
+    margin-right: var(--spacing-2);
+  }
 
-      .tooltip-text {
-        background: rgba(97, 97, 97, 0.9);
-        border-radius: 4px;
-        color: white;
-        padding: 0 4px;
-        font-weight: 500;
-        position: absolute;
-        margin-left: -20;
-        margin-top: 5;
-        z-index: 10;
-        font-size: 10px;
-        max-height: 26px;
-        display: none;
-      }
+  .tooltip-text {
+    background: rgba(97, 97, 97, 0.9);
+    border-radius: 4px;
+    color: white;
+    padding: 0 4px;
+    font-weight: 500;
+    position: absolute;
+    margin-left: -20;
+    margin-top: 5;
+    z-index: 10;
+    font-size: 10px;
+    max-height: 26px;
+    display: none;
+  }
 
-      .tooltip:hover {
-        .tooltip-text {
-          display: block;
-        }
-      }
-    }
-
-    @media only screen and (max-width: 600px) {
-      display: none;
-    }
+  .tooltip:hover .tooltip-text {
+    display: block;
   }
 
   .header-mobile {
-    min-height: 100px;
-    display: static !important;
-
-    @media only screen and (min-width: 600px) {
-      display: none;
-    }
-
-    .hex-group {
-      position: absolute;
-      z-index: -1;
-      top: -160px;
-      left: -185px;
-      pointer-events: none;
-    }
-
-    .wrapper {
-      position: relative;
-      top: -35px;
-      transition: opacity var(--transition-timing-default) var(--transition-function-default);
-    }
-
-    .main-hex {
-      position: absolute;
-      z-index: -1;
-      margin-left: 50%;
-      transform: translate(-50%, 0);
-      top: 10vw;
-    }
-
-    .blob {
-      position: absolute;
-      z-index: -1;
-      top: -30px;
-      right: -75px;
-      pointer-events: none;
-    }
-
-    .menu {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .logo {
-        margin: 24px;
-        max-width: 220px;
-      }
-
-      .hex {
-        position: absolute;
-        top: -35px;
-        right: -130px;
-        overflow: hidden;
-        z-index: 1000;
-      }
-
-      .hamburger {
-        z-index: 1000 + 10;
-        position: absolute;
-        top: 30px;
-        right: 15px;
-        cursor: pointer;
-        transition: opacity var(--transition-timing-default) var(--transition-function-default);
-      }
-    }
-    &__hex {
-      position: absolute;
-      top: -35px;
-      right: -130px;
-      overflow: hidden;
-      z-index: 1000;
-    }
-
-    &__hamburger {
-      z-index: 1000 + 10;
-      position: absolute;
-      top: 30px;
-      right: 15px;
-      cursor: pointer;
-      transition: opacity var(--transition-timing-default) var(--transition-function-default);
-    }
-
-    nav {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      margin-top: 25vw;
-      align-items: center;
-      justify-content: center;
-
-      &--slime {
-        font-size: 18px;
-        font-weight: 400;
-        margin-left: 8px;
-      }
-
-      a {
-        margin: var(--spacing) 0;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--color-white);
-      }
-    }
-
-    &__contacts {
-      margin-top: var(--spacing-10);
-      color: var(--color-blue);
-      transition: opacity var(--transition-timing-slow) var(--transition-function-default);
-      width: 100%;
-
-      a {
-        color: var(--color-blue);
-        font-size: 20px;
-        font-weight: 400;
-      }
-
-      span {
-        margin-left: var(--spacing-2);
-      }
-
-      &--item {
-        display: flex;
-        justify-content: flex-start;
-        margin: var(--spacing-1) var(--spacing-3);
-        align-items: center;
-        min-height: 44px;
-        font-size: 20px;
-        font-weight: 400;
-
-        img {
-          width: 22px;
-          height: 22px;
-        }
-      }
-
-      @media only screen and (max-height: 780px) {
-        display: none;
-      }
-    }
+    display: none;
   }
 
   .open {
@@ -383,11 +210,12 @@ const { color = "light" } = Astro.props;
     margin: 0 16px;
     background-color: rgba(49, 39, 131, 0.4);
     border-radius: 14px;
-    input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
 
   .slider {
@@ -400,22 +228,18 @@ const { color = "light" } = Astro.props;
     background-color: rgba(49, 39, 131, 0.4);
     -webkit-transition: 0.4s;
     transition: 0.4s;
+  }
 
-    @media only screen and (max-width: 600px) {
-      background-color: var(--color-blue-hovering);
-    }
-
-    &:before {
-      position: absolute;
-      content: "";
-      height: 23px;
-      width: 23px;
-      right: 20px;
-      bottom: -5px;
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
-      background-image: url("/img/languageSwitcher/en.svg");
-    }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 23px;
+    right: 20px;
+    bottom: -5px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background-image: url("/img/languageSwitcher/en.svg");
   }
 
   input:checked + .slider:before {
@@ -452,10 +276,165 @@ const { color = "light" } = Astro.props;
   /* Tablet */
   @media only screen and (max-width: 960px) {
   }
+
+  @media only screen and (min-height: 780px) {
+    .header-mobile .contacts {
+      display: none;
+    }
+  }
+
   /* Mobile */
   @media only screen and (max-width: 600px) {
-    header {
+    header .sub-header span {
+      color: var(--color-white);
+    }
+
+    header .sub-header {
       display: none;
+    }
+
+    header .header-mobile .sub-header {
+      display: unset;
+    }
+
+    .header-mobile .switch {
+      background-color: var(--color-blue-hovering);
+    }
+    nav {
+      display: none;
+    }
+
+    .header-mobile {
+      min-height: 100px;
+      display: unset;
+    }
+
+    .header-mobile .hex-group {
+      position: absolute;
+      z-index: -1;
+      top: -160px;
+      left: -185px;
+      pointer-events: none;
+    }
+
+    .header-mobile .wrapper {
+      //display: none;
+      height: 0;
+      opacity: 0;
+      position: relative;
+      top: -35px;
+      transition: opacity var(--transition-timing-default) var(--transition-function-default);
+    }
+
+    .header-mobile .main-hex {
+      position: absolute;
+      top: 7vw;
+      margin-left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .header-mobile .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-mobile .menu .logo {
+      margin: 24px;
+      max-width: 220px;
+    }
+
+    .header-mobile .menu .hex {
+      position: absolute;
+      top: -35px;
+      right: -130px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .header-mobile .menu .hamburger {
+      z-index: 1000 + 10;
+      position: absolute;
+      top: 30px;
+      right: 15px;
+      cursor: pointer;
+      transition: opacity var(--transition-timing-default) var(--transition-function-default);
+    }
+
+    .header-mobile nav {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      top: 10vh;
+      text-align: center;
+    }
+
+    .header-mobile nav ul {
+      display: block;
+      padding: auto;
+    }
+
+    .header-mobile nav a {
+      margin: var(--spacing) 0;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-white);
+    }
+
+    .header-mobile nav a span {
+      font-size: 18px;
+      font-weight: 400;
+      margin-left: 10px;
+    }
+
+    .header-mobile li {
+      padding: var(--spacing-1) 0;
+    }
+
+    .header-mobile .contacts {
+      margin-top: var(--spacing-10);
+      color: var(--color-blue);
+      transition: opacity var(--transition-timing-slow) var(--transition-function-default);
+      width: 100%;
+    }
+
+    .header-mobile .contacts a {
+      color: var(--color-blue);
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .header-mobile .contacts span {
+      margin-left: var(--spacing-2);
+    }
+
+    .header-mobile .contacts li {
+      display: flex;
+      justify-content: flex-start;
+      margin: var(--spacing-1) var(--spacing-3);
+      align-items: center;
+      min-height: 44px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .header-mobile .contacts li img {
+      width: 22px;
+      height: 22px;
+    }
+
+    .toggle-close {
+      display: none;
+    }
+
+    .toggle-open {
+      display: block !important;
+    }
+
+    .nav-visible {
+      height: 100% !important;
+      opacity: 1 !important;
     }
   }
 </style>
