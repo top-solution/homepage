@@ -4,7 +4,7 @@ import { contacts } from "../utils/contacts";
 ---
 
 <footer itemscope itemtype="https://schema.org/Organization">
-  <nav>
+  <nav aria-label="Menù footer">
     <ul>
       <h5>Informazioni</h5>
       <li><a href="company.html">Azienda</a></li>
@@ -39,10 +39,16 @@ import { contacts } from "../utils/contacts";
       <li><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
       <li>Sede Legale: {contacts.registeredOffice}</li>
       <li>Sede Operativa: {contacts.operationalOffice}</li>
-      <a target="_blank" href="https://twitter.com" rel="noopener noreferrer" class="picture">
+      <a target="_blank" href="https://twitter.com" rel="noopener noreferrer" class="picture" title="Twitter">
         <Picture base="footer" src="twitter" alt="Twitter" extension="svg" />
       </a>
-      <a target="_blank" href="https://www.linkedin.com/" rel="noopener noreferrer" class="picture spacing">
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/"
+        rel="noopener noreferrer"
+        class="picture spacing"
+        title="Linkedin"
+      >
         <Picture base="footer" src="linkedin" alt="Linkedin" extension="svg" />
       </a>
       <!-- <a

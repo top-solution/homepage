@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon";
 import { contacts } from "../utils/contacts";
 const { color = "light" } = Astro.props;
 ---
@@ -12,7 +13,7 @@ const { color = "light" } = Astro.props;
     </label>
     <span>ITA</span>
   </div>
-  <nav>
+  <nav aria-label="Menù principale">
     <a href="/" title="Home page">
       <img src={`img/topsolution_logo_${color}.svg`} alt="top Solution" />
     </a>
@@ -33,10 +34,17 @@ const { color = "light" } = Astro.props;
 
   <div class="header-mobile">
     <div class="menu">
-      <a href="index.html"> <img class="logo" src="img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a>
+      <a href="index.html" title="Home Page">
+        <img class="logo" src="img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a
+      >
       <img src="img/header/hexMenu.svg" alt="Hex" class="hex" />
-      <img class="hamburger toggle-close" src="img/header/hamburgerClose.svg" alt="top Solution" width="50" height="45"/>
-      <img class="hamburger toggle-open" src="img/header/hamburger.svg" alt="top Solution" width="50" height="45" />
+
+      <button class="hamburger toggle-close" aria-label="Chiudi menù">
+        <Icon pack="mdi" name="close" />
+      </button>
+      <button class="hamburger toggle-open" aria-label="Apri menù">
+        <Icon pack="mdi" name="menu" />
+      </button>
     </div>
 
     <div class="wrapper">
@@ -44,7 +52,7 @@ const { color = "light" } = Astro.props;
       <img src="img/header/hexMenuMobile.svg" alt="Main Hex Mobile" class="main-hex" />
       <img src="img/header/header-mobile-hex.svg" alt="Hex" class="hex-group" />
 
-      <nav>
+      <nav aria-label="Menù mobile">
         <ul>
           <li>
             <a href="index.html">HOME</a>
@@ -118,7 +126,7 @@ const { color = "light" } = Astro.props;
   document.querySelector(".toggle-close").addEventListener("click", closeMenu);
 </script>
 
-<style lang="scss">
+<style>
   header {
     max-width: 900px;
     margin: 0 auto;
@@ -273,10 +281,6 @@ const { color = "light" } = Astro.props;
     position: fixed;
   }
 
-  /* Tablet */
-  @media only screen and (max-width: 960px) {
-  }
-
   @media only screen and (min-height: 780px) {
     .header-mobile .contacts {
       display: none;
@@ -338,12 +342,12 @@ const { color = "light" } = Astro.props;
       align-items: center;
     }
 
-    .header-mobile .menu .logo {
+    .header-mobile .logo {
       margin: 24px;
       max-width: 220px;
     }
 
-    .header-mobile .menu .hex {
+    .header-mobile .hex {
       position: absolute;
       top: -35px;
       right: -130px;
@@ -352,12 +356,18 @@ const { color = "light" } = Astro.props;
     }
 
     .header-mobile .menu .hamburger {
-      z-index: 1000 + 10;
+      background: transparent;
+      border: 0;
+      color: var(--color-white);
+
+      z-index: calc(1000 + 10);
       position: absolute;
       top: 30px;
       right: 15px;
       cursor: pointer;
       transition: opacity var(--transition-timing-default) var(--transition-function-default);
+      min-width: 60px;
+      min-height: 60px;
     }
 
     .header-mobile nav {

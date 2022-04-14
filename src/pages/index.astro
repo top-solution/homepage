@@ -53,7 +53,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
           Scopri le opportunità per il tuo <strong>business</strong> offerte dalle nostre <strong>soluzioni</strong>
         </p>
         <div class="button">
-          <Button variant="primary" href="/contacts.html">Contattaci</Button>
+          <Button variant="primary" href="/contacts.html" aria-label="Contattaci">Contattaci</Button>
         </div>
       </div>
     </section>
@@ -79,178 +79,77 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
   </article>
 </Layout>
 
-<style lang="scss">
+<style>
   article {
     color: var(--color-blue);
+  }
 
-    .header-blob {
-      display: block;
-      position: absolute;
-      width: 1400px;
-      overflow: visible;
-      top: -400px;
-      left: -900px;
-      z-index: -1;
+  article .middle-hex-tablet,
+  article .middle-hex-mobile,
+  article .header-hex-mobile,
+  article .header-hex-logo-mobile,
+  article .header-blob-mobile {
+    display: none;
+  }
 
-      @media only screen and (max-width: 600px) {
-        transform: scaleX(-1);
-        left: -50px;
-        top: -350px;
-      }
-    }
+  article .hex-mobile-1,
+  article .hex-mobile-2,
+  article .hex-mobile-3,
+  article .hex-mobile-4,
+  article .hex-mobile-5,
+  article .hex-mobile-6 {
+    display: none;
+  }
 
-    .header-hex {
-      display: block;
-      position: absolute;
-      width: 1400px;
-      overflow: visible;
-      top: -630px;
-      left: -1040px;
-      z-index: -1;
-    }
+  article .header-blob {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    top: -400px;
+    left: -900px;
+    z-index: -1;
+  }
 
-    .header-hex-logo {
-      display: block;
-      position: absolute;
-      width: 1400px;
-      overflow: visible;
-      top: -480px;
-      left: -320px;
-      z-index: -1;
-    }
+  article .header-hex {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    top: -630px;
+    left: -1040px;
+    z-index: -1;
+  }
+  article .header-hex-logo {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    top: -480px;
+    left: -320px;
+    z-index: -1;
+  }
 
-    .middle-blob {
-      display: block;
-      position: absolute;
-      width: 1400px;
-      overflow: visible;
-      right: -1125px;
-      // top: 1525px; // FIXME: ripristinare con la sezione sviluppo software
-      top: 925px;
-      z-index: -1;
-    }
+  article .middle-blob {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    right: -1125px;
+    /* top: 1525px; // FIXME: ripristinare con la sezione sviluppo software */
+    top: 925px;
+    z-index: -1;
+  }
 
-    .middle-hex {
-      display: block;
-      position: absolute;
-      width: 1400px;
-      overflow: visible;
-      right: -1125px;
-      // top: 1225px; // FIXME: ripristinare con la sezione sviluppo software
-      top: 625px;
-      z-index: -1;
-    }
-
-    .middle-hex-tablet,
-    .middle-hex-mobile,
-    .header-hex-mobile,
-    .header-hex-logo-mobile,
-    .header-blob-mobile {
-      display: none;
-    }
-
-    .hex-mobile-1,
-    .hex-mobile-2,
-    .hex-mobile-3,
-    .hex-mobile-4,
-    .hex-mobile-5,
-    .hex-mobile-6 {
-      display: none;
-    }
-
-    @media only screen and (max-width: 600px) {
-      .hex-mobile-1,
-      .hex-mobile-2,
-      .hex-mobile-3,
-      .hex-mobile-4,
-      .hex-mobile-5,
-      .hex-mobile-6 {
-        display: block;
-        position: absolute;
-        overflow: visible;
-        z-index: -1;
-      }
-      .hex-mobile {
-        &-1 {
-          top: -100px;
-          left: 300px;
-        }
-        &-2 {
-          top: -70px;
-          left: 380px;
-        }
-        &-3 {
-          top: 170px;
-          left: 450px;
-        }
-        &-4 {
-          top: 170px;
-          left: 340px;
-        }
-        &-5 {
-          top: 230px;
-          left: 25px;
-        }
-        &-6 {
-          top: 300px;
-          left: 300px;
-        }
-      }
-
-      .header-hex,
-      .header-hex-logo,
-      .middle-blob,
-      .middle-hex,
-      .middle-hex-tablet {
-        display: none;
-      }
-
-      .middle-hex-mobile {
-        display: block;
-        position: absolute;
-        width: 1400px;
-        overflow: visible;
-        right: -1155px;
-        // top: 1450px; FIXME: ripristinare con la sezione sviluppo software
-        top: 800px;
-        z-index: -1;
-      }
-    }
-
-    @media only screen and (max-width: 960px) {
-      .header-hex-logo {
-        left: -415px;
-      }
-
-      .header-hex {
-        left: -1370px;
-      }
-
-      .middle-blob,
-      .middle-hex {
-        display: none;
-      }
-
-      .middle-hex-tablet {
-        display: block;
-        position: absolute;
-        width: 1400px;
-        overflow: visible;
-        right: -1155px;
-        top: 1325px;
-        z-index: -1;
-
-        @media only screen and (max-width: 600px) {
-          display: none;
-        }
-      }
-    }
-
-    @media only screen and (min-width: 961px) and (max-width: 700px) {
-      .header-hex-logo {
-        left: -390px;
-      }
-    }
+  article .middle-hex {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    right: -1125px;
+    /* top: 1225px; FIXME: ripristinare con la sezione sviluppo software */
+    top: 625px;
+    z-index: -1;
   }
 
   section {
@@ -261,28 +160,127 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     font-size: 48px;
     line-height: 67px;
     color: var(--color-blue);
+  }
 
-    .banner {
-      flex: 0 0 65%;
-    }
+  section .banner {
+    flex: 0 0 65%;
+  }
 
-    p {
-      margin-bottom: 80px;
-    }
+  section p {
+    margin-bottom: 80px;
+  }
 
-    .button {
-      display: flex;
-      justify-content: center;
-    }
+  section .button {
+    display: flex;
+    justify-content: center;
   }
 
   @media only screen and (max-width: 960px) {
+    article .header-hex-logo {
+      left: -415px;
+    }
+
+    article .header-hex {
+      left: -1370px;
+    }
+
+    article .middle-hex-tablet {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1155px;
+      top: 1325px;
+      z-index: -1;
+    }
+
+    article .middle-blob,
+    article .middle-hex {
+      display: none;
+    }
     section {
       margin-bottom: var(--spacing-10);
     }
   }
 
+  @media only screen and (min-width: 961px) and (max-width: 700px) {
+    article .header-hex-logo {
+      left: -390px;
+    }
+  }
+
   @media only screen and (max-width: 600px) {
+    article .header-blob {
+      transform: scaleX(-1);
+      left: -50px;
+      top: -350px;
+    }
+
+    article .middle-hex-mobile {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1155px;
+      /* top: 1450px; FIXME: ripristinare con la sezione sviluppo software */
+      top: 800px;
+      z-index: -1;
+    }
+
+    article .middle-hex-tablet {
+      display: none;
+    }
+
+    article .header-hex,
+    article .header-hex-logo,
+    article .middle-blob,
+    article .middle-hex,
+    article .middle-hex-tablet {
+      display: none;
+    }
+
+    article .hex-mobile-1 {
+      display: unset;
+      position: absolute;
+      top: -100px;
+      left: 300px;
+    }
+
+    article .hex-mobile-2 {
+      display: unset;
+      position: absolute;
+      top: -70px;
+      left: 380px;
+    }
+
+    article .hex-mobile-3 {
+      display: unset;
+      position: absolute;
+      top: 170px;
+      left: 450px;
+    }
+
+    article .hex-mobile-4 {
+      display: unset;
+      position: absolute;
+      top: 170px;
+      left: 340px;
+    }
+
+    article .hex-mobile-5 {
+      display: unset;
+      position: absolute;
+      top: 230px;
+      left: 25px;
+    }
+
+    article .hex-mobile-6 {
+      display: unset;
+      position: absolute;
+      top: 300px;
+      left: 300px;
+    }
+
     section {
       margin-top: var(--spacing-15);
       display: flex;
@@ -292,20 +290,11 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       justify-content: center;
       width: 100%;
       line-height: 37px;
+    }
 
-      &__text {
-        margin-bottom: 80px;
-      }
-
-      &__banner {
-        flex: 0 0 80%;
-        text-align: center;
-      }
-
-      &__button {
-        display: flex;
-        justify-content: center;
-      }
+    section .banner {
+      flex: 0 0 80%;
+      text-align: center;
     }
   }
 </style>
