@@ -15,11 +15,11 @@ const { color = "light" } = Astro.props;
   </div>
   <nav aria-label="Menù principale">
     <a href="/" title="Home page">
-      <img src={`img/topsolution_logo_${color}.svg`} alt="top Solution" />
+      <img src={`../img/topsolution_logo_${color}.svg`} alt="top Solution" />
     </a>
     <ul>
       <li>
-        <a href="hr-development.html" class="tooltip">
+        <a href="hr-development/" class="tooltip">
           <strong>
             HR
             <div class="tooltip-text">Risorse Umane</div>
@@ -35,22 +35,22 @@ const { color = "light" } = Astro.props;
   <div class="header-mobile">
     <div class="menu">
       <a href="index.html" title="Home Page">
-        <img class="logo" src="img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a
+        <img class="logo" src="../img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a
       >
-      <img src="img/header/hexMenu.svg" alt="Hex" class="hex" />
+      <img src="../img/header/hexMenu.svg" alt="Hex" class="hex" />
 
-      <button class="hamburger toggle-close" aria-label="Chiudi menù">
+      <button class="hamburger toggle-close" aria-label="Chiudi menù" aria-expanded="false">
         <Icon pack="mdi" name="close" />
       </button>
-      <button class="hamburger toggle-open" aria-label="Apri menù">
+      <button class="hamburger toggle-open" aria-label="Apri menù" aria-expanded="true">
         <Icon pack="mdi" name="menu" />
       </button>
     </div>
 
     <div class="wrapper">
-      <img src="img/header/blobHeaderMobile.svg" alt="Main Hex Mobile" />
-      <img src="img/header/hexMenuMobile.svg" alt="Main Hex Mobile" class="main-hex" />
-      <img src="img/header/header-mobile-hex.svg" alt="Hex" class="hex-group" />
+      <img src="../img/header/blobHeaderMobile.svg" alt="Main Hex Mobile" />
+      <img src="../img/header/hexMenuMobile.svg" alt="Main Hex Mobile" class="main-hex" />
+      <img src="../img/header/header-mobile-hex.svg" alt="Hex" class="hex-group" />
 
       <nav aria-label="Menù mobile">
         <ul>
@@ -82,13 +82,13 @@ const { color = "light" } = Astro.props;
         </div>
         <ul class="contacts">
           <li>
-            <img src="img/icons/phone.svg" alt="" />
+            <img src="../img/icons/phone.svg" alt="" />
             <a href={`tel:${contacts.phone}`}>
               <span>{contacts.phone}</span>
             </a>
           </li>
           <li>
-            <img src="img/icons/mail.svg" alt="" />
+            <img src="../img/icons/mail.svg" alt="" />
             <a href={`mailto:${contacts.email}`}>
               <span>{contacts.email}</span>
             </a>
