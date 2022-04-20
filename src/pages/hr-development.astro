@@ -19,11 +19,9 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
       <Button variant="primary" href="/contacts.html">Contattaci</Button>
     </div>
     <div slot="external">
-      <div class="header-hexagons-desktop">
-        <HeaderHexagonsDesktop />
-      </div>
+      <HeaderHexagonsDesktop />
       <div class="header-hexagons-mobile">
-        <HeaderHexagonsMobile />
+        <HeaderHexagonsMobile/>
       </div>
       <div class="hexagons-floating">
         <Hex width="85" fill="#312783" shadow="true" />
@@ -31,74 +29,71 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
     </div>
   </TopBanner>
   <article class="layout">
-    <div class="page-hr-development">
-      <div class="copy">
-        <p class="claim">
-          Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
-          di comunicazione on-line, diversi moduli per la <b>gestione</b> delle attività del <b>personale</b> interno ed
-          esterno
-        </p>
-        <div class="hr-svg">
-          <HrSvg />
-        </div>
-        <div class="floating-hex-3">
-          <Hex width="130" fill="#4758a3" shadow="true" />
-        </div>
+    <div class="copy">
+      <p>
+        Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
+        di comunicazione on-line, diversi moduli per la <b>gestione</b> delle attività del <b>personale</b> interno ed esterno
+      </p>
+      <div class="hr-svg">
+        <HrSvg />
       </div>
-      <div class="our-services">
-        <h2 class="title-3 title-form">I nostri <b>servizi</b></h2>
-        <ol>
-          <li>
-            <h5>AUDIT COMPETENZE</h5>
-            <div class="button">
-              <Button variant="outlined" href="haka.html">Scopri</Button>
-            </div>
-            <div class="small">
-              <Button variant="outlined" small={true} href="haka.html">Scopri</Button>
-            </div>
-          </li>
-          <li>
-            <h5>SVILUPPO ORGANIZZATIVO</h5>
-            <div class="button">
-              <Button variant="outlined" href="company-development.html">Scopri</Button>
-            </div>
-            <div class="small">
-              <Button variant="outlined" small={true} href="company-development.html">Scopri</Button>
-            </div>
-          </li>
-          <li>
-            <h5>SVILUPPO INDIVIDUALE</h5>
-            <div class="button">
-              <Button variant="outlined" href="self-development.html">Scopri</Button>
-            </div>
-            <div class="small">
-              <Button variant="outlined" small={true} href="self-development.html">Scopri</Button>
-            </div>
-          </li>
-        </ol>
-        <svg viewBox="0 0 616 573" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M615.851 371.212L588.675 228.197L560.868 85.3133L407.215 42.7312L253.339 0.697273L126.861 101.13L0.791841 201.98L27.968 344.995L55.7745 487.878L209.428 530.461L363.304 572.495L489.781 472.062L615.851 371.212Z"
-            fill="#E3F1FA"></path>
-        </svg>
+      <div class="floating-hex-3">
+        <Hex width="130" fill="#4758a3" shadow="true" />
       </div>
-      <div class="blob">
-        <Blob interactive="true" shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4">
-          <div class="blob-content">
-            <p class="body-2">
-              I nostri <b>prodotti</b> sono continuamente rinnovati utilizzando le più
-              <b>moderne tecnologie</b> web garantendo al cliente una
-              <b>user experience</b> sempre aggiornata e performance adeguate
-            </p>
-            <div class="button">
-              <Button variant="primary" href="/contacts.html" style="display: inline-block;">Contattaci</Button>
-            </div>
+    </div>
+    <div class="our-services">
+      <h2>I nostri <b>servizi</b></h2>
+      <ol>
+        <li>
+          <h5>AUDIT COMPETENZE</h5>
+          <div class="button">
+            <Button variant="outlined" href="haka.html">Scopri</Button>
           </div>
-        </Blob>
-      </div>
-      <div class="floating-hex-4">
-        <Hex width="75" fill="#312783" shadow="false" rotation="-4" />
-      </div>
+          <div class="small">
+            <Button variant="outlined" small={true} href="haka.html">Scopri</Button>
+          </div>
+        </li>
+        <li>
+          <h5>SVILUPPO ORGANIZZATIVO</h5>
+          <div class="button">
+            <Button variant="outlined" href="company-development.html">Scopri</Button>
+          </div>
+          <div class="small">
+            <Button variant="outlined" small={true} href="company-development.html">Scopri</Button>
+          </div>
+        </li>
+        <li>
+          <h5>SVILUPPO INDIVIDUALE</h5>
+          <div class="button">
+            <Button variant="outlined" href="self-development.html">Scopri</Button>
+          </div>
+          <div class="small">
+            <Button variant="outlined" small={true} href="self-development.html">Scopri</Button>
+          </div>
+        </li>
+      </ol>
+      <svg viewBox="0 0 616 573" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M615.851 371.212L588.675 228.197L560.868 85.3133L407.215 42.7312L253.339 0.697273L126.861 101.13L0.791841 201.98L27.968 344.995L55.7745 487.878L209.428 530.461L363.304 572.495L489.781 472.062L615.851 371.212Z"
+          fill="#E3F1FA"></path>
+      </svg>
+    </div>
+    <div class="blob">
+      <Blob interactive={true} shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4">
+        <div class="blob-content">
+          <p class="body-2">
+            I nostri <b>prodotti</b> sono continuamente rinnovati utilizzando le più
+            <b>moderne tecnologie</b> web garantendo al cliente una
+            <b>user experience</b> sempre aggiornata e performance adeguate
+          </p>
+          <div class="button">
+            <Button variant="primary" href="/contacts.html" style="display: inline-block;">Contattaci</Button>
+          </div>
+        </div>
+      </Blob>
+    </div>
+    <div class="floating-hex-4">
+      <Hex width="75" fill="#312783" shadow="false" rotation="-4" />
     </div>
   </article>
 </Layout>
@@ -126,26 +121,20 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
     right: 30px;
   }
 
-  .page-hr-development {
+  article {
     display: block;
     color: var(--color-blue);
     box-sizing: border-box;
   }
 
-  .page-hr-development .floating-hex-1 {
-    position: absolute;
-    bottom: -230px;
-    right: -90px;
-  }
-
-  .page-hr-development .floating-hex-3 {
+  article .floating-hex-3 {
     width: 130px;
     position: absolute;
     top: 300px;
     left: -30;
   }
 
-  .page-hr-development .floating-hex-4 {
+  article .floating-hex-4 {
     width: 225px;
     display: block;
     margin-left: auto;
@@ -161,6 +150,7 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
   .copy p {
     flex: 1 1 0;
     margin-top: var(--spacing-5);
+    font-size: 25px;
   }
 
   .copy .hr-svg {
@@ -177,10 +167,6 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .our-services .title-3 {
-    text-align: center;
   }
 
   .our-services ol {
@@ -212,34 +198,24 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
     width: 110%;
   }
 
-  .page-hr-development .blob {
+  article .blob {
     display: block;
     max-width: 540px;
     margin: 220px auto var(--spacing-10);
   }
 
-  .page-hr-development .blob-content {
+  article .blob-content {
     text-align: center;
     margin: 0 var(--spacing-5);
   }
 
-  .page-hr-development .blob-content .button {
+  article .blob-content .button {
     max-width: 175px;
     margin: var(--spacing-3) auto 0 auto;
   }
 
-  .page-hr-development .header-hexagons-desktop {
-    display: none;
-  }
 
-  .page-hr-development .header-hexagons-mobile {
-    display: block;
-    right: 72px;
-    width: 100%;
-    top: 30px;
-  }
-
-  .page-hr-development .hexagons-floating {
+  article .hexagons-floating {
     width: 58px;
   }
 
@@ -258,7 +234,7 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
       margin: var(--spacing-10) 0;
     }
 
-    .copy .claim {
+    .copy p {
       font-size: 20px;
       margin-top: 0;
     }
@@ -306,6 +282,7 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
       display: none;
     }
 
+    .copy p,
     .claim {
       text-align: center;
     }
