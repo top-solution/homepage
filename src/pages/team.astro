@@ -1,0 +1,226 @@
+---
+import Layout from "../components/Layout.astro";
+import Blob from "../components/Blob.astro";
+import TeamPerson from "../components/TeamPerson.astro";
+import TextField from "../components/TextField.astro";
+
+import Button from "../components/Button.astro";
+import HeaderHexagonsDesktop from "../HeaderHexagonsDesktop/Blob.astro";
+import HeaderHexagonsMobile from "../HeaderHexagonsMobile/Blob.astro";
+import ContactUs from "../components/ContactUs.astro";
+import FormTitleHex from "../components/FormTitleHex.astro";
+import Hex from "../components/Hex.astro";
+import Toast from "../components/Toast.astro";
+
+---
+
+<Layout color="light">
+  <div class="layout__content">
+    <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
+    <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
+    <div slot="external">
+      <div class="page-team__giga-blob">
+        <img src="img/giga-blob.svg" alt="" />
+      </div>
+      <div class="page-team__giga-blob-mobile">
+        <img src="img/giga-blob-mobile.svg" alt="" />
+      </div>
+    </div>
+    <h1 class="title-1">Team</h1>
+    <div class="page-team__copy">
+      <p class="body-1">
+        Top Solution nasce dall’associazione di una grande <b>expertise</b> nel settore della <b
+          >consulenza informatica</b
+        > e della
+        <b>gestione delle risorse umane</b>. Il team di informatici è affiancato da <b>psicologi del lavoro</b> per la realizzazione
+        delle
+        <b>piattaforme HR</b>
+        e per la progettazione e la realizzazione di tutti i progetti rivolti alle
+        <b>risorse umane</b>.
+      </p>
+    </div>
+    <div class="page-team__people">
+      <div class="page-team__people__spacer"></div>
+      <ts-team-person name="Paolo Andruetto" companyrole="CEO">
+        <b>Paolo Andruetto</b> CEO
+      </ts-team-person>
+      <ts-team-person name="Gabriele Destefanis" companyrole="CTO">
+        <b>Gabriele Destefanis</b> CTO
+      </ts-team-person>
+      <div class="page-team__people__spacer"></div>
+      <ts-team-person name="Luca Osti" companyrole="Backend Developer">
+        <b>Luca Osti</b> Backend Developer
+      </ts-team-person>
+      <ts-team-person name="Gabriele Spada" companyrole="Frontend Developer">
+        <b>Gabriele Spada</b> Frontend Developer
+      </ts-team-person>
+      <ts-team-person name="Luca Barbetti" companyrole="Frontend Developer">
+        <b>Luca Barbetti</b> Frontend Developer
+      </ts-team-person>
+      <div class="page-team__people__spacer"></div>
+      <ts-team-person name="Elisa Solinas" companyrole="Backend Developer">
+        <b>Elisa Solinas</b> Backend Developer
+      </ts-team-person>
+      <ts-team-person name="Federico Valetti" companyrole="Analista Funzionale">
+        <b>Federico Valetti</b> Analista Funzionale
+      </ts-team-person>
+      <div class="page-team__people__spacer"></div>
+      <ts-team-person name="Matteo Marsala" companyrole="Frontend Developer">
+        <b>Matteo Marsala</b> Frontend Developer
+      </ts-team-person>
+      <ts-team-person name="Martina Bilancieri" companyrole="UX/UI Designer">
+        <b>Martina Bilancieri</b> UX/UI Designer
+      </ts-team-person>
+      <ts-team-person src="img/question_mark.svg" name="Vuoi far parte del team?">
+        <ts-button
+          class="page-team__people__contact-us-button"
+          variant="primary"
+          component="button"
+          onclick="handleApplyClick()"
+        >
+          Candidati
+        </ts-button>
+      </ts-team-person>
+    </div>
+  </div>
+  <ts-contact-us open="false"></ts-contact-us>
+</Layout>
+
+<script>
+  var contactUsEl = document.querySelectorAll("ts-contact-us")[0];
+
+  function handleApplyClick() {
+    contactUsEl.open = "true";
+
+    setTimeout(() => {
+      contactUsEl.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }, 200);
+  }
+
+  function handleContactUsSubmit() {
+    console.log("handleContactUsSubmit");
+    contactUsEl.open = "false";
+    setTimeout(() => {
+      document.querySelector("body").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 500);
+  }
+
+  contactUsEl.addEventListener("formsubmit", handleContactUsSubmit);
+</script>
+
+<style lang="scss">
+  .page-team {
+    color: variables.$ts-blue-color;
+
+    ts-header-hexagons-desktop,
+    ts-header-hexagons-mobile {
+      z-index: -1;
+    }
+
+    &__people {
+      margin: variables.$ts-spacing-15 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      &__spacer {
+        flex: 0 1 16.6666%;
+        max-width: 16.6666%;
+      }
+
+      &__contact-us-button {
+        margin-top: variables.$ts-spacing-2;
+      }
+    }
+
+    ts-team-person {
+      margin: variables.$ts-spacing-7 0;
+      flex: 0 1 33.3333%;
+      max-width: 33.3333%;
+    }
+
+    &__giga-blob {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -430px;
+      right: 300px;
+      z-index: -1;
+    }
+
+    &__giga-blob-mobile {
+      display: none;
+    }
+
+    &__contact-us {
+      margin-bottom: variables.$ts-spacing-10;
+    }
+
+    ts-contact-us {
+      margin-top: 200px;
+      display: block;
+    }
+
+    @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
+      .title-1 {
+        max-width: 60%;
+        text-align: left;
+      }
+
+      &__giga-blob {
+        right: 600px;
+        top: -500px;
+      }
+
+      &__people {
+        margin: variables.$ts-spacing-4 0;
+      }
+
+      &__copy {
+        max-width: 60%;
+      }
+    }
+
+    @media only screen and (max-width: variables.$ts-mobile-max) {
+      &__copy {
+        max-width: 80%;
+      }
+
+      &__people {
+        margin: variables.$ts-spacing-3 0;
+
+        &__spacer {
+          display: none;
+        }
+      }
+
+      &__giga-blob {
+        display: none;
+      }
+
+      &__giga-blob-mobile {
+        display: block;
+        position: absolute;
+        width: 1400px;
+        overflow: visible;
+        top: -130px;
+        left: -270px;
+        z-index: -1;
+      }
+
+      ts-team-person {
+        margin: variables.$ts-spacing-1 2px;
+        flex: 0 1 calc(50% - 4px);
+        max-width: calc(50% - 4px);
+      }
+    }
+  }
+</style>
