@@ -1,23 +1,19 @@
 ---
 import Layout from "../components/Layout.astro";
 import Blob from "../components/Blob.astro";
-import TeamPerson from "../components/TeamPerson.astro";
-import TextField from "../components/TextField.astro";
+import TeamPerson from "../components/team/TeamPerson.astro";
 
 import Button from "../components/Button.astro";
-import HeaderHexagonsDesktop from "../HeaderHexagonsDesktop/Blob.astro";
-import HeaderHexagonsMobile from "../HeaderHexagonsMobile/Blob.astro";
+import HeaderHexagonsDesktop from "../components/team/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../components/team/HeaderHexagonsMobile.astro";
 import ContactUs from "../components/ContactUs.astro";
-import FormTitleHex from "../components/FormTitleHex.astro";
-import Hex from "../components/Hex.astro";
-import Toast from "../components/Toast.astro";
 
 ---
 
 <Layout color="light">
   <div class="layout__content">
-    <ts-header-hexagons-desktop></ts-header-hexagons-desktop>
-    <ts-header-hexagons-mobile></ts-header-hexagons-mobile>
+    <HeaderHexagonsDesktop />
+    <HeaderHexagonsMobile />
     <div slot="external">
       <div class="page-team__giga-blob">
         <img src="img/giga-blob.svg" alt="" />
@@ -41,49 +37,49 @@ import Toast from "../components/Toast.astro";
     </div>
     <div class="page-team__people">
       <div class="page-team__people__spacer"></div>
-      <ts-team-person name="Paolo Andruetto" companyrole="CEO">
+      <TeamPerson name="Paolo Andruetto" companyrole="CEO">
         <b>Paolo Andruetto</b> CEO
-      </ts-team-person>
-      <ts-team-person name="Gabriele Destefanis" companyrole="CTO">
+      </TeamPerson>
+      <TeamPerson name="Gabriele Destefanis" companyrole="CTO">
         <b>Gabriele Destefanis</b> CTO
-      </ts-team-person>
+      </TeamPerson>
       <div class="page-team__people__spacer"></div>
-      <ts-team-person name="Luca Osti" companyrole="Backend Developer">
+      <TeamPerson name="Luca Osti" companyrole="Backend Developer">
         <b>Luca Osti</b> Backend Developer
-      </ts-team-person>
-      <ts-team-person name="Gabriele Spada" companyrole="Frontend Developer">
+      </TeamPerson>
+      <TeamPerson name="Gabriele Spada" companyrole="Frontend Developer">
         <b>Gabriele Spada</b> Frontend Developer
-      </ts-team-person>
-      <ts-team-person name="Luca Barbetti" companyrole="Frontend Developer">
+      </TeamPerson>
+      <TeamPerson name="Luca Barbetti" companyrole="Frontend Developer">
         <b>Luca Barbetti</b> Frontend Developer
-      </ts-team-person>
+      </TeamPerson>
       <div class="page-team__people__spacer"></div>
-      <ts-team-person name="Elisa Solinas" companyrole="Backend Developer">
+      <TeamPerson name="Elisa Solinas" companyrole="Backend Developer">
         <b>Elisa Solinas</b> Backend Developer
-      </ts-team-person>
-      <ts-team-person name="Federico Valetti" companyrole="Analista Funzionale">
+      </TeamPerson>
+      <TeamPerson name="Federico Valetti" companyrole="Analista Funzionale">
         <b>Federico Valetti</b> Analista Funzionale
-      </ts-team-person>
+      </TeamPerson>
       <div class="page-team__people__spacer"></div>
-      <ts-team-person name="Matteo Marsala" companyrole="Frontend Developer">
+      <TeamPerson name="Matteo Marsala" companyrole="Frontend Developer">
         <b>Matteo Marsala</b> Frontend Developer
-      </ts-team-person>
-      <ts-team-person name="Martina Bilancieri" companyrole="UX/UI Designer">
+      </TeamPerson>
+      <TeamPerson name="Martina Bilancieri" companyrole="UX/UI Designer">
         <b>Martina Bilancieri</b> UX/UI Designer
-      </ts-team-person>
-      <ts-team-person src="img/question_mark.svg" name="Vuoi far parte del team?">
-        <ts-button
+      </TeamPerson>
+      <TeamPerson src="img/question_mark.svg" name="Vuoi far parte del team?">
+        <Button
           class="page-team__people__contact-us-button"
           variant="primary"
           component="button"
           onclick="handleApplyClick()"
         >
           Candidati
-        </ts-button>
-      </ts-team-person>
+        </Button>
+      </TeamPerson>
     </div>
   </div>
-  <ts-contact-us open="false"></ts-contact-us>
+  <ContactUs open="false"></ContactUs>
 </Layout>
 
 <script>

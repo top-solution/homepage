@@ -1,0 +1,65 @@
+---
+import Blob from '../Blob.astro';
+const { src, name, companyrole, personSrc} = Astro.props;
+---
+
+<script>
+  // import { onMount } from "svelte";
+
+  // onMount(async () => {
+  //   personSrc = src
+  //     ? src
+  //     : `img/team/${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
+  // });
+</script>
+
+<div class="team-person" itemscope itemtype="https://schema.org/Person">
+  <Blob interactive={false} shape="hexagon" src={src}>
+    <!-- <div class="team-person__image-sizer" /> -->
+  </Blob>
+  <h6 class="name">{name}</h6>
+
+  {companyrole && (
+    <h6 class="role" itemprop="jobTitle">
+      <b>{companyrole}</b>
+    </h6>
+    )}
+  {companyrole & (
+    <slot />
+  )}
+</div>
+
+<style>
+  .team-person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 variables.$ts-spacing-1;
+  }
+
+  h6 {
+    text-align: center;
+  }
+
+  h6 .name {
+    margin-top: variables.$ts-spacing-3;
+  }
+
+  h6 .role {
+    font-weight: 500;
+  }
+
+  /* ts-blob {
+    width: 100%;
+  } */
+
+  @media only screen and (max-width: 600px) {
+    .team-person {
+      margin: 0 variables.$ts-spacing-1;
+    }
+
+    h6 {
+      font-size: 15px;
+    }
+  }
+</style>
