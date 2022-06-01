@@ -15,8 +15,6 @@ const {
   clickable = "false",
 } = Astro.props;
 
-//console.log("Blob src", src);
-
 let paddingStyle = "";
 
 /**
@@ -390,6 +388,19 @@ onload = function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
   <script>
   function debouncedHandleMouseEnter () {
     alert("enter");
@@ -399,10 +410,10 @@ document.querySelector(".blob").addEventListener("onmouseleave", debouncedHandle
 console.log("fg")
   </script>
 
+<!--    onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
+  onmouseleave={() => interactive === true && debouncedHandleMouseLeave}-->
 <div
-  class={classnames("blob", {"clickable": clickable !== "false", })}
-  onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
-  onmouseleave={() => interactive === true && debouncedHandleMouseLeave}
+  class={classnames("blob", {"clickable": clickable })}
 >
   <div class="content" style={paddingStyle}>
     <slot />
@@ -459,7 +470,6 @@ console.log("fg")
   .blob:hover path {
     filter: brightness(0.9) saturate(1.5);
   }
-
 
   .blob:after {
     content: "";

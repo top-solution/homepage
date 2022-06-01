@@ -57,12 +57,8 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
         </div>
       </div>
     </section>
-    <TripleBlob
-      id="triple-blob-ht-development"
-      title="SVILUPPO DELLE RISORSE UMANE"
-      buttonlink="/hr-development.html"
-      blobs={developmentHumanResourceBlobs}
-    />
+    <TripleBlob id="triple-blob-ht-development" title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development.html"
+      blobs={developmentHumanResourceBlobs} />
     <div class="middle-blob">
       <img src="img/homepage/blob-middle-homepage.svg" alt="" />
     </div>
@@ -75,7 +71,8 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     <div class="middle-hex-tablet">
       <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
     </div>
-    <Customers id="customers" />
+    <div id="customers" />
+    <Customers />
   </article>
 </Layout>
 
@@ -120,6 +117,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     left: -1040px;
     z-index: -1;
   }
+
   article .header-hex-logo {
     display: block;
     position: absolute;
@@ -198,6 +196,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     article .middle-hex {
       display: none;
     }
+
     section {
       margin-bottom: var(--spacing-10);
     }
