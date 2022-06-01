@@ -1,38 +1,44 @@
 ---
 import classnames from "classnames";
-const { label = "", value = "", error = null, type = "text", name = "", textarea = false, rows = "3"} = Astro.props;
+const { label = "", value = "", error = null, type = "text", name = "", textarea = false, rows = "3" } = Astro.props;
 let focused;
+
+// const component = get_current_component();
+// const svelteDispatch = createEventDispatcher();
+
+// const dispatch = (name, detail) => {
+//   svelteDispatch(name, detail);
+//   component.dispatchEvent &&
+//     component.dispatchEvent(new CustomEvent(name, { detail }));
+// };
 ---
 
 <script>
-  import { createEventDispatcher } from "svelte";
-  import { get_current_component } from "svelte/internal";
-
-  const component = get_current_component();
-  const svelteDispatch = createEventDispatcher();
-
-  const dispatch = (name, detail) => {
-    svelteDispatch(name, detail);
-    component.dispatchEvent &&
-      component.dispatchEvent(new CustomEvent(name, { detail }));
-  };
-
+  // import { createEventDispatcher } from "svelte";
+  // import { get_current_component } from "svelte/internal";
 </script>
 
-<div
-  class={classnames("ts-textfield", {"focused": focused, "shrink": focused || value && value.length > 0, "error": error && error.length > 0})}
->
+<div class={classnames("ts-textfield", {"focused": focused, "shrink" : focused || value && value.length> 0, "error":
+  error && error.length > 0})}>
   <label for="outlined-basic">{label}</label>
   <div class="input">
-    {textarea ? (
-      <textarea
-        aria-invalid="false"
-        id="outlined-basic"
-        value={value ?? ""}
-        {name}
-        {rows}
-        onfocus={() => (focused = true)}
-        onblur={() => (focused = false)}
+    <!--         // onfocus={() => (focused = true)}
+        // onblur={() => (focused = false)}
+        // onchange={(e) => {
+        //   component.value = e.target.value;
+        //   dispatch("change", {});
+        // }}
+        // onkeyup={(e) => {
+        //   component.value = e.target.value;
+        //   dispatch("keyup");
+        // }} -->
+
+    { textarea ? (<textarea aria-invalid="false" id="outlined-basic" value={value || "" } {name} {rows} onfocus={()=> (focused = true)} onblur={() => (focused = false)}/>) :
+      (<input aria-invalid="false" id="outlined-basic" {type} {name} value={value || "" } />)}
+    <!-- { textarea && (
+    <textarea aria-invalid="false" id="outlined-basic" value={value || ""} name={name} rows={rows}
+        // onfocus={()=> (focused = true)}
+        // onblur={() => (focused = false)}
         // onchange={(e) => {
         //   component.value = e.target.value;
         //   dispatch("change", {});
@@ -41,26 +47,35 @@ let focused;
         //   component.value = e.target.value;
         //   dispatch("keyup");
         // }}
-      />
+    />)} -->
+    <!-- {!textarea && (
+      <input aria-invalid="false" id="outlined-basic" {type} {name} value={value || "" }
+      // onfocus={() => (focused = true)}
+      // onblur={() => (focused = false)}
+      // onchange={(e) => {
+      // component.value = e.target.value;
+      // dispatch("change", {});
+      // }}
+      // on:keyup={(e) => {
+      // component.value = e.target.value;
+      // dispatch("keyup");
+      // }}
+    />)} -->
+    <!-- {textarea ? (
+    <textarea aria-invalid="false" id="outlined-basic" value={value || ""} {name} {rows} />
     ) : (
-      <input
-        aria-invalid="false"
-        id="outlined-basic"
-        {type}
-        {name}
-        value={value ?? ""}
-        //onfocus={() => (focused = true)}
-        //onblur={() => (focused = false)}
-        // onchange={(e) => {
-        //   component.value = e.target.value;
-        //   dispatch("change", {});
-        // }}
-        // on:keyup={(e) => {
-        //   component.value = e.target.value;
-        //   dispatch("keyup");
-        // }}
-      />
-    )}
+    <input aria-invalid="false" id="outlined-basic" {type} {name} value={value || ""} //onfocus={()=> (focused = true)}
+    //onblur={() => (focused = false)}
+    // onchange={(e) => {
+    // component.value = e.target.value;
+    // dispatch("change", {});
+    // }}
+    // on:keyup={(e) => {
+    // component.value = e.target.value;
+    // dispatch("keyup");
+    // }}
+    />
+    )} -->
     <fieldset aria-hidden="true">
       <legend class="css-173wfxe"><span>{label}</span></legend>
     </fieldset>
@@ -137,7 +152,8 @@ let focused;
     border-width: 2px;
   }
 
-  .input input, textarea {
+  .input input,
+  textarea {
     box-sizing: content-box;
     color: black;
     border-color: currentcolor;

@@ -15,6 +15,8 @@ const {
   clickable = "false",
 } = Astro.props;
 
+//console.log("Blob src", src);
+
 let paddingStyle = "";
 
 /**
@@ -346,7 +348,7 @@ switch (shape) {
 }
 animate();
 
-onload = function() {
+onload = function () {
   switch (shape) {
     case "hexagon":
       points = createRegularPoints(6);
@@ -382,6 +384,12 @@ onload = function() {
 };
 ---
 
+
+
+
+
+
+
   <script>
   function debouncedHandleMouseEnter () {
     alert("enter");
@@ -399,6 +407,7 @@ console.log("fg")
   <div class="content" style={paddingStyle}>
     <slot />
   </div>
+
   <svg
     viewBox="0 0 210 210"
     preserveAspectRatio="none"
@@ -414,7 +423,7 @@ console.log("fg")
           width="210"
           height="210"
         >
-          <image href={src} width="210" height="210" />
+          <img href={src} width="210" height="210" />
         </pattern>
       </defs>
     )}

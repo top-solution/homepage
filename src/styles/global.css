@@ -22,6 +22,7 @@
 
   /* Spacing */
   --spacing: 8px;
+  --spacing-0-5: calc(var(--spacing) / 2);
   --spacing-1: var(--spacing);
   --spacing-1-5: calc(var(--spacing) * 1.5);
   --spacing-2: calc(var(--spacing) * 2);

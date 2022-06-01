@@ -1,88 +1,101 @@
 ---
 import Layout from "../components/Layout.astro";
-import Blob from "../components/Blob.astro";
 import TeamPerson from "../components/team/TeamPerson.astro";
 
 import Button from "../components/Button.astro";
 import HeaderHexagonsDesktop from "../components/team/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/team/HeaderHexagonsMobile.astro";
-import ContactUs from "../components/ContactUs.astro";
-
+import ContactUs from "../components/team/ContactUs.astro";
 ---
 
 <Layout color="light">
   <div class="layout__content">
-    <HeaderHexagonsDesktop />
-    <HeaderHexagonsMobile />
-    <div slot="external">
-      <div class="page-team__giga-blob">
-        <img src="img/giga-blob.svg" alt="" />
+    <HeaderHexagonsDesktop class="hex" />
+    <HeaderHexagonsMobile class="hex" />
+    <div>
+      <div class="giga-blob">
+        <img src="../img/giga-blob.svg" alt="" />
       </div>
-      <div class="page-team__giga-blob-mobile">
-        <img src="img/giga-blob-mobile.svg" alt="" />
+      <div class="giga-blob-mobile">
+        <img src="../img/giga-blob-mobile.svg" alt="" />
       </div>
     </div>
     <h1 class="title-1">Team</h1>
-    <div class="page-team__copy">
+    <div class="copy">
       <p class="body-1">
-        Top Solution nasce dall’associazione di una grande <b>expertise</b> nel settore della <b
-          >consulenza informatica</b
-        > e della
-        <b>gestione delle risorse umane</b>. Il team di informatici è affiancato da <b>psicologi del lavoro</b> per la realizzazione
+        Top Solution nasce dall’associazione di una grande <b>expertise</b> nel settore della <b>consulenza
+          informatica</b> e della
+        <b>gestione delle risorse umane</b>. Il team di informatici è affiancato da <b>psicologi del lavoro</b> per la
+        realizzazione
         delle
         <b>piattaforme HR</b>
         e per la progettazione e la realizzazione di tutti i progetti rivolti alle
         <b>risorse umane</b>.
       </p>
     </div>
-    <div class="page-team__people">
-      <div class="page-team__people__spacer"></div>
-      <TeamPerson name="Paolo Andruetto" companyrole="CEO">
-        <b>Paolo Andruetto</b> CEO
-      </TeamPerson>
-      <TeamPerson name="Gabriele Destefanis" companyrole="CTO">
-        <b>Gabriele Destefanis</b> CTO
-      </TeamPerson>
-      <div class="page-team__people__spacer"></div>
-      <TeamPerson name="Luca Osti" companyrole="Backend Developer">
-        <b>Luca Osti</b> Backend Developer
-      </TeamPerson>
-      <TeamPerson name="Gabriele Spada" companyrole="Frontend Developer">
-        <b>Gabriele Spada</b> Frontend Developer
-      </TeamPerson>
-      <TeamPerson name="Luca Barbetti" companyrole="Frontend Developer">
-        <b>Luca Barbetti</b> Frontend Developer
-      </TeamPerson>
-      <div class="page-team__people__spacer"></div>
-      <TeamPerson name="Elisa Solinas" companyrole="Backend Developer">
-        <b>Elisa Solinas</b> Backend Developer
-      </TeamPerson>
-      <TeamPerson name="Federico Valetti" companyrole="Analista Funzionale">
-        <b>Federico Valetti</b> Analista Funzionale
-      </TeamPerson>
-      <div class="page-team__people__spacer"></div>
-      <TeamPerson name="Matteo Marsala" companyrole="Frontend Developer">
-        <b>Matteo Marsala</b> Frontend Developer
-      </TeamPerson>
-      <TeamPerson name="Martina Bilancieri" companyrole="UX/UI Designer">
-        <b>Martina Bilancieri</b> UX/UI Designer
-      </TeamPerson>
-      <TeamPerson src="img/question_mark.svg" name="Vuoi far parte del team?">
-        <Button
-          class="page-team__people__contact-us-button"
-          variant="primary"
-          component="button"
-          onclick="handleApplyClick()"
-        >
-          Candidati
-        </Button>
-      </TeamPerson>
+    <div class="people">
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Paolo Andruetto" companyrole="CEO">
+          <b>Paolo Andruetto</b> CEO
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Gabriele Destefanis" companyrole="CTO">
+          <b>Gabriele Destefanis</b> CTO
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Luca Osti" companyrole="Backend Developer">
+          <b>Luca Osti</b> Backend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Gabriele Spada" companyrole="Frontend Developer">
+          <b>Gabriele Spada</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Luca Barbetti" companyrole="Frontend Developer">
+          <b>Luca Barbetti</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Elisa Solinas" companyrole="Backend Developer">
+          <b>Elisa Solinas</b> Backend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Federico Valetti" companyrole="Analista Funzionale">
+          <b>Federico Valetti</b> Analista Funzionale
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Matteo Marsala" companyrole="Frontend Developer">
+          <b>Matteo Marsala</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Martina Bilancieri" companyrole="UX/UI Designer">
+          <b>Martina Bilancieri</b> UX/UI Designer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson src="../img/question_mark.svg" name="Vuoi far parte del team?">
+          <Button class="contact-us-button" variant="primary" component="button" onclick="handleApplyClick()">
+            Candidati
+          </Button>
+        </TeamPerson>
+      </div>
     </div>
   </div>
-  <ContactUs open="false"></ContactUs>
+  <ContactUs open="false" class="contact-us-component"></ContactUs>
 </Layout>
 
-<script>
+<!-- <script>
   var contactUsEl = document.querySelectorAll("ts-contact-us")[0];
 
   function handleApplyClick() {
@@ -109,114 +122,114 @@ import ContactUs from "../components/ContactUs.astro";
   }
 
   contactUsEl.addEventListener("formsubmit", handleContactUsSubmit);
-</script>
+</script> -->
 
-<style lang="scss">
+<style>
   .page-team {
-    color: variables.$ts-blue-color;
+    color: var(--color-blue);
+  }
 
-    ts-header-hexagons-desktop,
-    ts-header-hexagons-mobile {
-      z-index: -1;
+  .people {
+    margin: var(--spacing-15) 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .spacer {
+    flex: 0 1 16.6666%;
+    max-width: 16.6666%;
+  }
+
+  .contact-us-button {
+    margin-top: var(--spacing-2);
+  }
+
+
+  .team-person-container {
+    margin: var(--spacing-7) 0;
+    flex: 0 1 33.3333%;
+    max-width: 33.3333%;
+  }
+
+  .giga-blob {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    top: -430px;
+    right: 300px;
+    z-index: -1;
+  }
+
+  .giga-blob-mobile {
+    display: none;
+  }
+
+  .contact-us {
+    margin-bottom: var(--spacing-10);
+  }
+
+  .contact-us-component {
+    margin-top: 200px;
+    display: block;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 960px) {
+    .title-1 {
+      max-width: 60%;
+      text-align: left;
     }
 
-    &__people {
-      margin: variables.$ts-spacing-15 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      &__spacer {
-        flex: 0 1 16.6666%;
-        max-width: 16.6666%;
-      }
-
-      &__contact-us-button {
-        margin-top: variables.$ts-spacing-2;
-      }
+    .giga-blob {
+      right: 600px;
+      top: -500px;
     }
 
-    ts-team-person {
-      margin: variables.$ts-spacing-7 0;
-      flex: 0 1 33.3333%;
-      max-width: 33.3333%;
+    .people {
+      margin: var(--spacing-4) 0;
     }
 
-    &__giga-blob {
+    .copy {
+      max-width: 60%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .copy {
+      max-width: 80%;
+    }
+
+    .people {
+      margin: var(--spacing-3) 0;
+    }
+
+    .people .spacer {
+      display: none;
+    }
+
+    .giga-blob {
+      display: none;
+    }
+
+    .giga-blob-mobile {
       display: block;
       position: absolute;
       width: 1400px;
       overflow: visible;
-      top: -430px;
-      right: 300px;
+      top: -130px;
+      left: -270px;
       z-index: -1;
     }
 
-    &__giga-blob-mobile {
-      display: none;
+    .team-person-container {
+      margin: var(--spacing-1) 2px;
+      flex: 0 1 calc(50% - 4px);
+      max-width: calc(50% - 4px);
     }
+  }
 
-    &__contact-us {
-      margin-bottom: variables.$ts-spacing-10;
-    }
-
-    ts-contact-us {
-      margin-top: 200px;
-      display: block;
-    }
-
-    @media only screen and (min-width: variables.$ts-tablet-min) and (max-width: variables.$ts-tablet-max) {
-      .title-1 {
-        max-width: 60%;
-        text-align: left;
-      }
-
-      &__giga-blob {
-        right: 600px;
-        top: -500px;
-      }
-
-      &__people {
-        margin: variables.$ts-spacing-4 0;
-      }
-
-      &__copy {
-        max-width: 60%;
-      }
-    }
-
-    @media only screen and (max-width: variables.$ts-mobile-max) {
-      &__copy {
-        max-width: 80%;
-      }
-
-      &__people {
-        margin: variables.$ts-spacing-3 0;
-
-        &__spacer {
-          display: none;
-        }
-      }
-
-      &__giga-blob {
-        display: none;
-      }
-
-      &__giga-blob-mobile {
-        display: block;
-        position: absolute;
-        width: 1400px;
-        overflow: visible;
-        top: -130px;
-        left: -270px;
-        z-index: -1;
-      }
-
-      ts-team-person {
-        margin: variables.$ts-spacing-1 2px;
-        flex: 0 1 calc(50% - 4px);
-        max-width: calc(50% - 4px);
-      }
-    }
+  .hex {
+    z-index: -1
   }
 </style>

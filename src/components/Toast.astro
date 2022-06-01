@@ -1,9 +1,9 @@
 ---
 import classnames from "classnames";
-export let message = "";
+const { message = ""} = Astro.props;
   let visible = false;
 
-  export const show = function show() {
+  const show = function show() {
     visible = true;
 
     if (visible) {
@@ -13,7 +13,6 @@ export let message = "";
     }
   };
 ---
-
 
 <div class={classnames("ts-toast", {"visible": visible })}>{message}</div>
 
@@ -27,8 +26,7 @@ export let message = "";
     min-height: 48px;
     background: #2e7d32;
     border-radius: 4px;
-    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-      0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
     padding: 6px 16px;
     color: #fff;
     font-weight: 700;

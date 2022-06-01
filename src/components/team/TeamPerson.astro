@@ -1,6 +1,6 @@
 ---
 import Blob from '../Blob.astro';
-const { src, name, companyrole, personSrc} = Astro.props;
+const { src, name, companyrole, personSrc } = Astro.props;
 ---
 
 <script>
@@ -14,18 +14,18 @@ const { src, name, companyrole, personSrc} = Astro.props;
 </script>
 
 <div class="team-person" itemscope itemtype="https://schema.org/Person">
-  <Blob interactive={false} shape="hexagon" src={src}>
+  <Blob interactive={false} shape="hexagon" src={src ? src : `../img/team/${`${name}`.toLowerCase().replace(/\s/g, "-" )}.jpg`}>
     <!-- <div class="team-person__image-sizer" /> -->
   </Blob>
   <h6 class="name">{name}</h6>
 
   {companyrole && (
-    <h6 class="role" itemprop="jobTitle">
-      <b>{companyrole}</b>
-    </h6>
-    )}
-  {companyrole & (
-    <slot />
+  <h6 class="role" itemprop="jobTitle">
+    <b>{companyrole}</b>
+  </h6>
+  )}
+  {!companyrole && (
+  <slot />
   )}
 </div>
 
@@ -34,7 +34,7 @@ const { src, name, companyrole, personSrc} = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 variables.$ts-spacing-1;
+    margin: 0 var(--spacing-1);
   }
 
   h6 {
@@ -42,7 +42,7 @@ const { src, name, companyrole, personSrc} = Astro.props;
   }
 
   h6 .name {
-    margin-top: variables.$ts-spacing-3;
+    margin-top: var(--spacing-3);
   }
 
   h6 .role {
@@ -55,7 +55,7 @@ const { src, name, companyrole, personSrc} = Astro.props;
 
   @media only screen and (max-width: 600px) {
     .team-person {
-      margin: 0 variables.$ts-spacing-1;
+      margin: 0 var(--spacing-1);
     }
 
     h6 {
