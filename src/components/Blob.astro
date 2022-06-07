@@ -346,40 +346,40 @@ switch (shape) {
 }
 animate();
 
-onload = function () {
-  switch (shape) {
-    case "hexagon":
-      points = createRegularPoints(6);
-      break;
-    case "octagon":
-      points = createRegularPoints(8);
-      break;
-    case "rectangle":
-      points = createPointsAlt();
-      break;
-    case "potato":
-      points = createPointsPotato();
-      break;
-    case "rectanglehr":
-      points = createPointsRectangle();
-      break;
-  }
-  animate();
+// onload = function () {
+//   switch (shape) {
+//     case "hexagon":
+//       points = createRegularPoints(6);
+//       break;
+//     case "octagon":
+//       points = createRegularPoints(8);
+//       break;
+//     case "rectangle":
+//       points = createPointsAlt();
+//       break;
+//     case "potato":
+//       points = createPointsPotato();
+//       break;
+//     case "rectanglehr":
+//       points = createPointsRectangle();
+//       break;
+//   }
+//   animate();
 
-  if (rotate || flip) {
-    transform = "transform:";
+//   if (rotate || flip) {
+//     transform = "transform:";
 
-    if (rotate) {
-      transform = `${transform} rotate(${rotate}deg)`;
-    }
-  }
+//     if (rotate) {
+//       transform = `${transform} rotate(${rotate}deg)`;
+//     }
+//   }
 
-  if (padding) {
-    paddingStyle = `padding: ${8 + Number(padding || 0)}px ${Number(
-      padding || 0
-    )}px;`;
-  }
-};
+//   if (padding) {
+//     paddingStyle = `padding: ${8 + Number(padding || 0)}px ${Number(
+//       padding || 0
+//     )}px;`;
+//   }
+// };
 ---
 
 
