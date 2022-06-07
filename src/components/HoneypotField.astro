@@ -10,23 +10,23 @@ const dispatch = (name, detail) => {
 <script>
   //import { createEventDispatcher, onMount } from "svelte";
 
-  const svelteDispatch = createEventDispatcher();
+  // const svelteDispatch = createEventDispatcher();
 
-  let parentEl = null;
+  // let parentEl = null;
 
-  onMount(() => {
-    parentEl.style = `
-      max-height: 0.1px;
-      max-width: 0.1px;
-      overflow: hidden;
-    `;
-  });
+  // onMount(() => {
+  //   parentEl.style = `
+  //     max-height: 0.1px;
+  //     max-width: 0.1px;
+  //     overflow: hidden;
+  //   `;
+  // });
 
-  const dispatch = (name, detail) => {
-    svelteDispatch(name, detail);
-    component.dispatchEvent &&
-      component.dispatchEvent(new CustomEvent(name, { detail }));
-  };
+  // const dispatch = (name, detail) => {
+  //   svelteDispatch(name, detail);
+  //   component.dispatchEvent &&
+  //     component.dispatchEvent(new CustomEvent(name, { detail }));
+  // };
 </script>
 
 <!--

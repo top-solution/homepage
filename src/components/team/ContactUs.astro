@@ -6,22 +6,10 @@ import Textfield from "../../components/TextField.astro";
 import Button from "../../components/Button.astro";
 import Toast from "../../components/Toast.astro";
 
-import { createEventDispatcher } from "svelte";
-import { get_current_component } from "svelte/internal";
 import HoneypotField from "../../components/HoneypotField.astro";
 
 export let open = "false";
 let toastEl = null;
-
-// const component = get_current_component();
-// const svelteDispatch = createEventDispatcher();
-
-const dispatch = (name, detail) => {
-  alert("FIXME");
-  // svelteDispatch(name, detail);
-  // component.dispatchEvent &&
-  //   component.dispatchEvent(new CustomEvent(name, { detail }));
-};
 
 let bot = false;
 let form = {
@@ -103,7 +91,7 @@ function handleSubmit(event) {
     curriculum: null,
   };
 
-  dispatch("formsubmit", {});
+  // dispatch("formsubmit", {});
   toastEl.show();
 
   document.querySelector("body").scrollIntoView({ behavior: "smooth" });
@@ -124,7 +112,9 @@ function handleSubmit(event) {
 </script>
 
 <form class="contact-us" onsubmit={handleSubmit}>
-  <Hex class="contact-us__floating-hex-1" width="111" fill="#312783" shadow="true" />
+  <div class="floating-hex-1">
+    <Hex width="111" fill="#312783" shadow="true" />
+  </div>
   <div class={classnames("drawer", {"open": open})}>
     <FormTitleHex />
     <h2 class="title-3 title-form">Candidatura <b>spontanea</b></h2>
@@ -162,8 +152,7 @@ function handleSubmit(event) {
             />
         </div>
         <div class="textfield textfield-experience">
-          <Textfield class="textfield textfield-experience" outlined required name="experience"
-            error={formErrors.experience} onkeyup={(e)=> {
+          <Textfield outlined required name="experience" error={formErrors.experience} onkeyup={(e)=> {
             if (e.target.value.length) {
             formErrors.experience = null;
             }
@@ -196,12 +185,11 @@ function handleSubmit(event) {
           }} -->
         <div class="textfield textfield-graduation-grade">
           <Textfield outlined required name="graduation-grade" error={formErrors.graduationGrade} type="number"
-            label="Votazione *" min="0" max="110" value={form.graduationGrade} on:change={(e)=> (form.graduationGrade =
+            label="Votazione *" min="0" max="110" value={form.graduationGrade} onchange={(e)=> (form.graduationGrade =
             e.target.value)}
             />
         </div>
       </div>
-
       <div class="form-row">
         <div class="textfield textfield-email">
           <Textfield outlined required name="email" error={formErrors.email} onkeyup={(e)=> {
@@ -250,8 +238,8 @@ function handleSubmit(event) {
         </label>
       </div>
       <HoneypotField onchange={()=> (bot = true)} />
-        <div class="submit-button-form-row">
-          <Button class="submit" component="button" variant="secondary" type="submit" onclick={handleSubmit}>
+        <div class="submit-button-form-row submit">
+          <Button component="button" variant="secondary" type="submit" onclick={handleSubmit}>
             Invia
           </Button>
         </div>
@@ -319,6 +307,7 @@ function handleSubmit(event) {
     display: flex;
     flex-wrap: wrap;
     margin: 0 var(--spacing-1) * -1 0;
+    justify-content: space-between;
   }
 
   .curriculum-upload {
@@ -359,7 +348,7 @@ function handleSubmit(event) {
   .cv-button-form-row {
     display: flex;
     align-items: center;
-    margin-bottom: var(--spacing-3);
+    margin: var(--spacing-3) 0;
     flex-direction: column-reverse;
     align-items: stretch;
   }
@@ -413,12 +402,29 @@ function handleSubmit(event) {
     margin: 0 var(--spacing-1) var(--spacing-3);
   }
 
-  .textfield-name .textfield-phone .textfield-graduation .textfield-graduation-grade .textfield-email {
-    flex: 1 1 100%;
+  .textfield-name {
+    flex: 0 0 40%;
   }
 
-  .textfield-age .textfield-experience {
-    flex: 0 1 calc(50% - var(--spacing-2));
+  .textfield-age {
+    flex: 0 0 20%;
+  }
+
+  .textfield-experience {
+    flex: 0 0 30%;
+  }
+
+  .textfield-graduation {
+    flex: 0 0 70%;
+  }
+
+  .textfield-graduation-grade {
+    flex: 0 0 20%;
+  }
+
+  .textfield-email,
+  .textfield-phone {
+    flex: 0 0 45%;
   }
 
   .submit-button-form-row {
@@ -426,7 +432,7 @@ function handleSubmit(event) {
   }
 
   .submit {
-    margin: 0 auto;
+    justify-content: center;
   }
 
   @media only screen and (min-width: 601px) {
@@ -453,10 +459,6 @@ function handleSubmit(event) {
 
     .textfield-age .textfield-graduation-grade {
       flex: 0 0 110px;
-    }
-
-    .textfield-experience {
-      flex: 0 0 172px;
     }
 
     .cv-button-form-row {
