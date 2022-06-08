@@ -1,0 +1,235 @@
+---
+import Layout from "../components/Layout.astro";
+import TeamPerson from "../components/team/TeamPerson.astro";
+
+import Button from "../components/Button.astro";
+import HeaderHexagonsDesktop from "../components/team/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../components/team/HeaderHexagonsMobile.astro";
+import ContactUs from "../components/team/ContactUs.astro";
+---
+
+<Layout color="light">
+  <div class="layout__content">
+    <HeaderHexagonsDesktop class="hex" />
+    <HeaderHexagonsMobile class="hex" />
+    <div>
+      <div class="giga-blob">
+        <img src="../img/giga-blob.svg" alt="" />
+      </div>
+      <div class="giga-blob-mobile">
+        <img src="../img/giga-blob-mobile.svg" alt="" />
+      </div>
+    </div>
+    <h1 class="title-1">Team</h1>
+    <div class="copy">
+      <p class="body-1">
+        Top Solution nasce dall’associazione di una grande <b>expertise</b> nel settore della <b>consulenza
+          informatica</b> e della
+        <b>gestione delle risorse umane</b>. Il team di informatici è affiancato da <b>psicologi del lavoro</b> per la
+        realizzazione
+        delle
+        <b>piattaforme HR</b>
+        e per la progettazione e la realizzazione di tutti i progetti rivolti alle
+        <b>risorse umane</b>.
+      </p>
+    </div>
+    <div class="people">
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Paolo Andruetto" companyrole="CEO">
+          <b>Paolo Andruetto</b> CEO
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Gabriele Destefanis" companyrole="CTO">
+          <b>Gabriele Destefanis</b> CTO
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Luca Osti" companyrole="Backend Developer">
+          <b>Luca Osti</b> Backend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Gabriele Spada" companyrole="Frontend Developer">
+          <b>Gabriele Spada</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Luca Barbetti" companyrole="Frontend Developer">
+          <b>Luca Barbetti</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Elisa Solinas" companyrole="Backend Developer">
+          <b>Elisa Solinas</b> Backend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Federico Valetti" companyrole="Analista Funzionale">
+          <b>Federico Valetti</b> Analista Funzionale
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Matteo Marsala" companyrole="Frontend Developer">
+          <b>Matteo Marsala</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Martina Bilancieri" companyrole="UX/UI Designer">
+          <b>Martina Bilancieri</b> UX/UI Designer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson src="question_mark.svg" name="Vuoi far parte del team?">
+          <Button class="contact-us-button" variant="primary" component="button" onclick="handleApplyClick()">
+            Candidati
+          </Button>
+        </TeamPerson>
+      </div>
+    </div>
+  </div>
+  <ContactUs open="false" class="contact-us-component" />
+</Layout>
+
+<!-- <script>
+  var contactUsEl = document.querySelectorAll("ts-contact-us")[0];
+
+  function handleApplyClick() {
+    contactUsEl.open = "true";
+
+    setTimeout(() => {
+      contactUsEl.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }, 200);
+  }
+
+  function handleContactUsSubmit() {
+    console.log("handleContactUsSubmit");
+    contactUsEl.open = "false";
+    setTimeout(() => {
+      document.querySelector("body").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 500);
+  }
+
+  contactUsEl.addEventListener("formsubmit", handleContactUsSubmit);
+</script> -->
+
+<style>
+  .page-team {
+    color: var(--color-blue);
+  }
+
+  .people {
+    margin: var(--spacing-15) 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .spacer {
+    flex: 0 1 16.6666%;
+    max-width: 16.6666%;
+  }
+
+  .contact-us-button {
+    margin-top: var(--spacing-2);
+  }
+
+
+  .team-person-container {
+    margin: var(--spacing-7) 0;
+    flex: 0 1 33.3333%;
+    max-width: 33.3333%;
+  }
+
+  .giga-blob {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    top: -430px;
+    right: 300px;
+    z-index: -1;
+  }
+
+  .giga-blob-mobile {
+    display: none;
+  }
+
+  .contact-us {
+    margin-bottom: var(--spacing-10);
+  }
+
+  .contact-us-component {
+    margin-top: 200px;
+    display: block;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 960px) {
+    .title-1 {
+      max-width: 60%;
+      text-align: left;
+    }
+
+    .giga-blob {
+      right: 600px;
+      top: -500px;
+    }
+
+    .people {
+      margin: var(--spacing-4) 0;
+    }
+
+    .copy {
+      max-width: 60%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .copy {
+      max-width: 80%;
+    }
+
+    .people {
+      margin: var(--spacing-3) 0;
+    }
+
+    .people .spacer {
+      display: none;
+    }
+
+    .giga-blob {
+      display: none;
+    }
+
+    .giga-blob-mobile {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      top: -130px;
+      left: -270px;
+      z-index: -1;
+    }
+
+    .team-person-container {
+      margin: var(--spacing-1) 2px;
+      flex: 0 1 calc(50% - 4px);
+      max-width: calc(50% - 4px);
+    }
+  }
+
+  .hex {
+    z-index: -1
+  }
+</style>

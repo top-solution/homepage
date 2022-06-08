@@ -346,41 +346,60 @@ switch (shape) {
 }
 animate();
 
-onload = function() {
-  switch (shape) {
-    case "hexagon":
-      points = createRegularPoints(6);
-      break;
-    case "octagon":
-      points = createRegularPoints(8);
-      break;
-    case "rectangle":
-      points = createPointsAlt();
-      break;
-    case "potato":
-      points = createPointsPotato();
-      break;
-    case "rectanglehr":
-      points = createPointsRectangle();
-      break;
-  }
-  animate();
+// onload = function () {
+//   switch (shape) {
+//     case "hexagon":
+//       points = createRegularPoints(6);
+//       break;
+//     case "octagon":
+//       points = createRegularPoints(8);
+//       break;
+//     case "rectangle":
+//       points = createPointsAlt();
+//       break;
+//     case "potato":
+//       points = createPointsPotato();
+//       break;
+//     case "rectanglehr":
+//       points = createPointsRectangle();
+//       break;
+//   }
+//   animate();
 
-  if (rotate || flip) {
-    transform = "transform:";
+//   if (rotate || flip) {
+//     transform = "transform:";
 
-    if (rotate) {
-      transform = `${transform} rotate(${rotate}deg)`;
-    }
-  }
+//     if (rotate) {
+//       transform = `${transform} rotate(${rotate}deg)`;
+//     }
+//   }
 
-  if (padding) {
-    paddingStyle = `padding: ${8 + Number(padding || 0)}px ${Number(
-      padding || 0
-    )}px;`;
-  }
-};
+//   if (padding) {
+//     paddingStyle = `padding: ${8 + Number(padding || 0)}px ${Number(
+//       padding || 0
+//     )}px;`;
+//   }
+// };
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
   function debouncedHandleMouseEnter () {
@@ -391,14 +410,15 @@ document.querySelector(".blob").addEventListener("onmouseleave", debouncedHandle
 console.log("fg")
   </script>
 
+<!--    onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
+  onmouseleave={() => interactive === true && debouncedHandleMouseLeave}-->
 <div
-  class={classnames("blob", {"clickable": clickable !== "false", })}
-  onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
-  onmouseleave={() => interactive === true && debouncedHandleMouseLeave}
+  class={classnames("blob", {"clickable": clickable })}
 >
   <div class="content" style={paddingStyle}>
     <slot />
   </div>
+
   <svg
     viewBox="0 0 210 210"
     preserveAspectRatio="none"
@@ -414,7 +434,7 @@ console.log("fg")
           width="210"
           height="210"
         >
-          <image href={src} width="210" height="210" />
+          <img href={src} width="210" height="210" />
         </pattern>
       </defs>
     )}
@@ -450,7 +470,6 @@ console.log("fg")
   .blob:hover path {
     filter: brightness(0.9) saturate(1.5);
   }
-
 
   .blob:after {
     content: "";

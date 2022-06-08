@@ -13,6 +13,7 @@
 
   --color-blob-development: #e9e8f2;
   --color-blue-hovering: #8d88ba;
+  --color-gray: #858585;
 
   /* Breakpoints */
   --breakpoint-mobile-max: 600px;
@@ -22,6 +23,7 @@
 
   /* Spacing */
   --spacing: 8px;
+  --spacing-0-5: calc(var(--spacing) / 2);
   --spacing-1: var(--spacing);
   --spacing-1-5: calc(var(--spacing) * 1.5);
   --spacing-2: calc(var(--spacing) * 2);
