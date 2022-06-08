@@ -1,0 +1,117 @@
+---
+import classnames from "classnames";
+const { title = "", title2 = "", azure = "", mobilealignleft = "" } = Astro.props;
+---
+
+<div
+  class={classnames("top-banner", {
+    azure: azure,
+    "mobile-align-left": mobilealignleft,
+  })}
+>
+  <div class="content">
+    <div class="external">
+      <slot name="external" />
+    </div>
+    <h1 class={classnames({ "title-1": !title2, "title-2": title2 })}>
+      {title}
+    </h1>
+    <div class="text">
+      <slot name="text" />
+    </div>
+    <div class="actions">
+      <slot name="actions" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .top-banner {
+    position: relative;
+    background-color: var(--color-blue-background);
+    color: var(--color-blue);
+    margin: 0 -100%;
+  }
+
+  .azure {
+    background-color: var(--color-azure-light);
+  }
+
+  .content {
+    box-sizing: border-box;
+    max-width: 960px;
+    margin: auto;
+    padding: var(--spacing-4) var(--spacing-8);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .title-1 {
+    margin: 0 0 var(--spacing-3) 0;
+  }
+
+  .text {
+    max-width: calc(600px + var(--spacing-2));
+    margin: 0 auto var(--spacing-3);
+  }
+
+  .actions {
+    margin: var(--spacing-5) auto var(--spacing-4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .external {
+    max-width: var(--breakpoint-tablet-max);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    .top-banner {
+      margin: 0;
+    }
+
+    h1 .title-1 {
+      margin-top: var(--spacing-9);
+      text-align: center;
+    }
+
+    h1 .title-2 {
+      margin-top: var(--spacing-4);
+      text-align: left;
+      max-width: 50%;
+    }
+
+    .content {
+      align-items: flex-start;
+      padding: var(--spacing-5) var(--spacing-4);
+    }
+
+    .text {
+      text-align: center;
+      max-width: 80%;
+      margin-left: 0;
+    }
+
+    .mobile-align-left .text,
+    .mobile-align-left h1 {
+      text-align: left;
+    }
+
+    .title-2 {
+      text-align: left;
+    }
+  }
+</style>

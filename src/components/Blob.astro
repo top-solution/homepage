@@ -1,8 +1,8 @@
 ---
 import classnames from "classnames";
-import { tick } from "svelte";
 import SimplexNoise from "simplex-noise";
-//import debounce from "lodash.debounce";
+// import { debounce } from "lodash";
+
 const {
   fill = "#E9E8F2",
   rotate = null,
@@ -312,6 +312,7 @@ function createPointsRectangle() {
 }
 
 function handleMouseEnter() {
+  alert("enter");
   mouseOver = true;
   noiseAccelStep = 0.003;
   animate();
@@ -320,6 +321,7 @@ function handleMouseEnter() {
 const debouncedHandleMouseEnter = handleMouseEnter; //debounce(handleMouseEnter); //FIXME
 
 function handleMouseLeave() {
+  alert("ooo");
   mouseOver = false;
   noiseAccelStep = -0.0001;
 }
@@ -344,83 +346,55 @@ switch (shape) {
 }
 animate();
 
-// onload = function() {
-//   switch (shape) {
-//     case "hexagon":
-//       points = createRegularPoints(6);
-//       break;
-//     case "octagon":
-//       points = createRegularPoints(8);
-//       break;
-//     case "rectangle":
-//       points = createPointsAlt();
-//       break;
-//     case "potato":
-//       points = createPointsPotato();
-//       break;
-//     case "rectanglehr":
-//       points = createPointsRectangle();
-//       break;
-//   }
-//   animate();
+onload = function() {
+  switch (shape) {
+    case "hexagon":
+      points = createRegularPoints(6);
+      break;
+    case "octagon":
+      points = createRegularPoints(8);
+      break;
+    case "rectangle":
+      points = createPointsAlt();
+      break;
+    case "potato":
+      points = createPointsPotato();
+      break;
+    case "rectanglehr":
+      points = createPointsRectangle();
+      break;
+  }
+  animate();
 
-//   if (rotate || flip) {
-//     transform = "transform:";
+  if (rotate || flip) {
+    transform = "transform:";
 
-//     if (rotate) {
-//       transform = `${transform} rotate(${rotate}deg)`;
-//     }
-//   }
+    if (rotate) {
+      transform = `${transform} rotate(${rotate}deg)`;
+    }
+  }
 
-//   if (padding) {
-//     paddingStyle = `padding: ${8 + Number(padding || 0)}px ${Number(
-//       padding || 0
-//     )}px;`;
-//   }
-// };
-
-// onMount(async () => {
-//   await tick();
-
-//   switch (shape) {
-//     case "hexagon":
-//       points = createRegularPoints(6);
-//       break;
-//     case "octagon":
-//       points = createRegularPoints(8);
-//       break;
-//     case "rectangle":
-//       points = createPointsAlt();
-//       break;
-//     case "potato":
-//       points = createPointsPotato();
-//       break;
-//     case "rectanglehr":
-//       points = createPointsRectangle();
-//       break;
-//   }
-//   animate();
-
-//   if (rotate || flip) {
-//     transform = "transform:";
-
-//     if (rotate) {
-//       transform = `${transform} rotate(${rotate}deg)`;
-//     }
-//   }
-
-//   if (padding) {
-//     paddingStyle = `padding: ${8 + Number(padding || 0)}px ${Number(
-//       padding || 0
-//     )}px;`;
-//   }
-// });
+  if (padding) {
+    paddingStyle = `padding: ${8 + Number(padding || 0)}px ${Number(
+      padding || 0
+    )}px;`;
+  }
+};
 ---
+
+  <script>
+  function debouncedHandleMouseEnter () {
+    alert("enter");
+  }
+document.querySelector(".blob").addEventListener("onmouseenter", debouncedHandleMouseEnter);
+document.querySelector(".blob").addEventListener("onmouseleave", debouncedHandleMouseLeave);
+console.log("fg")
+  </script>
 
 <div
   class={classnames("blob", {"clickable": clickable !== "false", })}
-  onmouseenter={() => interactive === "true" && debouncedHandleMouseEnter}
-  onmouseleave={() => interactive === "true" && debouncedHandleMouseLeave}
+  onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
+  onmouseleave={() => interactive === true && debouncedHandleMouseLeave}
 >
   <div class="content" style={paddingStyle}>
     <slot />

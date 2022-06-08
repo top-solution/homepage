@@ -2,7 +2,9 @@
 import classnames from "classnames";
 
 const { variant = "primary", component = null, small = false, href, type, icon } = Astro.props;
+
 ---
+
 {(component === "button") ? (
   <button
     class={classnames({'primary': variant === "primary", 'secondary': variant === "secondary", 'outlined': variant === "outlined", 'icon': icon, 'small': small})}
@@ -100,7 +102,8 @@ const { variant = "primary", component = null, small = false, href, type, icon }
     width: 0;
     margin-left: 0;
     opacity: 0;
-    transition: width var(--transition-timing-quick) var(--transition-function-default),
+    transition:
+      width var(--transition-timing-quick) var(--transition-function-default),
       opacity var(--transition-timing-quick) var(--transition-function-default),
       margin-left var(--transition-timing-quick) var(--transition-function-default);
     fill: var(--color-blue);
@@ -112,8 +115,7 @@ const { variant = "primary", component = null, small = false, href, type, icon }
     }
   }
 
-  .outlined:hover,
-  svg {
+  .outlined:hover svg {
     width: 16px;
     opacity: 1;
     margin-left: 12px;
