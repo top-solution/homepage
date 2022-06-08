@@ -1,0 +1,188 @@
+:root {
+  --font-roboto: "Manrope", sans-serif;
+}
+
+/**
+############################################
+  Basic Typography (as specified in Figma)
+############################################
+*/
+
+* {
+  font-family: var(--font-roboto);
+}
+
+a,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-blue);
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  a,
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 140%;
+  }
+}
+
+@media (min-width: 961px) {
+  a,
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 150%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+h4 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.body-1 {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.body-1 b {
+  font-weight: 500;
+}
+
+.body-2 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.body-2 em {
+  font-weight: 400;
+}
+
+.body-2 b {
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  h6 {
+    font-size: 20px;
+  }
+
+  .claim {
+    font-size: 25px;
+  }
+
+  .body-1 {
+    font-size: 20px;
+  }
+
+  .body-2 {
+    font-size: 18px;
+  }
+}
+
+h3 .title-form {
+  font-weight: 300;
+  margin-bottom: var(--spacing-6);
+}
+
+h3 .title-form b {
+  font-weight: 500;
+}
+
+.claim {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 38px;
+}
+
+.claim b {
+  font-weight: 500;
+}
+
+/**
+############################################
+  Typography utilities (less work for us)
+############################################
+*/
+
+/* Titles of many pages */
+h1 {
+  text-align: center;
+  margin-top: var(--spacing-10);
+  margin-bottom: var(--spacing-10);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    margin-bottom: var(--spacing-5);
+  }
+}

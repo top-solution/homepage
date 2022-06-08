@@ -1,0 +1,112 @@
+---
+import Blob from '../Blob.astro';
+const { src, name, companyrole, personSrc } = Astro.props;
+
+let p = src ? src : `${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
+---
+
+<div class="team-person" itemscope itemtype="https://schema.org/Person">
+  <!-- <Blob interactive={false} shape="hexagon" src={src ? src : `../img/team/${`${name}`.toLowerCase().replace(/\s/g, "-"
+    )}.jpg`}>
+    <!-- <div class="team-person__image-sizer" />
+  </Blob> -->
+  <div class="animated-blob" style={`background: url('../../../img/team/${p}') no-repeat; background-size: contain;`} />
+  <h6 class="name">{name}</h6>
+
+  {companyrole && (
+  <h6 class="role" itemprop="jobTitle">
+    <b>{companyrole}</b>
+  </h6>
+  )}
+  {!companyrole && (
+  <slot />
+  )}
+</div>
+
+<style>
+  .team-person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 var(--spacing-1);
+  }
+
+  h6 {
+    text-align: center;
+  }
+
+  h6 .name {
+    margin-top: var(--spacing-3);
+  }
+
+  h6 .role {
+    font-weight: 500;
+  }
+
+  /* ts-blob {
+    width: 100%;
+  } */
+
+  @media only screen and (max-width: 600px) {
+    .team-person {
+      margin: 0 var(--spacing-1);
+    }
+
+    h6 {
+      font-size: 15px;
+    }
+  }
+
+  .animated-blob {
+    width: 380px;
+    height: 380px;
+    /* margin: 0 auto; */
+    /* background: url('../../../img/team/matteo-marsala.jpg') no-repeat;
+     background-size: contain;
+    */
+  }
+
+  .animated-blob {
+    animation: move 20s ease-in-out infinite;
+  }
+
+  /* @keyframes move {
+    0% {
+      clip-path: ellipse(45% 50% at 50% 50%);
+    }
+
+    15% {
+      clip-path: ellipse(47% 43% at 50% 56%);
+    }
+
+    30% {
+      clip-path: ellipse(35% 42% at 55% 50%);
+    }
+
+    45% {
+      clip-path: ellipse(40% 30% at 50% 45%);
+    }
+
+    60% {
+      clip-path: ellipse(37% 30% at 45% 50%);
+    }
+
+    75% {
+      clip-path: ellipse(40% 30% at 50% 35%);
+    }
+
+    100% {
+      clip-path: ellipse(45% 50% at 50% 50%);
+    }
+  } */
+
+  @keyframes move {
+    0% {
+      clip-path: ellipse(41% 44% at 45% 52%);
+    }
+
+    100% {
+      clip-path: ellipse(41% 44% at 45% 52%);
+    }
+  }
+</style>

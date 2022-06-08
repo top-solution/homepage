@@ -1,0 +1,49 @@
+---
+import classnames from "classnames";
+const { message = ""} = Astro.props;
+  let visible = false;
+
+  const show = function show() {
+    visible = true;
+
+    if (visible) {
+      setTimeout(() => {
+        visible = false;
+      }, 6000);
+    }
+  };
+---
+
+<div class={classnames("ts-toast", {"visible": visible })}>{message}</div>
+
+<style>
+  .ts-toast {
+    width: 600px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-height: 48px;
+    background: #2e7d32;
+    border-radius: 4px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    padding: 6px 16px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    box-sizing: border-box;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    opacity: 0;
+    pointer-events: none;
+    max-width: calc(100vw - 16px);
+    display: flex;
+    align-items: center;
+  }
+
+  .visible {
+    opacity: 1;
+    transform: translate(-50%, -32px);
+  }
+</style>

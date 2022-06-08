@@ -1,0 +1,241 @@
+---
+import classnames from "classnames";
+const { label = "", value = "", error = null, type = "text", name = "", textarea = false, rows = "3" } = Astro.props;
+let focused;
+
+
+---
+
+<!-- <div class={classnames("ts-textfield", {"focused": focused, "shrink" : focused || value && value.length> 0, "error":
+  error && error.length > 0})}>
+  <label for="outlined-basic">{label}</label>
+  <div class="input">
+
+    { textarea ? (<textarea aria-invalid="false" id="outlined-basic" value={value || "" } {name} {rows} onfocus={()=> (focused = true)} onblur={() => (focused = false)}/>) :
+      (<input aria-invalid="false" id="outlined-basic" {type} {name} value={value || "" } />)}
+
+    <fieldset aria-hidden="true">
+      <legend class="css-173wfxe"><span>{label}</span></legend>
+    </fieldset>
+  </div>
+</div> -->
+<div class="input-contain">
+  <input {type} id={name} {name} {rows} autocomplete="off" value="" aria-labelledby={`placeholder-${name}`}>
+  <label class="placeholder-text" for={name} id={`placeholder-${name}`}>
+    <div class="text">{label}</div>
+  </label>
+</div>
+
+
+<script type="module">
+  let input_element = document.querySelector("input");
+  input_element.addEventListener("keyup", () => {
+    console.log(input_element.value)
+    input_element.setAttribute("value", input_element.value);
+  })
+</script>
+
+<style>
+  .ts-textfield {
+    width: 25ch;
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: top;
+    width: 100%;
+  }
+
+  .ts-textfield label {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4375em;
+    letter-spacing: 0.00938em;
+    padding: 0px;
+    display: block;
+    transform-origin: left top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 24px);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: translate(14px, 16px) scale(1);
+    transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+      transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+      max-width 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    z-index: 1;
+    pointer-events: none;
+    box-sizing: border-box;
+    transform-origin: left center;
+  }
+
+  .shrink label {
+    transform: translate(14px, -10px) scale(0.75);
+    max-width: 100%;
+    background: #fff;
+    padding: 0 4px;
+  }
+
+  .shrink label fieldset legend {
+    visibility: visible;
+  }
+
+  .focused label {
+    color: variables.$ts-blue-color;
+    transform: translate(14px, -10px) scale(0.75);
+  }
+
+  .focused fieldset {
+    border-color: variables.$ts-blue-color;
+    border-width: 2px;
+  }
+
+  .error label {
+    color: variables.$ts-error;
+  }
+
+  .error fieldset {
+    border-color: variables.$ts-error;
+    border-width: 2px;
+  }
+
+  .input input,
+  textarea {
+    box-sizing: content-box;
+    color: black;
+    border-color: currentcolor;
+    font: inherit;
+    letter-spacing: inherit;
+    border: 0px none;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+    margin: 0px;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    padding: 16.5px 14px;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .fieldset {
+    text-align: left;
+    position: absolute;
+    inset: -5px 0px 0px;
+    margin: 0px;
+    padding: 0px 8px;
+    pointer-events: none;
+    border-radius: inherit;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    min-width: 0%;
+    border-color: rgba(0, 0, 0, 0.38);
+    border-radius: 4px;
+  }
+
+  .fieldset legend {
+    float: unset;
+    display: block;
+    width: auto;
+    padding: 0px;
+    height: 11px;
+    font-size: 0.75em;
+    visibility: hidden;
+    max-width: 0.01px;
+    transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    white-space: nowrap;
+    background-color: #fff;
+  }
+
+  .fieldset legend span {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+    visibility: hidden;
+  }
+
+  .shrink legend span {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+  }
+
+
+  /* New input */
+  .input-contain {
+    position: relative;
+    margin: var(--spacing-1);
+  }
+
+  input {
+    height: 50px;
+    width: 100%;
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: var(--color-blue);
+    border: 2px solid var(--color-blue);
+  }
+
+  input:focus+.placeholder-text .text,
+  :not(input[value=""])+.placeholder-text .text {
+    background-color: white;
+    font-size: 0.8rem;
+    color: var(--color-blue);
+    transform: translate(5%, -160%);
+    padding: 0px 4px 0px 4px !important;
+  }
+
+  input:focus+.placeholder-text .text {
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+  }
+
+  input:focus+.placeholder-text .text input {
+    border: 2px solid var(--color-blue);
+  }
+
+  .placeholder-text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 3px solid transparent;
+    background-color: transparent;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .text {
+    font-size: 16px;
+    background-color: transparent;
+    transform: translate(0);
+    color: var(--color-gray);
+    transition: transform 0.15s ease-out, font-size 0.15s ease-out, background-color 0.2s ease-out, color 0.15s ease-out;
+  }
+
+  input,
+  .placeholder-text {
+    font-size: 16px;
+    padding-left: 8px;
+  }
+
+  @media (max-width: 40rem) {
+    input {
+      width: 70vw;
+    }
+  }
+</style>

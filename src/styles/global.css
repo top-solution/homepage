@@ -1,0 +1,181 @@
+:root {
+  /* css variables */
+  --color-blue: #312783;
+  --color-blue-light: #4857a3;
+  --color-blue-dark: #221b5c;
+  --color-blue-footer: #1e1e65;
+  --color-blue-background: #ebeaf3;
+  --color-azure: #75bae5;
+  --color-azure-light: #e3f1fa;
+  --color-white: #fff;
+  --color-error: #d32f2f;
+  --color-error-text: #b00020;
+
+  --color-blob-development: #e9e8f2;
+  --color-blue-hovering: #8d88ba;
+  --color-gray: #858585;
+
+  /* Breakpoints */
+  --breakpoint-mobile-max: 600px;
+  --breakpoint-tablet-min: var(--breakpoint-mobile-max) + 1px;
+  --breakpoint-tablet-max: 960px;
+  --breakpoint-mobile-min: var(--breakpoint-tablet-max) + 1px;
+
+  /* Spacing */
+  --spacing: 8px;
+  --spacing-0-5: calc(var(--spacing) / 2);
+  --spacing-1: var(--spacing);
+  --spacing-1-5: calc(var(--spacing) * 1.5);
+  --spacing-2: calc(var(--spacing) * 2);
+  --spacing-3: calc(var(--spacing) * 3);
+  --spacing-4: calc(var(--spacing) * 4);
+  --spacing-5: calc(var(--spacing) * 5);
+  --spacing-6: calc(var(--spacing) * 6);
+  --spacing-7: calc(var(--spacing) * 7);
+  --spacing-8: calc(var(--spacing) * 8);
+  --spacing-9: calc(var(--spacing) * 9);
+  --spacing-10: calc(var(--spacing) * 10);
+  --spacing-15: calc(var(--spacing) * 15);
+  --spacing-20: calc(var(--spacing) * 20);
+  --spacing-25: calc(var(--spacing) * 25);
+
+  /* Transitions */
+  --transition-timing-quick: 200ms;
+  --transition-timing-default: 400ms;
+  --transition-timing-slow: 2000ms;
+  --transition-function-default: ease-in-out;
+
+  /* Font-size */
+  --font-size--2: clamp(1.12rem, calc(0.35rem + 1.28vw), 0.65rem);
+  --font-size--1: clamp(1.4rem, calc(0.38rem + 1.69vw), 0.78rem);
+  --font-size-0: clamp(0.94rem, calc(0.42rem + 2.22vw), 1.75rem);
+  --font-size-1: clamp(1.13rem, calc(0.44rem + 2.91vw), 2.19rem);
+  --font-size-2: clamp(1.35rem, calc(0.46rem + 3.79vw), 2.73rem);
+  --font-size-3: clamp(1.62rem, calc(0.47rem + 4.92vw), 3.42rem);
+  --font-size-4: clamp(1.94rem, calc(0.45rem + 6.37vw), 4.27rem);
+  --font-size-5: clamp(2.33rem, calc(0.4rem + 8.23vw), 5.34rem);
+
+  /* Spacing */
+  --space-3xs: clamp(0.25rem, calc(0.13rem + 0.51vw), 0.44rem);
+  --space-2xs: clamp(0.5rem, calc(0.26rem + 1.03vw), 0.88rem);
+  --space-xs: clamp(0.69rem, calc(0.29rem + 1.71vw), 1.31rem);
+  --space-s: clamp(0.94rem, calc(0.42rem + 2.22vw), 1.75rem);
+  --space-m: clamp(1.44rem, calc(0.68rem + 3.25vw), 2.63rem);
+  --space-l: clamp(1.88rem, calc(0.83rem + 4.44vw), 3.5rem);
+  --space-xl: clamp(2.81rem, calc(1.25rem + 6.67vw), 5.25rem);
+  --space-2xl: clamp(3.75rem, calc(1.67rem + 8.89vw), 7rem);
+  --space-3xl: clamp(5.63rem, calc(2.5rem + 13.33vw), 10.5rem);
+}
+
+.wrapper {
+  margin-inline: auto;
+  max-width: 960px;
+  /* width: 100%;
+  min-width: 100%; */
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    min-width: auto;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  overflow-y: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.layout {
+  max-width: var(--breakpoint-tablet-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-3);
+  position: relative;
+}
+
+/* .layout .content {
+  min-height: calc(100vh - 621px);
+} */
+
+.centred-button {
+  display: flex;
+  justify-content: center;
+}
+
+/* manrope-300 - latin */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/manrope-v8-latin-300.eot"); /*url("./fonts/manrope-v8-latin-300.eot"); */ /* IE9 Compat Modes */
+  src: local(""), url("/fonts/manrope-v8-latin-300.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/manrope-v8-latin-300.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/manrope-v8-latin-300.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/manrope-v8-latin-300.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/manrope-v8-latin-300.svg#Manrope") format("svg"); /* Legacy iOS */
+  font-display: swap;
+}
+
+/* manrope-regular - latin */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/manrope-v8-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("/fonts/manrope-v8-latin-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/manrope-v8-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/manrope-v8-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/manrope-v8-latin-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/manrope-v8-latin-regular.svg#Manrope") format("svg"); /* Legacy iOS */
+  font-display: swap;
+}
+
+/* manrope-500 - latin */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/manrope-v8-latin-500.eot"); /* IE9 Compat Modes */
+  src: local(""), url("/fonts/manrope-v8-latin-500.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/manrope-v8-latin-500.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/manrope-v8-latin-500.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/manrope-v8-latin-500.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/manrope-v8-latin-500.svg#Manrope") format("svg"); /* Legacy iOS */
+  font-display: swap;
+}
+
+/* manrope-700 - latin */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/manrope-v8-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""), url("/fonts/manrope-v8-latin-700.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/manrope-v8-latin-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/manrope-v8-latin-700.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/manrope-v8-latin-700.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/manrope-v8-latin-700.svg#Manrope") format("svg"); /* Legacy iOS */
+  font-display: swap;
+}
+
+/* manrope-800 - latin */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/manrope-v8-latin-800.eot"); /* IE9 Compat Modes */
+  src: local(""), url("/fonts/manrope-v8-latin-800.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/manrope-v8-latin-800.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/manrope-v8-latin-800.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/manrope-v8-latin-800.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/manrope-v8-latin-800.svg#Manrope") format("svg"); /* Legacy iOS */
+  font-display: swap;
+}

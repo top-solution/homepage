@@ -1,0 +1,299 @@
+---
+import Layout from "../components/Layout.astro";
+import Button from "../components/Button.astro";
+import TripleBlob from "../components/TripleBlob.astro";
+import Customers from "../components/Customers.astro";
+import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
+---
+
+<Layout color="dark">
+  <article class="layout">
+    <div class="layout content">
+      <div class="header-blob">
+        <img src="img/homepage/blob-header-homepage.svg" alt="" />
+      </div>
+      <div class="header-blob-mobile">
+        <img src="img/homepage/blob-header-homepage.svg" alt="" />
+      </div>
+      <div class="header-hex">
+        <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
+      </div>
+      <div class="header-hex-mobile">
+        <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
+      </div>
+      <div class="header-hex-logo">
+        <img src="img/homepage/hex-logo-header.svg" alt="" />
+      </div>
+      <div class="header-hex-logo-mobile">
+        <img src="img/homepage/hex-logo-header.svg" alt="" />
+      </div>
+      <div class="hex-mobile-1">
+        <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
+      </div>
+      <div class="hex-mobile-2">
+        <img src="img/homepage/homepage-mobile-hex-2.svg" alt="" />
+      </div>
+      <div class="hex-mobile-3">
+        <img src="img/homepage/homepage-mobile-hex-3.svg" alt="" />
+      </div>
+      <div class="hex-mobile-4">
+        <img src="img/homepage/homepage-mobile-hex-4.svg" alt="" />
+      </div>
+      <div class="hex-mobile-5">
+        <img src="img/homepage/homepage-mobile-hex-5.svg" alt="" />
+      </div>
+      <div class="hex-mobile-6">
+        <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
+      </div>
+    </div>
+    <section>
+      <div class="banner">
+        <span>Entra in <strong>contatto</strong> con noi</span>
+        <p>
+          Scopri le opportunità per il tuo <strong>business</strong> offerte dalle nostre <strong>soluzioni</strong>
+        </p>
+        <div class="button">
+          <Button variant="primary" href="/contacts.html" aria-label="Contattaci">Contattaci</Button>
+        </div>
+      </div>
+    </section>
+    <TripleBlob id="triple-blob-ht-development" title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development.html"
+      blobs={developmentHumanResourceBlobs} />
+    <div class="middle-blob">
+      <img src="img/homepage/blob-middle-homepage.svg" alt="" />
+    </div>
+    <div class="middle-hex">
+      <img src="img/homepage/group-hex-middle-desktop.svg" alt="" />
+    </div>
+    <div class="middle-hex-mobile">
+      <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
+    </div>
+    <div class="middle-hex-tablet">
+      <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
+    </div>
+    <div id="customers" />
+    <Customers />
+  </article>
+</Layout>
+
+<style>
+  article {
+    color: var(--color-blue);
+  }
+
+  article .middle-hex-tablet,
+  article .middle-hex-mobile,
+  article .header-hex-mobile,
+  article .header-hex-logo-mobile,
+  article .header-blob-mobile {
+    display: none;
+  }
+
+  article .hex-mobile-1,
+  article .hex-mobile-2,
+  article .hex-mobile-3,
+  article .hex-mobile-4,
+  article .hex-mobile-5,
+  article .hex-mobile-6 {
+    display: none;
+  }
+
+  article .header-blob {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    top: -400px;
+    left: -900px;
+    z-index: -1;
+  }
+
+  article .header-hex {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    top: -630px;
+    left: -1040px;
+    z-index: -1;
+  }
+
+  article .header-hex-logo {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    top: -480px;
+    left: -320px;
+    z-index: -1;
+  }
+
+  article .middle-blob {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    right: -1125px;
+    /* top: 1525px; // FIXME: ripristinare con la sezione sviluppo software */
+    top: 925px;
+    z-index: -1;
+  }
+
+  article .middle-hex {
+    display: block;
+    position: absolute;
+    width: 1400px;
+    overflow: visible;
+    right: -1125px;
+    /* top: 1225px; FIXME: ripristinare con la sezione sviluppo software */
+    top: 625px;
+    z-index: -1;
+  }
+
+  section {
+    margin-top: var(--spacing-9);
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--spacing-25);
+    font-size: 48px;
+    line-height: 67px;
+    color: var(--color-blue);
+  }
+
+  section .banner {
+    flex: 0 0 65%;
+  }
+
+  section p {
+    margin-bottom: 80px;
+  }
+
+  section .button {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media only screen and (max-width: 960px) {
+    article .header-hex-logo {
+      left: -415px;
+    }
+
+    article .header-hex {
+      left: -1370px;
+    }
+
+    article .middle-hex-tablet {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1155px;
+      top: 1125px;
+      z-index: -1;
+    }
+
+    article .middle-blob,
+    article .middle-hex {
+      display: none;
+    }
+
+    section {
+      margin-bottom: var(--spacing-10);
+    }
+  }
+
+  @media only screen and (min-width: 961px) and (max-width: 700px) {
+    article .header-hex-logo {
+      left: -390px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    article .header-blob {
+      transform: scaleX(-1);
+      left: -50px;
+      top: -350px;
+    }
+
+    article .middle-hex-mobile {
+      display: block;
+      position: absolute;
+      width: 1400px;
+      overflow: visible;
+      right: -1190px;
+      /* top: 1450px; FIXME: ripristinare con la sezione sviluppo software */
+      top: 860px;
+      z-index: -1;
+    }
+
+    article .middle-hex-tablet {
+      display: none;
+    }
+
+    article .header-hex,
+    article .header-hex-logo,
+    article .middle-blob,
+    article .middle-hex,
+    article .middle-hex-tablet {
+      display: none;
+    }
+
+    article .hex-mobile-1 {
+      display: unset;
+      position: absolute;
+      top: -100px;
+      left: 300px;
+    }
+
+    article .hex-mobile-2 {
+      display: unset;
+      position: absolute;
+      top: -70px;
+      left: 380px;
+    }
+
+    article .hex-mobile-3 {
+      display: unset;
+      position: absolute;
+      top: 170px;
+      left: 450px;
+    }
+
+    article .hex-mobile-4 {
+      display: unset;
+      position: absolute;
+      top: 170px;
+      left: 340px;
+    }
+
+    article .hex-mobile-5 {
+      display: unset;
+      position: absolute;
+      top: 230px;
+      left: 25px;
+    }
+
+    article .hex-mobile-6 {
+      display: unset;
+      position: absolute;
+      top: 300px;
+      left: 300px;
+    }
+
+    section {
+      margin-top: var(--spacing-15);
+      display: flex;
+      margin-bottom: 24px;
+      font-size: 25px;
+      color: var(--color-blue);
+      justify-content: center;
+      width: 100%;
+      line-height: 37px;
+    }
+
+    section .banner {
+      flex: 0 0 80%;
+      text-align: center;
+    }
+  }
+</style>
