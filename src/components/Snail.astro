@@ -1,0 +1,121 @@
+---
+import classnames from "classnames";
+const { flip = "false", color = "#8D88BA", paddingtop = "false" } = Astro.props;
+---
+
+<div class={classnames("snail", {flip: flip, paddingTop: paddingtop})}>
+  <div class={classnames("layout-shift", {flip: flip})}>
+    <svg class={classnames("snail-snail", {snail: flip})} fill="none" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 200 96">
+      <path fill="url(#snail__filter-a)" fill-rule="evenodd"
+        d="M.767 42.496c1.39-6.522 5.283-12.948 34.537-11.94 31.563 1.088 13.246-59.94 48.523-12.429 18.857 25.397 94.523 30.904 107.803 41.057 8.713 6.66 13.367 24.002 0 26.223-13.658 2.27-47.534-4.871-62.516 4.603C98.31 109.49 57.871 76.045 27.657 66.417-3.463 56.499-.635 49.065.767 42.497Z"
+        clip-rule="evenodd" />
+      <defs>
+        <linearGradient id="snail__filter-a" x1="190" x2="100" y1="80" y2="160"
+          gradientTransform="matrix(-1 0 0 1 200 0)" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#EBEAF3" />
+          <stop offset="1" stop-color="#EBEAF3" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <svg class="hexagon" class:snail--flip__hexagon={flip==="true" } xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1427 1148">
+      <g filter="url(#snail__snail-filter-b)" transform="translate(-448.54 -19.607)">
+        <path
+          d="m1529.46 275.276-148.75-73.263-149.02-72.683-137.82 92.182-137.458 92.719 10.923 165.445 11.567 165.401 148.738 73.263 149.03 72.683 137.82-92.181 137.46-92.719-10.93-165.445z"
+          fill={color} />
+      </g>
+      <defs>
+        <filter id="snail-snail-filter-b" x="876.412" y="129.33" width="755.533" height="821.693"
+          filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+          <feOffset dy="80" />
+          <feGaussianBlur stdDeviation="40" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix values="0 0 0 0 0.192157 0 0 0 0 0.152941 0 0 0 0 0.513726 0 0 0 0.25 0" />
+          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_1579_39065" />
+          <feBlend in="SourceGraphic" in2="effect1_dropShadow_1579_39065" result="shape" />
+        </filter>
+      </defs>
+    </svg>
+  </div>
+</div>
+
+<style>
+  .snail {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    z-index: -1;
+  }
+
+  .padding-top .snail__layout-shift {
+    padding-top: 40px;
+  }
+
+  .layout-shift {
+    position: absolute;
+    width: 1210px;
+    left: -470px;
+    top: -300px;
+    height: 580px;
+  }
+
+  .snail {
+    position: absolute;
+    z-index: -2;
+    width: 1210px;
+    left: 0;
+    bottom: 0px;
+  }
+
+  .hexagon {
+    position: absolute;
+    z-index: 1;
+    height: 800px;
+    left: -310px;
+    bottom: 0px;
+  }
+
+  .flip .layout-shift {
+    right: -470px;
+    left: unset;
+  }
+
+  .flip .snail {
+    transform: scaleX(-1);
+  }
+
+  .flip .hexagon {
+    left: 400px;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 960px) {
+    .layout-shift {
+      transform: scale(0.75);
+      transform-origin: center;
+      left: -500px;
+      top: -250px;
+    }
+
+    .flip .layout-shift {
+      right: -500px;
+      left: unset;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .layout-shift {
+      transform: scale(0.5);
+      transform-origin: center;
+      left: -540px;
+      top: -250px;
+    }
+
+    .flip .layout-shift {
+      right: -540px;
+      left: unset;
+    }
+  }
+</style>

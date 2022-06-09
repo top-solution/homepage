@@ -1,0 +1,416 @@
+---
+import Layout from "../components/Layout.astro";
+import TopBanner from "../components/TopBanner.astro";
+import Button from "../components/Button.astro";
+import Picture from "../components/Picture.astro";
+import Hex from "../components/Hex.astro";
+import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
+import CardHexGroup from "../components/self-development/CardHexGroup.astro";
+---
+
+<Layout color="light">
+  <TopBanner title="Sviluppo Individuale" mobilealignleft="true" title2="{true}">
+    <div class="claim" slot="text">
+      Il <b>sapere</b> delle persone rappresenta il bene immateriale
+      <b>più importante</b> delle organizzazioni.
+    </div>
+    <div slot="actions" style="
+      display: flex;
+      flex-direction: column;
+      max-width: 175px;
+      margin: auto;
+    ">
+      <Button variant="primary" href="/contacts/">Contattaci</Button>
+    </div>
+    <div slot="external">
+      <HeaderHexagonsDesktop />
+      <HeaderHexagonsMobile />
+      <Hex width="56" fill="#9893c1" shadow="true" />
+      <div class="floating-hex-3">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
+      <div class="floating-hex-4">
+        <Hex width="86" fill="#312783" shadow="true" />
+      </div>
+      <div class="floating-hex-5">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
+    </div>
+  </TopBanner>
+  <div>
+    <div class="copy">
+      <p class="body-2">
+        Far crescere con continuità le <b>competenze</b> delle persone è, oltre
+        a un dovere, una <b>necessità</b> legata alla <b>continuità</b> del
+        <b>business</b>
+        e dell’organizzazione. Le <b>persone</b> sono quindi il fulcro di tutte
+        le
+        <b>organizzazioni</b>
+        e le <b>competenze</b> sono l’<b>asset strategico</b> sul quale
+        costruire l’identità aziendale.
+      </p>
+    </div>
+    <div class="services">
+      <h3 class="title-3 title-form choose-services">
+        I nostri <b>SERVIZI</b>
+      </h3>
+      <div class="card-container">
+        <div class="service-card">
+          <h4 itemprop="name">
+            Formazione su misura
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali
+            delle persone è l’elemento centrale per la continuità e/o la crescita
+            del business. Il Training che offriamo è di tipo <b>esperienziale</b>.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Formazione su misura
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali
+            delle persone è l’elemento centrale per la continuità e/o la crescita
+            del business. Il Training che offriamo è di tipo <b>esperienziale</b>.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Formazione su misura
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali
+            delle persone è l’elemento centrale per la continuità e/o la crescita
+            del business. Il Training che offriamo è di tipo <b>esperienziale</b>.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="card-hex-group">
+          <CardHexGroup />
+        </div>
+      </div>
+      <div class="floating-hex-2">
+        <Hex width="44" fill="#312783" opacity=".7" shadow="false" rotation="-4" />
+      </div>
+      <h3 class="title-3 title-form customers">
+        Chi ci ha scelto
+      </h3>
+      <Picture base="customers" src="sky" alt="Sky" />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .floating-hex {
+    display: block;
+    color: var(--color-blue);
+    box-sizing: border-box;
+  }
+
+  .floating-hex-1 {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+  }
+
+  .floating-hex-2 {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .floating-hex-3 {
+    position: absolute;
+    left: 20%;
+    top: 450px;
+  }
+
+  .floating-hex-4 {
+    position: absolute;
+    left: 60%;
+    top: 490px;
+  }
+
+  .floating-hex-5 {
+    position: absolute;
+    left: 65%;
+    top: 800px;
+  }
+
+  .card-hex-group {
+    position: absolute;
+    left: 50%;
+    top: 490px;
+  }
+
+  .copy p {
+    text-align: center;
+    margin: var(--spacing-15) 0 var(--spacing-6);
+
+  }
+
+  .services {
+    margin: var(--spacing-15) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 var(--spacing-10);
+  }
+
+  .service-card {
+    flex: 0 0 45%;
+    border: 1px solid var(--color-blue);
+    border-radius: 4px;
+    padding: 16px;
+    margin: var(--spacing-1);
+    max-width: 350px;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .body-3 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: var(--spacing-10);
+  }
+
+  .card-button {
+    margin-left: auto;
+    max-width: 140px;
+  }
+
+  .blob {
+    width: 1000px;
+    position: absolute;
+    top: 120%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  h2 {
+    text-transform: none;
+    text-align: center;
+    margin-bottom: var(--spacing-6);
+  }
+
+  .list a {
+    font-weight: 400;
+  }
+
+  .list a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-us-button {
+    display: inline-block;
+    margin-top: var(--spacing-4);
+  }
+
+
+  .customers {
+    margin-top: var(--spacing-15);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .choose-services {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .services-list,
+  .service-subservices ol {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    line-height: 28px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .services-list li,
+  .service-subservices li {
+    margin-bottom: var(--spacing-3);
+  }
+
+  .services-list li::before,
+  .service-subservices li::before {
+    content: "";
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    background-image: url("img/icons/hexagon-list-item.svg");
+    background-size: cover;
+    margin: 0 var(--spacing-4) -4px auto;
+    padding: 0;
+  }
+
+  .service {
+    position: relative;
+    margin-top: 280px;
+  }
+
+  .service .p {
+    width: 100%;
+    max-width: 580px;
+  }
+
+  .service h4 {
+    margin-bottom: var(--spacing-3);
+    line-height: 33px;
+  }
+
+  #page-self-development .sentieri-di-carriera {
+    text-align: right;
+  }
+
+  #page-self-development .sentieri-di-carriera p {
+    margin-left: auto;
+  }
+
+  .service-subservices {
+    margin: var(--spacing-4) 0;
+    position: relative;
+  }
+
+  .service-subservices li {
+    font-weight: 500;
+    margin-bottom: var(--spacing-4)
+  }
+
+  #page-self-development {}
+
+  #page-self-development .free-trial {
+    position: absolute;
+    right: 0;
+  }
+
+  #page-self-development .stress_lavoro_correlato p {
+    text-align: right;
+    margin-left: auto;
+
+  }
+
+  #page-self-development .coaching {
+    margin-bottom: 200px;
+  }
+
+  .our-plans {
+    margin-top: 300px;
+    text-align: center;
+  }
+
+  .our-plans .body-2 {
+    margin-bottom: var(--spacing-6);
+  }
+
+  @media only screen and (max-width: 960px) {
+
+    .services-list,
+    .service-subservices ol {
+      font-size: 18px;
+      width: 250px;
+    }
+
+    .services-list li::before,
+    .service-subservices li::before {
+      height: 24px;
+      width: 24px;
+      margin-right: var(--spacing-2);
+    }
+
+    .service {
+      margin-top: var(--spacing-10);
+    }
+
+    .service h4 {
+      margin-bottom: var(--spacing-3);
+      font-style: normal;
+      line-height: 24px;
+    }
+
+    .service p {
+      box-sizing: border-box;
+      padding-right: 60px;
+    }
+
+    .service-subservices ol {
+      margin: var(--spacing-7) auto;
+    }
+
+    .services-blob {
+      top: 105%;
+    }
+
+    #page-self-development .sentieri-di-carriera .stress_lavoro_correlato p {
+      padding-left: 60px;
+      padding-right: 0;
+    }
+
+
+    #page-self-development .free-trial {
+      position: static;
+      display: flex;
+    }
+
+    #page-self-development .free-trial button {
+      margin: auto;
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+
+    .service-card {
+      flex: 0 0 100%;
+    }
+
+    .services-blob {
+      top: 130%;
+    }
+
+    .floating-hex-3 {
+      position: absolute;
+      left: 0%;
+      top: 490px;
+    }
+
+    .card-hex-group,
+    .floating-hex-5 {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .card-hex-group {
+      top: 700px;
+    }
+  }
+</style>
