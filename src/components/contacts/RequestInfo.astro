@@ -1,0 +1,295 @@
+---
+import HoneypotField from "../../components/HoneypotField.astro";
+import FormTitleHex from "../../components/FormTitleHex.astro";
+import Button from "../../components/Button.astro";
+import Toast from "../../components/Toast.astro";
+import Hex from "../../components/Hex.astro";
+import Textfield from "../../components/TextField.astro";
+import Select from "../../components/Select.astro";
+
+let toastEl = null;
+
+let bot = false;
+let form = {
+  name: "",
+  surname: "",
+  role: "",
+  companyName: "",
+  employees: "",
+  industry: "",
+  email: "",
+  message: "",
+};
+
+let formErrors = {
+  name: null,
+  role: null,
+  companyName: null,
+  employees: null,
+  industry: null,
+  email: null,
+};
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  if (bot) {
+    return;
+  }
+
+  if (!form.name || form.name.length === 0) {
+    formErrors.name = " ";
+  }
+  if (!form.role || form.role.length === 0) {
+    formErrors.role = " ";
+  }
+  if (!form.companyName || form.companyName.length === 0) {
+    formErrors.companyName = " ";
+  }
+  if (!form.employees || form.employees.length === 0) {
+    formErrors.employees = " ";
+  }
+  if (!form.industry || form.industry.length === 0) {
+    formErrors.industry = " ";
+  }
+  if (!form.email || form.email.length === 0) {
+    formErrors.email = " ";
+  }
+  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) == false) {
+    formErrors.email = "Indirizzo email non valido";
+  }
+
+  if (Object.values(formErrors).find((err) => err !== null)) {
+    console.log(formErrors);
+    return;
+  }
+
+  console.log(event, form);
+
+  form = {
+    name: "",
+    surname: "",
+    role: "",
+    companyName: "",
+    email: "",
+    message: "",
+    employees: "",
+    industry: "",
+  };
+
+  toastEl.show();
+  document.querySelector("body").scrollIntoView({ behavior: "smooth" });
+}
+---
+
+<form class="request-info" onsubmit={handleSubmit}>
+  <div class="floating-hex-1">
+    <Hex width="40" fill="#352E6C" shadow="true" />
+  </div>
+  <div class="drawer">
+    <FormTitleHex />
+    <h2 class="title-3 title-form">Richiedi <b>informazioni</b></h2>
+    <p class="subtitle body-1">
+      <b>Compila</b> e <b>invia</b> il form per avere<br /> maggiori
+      <b>informazioni</b>
+      sui nostri <b>servizi</b>
+    </p>
+    <div class="form">
+      <div class="form-row">
+        <div class="textfield textfield-name">
+          <Textfield name="name" label="Nome Cognome *" error={formErrors.name} value={form.name} on:change={(e)=>
+            (form.name = e.target.value)}
+            onkeyup={(e) => {
+            if (e.target.value.length) {
+            formErrors.name = null;
+            }
+            }}
+            />
+        </div>
+        <div class="textfield textfield-companyName">
+          <Textfield class="textfield textfield-companyName" name="companyName" label="Nome azienda*"
+            error={formErrors.companyName} value={form.companyName} onchange={(e)=>
+            (form.companyName = e.target.value)}
+            onkeyup={(e) => {
+            if (e.target.value.length) {
+            formErrors.companyName = null;
+            }
+            }}
+            />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="textfield textfield-email">
+          <Textfield name="email" type="email" label="Email *" error={formErrors.email} value={form.email}
+            onchange={(e)=> (form.email = e.target.value)}
+            onkeyup={(e) => {
+            if (e.target.value.length) {
+            formErrors.email = null;
+            }
+            }}
+            />
+        </div>
+        <div class="textfield textfield-role">
+          <Textfield name="role" label="Ruolo *" error={formErrors.role} value={form.role} onchange={(e)=> (form.role =
+            e.target.value)}
+            onkeyup={(e) => {
+            if (e.target.value.length) {
+            formErrors.role = null;
+            }
+            }}
+            />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="textfield textfield-employees">
+          <Select name="employees" label="Numero di dipendenti" error={formErrors.employees} value={form.employees}
+            onchange={(e)=> {
+            form.employees = e.target.value;
+
+            if (e.target.value.length) {
+            formErrors.employees = null;
+            }
+            }}
+            options={[
+            { value: "", text: "" },
+            { value: "1", text: "1-15" },
+            { value: "16", text: "16-50" },
+            { value: "50", text: "Oltre 50" },
+            ]}
+            />
+        </div>
+        <div class="textfield textfield-industry">
+          <Select name="industry" label="Settore" error={formErrors.industry} value={form.industry} onchange={(e)=> {
+            form.industry = e.target.value;
+            if (e.target.value.length) {
+            formErrors.industry = null;
+            }
+            }}
+            options={[
+            { value: "", text: "" },
+            { value: "it", text: "IT" },
+            { value: "manifacturing", text: "Manifattura" },
+            { value: "servizi", text: "Servizi" },
+            ]}
+            />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="textfield textfield-message">
+          <Textfield textarea name="message" label="Messaggio" rows="3" value={form.message} onchange={(e)=>
+            (form.message = e.target.value)}
+            />
+        </div>
+      </div>
+      <HoneypotField onchange={()=> (bot = true)} />
+        <div class="submit submit-button-form-row">
+          <Button component="button" variant="secondary" type="submit" onclick={handleSubmit}>
+            Invia
+          </Button>
+        </div>
+    </div>
+  </div>
+  <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" />
+</form>
+
+<style>
+  .request-info {
+    position: relative;
+    margin-top: var(--spacing-25);
+  }
+
+  .floating-hex-1 {
+    position: absolute;
+    top: -140px;
+    right: 10%;
+  }
+
+  .drawer {
+    position: relative;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-4);
+  }
+
+  .subtitle {
+    text-align: center;
+    margin: 0;
+  }
+
+  .form {
+    margin: var(--spacing-6) 0 var(--spacing-10);
+    display: block;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 (var(--spacing-1) * -1) 0;
+  }
+
+  .textfield {
+    margin: 0 var(--spacing-1) var(--spacing-3);
+    flex: 1 1 100%;
+  }
+
+  .employees {
+    margin-right: var(--spacing-1);
+  }
+
+  .submit-button-form-row {
+    display: flex;
+  }
+
+  .submit {
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: var(--spacing-4)
+  }
+
+  @media only screen and (min-width: 600px) {
+    .request-info {
+      margin-top: 0;
+    }
+
+    .form-row {
+      margin: 0 (var(--spacing-1) * -1) var(--spacing-3);
+    }
+
+    .textfield {
+      margin: 0 var(--spacing-1) 0;
+    }
+
+    .textfield-name,
+    .textfield-surname,
+    .textfield-companyName,
+    .textfield-employees {
+      flex: 1 1 0;
+      margin-right: var(--spacing-1);
+    }
+
+    .textfield-role,
+    .textfield-email,
+    .textfield-industry {
+      flex: 1 1 0;
+    }
+
+    .textfield-message {
+      flex: 0 1 100%;
+    }
+
+    .floating-hex-1 {
+      top: -50px;
+      right: 5%;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 960px) {
+    .floating-hex-1 {
+      top: -140px;
+      right: 5%;
+    }
+  }
+</style>

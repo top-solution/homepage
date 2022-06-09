@@ -1,0 +1,166 @@
+---
+import Layout from "../components/Layout.astro";
+import Button from "../components/Button.astro";
+
+import HeaderHexagonsDesktop from "../components/contacts/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../components/contacts/HeaderHexagonsMobile.astro";
+import RequestInfo from "../components/contacts/RequestInfo.astro";
+import OfficeMap from "../components/contacts/OfficeMap.astro";
+---
+
+<Layout color="light">
+  <HeaderHexagonsDesktop />
+  <HeaderHexagonsMobile />
+  <div>
+    <h1 class="title-1">Contatti</h1>
+    <div class="container">
+      <div class="office-map-container">
+        <OfficeMap />
+      </div>
+      <ol class="contacts">
+        <li class="contact email">
+          <img src="../img/icons/mail.svg" alt="" />
+          <a href={`mailto:info@topsolution.it`} itemprop="email">info@topsolution.it</a>
+        </li>
+        <li class="contact">
+          <img src="../img/icons/pin.svg" alt="" />
+          <span itemprop="address">Sede Legale: Corso Regina Margherita, 254, 10144 Torino TO</span>
+        </li>
+        <li class="contact phone">
+          <img src="../img/icons/phone.svg" alt="" />
+          <a href={`tel:+390112488280`} itemprop="telephone">+39 011 248 82 80</a>
+        </li>
+        <li class="contact">
+          <img src="../img/icons/pin.svg" alt="" itemprop="location" /><span>Sede Operativa: Via Livorno, 60 B2 Lab,
+            10144
+            Torino TO</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="request-info">
+    <RequestInfo />
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: flex;
+    margin-top: var(--spacing-8);
+    margin-bottom: var(--spacing-15);
+    align-items: flex-start;
+  }
+
+  .contacts {
+    flex: 0 0 305px;
+    list-style: none;
+    padding-left: 0;
+    padding-left: var(--spacing-3);
+    margin: 0;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact {
+    flex: 1 0 50%;
+    display: flex;
+    margin-bottom: var(--spacing-2);
+    order: 4;
+    line-height: 35px;
+  }
+
+  .email {
+    order: 1;
+  }
+
+  .phone {
+    order: 2;
+  }
+
+  .contact:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .contact a {
+    font-weight: inherit;
+  }
+
+
+  .contacts img {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--spacing-3);
+    margin-top: 8px;
+  }
+
+  .request-info {
+    margin-top: var(--spacing-20);
+    display: block;
+  }
+
+  .office-map-container {
+    flex: 1 1 480px;
+    border-right: 1px solid var(--color-blue);
+    padding-right: 12px;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    width: 480px;
+    height: 300px;
+    position: relative;
+    z-index: 2000;
+  }
+
+  @media only screen and (max-width: 960px) {
+    .contacts {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contacts .contact {
+      flex: 0 0 auto;
+    }
+
+    .phone {
+      order: 1;
+    }
+
+    .container {
+      flex-direction: column;
+      align-items: stretch;
+      margin-top: var(--spacing-2);
+    }
+
+    img {
+      width: 22px;
+      height: 22px;
+      margin-top: 3px;
+      margin-right: var(--spacing-3);
+    }
+
+    .office-map-container {
+      border-right: 0;
+      max-height: 320px;
+      margin-bottom: var(--spacing-7);
+      height: auto;
+      display: block;
+      flex: 1 1 0;
+      max-width: 100%;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .request-info {
+      margin-top: var(--spacing-10);
+      display: block;
+    }
+
+    .office-map-container {
+      max-height: 240px;
+    }
+  }
+</style>
