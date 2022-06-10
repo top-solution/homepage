@@ -10,10 +10,10 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
 ---
 
 <Layout color="light">
-  <TopBanner title="Sviluppo Individuale" mobilealignleft="true" title2="{true}">
+  <TopBanner title="Sviluppo organizzativo" mobilealignleft="true" title2="{true}">
     <div class="claim" slot="text">
-      Il <b>sapere</b> delle persone rappresenta il bene immateriale
-      <b>più importante</b> delle organizzazioni.
+      è necessario ascoltare la voce delle proprie persone per capire come costruire azioni di miglioramento e con loro
+      progettare il futuro
     </div>
     <div slot="actions" style="
       display: flex;
@@ -33,23 +33,18 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
       <div class="floating-hex-4">
         <Hex width="86" fill="#312783" shadow="true" />
       </div>
-      <div class="floating-hex-5">
-        <Hex width="56" fill="#9893c1" shadow="true" />
-      </div>
     </div>
   </TopBanner>
   <div>
     <div class="copy">
       <p class="body-2">
-        Far crescere con continuità le <b>competenze</b> delle persone è, oltre
-        a un dovere, una <b>necessità</b> legata alla <b>continuità</b> del
-        <b>business</b>
-        e dell’organizzazione. Le <b>persone</b> sono quindi il fulcro di tutte
-        le
-        <b>organizzazioni</b>
-        e le <b>competenze</b> sono l’<b>asset strategico</b> sul quale
-        costruire l’identità aziendale.
+        Per affrontare situazioni organizzative ritenute critiche occorre analizzare i processi organizzativi e
+        identificare i meccanismi di successo interni da replicare o apportare azioni correttive ove richiesto.
       </p>
+      <video class="video" controls>
+        <track kind="captions" />
+        <source src="../videos/company-development.mp4" type="video/mp4" />
+      </video>
     </div>
     <div class="services">
       <h3 class="title-3 title-form choose-services">
@@ -58,13 +53,13 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
       <div class="card-container">
         <div class="service-card">
           <h4 itemprop="name">
-            Formazione su misura
+            Management diagnostic
           </h4>
           <p class="body-3" itemprop="offers">
-            Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali
-            delle persone è l’elemento centrale per la continuità e/o la crescita
-            del business. Il Training che offriamo è di tipo <b>esperienziale</b>.
-
+            È un’attività di analisi organizzativa, veloce e dinamica, centrata sullo studio delle relazioni
+            professionali, funzionali e interfunzionali che permette di comprendere il potenziale delle persone, le
+            dinamiche di gruppo, l’integrazione tra organigramma dichiarato e reale, i modelli di comunicazione e la
+            qualità delle politiche organizzative.
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -74,12 +69,12 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
         </div>
         <div class="service-card">
           <h4 itemprop="name">
-            Sentieri di carriera
+            Clima organizzativo
           </h4>
           <p class="body-3" itemprop="offers">
-            Nell’ottica del miglioramento continuo, lo sviluppo delle competenze professionali evolve con la maturità
-            professionale dei singoli. Pianificare la crescita professionale permette all’organizzazione lo sviluppo
-            delle competenze e la continuità aziendale nel ricercare gli obiettivi d’impresa.
+            Analisi che permette di comprendere “come le persone vivono” in azienda, attraverso l’osservazione
+            “dell’aria che si respira” all’interno dell’organizzazione e durante la loro attività quotidiana. Fotografa
+            la distanza percepita tra la direzione e l’ambiente lavorativo.
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -89,13 +84,44 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
         </div>
         <div class="service-card">
           <h4 itemprop="name">
-            Coaching
+            Employees engagement
           </h4>
           <p class="body-3" itemprop="offers">
-            Il Coaching è una metodologia formativa che permette ai manager e ai responsabili di funzione di apprendere
-            tecniche e strumenti innovativi per migliorare la performance professionale e organizzativa. È un processo
-            utile a sostenere l’apprendimento e a far emergere le potenzialità individuali di guida e di orientamento al
-            business.
+            Esprime il livello di coinvolgimento emotivo e professionale vissuto dal dipendente nel lavoro e per
+            l’organizzazione. Si focalizza sul funzionamento ottimale della persona e sulle potenzialità piuttosto che
+            sulle debolezze e disfunzioni. L’analisi del coinvolgimento definisce quali sono gli elementi sui quali
+            occorre sviluppare la partecipazione.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Stress lavoro correlato
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Può essere definito come lo squilibrio percepito dal lavoratore quando le richieste dell’ambiente di lavoro
+            sono eccessive rispetto alla capacità individuale di affrontare lo stress conseguente. Aiuta quindi
+            l’organizzazione a mettere a disposizione le adeguate risorse per fronteggiarle.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Customer satisfaction
+          </h4>
+          <p class="body-3" itemprop="offers">
+            La soddisfazione è intesa come stato psicologico derivante da un gap tra la valutazione dell’avvenuta
+            esperienza di consumo e le attese del consumatore in merito a tale esperienza. La ricerca è finalizzata a
+            verificare il livello di gradimento degli utilizzatori e a creare una mappa delle priorità per ottimizzare
+            gli interventi con le risorse disponibili.
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -147,7 +173,7 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
   .card-hex-group {
     position: absolute;
     left: 50%;
-    top: 590px;
+    top: 1200px;
   }
 
   .copy p {
@@ -162,6 +188,12 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
     flex-direction: column;
     align-items: center;
     position: relative;
+  }
+
+  .video {
+    width: 100%;
+    height: auto;
+    margin: var(--spacing-3) 0;
   }
 
   .card-container {
@@ -226,9 +258,9 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
     }
   }
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 900px) {
     .card-hex-group {
-      top: 700px;
+      display: none;
     }
   }
 </style>

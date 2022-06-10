@@ -8,7 +8,7 @@ const { color = "light" } = Astro.props;
   <div class="sub-header">
     <span>ENG</span>
     <label class="switch">
-      <input type="checkbox" checked />
+      <input id="translator" type="checkbox" checked />
       <span class="slider round"></span>
     </label>
     <span>ITA</span>
@@ -35,8 +35,7 @@ const { color = "light" } = Astro.props;
   <div class="header-mobile">
     <div class="menu">
       <a href="index.html" title="Home Page">
-        <img class="logo" src="../img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a
-      >
+        <img class="logo" src="../img/topsolution_logo_light.svg" alt="top Solution" height="70" /></a>
       <img src="../img/header/hexMenu.svg" alt="Hex" class="hex" />
 
       <button class="hamburger toggle-close" aria-label="Chiudi menù" aria-expanded="false">
@@ -58,10 +57,8 @@ const { color = "light" } = Astro.props;
             <a href="index.html">HOME</a>
           </li>
           <li>
-            <a href="hr-development.html"
-              >HR
-              <span>Risorse Umane</span></a
-            >
+            <a href="hr-development.html">HR
+              <span>Risorse Umane</span></a>
           </li>
           <!-- <a href="software-development.html"
           >DEV
@@ -100,6 +97,15 @@ const { color = "light" } = Astro.props;
 </header>
 
 <script>
+
+  function handleChangeTranslation() {
+    if (sessionStorage.getItem("language") === null || sessionStorage.getItem("language") === "en") {
+      sessionStorage.setItem("language", "it")
+    } else {
+      sessionStorage.setItem("language", "en")
+    }
+  }
+
   function openMenu() {
     document.querySelector(".wrapper").classList.add("nav-visible");
     document.querySelector("html").style.overflow = "hidden";
@@ -124,6 +130,7 @@ const { color = "light" } = Astro.props;
 
   document.querySelector(".toggle-open").addEventListener("click", openMenu);
   document.querySelector(".toggle-close").addEventListener("click", closeMenu);
+  document.getElementById("translator").addEventListener("click", handleChangeTranslation);
 </script>
 
 <style>
@@ -204,6 +211,7 @@ const { color = "light" } = Astro.props;
     height: 100vh;
     position: fixed;
   }
+
   .close {
     height: 0px;
     position: unset;
@@ -250,14 +258,15 @@ const { color = "light" } = Astro.props;
     background-image: url("/img/languageSwitcher/en.svg");
   }
 
-  input:checked + .slider:before {
+  input:checked+.slider:before {
     background-image: url("/img/languageSwitcher/it.svg");
   }
 
-  input:focus + .slider {
+  input:focus+.slider {
     box-shadow: 0 0 1px #2196f3;
   }
-  input:checked + .slider:before {
+
+  input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -304,6 +313,7 @@ const { color = "light" } = Astro.props;
     .header-mobile .switch {
       background-color: var(--color-blue-hovering);
     }
+
     nav {
       display: none;
     }
@@ -336,6 +346,7 @@ const { color = "light" } = Astro.props;
       margin-left: 50%;
       transform: translate(-50%, 0);
     }
+
     .header-mobile .menu {
       display: flex;
       justify-content: space-between;

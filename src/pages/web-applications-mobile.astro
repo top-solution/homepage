@@ -6,14 +6,13 @@ import Picture from "../components/Picture.astro";
 import Hex from "../components/Hex.astro";
 import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
-import CardHexGroup from "../components/self-development/CardHexGroup.astro";
 ---
 
 <Layout color="light">
-  <TopBanner title="Sviluppo Individuale" mobilealignleft="true" title2="{true}">
+  <TopBanner azure={true} title="Applicazioni web e mobile" mobilealignleft="true" title2="{true}">
     <div class="claim" slot="text">
-      Il <b>sapere</b> delle persone rappresenta il bene immateriale
-      <b>più importante</b> delle organizzazioni.
+      Utilizziamo le tecnologie open source più all'avanguardia per offrirti il massimo delle performance, la libertà da
+      licenze e lock-in, la possibilità di scegliere l'ambiente che preferisci.
     </div>
     <div slot="actions" style="
       display: flex;
@@ -33,22 +32,13 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
       <div class="floating-hex-4">
         <Hex width="86" fill="#312783" shadow="true" />
       </div>
-      <div class="floating-hex-5">
-        <Hex width="56" fill="#9893c1" shadow="true" />
-      </div>
     </div>
   </TopBanner>
   <div>
     <div class="copy">
       <p class="body-2">
-        Far crescere con continuità le <b>competenze</b> delle persone è, oltre
-        a un dovere, una <b>necessità</b> legata alla <b>continuità</b> del
-        <b>business</b>
-        e dell’organizzazione. Le <b>persone</b> sono quindi il fulcro di tutte
-        le
-        <b>organizzazioni</b>
-        e le <b>competenze</b> sono l’<b>asset strategico</b> sul quale
-        costruire l’identità aziendale.
+        Realizziamo web applications e app mobile (iOS e Android) su misura per il tuo business, prendendoci cura di
+        tutto il processo: dall'analisi dei requisiti allo sviluppo back-end e front-end.
       </p>
     </div>
     <div class="services">
@@ -58,13 +48,13 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
       <div class="card-container">
         <div class="service-card">
           <h4 itemprop="name">
-            Formazione su misura
+            Single page web applications
           </h4>
           <p class="body-3" itemprop="offers">
-            Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali
-            delle persone è l’elemento centrale per la continuità e/o la crescita
-            del business. Il Training che offriamo è di tipo <b>esperienziale</b>.
-
+            JavaScript è il nostro pane quotidiano, i framework che utilizziamo sono REACT (con Redux e Redux-Saga),
+            Vue.js, Angular.io ed il buon vecchio Angular JS.
+            Nella nostra cassetta degli attrezzi c'è anche posto per Babel, Webpack, RxJS, Gulp, Socket.io, Google
+            Material, Bootstrap, SASS...
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -74,12 +64,11 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
         </div>
         <div class="service-card">
           <h4 itemprop="name">
-            Sentieri di carriera
+            Rest api
           </h4>
           <p class="body-3" itemprop="offers">
-            Nell’ottica del miglioramento continuo, lo sviluppo delle competenze professionali evolve con la maturità
-            professionale dei singoli. Pianificare la crescita professionale permette all’organizzazione lo sviluppo
-            delle competenze e la continuità aziendale nel ricercare gli obiettivi d’impresa.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
+            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -89,13 +78,11 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
         </div>
         <div class="service-card">
           <h4 itemprop="name">
-            Coaching
+            Micro services
           </h4>
           <p class="body-3" itemprop="offers">
-            Il Coaching è una metodologia formativa che permette ai manager e ai responsabili di funzione di apprendere
-            tecniche e strumenti innovativi per migliorare la performance professionale e organizzativa. È un processo
-            utile a sostenere l’apprendimento e a far emergere le potenzialità individuali di guida e di orientamento al
-            business.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
+            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -103,8 +90,19 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
             </Button>
           </div>
         </div>
-        <div class="card-hex-group">
-          <CardHexGroup />
+        <div class="service-card">
+          <h4 itemprop="name">
+            Hybrid apps
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
+            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
         </div>
       </div>
       <div class="floating-hex-2">
@@ -147,7 +145,7 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
   .card-hex-group {
     position: absolute;
     left: 50%;
-    top: 590px;
+    top: 1200px;
   }
 
   .copy p {
@@ -226,9 +224,9 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
     }
   }
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 900px) {
     .card-hex-group {
-      top: 700px;
+      display: none;
     }
   }
 </style>

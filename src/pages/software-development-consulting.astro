@@ -10,10 +10,10 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
 ---
 
 <Layout color="light">
-  <TopBanner title="Sviluppo Individuale" mobilealignleft="true" title2="{true}">
+  <TopBanner azure={true} title="Consulenza sviluppo software" mobilealignleft="true" title2="{true}">
     <div class="claim" slot="text">
-      Il <b>sapere</b> delle persone rappresenta il bene immateriale
-      <b>più importante</b> delle organizzazioni.
+      Affrontiamo lo sviluppo dei nostri prodotti e servizi con tecnologie sempre nuove, perchè la curiosità e la voglia
+      di sperimentare fanno parte del nostro DNA
     </div>
     <div slot="actions" style="
       display: flex;
@@ -41,14 +41,8 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
   <div>
     <div class="copy">
       <p class="body-2">
-        Far crescere con continuità le <b>competenze</b> delle persone è, oltre
-        a un dovere, una <b>necessità</b> legata alla <b>continuità</b> del
-        <b>business</b>
-        e dell’organizzazione. Le <b>persone</b> sono quindi il fulcro di tutte
-        le
-        <b>organizzazioni</b>
-        e le <b>competenze</b> sono l’<b>asset strategico</b> sul quale
-        costruire l’identità aziendale.
+        Siamo in grado di offrire una consulenza di sviluppo software chiavi in mano su tecnologie open source
+        all'avanguardia.
       </p>
     </div>
     <div class="services">
@@ -58,13 +52,14 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
       <div class="card-container">
         <div class="service-card">
           <h4 itemprop="name">
-            Formazione su misura
+            Kick-off progetti
           </h4>
           <p class="body-3" itemprop="offers">
-            Investire sulle <b>conoscenze</b> e <b>competenze</b> professionali
-            delle persone è l’elemento centrale per la continuità e/o la crescita
-            del business. Il Training che offriamo è di tipo <b>esperienziale</b>.
-
+            Hai finito l'analisi e adesso è arrivata l'ora di inziare a scrivere codice ma non sai che tecnologia
+            scegliere? Hai già individuato la tecnologia più adatta ma il tuo team non la conosce a fondo?
+            Nuovi framework e linguaggi possono aiutare a risolvere molti problemi, ma una conoscenza poco approfondita
+            può portare a scegliere una strada sbagliata senza rendersene conto.
+            La nostra esperienza può aiutarti a risparmiare tempo e soldi.
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -74,12 +69,13 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
         </div>
         <div class="service-card">
           <h4 itemprop="name">
-            Sentieri di carriera
+            Sviluppo e manutenzione
           </h4>
           <p class="body-3" itemprop="offers">
-            Nell’ottica del miglioramento continuo, lo sviluppo delle competenze professionali evolve con la maturità
-            professionale dei singoli. Pianificare la crescita professionale permette all’organizzazione lo sviluppo
-            delle competenze e la continuità aziendale nel ricercare gli obiettivi d’impresa.
+            Hai la necessità di aumentare la capacità del tuo team per brevi periodi? Trovare professionisti affidabili
+            non è semplice, la nostra società è in grado di offrire garanzie molto più solide.
+            Hai sviluppato o hai fatto sviluppare un'app in una tecnologia che non padroneggi? A volte affidare la
+            manutenzione in outsourcing è più economico che investire in formazione o in un nuovo team di sviluppo.
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -89,13 +85,13 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
         </div>
         <div class="service-card">
           <h4 itemprop="name">
-            Coaching
+            Disaster recovery
           </h4>
           <p class="body-3" itemprop="offers">
-            Il Coaching è una metodologia formativa che permette ai manager e ai responsabili di funzione di apprendere
-            tecniche e strumenti innovativi per migliorare la performance professionale e organizzativa. È un processo
-            utile a sostenere l’apprendimento e a far emergere le potenzialità individuali di guida e di orientamento al
-            business.
+            Prima o poi a tutti capita di sottostimare le sfide legate ad un nuovo progetto: il rischio di mancare una
+            consegna o perdere un cliente riduce di molto la tua redditività e reputazione.
+            Top Solution può aiutarti a rimanere al passo con le scadenze ed evitare di introdurre debito tecnico che
+            pagherai inevitabilmente in seguito.
           </p>
           <div class="card-button">
             <Button variant="primary" href="/contacts/" target="_blank">
@@ -147,13 +143,12 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
   .card-hex-group {
     position: absolute;
     left: 50%;
-    top: 590px;
+    top: 750px;
   }
 
   .copy p {
     text-align: center;
     margin: var(--spacing-15) 0 var(--spacing-6);
-
   }
 
   .services {
