@@ -9,87 +9,85 @@ import ContactUs from "../components/team/ContactUs.astro";
 ---
 
 <Layout color="light">
-  <div class="layout__content">
-    <HeaderHexagonsDesktop class="hex" />
-    <HeaderHexagonsMobile class="hex" />
-    <div>
-      <div class="giga-blob">
-        <img src="../img/giga-blob.svg" alt="" />
-      </div>
-      <div class="giga-blob-mobile">
-        <img src="../img/giga-blob-mobile.svg" alt="" />
-      </div>
+  <HeaderHexagonsDesktop class="hex" />
+  <HeaderHexagonsMobile class="hex" />
+  <div>
+    <div class="giga-blob">
+      <img src="../img/giga-blob.svg" alt="" />
     </div>
-    <h1 class="title-1">Team</h1>
-    <div class="copy">
-      <p class="body-1">
-        Top Solution nasce dall’associazione di una grande <b>expertise</b> nel settore della <b>consulenza
-          informatica</b> e della
-        <b>gestione delle risorse umane</b>. Il team di informatici è affiancato da <b>psicologi del lavoro</b> per la
-        realizzazione
-        delle
-        <b>piattaforme HR</b>
-        e per la progettazione e la realizzazione di tutti i progetti rivolti alle
-        <b>risorse umane</b>.
-      </p>
+    <div class="giga-blob-mobile">
+      <img src="../img/giga-blob-mobile.svg" alt="" />
     </div>
-    <div class="people">
-      <div class="spacer" />
-      <div class="team-person-container">
-        <TeamPerson name="Paolo Andruetto" companyrole="CEO">
-          <b>Paolo Andruetto</b> CEO
-        </TeamPerson>
-      </div>
-      <div class="team-person-container">
-        <TeamPerson name="Gabriele Destefanis" companyrole="CTO">
-          <b>Gabriele Destefanis</b> CTO
-        </TeamPerson>
-      </div>
-      <div class="spacer" />
-      <div class="team-person-container">
-        <TeamPerson name="Luca Osti" companyrole="Backend Developer">
-          <b>Luca Osti</b> Backend Developer
-        </TeamPerson>
-      </div>
-      <div class="team-person-container">
-        <TeamPerson name="Gabriele Spada" companyrole="Frontend Developer">
-          <b>Gabriele Spada</b> Frontend Developer
-        </TeamPerson>
-      </div>
-      <div class="team-person-container">
-        <TeamPerson name="Luca Barbetti" companyrole="Frontend Developer">
-          <b>Luca Barbetti</b> Frontend Developer
-        </TeamPerson>
-      </div>
-      <div class="spacer" />
-      <div class="team-person-container">
-        <TeamPerson name="Elisa Solinas" companyrole="Backend Developer">
-          <b>Elisa Solinas</b> Backend Developer
-        </TeamPerson>
-      </div>
-      <div class="team-person-container">
-        <TeamPerson name="Federico Valetti" companyrole="Analista Funzionale">
-          <b>Federico Valetti</b> Analista Funzionale
-        </TeamPerson>
-      </div>
-      <div class="spacer" />
-      <div class="team-person-container">
-        <TeamPerson name="Matteo Marsala" companyrole="Frontend Developer">
-          <b>Matteo Marsala</b> Frontend Developer
-        </TeamPerson>
-      </div>
-      <div class="team-person-container">
-        <TeamPerson name="Martina Bilancieri" companyrole="UX/UI Designer">
-          <b>Martina Bilancieri</b> UX/UI Designer
-        </TeamPerson>
-      </div>
-      <div class="team-person-container">
-        <TeamPerson src="question_mark.svg" name="Vuoi far parte del team?">
-          <Button class="contact-us-button" variant="primary" component="button" onclick="handleApplyClick()">
-            Candidati
-          </Button>
-        </TeamPerson>
-      </div>
+  </div>
+  <h1 class="title-1">Team</h1>
+  <div class="copy">
+    <p class="body-1">
+      Top Solution nasce dall’associazione di una grande <b>expertise</b> nel settore della <b>consulenza
+        informatica</b> e della
+      <b>gestione delle risorse umane</b>. Il team di informatici è affiancato da <b>psicologi del lavoro</b> per la
+      realizzazione
+      delle
+      <b>piattaforme HR</b>
+      e per la progettazione e la realizzazione di tutti i progetti rivolti alle
+      <b>risorse umane</b>.
+    </p>
+  </div>
+  <div class="people">
+    <div class="spacer" />
+    <div class="team-person-container">
+      <TeamPerson name="Paolo Andruetto" companyrole="CEO">
+        <b>Paolo Andruetto</b> CEO
+      </TeamPerson>
+    </div>
+    <div class="team-person-container">
+      <TeamPerson name="Gabriele Destefanis" companyrole="CTO">
+        <b>Gabriele Destefanis</b> CTO
+      </TeamPerson>
+    </div>
+    <div class="spacer" />
+    <div class="team-person-container">
+      <TeamPerson name="Luca Osti" companyrole="Backend Developer">
+        <b>Luca Osti</b> Backend Developer
+      </TeamPerson>
+    </div>
+    <div class="team-person-container">
+      <TeamPerson name="Gabriele Spada" companyrole="Frontend Developer">
+        <b>Gabriele Spada</b> Frontend Developer
+      </TeamPerson>
+    </div>
+    <div class="team-person-container">
+      <TeamPerson name="Luca Barbetti" companyrole="Frontend Developer">
+        <b>Luca Barbetti</b> Frontend Developer
+      </TeamPerson>
+    </div>
+    <div class="spacer" />
+    <div class="team-person-container">
+      <TeamPerson name="Elisa Solinas" companyrole="Backend Developer">
+        <b>Elisa Solinas</b> Backend Developer
+      </TeamPerson>
+    </div>
+    <div class="team-person-container">
+      <TeamPerson name="Federico Valetti" companyrole="Analista Funzionale">
+        <b>Federico Valetti</b> Analista Funzionale
+      </TeamPerson>
+    </div>
+    <div class="spacer" />
+    <div class="team-person-container">
+      <TeamPerson name="Matteo Marsala" companyrole="Frontend Developer">
+        <b>Matteo Marsala</b> Frontend Developer
+      </TeamPerson>
+    </div>
+    <div class="team-person-container">
+      <TeamPerson name="Martina Bilancieri" companyrole="UX/UI Designer">
+        <b>Martina Bilancieri</b> UX/UI Designer
+      </TeamPerson>
+    </div>
+    <div class="team-person-container">
+      <TeamPerson src="question_mark.svg" name="Vuoi far parte del team?">
+        <Button class="contact-us-button" variant="primary" component="button" onclick="handleApplyClick()">
+          Candidati
+        </Button>
+      </TeamPerson>
     </div>
   </div>
   <ContactUs open="false" class="contact-us-component" />

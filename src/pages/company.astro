@@ -1,0 +1,283 @@
+---
+import Layout from "../components/Layout.astro";
+import Blob from '../components/Blob.astro';
+import HeaderHexagonsDesktop from "../components/company/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../components/company/HeaderHexagonsMobile.astro";
+
+import Hex1Desktop from "../components/company/Hex1.astro";
+import Hex1Mobile from "../components/company/Hex1Mobile.astro";
+
+import Hex2Desktop from "../components/company/Hex2.astro";
+import Hex2Mobile from "../components/company/Hex2Mobile.astro";
+---
+
+<Layout color="light">
+  <div class="ts-header-hexagons-desktop">
+    <HeaderHexagonsDesktop />
+  </div>
+  <div class="ts-header-hexagons-mobile">
+    <HeaderHexagonsMobile />
+  </div>
+  <h1 class="title-1">Azienda</h1>
+  <div class="row">
+    <div class="logo" style="background-image: url(../../../img/start_cup.png)"></div>
+    <div class="blob">
+      <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
+        <div class="blob content">
+          <p class="body-1">
+            Nasciamo come <b>vincitori</b> nel 2008 della IV edizione della Start
+            Cup Torino Piemonte
+          </p>
+        </div>
+      </Blob>
+    </div>
+  </div>
+  <svg viewBox="0 0 100 109" class="floating-hex-1" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M6.10979 22.8979L30.8094 11.5447L55.5531 0.287793L77.7351 16.0017L99.8557 31.8019L97.3381 58.869L94.715 85.9261L70.0154 97.2794L45.2717 108.536L23.0897 92.8224L0.969092 77.0222L3.48669 49.955L6.10979 22.8979Z"
+      fill="#312783" />
+  </svg>
+  <div class="hex-1">
+    <Hex1Desktop />
+  </div>
+  <div class="hex-1-mobile">
+    <Hex1Mobile />
+  </div>
+  <div class="row flipped">
+    <div class="logo" style="background-image: url(../../../img/i3p.png)"></div>
+    <div class="blob">
+      <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2" flip="true">
+        <div class="blob content">
+          <p class="body-1">
+            Nel 2012 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
+            siamo usciti dall'incubatore e abbiamo aperto il nostro primo ufficio
+          </p>
+        </div>
+      </Blob>
+    </div>
+  </div>
+  <div class="hex-2">
+    <Hex2Desktop />
+  </div>
+  <div class="hex-2-mobile">
+    <Hex2Mobile />
+  </div>
+  <div class="row mb-4" itemscope itemtype="https://schema.org/Organization">
+    <div itemprop="logo" class="logo" style="background-image: url(../../../img/logo_name.svg)"></div>
+    <div class="blob">
+      <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
+        <div class="blob content">
+          <p class="body-1">
+            <b>Oggi</b> siamo proiettati all’<b>industry 4.0</b> e allo sviluppo
+            di applicazioni per l’<b>ottimizzazione</b>, l'<b>efficientamento</b>
+            e l’<b>interazione</b> uomo-macchina
+          </p>
+        </div>
+      </Blob>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.querySelectorAll('ts-blob').forEach(function (el) {
+    if (window.innerWidth < 900) {
+      el.innerWith = "octagon"
+      el.variance = "1.2"
+    }
+  })
+</script>
+
+<style>
+  .page-company {
+    display: block;
+    color: var(--color-blue);
+    box-sizing: border-box;
+    margin-bottom: var(--spacing-4);
+  }
+
+  .ts-header-hexagons-desktop,
+  .ts-header-hexagons-mobile {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .ts-header-hexagons-desktop {
+    right: -280px;
+    width: 830px;
+    top: -400px;
+  }
+
+  .ts-header-hexagons-mobile {
+    display: none;
+  }
+
+  .floating-hex-1 {
+    position: absolute;
+    left: 17%;
+    top: 200px;
+    width: 100px;
+  }
+
+  .logo {
+    flex: 1 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 130px;
+    max-width: 320px;
+    height: 190px;
+    width: auto;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-height: 600px;
+    justify-content: space-between;
+    margin: 0 calc(var(--spacing-3) * -1);
+    padding-left: var(--spacing-3);
+    flex: 1 1 0;
+  }
+
+  .flipped {
+    flex-direction: row-reverse;
+    padding-right: var(--spacing-3);
+    padding-left: 0;
+  }
+
+  .blob {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+    z-index: -10;
+  }
+
+  .content {
+    padding: var(--spacing-2) var(--spacing-5);
+    text-align: center;
+  }
+
+  .body-1 {
+    margin: var(--spacing-3) 0;
+  }
+
+  .blob {
+    width: 545px;
+  }
+
+  .hex-1,
+  .hex-2,
+  .hex-1-mobile,
+  .hex-2-mobile {
+    width: 200px;
+    display: block;
+  }
+
+  .hex-1 {
+    margin: var(--spacing-4) 30% 0 auto;
+    height: 250px;
+  }
+
+  .hex-2 {
+    margin: var(--spacing-4) auto 0 40%;
+  }
+
+  .hex-1-mobile,
+  .hex-2-mobile {
+    display: none;
+  }
+
+  .mb-4 {
+    margin-bottom: var(--spacing-4);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .ts-header-hexagons-desktop {
+      display: none;
+    }
+
+    .ts-header-hexagons-mobile {
+      display: block;
+      right: -110px;
+      width: 414px;
+      top: -285px;
+    }
+
+    h1.title-1 {
+      margin-bottom: var(--spacing-10);
+    }
+
+    .floating-hex-1 {
+      display: none;
+    }
+
+    .row {
+      max-height: 600px;
+    }
+
+    .row img {
+      max-width: 120px;
+    }
+
+    .blob {
+      min-width: 0;
+    }
+
+    .blob {
+      min-width: 80vw;
+      margin-right: 0;
+      /* margin-left: -(variables.$ts-spacing-8); */
+    }
+
+    .content {
+      padding: var(--spacing-2) var(--spacing-4) var(--spacing-2) var(--spacing-8);
+      text-align: left;
+    }
+
+    .row .flipped .content {
+      padding: var(--spacing-2) var(--spacing-8) var(--spacing-2) var(--spacing-4);
+      text-align: right;
+    }
+
+    .row {
+      padding-left: var(--spacing-3);
+      padding-right: var(--spacing-3);
+    }
+
+    .hex-1,
+    .hex-2 {
+      display: none;
+    }
+
+    .hex-1-mobile,
+    .hex-2-mobile {
+      width: 60vw;
+      display: block;
+    }
+
+    .hex-1-mobile {
+      margin: var(--spacing-4) auto 0 40%;
+    }
+
+    .hex-2-mobile {
+      margin: var(--spacing-4) auto 0 40%;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 960px) {
+    .ts-header-hexagons-desktop {
+      right: -380px;
+      top: -660px;
+    }
+
+    .row img {
+      max-width: 200px;
+    }
+
+    .blob {
+      min-width: 60vw;
+
+    }
+  }
+</style>

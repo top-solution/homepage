@@ -2,48 +2,37 @@
 import { Icon } from 'astro-icon'
 import Button from './Button.astro';
 import Blob from './Blob.astro';
-const {title, blobs, buttonlink} = Astro.props;
+const { title, blobs, buttonlink } = Astro.props;
 ---
 
 <section>
   <h1>{title}</h1>
   <div class="container">
     {blobs.map((blob) => (
-       <a href={blob.href}>
-        <Blob
-          interactive={true}
-          shape="rectangle"
-          style={`max-width: ${blob.width};`}
-          fill={blob.color}
-          padding="20"
-          clickable="true"
-        >
-          <div class="text">
-            <p>
-              <img
-                src={`../img/icons/${blob.icon}`}
-                alt="devices icon"
-                width="50"
-                height="35"
-              />
-            </p>
-            <p class="claim">
-              <b>{blob.title}</b>
-            </p>
-            <h6>
-              {blob.subtitle}
-            </h6>
-          </div>
-        </Blob>
-      </a>
+    <a href={blob.href}>
+      <Blob interactive={true} shape="rectangle" style={`max-width: ${blob.width};`} fill={blob.color} padding="20"
+        clickable="true">
+        <div class="text">
+          <p>
+            <img src={`../img/icons/${blob.icon}`} alt="devices icon" width="50" height="35" />
+          </p>
+          <p class="claim">
+            <b>{blob.title}</b>
+          </p>
+          <h6>
+            {blob.subtitle}
+          </h6>
+        </div>
+      </Blob>
+    </a>
     ))}
   </div>
   <div class="container-mobile">
     {blobs.map((blob) => (
-      <a href={blob.href} style={`background-color: ${blob.colorMobile}`}>
-        <h5>{blob.title}</h5>
-        <Icon pack="mdi" name="arrow-right" />
-      </a>
+    <a href={blob.href} style={`background-color: ${blob.colorMobile}`}>
+      <h5>{blob.title}</h5>
+      <Icon pack="mdi" name="arrow-right" />
+    </a>
     ))}
   </div>
   <div class="centred-button">
@@ -83,15 +72,17 @@ const {title, blobs, buttonlink} = Astro.props;
   }
 
   @media only screen and (max-width: 960px) {
-     .container, .centred-button {
-       display: none;
-     }
 
-     .container-mobile {
+    .container,
+    .centred-button {
+      display: none;
+    }
+
+    .container-mobile {
       display: flex;
       flex-direction: column;
       align-items: center;
-     }
+    }
 
     a {
       display: flex;
