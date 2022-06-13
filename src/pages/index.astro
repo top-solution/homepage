@@ -4,6 +4,12 @@ import Button from "../components/Button.astro";
 import TripleBlob from "../components/TripleBlob.astro";
 import Customers from "../components/Customers.astro";
 import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
+
+// import locale from "../utils/locale.js"
+// function translate(key) {
+//   console.log(locale[key].it)
+//   return locale[key].it;
+// }
 ---
 
 <Layout color="dark">
@@ -47,6 +53,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       </div>
     </div>
     <section>
+      <!-- {window.translate("home-banner")} -->
       <div class="banner">
         <span>Entra in <strong>contatto</strong> con noi</span>
         <p>

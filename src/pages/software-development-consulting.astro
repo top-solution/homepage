@@ -1,0 +1,229 @@
+---
+import Layout from "../components/Layout.astro";
+import TopBanner from "../components/TopBanner.astro";
+import Button from "../components/Button.astro";
+import Picture from "../components/Picture.astro";
+import Hex from "../components/Hex.astro";
+import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
+import CardHexGroup from "../components/self-development/CardHexGroup.astro";
+---
+
+<Layout color="light">
+  <TopBanner azure={true} title="Consulenza sviluppo software" mobilealignleft="true" title2="{true}">
+    <div class="claim" slot="text">
+      Affrontiamo lo sviluppo dei nostri prodotti e servizi con tecnologie sempre nuove, perchè la curiosità e la voglia
+      di sperimentare fanno parte del nostro DNA
+    </div>
+    <div slot="actions" style="
+      display: flex;
+      flex-direction: column;
+      max-width: 175px;
+      margin: auto;
+    ">
+      <Button variant="primary" href="/contacts/">Contattaci</Button>
+    </div>
+    <div slot="external">
+      <HeaderHexagonsDesktop />
+      <HeaderHexagonsMobile />
+      <Hex width="56" fill="#9893c1" shadow="true" />
+      <div class="floating-hex-3">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
+      <div class="floating-hex-4">
+        <Hex width="86" fill="#312783" shadow="true" />
+      </div>
+      <div class="floating-hex-5">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
+    </div>
+  </TopBanner>
+  <div>
+    <div class="copy">
+      <p class="body-2">
+        Siamo in grado di offrire una consulenza di sviluppo software chiavi in mano su tecnologie open source
+        all'avanguardia.
+      </p>
+    </div>
+    <div class="services">
+      <h3 class="title-3 title-form choose-services">
+        I nostri <b>SERVIZI</b>
+      </h3>
+      <div class="card-container">
+        <div class="service-card">
+          <h4 itemprop="name">
+            Kick-off progetti
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Hai finito l'analisi e adesso è arrivata l'ora di inziare a scrivere codice ma non sai che tecnologia
+            scegliere? Hai già individuato la tecnologia più adatta ma il tuo team non la conosce a fondo?
+            Nuovi framework e linguaggi possono aiutare a risolvere molti problemi, ma una conoscenza poco approfondita
+            può portare a scegliere una strada sbagliata senza rendersene conto.
+            La nostra esperienza può aiutarti a risparmiare tempo e soldi.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Sviluppo e manutenzione
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Hai la necessità di aumentare la capacità del tuo team per brevi periodi? Trovare professionisti affidabili
+            non è semplice, la nostra società è in grado di offrire garanzie molto più solide.
+            Hai sviluppato o hai fatto sviluppare un'app in una tecnologia che non padroneggi? A volte affidare la
+            manutenzione in outsourcing è più economico che investire in formazione o in un nuovo team di sviluppo.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Disaster recovery
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Prima o poi a tutti capita di sottostimare le sfide legate ad un nuovo progetto: il rischio di mancare una
+            consegna o perdere un cliente riduce di molto la tua redditività e reputazione.
+            Top Solution può aiutarti a rimanere al passo con le scadenze ed evitare di introdurre debito tecnico che
+            pagherai inevitabilmente in seguito.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="card-hex-group">
+          <CardHexGroup />
+        </div>
+      </div>
+      <div class="floating-hex-2">
+        <Hex width="44" fill="#312783" opacity=".7" shadow="false" rotation="-4" />
+      </div>
+      <h3 class="title-3 title-form customers">
+        Chi ci ha scelto
+      </h3>
+      <Picture base="customers" src="sky" alt="Sky" />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .floating-hex-2 {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .floating-hex-3 {
+    position: absolute;
+    left: 20%;
+    top: 450px;
+  }
+
+  .floating-hex-4 {
+    position: absolute;
+    left: 60%;
+    top: 490px;
+  }
+
+  .floating-hex-5 {
+    position: absolute;
+    left: 65%;
+    top: 800px;
+  }
+
+  .card-hex-group {
+    position: absolute;
+    left: 50%;
+    top: 750px;
+  }
+
+  .copy p {
+    text-align: center;
+    margin: var(--spacing-15) 0 var(--spacing-6);
+  }
+
+  .services {
+    margin: var(--spacing-15) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 var(--spacing-10);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 45%;
+    border: 1px solid var(--color-blue);
+    border-radius: 4px;
+    padding: 16px;
+    margin: var(--spacing-1);
+    max-width: 350px;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .body-3 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: var(--spacing-10);
+  }
+
+  .card-button {
+    margin-left: auto;
+    max-width: 140px;
+  }
+
+  .customers {
+    margin-top: var(--spacing-15);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .choose-services {
+    margin-bottom: var(--spacing-6);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .service-card {
+      flex: 0 0 100%;
+    }
+
+    .floating-hex-3 {
+      position: absolute;
+      left: 0%;
+      top: 490px;
+    }
+
+    .card-hex-group,
+    .floating-hex-5 {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .card-hex-group {
+      top: 700px;
+    }
+  }
+</style>

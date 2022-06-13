@@ -1,0 +1,232 @@
+---
+import Layout from "../components/Layout.astro";
+import TopBanner from "../components/TopBanner.astro";
+import Button from "../components/Button.astro";
+import Picture from "../components/Picture.astro";
+import Hex from "../components/Hex.astro";
+import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
+---
+
+<Layout color="light">
+  <TopBanner azure={true} title="Applicazioni web e mobile" mobilealignleft="true" title2="{true}">
+    <div class="claim" slot="text">
+      Utilizziamo le tecnologie open source più all'avanguardia per offrirti il massimo delle performance, la libertà da
+      licenze e lock-in, la possibilità di scegliere l'ambiente che preferisci.
+    </div>
+    <div slot="actions" style="
+      display: flex;
+      flex-direction: column;
+      max-width: 175px;
+      margin: auto;
+    ">
+      <Button variant="primary" href="/contacts/">Contattaci</Button>
+    </div>
+    <div slot="external">
+      <HeaderHexagonsDesktop />
+      <HeaderHexagonsMobile />
+      <Hex width="56" fill="#9893c1" shadow="true" />
+      <div class="floating-hex-3">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
+      <div class="floating-hex-4">
+        <Hex width="86" fill="#312783" shadow="true" />
+      </div>
+    </div>
+  </TopBanner>
+  <div>
+    <div class="copy">
+      <p class="body-2">
+        Realizziamo web applications e app mobile (iOS e Android) su misura per il tuo business, prendendoci cura di
+        tutto il processo: dall'analisi dei requisiti allo sviluppo back-end e front-end.
+      </p>
+    </div>
+    <div class="services">
+      <h3 class="title-3 title-form choose-services">
+        I nostri <b>SERVIZI</b>
+      </h3>
+      <div class="card-container">
+        <div class="service-card">
+          <h4 itemprop="name">
+            Single page web applications
+          </h4>
+          <p class="body-3" itemprop="offers">
+            JavaScript è il nostro pane quotidiano, i framework che utilizziamo sono REACT (con Redux e Redux-Saga),
+            Vue.js, Angular.io ed il buon vecchio Angular JS.
+            Nella nostra cassetta degli attrezzi c'è anche posto per Babel, Webpack, RxJS, Gulp, Socket.io, Google
+            Material, Bootstrap, SASS...
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Rest api
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
+            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Micro services
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
+            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+        <div class="service-card">
+          <h4 itemprop="name">
+            Hybrid apps
+          </h4>
+          <p class="body-3" itemprop="offers">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
+            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
+          </p>
+          <div class="card-button">
+            <Button variant="primary" href="/contacts/" target="_blank">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+      </div>
+      <div class="floating-hex-2">
+        <Hex width="44" fill="#312783" opacity=".7" shadow="false" rotation="-4" />
+      </div>
+      <h3 class="title-3 title-form customers">
+        Chi ci ha scelto
+      </h3>
+      <Picture base="customers" src="sky" alt="Sky" />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .floating-hex-2 {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .floating-hex-3 {
+    position: absolute;
+    left: 20%;
+    top: 450px;
+  }
+
+  .floating-hex-4 {
+    position: absolute;
+    left: 60%;
+    top: 490px;
+  }
+
+  .floating-hex-5 {
+    position: absolute;
+    left: 65%;
+    top: 800px;
+  }
+
+  .card-hex-group {
+    position: absolute;
+    left: 50%;
+    top: 1200px;
+  }
+
+  .copy p {
+    text-align: center;
+    margin: var(--spacing-15) 0 var(--spacing-6);
+
+  }
+
+  .services {
+    margin: var(--spacing-15) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 var(--spacing-10);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 45%;
+    border: 1px solid var(--color-blue);
+    border-radius: 4px;
+    padding: 16px;
+    margin: var(--spacing-1);
+    max-width: 350px;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .body-3 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: var(--spacing-10);
+  }
+
+  .card-button {
+    margin-left: auto;
+    max-width: 140px;
+  }
+
+  .customers {
+    margin-top: var(--spacing-15);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .choose-services {
+    margin-bottom: var(--spacing-6);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .service-card {
+      flex: 0 0 100%;
+    }
+
+    .floating-hex-3 {
+      position: absolute;
+      left: 0%;
+      top: 490px;
+    }
+
+    .card-hex-group,
+    .floating-hex-5 {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .card-hex-group {
+      display: none;
+    }
+  }
+</style>
