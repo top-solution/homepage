@@ -1,0 +1,327 @@
+---
+import HoneypotField from "../HoneypotField.astro";
+import FormTitleHex from "../../components/FormTitleHex.astro";
+import Toast from "../../components/Toast.astro";
+import Textfield from "../../components/TextField.astro";
+import Select from "../../components/Select.astro";
+import Button from "../../components/Button.astro";
+
+let toastEl = null;
+
+const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+let bot = false;
+let form = {
+  name: "",
+  role: "",
+  companyName: "",
+  employees: "",
+  industry: "",
+  email: "",
+  message: "",
+  emailAssessor: "",
+  emailAssessee: "",
+};
+
+let formErrors = {
+  name: null,
+  role: null,
+  companyName: null,
+  employees: null,
+  industry: null,
+  email: null,
+  emailAssessor: null,
+  emailAssessee: null,
+};
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  if (bot) {
+    return;
+  }
+
+  if (!form.name || form.name.length === 0) {
+    formErrors.name = " ";
+  }
+  if (!form.role || form.role.length === 0) {
+    formErrors.role = " ";
+  }
+  if (!form.companyName || form.companyName.length === 0) {
+    formErrors.companyName = " ";
+  }
+  if (!form.employees || form.employees.length === 0) {
+    formErrors.employees = " ";
+  }
+  if (!form.industry || form.industry.length === 0) {
+    formErrors.industry = " ";
+  }
+  if (!form.email || form.email.length === 0) {
+    formErrors.email = " ";
+  }
+  if (emailRegexp.test(form.email) == false) {
+    formErrors.email = "Indirizzo email non valido";
+  }
+  if (form.emailAssessee && form.emailAssessee.length !== 0) {
+    if (emailRegexp.test(form.emailAssessee) == false) {
+      formErrors.emailAssessee = "Indirizzo email non valido";
+    }
+  }
+  if (form.emailAssessor && form.emailAssessor.length !== 0) {
+    if (emailRegexp.test(form.emailAssessor) == false) {
+      formErrors.emailAssessor = "Indirizzo email non valido";
+    }
+  }
+
+  if (Object.values(formErrors).find((err) => err !== null)) {
+    console.log(formErrors);
+    return;
+  }
+
+  console.log(event, form);
+
+  form = {
+    name: "",
+    role: "",
+    companyName: "",
+    employees: "",
+    industry: "",
+    email: "",
+    message: "",
+    emailAssessor: "",
+    emailAssessee: "",
+  };
+
+  toastEl.show();
+  document.querySelector("body").scrollIntoView({ behavior: "smooth" });
+}
+---
+
+<form class="request-trial" onsubmit={handleSubmit}>
+  <FormTitleHex />
+  <h2 class="title-3 title-form">Richiedi una <b>prova gratuita</b></h2>
+  <p class="subtitle body-2">
+    <b>Compila</b> e <b>invia</b> il form, il nostro team ti invierà il modello
+    per la valutazione delle performance <b>gratuitamente</b>
+  </p>
+  <div class="form">
+    <div class="form-row">
+      <div class="textfield name-textfield">
+        <Textfield name="name" label="Nome Cognome*" error={formErrors.name} value={form.name} on:change={(e)=>
+          (form.name = e.target.value)}
+          on:keyup={(e) => {
+          if (e.target.value.length) {
+          formErrors.name = null;
+          }
+          }}
+          />
+      </div>
+      <div class="textfield companyName-textfield">
+        <Textfield name="companyName" label="Nome azienda*" error={formErrors.companyName} value={form.companyName}
+          on:change={(e)=> (form.companyName = e.target.value)}
+          on:keyup={(e) => {
+          if (e.target.value.length) {
+          formErrors.companyName = null;
+          }
+          }}
+          />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="textfield email-textfield">
+        <Textfield name="email" type="email" label="Email*" error={formErrors.email} value={form.email} on:change={(e)=>
+          (form.email = e.target.value)}
+          on:keyup={(e) => {
+          if (e.target.value.length) {
+          formErrors.email = null;
+          }
+          }}
+          />
+      </div>
+      <div class="textfield role-textfield">
+        <Textfield name="role" label="Ruolo*" error={formErrors.role} value={form.role} on:change={(e)=> (form.role =
+          e.target.value)}
+          on:keyup={(e) => {
+          if (e.target.value.length) {
+          formErrors.role = null;
+          }
+          }}
+          />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="select employees-textfield">
+        <Select name="employees" label="Numero di dipendenti*" error={formErrors.employees} value={form.employees}
+          onchange={(e)=> {
+          form.employees = e.target.value;
+          if (e.target.value.length) {
+          formErrors.employees = null;
+          }
+          }}
+          options={[
+          { value: "", text: "" },
+          { value: "1", text: "1-15" },
+          { value: "16", text: "16-50" },
+          { value: "50", text: "Oltre 50" },
+          ]}
+          />
+      </div>
+      <div class="select industry-textfield">
+        <Select name="industry" label="Settore*" error={formErrors.industry} value={form.industry} on:change={(e)=> {
+          form.industry = e.target.value;
+          if (e.target.value.length) {
+          formErrors.industry = null;
+          }
+          }}
+          options={[
+          { value: "", text: "" },
+          { value: "it", text: "IT" },
+          { value: "manifacturing", text: "Manifattura" },
+          { value: "servizi", text: "Servizi" },
+          ]}
+          />
+      </div>
+    </div>
+    <div class="form-row">
+      <p class="body-2">
+        Inserisci l’email del valutato e del valutatore, in questo modo potrai
+        ottenere in autonomia le <b>credenziali</b> per accedere alla
+        piattaforma e fruire della <b>prova gratuita</b>.
+      </p>
+    </div>
+    <div class="form-row">
+      <div class="textfield assessee-email-textfield">
+        <Textfield name="email" type="email" label="Email valutato" error={formErrors.emailAssessee}
+          value={form.emailAssessee} on:change={(e)=> (form.emailAssessee =
+          e.target.value)}
+          onkeyup={(e) => {
+          if (e.target.value.length) {
+          formErrors.emailAssessee = null;
+          }
+          }}
+          />
+      </div>
+      <div class="textfield assessor-email-textfield">
+        <Textfield name="email" type="email" label="Email valutatore" error={formErrors.emailAssessor}
+          value={form.emailAssessor} on:change={(e)=> (form.emailAssessor =
+          e.target.value)}
+          onkeyup={(e) => {
+          if (e.target.value.length) {
+          formErrors.emailAssessor = null;
+          }
+          }}
+          />
+      </div>
+    </div>
+    <HoneypotField onchange={()=> (bot = true)} />
+      <div class="submit-button-form-row">
+        <Button component="button" variant="secondary" type="submit" on:click={handleSubmit}>
+          Invia
+        </Button>
+      </div>
+  </div>
+  <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" />
+</form>
+
+<style>
+  .title-3 {
+    text-transform: none;
+  }
+
+  .request-trial {
+    position: relative;
+    margin-top: var(--spacing-8);
+  }
+
+  .request-trial h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-4);
+  }
+
+  .subtitle {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 730px;
+  }
+
+  .title-hexagon {
+    position: absolute;
+    z-index: -1;
+    top: -160px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .form {
+    margin: var(--spacing-6) 0;
+    display: block;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .form-row .body-2 {
+    font-size: 18px;
+    margin: 0 var(--spacing-3) var(--spacing-3);
+
+    b {
+      font-weight: 500;
+    }
+  }
+
+  .form-row .body-2 b {
+    font-weight: 500;
+  }
+
+  .textfield,
+  .select {
+    margin: 0 0 var(--spacing-3);
+  }
+
+  .textfield,
+  .select {
+    flex: 1 0 100%;
+  }
+
+  .employees-textfield {
+    margin-right: var(--spacing-1);
+  }
+
+  .submit-button-form-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 960px) {
+    .request-trial {
+      margin-top: 0;
+    }
+
+    .textfield,
+    .select {
+      margin: 0 var(--spacing-2) 0;
+    }
+
+    .form-row {
+      margin: 0 -8px var(--spacing-2);
+    }
+
+    .name-textfield,
+    .email-textfield,
+    .employees-textfield,
+    .assessee-email-textfield {
+      flex: 1 1 0;
+      margin-right: var(--spacing-1);
+    }
+
+    .companyName-textfield,
+    .role-textfield,
+    .industry-textfield,
+    .assessor-email-textfield {
+      flex: 1 1 0;
+    }
+  }
+</style>

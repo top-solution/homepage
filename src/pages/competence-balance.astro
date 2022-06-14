@@ -1,0 +1,359 @@
+---
+import Layout from "../components/Layout.astro";
+import Button from "../components/Button.astro";
+import Blob from "../components/Blob.astro";
+import Hex from "../components/Hex.astro";
+---
+
+<Layout color="light">
+  <article>
+    <section>
+      <div class="copy">
+        <div class="floating-hex-0">
+          <Hex width="185" fill="#312783" shadow="true" />
+        </div>
+        <div class="floating-hex-1">
+          <Hex width="275" fill="#312783" shadow="true" />
+        </div>
+        <div class="floating-hex-2">
+          <Hex width="85" fill="#0078C3" shadow="true" />
+        </div>
+        <div class="floating-hex-6">
+          <Hex width="135" fill="#8883B6" shadow="true" />
+        </div>
+        <h4>Bilancio di competenza</h4>
+        <p>
+          Permette di comprendere come le persone esprimono professionalmente le conoscenze, le capacità e le qualità
+          professionali nella realizzazione quotidiana del loro lavoro e come esse impattano nel sistema azienda. La
+          metodologia consiste nel far valutare il candidato da più persone che interagiscono lavorativamente con lui in
+          modo diretto o indiretto (responsabili, colleghi e riporti).
+        </p>
+        <ul>
+          <li> &#11042; <span>Valutazione 180°</span></li>
+          <li> &#11042; <span>Valutazione 360°</span></li>
+        </ul>
+        <div class="floating-hex-3">
+          <Hex width="65" fill="#312783" shadow="true" />
+        </div>
+      </div>
+      <div class="button">
+        <Button variant="primary" href="/contacts/">Contattaci</Button>
+      </div>
+    </section>
+    <section>
+      <h5>Piano Custom TAB TO CHANGE</h5>
+      <div class="custom-plan">
+        <h6><strong>Valutazione
+            del potenziale</strong></h6>
+        <p><strong>Tra le prove:</strong></p>
+        <hr />
+        <p>Colloqui in call conference</p>
+        <hr />
+        <p>Prove a tempo cronometrate con segnalazione di eventuale overtime </p>
+        <hr />
+        <p>Incident e inbasket online con la possibilità di avere assistenza remoto </p>
+        <hr />
+        <p>Prove di gruppo in call conference con tutti i partecipanti e gli psicologi che verificano l’andamento e
+          valutano i comportamenti</p>
+      </div>
+    </section>
+    <div class="floating-hex-4">
+      <Hex width="65" fill="#0078C3" shadow="false" rotation="-4" />
+    </div>
+    <div class="blob">
+      <Blob interactive={true} shape="hexagon" fill="#E3F1FA" padding="46" variance="1.2">
+        <div class="blob-content">
+          <p class="title-6">Desideri un <b>piano custom</b>?</p>
+          <p class="title-6">Scegli il piano <b>ENTERPRISE</b></p>
+          <div class="button">
+            <Button variant="primary" href="/contacts.html" style="display: inline-block">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+      </Blob>
+    </div>
+    <section>
+      <h5>Piano Custom TAB TO CHANGE</h5>
+      <div class="custom-plan">
+        <h6><strong>Valutazione
+            del potenziale</strong></h6>
+        <p><strong>Tra le prove:</strong></p>
+        <hr />
+        <p>Colloqui in call conference</p>
+        <hr />
+        <p>Prove a tempo cronometrate con segnalazione di eventuale overtime </p>
+        <hr />
+        <p>Incident e inbasket online con la possibilità di avere assistenza remoto </p>
+        <hr />
+        <p>Prove di gruppo in call conference con tutti i partecipanti e gli psicologi che verificano l’andamento e
+          valutano i comportamenti</p>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .body-2 {
+    font-size: 20px;
+  }
+
+  section {
+    margin-bottom: var(--spacing-5);
+  }
+
+  h5 {
+    margin-bottom: var(--spacing-3);
+    text-align: center;
+  }
+
+  h6 {
+    margin-bottom: var(--spacing-1);
+  }
+
+  .custom-plan {
+    background-color: var(--color-blue-background);
+    color: var(--color-blue);
+    padding: 16px 24px;
+  }
+
+  hr {
+    color: red;
+  }
+
+  .header-hexagons-desktop {
+    right: 0px;
+    width: 100%;
+    top: 0px;
+  }
+
+  .header-hexagons-mobile {
+    display: none;
+  }
+
+  .header-hexagons-desktop,
+  .header-hexagons-mobile {
+    position: absolute;
+  }
+
+  .floating-hex-0 {
+    width: 130px;
+    position: absolute;
+    top: -200px;
+    left: -400px;
+  }
+
+  .floating-hex-1 {
+    width: 85px;
+    position: absolute;
+    top: -565px;
+    left: 625px;
+    transform: rotate(25deg);
+  }
+
+  .floating-hex-2 {
+    width: 85px;
+    position: absolute;
+    top: -25px;
+    left: 600px;
+  }
+
+  .floating-hex-6 {
+    width: 85px;
+    position: absolute;
+    top: 125px;
+    left: 775px;
+  }
+
+  article {
+    display: block;
+    color: var(--color-blue);
+    box-sizing: border-box;
+  }
+
+  article .floating-hex-3 {
+    width: 130px;
+    position: absolute;
+    top: 375px;
+    left: 600px;
+  }
+
+  article .floating-hex-4 {
+    width: 425px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: var(--spacing-3);
+  }
+
+  .copy {
+    width: 60%;
+    margin-top: var(--spacing-15);
+    position: relative;
+  }
+
+  .copy p {
+    flex: 1 1 0;
+    margin-top: var(--spacing-5);
+    font-size: 25px;
+  }
+
+  .our-services {
+    max-width: 540px;
+    margin: var(--spacing-20) auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .our-services ol {
+    list-style: none;
+    padding: 0;
+  }
+
+  .our-services li {
+    display: flex;
+    min-width: 500px;
+    margin-bottom: var(--spacing-3);
+  }
+
+  .button {
+    margin: 0 auto;
+    max-width: 150px;
+    margin-top: var(--spacing-2)
+  }
+
+  ul {
+    position: relative;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  ul span {
+    padding-left: var(--spacing-1);
+  }
+
+
+  ul li:before {
+    position: absolute;
+    left: 0;
+  }
+
+  ul li {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-0-5)
+  }
+
+
+  .our-services .small {
+    display: none;
+  }
+
+  .our-services svg {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 110%;
+  }
+
+  article .blob {
+    display: block;
+    max-width: 340px;
+    margin: 110px auto var(--spacing-15);
+    width: 100%;
+  }
+
+  article .blob-content {
+    text-align: center;
+    margin: 0 var(--spacing-5) 0 var(--spacing-8);
+  }
+
+  article .blob-content .button {
+    max-width: 175px;
+    margin: var(--spacing-3) auto 0 auto;
+  }
+
+  article .hexagons-floating {
+    width: 58px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .floating-hex-3 {
+      display: none;
+    }
+
+    .floating-hex-4 {
+      width: 45px;
+      margin-right: 134px;
+    }
+
+    .copy {
+      align-items: flex-start;
+      margin: var(--spacing-10) 0;
+    }
+
+    .copy p {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .copy .hr-svg {
+      display: none;
+      max-width: 160px;
+      flex: 0 1 160px;
+      margin-left: var(--spacing-1);
+      margin-top: var(--spacing-1);
+    }
+
+    .blob {
+      margin-top: 100px;
+    }
+
+    .our-services {
+      align-items: stretch;
+      margin-top: var(--spacing-15);
+    }
+
+    .our-services li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 0;
+    }
+
+    .our-services .button {
+      display: none;
+    }
+
+    .our-services .small {
+      display: block;
+      margin-left: auto;
+    }
+
+    .our-services svg {
+      width: 125%;
+    }
+  }
+
+  @media only screen and (max-width: 960px) {
+    .hr-svg {
+      display: none;
+    }
+
+    .copy p,
+    .claim {
+      text-align: center;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 960px) {
+    .floating-hex-3 {
+      display: none;
+    }
+  }
+</style>

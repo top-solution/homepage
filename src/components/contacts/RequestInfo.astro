@@ -107,7 +107,7 @@ function handleSubmit(event) {
             />
         </div>
         <div class="textfield textfield-companyName">
-          <Textfield class="textfield textfield-companyName" name="companyName" label="Nome azienda*"
+          <Textfield name="companyName" label="Nome azienda*"
             error={formErrors.companyName} value={form.companyName} onchange={(e)=>
             (form.companyName = e.target.value)}
             onkeyup={(e) => {
@@ -255,7 +255,7 @@ function handleSubmit(event) {
     }
 
     .form-row {
-      margin: 0 (var(--spacing-1) * -1) var(--spacing-3);
+      margin: 0 (var(--spacing-1) * -1) var(--spacing-2);
     }
 
     .textfield {

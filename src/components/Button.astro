@@ -6,39 +6,30 @@ const { variant = "primary", component = null, small = false, href, type, icon }
 ---
 
 {(component === "button") ? (
-  <button
-    class={classnames({'primary': variant === "primary", 'secondary': variant === "secondary", 'outlined': variant === "outlined", 'icon': icon, 'small': small})}
-    type={type}
-  >
-    <slot />
-    {variant === "outlined" && (
-      <svg
-        viewBox="0 0 16 16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
-      </svg>
-    )}
-  </button>
+<button class={classnames({'primary': variant==="primary" , 'secondary' : variant==="secondary" , 'tertiary' :
+  variant==="tertiary" , 'outlined' : variant==="outlined" , 'icon' : icon, 'small' : small})} type={type}>
+  <slot />
+  {variant === "outlined" && (
+  <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
+  </svg>
+  )}
+</button>
 ) : (component === null || component === "a") && (
-  <a
-    class={classnames({'primary': variant === "primary", 'secondary': variant === "secondary", 'outlined': variant === "outlined", 'icon': icon, 'small': small})}
-    href={href}
-  >
-    <slot />
-    {variant === "outlined" && (
-      <svg
-        viewBox="0 0 16 16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
-      </svg>
-    )}
-  </a>
+<a class={classnames({'primary': variant==="primary" , 'secondary' : variant==="secondary" , 'tertiary' :
+  variant==="tertiary" , 'outlined' : variant==="outlined" , 'icon' : icon, 'small' : small})} href={href}>
+  <slot />
+  {variant === "outlined" && (
+  <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
+  </svg>
+  )}
+</a>
 )}
 
 <style>
-  a, button {
+  a,
+  button {
     align-items: center;
     border-radius: 4px;
     box-sizing: border-box;
@@ -58,7 +49,8 @@ const { variant = "primary", component = null, small = false, href, type, icon }
   }
 
   .primary,
-  .secondary {
+  .secondary,
+  .tertiary {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px,
       rgba(240, 177, 177, 0.12) 0px 1px 10px 0px;
   }
@@ -82,6 +74,18 @@ const { variant = "primary", component = null, small = false, href, type, icon }
   }
 
   .secondary:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+    background-color: var(--color-azure-light);
+  }
+
+  .tertiary {
+    color: var(--color-white);
+    border: 1px solid transparent;
+    background-color: var(--color-blue-middle);
+  }
+
+  .tertiary:hover {
     color: var(--color-blue);
     border-color: var(--color-blue);
     background-color: var(--color-azure-light);

@@ -2,26 +2,26 @@
 import { Icon } from 'astro-icon'
 import Button from './Button.astro';
 import Blob from './Blob.astro';
-const { title, blobs, buttonlink } = Astro.props;
+const { title, subtitle, blobs, buttonlink } = Astro.props;
 ---
 
 <section>
-  <h1>{title}</h1>
+  <h4>{title}</h4>
+  <p class="subtitle">{subtitle}</p>
   <div class="container">
     {blobs.map((blob) => (
     <a href={blob.href}>
-      <Blob interactive={true} shape="rectangle" style={`max-width: ${blob.width};`}
-        fill={blob.color} padding="20" clickable="true">
+      <Blob interactive={true} shape="rectangle" style={`max-width: ${blob.width};`} fill={blob.color} padding="20"
+        clickable="true">
         <div class="text">
-          <p>
-            <img src={`../img/icons/${blob.icon}`} alt="devices icon" width="50" height="35" />
-          </p>
           <p class="claim">
             <b>{blob.title}</b>
           </p>
-          <h6>
-            {blob.subtitle}
-          </h6>
+          <div class="centred-button">
+            <button class="outlined" href={blob.href} type="button">
+              Vai al Piano
+            </button>
+          </div>
         </div>
       </Blob>
     </a>
@@ -34,11 +34,6 @@ const { title, blobs, buttonlink } = Astro.props;
       <Icon pack="mdi" name="arrow-right" />
     </a>
     ))}
-  </div>
-  <div class="centred-button">
-    <Button variant="outlined" href={buttonlink} type="button">
-      Scopri
-    </Button>
   </div>
 </section>
 
@@ -54,8 +49,14 @@ const { title, blobs, buttonlink } = Astro.props;
     font-size: 24px;
   }
 
-  h6 {
+  h4 {
     font-size: 18px;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin-bottom: var(--spacing-10);
   }
 
   .container-mobile {
@@ -77,6 +78,26 @@ const { title, blobs, buttonlink } = Astro.props;
 
   h1 {
     margin-top: var(--spacing-20)
+  }
+
+  .outlined {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px,
+      rgba(240, 177, 177, 0.12) 0px 1px 10px 0px;
+    border: 0;
+
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 8px 16px;
+
+    transition: background-color var(--transition-timing-quick) var(--transition-function-default);
+  }
+
+  .outlined:hover {
+    background-color: var(--color-blue);
+    color: white;
+    cursor: pointer;
   }
 
   @media only screen and (max-width: 960px) {
