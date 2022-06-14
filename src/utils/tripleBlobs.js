@@ -35,6 +35,7 @@ export const developmentSoftwareBlobs = [
     subtitle:
       "Single page web applications, rest api, micro-services, hybrid apps",
     color: "#e3f1fa",
+    colorMobile: "#0078C3",
     width: "260px",
     href: "/applications.html",
   },
@@ -43,6 +44,7 @@ export const developmentSoftwareBlobs = [
     title: "CONSULENZA SVILUPPO SW",
     subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
     color: "#e3f1fa",
+    colorMobile: "#0078C3",
     width: "260px",
     html: "/consulting.html",
   },
@@ -52,6 +54,7 @@ export const developmentSoftwareBlobs = [
     subtitle:
       "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!",
     color: "#e3f1fa",
+    colorMobile: "#0078C3",
     width: "260px",
     html: "/cloud.html",
   },

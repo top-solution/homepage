@@ -1,0 +1,87 @@
+---
+import { CHECKED, UNCHECKED } from "../../utils/tables"
+const { header, rows } = Astro.props;
+---
+
+<section>
+  <table>
+    {header.map((row) =>
+    <tr>
+      <th>
+        {row[0]}
+      </th>
+      <th>
+        {row[1]}
+      </th>
+      <th>
+        {row[2]}
+      </th>
+      <th>
+        {row[3]}
+      </th>
+    </tr>
+    )}
+    {rows.map((row) =>
+    <tr>
+      <td>
+        {row[0] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[0] === UNCHECKED ? <img
+          src="../img/icons/check-false.svg" /> : row[0])}
+      </td>
+      <td>
+        {row[1] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[1] === UNCHECKED ? <img
+          src="../img/icons/check-false.svg" /> : row[1])}
+      </td>
+      <td>
+        {row[2] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[2] === UNCHECKED ? <img
+          src="../img/icons/check-false.svg" /> : row[2])}
+      </td>
+      <td>
+        {row[3] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[3] === UNCHECKED ? <img
+          src="../img/icons/check-false.svg" /> : row[3])}
+      </td>
+    </tr>
+    )}
+  </table>
+</section>
+
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    text-align: start;
+  }
+
+  th:first-child {
+    font-size: 24px;
+  }
+
+  th,
+  td {
+    padding: var(--spacing-2);
+    border-bottom: 0.25px solid var(--color-blue);
+  }
+
+  section {
+    margin-bottom: var(--spacing-5);
+    background-color: var(--color-blue-background);
+    color: var(--color-blue);
+    padding: 16px 24px;
+  }
+
+  h5 {
+    margin-bottom: var(--spacing-3);
+    text-align: center;
+  }
+
+  h6 {
+    margin-bottom: var(--spacing-1);
+  }
+
+  hr {
+    color: red;
+  }
+</style>

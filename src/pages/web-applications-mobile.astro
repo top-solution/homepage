@@ -2,7 +2,7 @@
 import Layout from "../components/Layout.astro";
 import TopBanner from "../components/TopBanner.astro";
 import Button from "../components/Button.astro";
-import Picture from "../components/Picture.astro";
+import Customers from "../components/Customers.astro";
 import Hex from "../components/Hex.astro";
 import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
@@ -108,10 +108,7 @@ import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsM
       <div class="floating-hex-2">
         <Hex width="44" fill="#312783" opacity=".7" shadow="false" rotation="-4" />
       </div>
-      <h3 class="title-3 title-form customers">
-        Chi ci ha scelto
-      </h3>
-      <Picture base="customers" src="sky" alt="Sky" />
+      <Customers title="Chi ci ha scelto" />
     </div>
   </div>
 </Layout>

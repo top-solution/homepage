@@ -12,17 +12,13 @@ import { contacts } from "../utils/contacts";
       <li><a href="/#customers">Clienti</a></li>
     </ul>
     <ul>
-      <h5>Link utili</h5>
-      <li><a href="/hr-development.html/">HR</a></li>
-      <li><a href="/software-development/">DEV</a></li>
-      <li><a href="/haka.html/">Tariffe</a></li>
-      <li><a href="/privacy-policy/">Privacy Policy</a></li>
-    </ul>
-    <ul>
-      <h5>Servizi</h5>
+      <h5>HR</h5>
       <li><a href="/haka/">Audit competenze</a></li>
       <li><a href="/company-development/">Sviluppo organizzativo</a></li>
       <li><a href="/self-development/">Sviluppo individuale</a></li>
+    </ul>
+    <ul>
+      <h5>DEV</h5>
       <li><a href="/web-applications-mobile/">Applicazioni web e mobile</a></li>
       <li><a href="/software-development-consulting/">Consulenza sviluppo software</a></li>
       <li><a href="/cloud-computing/">Cloud computing</a></li>
@@ -34,13 +30,13 @@ import { contacts } from "../utils/contacts";
       <li><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
       <li>Sede Legale: {contacts.registeredOffice}</li>
       <li>Sede Operativa: {contacts.operationalOffice}</li>
-      <a target="_blank" href="https://twitter.com" rel="noopener noreferrer" class="picture" title="Twitter">
+      <!-- <a target="_blank" href="https://twitter.com" rel="noopener noreferrer" class="picture" title="Twitter">
         <Picture base="footer" src="twitter" alt="Twitter" extension="svg" />
       </a>
       <a target="_blank" href="https://www.linkedin.com/" rel="noopener noreferrer" class="picture spacing"
         title="Linkedin">
         <Picture base="footer" src="linkedin" alt="Linkedin" extension="svg" />
-      </a>
+      </a> -->
       <!-- <a
         target="_blank"
         href="https://www.instagram.com/"
@@ -68,6 +64,7 @@ import { contacts } from "../utils/contacts";
     <div class="iva">
       <span itemprop="legalName">© Top Solution s.r.l </span>
       <span class="spacing" itemprop="vatID"><strong>P.IVA/CF </strong> 10031960015</span>
+      <span><a class="spacing" href="/privacy-policy/">Privacy Policy</a></span>
     </div>
   </aside>
 </footer>

@@ -3,6 +3,8 @@ import Layout from "../components/Layout.astro";
 import Button from "../components/Button.astro";
 import Blob from "../components/Blob.astro";
 import Hex from "../components/Hex.astro";
+import PrincingTable from "../components/haka/PricingTable.astro"
+import { competenceBalanceHeader180, competenceBalance180, competenceBalanceHeader360, competenceBalance360 } from "../utils/tables.js";
 ---
 
 <Layout color="light">
@@ -40,23 +42,7 @@ import Hex from "../components/Hex.astro";
         <Button variant="primary" href="/contacts/">Contattaci</Button>
       </div>
     </section>
-    <section>
-      <h5>Piano Custom TAB TO CHANGE</h5>
-      <div class="custom-plan">
-        <h6><strong>Valutazione
-            del potenziale</strong></h6>
-        <p><strong>Tra le prove:</strong></p>
-        <hr />
-        <p>Colloqui in call conference</p>
-        <hr />
-        <p>Prove a tempo cronometrate con segnalazione di eventuale overtime </p>
-        <hr />
-        <p>Incident e inbasket online con la possibilità di avere assistenza remoto </p>
-        <hr />
-        <p>Prove di gruppo in call conference con tutti i partecipanti e gli psicologi che verificano l’andamento e
-          valutano i comportamenti</p>
-      </div>
-    </section>
+    <PrincingTable header={competenceBalanceHeader180} rows={competenceBalance180} />
     <div class="floating-hex-4">
       <Hex width="65" fill="#0078C3" shadow="false" rotation="-4" />
     </div>
@@ -73,23 +59,23 @@ import Hex from "../components/Hex.astro";
         </div>
       </Blob>
     </div>
-    <section>
-      <h5>Piano Custom TAB TO CHANGE</h5>
-      <div class="custom-plan">
-        <h6><strong>Valutazione
-            del potenziale</strong></h6>
-        <p><strong>Tra le prove:</strong></p>
-        <hr />
-        <p>Colloqui in call conference</p>
-        <hr />
-        <p>Prove a tempo cronometrate con segnalazione di eventuale overtime </p>
-        <hr />
-        <p>Incident e inbasket online con la possibilità di avere assistenza remoto </p>
-        <hr />
-        <p>Prove di gruppo in call conference con tutti i partecipanti e gli psicologi che verificano l’andamento e
-          valutano i comportamenti</p>
-      </div>
-    </section>
+    <PrincingTable header={competenceBalanceHeader360} rows={competenceBalance360} />
+    <div class="floating-hex-5">
+      <Hex width="65" fill="#0078C3" shadow="false" rotation="-4" />
+    </div>
+    <div class="blob">
+      <Blob interactive={true} shape="hexagon" fill="#E3F1FA" padding="46" variance="1.2">
+        <div class="blob-content">
+          <p class="title-6">Desideri un <b>piano custom</b>?</p>
+          <p class="title-6">Scegli il piano <b>ENTERPRISE</b></p>
+          <div class="button">
+            <Button variant="primary" href="/contacts.html" style="display: inline-block">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+      </Blob>
+    </div>
   </article>
 </Layout>
 
@@ -179,6 +165,14 @@ import Hex from "../components/Hex.astro";
   }
 
   article .floating-hex-4 {
+    width: 425px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: var(--spacing-3);
+  }
+
+  article .floating-hex-5 {
     width: 425px;
     height: 50px;
     display: block;

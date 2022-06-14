@@ -4,6 +4,8 @@ import Button from "../components/Button.astro";
 import Blob from "../components/Blob.astro";
 import Hex from "../components/Hex.astro";
 import RequestTrial from "../components/haka/RequestTrial.astro";
+import PrincingTable from "../components/haka/PricingTable.astro"
+import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tables.js";
 ---
 
 <Layout color="light">
@@ -42,23 +44,7 @@ import RequestTrial from "../components/haka/RequestTrial.astro";
         <Button variant="tertiary" href="/contacts/">Prova Gratuita</Button>
       </div>
     </section>
-    <section>
-      <h5>Piano Custom TAB TO CHANGE</h5>
-      <div class="custom-plan">
-        <h6><strong>Valutazione
-            del potenziale</strong></h6>
-        <p><strong>Tra le prove:</strong></p>
-        <hr />
-        <p>Colloqui in call conference</p>
-        <hr />
-        <p>Prove a tempo cronometrate con segnalazione di eventuale overtime </p>
-        <hr />
-        <p>Incident e inbasket online con la possibilità di avere assistenza remoto </p>
-        <hr />
-        <p>Prove di gruppo in call conference con tutti i partecipanti e gli psicologi che verificano l’andamento e
-          valutano i comportamenti</p>
-      </div>
-    </section>
+    <PrincingTable header={assessmentPerformanceHeader} rows={assessmentPerformance} />
     <div class="floating-hex-4">
       <Hex width="65" fill="#0078C3" shadow="false" rotation="-4" />
     </div>

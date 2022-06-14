@@ -5,6 +5,7 @@ import Button from "../components/Button.astro";
 import Hex from "../components/Hex.astro";
 import Blob from "../components/Blob.astro";
 import Picture from "../components/Picture.astro";
+import Customers from "../components/Customers.astro";
 import HeaderHexagonsDesktop from "../components/haka/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/haka/HeaderHexagonsMobile.astro";
 import HakaTripleBlob from "../components/HakaTripleBlob.astro";
@@ -81,10 +82,7 @@ import { hakaBlobs } from "../utils/tripleBlobs";
           </div>
         </Blob>
       </div>
-      <h3 class="title-3 title-form customers">
-        Chi ha scelto 測 HAKA
-      </h3>
-      <Picture base="customers" src="sky" alt="Sky" />
+      <Customers title="Chi ha scelto 測 HAKA"/>
     </div>
   </div>
 </Layout>
@@ -159,6 +157,7 @@ import { hakaBlobs } from "../utils/tripleBlobs";
     left: 30%;
     top: 2575px;
   }
+
   .floating-hex-9 {
     position: absolute;
     left: 55%;
