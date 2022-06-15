@@ -473,4 +473,27 @@ function handleSubmit(event) {
       margin-bottom: 0;
     }
   }
+
+  @media only screen and (max-width: 600px) {
+
+    .form-row {
+      margin: 0 var(--spacing-1);
+      justify-content: space-between;
+    }
+
+    .textfield {
+      flex: 0 0 100%;
+    }
+
+    .textfield-age,
+    .textfield-graduation {
+      flex: 0 0 45%;
+    }
+
+    .textfield-experience,
+    .textfield-graduation-grade {
+      flex: 0 0 45%;
+      margin-right: 0;
+    }
+  }
 </style>

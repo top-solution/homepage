@@ -9,8 +9,8 @@ import ContactUs from "../components/team/ContactUs.astro";
 ---
 
 <Layout color="light">
-  <HeaderHexagonsDesktop class="hex" />
-  <HeaderHexagonsMobile class="hex" />
+  <HeaderHexagonsDesktop />
+  <HeaderHexagonsMobile />
   <div>
     <div class="giga-blob">
       <img src="../img/giga-blob.svg" alt="" />
@@ -128,7 +128,7 @@ import ContactUs from "../components/team/ContactUs.astro";
   }
 
   .people {
-    margin: var(--spacing-15) 0;
+    margin: var(--spacing-10) 0 var(--spacing-15);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -145,7 +145,7 @@ import ContactUs from "../components/team/ContactUs.astro";
 
 
   .team-person-container {
-    margin: var(--spacing-7) 0;
+    margin: var(--spacing-2) 0;
     flex: 0 1 33.3333%;
     max-width: 33.3333%;
   }
@@ -175,8 +175,7 @@ import ContactUs from "../components/team/ContactUs.astro";
 
   @media only screen and (min-width: 601px) and (max-width: 960px) {
     .title-1 {
-      max-width: 60%;
-      text-align: left;
+      text-align: center;
     }
 
     .giga-blob {
@@ -189,13 +188,30 @@ import ContactUs from "../components/team/ContactUs.astro";
     }
 
     .copy {
-      max-width: 60%;
+      margin: 0 var(--spacing-2);
+    }
+
+    .team-person-container {
+      flex: 0 1 50%;
+      max-width: 50%;
+    }
+
+    .spacer {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .team-person-container {
+      flex: 0 1 100%;
+      max-width: 100%;
     }
   }
 
   @media only screen and (max-width: 600px) {
+
     .copy {
-      max-width: 80%;
+      margin: 0 var(--spacing-2);
     }
 
     .people {
@@ -220,14 +236,6 @@ import ContactUs from "../components/team/ContactUs.astro";
       z-index: -1;
     }
 
-    .team-person-container {
-      margin: var(--spacing-1) 2px;
-      flex: 0 1 calc(50% - 4px);
-      max-width: calc(50% - 4px);
-    }
-  }
 
-  .hex {
-    z-index: -1
   }
 </style>
