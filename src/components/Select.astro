@@ -86,16 +86,6 @@ let { focused, menuOpen } = Astro.props;
 
 <style>
   .ts-select {
-    width: 25ch;
-    display: inline-flex;
-    flex-direction: column;
-    position: relative;
-    min-width: 0;
-    padding: 0;
-    border: 0;
-    max-width: 448px;
-    vertical-align: top;
-    width: 100%;
     position: relative;
     margin: var(--spacing-1);
   }
@@ -286,4 +276,10 @@ let { focused, menuOpen } = Astro.props;
   .menu li:hover {
     background-color: rgba(0, 0, 0, 0.04);
   }
+
+  /* @media only screen and (max-width: 600px) {
+    .ts-select {
+      max-width: 100%;
+    }
+  } */
 </style>
