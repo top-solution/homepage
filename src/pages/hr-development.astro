@@ -4,15 +4,18 @@ import Button from "../components/Button.astro";
 import Blob from "../components/Blob.astro";
 import TopBanner from "../components/TopBanner.astro";
 import Hex from "../components/Hex.astro";
+import TripleBlob from "../components/TripleBlob.astro";
 import HrSvg from "../components/hr-development/HrSvg.astro";
 import HeaderHexagonsDesktop from "../components/hr-development/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMobile.astro";
+import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../utils/tripleBlobs";
 ---
 
 <Layout color="light">
   <TopBanner title="Sviluppo delle Risorse Umane" mobilealignleft="true" title2={false}>
     <div class="claim" slot="text">
-      I nostri <b>servizi</b> vengono proposti in modalità SaaS e sono rivolti allo sviluppo delle <b>Risorse Umane</b> e
+      I nostri <b>servizi</b> vengono proposti in modalità SaaS e sono rivolti allo sviluppo delle <b>Risorse Umane</b>
+      e
       del <b>Marketing Aziendale</b>
     </div>
     <div slot="actions" style="display: flex; flex-direction: column; max-width: 175px; margin: auto;">
@@ -21,18 +24,19 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
     <div slot="external">
       <HeaderHexagonsDesktop />
       <div class="header-hexagons-mobile">
-        <HeaderHexagonsMobile/>
+        <HeaderHexagonsMobile />
       </div>
       <div class="hexagons-floating">
         <Hex width="85" fill="#312783" shadow="true" />
       </div>
     </div>
   </TopBanner>
-  <article class="layout">
+  <article>
     <div class="copy">
       <p>
         Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
-        di comunicazione on-line, diversi moduli per la <b>gestione</b> delle attività del <b>personale</b> interno ed esterno
+        di comunicazione on-line, diversi moduli per la <b>gestione</b> delle attività del <b>personale</b> interno ed
+        esterno
       </p>
       <div class="hr-svg">
         <HrSvg />
@@ -41,45 +45,10 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
         <Hex width="130" fill="#4758a3" shadow="true" />
       </div>
     </div>
-    <div class="our-services">
-      <h2>I nostri <b>servizi</b></h2>
-      <ol>
-        <li>
-          <h5>AUDIT COMPETENZE</h5>
-          <div class="button">
-            <Button variant="outlined" href="haka.html">Scopri</Button>
-          </div>
-          <div class="small">
-            <Button variant="outlined" small={true} href="haka.html">Scopri</Button>
-          </div>
-        </li>
-        <li>
-          <h5>SVILUPPO ORGANIZZATIVO</h5>
-          <div class="button">
-            <Button variant="outlined" href="company-development.html">Scopri</Button>
-          </div>
-          <div class="small">
-            <Button variant="outlined" small={true} href="company-development.html">Scopri</Button>
-          </div>
-        </li>
-        <li>
-          <h5>SVILUPPO INDIVIDUALE</h5>
-          <div class="button">
-            <Button variant="outlined" href="self-development.html">Scopri</Button>
-          </div>
-          <div class="small">
-            <Button variant="outlined" small={true} href="self-development.html">Scopri</Button>
-          </div>
-        </li>
-      </ol>
-      <svg viewBox="0 0 616 573" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M615.851 371.212L588.675 228.197L560.868 85.3133L407.215 42.7312L253.339 0.697273L126.861 101.13L0.791841 201.98L27.968 344.995L55.7745 487.878L209.428 530.461L363.304 572.495L489.781 472.062L615.851 371.212Z"
-          fill="#E3F1FA"></path>
-      </svg>
-    </div>
+    <TripleBlob title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development/"
+      blobs={developmentHumanResourceBlobs} />
     <div class="blob">
-      <Blob interactive={true} shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4">
+      <Blob interactive={true} shape="hexagon" fill="#E3F1FA" padding="48" variance="1.4">
         <div class="blob-content">
           <p class="body-2">
             I nostri <b>prodotti</b> sono continuamente rinnovati utilizzando le più
@@ -123,27 +92,26 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
 
   article {
     display: block;
+    margin-top: var(--spacing-3);
     color: var(--color-blue);
     box-sizing: border-box;
   }
 
-  article .floating-hex-3 {
+  .floating-hex-3 {
     width: 130px;
     position: absolute;
     top: 300px;
-    left: -30;
+    left: -175px;
   }
 
-  article .floating-hex-4 {
-    width: 225px;
-    display: block;
-    margin-left: auto;
-    margin-right: var(--spacing-3);
+  .floating-hex-4 {
+    position: absolute;
+    left: 800px;
+    top: 2025px;
   }
 
   .copy {
     display: flex;
-    margin-top: var(--spacing-15);
     position: relative;
   }
 
@@ -198,15 +166,15 @@ import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMob
     width: 110%;
   }
 
-  article .blob {
+  .blob {
     display: block;
     max-width: 540px;
-    margin: 220px auto var(--spacing-10);
+    margin: 120px auto var(--spacing-10);
   }
 
   article .blob-content {
     text-align: center;
-    margin: 0 var(--spacing-5);
+    padding: 0 var(--spacing-9);
   }
 
   article .blob-content .button {

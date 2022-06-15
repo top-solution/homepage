@@ -12,18 +12,16 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
 ---
 
 <Layout color="light">
-  <div class="ts-header-hexagons-desktop">
-    <HeaderHexagonsDesktop />
-  </div>
+  <HeaderHexagonsDesktop />
   <div class="ts-header-hexagons-mobile">
     <HeaderHexagonsMobile />
   </div>
   <h1 class="title-1">Azienda</h1>
-  <div class="row">
+  <div class="row mt">
     <div class="logo" style="background-image: url(../../../img/start_cup.png)"></div>
     <div class="blob">
       <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
-        <div class="blob content">
+        <div class="blob content right">
           <p class="body-1">
             Nasciamo come <b>vincitori</b> nel 2008 della IV edizione della Start
             Cup Torino Piemonte
@@ -41,13 +39,13 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     <Hex1Desktop />
   </div>
   <div class="hex-1-mobile">
-    <Hex1Mobile />
+    <Hex2Mobile />
   </div>
   <div class="row flipped">
     <div class="logo" style="background-image: url(../../../img/i3p.png)"></div>
     <div class="blob">
       <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2" flip="true">
-        <div class="blob content">
+        <div class="blob content left">
           <p class="body-1">
             Nel 2012 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
             siamo usciti dall'incubatore e abbiamo aperto il nostro primo ufficio
@@ -66,7 +64,7 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     <div itemprop="logo" class="logo" style="background-image: url(../../../img/logo_name.svg)"></div>
     <div class="blob">
       <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
-        <div class="blob content">
+        <div class="blob content center">
           <p class="body-1">
             <b>Oggi</b> siamo proiettati all’<b>industry 4.0</b> e allo sviluppo
             di applicazioni per l’<b>ottimizzazione</b>, l'<b>efficientamento</b>
@@ -102,7 +100,7 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
   }
 
   .ts-header-hexagons-desktop {
-    right: -280px;
+    right: -225px;
     width: 830px;
     top: -400px;
   }
@@ -193,15 +191,16 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
   }
 
   @media only screen and (max-width: 600px) {
+    .body-1 {
+      font-size: 18px;
+    }
+
     .ts-header-hexagons-desktop {
       display: none;
     }
 
     .ts-header-hexagons-mobile {
-      display: block;
-      right: -110px;
-      width: 414px;
-      top: -285px;
+      display: none;
     }
 
     h1.title-1 {
@@ -227,12 +226,23 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     .blob {
       min-width: 80vw;
       margin-right: 0;
-      /* margin-left: -(variables.$ts-spacing-8); */
     }
 
     .content {
       padding: var(--spacing-2) var(--spacing-4) var(--spacing-2) var(--spacing-8);
       text-align: left;
+    }
+
+    .right {
+      padding: var(--spacing-2) var(--spacing-6) var(--spacing-2) var(--spacing-4);
+    }
+
+    .left {
+      padding: var(--spacing-2) var(--spacing-4) var(--spacing-2) var(--spacing-10);
+    }
+
+    .center{
+      padding: var(--spacing-1) var(--spacing-8) var(--spacing-1) var(--spacing-8);
     }
 
     .row .flipped .content {
@@ -243,6 +253,10 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     .row {
       padding-left: var(--spacing-3);
       padding-right: var(--spacing-3);
+    }
+
+    .mt {
+      margin-top: var(--spacing-20);
     }
 
     .hex-1,
@@ -267,8 +281,8 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
 
   @media only screen and (min-width: 601px) and (max-width: 960px) {
     .ts-header-hexagons-desktop {
-      right: -380px;
-      top: -660px;
+      right: -400px;
+      top: -500px;
     }
 
     .row img {
