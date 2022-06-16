@@ -178,7 +178,7 @@ h3 .title-form b {
 h1 {
   text-align: center;
   /* margin-top: var(--spacing-10); */
-  margin-bottom: var(--spacing-10);
+  margin-bottom: var(--spacing-5);
 }
 
 @media (max-width: 600px) {

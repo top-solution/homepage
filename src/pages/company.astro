@@ -5,10 +5,7 @@ import HeaderHexagonsDesktop from "../components/company/HeaderHexagonsDesktop.a
 import HeaderHexagonsMobile from "../components/company/HeaderHexagonsMobile.astro";
 
 import Hex1Desktop from "../components/company/Hex1.astro";
-import Hex1Mobile from "../components/company/Hex1Mobile.astro";
-
 import Hex2Desktop from "../components/company/Hex2.astro";
-import Hex2Mobile from "../components/company/Hex2Mobile.astro";
 ---
 
 <Layout color="light">
@@ -17,7 +14,7 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     <HeaderHexagonsMobile />
   </div>
   <h1 class="title-1">Azienda</h1>
-  <div class="row mt">
+  <div class="row mt row-1">
     <div class="logo" style="background-image: url(../../../img/start_cup.png)"></div>
     <div class="blob">
       <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
@@ -39,7 +36,7 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     <Hex1Desktop />
   </div>
   <div class="hex-1-mobile">
-    <Hex2Mobile />
+    <Hex1Desktop />
   </div>
   <div class="row flipped">
     <div class="logo" style="background-image: url(../../../img/i3p.png)"></div>
@@ -58,9 +55,9 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     <Hex2Desktop />
   </div>
   <div class="hex-2-mobile">
-    <Hex2Mobile />
+    <Hex2Desktop />
   </div>
-  <div class="row mb-4" itemscope itemtype="https://schema.org/Organization">
+  <div class="row row-3" itemscope itemtype="https://schema.org/Organization">
     <div itemprop="logo" class="logo" style="background-image: url(../../../img/logo_name.svg)"></div>
     <div class="blob">
       <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
@@ -136,6 +133,11 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     margin: 0 calc(var(--spacing-3) * -1);
     padding-left: var(--spacing-3);
     flex: 1 1 0;
+    height: 400px;
+  }
+
+  .row-1 {
+    margin-top: var(--spacing-15);
   }
 
   .flipped {
@@ -173,12 +175,14 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
   }
 
   .hex-1 {
-    margin: var(--spacing-4) 30% 0 auto;
-    height: 250px;
+    margin: -100px 50% 0 auto;
+    height: 150px;
   }
 
   .hex-2 {
-    margin: var(--spacing-4) auto 0 40%;
+    /* margin: -100px auto 0 30%; */
+    margin: -100px 50% 100px auto;
+    height: 150px;
   }
 
   .hex-1-mobile,
@@ -186,8 +190,8 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     display: none;
   }
 
-  .mb-4 {
-    margin-bottom: var(--spacing-4);
+  .row-3 {
+    margin-bottom: var(--spacing-15);
   }
 
   @media only screen and (max-width: 600px) {
@@ -268,18 +272,27 @@ import Hex2Mobile from "../components/company/Hex2Mobile.astro";
     .hex-2-mobile {
       width: 60vw;
       display: block;
+      height: 150px;
     }
 
     .hex-1-mobile {
-      margin: var(--spacing-4) auto 0 40%;
+      margin: -100px auto 0 30%;
+      margin-bottom: var(--spacing-10) !important;
     }
 
     .hex-2-mobile {
-      margin: var(--spacing-4) auto 0 40%;
+      margin: -100px auto 0 20%;
+      margin-bottom: var(--spacing-10) !important;
+      ;
     }
   }
 
   @media only screen and (min-width: 601px) and (max-width: 960px) {
+
+    .hex-1 {
+      margin-top: 0px !important;
+    }
+
     .ts-header-hexagons-desktop {
       right: -400px;
       top: -500px;

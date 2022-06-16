@@ -6,8 +6,8 @@ export const assessmentPerformanceHeader = [
 ];
 
 export const assessmentPerformance = [
-  ["Fino a 15 valutazioni", "€ 25,00/valutato", "€ 50,00/valutato", "€ 80,00/valutato"],
-  ["Da 16 a 50 valutazioni", UNCHECKED, "€ 42,00/valutato", "€ 68,00/valutato"],
+  ["Fino a 15 valutazioni", "€ 25,00 / valutato", "€ 50,00 / valutato", "€ 80,00 / valutato"],
+  ["Da 16 a 50 valutazioni", UNCHECKED, "€ 42,00 / valutato", "€ 68,00 / valutato"],
 ];
 
 export const competenceBalanceHeader180 = [

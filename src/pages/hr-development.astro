@@ -15,8 +15,7 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
   <TopBanner title="Sviluppo delle Risorse Umane" mobilealignleft="true" title2={false}>
     <div class="claim" slot="text">
       I nostri <b>servizi</b> vengono proposti in modalità SaaS e sono rivolti allo sviluppo delle <b>Risorse Umane</b>
-      e
-      del <b>Marketing Aziendale</b>
+      e del <b>Marketing Aziendale</b>
     </div>
     <div slot="actions" style="display: flex; flex-direction: column; max-width: 175px; margin: auto;">
       <Button variant="primary" href="/contacts.html">Contattaci</Button>
@@ -100,19 +99,20 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
   .floating-hex-3 {
     width: 130px;
     position: absolute;
-    top: 300px;
+    top: 250px;
     left: -175px;
   }
 
   .floating-hex-4 {
     position: absolute;
     left: 975px;
-    top: 1925px;
+    top: 1275px;
   }
 
   .copy {
     display: flex;
     position: relative;
+    height: 300px;
   }
 
   .copy p {
@@ -169,7 +169,8 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
   .blob {
     display: block;
     max-width: 540px;
-    margin: 120px auto var(--spacing-10);
+    /* margin: 120px auto var(--spacing-10); */
+    margin: 60px auto;
   }
 
   article .blob-content {
@@ -187,7 +188,12 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     width: 58px;
   }
 
+  .claim {
+    text-align: center;
+  }
+
   @media only screen and (max-width: 600px) {
+
     .floating-hex-3 {
       display: none;
     }
@@ -200,6 +206,7 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     .copy {
       align-items: flex-start;
       margin: var(--spacing-10) 0;
+      height: auto !important;
     }
 
     .copy p {
@@ -250,10 +257,14 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
       display: none;
     }
 
-    .copy p,
-    .claim {
+    .copy p {
       text-align: center;
     }
+
+    .copy {
+      height: 400px;
+    }
+
   }
 
   @media only screen and (min-width: 601px) and (max-width: 960px) {
