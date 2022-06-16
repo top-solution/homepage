@@ -33,7 +33,9 @@ import { hakaBlobs } from "../utils/tripleBlobs";
     <div slot="external">
       <HeaderHexagonsDesktop />
       <HeaderHexagonsMobile />
-      <Hex width="56" fill="#9893c1" shadow="true" />
+      <div class="floating-hex-0">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
       <div class="floating-hex-3">
         <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
@@ -62,9 +64,6 @@ import { hakaBlobs } from "../utils/tripleBlobs";
     <div class="floating-hex-8">
       <Hex width="56" fill="#31278370" shadow="true" />
     </div>
-    <div class="floating-hex-9">
-      <Hex width="56" fill="#31278367" shadow="true" />
-    </div>
     <div class="services">
       <HakaTripleBlob id="triple-blob-ht-development" title="Scegli il PIANO e scopri le tariffe"
         subtitle="Scegliendo Haka sei libero di utilizzare il servizio senza effettuare abbonamenti"
@@ -82,7 +81,7 @@ import { hakaBlobs } from "../utils/tripleBlobs";
           </div>
         </Blob>
       </div>
-      <Customers title="Chi ha scelto 測 HAKA"/>
+      <Customers title="Chi ha scelto 測 HAKA" />
     </div>
   </div>
 </Layout>
@@ -148,20 +147,14 @@ import { hakaBlobs } from "../utils/tripleBlobs";
 
   .floating-hex-7 {
     position: absolute;
-    left: 60%;
+    left: 80%;
     top: 2175px;
   }
 
   .floating-hex-8 {
     position: absolute;
-    left: 30%;
-    top: 2575px;
-  }
-
-  .floating-hex-9 {
-    position: absolute;
-    left: 55%;
-    top: 2925px;
+    left: 10%;
+    top: 2400px;
   }
 
   .card-hex-group {
@@ -247,6 +240,8 @@ import { hakaBlobs } from "../utils/tripleBlobs";
     }
 
     .card-hex-group,
+    .floating-hex-0,
+    .floating-hex-3,
     .floating-hex-5 {
       display: none;
     }

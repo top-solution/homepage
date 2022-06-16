@@ -40,8 +40,8 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
       <div class="button">
         <Button variant="primary" href="/contacts/">Contattaci</Button>
       </div>
-      <div class="button">
-        <Button variant="tertiary" href="/contacts/">Prova Gratuita</Button>
+      <div class="button" onclick="handleFreeTryClick()">
+        <Button variant="tertiary">Prova Gratuita</Button>
       </div>
     </section>
     <PrincingTable header={assessmentPerformanceHeader} rows={assessmentPerformance} />
@@ -62,10 +62,17 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
       </Blob>
     </div>
     <section>
+      <div id="free-try" />
       <RequestTrial />
     </section>
   </article>
 </Layout>
+
+<script type="text/javascript">
+  function handleFreeTryClick() {
+    document.getElementById("free-try").scrollIntoView(true);
+  }
+</script>
 
 <style>
   .body-2 {
@@ -319,9 +326,13 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
       display: none;
     }
 
+    .copy {
+      margin-left: var(--spacing-2);
+    }
+
     .copy p,
     .claim {
-      text-align: center;
+      text-align: left;
     }
   }
 

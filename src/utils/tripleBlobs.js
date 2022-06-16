@@ -37,7 +37,7 @@ export const developmentSoftwareBlobs = [
     color: "#e3f1fa",
     colorMobile: "#0078C3",
     width: "260px",
-    href: "/applications.html",
+    href: "/web-applications-mobile/",
   },
   {
     icon: "palace.svg",
@@ -46,7 +46,7 @@ export const developmentSoftwareBlobs = [
     color: "#e3f1fa",
     colorMobile: "#0078C3",
     width: "260px",
-    html: "/consulting.html",
+    href: "/software-development-consulting/",
   },
   {
     icon: "user.svg",
@@ -56,7 +56,7 @@ export const developmentSoftwareBlobs = [
     color: "#e3f1fa",
     colorMobile: "#0078C3",
     width: "260px",
-    html: "/cloud.html",
+    href: "/cloud-computing/",
   },
 ];
 

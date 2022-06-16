@@ -84,14 +84,23 @@ import ContactUs from "../components/team/ContactUs.astro";
     </div>
     <div class="team-person-container">
       <TeamPerson src="question_mark.svg" name="Vuoi far parte del team?">
-        <Button class="contact-us-button" variant="primary" component="button" onclick="handleApplyClick()">
-          Candidati
-        </Button>
+        <div class="contact-us-button" onclick="handleCandidateClick()">
+          <Button variant="primary" component="button" onclick="handleCandidateClick()">
+            Candidati
+          </Button>
+        </div>
       </TeamPerson>
     </div>
   </div>
+  <div id="contact-us" />
   <ContactUs open="false" class="contact-us-component" />
 </Layout>
+
+<script type="text/javascript">
+  function handleCandidateClick() {
+    document.getElementById("contact-us").scrollIntoView(true);
+  }
+</script>
 
 <!-- <script>
   var contactUsEl = document.querySelectorAll("ts-contact-us")[0];
