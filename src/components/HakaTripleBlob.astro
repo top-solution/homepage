@@ -11,27 +11,16 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
   <div class="container">
     {blobs.map((blob) => (
     <a href={blob.href}>
-      <Blob interactive={true} shape="rectangle" style={`max-width: ${blob.width};`} fill={blob.color} padding="20"
-        clickable="true">
-        <div class="text">
-          <p class="claim">
-            <b>{blob.title}</b>
-          </p>
-          <div class="centred-button">
-            <button class="outlined" href={blob.href} type="button">
-              Vai al Piano
-            </button>
-          </div>
+      <div class="card">
+        <p class="claim">
+          <b>{blob.title}</b>
+        </p>
+        <div class="centred-button">
+          <button class="outlined" href={blob.href} type="button">
+            Vai al Piano
+          </button>
         </div>
-      </Blob>
-    </a>
-    ))}
-  </div>
-  <div class="container-mobile">
-    {blobs.map((blob) => (
-    <a href={blob.href} style={`background-color: ${blob.colorMobile}`}>
-      <h5>{blob.title}</h5>
-      <Icon pack="mdi" name="arrow-right" />
+      </div>
     </a>
     ))}
   </div>
@@ -45,8 +34,22 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
     color: var(--color-blue);
   }
 
+  .card {
+    border: 0.8px solid var(--color-blue);
+    border-radius: 4px;
+    padding: var(--spacing-1);
+    display: flex;
+    text-align: center;
+  }
+
   .claim {
-    font-size: 24px;
+    font-size: 20px;
+    flex: 0 0 50%;
+  }
+
+  .centred-button {
+    flex: 0 0 50%;
+    align-items: center;
   }
 
   h4 {
@@ -85,12 +88,12 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
       rgba(240, 177, 177, 0.12) 0px 1px 10px 0px;
     border: 0;
 
-    color: var(--color-blue);
+    color: var(--color-white);
     border: 1px solid var(--color-blue);
-    background-color: transparent;
+    background-color: var(--color-blue);
     border-radius: 4px;
-    padding: 8px 16px;
-
+    padding: 8px;
+    align-items: center;
     transition: background-color var(--transition-timing-quick) var(--transition-function-default);
   }
 
@@ -102,12 +105,7 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
 
   @media only screen and (max-width: 960px) {
 
-    .container,
-    .centred-button {
-      display: none;
-    }
-
-    .container-mobile {
+    .container {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -122,11 +120,6 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
       margin: var(--spacing-2) 0;
       padding: var(--spacing-2);
       justify-content: space-between;
-    }
-
-    h5 {
-      color: var(--color-white);
-      flex: 0 0 80%;
     }
 
     svg {

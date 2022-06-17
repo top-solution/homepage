@@ -39,9 +39,6 @@ import { hakaBlobs } from "../utils/tripleBlobs";
       <div class="floating-hex-3">
         <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
-      <div class="floating-hex-4">
-        <Hex width="86" fill="#312783" shadow="true" />
-      </div>
     </div>
   </TopBanner>
   <div>
@@ -89,7 +86,7 @@ import { hakaBlobs } from "../utils/tripleBlobs";
 <style>
   h2 {
     text-align: center;
-    margin-top: var(--spacing-10);
+    margin-top: var(--spacing-5);
   }
 
   .button-margin {
@@ -112,8 +109,7 @@ import { hakaBlobs } from "../utils/tripleBlobs";
   .blob {
     display: block;
     max-width: 285px;
-    margin: 110px auto var(--spacing-10);
-    margin-top: 100px;
+    margin: 0px auto 0px;
     width: 100%;
   }
 
@@ -125,12 +121,6 @@ import { hakaBlobs } from "../utils/tripleBlobs";
   .button {
     max-width: 175px;
     margin: var(--spacing-3) auto 0 auto;
-  }
-
-  .floating-hex-4 {
-    position: absolute;
-    left: 60%;
-    top: 590px;
   }
 
   .floating-hex-5 {
@@ -153,8 +143,8 @@ import { hakaBlobs } from "../utils/tripleBlobs";
 
   .floating-hex-8 {
     position: absolute;
-    left: 10%;
-    top: 2400px;
+    left: -5%;
+    top: 1975px;
   }
 
   .card-hex-group {
@@ -170,7 +160,7 @@ import { hakaBlobs } from "../utils/tripleBlobs";
   }
 
   .services {
-    margin: var(--spacing-10) 0;
+    margin: var(--spacing-5) 0;
     display: flex;
     flex-direction: column;
     align-items: center;

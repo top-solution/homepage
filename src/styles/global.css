@@ -1,7 +1,7 @@
 :root {
   /* css variables */
   --color-blue: #312783;
-  --color-blue-middle: #0078C3;
+  --color-blue-middle: #0078c3;
   --color-blue-light: #4857a3;
   --color-blue-dark: #221b5c;
   --color-blue-footer: #1e1e65;
@@ -13,7 +13,7 @@
   --color-error-text: #b00020;
 
   --color-blob-development: #e9e8f2;
-  --color-blue-hovering: #8d88ba;
+  --color-blue-hovering: #0069a7;
   --color-gray: #858585;
 
   /* Breakpoints */

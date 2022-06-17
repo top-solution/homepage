@@ -69,7 +69,7 @@ export const hakaBlobs = [
     href: "/assessment-performance/",
   },
   {
-    title: "Bilancio della competenza",
+    title: "Bilancio di competenza",
     color: "#e3f1fa",
     colorMobile: "#312783",
     width: "500px",

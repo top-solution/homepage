@@ -110,12 +110,14 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
     display: block;
     margin-left: auto;
     margin-right: var(--spacing-3);
+    height: 100px;
   }
 
   .copy {
     display: flex;
     margin-top: var(--spacing-3);
     position: relative;
+    height: 300px;
   }
 
   .copy p {
@@ -172,7 +174,7 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
   article .blob {
     display: block;
     max-width: 540px;
-    margin: 110px auto var(--spacing-10);
+    margin: 0px auto 0px;
   }
 
   article .blob-content {
@@ -250,6 +252,10 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
   @media only screen and (max-width: 960px) {
     .hr-svg {
       display: none;
+    }
+
+    .copy {
+      height: auto;
     }
 
     .copy p,

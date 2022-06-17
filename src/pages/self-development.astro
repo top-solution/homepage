@@ -34,9 +34,6 @@ import { selfDevelopmentCard } from "../utils/cards";
       <div class="floating-hex-3">
         <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
-      <div class="floating-hex-4">
-        <Hex width="86" fill="#312783" shadow="true" />
-      </div>
       <div class="floating-hex-5">
         <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
@@ -67,9 +64,6 @@ import { selfDevelopmentCard } from "../utils/cards";
           <CardHexGroup />
         </div>
       </div>
-      <div class="floating-hex-2">
-        <Hex width="44" fill="#312783" opacity=".7" shadow="false" rotation="-4" />
-      </div>
       <Customers title="Chi ci ha scelto" />
     </div>
   </div>
@@ -86,19 +80,13 @@ import { selfDevelopmentCard } from "../utils/cards";
   .floating-hex-3 {
     position: absolute;
     left: 20%;
-    top: 450px;
-  }
-
-  .floating-hex-4 {
-    position: absolute;
-    left: 60%;
-    top: 470px;
+    top: 375px;
   }
 
   .floating-hex-5 {
     position: absolute;
     left: 65%;
-    top: 800px;
+    top: 650px;
   }
 
   .card-hex-group {
@@ -109,12 +97,12 @@ import { selfDevelopmentCard } from "../utils/cards";
 
   .copy p {
     text-align: center;
-    margin: var(--spacing-15) 0 var(--spacing-6);
+    margin: var(--spacing-5) 0 var(--spacing-6);
 
   }
 
   .services {
-    margin: var(--spacing-15) 0;
+    margin: var(--spacing-5) 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,6 +150,11 @@ import { selfDevelopmentCard } from "../utils/cards";
   }
 
   @media only screen and (max-width: 600px) {
+
+    .copy {
+      margin: 0 var(--spacing-2);
+    }
+
     .service-card {
       flex: 0 0 100%;
     }
@@ -183,13 +176,9 @@ import { selfDevelopmentCard } from "../utils/cards";
   @media only screen and (max-width: 820px) {
 
     .card-hex-group {
-      left: 70%;
+      left: 50%;
+      top: 975px;
     }
   }
 
-  @media screen and (max-width: 850px) {
-    .card-hex-group {
-      top: 700px;
-    }
-  }
 </style>
