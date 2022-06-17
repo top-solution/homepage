@@ -2,15 +2,13 @@
 import Blob from '../Blob.astro';
 const { src, name, companyrole, personSrc } = Astro.props;
 
-let p = src ? src : `${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
+let path = src ? src : `${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
 ---
 
 <div class="team-person" itemscope itemtype="https://schema.org/Person">
-  <!-- <Blob interactive={false} shape="hexagon" src={src ? src : `../img/team/${`${name}`.toLowerCase().replace(/\s/g, "-"
-    )}.jpg`}>
-    <!-- <div class="team-person__image-sizer" />
-  </Blob> -->
-  <div class="animated-blob" style={`background: url('../../../img/team/${p}') no-repeat; background-size: contain;`} />
+  <!-- <Blob interactive={false} shape="rectangle" fill="#ff0000" padding="20" src={src ? src :
+    `../img/team/${`${name}`.toLowerCase().replace(/\s/g, "-" )}.jpg`} /> -->
+  <div class="animated-blob" style={`background: url('../../../img/team/${path}') no-repeat; background-size: contain;`} />
   <h6 class="name">{name}</h6>
 
   {companyrole && (
@@ -58,8 +56,8 @@ let p = src ? src : `${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
   }
 
   .animated-blob {
-    width: 380px;
-    height: 380px;
+    width: 330px;
+    height: 325px;
     /* margin: 0 auto; */
     /* background: url('../../../img/team/matteo-marsala.jpg') no-repeat;
      background-size: contain;

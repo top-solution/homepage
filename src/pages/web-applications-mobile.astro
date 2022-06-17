@@ -2,10 +2,13 @@
 import Layout from "../components/Layout.astro";
 import TopBanner from "../components/TopBanner.astro";
 import Button from "../components/Button.astro";
-import Picture from "../components/Picture.astro";
+import Customers from "../components/Customers.astro";
 import Hex from "../components/Hex.astro";
 import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
+import CardHexGroup from "../components/self-development/CardHexGroup.astro";
+import Card from "../components/Card.astro";
+import { webApplicationsAndMobileCard } from "../utils/cards";
 ---
 
 <Layout color="light">
@@ -25,12 +28,11 @@ import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsM
     <div slot="external">
       <HeaderHexagonsDesktop />
       <HeaderHexagonsMobile />
-      <Hex width="56" fill="#9893c1" shadow="true" />
-      <div class="floating-hex-3">
+      <div class="floating-hex-0">
         <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
-      <div class="floating-hex-4">
-        <Hex width="86" fill="#312783" shadow="true" />
+      <div class="floating-hex-3">
+        <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
     </div>
   </TopBanner>
@@ -46,72 +48,14 @@ import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsM
         I nostri <b>SERVIZI</b>
       </h3>
       <div class="card-container">
-        <div class="service-card">
-          <h4 itemprop="name">
-            Single page web applications
-          </h4>
-          <p class="body-3" itemprop="offers">
-            JavaScript è il nostro pane quotidiano, i framework che utilizziamo sono REACT (con Redux e Redux-Saga),
-            Vue.js, Angular.io ed il buon vecchio Angular JS.
-            Nella nostra cassetta degli attrezzi c'è anche posto per Babel, Webpack, RxJS, Gulp, Socket.io, Google
-            Material, Bootstrap, SASS...
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
-        </div>
-        <div class="service-card">
-          <h4 itemprop="name">
-            Rest api
-          </h4>
-          <p class="body-3" itemprop="offers">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
-            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
-        </div>
-        <div class="service-card">
-          <h4 itemprop="name">
-            Micro services
-          </h4>
-          <p class="body-3" itemprop="offers">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
-            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
-        </div>
-        <div class="service-card">
-          <h4 itemprop="name">
-            Hybrid apps
-          </h4>
-          <p class="body-3" itemprop="offers">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus amet varius arcu dignissim. Aliquet nisl
-            blandit nibh cursus duis sed. Phasellus rutrum facilisi sagittis vestibulum arcu viverra.
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
+        {webApplicationsAndMobileCard.map((card) =>
+        <Card title={card.title} description={card.description} />
+        )}
+        <div class="card-hex-group">
+          <CardHexGroup />
         </div>
       </div>
-      <div class="floating-hex-2">
-        <Hex width="44" fill="#312783" opacity=".7" shadow="false" rotation="-4" />
-      </div>
-      <h3 class="title-3 title-form customers">
-        Chi ci ha scelto
-      </h3>
-      <Picture base="customers" src="sky" alt="Sky" />
+      <Customers title="Chi ci ha scelto" />
     </div>
   </div>
 </Layout>
@@ -127,35 +71,29 @@ import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsM
   .floating-hex-3 {
     position: absolute;
     left: 20%;
-    top: 450px;
-  }
-
-  .floating-hex-4 {
-    position: absolute;
-    left: 60%;
-    top: 490px;
+    top: 400px;
   }
 
   .floating-hex-5 {
     position: absolute;
     left: 65%;
-    top: 800px;
+    top: 600px;
   }
 
   .card-hex-group {
     position: absolute;
     left: 50%;
-    top: 1200px;
+    top: 1075px;
   }
 
   .copy p {
     text-align: center;
-    margin: var(--spacing-15) 0 var(--spacing-6);
+    margin: var(--spacing-5) 0 var(--spacing-6);
 
   }
 
   .services {
-    margin: var(--spacing-15) 0;
+    margin: var(--spacing-5) 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -193,11 +131,6 @@ import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsM
     margin-bottom: var(--spacing-10);
   }
 
-  .card-button {
-    margin-left: auto;
-    max-width: 140px;
-  }
-
   .customers {
     margin-top: var(--spacing-15);
     margin-bottom: var(--spacing-6);
@@ -208,6 +141,10 @@ import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsM
   }
 
   @media only screen and (max-width: 600px) {
+    .copy {
+      margin: 0 var(--spacing-2);
+    }
+
     .service-card {
       flex: 0 0 100%;
     }
@@ -219,14 +156,17 @@ import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsM
     }
 
     .card-hex-group,
+    .floating-hex-0,
+    .floating-hex-3,
     .floating-hex-5 {
       display: none;
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media only screen and (max-width: 820px) {
     .card-hex-group {
-      display: none;
+      left: 70%;
+      top: 1275px;
     }
   }
 </style>

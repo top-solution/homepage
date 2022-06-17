@@ -177,8 +177,8 @@ h3 .title-form b {
 /* Titles of many pages */
 h1 {
   text-align: center;
-  margin-top: var(--spacing-10);
-  margin-bottom: var(--spacing-10);
+  /* margin-top: var(--spacing-10); */
+  margin-bottom: var(--spacing-5);
 }
 
 @media (max-width: 600px) {

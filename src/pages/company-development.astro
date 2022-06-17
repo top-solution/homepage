@@ -2,11 +2,13 @@
 import Layout from "../components/Layout.astro";
 import TopBanner from "../components/TopBanner.astro";
 import Button from "../components/Button.astro";
-import Picture from "../components/Picture.astro";
 import Hex from "../components/Hex.astro";
+import Customers from "../components/Customers.astro";
 import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
 import CardHexGroup from "../components/self-development/CardHexGroup.astro";
+import Card from "../components/Card.astro";
+import { companyDevelopmentCard } from "../utils/cards";
 ---
 
 <Layout color="light">
@@ -26,12 +28,11 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
     <div slot="external">
       <HeaderHexagonsDesktop />
       <HeaderHexagonsMobile />
-      <Hex width="56" fill="#9893c1" shadow="true" />
-      <div class="floating-hex-3">
+      <div class="floating-hex-0">
         <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
-      <div class="floating-hex-4">
-        <Hex width="86" fill="#312783" shadow="true" />
+      <div class="floating-hex-3">
+        <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
     </div>
   </TopBanner>
@@ -51,95 +52,14 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
         I nostri <b>SERVIZI</b>
       </h3>
       <div class="card-container">
-        <div class="service-card">
-          <h4 itemprop="name">
-            Management diagnostic
-          </h4>
-          <p class="body-3" itemprop="offers">
-            È un’attività di analisi organizzativa, veloce e dinamica, centrata sullo studio delle relazioni
-            professionali, funzionali e interfunzionali che permette di comprendere il potenziale delle persone, le
-            dinamiche di gruppo, l’integrazione tra organigramma dichiarato e reale, i modelli di comunicazione e la
-            qualità delle politiche organizzative.
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
-        </div>
-        <div class="service-card">
-          <h4 itemprop="name">
-            Clima organizzativo
-          </h4>
-          <p class="body-3" itemprop="offers">
-            Analisi che permette di comprendere “come le persone vivono” in azienda, attraverso l’osservazione
-            “dell’aria che si respira” all’interno dell’organizzazione e durante la loro attività quotidiana. Fotografa
-            la distanza percepita tra la direzione e l’ambiente lavorativo.
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
-        </div>
-        <div class="service-card">
-          <h4 itemprop="name">
-            Employees engagement
-          </h4>
-          <p class="body-3" itemprop="offers">
-            Esprime il livello di coinvolgimento emotivo e professionale vissuto dal dipendente nel lavoro e per
-            l’organizzazione. Si focalizza sul funzionamento ottimale della persona e sulle potenzialità piuttosto che
-            sulle debolezze e disfunzioni. L’analisi del coinvolgimento definisce quali sono gli elementi sui quali
-            occorre sviluppare la partecipazione.
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
-        </div>
-        <div class="service-card">
-          <h4 itemprop="name">
-            Stress lavoro correlato
-          </h4>
-          <p class="body-3" itemprop="offers">
-            Può essere definito come lo squilibrio percepito dal lavoratore quando le richieste dell’ambiente di lavoro
-            sono eccessive rispetto alla capacità individuale di affrontare lo stress conseguente. Aiuta quindi
-            l’organizzazione a mettere a disposizione le adeguate risorse per fronteggiarle.
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
-        </div>
-        <div class="service-card">
-          <h4 itemprop="name">
-            Customer satisfaction
-          </h4>
-          <p class="body-3" itemprop="offers">
-            La soddisfazione è intesa come stato psicologico derivante da un gap tra la valutazione dell’avvenuta
-            esperienza di consumo e le attese del consumatore in merito a tale esperienza. La ricerca è finalizzata a
-            verificare il livello di gradimento degli utilizzatori e a creare una mappa delle priorità per ottimizzare
-            gli interventi con le risorse disponibili.
-          </p>
-          <div class="card-button">
-            <Button variant="primary" href="/contacts/" target="_blank">
-              Contattaci
-            </Button>
-          </div>
-        </div>
+        {companyDevelopmentCard.map((card) =>
+        <Card title={card.title} description={card.description} />
+        )}
         <div class="card-hex-group">
           <CardHexGroup />
         </div>
       </div>
-      <div class="floating-hex-2">
-        <Hex width="44" fill="#312783" opacity=".7" shadow="false" rotation="-4" />
-      </div>
-      <h3 class="title-3 title-form customers">
-        Chi ci ha scelto
-      </h3>
-      <Picture base="customers" src="sky" alt="Sky" />
+      <Customers title="Chi ci ha scelto" />
     </div>
   </div>
 </Layout>
@@ -155,19 +75,19 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
   .floating-hex-3 {
     position: absolute;
     left: 20%;
-    top: 450px;
+    top: 370px;
   }
 
   .floating-hex-4 {
     position: absolute;
     left: 60%;
-    top: 490px;
+    top: 470px;
   }
 
   .floating-hex-5 {
     position: absolute;
     left: 65%;
-    top: 800px;
+    top: 600px;
   }
 
   .card-hex-group {
@@ -178,12 +98,12 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
 
   .copy p {
     text-align: center;
-    margin: var(--spacing-15) 0 var(--spacing-6);
+    margin: var(--spacing-5) 0 var(--spacing-6);
 
   }
 
   .services {
-    margin: var(--spacing-15) 0;
+    margin: var(--spacing-5) 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,11 +147,6 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
     margin-bottom: var(--spacing-10);
   }
 
-  .card-button {
-    margin-left: auto;
-    max-width: 140px;
-  }
-
   .customers {
     margin-top: var(--spacing-15);
     margin-bottom: var(--spacing-6);
@@ -242,6 +157,10 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
   }
 
   @media only screen and (max-width: 600px) {
+    .copy {
+      margin: 0 var(--spacing-2);
+    }
+
     .service-card {
       flex: 0 0 100%;
     }
@@ -253,6 +172,8 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
     }
 
     .card-hex-group,
+    .floating-hex-0,
+    .floating-hex-3,
     .floating-hex-5 {
       display: none;
     }
@@ -261,6 +182,14 @@ import CardHexGroup from "../components/self-development/CardHexGroup.astro";
   @media screen and (max-width: 900px) {
     .card-hex-group {
       display: none;
+    }
+  }
+
+  @media only screen and (max-width: 820px) {
+
+    .card-hex-group {
+      left: 50%;
+      top: 675px;
     }
   }
 </style>

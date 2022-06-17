@@ -3,17 +3,12 @@ import classnames from "classnames";
 const { title = "", title2 = "", azure = "", mobilealignleft = "" } = Astro.props;
 ---
 
-<div
-  class={classnames("top-banner", {
-    azure: azure,
-    "mobile-align-left": mobilealignleft,
-  })}
->
+<div class={classnames("top-banner", { azure: azure, "mobile-align-left" : mobilealignleft, })}>
   <div class="content">
     <div class="external">
       <slot name="external" />
     </div>
-    <h1 class={classnames({ "title-1": !title2, "title-2": title2 })}>
+    <h1 class={classnames({ "title-1" : !title2, "title-2" : title2 })}>
       {title}
     </h1>
     <div class="text">
@@ -57,7 +52,8 @@ const { title = "", title2 = "", azure = "", mobilealignleft = "" } = Astro.prop
   }
 
   .text {
-    max-width: calc(600px + var(--spacing-2));
+    /* max-width: calc(600px + var(--spacing-2)); */
+    max-width: 600px;
     margin: 0 auto var(--spacing-3);
   }
 

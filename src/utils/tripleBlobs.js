@@ -28,31 +28,61 @@ export const developmentHumanResourceBlobs = [
   },
 ];
 
-// export const developmentSoftwareBlobs = [
-//   {
-//     icon: "lens.svg",
-//     title: "APPLICAZIONI WEB E MOBILE",
-//     subtitle:
-//       "Single page web applications, rest api, micro-services, hybrid apps",
-//     color: "#e3f1fa",
-//     width: "260px",
-//     href: "/applications.html",
-//   },
-//   {
-//     icon: "palace.svg",
-//     title: "CONSULENZA SVILUPPO SW",
-//     subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
-//     color: "#e3f1fa",
-//     width: "260px",
-//     html: "/consulting.html",
-//   },
-//   {
-//     icon: "user.svg",
-//     title: "CLOUD COMPUTING",
-//     subtitle:
-//       "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!!!",
-//     color: "#e3f1fa",
-//     width: "260px",
-//     html: "/cloud.html",
-//   },
-// ];
+export const developmentSoftwareBlobs = [
+  {
+    icon: "lens.svg",
+    title: "APPLICAZIONI WEB E MOBILE",
+    subtitle:
+      "Single page web applications, rest api, micro-services, hybrid apps",
+    color: "#e3f1fa",
+    colorMobile: "#0078C3",
+    width: "260px",
+    href: "/web-applications-mobile/",
+  },
+  {
+    icon: "palace.svg",
+    title: "CONSULENZA SVILUPPO SW",
+    subtitle: "Kick-off progetti, sviluppo e manutenzione, disaster recovery",
+    color: "#e3f1fa",
+    colorMobile: "#0078C3",
+    width: "260px",
+    href: "/software-development-consulting/",
+  },
+  {
+    icon: "user.svg",
+    title: "CLOUD COMPUTING",
+    subtitle:
+      "Utilizziamo servizi cloud per rendere i progetti sempre raggiungibili!",
+    color: "#e3f1fa",
+    colorMobile: "#0078C3",
+    width: "260px",
+    href: "/cloud-computing/",
+  },
+];
+
+export const hakaBlobs = [
+  {
+    title: "Valutazione performance",
+    color: "#e3f1fa",
+    colorMobile: "#312783",
+    width: "500px",
+    href: "/assessment-performance/",
+  },
+  {
+    title: "Bilancio di competenza",
+    color: "#e3f1fa",
+    colorMobile: "#312783",
+    width: "500px",
+    href: "/competence-balance/",
+  },
+  {
+    title: "Valutazione del potenziale",
+    color: "#e3f1fa",
+    colorMobile: "#312783",
+    width: "500px",
+    href: "/assessment-center/",
+  },
+];
+
+
+

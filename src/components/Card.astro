@@ -1,0 +1,43 @@
+---
+const { title, description } = Astro.props;
+---
+
+<div class="service-card">
+  <h4 itemprop="name">
+    {title}
+  </h4>
+  <p class="body-3" itemprop="offers">
+    {description}
+  </p>
+</div>
+
+<style>
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 45%;
+    border: 1px solid var(--color-blue);
+    border-radius: 4px;
+    padding: 16px;
+    margin: var(--spacing-1);
+    max-width: 350px;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .body-3 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: var(--spacing-10);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .service-card {
+      flex: 0 0 100%;
+    }
+  }
+</style>

@@ -4,18 +4,19 @@ import Button from "../components/Button.astro";
 import Blob from "../components/Blob.astro";
 import TopBanner from "../components/TopBanner.astro";
 import Hex from "../components/Hex.astro";
+import HrSvg from "../components/software-development/HrSvg.astro";
+import HeaderHexagonsDesktop from "../components/software-development/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../components/software-development/HeaderHexagonsMobile.astro";
 import TripleBlob from "../components/TripleBlob.astro";
-import HrSvg from "../components/hr-development/HrSvg.astro";
-import HeaderHexagonsDesktop from "../components/hr-development/HeaderHexagonsDesktop.astro";
-import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMobile.astro";
-import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../utils/tripleBlobs";
+import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
 ---
 
 <Layout color="light">
-  <TopBanner title="Sviluppo delle Risorse Umane" mobilealignleft="true" title2={false}>
+  <TopBanner title="Sviluppo Software" mobilealignleft="true" title2={false}>
     <div class="claim" slot="text">
-      I nostri <b>servizi</b> vengono proposti in modalità SaaS e sono rivolti allo sviluppo delle <b>Risorse Umane</b>
-      e del <b>Marketing Aziendale</b>
+      Affrontiamo lo sviluppo dei nostri prodotti e servizi con tecnologie sempre nuove, perchè la curiosità e la voglia
+      di sperimentare fanno parte del nostro DNA. Per questo siamo in grado di offrire una consulenza di sviluppo
+      software chiavi in mano su tecnologie open source all'avanguardia.
     </div>
     <div slot="actions" style="display: flex; flex-direction: column; max-width: 175px; margin: auto;">
       <Button variant="primary" href="/contacts.html">Contattaci</Button>
@@ -30,12 +31,11 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
       </div>
     </div>
   </TopBanner>
-  <article>
+  <article class="layout">
     <div class="copy">
       <p>
-        Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
-        di comunicazione on-line, diversi moduli per la <b>gestione</b> delle attività del <b>personale</b> interno ed
-        esterno
+        Le doti di flessibilità e scalabilità dei nostri sistemi consentono di ottenere: naturale estendibilità a tutta
+        la popolazione aziendale, chiarezza interpretativa, facilità di utilizzo con il minimo disagio organizzativo.
       </p>
       <div class="hr-svg">
         <HrSvg />
@@ -44,15 +44,14 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
         <Hex width="130" fill="#4758a3" shadow="true" />
       </div>
     </div>
-    <TripleBlob title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development/"
-      blobs={developmentHumanResourceBlobs} />
+    <TripleBlob id="triple-blob-ht-development" title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development.html"
+      blobs={developmentSoftwareBlobs} />
     <div class="blob">
-      <Blob interactive={true} shape="hexagon" fill="#E3F1FA" padding="48" variance="1.4">
+      <Blob interactive={true} shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4">
         <div class="blob-content">
           <p class="body-2">
-            I nostri <b>prodotti</b> sono continuamente rinnovati utilizzando le più
-            <b>moderne tecnologie</b> web garantendo al cliente una
-            <b>user experience</b> sempre aggiornata e performance adeguate
+            Il software è in continuo mutamento ed essere aggiornati sulle ultime tecnologie e tendenze richiede un
+            sacco di tempo, un investimento che non tutte le aziende possono permettersi di sostenere.
           </p>
           <div class="button">
             <Button variant="primary" href="/contacts.html" style="display: inline-block;">Contattaci</Button>
@@ -67,6 +66,10 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
 </Layout>
 
 <style>
+  .body-2 {
+    font-size: 20px;
+  }
+
   .header-hexagons-desktop {
     right: 0px;
     width: 100%;
@@ -91,26 +94,28 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
 
   article {
     display: block;
-    margin-top: var(--spacing-3);
     color: var(--color-blue);
     box-sizing: border-box;
   }
 
-  .floating-hex-3 {
+  article .floating-hex-3 {
     width: 130px;
     position: absolute;
-    top: 250px;
-    left: -175px;
+    top: 300px;
+    left: -350px;
   }
 
-  .floating-hex-4 {
-    position: absolute;
-    left: 975px;
-    top: 1275px;
+  article .floating-hex-4 {
+    width: 225px;
+    display: block;
+    margin-left: auto;
+    margin-right: var(--spacing-3);
+    height: 100px;
   }
 
   .copy {
     display: flex;
+    margin-top: var(--spacing-3);
     position: relative;
     height: 300px;
   }
@@ -166,16 +171,15 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     width: 110%;
   }
 
-  .blob {
+  article .blob {
     display: block;
     max-width: 540px;
-    /* margin: 120px auto var(--spacing-10); */
-    margin: 60px auto;
+    margin: 0px auto 0px;
   }
 
   article .blob-content {
     text-align: center;
-    padding: 0 var(--spacing-9);
+    margin: 0 var(--spacing-5);
   }
 
   article .blob-content .button {
@@ -183,17 +187,11 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     margin: var(--spacing-3) auto 0 auto;
   }
 
-
   article .hexagons-floating {
     width: 58px;
   }
 
-  .claim {
-    text-align: center;
-  }
-
   @media only screen and (max-width: 600px) {
-
     .floating-hex-3 {
       display: none;
     }
@@ -206,7 +204,6 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     .copy {
       align-items: flex-start;
       margin: var(--spacing-10) 0;
-      height: auto !important;
     }
 
     .copy p {
@@ -257,14 +254,14 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
       display: none;
     }
 
-    .copy p {
+    .copy {
+      height: auto;
+    }
+
+    .copy p,
+    .claim {
       text-align: center;
     }
-
-    .copy {
-      height: 400px;
-    }
-
   }
 
   @media only screen and (min-width: 601px) and (max-width: 960px) {

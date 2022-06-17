@@ -1,9 +1,9 @@
 ---
 import Layout from "../components/Layout.astro";
-import Button from "../components/Button.astro";
 import TripleBlob from "../components/TripleBlob.astro";
 import Customers from "../components/Customers.astro";
-import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
+import Hex from "../components/Hex.astro";
+import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../utils/tripleBlobs";
 
 // import locale from "../utils/locale.js"
 // function translate(key) {
@@ -54,18 +54,19 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     </div>
     <section>
       <!-- {window.translate("home-banner")} -->
-      <div class="banner">
-        <span>Entra in <strong>contatto</strong> con noi</span>
-        <p>
-          Scopri le opportunità per il tuo <strong>business</strong> offerte dalle nostre <strong>soluzioni</strong>
-        </p>
-        <div class="button">
-          <Button variant="primary" href="/contacts.html" aria-label="Contattaci">Contattaci</Button>
-        </div>
+      <p>
+        Scopri le opportunità per il tuo <strong>business</strong> offerte dalle nostre <strong>soluzioni</strong>
+      </p>
+      <div class="floating-hex-0">
+        <Hex width="65" fill="#312783" shadow="true" />
       </div>
     </section>
-    <TripleBlob id="triple-blob-ht-development" title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development.html"
+    <TripleBlob title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development/"
       blobs={developmentHumanResourceBlobs} />
+    <div class="floating-hex-1">
+      <Hex width="45" fill="#0069A7" shadow="true" />
+    </div>
+    <TripleBlob title="SVILUPPO SOFTWARE" buttonlink="/software-development/" blobs={developmentSoftwareBlobs} />
     <div class="middle-blob">
       <img src="img/homepage/blob-middle-homepage.svg" alt="" />
     </div>
@@ -79,11 +80,25 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
       <img src="img/homepage/group-hex-middle-mobile.svg" alt="" />
     </div>
     <div id="customers" />
-    <Customers />
+    <Customers title="I nostri clienti" />
   </article>
 </Layout>
 
 <style>
+  .floating-hex-0 {
+    width: 130px;
+    position: absolute;
+    top: 75px;
+    left: 850px;
+  }
+
+  .floating-hex-1 {
+    width: 130px;
+    position: absolute;
+    top: 625px;
+    left: 50px;
+  }
+
   article {
     color: var(--color-blue);
   }
@@ -120,8 +135,8 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     position: absolute;
     width: 1400px;
     overflow: visible;
-    top: -630px;
-    left: -1040px;
+    top: -975px;
+    left: -1480px;
     z-index: -1;
   }
 
@@ -130,9 +145,10 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     position: absolute;
     width: 1400px;
     overflow: visible;
-    top: -480px;
-    left: -320px;
+    top: -526px;
+    left: -700px;
     z-index: -1;
+    transform: rotate(82deg);
   }
 
   article .middle-blob {
@@ -140,9 +156,8 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     position: absolute;
     width: 1400px;
     overflow: visible;
-    right: -1125px;
-    /* top: 1525px; // FIXME: ripristinare con la sezione sviluppo software */
-    top: 925px;
+    right: -1225px;
+    top: 825px;
     z-index: -1;
   }
 
@@ -151,42 +166,36 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     position: absolute;
     width: 1400px;
     overflow: visible;
-    right: -1125px;
-    /* top: 1225px; FIXME: ripristinare con la sezione sviluppo software */
-    top: 625px;
+    right: -1225px;
+    top: 525px;
     z-index: -1;
   }
 
   section {
-    margin-top: var(--spacing-9);
+    margin-top: var(--spacing-10);
     display: flex;
     justify-content: flex-end;
-    margin-bottom: var(--spacing-25);
+    margin-bottom: var(--spacing-10);
     font-size: 48px;
     line-height: 67px;
     color: var(--color-blue);
   }
 
-  section .banner {
-    flex: 0 0 65%;
-  }
-
   section p {
     margin-bottom: 80px;
-  }
-
-  section .button {
-    display: flex;
-    justify-content: center;
+    font-size: 33px;
+    margin: 0 var(--spacing-10);
+    text-align: center;
   }
 
   @media only screen and (max-width: 960px) {
     article .header-hex-logo {
-      left: -415px;
+      left: -785px;
+      transform: rotate(81deg);
     }
 
     article .header-hex {
-      left: -1370px;
+      left: -1400px;
     }
 
     article .middle-hex-tablet {
@@ -205,7 +214,7 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     }
 
     section {
-      margin-bottom: var(--spacing-10);
+      margin-bottom: var(--spacing-15);
     }
   }
 
@@ -215,22 +224,31 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     }
   }
 
+  @media only screen and (max-width: 700px) {
+    .floating-hex-1 {
+      display: none;
+    }
+  }
+
+
   @media only screen and (max-width: 600px) {
+
     article .header-blob {
-      transform: scaleX(-1);
+      /* transform: scaleX(-1);
       left: -50px;
-      top: -350px;
+      top: -350px; */
+      display: none;
     }
 
     article .middle-hex-mobile {
-      display: block;
+      /* display: block;
       position: absolute;
       width: 1400px;
       overflow: visible;
       right: -1190px;
-      /* top: 1450px; FIXME: ripristinare con la sezione sviluppo software */
-      top: 860px;
-      z-index: -1;
+      top: 1250px;
+      z-index: -1; */
+      display: none;
     }
 
     article .middle-hex-tablet {
@@ -248,59 +266,47 @@ import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
     article .hex-mobile-1 {
       display: unset;
       position: absolute;
-      top: -100px;
-      left: 300px;
+      top: -60px;
+      left: 275px;
     }
 
     article .hex-mobile-2 {
       display: unset;
       position: absolute;
-      top: -70px;
-      left: 380px;
+      top: 25px;
+      left: 400px;
     }
 
     article .hex-mobile-3 {
       display: unset;
       position: absolute;
-      top: 170px;
-      left: 450px;
+      top: 290px;
+      left: 470px;
     }
 
     article .hex-mobile-4 {
       display: unset;
       position: absolute;
       top: 170px;
-      left: 340px;
+      left: 0px;
     }
 
     article .hex-mobile-5 {
       display: unset;
       position: absolute;
-      top: 230px;
-      left: 25px;
+      top: 375px;
+      left: -25px;
     }
 
     article .hex-mobile-6 {
       display: unset;
       position: absolute;
-      top: 300px;
+      top: 450px;
       left: 300px;
     }
 
     section {
-      margin-top: var(--spacing-15);
-      display: flex;
-      margin-bottom: 24px;
-      font-size: 25px;
-      color: var(--color-blue);
-      justify-content: center;
-      width: 100%;
-      line-height: 37px;
-    }
-
-    section .banner {
-      flex: 0 0 80%;
-      text-align: center;
+      display: none
     }
   }
 </style>

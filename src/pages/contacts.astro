@@ -79,6 +79,10 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
     order: 2;
   }
 
+  .title-1 {
+    margin-bottom: 0
+  }
+
   .contact:last-of-type {
     margin-bottom: 0;
   }
@@ -114,6 +118,18 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
   }
 
   @media only screen and (max-width: 960px) {
+    h1 {
+      margin-bottom: var(--spacing-5) !important;
+    }
+
+    .title-1 {
+      margin-bottom: var(--spacing-20);
+    }
+
+    .request-info {
+      margin-top: 0;
+    }
+
     .contacts {
       display: flex;
       flex-direction: column;
@@ -131,6 +147,7 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
       flex-direction: column;
       align-items: stretch;
       margin-top: var(--spacing-2);
+      margin-bottom: 0;
     }
 
     img {
@@ -146,7 +163,6 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
       margin-bottom: var(--spacing-7);
       height: auto;
       display: block;
-      flex: 1 1 0;
       max-width: 100%;
       margin-right: 0;
       width: 100%;
@@ -154,8 +170,12 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
   }
 
   @media only screen and (max-width: 600px) {
+
+    .title-1 {
+      margin-bottom: 0
+    }
+
     .request-info {
-      margin-top: var(--spacing-10);
       display: block;
     }
 
