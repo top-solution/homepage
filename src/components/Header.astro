@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon";
 import { contacts } from "../utils/contacts";
+
 const { color = "light" } = Astro.props;
 ---
 
@@ -27,7 +28,7 @@ const { color = "light" } = Astro.props;
         </a>
       </li>
       <li><a href="/software-development/"><strong>DEV</strong></a></li>
-      <li><a href="/company/"><strong>AZIENDA </strong></a></li>
+      <li><a href="/company/"><strong id="company">AZIENDA</strong></a></li>
       <li><a href="/team/"><strong>TEAM</strong></a></li>
       <li><a href="/contacts/"><strong>CONTATTI</strong></a></li>
     </ul>
@@ -93,13 +94,13 @@ const { color = "light" } = Astro.props;
 </header>
 
 <script>
+  import locale from "../utils/locale";
 
-  function handleChangeTranslation() {
-    if (sessionStorage.getItem("language") === null || sessionStorage.getItem("language") === "en") {
-      sessionStorage.setItem("language", "it")
-    } else {
-      sessionStorage.setItem("language", "en")
-    }
+  function translate(key) {
+    if (sessionStorage.getItem("language") === 'it' || sessionStorage.getItem("language") === null)
+      return locale.it[key];
+    else if (sessionStorage.getItem("language") === 'en')
+      return locale.en[key];
   }
 
   function openMenu() {
@@ -122,6 +123,18 @@ const { color = "light" } = Astro.props;
 
     document.querySelector(".toggle-open").classList.add("toggle-close");
     document.querySelector(".toggle-open").classList.remove("toggle-open");
+  }
+
+  function handleChangeTranslation() {
+    if (sessionStorage.getItem("language") === null || sessionStorage.getItem("language") === "en") {
+      sessionStorage.setItem("language", "it")
+    } else {
+      sessionStorage.setItem("language", "en")
+    }
+
+    //FIXME
+    company.textContent = translate("company");
+    homeBanner.textContent = translate("homeBanner");
   }
 
   document.querySelector(".toggle-open").addEventListener("click", openMenu);
