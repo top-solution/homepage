@@ -8,7 +8,7 @@ import { competenceBalanceHeader180, competenceBalance180, competenceBalanceHead
 ---
 
 <Layout color="light">
-  <article>
+  <article itemscope itemtype="https://schema.org/Service">
     <section>
       <div class="copy">
         <div class="floating-hex-0">
@@ -23,8 +23,8 @@ import { competenceBalanceHeader180, competenceBalance180, competenceBalanceHead
         <div class="floating-hex-6">
           <Hex width="135" fill="#8883B6" shadow="true" />
         </div>
-        <h4>Bilancio di competenza</h4>
-        <p>
+        <h4 itemprop="name">Bilancio di competenza</h4>
+        <p itemprop="description">
           Permette di comprendere come le persone esprimono professionalmente le conoscenze, le capacità e le qualità
           professionali nella realizzazione quotidiana del loro lavoro e come esse impattano nel sistema azienda. La
           metodologia consiste nel far valutare il candidato da più persone che interagiscono lavorativamente con lui in
@@ -42,7 +42,7 @@ import { competenceBalanceHeader180, competenceBalance180, competenceBalanceHead
         <Button variant="primary" href="/contacts/">Contattaci</Button>
       </div>
     </section>
-    <PrincingTable header={competenceBalanceHeader180} rows={competenceBalance180} />
+    <PrincingTable header={competenceBalanceHeader180} rows={competenceBalance180} itemprop="offers" />
     <div class="floating-hex-4">
       <Hex width="65" fill="#0078C3" shadow="false" rotation="-4" />
     </div>

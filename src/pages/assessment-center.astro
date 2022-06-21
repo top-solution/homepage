@@ -6,7 +6,7 @@ import Hex from "../components/Hex.astro";
 ---
 
 <Layout color="light">
-  <article>
+  <article itemscope itemtype="https://schema.org/Service">
     <section>
       <div class="copy">
         <div class="floating-hex-0">
@@ -21,8 +21,8 @@ import Hex from "../components/Hex.astro";
         <div class="floating-hex-6">
           <Hex width="135" fill="#8883B6" shadow="true" />
         </div>
-        <h4>Valutazione del potenziale</h4>
-        <p>
+        <h4 itemprop="name">Valutazione del potenziale</h4>
+        <p itemprop="description">
           Le doti di flessibilità e scalabilità dei nostri sistemi consentono di ottenere: naturale estendibilità a
           tutta
           la popolazione aziendale, chiarezza interpretativa, facilità di utilizzo con il minimo disagio organizzativo.
@@ -38,7 +38,7 @@ import Hex from "../components/Hex.astro";
         <Button variant="primary" href="/contacts/">Contattaci</Button>
       </div>
     </section>
-    <section>
+    <section itemprop="offers">
       <h5>Piano Custom</h5>
       <div class="custom-plan">
         <h6><strong>Valutazione

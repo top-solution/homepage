@@ -9,7 +9,7 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
 ---
 
 <Layout color="light">
-  <article>
+  <article itemscope itemtype="https://schema.org/Service">
     <section>
       <div class="copy">
         <div class="floating-hex-0">
@@ -24,8 +24,8 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
         <div class="floating-hex-6">
           <Hex width="135" fill="#8883B6" shadow="true" />
         </div>
-        <h4>Valutazione performance</h4>
-        <p>
+        <h4 itemprop="name">Valutazione performance</h4>
+        <p itemprop="description">
           Permette di comprendere quali risultati professionali ha raggiunto la persona nel corso del tempo e come ha
           espresso il proprio contributo all’interno dell’organizzazione.
         </p>
@@ -44,7 +44,7 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
         <Button variant="tertiary">Prova Gratuita</Button>
       </div>
     </section>
-    <PrincingTable header={assessmentPerformanceHeader} rows={assessmentPerformance} />
+    <PrincingTable header={assessmentPerformanceHeader} rows={assessmentPerformance} itemprop="offers" />
     <div class="floating-hex-4">
       <Hex width="65" fill="#0078C3" shadow="false" rotation="-4" />
     </div>

@@ -13,7 +13,7 @@ import { hakaBlobs } from "../utils/tripleBlobs";
 ---
 
 <Layout color="light">
-  <TopBanner title="Audit competenze" mobilealignleft="true" title2="{true}">
+  <TopBanner title="Audit competenze" mobilealignleft="true" title2={true}>
     <div class="claim" slot="text">
       Rileva il Know-how professionale dei dipendenti e scopri il punto di partenza per sviluppare e rafforzare le loro
       competenze con Haka
@@ -41,9 +41,10 @@ import { hakaBlobs } from "../utils/tripleBlobs";
       </div>
     </div>
   </TopBanner>
-  <div>
+  <div itemscope itemtype="https://schema.org/Service">
+    <!-- FIXME - article with inner section -->
     <div class="copy">
-      <h2>測 HAKA</h2>
+      <h2 itemprop="name">測 HAKA</h2>
       <p class="body-2">
         Le Risorse Umane sono il cardine delle organizzazioni: le idee guidano il cambiamento, le persone lo realizzano.
       </p>

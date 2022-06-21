@@ -27,9 +27,9 @@ import { contacts } from "../utils/contacts";
     <ul class="bordered-box">
       <h5>Contatti</h5>
       <li><a href={`tel:${contacts.phone}`}>{contacts.phone}</a></li>
-      <li><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
+      <li itemprop="email"><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
       <li>Sede Legale: {contacts.registeredOffice}</li>
-      <li>Sede Operativa: {contacts.operationalOffice}</li>
+      <li itemprop="address">Sede Operativa: {contacts.operationalOffice}</li>
       <!-- <a target="_blank" href="https://twitter.com" rel="noopener noreferrer" class="picture" title="Twitter">
         <Picture base="footer" src="twitter" alt="Twitter" extension="svg" />
       </a>
