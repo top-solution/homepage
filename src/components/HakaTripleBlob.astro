@@ -5,9 +5,9 @@ import Blob from './Blob.astro';
 const { title, subtitle, blobs, buttonlink } = Astro.props;
 ---
 
-<section>
-  <h4>{title}</h4>
-  <p class="subtitle">{subtitle}</p>
+<section itemscope itemtype="https://schema.org/Service">
+  <h4 itemprop="name">{title}</h4>
+  <p class="subtitle" itemprop="description">{subtitle}</p>
   <div class="container">
     {blobs.map((blob) => (
     <a href={blob.href}>

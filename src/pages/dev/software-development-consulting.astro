@@ -1,0 +1,182 @@
+---
+import Layout from "../../components/Layout.astro";
+import TopBanner from "../../components/TopBanner.astro";
+import Button from "../../components/Button.astro";
+import Customers from "../../components/Customers.astro";
+import Hex from "../../components/Hex.astro";
+import HeaderHexagonsDesktop from "../../components/self-development/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../../components/self-development/HeaderHexagonsMobile.astro";
+import CardHexGroup from "../../components/self-development/CardHexGroup.astro";
+import Card from "../../components/Card.astro";
+import { softwareDevelopmentConsultingCard } from "../../utils/cards";
+---
+
+<Layout color="light" subPages={true}>
+  <TopBanner azure={true} title="Consulenza sviluppo software" mobilealignleft="true" title2="{true}">
+    <div class="claim" slot="text">
+      Affrontiamo lo sviluppo dei nostri prodotti e servizi con tecnologie sempre nuove, perchè la curiosità e la voglia
+      di sperimentare fanno parte del nostro DNA
+    </div>
+    <div slot="actions" style="
+      display: flex;
+      flex-direction: column;
+      max-width: 175px;
+      margin: auto;
+    ">
+      <Button variant="primary" href="/contacts/">Contattaci</Button>
+    </div>
+    <div slot="external">
+      <HeaderHexagonsDesktop />
+      <HeaderHexagonsMobile />
+      <div class="floating-hex-0">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
+      <div class="floating-hex-3">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
+      <div class="floating-hex-5">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
+    </div>
+  </TopBanner>
+  <div>
+    <div class="copy">
+      <p class="body-2">
+        Siamo in grado di offrire una consulenza di sviluppo software chiavi in mano su tecnologie open source
+        all'avanguardia.
+      </p>
+    </div>
+    <div class="services">
+      <h3 class="title-3 title-form choose-services">
+        I nostri <b>SERVIZI</b>
+      </h3>
+      <div class="card-container">
+        {softwareDevelopmentConsultingCard.map((card) =>
+        <Card title={card.title} description={card.description} />
+        )}
+        <div class="card-hex-group">
+          <CardHexGroup />
+        </div>
+      </div>
+      <Customers title="Chi ci ha scelto" />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .floating-hex-2 {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .floating-hex-3 {
+    position: absolute;
+    left: 20%;
+    top: 400px;
+  }
+
+  .floating-hex-5 {
+    position: absolute;
+    left: 65%;
+    top: 600px;
+  }
+
+  .card-hex-group {
+    position: absolute;
+    left: 50%;
+    top: 750px;
+  }
+
+  .copy p {
+    text-align: center;
+    margin: var(--spacing-5) 0 var(--spacing-6);
+  }
+
+  .services {
+    margin: var(--spacing-5) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 var(--spacing-10);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 45%;
+    border: 1px solid var(--color-blue);
+    border-radius: 4px;
+    padding: 16px;
+    margin: var(--spacing-1);
+    max-width: 350px;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .body-3 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: var(--spacing-10);
+  }
+
+  .customers {
+    margin-top: var(--spacing-15);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .choose-services {
+    margin-bottom: var(--spacing-6);
+  }
+
+  @media only screen and (max-width: 820px) {
+
+    .card-hex-group {
+      left: 50%;
+      top: 675px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    .copy {
+      margin: 0 var(--spacing-2);
+    }
+
+    .service-card {
+      flex: 0 0 100%;
+    }
+
+    .floating-hex-3 {
+      position: absolute;
+      left: 0%;
+      top: 490px;
+    }
+
+    .card-hex-group,
+    .floating-hex-0,
+    .floating-hex-5 {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 820px) {
+    .card-hex-group {
+      left: 50%;
+      top: 1275px;
+    }
+  }
+</style>

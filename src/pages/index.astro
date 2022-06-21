@@ -5,11 +5,6 @@ import Customers from "../components/Customers.astro";
 import Hex from "../components/Hex.astro";
 import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../utils/tripleBlobs";
 
-// import locale from "../utils/locale.js"
-// function translate(key) {
-//   console.log(locale[key].it)
-//   return locale[key].it;
-// }
 ---
 
 <Layout color="dark">
@@ -53,9 +48,8 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
       </div>
     </div>
     <section>
-      <!-- {window.translate("home-banner")} -->
-      <p>
-        Scopri le opportunità per il tuo <strong>business</strong> offerte dalle nostre <strong>soluzioni</strong>
+      <p id="homeBanner">
+        Scopri le opportunità per il tuo business offerte dalle nostre soluzioni
       </p>
       <div class="floating-hex-0">
         <Hex width="65" fill="#312783" shadow="true" />

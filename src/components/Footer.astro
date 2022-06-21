@@ -1,6 +1,8 @@
 ---
 import Picture from "../components/Picture.astro";
 import { contacts } from "../utils/contacts";
+const { subPages } = Astro.props;
+
 ---
 
 <footer itemscope itemtype="https://schema.org/Organization">
@@ -13,23 +15,23 @@ import { contacts } from "../utils/contacts";
     </ul>
     <ul>
       <h5>HR</h5>
-      <li><a href="/haka/">Audit competenze</a></li>
-      <li><a href="/company-development/">Sviluppo organizzativo</a></li>
-      <li><a href="/self-development/">Sviluppo individuale</a></li>
+      <li><a href="/hr/audit-skills/">Audit competenze</a></li>
+      <li><a href="/hr/company-development/">Sviluppo organizzativo</a></li>
+      <li><a href="/hr/self-development/">Sviluppo individuale</a></li>
     </ul>
     <ul>
       <h5>DEV</h5>
-      <li><a href="/web-applications-mobile/">Applicazioni web e mobile</a></li>
-      <li><a href="/software-development-consulting/">Consulenza sviluppo software</a></li>
-      <li><a href="/cloud-computing/">Cloud computing</a></li>
+      <li><a href="/dev/web-applications-mobile/">Applicazioni web e mobile</a></li>
+      <li><a href="/dev/software-development-consulting/">Consulenza sviluppo software</a></li>
+      <li><a href="/dev/cloud-computing/">Cloud computing</a></li>
 
     </ul>
     <ul class="bordered-box">
       <h5>Contatti</h5>
       <li><a href={`tel:${contacts.phone}`}>{contacts.phone}</a></li>
-      <li><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
+      <li itemprop="email"><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
       <li>Sede Legale: {contacts.registeredOffice}</li>
-      <li>Sede Operativa: {contacts.operationalOffice}</li>
+      <li itemprop="address">Sede Operativa: {contacts.operationalOffice}</li>
       <!-- <a target="_blank" href="https://twitter.com" rel="noopener noreferrer" class="picture" title="Twitter">
         <Picture base="footer" src="twitter" alt="Twitter" extension="svg" />
       </a>
@@ -56,8 +58,8 @@ import { contacts } from "../utils/contacts";
   <aside>
     <div class="container">
       <a href="/index.html">
-        <img src="../img/topsolution_footer_logo_dark.svg" alt="top-solution_logo" width="79" height="79"
-          itemprop="logo" />
+        <img src={subPages ? "../../img/topsolution_footer_logo_dark.svg" : "../img/topsolution_footer_logo_dark.svg" }
+          alt="top-solution_logo" width="79" height="79" itemprop="logo" />
       </a>
       <p>Entra in contatto con noi. Scopri le opportunità per il tuo business offerte dalle nostre soluzioni</p>
     </div>

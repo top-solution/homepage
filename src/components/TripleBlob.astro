@@ -9,16 +9,16 @@ const { title, blobs, buttonlink } = Astro.props;
   <h1>{title}</h1>
   <div class="container">
     {blobs.map((blob) => (
-    <a href={blob.href}>
+    <a href={blob.href} itemscope itemtype="https://schema.org/Service">
       <Blob interactive={true} shape="rectangle" fill={blob.color} padding="20" clickable="true">
         <div class="text">
           <p>
             <img src={`../img/icons/${blob.icon}`} alt="devices icon" width="50" height="35" />
           </p>
           <h2>
-            <b>{blob.title}</b>
+            <b itemprop="name">{blob.title}</b>
           </h2>
-          <h6>
+          <h6 itemprop="description">
             {blob.subtitle}
           </h6>
         </div>

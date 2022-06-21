@@ -2,7 +2,7 @@
 const { title, description } = Astro.props;
 ---
 
-<div class="service-card">
+<div class="service-card" itemscope itemtype="https://schema.org/Service">
   <h4 itemprop="name">
     {title}
   </h4>
