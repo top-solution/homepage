@@ -1,18 +1,18 @@
 ---
-import Layout from "../components/Layout.astro";
-import TopBanner from "../components/TopBanner.astro";
-import Button from "../components/Button.astro";
-import Hex from "../components/Hex.astro";
-import Blob from "../components/Blob.astro";
-import Picture from "../components/Picture.astro";
-import Customers from "../components/Customers.astro";
-import HeaderHexagonsDesktop from "../components/haka/HeaderHexagonsDesktop.astro";
-import HeaderHexagonsMobile from "../components/haka/HeaderHexagonsMobile.astro";
-import HakaTripleBlob from "../components/HakaTripleBlob.astro";
-import { hakaBlobs } from "../utils/tripleBlobs";
+import Layout from "../../components/Layout.astro";
+import TopBanner from "../../components/TopBanner.astro";
+import Button from "../../components/Button.astro";
+import Hex from "../../components/Hex.astro";
+import Blob from "../../components/Blob.astro";
+import Picture from "../../components/Picture.astro";
+import Customers from "../../components/Customers.astro";
+import HeaderHexagonsDesktop from "../../components/audit-skills/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../../components/audit-skills/HeaderHexagonsMobile.astro";
+import HakaTripleBlob from "../../components/HakaTripleBlob.astro";
+import { hakaBlobs } from "../../utils/tripleBlobs";
 ---
 
-<Layout color="light">
+<Layout color="light" subPages={true}>
   <TopBanner title="Audit competenze" mobilealignleft="true" title2={true}>
     <div class="claim" slot="text">
       Rileva il Know-how professionale dei dipendenti e scopri il punto di partenza per sviluppare e rafforzare le loro
@@ -50,7 +50,7 @@ import { hakaBlobs } from "../utils/tripleBlobs";
       </p>
       <video class="video" controls>
         <track kind="captions" />
-        <source src="../videos/haka.mp4" type="video/mp4" />
+        <source src="../../videos/haka.mp4" type="video/mp4" />
       </video>
       <div class="floating-hex-6">
         <Hex width="56" fill="#9893c1" shadow="true" />

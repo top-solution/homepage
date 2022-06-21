@@ -1,5 +1,6 @@
 ---
 import classnames from "classnames";
+import { Icon } from "astro-icon";
 const { label = "", value = "", error = null, name = "", options = [] } = Astro.props;
 let { focused, menuOpen } = Astro.props;
 
@@ -63,7 +64,8 @@ let { focused, menuOpen } = Astro.props;
       <option value={option.value}>{option.text}</option>
       ))}
     </select>
-    <img class={classnames("arrow", {open: menuOpen})} src="../img/icons/arrowDropDown.svg" alt="" />
+    <Icon pack="mdi" name="chevron-down" class={classnames("arrow", {open: menuOpen})} />
+    <!-- <img class={classnames("arrow", {open: menuOpen})} src="../img/icons/arrowDropDown.svg" alt="" /> -->
     <fieldset aria-hidden="true" class="fieldset">
       <legend class="css-173wfxe"><span>{label}</span></legend>
     </fieldset>

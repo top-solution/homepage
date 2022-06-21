@@ -6,7 +6,7 @@ export const developmentHumanResourceBlobs = [
     color: "#e9e8f2",
     colorMobile: "#312783",
     width: "240px",
-    href: "/haka.html",
+    href: "/hr/audit-skills/",
   },
   {
     icon: "optionPaper.svg",
@@ -15,7 +15,7 @@ export const developmentHumanResourceBlobs = [
     color: "#e9e8f2",
     colorMobile: "#312783",
     width: "245px",
-    href: "/company-development.html",
+    href: "/hr/company-development/",
   },
   {
     icon: "cloud.svg",
@@ -24,7 +24,7 @@ export const developmentHumanResourceBlobs = [
     color: "#e9e8f2",
     colorMobile: "#312783",
     width: "240px",
-    href: "/self-development.html",
+    href: "/hr/self-development/",
   },
 ];
 
@@ -37,7 +37,7 @@ export const developmentSoftwareBlobs = [
     color: "#e3f1fa",
     colorMobile: "#0078C3",
     width: "260px",
-    href: "/web-applications-mobile/",
+    href: "/dev/web-applications-mobile/",
   },
   {
     icon: "palace.svg",
@@ -46,7 +46,7 @@ export const developmentSoftwareBlobs = [
     color: "#e3f1fa",
     colorMobile: "#0078C3",
     width: "260px",
-    href: "/software-development-consulting/",
+    href: "/dev/software-development-consulting/",
   },
   {
     icon: "user.svg",
@@ -56,7 +56,7 @@ export const developmentSoftwareBlobs = [
     color: "#e3f1fa",
     colorMobile: "#0078C3",
     width: "260px",
-    href: "/cloud-computing/",
+    href: "/dev/cloud-computing/",
   },
 ];
 
@@ -66,21 +66,21 @@ export const hakaBlobs = [
     color: "#e3f1fa",
     colorMobile: "#312783",
     width: "500px",
-    href: "/assessment-performance/",
+    href: "/audit-skills/assessment-performance/",
   },
   {
     title: "Bilancio di competenza",
     color: "#e3f1fa",
     colorMobile: "#312783",
     width: "500px",
-    href: "/competence-balance/",
+    href: "/audit-skills/competence-balance/",
   },
   {
     title: "Valutazione del potenziale",
     color: "#e3f1fa",
     colorMobile: "#312783",
     width: "500px",
-    href: "/assessment-center/",
+    href: "/audit-skills/assessment-center/",
   },
 ];
 

@@ -1,21 +1,21 @@
 ---
-import Layout from "../components/Layout.astro";
-import TopBanner from "../components/TopBanner.astro";
-import Button from "../components/Button.astro";
-import Customers from "../components/Customers.astro";
-import Hex from "../components/Hex.astro";
-import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
-import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
-import CardHexGroup from "../components/self-development/CardHexGroup.astro";
-import Card from "../components/Card.astro";
-import { selfDevelopmentCard } from "../utils/cards";
+import Layout from "../../components/Layout.astro";
+import TopBanner from "../../components/TopBanner.astro";
+import Button from "../../components/Button.astro";
+import Customers from "../../components/Customers.astro";
+import Hex from "../../components/Hex.astro";
+import HeaderHexagonsDesktop from "../../components/self-development/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../../components/self-development/HeaderHexagonsMobile.astro";
+import CardHexGroup from "../../components/self-development/CardHexGroup.astro";
+import Card from "../../components/Card.astro";
+import { softwareDevelopmentConsultingCard } from "../../utils/cards";
 ---
 
-<Layout color="light">
-  <TopBanner title="Sviluppo Individuale" mobilealignleft="true" title2="{true}">
+<Layout color="light" subPages={true}>
+  <TopBanner azure={true} title="Consulenza sviluppo software" mobilealignleft="true" title2="{true}">
     <div class="claim" slot="text">
-      Il <b>sapere</b> delle persone rappresenta il bene immateriale
-      <b>più importante</b> delle organizzazioni.
+      Affrontiamo lo sviluppo dei nostri prodotti e servizi con tecnologie sempre nuove, perchè la curiosità e la voglia
+      di sperimentare fanno parte del nostro DNA
     </div>
     <div slot="actions" style="
       display: flex;
@@ -42,14 +42,8 @@ import { selfDevelopmentCard } from "../utils/cards";
   <div>
     <div class="copy">
       <p class="body-2">
-        Far crescere con continuità le <b>competenze</b> delle persone è, oltre
-        a un dovere, una <b>necessità</b> legata alla <b>continuità</b> del
-        <b>business</b>
-        e dell’organizzazione. Le <b>persone</b> sono quindi il fulcro di tutte
-        le
-        <b>organizzazioni</b>
-        e le <b>competenze</b> sono l’<b>asset strategico</b> sul quale
-        costruire l’identità aziendale.
+        Siamo in grado di offrire una consulenza di sviluppo software chiavi in mano su tecnologie open source
+        all'avanguardia.
       </p>
     </div>
     <div class="services">
@@ -57,7 +51,7 @@ import { selfDevelopmentCard } from "../utils/cards";
         I nostri <b>SERVIZI</b>
       </h3>
       <div class="card-container">
-        {selfDevelopmentCard.map((card) =>
+        {softwareDevelopmentConsultingCard.map((card) =>
         <Card title={card.title} description={card.description} />
         )}
         <div class="card-hex-group">
@@ -80,25 +74,24 @@ import { selfDevelopmentCard } from "../utils/cards";
   .floating-hex-3 {
     position: absolute;
     left: 20%;
-    top: 375px;
+    top: 400px;
   }
 
   .floating-hex-5 {
     position: absolute;
     left: 65%;
-    top: 650px;
+    top: 600px;
   }
 
   .card-hex-group {
     position: absolute;
     left: 50%;
-    top: 590px;
+    top: 750px;
   }
 
   .copy p {
     text-align: center;
     margin: var(--spacing-5) 0 var(--spacing-6);
-
   }
 
   .services {
@@ -149,6 +142,14 @@ import { selfDevelopmentCard } from "../utils/cards";
     margin-bottom: var(--spacing-6);
   }
 
+  @media only screen and (max-width: 820px) {
+
+    .card-hex-group {
+      left: 50%;
+      top: 675px;
+    }
+  }
+
   @media only screen and (max-width: 600px) {
 
     .copy {
@@ -167,18 +168,15 @@ import { selfDevelopmentCard } from "../utils/cards";
 
     .card-hex-group,
     .floating-hex-0,
-    .floating-hex-3,
     .floating-hex-5 {
       display: none;
     }
   }
 
-  @media only screen and (max-width: 820px) {
-
+  @media screen and (max-width: 820px) {
     .card-hex-group {
       left: 50%;
-      top: 975px;
+      top: 1275px;
     }
   }
-
 </style>

@@ -24,20 +24,20 @@ const { header, rows } = Astro.props;
     {rows.map((row) =>
     <tr>
       <td>
-        {row[0] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[0] === UNCHECKED ? <img
-          src="../img/icons/check-false.svg" /> : row[0])}
+        {row[0] === CHECKED ? <img src="../../img/icons/check-true.svg" alt="SI" /> : (row[0] === UNCHECKED ? <img
+          src="../../img/icons/check-false.svg" /> : row[0])}
       </td>
       <td>
         {row[1] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[1] === UNCHECKED ? <img
-          src="../img/icons/check-false.svg" /> : row[1])}
+          src="../../img/icons/check-false.svg" /> : row[1])}
       </td>
       <td>
         {row[2] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[2] === UNCHECKED ? <img
-          src="../img/icons/check-false.svg" /> : row[2])}
+          src="../../img/icons/check-false.svg" /> : row[2])}
       </td>
       <td>
         {row[3] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[3] === UNCHECKED ? <img
-          src="../img/icons/check-false.svg" /> : row[3])}
+          src="../../img/icons/check-false.svg" /> : row[3])}
       </td>
     </tr>
     )}

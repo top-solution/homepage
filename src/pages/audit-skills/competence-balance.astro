@@ -1,19 +1,18 @@
 ---
-import Layout from "../components/Layout.astro";
-import Button from "../components/Button.astro";
-import Blob from "../components/Blob.astro";
-import Hex from "../components/Hex.astro";
-import RequestTrial from "../components/haka/RequestTrial.astro";
-import PrincingTable from "../components/haka/PricingTable.astro"
-import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tables.js";
+import Layout from "../../components/Layout.astro";
+import Button from "../../components/Button.astro";
+import Blob from "../../components/Blob.astro";
+import Hex from "../../components/Hex.astro";
+import PrincingTable from "../../components/audit-skills/PricingTable.astro"
+import { competenceBalanceHeader180, competenceBalance180, competenceBalanceHeader360, competenceBalance360 } from "../../utils/tables.js";
 ---
 
-<Layout color="light">
+<Layout color="light" subPages={true}>
   <article itemscope itemtype="https://schema.org/Service">
     <section>
       <div class="copy">
         <div class="floating-hex-0">
-          <Hex width="185" fill="#312783" shadow="true" />
+          <Hex width="145" fill="#312783" shadow="true" />
         </div>
         <div class="floating-hex-1">
           <Hex width="275" fill="#312783" shadow="true" />
@@ -24,14 +23,16 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
         <div class="floating-hex-6">
           <Hex width="135" fill="#8883B6" shadow="true" />
         </div>
-        <h4 itemprop="name">Valutazione performance</h4>
+        <h4 itemprop="name">Bilancio di competenza</h4>
         <p itemprop="description">
-          Permette di comprendere quali risultati professionali ha raggiunto la persona nel corso del tempo e come ha
-          espresso il proprio contributo all’interno dell’organizzazione.
+          Permette di comprendere come le persone esprimono professionalmente le conoscenze, le capacità e le qualità
+          professionali nella realizzazione quotidiana del loro lavoro e come esse impattano nel sistema azienda. La
+          metodologia consiste nel far valutare il candidato da più persone che interagiscono lavorativamente con lui in
+          modo diretto o indiretto (responsabili, colleghi e riporti).
         </p>
         <ul>
-          <li> &#11042; <span>Auto Valutazione</span></li>
-          <li> &#11042; <span>Etero Valutazione</span></li>
+          <li> &#11042; <span>Valutazione 180°</span></li>
+          <li> &#11042; <span>Valutazione 360°</span></li>
         </ul>
         <div class="floating-hex-3">
           <Hex width="65" fill="#312783" shadow="true" />
@@ -40,11 +41,8 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
       <div class="button">
         <Button variant="primary" href="/contacts/">Contattaci</Button>
       </div>
-      <div class="button" onclick="handleFreeTryClick()">
-        <Button variant="tertiary">Prova Gratuita</Button>
-      </div>
     </section>
-    <PrincingTable header={assessmentPerformanceHeader} rows={assessmentPerformance} itemprop="offers" />
+    <PrincingTable header={competenceBalanceHeader180} rows={competenceBalance180} itemprop="offers" />
     <div class="floating-hex-4">
       <Hex width="65" fill="#0078C3" shadow="false" rotation="-4" />
     </div>
@@ -61,18 +59,25 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
         </div>
       </Blob>
     </div>
-    <section>
-      <div id="free-try" />
-      <RequestTrial />
-    </section>
+    <PrincingTable header={competenceBalanceHeader360} rows={competenceBalance360} />
+    <div class="floating-hex-5">
+      <Hex width="65" fill="#0078C3" shadow="false" rotation="-4" />
+    </div>
+    <div class="blob">
+      <Blob interactive={true} shape="hexagon" fill="#E3F1FA" padding="46" variance="1.2">
+        <div class="blob-content">
+          <p class="title-6">Desideri un <b>piano custom</b>?</p>
+          <p class="title-6">Scegli il piano <b>ENTERPRISE</b></p>
+          <div class="button">
+            <Button variant="primary" href="/contacts.html" style="display: inline-block">
+              Contattaci
+            </Button>
+          </div>
+        </div>
+      </Blob>
+    </div>
   </article>
 </Layout>
-
-<script type="text/javascript">
-  function handleFreeTryClick() {
-    document.getElementById("free-try").scrollIntoView(true);
-  }
-</script>
 
 <style>
   .body-2 {
@@ -160,6 +165,14 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../utils/tab
   }
 
   article .floating-hex-4 {
+    width: 425px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: var(--spacing-3);
+  }
+
+  article .floating-hex-5 {
     width: 425px;
     height: 50px;
     display: block;

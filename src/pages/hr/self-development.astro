@@ -1,21 +1,21 @@
 ---
-import Layout from "../components/Layout.astro";
-import TopBanner from "../components/TopBanner.astro";
-import Button from "../components/Button.astro";
-import Hex from "../components/Hex.astro";
-import Customers from "../components/Customers.astro";
-import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
-import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
-import CardHexGroup from "../components/self-development/CardHexGroup.astro";
-import Card from "../components/Card.astro";
-import { companyDevelopmentCard } from "../utils/cards";
+import Layout from "../../components/Layout.astro";
+import TopBanner from "../../components/TopBanner.astro";
+import Button from "../../components/Button.astro";
+import Customers from "../../components/Customers.astro";
+import Hex from "../../components/Hex.astro";
+import HeaderHexagonsDesktop from "../../components/self-development/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../../components/self-development/HeaderHexagonsMobile.astro";
+import CardHexGroup from "../../components/self-development/CardHexGroup.astro";
+import Card from "../../components/Card.astro";
+import { selfDevelopmentCard } from "../../utils/cards";
 ---
 
-<Layout color="light">
-  <TopBanner title="Sviluppo organizzativo" mobilealignleft="true" title2="{true}">
+<Layout color="light" subPages={true}>
+  <TopBanner title="Sviluppo Individuale" mobilealignleft="true" title2="{true}">
     <div class="claim" slot="text">
-      è necessario ascoltare la voce delle proprie persone per capire come costruire azioni di miglioramento e con loro
-      progettare il futuro
+      Il <b>sapere</b> delle persone rappresenta il bene immateriale
+      <b>più importante</b> delle organizzazioni.
     </div>
     <div slot="actions" style="
       display: flex;
@@ -34,25 +34,30 @@ import { companyDevelopmentCard } from "../utils/cards";
       <div class="floating-hex-3">
         <Hex width="56" fill="#9893c1" shadow="true" />
       </div>
+      <div class="floating-hex-5">
+        <Hex width="56" fill="#9893c1" shadow="true" />
+      </div>
     </div>
   </TopBanner>
-  <section>
+  <div>
     <div class="copy">
       <p class="body-2">
-        Per affrontare situazioni organizzative ritenute critiche occorre analizzare i processi organizzativi e
-        identificare i meccanismi di successo interni da replicare o apportare azioni correttive ove richiesto.
+        Far crescere con continuità le <b>competenze</b> delle persone è, oltre
+        a un dovere, una <b>necessità</b> legata alla <b>continuità</b> del
+        <b>business</b>
+        e dell’organizzazione. Le <b>persone</b> sono quindi il fulcro di tutte
+        le
+        <b>organizzazioni</b>
+        e le <b>competenze</b> sono l’<b>asset strategico</b> sul quale
+        costruire l’identità aziendale.
       </p>
-      <video class="video" controls>
-        <track kind="captions" />
-        <source src="../videos/company-development.mp4" type="video/mp4" />
-      </video>
     </div>
     <div class="services">
       <h3 class="title-3 title-form choose-services">
         I nostri <b>SERVIZI</b>
       </h3>
       <div class="card-container">
-        {companyDevelopmentCard.map((card) =>
+        {selfDevelopmentCard.map((card) =>
         <Card title={card.title} description={card.description} />
         )}
         <div class="card-hex-group">
@@ -61,7 +66,7 @@ import { companyDevelopmentCard } from "../utils/cards";
       </div>
       <Customers title="Chi ci ha scelto" />
     </div>
-  </section>
+  </div>
 </Layout>
 
 <style>
@@ -75,25 +80,19 @@ import { companyDevelopmentCard } from "../utils/cards";
   .floating-hex-3 {
     position: absolute;
     left: 20%;
-    top: 370px;
-  }
-
-  .floating-hex-4 {
-    position: absolute;
-    left: 60%;
-    top: 470px;
+    top: 375px;
   }
 
   .floating-hex-5 {
     position: absolute;
     left: 65%;
-    top: 600px;
+    top: 650px;
   }
 
   .card-hex-group {
     position: absolute;
     left: 50%;
-    top: 1200px;
+    top: 590px;
   }
 
   .copy p {
@@ -108,12 +107,6 @@ import { companyDevelopmentCard } from "../utils/cards";
     flex-direction: column;
     align-items: center;
     position: relative;
-  }
-
-  .video {
-    width: 100%;
-    height: auto;
-    margin: var(--spacing-3) 0;
   }
 
   .card-container {
@@ -157,6 +150,7 @@ import { companyDevelopmentCard } from "../utils/cards";
   }
 
   @media only screen and (max-width: 600px) {
+
     .copy {
       margin: 0 var(--spacing-2);
     }
@@ -179,17 +173,11 @@ import { companyDevelopmentCard } from "../utils/cards";
     }
   }
 
-  @media screen and (max-width: 900px) {
-    .card-hex-group {
-      display: none;
-    }
-  }
-
   @media only screen and (max-width: 820px) {
 
     .card-hex-group {
       left: 50%;
-      top: 675px;
+      top: 975px;
     }
   }
 </style>

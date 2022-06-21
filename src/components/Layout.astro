@@ -1,13 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-const { color = "light" } = Astro.props;
-
-// import locale from "../utils/locale.js"
-// function translate(key) {
-//   console.log(locale[key].it)
-//   return locale[key].it;
-// }
+const { color = "light", subPages } = Astro.props;
 ---
 
 <html class="no-js" lang="it" dir="ltr">
@@ -33,11 +27,13 @@ const { color = "light" } = Astro.props;
   <link rel="canonical" href="https://topsolution.it/" />
 
   <title>Top Solution</title>
-  <link rel="manifest" href="../site.webmanifest" />
-  <link rel="icon" type="image/x-icon" href="../img/logo.svg" />
-  <link rel="stylesheet" href="../src/styles/global.css" />
-  <link rel="stylesheet" href="../src/styles/normalize.css" />
-  <link rel="stylesheet" href="../src/styles/typography.css" />
+  <link rel="manifest" href={subPages ? "../../site.webmanifest" : "../site.webmanifest" } />
+  <link rel="icon" type="image/x-icon" href={subPages ? "../../img/logo.svg" : "../img/logo.svg" } />
+  <link rel="stylesheet" href={subPages ? "../../src/styles/global.css" : "../src/styles/global.css" } />
+  <link rel="stylesheet" href={subPages ? "../../src/styles/normalize.css" : "../src/styles/normalize.css" } />
+  <link rel="stylesheet" href={subPages ? "../../src/styles/typography.css" : "../src/styles/typography.css" } />
+
+  <script type="text/javascript" src="../../src/utils/func.js"></script>
 </head>
 
 <script>
@@ -46,11 +42,11 @@ const { color = "light" } = Astro.props;
 </script>
 
 <body>
-  <Header {color} />
+  <Header {color} subPages />
   <main class="wrapper">
     <slot />
   </main>
-  <Footer />
+  <Footer subPages />
 </body>
 
 </html>

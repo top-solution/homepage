@@ -1,17 +1,17 @@
 ---
-import Layout from "../components/Layout.astro";
-import TopBanner from "../components/TopBanner.astro";
-import Button from "../components/Button.astro";
-import Customers from "../components/Customers.astro";
-import Hex from "../components/Hex.astro";
-import HeaderHexagonsDesktop from "../components/self-development/HeaderHexagonsDesktop.astro";
-import HeaderHexagonsMobile from "../components/self-development/HeaderHexagonsMobile.astro";
-import CardHexGroup from "../components/self-development/CardHexGroup.astro";
-import Card from "../components/Card.astro";
-import { webApplicationsAndMobileCard } from "../utils/cards";
+import Layout from "../../components/Layout.astro";
+import TopBanner from "../../components/TopBanner.astro";
+import Button from "../../components/Button.astro";
+import Customers from "../../components/Customers.astro";
+import Hex from "../../components/Hex.astro";
+import HeaderHexagonsDesktop from "../../components/self-development/HeaderHexagonsDesktop.astro";
+import HeaderHexagonsMobile from "../../components/self-development/HeaderHexagonsMobile.astro";
+import CardHexGroup from "../../components/self-development/CardHexGroup.astro";
+import Card from "../../components/Card.astro";
+import { webApplicationsAndMobileCard } from "../../utils/cards";
 ---
 
-<Layout color="light">
+<Layout color="light" subPages={true}>
   <TopBanner azure={true} title="Applicazioni web e mobile" mobilealignleft="true" title2={true}>
     <div class="claim" slot="text">
       Utilizziamo le tecnologie open source più all'avanguardia per offrirti il massimo delle performance, la libertà da
