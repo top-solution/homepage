@@ -99,7 +99,7 @@ const { color = "light", subPages } = Astro.props;
 </header>
 
 <script>
-  import locale from "../utils/locale";
+  import locale from "../utils/locale.js";
 
   function translate(key) {
     if (sessionStorage.getItem("language") === 'it' || sessionStorage.getItem("language") === null)
