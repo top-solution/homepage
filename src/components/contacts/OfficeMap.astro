@@ -2,6 +2,21 @@
 import Button from "../../components/Button.astro";
 ---
 
+<div id="container">
+  <div id="office-map" />
+  <div id="center-button">
+    <Button variant="secondary" icon={true} title="Mostra a schermo intero"> <img src="../img/icons/center-map.svg"
+        alt="center map" /></Button>
+  </div>
+  <div id="zoom-in-button">
+    <Button variant="secondary" icon={true}><img src="../img/icons/zoom-in-map.svg" alt="zoom in map" /></Button>
+  </div>
+  <div id="zoom-out-button">
+    <Button variant="secondary" icon={true}><img src="../img/icons/zoom-out-map.svg" alt="zoom out map" /></Button>
+  </div>
+</div>
+
+
 <script>
   let mapElement = document.getElementById("office-map");
 
@@ -12,7 +27,7 @@ import Button from "../../components/Button.astro";
     var script = document.createElement("script");
     script.src =
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyAZo_LJrBCbL6GOjCwtR41qPpoi4jn4NwA&callback=initMap";
-    script.async = false; //FIXME was true
+    script.async = false;
 
     window.initMap = function () {
       map = new google.maps.Map(mapElement, {
@@ -135,29 +150,26 @@ import Button from "../../components/Button.astro";
 
     document.head.appendChild(script);
   }
-</script>
 
-<div id="container">
-  <div id="office-map" />
-  <div id="center-button">
-    <Button variant="secondary" icon={true} title="Mostra a schermo intero" onclick={(e)=> {
-      e.preventDefault();
-      Astro.props.mapElement.requestFullscreen();
-      }}><img src="../img/icons/center-map.svg" alt="center map" /></Button>
-  </div>
-  <div id="zoom-in-button">
-    <Button variant="secondary" icon={true} onclick={(e)=> {
-      e.preventDefault();
-      Astro.props.map.setZoom(Astro.props.map.zoom + 1);
-      }}><img src="../img/icons/zoom-in-map.svg" alt="zoom in map" /></Button>
-  </div>
-  <div id="zoom-out-button">
-    <Button variant="secondary" icon={true} onclick={(e)=> {
-      e.preventDefault();
-      Astro.props.map.setZoom(Astro.props.map.zoom - 1);
-      }}><img src="../img/icons/zoom-out-map.svg" alt="zoom out map" /></Button>
-  </div>
-</div>
+  function fullScreen(e) {
+    e.preventDefault();
+    mapElement.requestFullscreen();
+  }
+
+  function zoomIn(e) {
+    e.preventDefault();
+    map.setZoom(map.zoom + 1);
+  }
+
+  function zoomOut(e) {
+    e.preventDefault();
+    map.setZoom(map.zoom - 1);
+  }
+
+  document.querySelector("#center-button").addEventListener("click", fullScreen);
+  document.querySelector("#zoom-in-button").addEventListener("click", zoomIn);
+  document.querySelector("#zoom-out-button").addEventListener("click", zoomOut);
+</script>
 
 <style>
   #container,
