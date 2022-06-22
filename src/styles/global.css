@@ -95,17 +95,6 @@ body {
   box-sizing: border-box;
 }
 
-.layout {
-  max-width: var(--breakpoint-tablet-max);
-  margin: 0 auto;
-  padding: 0 var(--spacing-3);
-  position: relative;
-}
-
-/* .layout .content {
-  min-height: calc(100vh - 621px);
-} */
-
 .centred-button {
   display: flex;
   justify-content: center;

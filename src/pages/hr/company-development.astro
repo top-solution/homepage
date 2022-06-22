@@ -12,11 +12,11 @@ import { companyDevelopmentCard } from "../../utils/cards";
 ---
 
 <Layout color="light" subPages={true}>
-  <TopBanner title="Sviluppo organizzativo" mobilealignleft="true" title2="{true}">
-    <div class="claim" slot="text">
+  <TopBanner title="Sviluppo organizzativo" mobilealignleft="true" title2={true}>
+    <p class="claim" slot="text">
       è necessario ascoltare la voce delle proprie persone per capire come costruire azioni di miglioramento e con loro
       progettare il futuro
-    </div>
+    </p>
     <div slot="actions" style="
       display: flex;
       flex-direction: column;
@@ -38,17 +38,17 @@ import { companyDevelopmentCard } from "../../utils/cards";
   </TopBanner>
   <section>
     <div class="copy">
-      <p class="body-2">
+      <p>
         Per affrontare situazioni organizzative ritenute critiche occorre analizzare i processi organizzativi e
         identificare i meccanismi di successo interni da replicare o apportare azioni correttive ove richiesto.
       </p>
-      <video class="video" controls>
+      <video controls>
         <track kind="captions" />
         <source src="../../videos/company-development.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="services">
-      <h3 class="title-3 title-form choose-services">
+      <h3>
         I nostri <b>SERVIZI</b>
       </h3>
       <div class="card-container">
@@ -99,7 +99,7 @@ import { companyDevelopmentCard } from "../../utils/cards";
   .copy p {
     text-align: center;
     margin: var(--spacing-5) 0 var(--spacing-6);
-
+    font-size: 22px;
   }
 
   .services {
@@ -110,7 +110,7 @@ import { companyDevelopmentCard } from "../../utils/cards";
     position: relative;
   }
 
-  .video {
+  video {
     width: 100%;
     height: auto;
     margin: var(--spacing-3) 0;
@@ -123,46 +123,13 @@ import { companyDevelopmentCard } from "../../utils/cards";
     margin: 0 var(--spacing-10);
   }
 
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 0 0 45%;
-    border: 1px solid var(--color-blue);
-    border-radius: 4px;
-    padding: 16px;
-    margin: var(--spacing-1);
-    max-width: 350px;
-  }
-
-  h4 {
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: var(--spacing-1);
-  }
-
-  .body-3 {
-    font-weight: 400;
-    font-size: 20px;
-    margin-bottom: var(--spacing-10);
-  }
-
-  .customers {
-    margin-top: var(--spacing-15);
-    margin-bottom: var(--spacing-6);
-  }
-
-  .choose-services {
+  h3 {
     margin-bottom: var(--spacing-6);
   }
 
   @media only screen and (max-width: 600px) {
     .copy {
       margin: 0 var(--spacing-2);
-    }
-
-    .service-card {
-      flex: 0 0 100%;
     }
 
     .floating-hex-3 {

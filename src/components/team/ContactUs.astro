@@ -99,7 +99,6 @@ function handleSubmit(event) {
 ---
 
 <script>
-  //FIXME
   let formErrors = {
     name: null,
     age: null,
@@ -112,17 +111,17 @@ function handleSubmit(event) {
   };
 </script>
 
-<form class="contact-us" onsubmit={handleSubmit}>
+<form onsubmit={handleSubmit}>
   <div class="floating-hex-1">
     <Hex width="111" fill="#312783" shadow="true" />
   </div>
-  <div class={classnames("drawer", {"open": open})}>
+  <section>
     <FormTitleHex />
-    <h2 class="title-3 title-form">Candidatura <b>spontanea</b></h2>
-    <p class="subtitle body-1">
+    <h2>Candidatura <b>spontanea</b></h2>
+    <p>
       Vuoi far parte del <b>nostro team</b>?
     </p>
-    <p class="subtitle body-1">
+    <p>
       <b>Inviaci</b> la tua <b>candidatura spontanea</b>
     </p>
     <div class="form">
@@ -245,19 +244,19 @@ function handleSubmit(event) {
           </Button>
         </div>
     </div>
-  </div>
+  </section>
 </form>
 <Toast bind:this={toastEl} message="Grazie per aver inviato la tua candidatura spontanea!" />
 
 <style>
-  .contact-us {
+  form {
     position: relative;
     margin-top: var(--spacing-8);
     max-width: var(--breakpoint-mobile-max);
     margin: auto;
   }
 
-  .drawer {
+  section {
     position: relative;
     max-height: 0;
     transition: max-height var(--transition-timing-default) var(--transition-function-default),
@@ -266,9 +265,9 @@ function handleSubmit(event) {
     padding-top: 0px;
   }
 
-  .open {
-    max-height: 900px;
-    padding-top: 100px;
+  section p {
+    font-size: 22px;
+    text-align: center;
   }
 
   h2 {
@@ -276,27 +275,10 @@ function handleSubmit(event) {
     margin-bottom: var(--spacing-4);
   }
 
-  .title {
-    margin: var(--spacing-6) 0;
-  }
-
-  .subtitle {
-    text-align: center;
-    margin: 0;
-  }
-
   .floating-hex-1 {
     position: absolute;
     left: -420px;
     top: -580px;
-  }
-
-  .title-hexagon {
-    position: absolute;
-    z-index: -1;
-    top: -160px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
   }
 
   .form {
@@ -376,9 +358,7 @@ function handleSubmit(event) {
     text-transform: uppercase;
     white-space: nowrap;
     user-select: none;
-
     border: 0;
-
     transition: background-color var(--transition-timing-quick) var(--transition-function-default),
       border-color var(--transition-timing-quick) var(--transition-function-default);
   }
@@ -437,18 +417,13 @@ function handleSubmit(event) {
   }
 
   @media only screen and (min-width: 601px) {
-    .contact-us {
+    form {
       margin-top: 0;
     }
 
-    .drawer .open {
+    section {
       max-height: 1100px;
     }
-
-    /* FIXME */
-    /* .form-row {
-      margin: 0 var(--spacing-1) * -1 var(--spacing-3);
-    } */
 
     .textfield {
       margin: 0 var(--spacing-1) 0;

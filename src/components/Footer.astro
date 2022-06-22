@@ -1,5 +1,4 @@
 ---
-import Picture from "../components/Picture.astro";
 import { contacts } from "../utils/contacts";
 const { subPages } = Astro.props;
 
@@ -168,6 +167,17 @@ const { subPages } = Astro.props;
 
   /* Mobile */
   @media only screen and (max-width: 600px) {
+
+    .iva {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+    }
+
+    .iva span {
+      margin: var(--spacing-1) 0;
+    }
+
     nav {
       flex-wrap: wrap;
       padding: var(--spacing-3);

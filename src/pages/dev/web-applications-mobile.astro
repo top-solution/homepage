@@ -13,10 +13,10 @@ import { webApplicationsAndMobileCard } from "../../utils/cards";
 
 <Layout color="light" subPages={true}>
   <TopBanner azure={true} title="Applicazioni web e mobile" mobilealignleft="true" title2={true}>
-    <div class="claim" slot="text">
+    <p class="claim" slot="text">
       Utilizziamo le tecnologie open source più all'avanguardia per offrirti il massimo delle performance, la libertà da
       licenze e lock-in, la possibilità di scegliere l'ambiente che preferisci.
-    </div>
+    </p>
     <div slot="actions" style="
       display: flex;
       flex-direction: column;
@@ -36,13 +36,11 @@ import { webApplicationsAndMobileCard } from "../../utils/cards";
       </div>
     </div>
   </TopBanner>
-  <div>
-    <div class="copy">
-      <p class="body-2">
-        Realizziamo web applications e app mobile (iOS e Android) su misura per il tuo business, prendendoci cura di
-        tutto il processo: dall'analisi dei requisiti allo sviluppo back-end e front-end.
-      </p>
-    </div>
+  <section>
+    <p>
+      Realizziamo web applications e app mobile (iOS e Android) su misura per il tuo business, prendendoci cura di
+      tutto il processo: dall'analisi dei requisiti allo sviluppo back-end e front-end.
+    </p>
     <div class="services">
       <h3 class="title-3 title-form choose-services">
         I nostri <b>SERVIZI</b>
@@ -57,7 +55,7 @@ import { webApplicationsAndMobileCard } from "../../utils/cards";
       </div>
       <Customers title="Chi ci ha scelto" />
     </div>
-  </div>
+  </section>
 </Layout>
 
 <style>
@@ -86,10 +84,10 @@ import { webApplicationsAndMobileCard } from "../../utils/cards";
     top: 1075px;
   }
 
-  .copy p {
+  section p {
     text-align: center;
     margin: var(--spacing-5) 0 var(--spacing-6);
-
+    font-size: 22px;
   }
 
   .services {
@@ -107,48 +105,11 @@ import { webApplicationsAndMobileCard } from "../../utils/cards";
     margin: 0 var(--spacing-10);
   }
 
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 0 0 45%;
-    border: 1px solid var(--color-blue);
-    border-radius: 4px;
-    padding: 16px;
-    margin: var(--spacing-1);
-    max-width: 350px;
-  }
-
-  h4 {
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: var(--spacing-1);
-  }
-
-  .body-3 {
-    font-weight: 400;
-    font-size: 20px;
-    margin-bottom: var(--spacing-10);
-  }
-
-  .customers {
-    margin-top: var(--spacing-15);
-    margin-bottom: var(--spacing-6);
-  }
-
   .choose-services {
     margin-bottom: var(--spacing-6);
   }
 
   @media only screen and (max-width: 600px) {
-    .copy {
-      margin: 0 var(--spacing-2);
-    }
-
-    .service-card {
-      flex: 0 0 100%;
-    }
-
     .floating-hex-3 {
       position: absolute;
       left: 0%;

@@ -14,10 +14,10 @@ import { hakaBlobs } from "../../utils/tripleBlobs";
 
 <Layout color="light" subPages={true}>
   <TopBanner title="Audit competenze" mobilealignleft="true" title2={true}>
-    <div class="claim" slot="text">
+    <p class="claim" slot="text">
       Rileva il Know-how professionale dei dipendenti e scopri il punto di partenza per sviluppare e rafforzare le loro
       competenze con Haka
-    </div>
+    </p>
     <div slot="actions" style="
       display: flex;
       flex-direction: column;
@@ -41,14 +41,13 @@ import { hakaBlobs } from "../../utils/tripleBlobs";
       </div>
     </div>
   </TopBanner>
-  <div itemscope itemtype="https://schema.org/Service">
-    <!-- FIXME - article with inner section -->
+  <article itemscope itemtype="https://schema.org/Service">
     <div class="copy">
       <h2 itemprop="name">測 HAKA</h2>
-      <p class="body-2">
+      <p>
         Le Risorse Umane sono il cardine delle organizzazioni: le idee guidano il cambiamento, le persone lo realizzano.
       </p>
-      <video class="video" controls>
+      <video controls>
         <track kind="captions" />
         <source src="../../videos/haka.mp4" type="video/mp4" />
       </video>
@@ -62,7 +61,7 @@ import { hakaBlobs } from "../../utils/tripleBlobs";
     <div class="floating-hex-8">
       <Hex width="56" fill="#31278370" shadow="true" />
     </div>
-    <div class="services">
+    <section class="services">
       <HakaTripleBlob id="triple-blob-ht-development" title="Scegli il PIANO e scopri le tariffe"
         subtitle="Scegliendo Haka sei libero di utilizzare il servizio senza effettuare abbonamenti"
         buttonlink="/hr-development.html" blobs={hakaBlobs} />
@@ -80,8 +79,8 @@ import { hakaBlobs } from "../../utils/tripleBlobs";
         </Blob>
       </div>
       <Customers title="Chi ha scelto 測 HAKA" />
-    </div>
-  </div>
+    </section>
+  </article>
 </Layout>
 
 <style>
@@ -157,7 +156,7 @@ import { hakaBlobs } from "../../utils/tripleBlobs";
   .copy p {
     text-align: center;
     margin: var(--spacing-6) 0 var(--spacing-6);
-
+    font-size: 22px;
   }
 
   .services {
@@ -168,7 +167,7 @@ import { hakaBlobs } from "../../utils/tripleBlobs";
     position: relative;
   }
 
-  .video {
+  video {
     width: 100%;
     height: auto;
     margin: var(--spacing-3) 0;
@@ -181,49 +180,7 @@ import { hakaBlobs } from "../../utils/tripleBlobs";
     margin: 0 var(--spacing-10);
   }
 
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 0 0 45%;
-    border: 1px solid var(--color-blue);
-    border-radius: 4px;
-    padding: 16px;
-    margin: var(--spacing-1);
-    max-width: 350px;
-  }
-
-  h4 {
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: var(--spacing-1);
-  }
-
-  .body-3 {
-    font-weight: 400;
-    font-size: 20px;
-    margin-bottom: var(--spacing-10);
-  }
-
-  .card-button {
-    margin-left: auto;
-    max-width: 140px;
-  }
-
-  .customers {
-    margin-top: var(--spacing-10);
-    margin-bottom: var(--spacing-6);
-  }
-
-  .choose-services {
-    margin-bottom: var(--spacing-6);
-  }
-
   @media only screen and (max-width: 600px) {
-    .service-card {
-      flex: 0 0 100%;
-    }
-
     .floating-hex-3 {
       position: absolute;
       left: 0%;

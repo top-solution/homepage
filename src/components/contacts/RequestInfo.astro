@@ -82,14 +82,14 @@ function handleSubmit(event) {
 }
 ---
 
-<form class="request-info" onsubmit={handleSubmit}>
+<form onsubmit={handleSubmit}>
   <div class="floating-hex-1">
     <Hex width="40" fill="#352E6C" shadow="true" />
   </div>
-  <div class="drawer">
+  <section>
     <FormTitleHex />
-    <h2 class="title-3 title-form">Richiedi <b>informazioni</b></h2>
-    <p class="subtitle body-1">
+    <h2>Richiedi <b>informazioni</b></h2>
+    <p>
       <b>Compila</b> e <b>invia</b> il form per avere<br /> maggiori
       <b>informazioni</b>
       sui nostri <b>servizi</b>
@@ -107,8 +107,8 @@ function handleSubmit(event) {
             />
         </div>
         <div class="textfield textfield-companyName">
-          <Textfield name="companyName" label="Nome azienda*"
-            error={formErrors.companyName} value={form.companyName} onchange={(e)=>
+          <Textfield name="companyName" label="Nome azienda*" error={formErrors.companyName} value={form.companyName}
+            onchange={(e)=>
             (form.companyName = e.target.value)}
             onkeyup={(e) => {
             if (e.target.value.length) {
@@ -189,12 +189,12 @@ function handleSubmit(event) {
           </Button>
         </div>
     </div>
-  </div>
+  </section>
   <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" />
 </form>
 
 <style>
-  .request-info {
+  form {
     position: relative;
   }
 
@@ -204,8 +204,15 @@ function handleSubmit(event) {
     right: 10%;
   }
 
-  .drawer {
+  section {
     position: relative;
+  }
+
+  section p {
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: var(--spacing-1);
   }
 
   h2 {
@@ -213,12 +220,7 @@ function handleSubmit(event) {
     margin-bottom: var(--spacing-4);
   }
 
-  .subtitle {
-    text-align: center;
-    margin: 0;
-  }
-
-  .form {
+  form {
     margin: var(--spacing-6) 0 var(--spacing-10);
     display: block;
   }
@@ -249,7 +251,7 @@ function handleSubmit(event) {
   }
 
   @media only screen and (min-width: 600px) {
-    .request-info {
+    form {
       margin-top: 0;
     }
 

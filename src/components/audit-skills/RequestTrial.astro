@@ -97,10 +97,10 @@ function handleSubmit(event) {
 }
 ---
 
-<form class="request-trial" onsubmit={handleSubmit}>
+<form onsubmit={handleSubmit}>
   <FormTitleHex />
-  <h2 class="title-3 title-form">Richiedi una <b>prova gratuita</b></h2>
-  <p class="subtitle body-2">
+  <h2>Richiedi una <b>prova gratuita</b></h2>
+  <p>
     <b>Compila</b> e <b>invia</b> il form, il nostro team ti invierà il modello
     per la valutazione delle performance <b>gratuitamente</b>
   </p>
@@ -183,7 +183,7 @@ function handleSubmit(event) {
       </div>
     </div>
     <div class="form-row">
-      <p class="body-2">
+      <p>
         Inserisci l’email del valutato e del valutatore, in questo modo potrai
         ottenere in autonomia le <b>credenziali</b> per accedere alla
         piattaforma e fruire della <b>prova gratuita</b>.
@@ -224,37 +224,14 @@ function handleSubmit(event) {
 </form>
 
 <style>
-  .title-3 {
-    text-transform: none;
-  }
-
-  .request-trial {
+  form {
     position: relative;
     margin-top: var(--spacing-8);
   }
 
-  .request-trial h2 {
+  h2 {
     text-align: center;
-    margin-bottom: var(--spacing-4);
-  }
-
-  .subtitle {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 730px;
-  }
-
-  .title-hexagon {
-    position: absolute;
-    z-index: -1;
-    top: -160px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
-  }
-
-  .form {
-    margin: var(--spacing-6) 0;
-    display: block;
+    margin-bottom: var(--spacing-2);
   }
 
   .form-row {
@@ -263,26 +240,18 @@ function handleSubmit(event) {
     margin: 0;
   }
 
-  .form-row .body-2 {
+  form p {
     font-size: 18px;
-    margin: 0 var(--spacing-3) var(--spacing-3);
-
-    b {
-      font-weight: 500;
-    }
+    text-align: center;
+    margin: 0 auto;
+    max-width: 730px;
+    margin-bottom: var(--spacing-1);
   }
 
-  .form-row .body-2 b {
-    font-weight: 500;
-  }
 
   .textfield,
   .select {
     margin: 0 0 var(--spacing-3);
-  }
-
-  .textfield,
-  .select {
     flex: 1 0 100%;
   }
 
@@ -296,7 +265,7 @@ function handleSubmit(event) {
   }
 
   @media only screen and (min-width: 960px) {
-    .request-trial {
+    form {
       margin-top: 0;
     }
 

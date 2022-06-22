@@ -79,20 +79,24 @@ const { color = "light", subPages } = Astro.props;
           </label>
           <span>ITA</span>
         </div>
-        <ul class="contacts">
-          <li>
-            <img src={subPages ? "../../img/icons/phone.svg" : "../img/icons/phone.svg" } alt="" />
-            <a href={`tel:${contacts.phone}`}>
-              <span>{contacts.phone}</span>
-            </a>
-          </li>
-          <li>
-            <img src={subPages ? "../../img/icons/mail.svg" : "../img/icons/mail.svg" } alt="" />
-            <a href={`mailto:${contacts.email}`}>
-              <span>{contacts.email}</span>
-            </a>
-          </li>
-        </ul>
+        <address>
+          <ul>
+            <li>
+              <img src={subPages ? "../../img/icons/phone.svg" : "../img/icons/phone.svg" } alt="" width="22"
+                height="22" />
+              <a href={`tel:${contacts.phone}`}>
+                <span>{contacts.phone}</span>
+              </a>
+            </li>
+            <li>
+              <img src={subPages ? "../../img/icons/mail.svg" : "../img/icons/mail.svg" } alt="" width="22"
+                height="22" />
+              <a href={`mailto:${contacts.email}`}>
+                <span>{contacts.email}</span>
+              </a>
+            </li>
+          </ul>
+        </address>
       </nav>
     </div>
   </div>
@@ -117,6 +121,8 @@ const { color = "light", subPages } = Astro.props;
 
     document.querySelector(".toggle-close").classList.add("toggle-open");
     document.querySelector(".toggle-close").classList.remove("toggle-close");
+
+    document.querySelector(".wrapper").classList.add("wrapper-show");
   }
 
   function closeMenu() {
@@ -128,6 +134,8 @@ const { color = "light", subPages } = Astro.props;
 
     document.querySelector(".toggle-open").classList.add("toggle-close");
     document.querySelector(".toggle-open").classList.remove("toggle-open");
+
+    document.querySelector(".wrapper").classList.remove("wrapper-show");;
   }
 
   function handleChangeTranslation() {
@@ -302,7 +310,7 @@ const { color = "light", subPages } = Astro.props;
   }
 
   @media only screen and (min-height: 780px) {
-    .header-mobile .contacts {
+    address ul {
       display: none;
     }
   }
@@ -343,12 +351,16 @@ const { color = "light", subPages } = Astro.props;
     }
 
     .header-mobile .wrapper {
-      //display: none;
+      display: none;
       height: 0;
       opacity: 0;
       position: relative;
       top: -35px;
       transition: opacity var(--transition-timing-default) var(--transition-function-default);
+    }
+
+    .wrapper-show {
+      display: block !important;
     }
 
     .header-mobile .main-hex {
@@ -424,24 +436,24 @@ const { color = "light", subPages } = Astro.props;
       padding: var(--spacing-1) 0;
     }
 
-    .header-mobile .contacts {
-      margin-top: var(--spacing-10);
-      color: var(--color-blue);
-      transition: opacity var(--transition-timing-slow) var(--transition-function-default);
+    address {
       width: 100%;
+      margin-top: var(--spacing-8);
+      transition: opacity var(--transition-timing-slow) var(--transition-function-default);
     }
 
-    .header-mobile .contacts a {
+    address ul a {
       color: var(--color-blue);
       font-size: 20px;
       font-weight: 400;
     }
 
-    .header-mobile .contacts span {
+    address ul span {
       margin-left: var(--spacing-2);
+      color: var(--color-blue);
     }
 
-    .header-mobile .contacts li {
+    address ul li {
       display: flex;
       justify-content: flex-start;
       margin: var(--spacing-1) var(--spacing-3);
@@ -449,11 +461,6 @@ const { color = "light", subPages } = Astro.props;
       min-height: 44px;
       font-size: 20px;
       font-weight: 400;
-    }
-
-    .header-mobile .contacts li img {
-      width: 22px;
-      height: 22px;
     }
 
     .toggle-close {

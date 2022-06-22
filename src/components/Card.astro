@@ -6,7 +6,7 @@ const { title, description } = Astro.props;
   <h4 itemprop="name">
     {title}
   </h4>
-  <p class="body-3" itemprop="offers">
+  <p itemprop="offers">
     {description}
   </p>
 </div>
@@ -29,7 +29,7 @@ const { title, description } = Astro.props;
     margin-bottom: var(--spacing-1);
   }
 
-  .body-3 {
+  p {
     font-weight: 400;
     font-size: 20px;
     margin-bottom: var(--spacing-10);

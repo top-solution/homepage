@@ -12,11 +12,11 @@ import { cloudComputingCard } from "../../utils/cards";
 ---
 
 <Layout color="light" subPages={true}>
-  <TopBanner azure={true} title="Cloud computing" mobilealignleft="true" title2="{true}">
-    <div class="claim" slot="text">
+  <TopBanner azure={true} title="Cloud computing" mobilealignleft="true" title2={true}>
+    <p class="claim" slot="text">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum feugiat quam ac ipsum tellus. Dictum nunc nunc
       diam elementum tellus urna, aliquam auctor libero.
-    </div>
+    </p>
     <div slot="actions" style="
       display: flex;
       flex-direction: column;
@@ -40,12 +40,10 @@ import { cloudComputingCard } from "../../utils/cards";
     </div>
   </TopBanner>
   <section>
-    <div class="copy">
-      <p class="body-2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum feugiat quam ac ipsum tellus. Dictum nunc nunc
-        diam elementum tellus urna, aliquam auctor libero.
-      </p>
-    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum feugiat quam ac ipsum tellus. Dictum nunc nunc
+      diam elementum tellus urna, aliquam auctor libero.
+    </p>
     <div class="services">
       <h3 class="title-3 title-form choose-services">
         I nostri <b>SERVIZI</b>
@@ -74,13 +72,13 @@ import { cloudComputingCard } from "../../utils/cards";
   .floating-hex-3 {
     position: absolute;
     left: 20%;
-    top: 400px;
+    top: 350px;
   }
 
   .floating-hex-5 {
     position: absolute;
     left: 65%;
-    top: 600px;
+    top: 550px;
   }
 
   .card-hex-group {
@@ -89,9 +87,10 @@ import { cloudComputingCard } from "../../utils/cards";
     top: 475px;
   }
 
-  .copy p {
+  section p {
     text-align: center;
     margin: var(--spacing-5) 0 var(--spacing-6);
+    font-size: 22px;
   }
 
   .services {
@@ -109,35 +108,6 @@ import { cloudComputingCard } from "../../utils/cards";
     margin: 0 var(--spacing-10);
   }
 
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 0 0 45%;
-    border: 1px solid var(--color-blue);
-    border-radius: 4px;
-    padding: 16px;
-    margin: var(--spacing-1);
-    max-width: 350px;
-  }
-
-  h4 {
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: var(--spacing-1);
-  }
-
-  .body-3 {
-    font-weight: 400;
-    font-size: 20px;
-    margin-bottom: var(--spacing-10);
-  }
-
-  .customers {
-    margin-top: var(--spacing-15);
-    margin-bottom: var(--spacing-6);
-  }
-
   .choose-services {
     margin-bottom: var(--spacing-6);
   }
@@ -151,15 +121,6 @@ import { cloudComputingCard } from "../../utils/cards";
   }
 
   @media only screen and (max-width: 600px) {
-
-    .copy {
-      margin: 0 var(--spacing-2);
-    }
-
-    .service-card {
-      flex: 0 0 100%;
-    }
-
     .floating-hex-3 {
       position: absolute;
       left: 0%;

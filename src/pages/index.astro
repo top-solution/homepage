@@ -8,44 +8,42 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
 ---
 
 <Layout color="dark">
-  <article class="layout">
-    <div class="layout content">
-      <div class="header-blob">
-        <img src="img/homepage/blob-header-homepage.svg" alt="" />
-      </div>
-      <div class="header-blob-mobile">
-        <img src="img/homepage/blob-header-homepage.svg" alt="" />
-      </div>
-      <div class="header-hex">
-        <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
-      </div>
-      <div class="header-hex-mobile">
-        <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
-      </div>
-      <div class="header-hex-logo">
-        <img src="img/homepage/hex-logo-header.svg" alt="" />
-      </div>
-      <div class="header-hex-logo-mobile">
-        <img src="img/homepage/hex-logo-header.svg" alt="" />
-      </div>
-      <div class="hex-mobile-1">
-        <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
-      </div>
-      <div class="hex-mobile-2">
-        <img src="img/homepage/homepage-mobile-hex-2.svg" alt="" />
-      </div>
-      <div class="hex-mobile-3">
-        <img src="img/homepage/homepage-mobile-hex-3.svg" alt="" />
-      </div>
-      <div class="hex-mobile-4">
-        <img src="img/homepage/homepage-mobile-hex-4.svg" alt="" />
-      </div>
-      <div class="hex-mobile-5">
-        <img src="img/homepage/homepage-mobile-hex-5.svg" alt="" />
-      </div>
-      <div class="hex-mobile-6">
-        <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
-      </div>
+  <article>
+    <div class="header-blob">
+      <img src="img/homepage/blob-header-homepage.svg" alt="" />
+    </div>
+    <div class="header-blob-mobile">
+      <img src="img/homepage/blob-header-homepage.svg" alt="" />
+    </div>
+    <div class="header-hex">
+      <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
+    </div>
+    <div class="header-hex-mobile">
+      <img src="img/homepage/group-hex-header-desktop.svg" alt="" />
+    </div>
+    <div class="header-hex-logo">
+      <img src="img/homepage/hex-logo-header.svg" alt="" />
+    </div>
+    <div class="header-hex-logo-mobile">
+      <img src="img/homepage/hex-logo-header.svg" alt="" />
+    </div>
+    <div class="hex-mobile-1">
+      <img src="img/homepage/homepage-mobile-hex-1.svg" alt="" />
+    </div>
+    <div class="hex-mobile-2">
+      <img src="img/homepage/homepage-mobile-hex-2.svg" alt="" />
+    </div>
+    <div class="hex-mobile-3">
+      <img src="img/homepage/homepage-mobile-hex-3.svg" alt="" />
+    </div>
+    <div class="hex-mobile-4">
+      <img src="img/homepage/homepage-mobile-hex-4.svg" alt="" />
+    </div>
+    <div class="hex-mobile-5">
+      <img src="img/homepage/homepage-mobile-hex-5.svg" alt="" />
+    </div>
+    <div class="hex-mobile-6">
+      <img src="img/homepage/homepage-mobile-hex-6.svg" alt="" />
     </div>
     <section>
       <p id="homeBanner">
@@ -95,6 +93,7 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
 
   article {
     color: var(--color-blue);
+    position: relative;
   }
 
   article .middle-hex-tablet,
@@ -140,7 +139,7 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     width: 1400px;
     overflow: visible;
     top: -526px;
-    left: -700px;
+    left: -675px;
     z-index: -1;
     transform: rotate(82deg);
   }
@@ -184,7 +183,7 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
 
   @media only screen and (max-width: 960px) {
     article .header-hex-logo {
-      left: -785px;
+      left: -760px;
       transform: rotate(81deg);
     }
 
@@ -228,20 +227,10 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
   @media only screen and (max-width: 600px) {
 
     article .header-blob {
-      /* transform: scaleX(-1);
-      left: -50px;
-      top: -350px; */
       display: none;
     }
 
     article .middle-hex-mobile {
-      /* display: block;
-      position: absolute;
-      width: 1400px;
-      overflow: visible;
-      right: -1190px;
-      top: 1250px;
-      z-index: -1; */
       display: none;
     }
 

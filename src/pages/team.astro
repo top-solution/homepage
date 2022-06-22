@@ -11,89 +11,89 @@ import ContactUs from "../components/team/ContactUs.astro";
 <Layout color="light">
   <HeaderHexagonsDesktop />
   <HeaderHexagonsMobile />
-  <div>
-    <div class="giga-blob">
-      <img src="../img/giga-blob.svg" alt="" />
-    </div>
-    <div class="giga-blob-mobile">
-      <img src="../img/giga-blob-mobile.svg" alt="" />
-    </div>
+  <div class="giga-blob">
+    <img src="../img/giga-blob.svg" alt="blob" />
   </div>
-  <h1 class="title-1">Team</h1>
-  <div class="copy">
-    <p class="body-1">
-      Top Solution nasce dall’associazione di una grande <b>expertise</b> nel settore della <b>consulenza
-        informatica</b> e della
-      <b>gestione delle risorse umane</b>. Il team di informatici è affiancato da <b>psicologi del lavoro</b> per la
-      realizzazione
-      delle
-      <b>piattaforme HR</b>
-      e per la progettazione e la realizzazione di tutti i progetti rivolti alle
-      <b>risorse umane</b>.
-    </p>
+  <div class="giga-blob-mobile">
+    <img src="../img/giga-blob-mobile.svg" alt="blob-mobile" />
   </div>
-  <div class="people">
-    <div class="spacer" />
-    <div class="team-person-container">
-      <TeamPerson name="Paolo Andruetto" companyrole="CEO">
-        <b>Paolo Andruetto</b> CEO
-      </TeamPerson>
-    </div>
-    <div class="team-person-container">
-      <TeamPerson name="Gabriele Destefanis" companyrole="CTO">
-        <b>Gabriele Destefanis</b> CTO
-      </TeamPerson>
-    </div>
-    <div class="spacer" />
-    <div class="team-person-container">
-      <TeamPerson name="Luca Osti" companyrole="Backend Developer">
-        <b>Luca Osti</b> Backend Developer
-      </TeamPerson>
-    </div>
-    <div class="team-person-container">
-      <TeamPerson name="Gabriele Spada" companyrole="Frontend Developer">
-        <b>Gabriele Spada</b> Frontend Developer
-      </TeamPerson>
-    </div>
-    <div class="team-person-container">
-      <TeamPerson name="Luca Barbetti" companyrole="Frontend Developer">
-        <b>Luca Barbetti</b> Frontend Developer
-      </TeamPerson>
-    </div>
-    <div class="spacer" />
-    <div class="team-person-container">
-      <TeamPerson name="Elisa Solinas" companyrole="Backend Developer">
-        <b>Elisa Solinas</b> Backend Developer
-      </TeamPerson>
-    </div>
-    <div class="team-person-container">
-      <TeamPerson name="Federico Valetti" companyrole="Analista Funzionale">
-        <b>Federico Valetti</b> Analista Funzionale
-      </TeamPerson>
-    </div>
-    <div class="spacer" />
-    <div class="team-person-container">
-      <TeamPerson name="Matteo Marsala" companyrole="Frontend Developer">
-        <b>Matteo Marsala</b> Frontend Developer
-      </TeamPerson>
-    </div>
-    <div class="team-person-container">
-      <TeamPerson name="Martina Bilancieri" companyrole="UX/UI Designer">
-        <b>Martina Bilancieri</b> UX/UI Designer
-      </TeamPerson>
-    </div>
-    <div class="team-person-container">
-      <TeamPerson src="question_mark.svg" name="Vuoi far parte del team?">
-        <div class="contact-us-button" onclick="handleCandidateClick()">
-          <Button variant="primary" component="button" onclick="handleCandidateClick()">
-            Candidati
-          </Button>
-        </div>
-      </TeamPerson>
-    </div>
-  </div>
+  <article>
+    <h1>Team</h1>
+    <section>
+      <p>
+        Top Solution nasce dall’associazione di una grande <b>expertise</b> nel settore della <b>consulenza
+          informatica</b> e della
+        <b>gestione delle risorse umane</b>. Il team di informatici è affiancato da <b>psicologi del lavoro</b> per la
+        realizzazione
+        delle
+        <b>piattaforme HR</b>
+        e per la progettazione e la realizzazione di tutti i progetti rivolti alle
+        <b>risorse umane</b>.
+      </p>
+    </section>
+    <section>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Paolo Andruetto" companyrole="CEO">
+          <b>Paolo Andruetto</b> CEO
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Gabriele Destefanis" companyrole="CTO">
+          <b>Gabriele Destefanis</b> CTO
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Luca Osti" companyrole="Backend Developer">
+          <b>Luca Osti</b> Backend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Gabriele Spada" companyrole="Frontend Developer">
+          <b>Gabriele Spada</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Luca Barbetti" companyrole="Frontend Developer">
+          <b>Luca Barbetti</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Elisa Solinas" companyrole="Backend Developer">
+          <b>Elisa Solinas</b> Backend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Federico Valetti" companyrole="Analista Funzionale">
+          <b>Federico Valetti</b> Analista Funzionale
+        </TeamPerson>
+      </div>
+      <div class="spacer" />
+      <div class="team-person-container">
+        <TeamPerson name="Matteo Marsala" companyrole="Frontend Developer">
+          <b>Matteo Marsala</b> Frontend Developer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson name="Martina Bilancieri" companyrole="UX/UI Designer">
+          <b>Martina Bilancieri</b> UX/UI Designer
+        </TeamPerson>
+      </div>
+      <div class="team-person-container">
+        <TeamPerson src="question_mark.svg" name="Vuoi far parte del team?">
+          <div class="contact-us-button" onclick="handleCandidateClick()">
+            <Button variant="primary" component="button" onclick="handleCandidateClick()">
+              Candidati
+            </Button>
+          </div>
+        </TeamPerson>
+      </div>
+    </section>
+  </article>
   <div id="contact-us" />
-  <ContactUs open="false" class="contact-us-component" />
+  <ContactUs open="false" />
 </Layout>
 
 <script type="text/javascript">
@@ -132,12 +132,8 @@ import ContactUs from "../components/team/ContactUs.astro";
 </script> -->
 
 <style>
-  .page-team {
-    color: var(--color-blue);
-  }
-
-  .people {
-    margin: var(--spacing-10) 0 var(--spacing-15);
+  section {
+    margin: var(--spacing-5) 0 var(--spacing-5);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -151,7 +147,6 @@ import ContactUs from "../components/team/ContactUs.astro";
   .contact-us-button {
     margin-top: var(--spacing-2);
   }
-
 
   .team-person-container {
     margin: var(--spacing-2) 0;
@@ -177,13 +172,13 @@ import ContactUs from "../components/team/ContactUs.astro";
     margin-bottom: var(--spacing-10);
   }
 
-  .contact-us-component {
-    margin-top: 200px;
-    display: block;
+  section p {
+    font-size: 25px;
+    font-weight: 300;
   }
 
   @media only screen and (min-width: 601px) and (max-width: 960px) {
-    .title-1 {
+    h1 {
       text-align: center;
     }
 
@@ -192,12 +187,8 @@ import ContactUs from "../components/team/ContactUs.astro";
       top: -500px;
     }
 
-    .people {
+    section {
       margin: var(--spacing-4) 0;
-    }
-
-    .copy {
-      margin: 0 var(--spacing-2);
     }
 
     .team-person-container {
@@ -218,16 +209,16 @@ import ContactUs from "../components/team/ContactUs.astro";
   }
 
   @media only screen and (max-width: 600px) {
-
-    .copy {
+    section {
       margin: 0 var(--spacing-2);
     }
 
-    .people {
-      margin: var(--spacing-3) 0;
+    section p {
+      font-size: 18px;
+      font-weight: 300;
     }
 
-    .people .spacer {
+    section .spacer {
       display: none;
     }
 
@@ -244,7 +235,5 @@ import ContactUs from "../components/team/ContactUs.astro";
       left: -270px;
       z-index: -1;
     }
-
-
   }
 </style>

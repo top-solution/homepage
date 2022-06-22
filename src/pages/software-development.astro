@@ -13,11 +13,11 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
 
 <Layout color="light">
   <TopBanner title="Sviluppo Software" mobilealignleft="true" title2={false}>
-    <div class="claim" slot="text">
+    <p class="claim" slot="text">
       Affrontiamo lo sviluppo dei nostri prodotti e servizi con tecnologie sempre nuove, perchè la curiosità e la voglia
       di sperimentare fanno parte del nostro DNA. Per questo siamo in grado di offrire una consulenza di sviluppo
       software chiavi in mano su tecnologie open source all'avanguardia.
-    </div>
+    </p>
     <div slot="actions" style="display: flex; flex-direction: column; max-width: 175px; margin: auto;">
       <Button variant="primary" href="/contacts.html">Contattaci</Button>
     </div>
@@ -31,8 +31,8 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
       </div>
     </div>
   </TopBanner>
-  <article class="layout">
-    <div class="copy">
+  <article>
+    <section>
       <p>
         Le doti di flessibilità e scalabilità dei nostri sistemi consentono di ottenere: naturale estendibilità a tutta
         la popolazione aziendale, chiarezza interpretativa, facilità di utilizzo con il minimo disagio organizzativo.
@@ -43,18 +43,18 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
       <div class="floating-hex-3">
         <Hex width="130" fill="#4758a3" shadow="true" />
       </div>
-    </div>
+    </section>
     <TripleBlob id="triple-blob-ht-development" title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development.html"
       blobs={developmentSoftwareBlobs} />
     <div class="blob">
       <Blob interactive={true} shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4">
         <div class="blob-content">
-          <p class="body-2">
+          <p>
             Il software è in continuo mutamento ed essere aggiornati sulle ultime tecnologie e tendenze richiede un
             sacco di tempo, un investimento che non tutte le aziende possono permettersi di sostenere.
           </p>
           <div class="button">
-            <Button variant="primary" href="/contacts.html" style="display: inline-block;">Contattaci</Button>
+            <Button variant="primary" href="/contacts.html">Contattaci</Button>
           </div>
         </div>
       </Blob>
@@ -66,22 +66,12 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
 </Layout>
 
 <style>
-  .body-2 {
+  .blob p {
     font-size: 20px;
-  }
-
-  .header-hexagons-desktop {
-    right: 0px;
-    width: 100%;
-    top: 0px;
   }
 
   .header-hexagons-mobile {
     display: none;
-  }
-
-  .header-hexagons-desktop,
-  .header-hexagons-mobile {
     position: absolute;
   }
 
@@ -96,6 +86,7 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
     display: block;
     color: var(--color-blue);
     box-sizing: border-box;
+    text-align: center;
   }
 
   article .floating-hex-3 {
@@ -113,76 +104,37 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
     height: 100px;
   }
 
-  .copy {
+  section {
     display: flex;
-    margin-top: var(--spacing-3);
     position: relative;
     height: 300px;
   }
 
-  .copy p {
+  section p {
     flex: 1 1 0;
     margin-top: var(--spacing-5);
     font-size: 25px;
   }
 
-  .copy .hr-svg {
+  section .hr-svg {
     display: block;
     max-width: 320px;
     flex: 0 1 320px;
     overflow: visible;
   }
 
-  .our-services {
-    max-width: 540px;
-    margin: var(--spacing-20) auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .our-services ol {
-    list-style: none;
-    padding: 0;
-  }
-
-  .our-services li {
-    display: flex;
-    min-width: 500px;
-    margin-bottom: var(--spacing-3);
-  }
-
-  .our-services .button {
-    display: inline-block;
-    margin-left: var(--spacing-8);
-  }
-
-  .our-services .small {
-    display: none;
-  }
-
-  .our-services svg {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 110%;
-  }
-
-  article .blob {
+  .blob {
     display: block;
     max-width: 540px;
     margin: 0px auto 0px;
   }
 
-  article .blob-content {
+  .blob-content {
     text-align: center;
     margin: 0 var(--spacing-5);
   }
 
-  article .blob-content .button {
+  .blob-content .button {
     max-width: 175px;
     margin: var(--spacing-3) auto 0 auto;
   }
@@ -192,6 +144,10 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
   }
 
   @media only screen and (max-width: 600px) {
+    .blob p {
+      font-size: 18px;
+    }
+
     .floating-hex-3 {
       display: none;
     }
@@ -201,17 +157,17 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
       margin-right: 134px;
     }
 
-    .copy {
+    section {
       align-items: flex-start;
       margin: var(--spacing-10) 0;
     }
 
-    .copy p {
+    section p {
       font-size: 20px;
       margin-top: 0;
     }
 
-    .copy .hr-svg {
+    section .hr-svg {
       display: none;
       max-width: 160px;
       flex: 0 1 160px;
@@ -222,31 +178,6 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
     .blob {
       margin-top: 100px;
     }
-
-    .our-services {
-      align-items: stretch;
-      margin-top: var(--spacing-15);
-    }
-
-    .our-services li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-width: 0;
-    }
-
-    .our-services .button {
-      display: none;
-    }
-
-    .our-services .small {
-      display: block;
-      margin-left: auto;
-    }
-
-    .our-services svg {
-      width: 125%;
-    }
   }
 
   @media only screen and (max-width: 960px) {
@@ -254,12 +185,11 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
       display: none;
     }
 
-    .copy {
+    section {
       height: auto;
     }
 
-    .copy p,
-    .claim {
+    section p {
       text-align: center;
     }
   }

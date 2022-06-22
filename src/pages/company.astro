@@ -13,20 +13,20 @@ import Hex2Desktop from "../components/company/Hex2.astro";
   <div class="ts-header-hexagons-mobile">
     <HeaderHexagonsMobile />
   </div>
-  <h1 class="title-1">Azienda</h1>
-  <div class="row mt row-1">
-    <div class="logo" style="background-image: url(../../../img/start_cup.png)"></div>
+  <h1>Azienda</h1>
+  <section class="mt">
+    <div class="logo" style="background-image: url(../../../img/start_cup.png)" />
     <div class="blob">
       <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
         <div class="blob content right">
-          <p class="body-1">
+          <p>
             Nasciamo come <b>vincitori</b> nel 2008 della IV edizione della Start
             Cup Torino Piemonte
           </p>
         </div>
       </Blob>
     </div>
-  </div>
+  </section>
   <svg viewBox="0 0 100 109" class="floating-hex-1" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M6.10979 22.8979L30.8094 11.5447L55.5531 0.287793L77.7351 16.0017L99.8557 31.8019L97.3381 58.869L94.715 85.9261L70.0154 97.2794L45.2717 108.536L23.0897 92.8224L0.969092 77.0222L3.48669 49.955L6.10979 22.8979Z"
@@ -38,31 +38,31 @@ import Hex2Desktop from "../components/company/Hex2.astro";
   <div class="hex-1-mobile">
     <Hex1Desktop />
   </div>
-  <div class="row flipped">
-    <div class="logo" style="background-image: url(../../../img/i3p.png)"></div>
+  <section class="flipped">
+    <div class="logo" style="background-image: url(../../../img/i3p.png)" />
     <div class="blob">
       <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2" flip="true">
         <div class="blob content left">
-          <p class="body-1">
+          <p>
             Nel 2012 ci siamo laureati come <b>impresa innovativa</b> presso I3P,
             siamo usciti dall'incubatore e abbiamo aperto il nostro primo ufficio
           </p>
         </div>
       </Blob>
     </div>
-  </div>
+  </section>
   <div class="hex-2">
     <Hex2Desktop />
   </div>
   <div class="hex-2-mobile">
     <Hex2Desktop />
   </div>
-  <div class="row row-3">
+  <section class="mb">
     <div class="logo" style="background-image: url(../../../img/logo_name.svg)"></div>
     <div class="blob">
       <Blob interactive="true" fill="#EBEAF3" padding="24" rectanglehr="rectanglehr" variance="2">
         <div class="blob content center">
-          <p class="body-1">
+          <p>
             <b>Oggi</b> siamo proiettati all’<b>industry 4.0</b> e allo sviluppo
             di applicazioni per l’<b>ottimizzazione</b>, l'<b>efficientamento</b>
             e l’<b>interazione</b> uomo-macchina
@@ -70,7 +70,7 @@ import Hex2Desktop from "../components/company/Hex2.astro";
         </div>
       </Blob>
     </div>
-  </div>
+  </section>
 </Layout>
 
 <script>
@@ -83,26 +83,9 @@ import Hex2Desktop from "../components/company/Hex2.astro";
 </script>
 
 <style>
-  .page-company {
-    display: block;
-    color: var(--color-blue);
-    box-sizing: border-box;
-    margin-bottom: var(--spacing-4);
-  }
-
-  .ts-header-hexagons-desktop,
   .ts-header-hexagons-mobile {
     position: absolute;
     z-index: -1;
-  }
-
-  .ts-header-hexagons-desktop {
-    right: -225px;
-    width: 830px;
-    top: -400px;
-  }
-
-  .ts-header-hexagons-mobile {
     display: none;
   }
 
@@ -124,7 +107,7 @@ import Hex2Desktop from "../components/company/Hex2.astro";
     width: auto;
   }
 
-  .row {
+  section {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -134,10 +117,6 @@ import Hex2Desktop from "../components/company/Hex2.astro";
     padding-left: var(--spacing-3);
     flex: 1 1 0;
     height: 400px;
-  }
-
-  .row-1 {
-    margin-top: var(--spacing-15);
   }
 
   .flipped {
@@ -158,8 +137,10 @@ import Hex2Desktop from "../components/company/Hex2.astro";
     text-align: center;
   }
 
-  .body-1 {
+  .blob p {
     margin: var(--spacing-3) 0;
+    font-size: 25px;
+    font-weight: 300;
   }
 
   .blob {
@@ -190,24 +171,20 @@ import Hex2Desktop from "../components/company/Hex2.astro";
     display: none;
   }
 
-  .row-3 {
+  .mb {
     margin-bottom: var(--spacing-15);
   }
 
   @media only screen and (max-width: 600px) {
-    .body-1 {
+    .blob p {
       font-size: 18px;
-    }
-
-    .ts-header-hexagons-desktop {
-      display: none;
     }
 
     .ts-header-hexagons-mobile {
       display: none;
     }
 
-    h1.title-1 {
+    h1 {
       margin-bottom: var(--spacing-10);
     }
 
@@ -215,17 +192,6 @@ import Hex2Desktop from "../components/company/Hex2.astro";
       display: none;
     }
 
-    .row {
-      max-height: 600px;
-    }
-
-    .row img {
-      max-width: 120px;
-    }
-
-    .blob {
-      min-width: 0;
-    }
 
     .blob {
       min-width: 80vw;
@@ -249,15 +215,21 @@ import Hex2Desktop from "../components/company/Hex2.astro";
       padding: var(--spacing-1) var(--spacing-8) var(--spacing-1) var(--spacing-8);
     }
 
-    .row .flipped .content {
+    section .flipped .content {
       padding: var(--spacing-2) var(--spacing-8) var(--spacing-2) var(--spacing-4);
       text-align: right;
     }
 
-    .row {
+    section {
       padding-left: var(--spacing-3);
       padding-right: var(--spacing-3);
+      max-height: 600px;
     }
+
+    section img {
+      max-width: 120px;
+    }
+
 
     .mt {
       margin-top: var(--spacing-20);
@@ -283,7 +255,6 @@ import Hex2Desktop from "../components/company/Hex2.astro";
     .hex-2-mobile {
       margin: -100px auto 0 20%;
       margin-bottom: var(--spacing-10) !important;
-      ;
     }
   }
 
@@ -293,12 +264,7 @@ import Hex2Desktop from "../components/company/Hex2.astro";
       margin-top: 0px !important;
     }
 
-    .ts-header-hexagons-desktop {
-      right: -400px;
-      top: -500px;
-    }
-
-    .row img {
+    section img {
       max-width: 200px;
     }
 

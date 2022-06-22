@@ -37,6 +37,11 @@ const { color = "light", subPages } = Astro.props;
 </head>
 
 <script>
+  // if (sessionStorage.getItem("language") === null || sessionStorage.getItem("language") === "it") {
+  //   sessionStorage.setItem("language", "it")
+  // } else if (sessionStorage.getItem("language") === "en") {
+  //   sessionStorage.setItem("language", "en")
+  // }
   sessionStorage.removeItem("language")
   sessionStorage.setItem("language", "it")
 </script>
