@@ -326,7 +326,7 @@ function handleMouseLeave() {
   mouseOver = false;
   noiseAccelStep = -0.0001;
 }
-const debouncedHandleMouseLeave = handleMouseLeave; //debounce(handleMouseLeave);
+//const debouncedHandleMouseLeave = handleMouseLeave; //debounce(handleMouseLeave);
 
 switch (shape) {
   case "hexagon":
@@ -393,9 +393,8 @@ animate();
   function debouncedHandleMouseEnter () {
     alert("enter");
   }
-document.querySelector(".blob").addEventListener("onmouseenter", debouncedHandleMouseEnter);
-document.querySelector(".blob").addEventListener("onmouseleave", debouncedHandleMouseLeave);
-console.log("fg")
+//document.querySelector(".blob").addEventListener("onmouseenter", debouncedHandleMouseEnter);
+//document.querySelector(".blob").addEventListener("onmouseleave", debouncedHandleMouseLeave);
   </script>
 
 <!--    onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
