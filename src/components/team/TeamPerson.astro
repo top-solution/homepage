@@ -8,7 +8,8 @@ let path = src ? src : `${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
 <div class="team-person" itemscope itemtype="https://schema.org/Person">
   <!-- <Blob interactive={false} shape="rectangle" fill="#ff0000" padding="20" src={src ? src :
     `../img/team/${`${name}`.toLowerCase().replace(/\s/g, "-" )}.jpg`} /> -->
-  <div class="animated-blob" style={`background: url('../../../img/team/${path}') no-repeat; background-size: contain;`} />
+  <div class="animated-blob" style={`background: url('../../../img/team/${path}') no-repeat; background-size:
+    contain;`} />
   <h6 class="name">{name}</h6>
 
   {companyrole && (
@@ -52,7 +53,7 @@ let path = src ? src : `${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
   }
 
   .animated-blob {
-    width: 330px;
+    width: 320px;
     height: 325px;
   }
 
@@ -62,31 +63,31 @@ let path = src ? src : `${`${name}`.toLowerCase().replace(/\s/g, "-")}.jpg`;
 
   /* @keyframes move {
     0% {
-      clip-path: ellipse(45% 50% at 50% 50%);
+      clip-path: ellipse(41% 44% at 45% 52%);
     }
 
     15% {
-      clip-path: ellipse(47% 43% at 50% 56%);
+      clip-path: ellipse(42% 44% at 46% 53%);
     }
 
     30% {
-      clip-path: ellipse(35% 42% at 55% 50%);
+      clip-path: ellipse(43% 44% at 47% 54%);
     }
 
     45% {
-      clip-path: ellipse(40% 30% at 50% 45%);
+      clip-path: ellipse(44% 44% at 48% 46%);
     }
 
     60% {
-      clip-path: ellipse(37% 30% at 45% 50%);
+      clip-path: ellipse(43% 44% at 47% 54%);
     }
 
     75% {
-      clip-path: ellipse(40% 30% at 50% 35%);
+      clip-path: ellipse(42% 44% at 46% 53%);
     }
 
     100% {
-      clip-path: ellipse(45% 50% at 50% 50%);
+      clip-path: ellipse(41% 44% at 45% 52%);
     }
   } */
 

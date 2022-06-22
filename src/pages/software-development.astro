@@ -47,7 +47,7 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
     <TripleBlob id="triple-blob-ht-development" title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development.html"
       blobs={developmentSoftwareBlobs} />
     <div class="blob">
-      <Blob interactive={true} shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4">
+      <Blob interactive={true} shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4" height="400">
         <div class="blob-content">
           <p>
             Il software è in continuo mutamento ed essere aggiornati sulle ultime tecnologie e tendenze richiede un
@@ -125,13 +125,11 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
 
   .blob {
     display: block;
-    max-width: 540px;
-    margin: 0px auto 0px;
   }
 
   .blob-content {
     text-align: center;
-    margin: 0 var(--spacing-5);
+    padding: var(--spacing-2) var(--spacing-9) 0 var(--spacing-9);
   }
 
   .blob-content .button {

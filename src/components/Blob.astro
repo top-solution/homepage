@@ -13,6 +13,7 @@ const {
   padding = 0,
   src = null,
   clickable = "false",
+  height = "",
 } = Astro.props;
 
 let paddingStyle = "";
@@ -382,6 +383,12 @@ animate();
 // };
 ---
 
+
+
+
+
+
+
   <script>
   function debouncedHandleMouseEnter () {
     alert("enter");
@@ -393,10 +400,12 @@ console.log("fg")
 
 <!--    onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
   onmouseleave={() => interactive === true && debouncedHandleMouseLeave}-->
+
+  <!-- style={{height: height !== "" ? height + "px" : "0px"}} -->
 <div
-  class={classnames("blob", {"clickable": clickable })}
+  class={classnames("blob", {"clickable": clickable,})} style={`height: ${height}px;`}
 >
-  <div class="content" style={paddingStyle}>
+  <div class="content" style={paddingStyle} >
     <slot />
   </div>
 
