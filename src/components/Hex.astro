@@ -11,7 +11,7 @@
     {shadow && (
       <defs>
         <filter
-          class={"hex__filter"}
+          id={"hex__filter"}
           width="3.095"
           height="2.814"
           x="-1.047"
@@ -28,7 +28,7 @@
           <path
             fill-opacity={0.4 * Number(opacity)}
             d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
-            filter={shadow ? "url(.hex__filter)" : ""}
+            filter={shadow ? "url(#hex__filter)" : ""}
           />
         </g>
       )}

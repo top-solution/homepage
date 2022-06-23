@@ -7,8 +7,6 @@ import Hex from "../../components/Hex.astro";
 import Textfield from "../../components/TextField.astro";
 import Select from "../../components/Select.astro";
 
-let toastEl = null;
-
 let bot = false;
 let form = {
   name: "",
@@ -29,60 +27,9 @@ let formErrors = {
   industry: null,
   email: null,
 };
-
-function handleSubmit(event) {
-  event.preventDefault();
-
-  if (bot) {
-    return;
-  }
-
-  if (!form.name || form.name.length === 0) {
-    formErrors.name = " ";
-  }
-  if (!form.role || form.role.length === 0) {
-    formErrors.role = " ";
-  }
-  if (!form.companyName || form.companyName.length === 0) {
-    formErrors.companyName = " ";
-  }
-  if (!form.employees || form.employees.length === 0) {
-    formErrors.employees = " ";
-  }
-  if (!form.industry || form.industry.length === 0) {
-    formErrors.industry = " ";
-  }
-  if (!form.email || form.email.length === 0) {
-    formErrors.email = " ";
-  }
-  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) == false) {
-    formErrors.email = "Indirizzo email non valido";
-  }
-
-  if (Object.values(formErrors).find((err) => err !== null)) {
-    console.log(formErrors);
-    return;
-  }
-
-  console.log(event, form);
-
-  form = {
-    name: "",
-    surname: "",
-    role: "",
-    companyName: "",
-    email: "",
-    message: "",
-    employees: "",
-    industry: "",
-  };
-
-  toastEl.show();
-  document.querySelector("body").scrollIntoView({ behavior: "smooth" });
-}
 ---
 
-<form onsubmit={handleSubmit}>
+<form id="form">
   <div class="floating-hex-1">
     <Hex width="40" fill="#352E6C" shadow="true" />
   </div>
@@ -183,15 +130,104 @@ function handleSubmit(event) {
         </div>
       </div>
       <HoneypotField onchange={()=> (bot = true)} />
-        <div class="submit submit-button-form-row">
-          <Button component="button" variant="secondary" type="submit" onclick={handleSubmit}>
+        <div class="submit submit-button-form-row" id="button">
+          <!-- type="submit" -->
+          <Button component="button" variant="secondary">
             Invia
           </Button>
         </div>
     </div>
   </section>
-  <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" />
+  <!-- bind:this={toastEl} -->
+  <Toast id="toast" message="La tua richiesta è stata presa in carico dal nostro team" />
 </form>
+
+<script>
+  let toastEl = null;
+
+  let bot = false;
+  let form = {
+    name: "",
+    surname: "",
+    role: "",
+    companyName: "",
+    employees: "",
+    industry: "",
+    email: "",
+    message: "",
+  };
+
+  let formErrors = {
+    name: null,
+    role: null,
+    companyName: null,
+    employees: null,
+    industry: null,
+    email: null,
+  };
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (bot) {
+      return;
+    }
+
+    if (!form.name || form.name.length === 0) {
+      formErrors.name = " ";
+    }
+    if (!form.role || form.role.length === 0) {
+      formErrors.role = " ";
+    }
+    if (!form.companyName || form.companyName.length === 0) {
+      formErrors.companyName = " ";
+    }
+    if (!form.employees || form.employees.length === 0) {
+      formErrors.employees = " ";
+    }
+    if (!form.industry || form.industry.length === 0) {
+      formErrors.industry = " ";
+    }
+    if (!form.email || form.email.length === 0) {
+      formErrors.email = " ";
+    }
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) == false) {
+      formErrors.email = "Indirizzo email non valido";
+    }
+
+    if (Object.values(formErrors).find((err) => err !== null)) {
+      console.log('errors', formErrors); //To manage - FIXME
+      //return;
+    }
+
+    console.log(event, form);
+
+    form = {
+      name: "",
+      surname: "",
+      role: "",
+      companyName: "",
+      email: "",
+      message: "",
+      employees: "",
+      industry: "",
+    };
+
+    prova();
+    toastEl.show();
+    //document.querySelector("body").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function prova() {
+    alert("go")
+    var toastEl = document.getElementById("toast")
+    console.log("toastEl", toastEl);
+    toastEl.bind(show());
+  }
+
+  //document.getElementById("button").addEventListener("click", prova);
+  document.getElementById("form").addEventListener("submit", handleSubmit);
+</script>
 
 <style>
   form {
