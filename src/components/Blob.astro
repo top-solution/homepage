@@ -13,7 +13,7 @@ const {
   padding = 0,
   src = null,
   clickable = "false",
-  height = "",
+  height = ""
 } = Astro.props;
 
 let paddingStyle = "";
@@ -389,6 +389,15 @@ animate();
 
 
 
+
+
+
+
+
+
+
+
+
   <script>
   function debouncedHandleMouseEnter () {
     alert("enter");
@@ -400,11 +409,11 @@ animate();
 <!--    onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
   onmouseleave={() => interactive === true && debouncedHandleMouseLeave}-->
 
-  <!-- style={{height: height !== "" ? height + "px" : "0px"}} -->
+<!-- style={{height: height !== "" ? height + "px" : "0px"}} -->
 <div
-  class={classnames("blob", {"clickable": clickable,})} style={`height: ${height}px;`}
+  class={classnames("blob", {"clickable": clickable})} style={`height: ${height}px;`}
 >
-  <div class="content" style={paddingStyle} >
+  <div class="content">
     <slot />
   </div>
 
@@ -427,8 +436,8 @@ animate();
         </pattern>
       </defs>
     )}
+    <!-- id="path" -->
     <path
-      id="path"
       d={path}
       fill={src ? `url(#blob__image)` : fill ?? "#EBEAF3"}
       style={`box-shadow: 5px 10px #888888; ${transform}; transform-box: fill-box; transform-origin: center;`}
@@ -446,6 +455,7 @@ animate();
   .blob {
     position: relative;
     width: 100%;
+    z-index: -1;
   }
 
   .blob .clickable {
