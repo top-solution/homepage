@@ -93,14 +93,13 @@ function handleSubmit(event) {
   };
 
   toastEl.show();
-  document.querySelector("body").scrollIntoView({ behavior: "smooth" });
 }
 ---
 
-<form class="request-trial" onsubmit={handleSubmit}>
+<form id="form" onsubmit={handleSubmit}>
   <FormTitleHex />
-  <h2 class="title-3 title-form">Richiedi una <b>prova gratuita</b></h2>
-  <p class="subtitle body-2">
+  <h2>Richiedi una <b>prova gratuita</b></h2>
+  <p>
     <b>Compila</b> e <b>invia</b> il form, il nostro team ti invierà il modello
     per la valutazione delle performance <b>gratuitamente</b>
   </p>
@@ -183,7 +182,7 @@ function handleSubmit(event) {
       </div>
     </div>
     <div class="form-row">
-      <p class="body-2">
+      <p>
         Inserisci l’email del valutato e del valutatore, in questo modo potrai
         ottenere in autonomia le <b>credenziali</b> per accedere alla
         piattaforma e fruire della <b>prova gratuita</b>.
@@ -214,47 +213,121 @@ function handleSubmit(event) {
       </div>
     </div>
     <HoneypotField onchange={()=> (bot = true)} />
-      <div class="submit-button-form-row">
-        <Button component="button" variant="secondary" type="submit" on:click={handleSubmit}>
+      <div class="submit-button-form-row" id="button">
+        <Button component="button" variant="secondary">
           Invia
         </Button>
       </div>
   </div>
-  <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" />
+  <!-- <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" /> -->
+  <div id="toast" class="ts-toast">La tua richiesta è stata presa in carico dal nostro team</div>
 </form>
 
-<style>
-  .title-3 {
-    text-transform: none;
+
+<script>
+  let bot = false;
+  const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let form = {
+    name: "",
+    role: "",
+    companyName: "",
+    employees: "",
+    industry: "",
+    email: "",
+    message: "",
+    emailAssessor: "",
+    emailAssessee: "",
+  };
+
+  let formErrors = {
+    name: null,
+    role: null,
+    companyName: null,
+    employees: null,
+    industry: null,
+    email: null,
+    emailAssessor: null,
+    emailAssessee: null,
+  };
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (bot) {
+      return;
+    }
+
+    if (!form.name || form.name.length === 0) {
+      formErrors.name = " ";
+    }
+    if (!form.role || form.role.length === 0) {
+      formErrors.role = " ";
+    }
+    if (!form.companyName || form.companyName.length === 0) {
+      formErrors.companyName = " ";
+    }
+    if (!form.employees || form.employees.length === 0) {
+      formErrors.employees = " ";
+    }
+    if (!form.industry || form.industry.length === 0) {
+      formErrors.industry = " ";
+    }
+    if (!form.email || form.email.length === 0) {
+      formErrors.email = " ";
+    }
+    if (emailRegexp.test(form.email) == false) {
+      formErrors.email = "Indirizzo email non valido";
+    }
+    if (form.emailAssessee && form.emailAssessee.length !== 0) {
+      if (emailRegexp.test(form.emailAssessee) == false) {
+        formErrors.emailAssessee = "Indirizzo email non valido";
+      }
+    }
+    if (form.emailAssessor && form.emailAssessor.length !== 0) {
+      if (emailRegexp.test(form.emailAssessor) == false) {
+        formErrors.emailAssessor = "Indirizzo email non valido";
+      }
+    }
+
+    if (Object.values(formErrors).find((err) => err !== null)) {
+      console.log('errors', formErrors); //To manage - FIXME
+      return;
+    }
+
+    form = {
+      name: "",
+      role: "",
+      companyName: "",
+      employees: "",
+      industry: "",
+      email: "",
+      message: "",
+      emailAssessor: "",
+      emailAssessee: "",
+    };
+
+    showToast();
   }
 
-  .request-trial {
+  function showToast() {
+    document.querySelector("#toast").classList.add("visible");
+    setTimeout(() => {
+      document.querySelector("#toast").classList.remove("visible");
+    }, 6000);
+  }
+
+  document.getElementById("form").addEventListener("submit", handleSubmit);
+</script>
+
+<style>
+  form {
     position: relative;
     margin-top: var(--spacing-8);
   }
 
-  .request-trial h2 {
+  h2 {
     text-align: center;
-    margin-bottom: var(--spacing-4);
-  }
-
-  .subtitle {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 730px;
-  }
-
-  .title-hexagon {
-    position: absolute;
-    z-index: -1;
-    top: -160px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
-  }
-
-  .form {
-    margin: var(--spacing-6) 0;
-    display: block;
+    margin-bottom: var(--spacing-2);
   }
 
   .form-row {
@@ -263,26 +336,18 @@ function handleSubmit(event) {
     margin: 0;
   }
 
-  .form-row .body-2 {
+  form p {
     font-size: 18px;
-    margin: 0 var(--spacing-3) var(--spacing-3);
-
-    b {
-      font-weight: 500;
-    }
+    text-align: center;
+    margin: 0 auto;
+    max-width: 730px;
+    margin-bottom: var(--spacing-1);
   }
 
-  .form-row .body-2 b {
-    font-weight: 500;
-  }
 
   .textfield,
   .select {
     margin: 0 0 var(--spacing-3);
-  }
-
-  .textfield,
-  .select {
     flex: 1 0 100%;
   }
 
@@ -296,7 +361,7 @@ function handleSubmit(event) {
   }
 
   @media only screen and (min-width: 960px) {
-    .request-trial {
+    form {
       margin-top: 0;
     }
 

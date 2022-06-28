@@ -1,6 +1,5 @@
 ---
 import Layout from "../components/Layout.astro";
-import Button from "../components/Button.astro";
 
 import HeaderHexagonsDesktop from "../components/contacts/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/contacts/HeaderHexagonsMobile.astro";
@@ -11,27 +10,28 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
 <Layout color="light">
   <HeaderHexagonsDesktop />
   <HeaderHexagonsMobile />
-  <section>
-    <h1 class="title-1">Contatti</h1>
+  <section itemscope itemtype="https://schema.org/Organization">
+    <h1>Contatti</h1>
     <div class="container">
       <div class="office-map-container">
         <OfficeMap />
       </div>
-      <ol class="contacts">
-        <li class="contact email">
-          <img src="../img/icons/mail.svg" alt="" />
+      <ol>
+        <li class="email">
+          <img src="../img/icons/mail.svg" alt="mail" />
           <a href={`mailto:info@topsolution.it`} itemprop="email">info@topsolution.it</a>
         </li>
-        <li class="contact">
-          <img src="../img/icons/pin.svg" alt="" />
+        <li>
+          <img src="../img/icons/pin.svg" alt="address" />
           <span itemprop="address">Sede Legale: Corso Regina Margherita, 254, 10144 Torino TO</span>
         </li>
-        <li class="contact phone">
-          <img src="../img/icons/phone.svg" alt="" />
+        <li class="phone">
+          <img src="../img/icons/phone.svg" alt="phone" />
           <a href={`tel:+390112488280`} itemprop="telephone">+39 011 248 82 80</a>
         </li>
-        <li class="contact">
-          <img src="../img/icons/pin.svg" alt="" itemprop="location" /><span>Sede Operativa: Via Livorno, 60 B2 Lab,
+        <li>
+          <img src="../img/icons/pin.svg" alt="address" itemprop="location" /><span>Sede Operativa: Via Livorno, 60 B2
+            Lab,
             10144
             Torino TO</span>
         </li>
@@ -52,7 +52,7 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
     align-items: flex-start;
   }
 
-  .contacts {
+  ol {
     flex: 0 0 305px;
     list-style: none;
     padding-left: 0;
@@ -63,7 +63,7 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
     flex-direction: column;
   }
 
-  .contact {
+  li {
     flex: 1 0 50%;
     display: flex;
     margin-bottom: var(--spacing-2);
@@ -79,20 +79,19 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
     order: 2;
   }
 
-  .title-1 {
+  h1 {
     margin-bottom: 0
   }
 
-  .contact:last-of-type {
+  li:last-of-type {
     margin-bottom: 0;
   }
 
-  .contact a {
+  a {
     font-weight: inherit;
   }
 
-
-  .contacts img {
+  ol img {
     width: 20px;
     height: 20px;
     margin-right: var(--spacing-3);
@@ -120,9 +119,6 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
   @media only screen and (max-width: 960px) {
     h1 {
       margin-bottom: var(--spacing-5) !important;
-    }
-
-    .title-1 {
       margin-bottom: var(--spacing-20);
     }
 
@@ -130,12 +126,12 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
       margin-top: 0;
     }
 
-    .contacts {
+    ol {
       display: flex;
       flex-direction: column;
     }
 
-    .contacts .contact {
+    li {
       flex: 0 0 auto;
     }
 
@@ -171,7 +167,7 @@ import OfficeMap from "../components/contacts/OfficeMap.astro";
 
   @media only screen and (max-width: 600px) {
 
-    .title-1 {
+    h1 {
       margin-bottom: 0
     }
 

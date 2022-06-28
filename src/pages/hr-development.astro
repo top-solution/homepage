@@ -8,15 +8,15 @@ import TripleBlob from "../components/TripleBlob.astro";
 import HrSvg from "../components/hr-development/HrSvg.astro";
 import HeaderHexagonsDesktop from "../components/hr-development/HeaderHexagonsDesktop.astro";
 import HeaderHexagonsMobile from "../components/hr-development/HeaderHexagonsMobile.astro";
-import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../utils/tripleBlobs";
+import { developmentHumanResourceBlobs } from "../utils/tripleBlobs";
 ---
 
 <Layout color="light">
   <TopBanner title="Sviluppo delle Risorse Umane" mobilealignleft="true" title2={false}>
-    <div class="claim" slot="text">
+    <p class="claim" slot="text">
       I nostri <b>servizi</b> vengono proposti in modalità SaaS e sono rivolti allo sviluppo delle <b>Risorse Umane</b>
       e del <b>Marketing Aziendale</b>
-    </div>
+    </p>
     <div slot="actions" style="display: flex; flex-direction: column; max-width: 175px; margin: auto;">
       <Button variant="primary" href="/contacts.html">Contattaci</Button>
     </div>
@@ -31,7 +31,7 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     </div>
   </TopBanner>
   <article>
-    <div class="copy">
+    <section>
       <p>
         Le nostre piattaforme permettono di integrare in un <b>unico sistema</b>
         di comunicazione on-line, diversi moduli per la <b>gestione</b> delle attività del <b>personale</b> interno ed
@@ -43,13 +43,13 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
       <div class="floating-hex-3">
         <Hex width="130" fill="#4758a3" shadow="true" />
       </div>
-    </div>
+    </section>
     <TripleBlob title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development/"
       blobs={developmentHumanResourceBlobs} />
     <div class="blob">
-      <Blob interactive={true} shape="hexagon" fill="#E3F1FA" padding="48" variance="1.4">
+      <Blob interactive={true} shape="hexagon" fill="#E3F1FA" padding="48" variance="1.4" height="400">
         <div class="blob-content">
-          <p class="body-2">
+          <p>
             I nostri <b>prodotti</b> sono continuamente rinnovati utilizzando le più
             <b>moderne tecnologie</b> web garantendo al cliente una
             <b>user experience</b> sempre aggiornata e performance adeguate
@@ -59,6 +59,9 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
           </div>
         </div>
       </Blob>
+      <div class="floating-hex-4">
+        <Hex width="75" fill="#312783" shadow="false" rotation="-4" />
+      </div>
     </div>
     <div class="floating-hex-4">
       <Hex width="75" fill="#312783" shadow="false" rotation="-4" />
@@ -67,18 +70,8 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
 </Layout>
 
 <style>
-  .header-hexagons-desktop {
-    right: 0px;
-    width: 100%;
-    top: 0px;
-  }
-
   .header-hexagons-mobile {
     display: none;
-  }
-
-  .header-hexagons-desktop,
-  .header-hexagons-mobile {
     position: absolute;
   }
 
@@ -100,7 +93,7 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     width: 130px;
     position: absolute;
     top: 250px;
-    left: -175px;
+    left: -275px;
   }
 
   .floating-hex-4 {
@@ -109,90 +102,50 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     top: 1275px;
   }
 
-  .copy {
+  section {
     display: flex;
     position: relative;
     height: 300px;
   }
 
-  .copy p {
+  section p {
     flex: 1 1 0;
     margin-top: var(--spacing-5);
     font-size: 25px;
   }
 
-  .copy .hr-svg {
+  section .hr-svg {
     display: block;
     max-width: 320px;
     flex: 0 1 320px;
     overflow: visible;
   }
 
-  .our-services {
-    max-width: 540px;
-    margin: var(--spacing-20) auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .our-services ol {
-    list-style: none;
-    padding: 0;
-  }
-
-  .our-services li {
-    display: flex;
-    min-width: 500px;
-    margin-bottom: var(--spacing-3);
-  }
-
-  .our-services .button {
-    display: inline-block;
-    margin-left: var(--spacing-8);
-  }
-
-  .our-services .small {
-    display: none;
-  }
-
-  .our-services svg {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 110%;
-  }
-
   .blob {
     display: block;
-    max-width: 540px;
-    /* margin: 120px auto var(--spacing-10); */
-    margin: 60px auto;
+    margin-bottom: var(--spacing-1);
   }
 
-  article .blob-content {
+  .blob p {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  .blob-content {
     text-align: center;
-    padding: 0 var(--spacing-9);
+    padding: var(--spacing-1) var(--spacing-9) 0 var(--spacing-9);
+    max-height: 400px;
   }
 
-  article .blob-content .button {
+  .blob-content .button {
     max-width: 175px;
     margin: var(--spacing-3) auto 0 auto;
   }
 
-
-  article .hexagons-floating {
-    width: 58px;
-  }
-
-  .claim {
-    text-align: center;
-  }
-
   @media only screen and (max-width: 600px) {
+    .blob p {
+      font-size: 18px;
+    }
 
     .floating-hex-3 {
       display: none;
@@ -203,18 +156,18 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
       margin-right: 134px;
     }
 
-    .copy {
+    section {
       align-items: flex-start;
       margin: var(--spacing-10) 0;
       height: auto !important;
     }
 
-    .copy p {
+    section p {
       font-size: 20px;
       margin-top: 0;
     }
 
-    .copy .hr-svg {
+    section .hr-svg {
       display: none;
       max-width: 160px;
       flex: 0 1 160px;
@@ -225,31 +178,6 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
     .blob {
       margin-top: 100px;
     }
-
-    .our-services {
-      align-items: stretch;
-      margin-top: var(--spacing-15);
-    }
-
-    .our-services li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-width: 0;
-    }
-
-    .our-services .button {
-      display: none;
-    }
-
-    .our-services .small {
-      display: block;
-      margin-left: auto;
-    }
-
-    .our-services svg {
-      width: 125%;
-    }
   }
 
   @media only screen and (max-width: 960px) {
@@ -257,14 +185,13 @@ import { developmentHumanResourceBlobs, developmentSoftwareBlobs } from "../util
       display: none;
     }
 
-    .copy p {
+    section p {
       text-align: center;
     }
 
-    .copy {
+    section {
       height: 400px;
     }
-
   }
 
   @media only screen and (min-width: 601px) and (max-width: 960px) {

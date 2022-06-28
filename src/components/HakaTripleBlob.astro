@@ -1,18 +1,15 @@
 ---
-import { Icon } from 'astro-icon'
-import Button from './Button.astro';
-import Blob from './Blob.astro';
 const { title, subtitle, blobs, buttonlink } = Astro.props;
 ---
 
 <section itemscope itemtype="https://schema.org/Service">
   <h4 itemprop="name">{title}</h4>
-  <p class="subtitle" itemprop="description">{subtitle}</p>
+  <p itemprop="description">{subtitle}</p>
   <div class="container">
     {blobs.map((blob) => (
     <a href={blob.href}>
       <div class="card">
-        <p class="claim">
+        <p>
           <b>{blob.title}</b>
         </p>
         <div class="centred-button">
@@ -30,7 +27,7 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
   .container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: var(--spacing-10);
+    margin: var(--spacing-10) 0;
     color: var(--color-blue);
   }
 
@@ -42,7 +39,7 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
     text-align: center;
   }
 
-  .claim {
+  .card p {
     font-size: 20px;
     flex: 0 0 50%;
   }
@@ -57,9 +54,10 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
     text-align: center;
   }
 
-  .subtitle {
+  section p {
     text-align: center;
-    margin-bottom: var(--spacing-10);
+    /* margin-bottom: var(--spacing-10); */
+    font-size: 22px;
   }
 
   .container-mobile {
@@ -104,6 +102,10 @@ const { title, subtitle, blobs, buttonlink } = Astro.props;
   }
 
   @media only screen and (max-width: 960px) {
+
+    .card {
+      margin: var(--spacing-5) 0;
+    }
 
     .container {
       display: flex;

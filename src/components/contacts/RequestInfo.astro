@@ -7,8 +7,7 @@ import Hex from "../../components/Hex.astro";
 import Textfield from "../../components/TextField.astro";
 import Select from "../../components/Select.astro";
 
-let toastEl = null;
-
+let showToast = false;
 let bot = false;
 let form = {
   name: "",
@@ -29,67 +28,16 @@ let formErrors = {
   industry: null,
   email: null,
 };
-
-function handleSubmit(event) {
-  event.preventDefault();
-
-  if (bot) {
-    return;
-  }
-
-  if (!form.name || form.name.length === 0) {
-    formErrors.name = " ";
-  }
-  if (!form.role || form.role.length === 0) {
-    formErrors.role = " ";
-  }
-  if (!form.companyName || form.companyName.length === 0) {
-    formErrors.companyName = " ";
-  }
-  if (!form.employees || form.employees.length === 0) {
-    formErrors.employees = " ";
-  }
-  if (!form.industry || form.industry.length === 0) {
-    formErrors.industry = " ";
-  }
-  if (!form.email || form.email.length === 0) {
-    formErrors.email = " ";
-  }
-  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) == false) {
-    formErrors.email = "Indirizzo email non valido";
-  }
-
-  if (Object.values(formErrors).find((err) => err !== null)) {
-    console.log(formErrors);
-    return;
-  }
-
-  console.log(event, form);
-
-  form = {
-    name: "",
-    surname: "",
-    role: "",
-    companyName: "",
-    email: "",
-    message: "",
-    employees: "",
-    industry: "",
-  };
-
-  toastEl.show();
-  document.querySelector("body").scrollIntoView({ behavior: "smooth" });
-}
 ---
 
-<form class="request-info" onsubmit={handleSubmit}>
+<form id="form">
   <div class="floating-hex-1">
     <Hex width="40" fill="#352E6C" shadow="true" />
   </div>
-  <div class="drawer">
+  <section>
     <FormTitleHex />
-    <h2 class="title-3 title-form">Richiedi <b>informazioni</b></h2>
-    <p class="subtitle body-1">
+    <h2>Richiedi <b>informazioni</b></h2>
+    <p>
       <b>Compila</b> e <b>invia</b> il form per avere<br /> maggiori
       <b>informazioni</b>
       sui nostri <b>servizi</b>
@@ -107,8 +55,8 @@ function handleSubmit(event) {
             />
         </div>
         <div class="textfield textfield-companyName">
-          <Textfield name="companyName" label="Nome azienda*"
-            error={formErrors.companyName} value={form.companyName} onchange={(e)=>
+          <Textfield name="companyName" label="Nome azienda*" error={formErrors.companyName} value={form.companyName}
+            onchange={(e)=>
             (form.companyName = e.target.value)}
             onkeyup={(e) => {
             if (e.target.value.length) {
@@ -183,18 +131,104 @@ function handleSubmit(event) {
         </div>
       </div>
       <HoneypotField onchange={()=> (bot = true)} />
-        <div class="submit submit-button-form-row">
-          <Button component="button" variant="secondary" type="submit" onclick={handleSubmit}>
+        <div class="submit submit-button-form-row" id="button">
+          <!-- type="submit" -->
+          <Button component="button" variant="secondary">
             Invia
           </Button>
         </div>
     </div>
-  </div>
-  <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" />
+  </section>
+  <!-- bind:this={toastEl} -->
+  <!-- <Toast id="toast" visible={showToast} message="La tua richiesta è stata presa in carico dal nostro team" /> -->
+  <div id="toast" class="ts-toast">La tua richiesta è stata presa in carico dal nostro team</div>
 </form>
 
+<script>
+  let bot = false;
+  let form = {
+    name: "",
+    surname: "",
+    role: "",
+    companyName: "",
+    employees: "",
+    industry: "",
+    email: "",
+    message: "",
+  };
+
+  let formErrors = {
+    name: null,
+    role: null,
+    companyName: null,
+    employees: null,
+    industry: null,
+    email: null,
+  };
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (bot) {
+      return;
+    }
+
+    if (!form.name || form.name.length === 0) {
+      formErrors.name = " ";
+    }
+    if (!form.role || form.role.length === 0) {
+      formErrors.role = " ";
+    }
+    if (!form.companyName || form.companyName.length === 0) {
+      formErrors.companyName = " ";
+    }
+    if (!form.employees || form.employees.length === 0) {
+      formErrors.employees = " ";
+    }
+    if (!form.industry || form.industry.length === 0) {
+      formErrors.industry = " ";
+    }
+    if (!form.email || form.email.length === 0) {
+      formErrors.email = " ";
+    }
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) == false) {
+      formErrors.email = "Indirizzo email non valido";
+    }
+
+    if (Object.values(formErrors).find((err) => err !== null)) {
+      console.log('errors', formErrors); //To manage - FIXME
+      return;
+    }
+
+    console.log(event, form);
+
+    form = {
+      name: "",
+      surname: "",
+      role: "",
+      companyName: "",
+      email: "",
+      message: "",
+      employees: "",
+      industry: "",
+    };
+
+    showToast();
+    //document.querySelector("body").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function showToast() {
+    document.querySelector("#toast").classList.add("visible");
+    setTimeout(() => {
+      document.querySelector("#toast").classList.remove("visible");
+    }, 6000);
+  }
+
+  document.getElementById("form").addEventListener("submit", handleSubmit);
+</script>
+
 <style>
-  .request-info {
+  form {
     position: relative;
   }
 
@@ -204,8 +238,15 @@ function handleSubmit(event) {
     right: 10%;
   }
 
-  .drawer {
+  section {
     position: relative;
+  }
+
+  section p {
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: var(--spacing-1);
   }
 
   h2 {
@@ -213,12 +254,7 @@ function handleSubmit(event) {
     margin-bottom: var(--spacing-4);
   }
 
-  .subtitle {
-    text-align: center;
-    margin: 0;
-  }
-
-  .form {
+  form {
     margin: var(--spacing-6) 0 var(--spacing-10);
     display: block;
   }
@@ -249,7 +285,7 @@ function handleSubmit(event) {
   }
 
   @media only screen and (min-width: 600px) {
-    .request-info {
+    form {
       margin-top: 0;
     }
 

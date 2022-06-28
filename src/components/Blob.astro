@@ -13,6 +13,7 @@ const {
   padding = 0,
   src = null,
   clickable = "false",
+  height = ""
 } = Astro.props;
 
 let paddingStyle = "";
@@ -325,7 +326,7 @@ function handleMouseLeave() {
   mouseOver = false;
   noiseAccelStep = -0.0001;
 }
-const debouncedHandleMouseLeave = handleMouseLeave; //debounce(handleMouseLeave);
+//const debouncedHandleMouseLeave = handleMouseLeave; //debounce(handleMouseLeave);
 
 switch (shape) {
   case "hexagon":
@@ -390,21 +391,30 @@ animate();
 
 
 
+
+
+
+
+
+
+
+
   <script>
   function debouncedHandleMouseEnter () {
     alert("enter");
   }
-document.querySelector(".blob").addEventListener("onmouseenter", debouncedHandleMouseEnter);
-document.querySelector(".blob").addEventListener("onmouseleave", debouncedHandleMouseLeave);
-console.log("fg")
+//document.querySelector(".blob").addEventListener("onmouseenter", debouncedHandleMouseEnter);
+//document.querySelector(".blob").addEventListener("onmouseleave", debouncedHandleMouseLeave);
   </script>
 
 <!--    onmouseenter={() => interactive === true && debouncedHandleMouseEnter}
   onmouseleave={() => interactive === true && debouncedHandleMouseLeave}-->
+
+<!-- style={{height: height !== "" ? height + "px" : "0px"}} -->
 <div
-  class={classnames("blob", {"clickable": clickable })}
+  class={classnames("blob", {"clickable": clickable})} style={`height: ${height}px;`}
 >
-  <div class="content" style={paddingStyle}>
+  <div class="content">
     <slot />
   </div>
 
@@ -427,8 +437,8 @@ console.log("fg")
         </pattern>
       </defs>
     )}
+    <!-- id="path" -->
     <path
-      id="path"
       d={path}
       fill={src ? `url(#blob__image)` : fill ?? "#EBEAF3"}
       style={`box-shadow: 5px 10px #888888; ${transform}; transform-box: fill-box; transform-origin: center;`}
@@ -446,6 +456,7 @@ console.log("fg")
   .blob {
     position: relative;
     width: 100%;
+    /* z-index: -1; */
   }
 
   .blob .clickable {

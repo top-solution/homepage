@@ -13,16 +13,16 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../../utils/
     <section>
       <div class="copy">
         <div class="floating-hex-0">
-          <Hex width="185" fill="#312783" shadow="true" />
+          <Hex width="85" fill="#312783" shadow="true" />
         </div>
         <div class="floating-hex-1">
-          <Hex width="275" fill="#312783" shadow="true" />
+          <Hex width="185" fill="#312783" shadow="true" />
         </div>
         <div class="floating-hex-2">
           <Hex width="85" fill="#0078C3" shadow="true" />
         </div>
         <div class="floating-hex-6">
-          <Hex width="135" fill="#8883B6" shadow="true" />
+          <Hex width="55" fill="#8883B6" shadow="true" />
         </div>
         <h4 itemprop="name">Valutazione performance</h4>
         <p itemprop="description">
@@ -75,46 +75,14 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../../utils/
 </script>
 
 <style>
-  .body-2 {
-    font-size: 20px;
-  }
-
   section {
     margin-bottom: var(--spacing-5);
-  }
-
-  h5 {
-    margin-bottom: var(--spacing-3);
-    text-align: center;
-  }
-
-  h6 {
-    margin-bottom: var(--spacing-1);
   }
 
   .custom-plan {
     background-color: var(--color-blue-background);
     color: var(--color-blue);
     padding: 16px 24px;
-  }
-
-  hr {
-    color: red;
-  }
-
-  .header-hexagons-desktop {
-    right: 0px;
-    width: 100%;
-    top: 0px;
-  }
-
-  .header-hexagons-mobile {
-    display: none;
-  }
-
-  .header-hexagons-desktop,
-  .header-hexagons-mobile {
-    position: absolute;
   }
 
   .floating-hex-0 {
@@ -127,9 +95,9 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../../utils/
   .floating-hex-1 {
     width: 85px;
     position: absolute;
-    top: -565px;
-    left: 625px;
-    transform: rotate(25deg);
+    top: -400px;
+    left: 900px;
+    transform: rotate(15deg);
   }
 
   .floating-hex-2 {
@@ -152,14 +120,14 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../../utils/
     box-sizing: border-box;
   }
 
-  article .floating-hex-3 {
+  .floating-hex-3 {
     width: 130px;
     position: absolute;
     top: 375px;
     left: 600px;
   }
 
-  article .floating-hex-4 {
+  .floating-hex-4 {
     width: 425px;
     height: 50px;
     display: block;
@@ -178,27 +146,6 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../../utils/
     margin-top: var(--spacing-5);
     font-size: 25px;
   }
-
-  .our-services {
-    max-width: 540px;
-    margin: var(--spacing-20) auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .our-services ol {
-    list-style: none;
-    padding: 0;
-  }
-
-  .our-services li {
-    display: flex;
-    min-width: 500px;
-    margin-bottom: var(--spacing-3);
-  }
-
   .button {
     margin: 0 auto;
     max-width: 150px;
@@ -228,45 +175,39 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../../utils/
     margin-bottom: var(--spacing-0-5)
   }
 
-
-  .our-services .small {
-    display: none;
-  }
-
-  .our-services svg {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 110%;
-  }
-
-  article .blob {
+  .blob {
     display: block;
     max-width: 340px;
     margin: 110px auto var(--spacing-15);
     width: 100%;
   }
 
-  article .blob-content {
+  .blob-content {
     text-align: center;
     margin: 0 var(--spacing-5) 0 var(--spacing-8);
   }
 
-  article .blob-content .button {
+  .blob-content .button {
     max-width: 175px;
     margin: var(--spacing-3) auto 0 auto;
   }
 
-  article .hexagons-floating {
-    width: 58px;
-  }
 
   @media only screen and (max-width: 600px) {
     .floating-hex-3 {
       display: none;
     }
+
+    .floating-hex-0 {
+      top: 25px;
+      left: 400px;
+    }
+
+    .floating-hex-6 {
+      top: 275px;
+      left: 425px;
+    }
+
 
     .floating-hex-4 {
       width: 45px;
@@ -283,55 +224,17 @@ import { assessmentPerformanceHeader, assessmentPerformance } from "../../utils/
       margin-top: 0;
     }
 
-    .copy .hr-svg {
-      display: none;
-      max-width: 160px;
-      flex: 0 1 160px;
-      margin-left: var(--spacing-1);
-      margin-top: var(--spacing-1);
-    }
-
     .blob {
       margin-top: 100px;
-    }
-
-    .our-services {
-      align-items: stretch;
-      margin-top: var(--spacing-15);
-    }
-
-    .our-services li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-width: 0;
-    }
-
-    .our-services .button {
-      display: none;
-    }
-
-    .our-services .small {
-      display: block;
-      margin-left: auto;
-    }
-
-    .our-services svg {
-      width: 125%;
     }
   }
 
   @media only screen and (max-width: 960px) {
-    .hr-svg {
-      display: none;
-    }
-
     .copy {
       margin-left: var(--spacing-2);
     }
 
-    .copy p,
-    .claim {
+    .copy p {
       text-align: left;
     }
   }

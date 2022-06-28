@@ -7,19 +7,8 @@ let { focused, menuOpen } = Astro.props;
 ---
 
 <script>
-  // import { createEventDispatcher } from "svelte";
-  // import { get_current_component } from "svelte/internal";
-
   let menuOpen = false;
   let focused;
-  // const component = get_current_component();
-  // const svelteDispatch = createEventDispatcher();
-
-  // const dispatch = (name, detail) => {
-  //   svelteDispatch(name, detail);
-  //   component.dispatchEvent &&
-  //     component.dispatchEvent(new CustomEvent(name, { detail }));
-  // };
 
   const closeMenu = () => {
     menuOpen = false;

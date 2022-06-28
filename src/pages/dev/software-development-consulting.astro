@@ -13,10 +13,10 @@ import { softwareDevelopmentConsultingCard } from "../../utils/cards";
 
 <Layout color="light" subPages={true}>
   <TopBanner azure={true} title="Consulenza sviluppo software" mobilealignleft="true" title2="{true}">
-    <div class="claim" slot="text">
+    <p class="claim" slot="text">
       Affrontiamo lo sviluppo dei nostri prodotti e servizi con tecnologie sempre nuove, perchè la curiosità e la voglia
       di sperimentare fanno parte del nostro DNA
-    </div>
+    </p>
     <div slot="actions" style="
       display: flex;
       flex-direction: column;
@@ -39,13 +39,11 @@ import { softwareDevelopmentConsultingCard } from "../../utils/cards";
       </div>
     </div>
   </TopBanner>
-  <div>
-    <div class="copy">
-      <p class="body-2">
-        Siamo in grado di offrire una consulenza di sviluppo software chiavi in mano su tecnologie open source
-        all'avanguardia.
-      </p>
-    </div>
+  <section>
+    <p>
+      Siamo in grado di offrire una consulenza di sviluppo software chiavi in mano su tecnologie open source
+      all'avanguardia.
+    </p>
     <div class="services">
       <h3 class="title-3 title-form choose-services">
         I nostri <b>SERVIZI</b>
@@ -60,7 +58,7 @@ import { softwareDevelopmentConsultingCard } from "../../utils/cards";
       </div>
       <Customers title="Chi ci ha scelto" />
     </div>
-  </div>
+  </section>
 </Layout>
 
 <style>
@@ -74,13 +72,13 @@ import { softwareDevelopmentConsultingCard } from "../../utils/cards";
   .floating-hex-3 {
     position: absolute;
     left: 20%;
-    top: 400px;
+    top: 350px;
   }
 
   .floating-hex-5 {
     position: absolute;
     left: 65%;
-    top: 600px;
+    top: 550px;
   }
 
   .card-hex-group {
@@ -89,9 +87,10 @@ import { softwareDevelopmentConsultingCard } from "../../utils/cards";
     top: 750px;
   }
 
-  .copy p {
+  section p {
     text-align: center;
     margin: var(--spacing-5) 0 var(--spacing-6);
+    font-size: 22px;
   }
 
   .services {
@@ -109,41 +108,11 @@ import { softwareDevelopmentConsultingCard } from "../../utils/cards";
     margin: 0 var(--spacing-10);
   }
 
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 0 0 45%;
-    border: 1px solid var(--color-blue);
-    border-radius: 4px;
-    padding: 16px;
-    margin: var(--spacing-1);
-    max-width: 350px;
-  }
-
-  h4 {
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: var(--spacing-1);
-  }
-
-  .body-3 {
-    font-weight: 400;
-    font-size: 20px;
-    margin-bottom: var(--spacing-10);
-  }
-
-  .customers {
-    margin-top: var(--spacing-15);
-    margin-bottom: var(--spacing-6);
-  }
-
   .choose-services {
     margin-bottom: var(--spacing-6);
   }
 
   @media only screen and (max-width: 820px) {
-
     .card-hex-group {
       left: 50%;
       top: 675px;
@@ -151,14 +120,6 @@ import { softwareDevelopmentConsultingCard } from "../../utils/cards";
   }
 
   @media only screen and (max-width: 600px) {
-
-    .copy {
-      margin: 0 var(--spacing-2);
-    }
-
-    .service-card {
-      flex: 0 0 100%;
-    }
 
     .floating-hex-3 {
       position: absolute;

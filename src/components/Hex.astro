@@ -1,42 +1,27 @@
 ---
-  const { width = 64, fill = "#312783", shadow = false, rotation = 4, opacity = 1 } = Astro.props;
+const { width = 64, fill = "#312783", shadow = false, rotation = 4, opacity = 1 } = Astro.props;
+const ID = Math.floor(Math.random() * 999999);
 ---
 
 <div>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={width * 3}
-    viewBox="0 0 45.385 49.227"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width={width * 3} viewBox="0 0 45.385 49.227">
     {shadow && (
-      <defs>
-        <filter
-          id="hex__filter"
-          width="3.095"
-          height="2.814"
-          x="-1.047"
-          y="-.907"
-          color-interpolation-filters="sRGB"
-        >
-          <feGaussianBlur result="blur" stdDeviation="6.4 6.4" />
-        </filter>
-      </defs>
-     )}
+    <defs>
+      <filter id={"hex__filter" + ID} width="3.095" height="2.814" x="-1.047" y="-.907"
+        color-interpolation-filters="sRGB">
+        <feGaussianBlur result="blur" stdDeviation="6.4 6.4" />
+      </filter>
+    </defs>
+    )}
     <g {fill}>
       {shadow && (
-        <g transform={`rotate(${Number(rotation)}) translate(0 14)`}>
-          <path
-            fill-opacity={0.4 * Number(opacity)}
-            d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
-            filter={shadow ? "url(#hex__filter)" : ""}
-          />
-        </g>
+      <g transform={`rotate(${Number(rotation)}) translate(0 14)`}>
+        <path fill-opacity={0.4 * Number(opacity)} d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
+          filter={shadow ? `url(#hex__filter${ID})` : "" } />
+      </g>
       )}
       <g transform={`rotate(${Number(rotation)})`}>
-        <path
-          fill-opacity={Number(opacity)}
-          d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z"
-        />
+        <path fill-opacity={Number(opacity)} d="M22.692 16.933 15.36 12.7V4.233L22.692 0l7.333 4.233V12.7z" />
       </g>
     </g>
   </svg>

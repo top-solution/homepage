@@ -3,7 +3,7 @@ import classnames from "classnames";
 const { title = "", title2 = "", azure = "", mobilealignleft = "" } = Astro.props;
 ---
 
-<div class={classnames("top-banner", { azure: azure, "mobile-align-left" : mobilealignleft, })}>
+<section class={classnames("top-banner", { azure: azure, "mobile-align-left" : mobilealignleft, })}>
   <div class="content">
     <div class="external">
       <slot name="external" />
@@ -18,7 +18,7 @@ const { title = "", title2 = "", azure = "", mobilealignleft = "" } = Astro.prop
       <slot name="actions" />
     </div>
   </div>
-</div>
+</section>
 
 <style>
   .top-banner {

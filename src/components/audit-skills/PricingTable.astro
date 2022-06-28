@@ -24,20 +24,20 @@ const { header, rows } = Astro.props;
     {rows.map((row) =>
     <tr>
       <td>
-        {row[0] === CHECKED ? <img src="../../img/icons/check-true.svg" alt="SI" /> : (row[0] === UNCHECKED ? <img
-          src="../../img/icons/check-false.svg" /> : row[0])}
+        {row[0] === CHECKED ? <img src="../../img/icons/check-true.svg" alt="checked" /> : (row[0] === UNCHECKED ? <img
+          src="../../img/icons/check-false.svg" alt="unchecked" /> : row[0])}
       </td>
       <td>
-        {row[1] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[1] === UNCHECKED ? <img
-          src="../../img/icons/check-false.svg" /> : row[1])}
+        {row[1] === CHECKED ? <img src="../../img/icons/check-true.svg" alt="checked" /> : (row[1] === UNCHECKED ? <img
+          src="../../img/icons/check-false.svg" alt="unchecked" /> : row[1])}
       </td>
       <td>
-        {row[2] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[2] === UNCHECKED ? <img
-          src="../../img/icons/check-false.svg" /> : row[2])}
+        {row[2] === CHECKED ? <img src="../../img/icons/check-true.svg" alt="checked" /> : (row[2] === UNCHECKED ? <img
+          src="../../img/icons/check-false.svg" alt="unchecked" /> : row[2])}
       </td>
       <td>
-        {row[3] === CHECKED ? <img src="img/icons/check-true.svg" alt="SI" /> : (row[3] === UNCHECKED ? <img
-          src="../../img/icons/check-false.svg" /> : row[3])}
+        {row[3] === CHECKED ? <img src="../../img/icons/check-true.svg" alt="checked" /> : (row[3] === UNCHECKED ? <img
+          src="../../img/icons/check-false.svg" alt="unchecked" /> : row[3])}
       </td>
     </tr>
     )}
@@ -81,7 +81,20 @@ const { header, rows } = Astro.props;
     margin-bottom: var(--spacing-1);
   }
 
-  hr {
-    color: red;
+  @media only screen and (max-width: 960px) {
+    th:first-child {
+      font-size: 18px;
+    }
+
+    th,
+    td {
+      padding: var(--spacing-1);
+    }
+
+
+    section {
+      padding: 4px;
+    }
+
   }
 </style>
