@@ -102,35 +102,6 @@ import ContactUs from "../components/team/ContactUs.astro";
   }
 </script>
 
-<!-- <script>
-  var contactUsEl = document.querySelectorAll("ts-contact-us")[0];
-
-  function handleApplyClick() {
-    contactUsEl.open = "true";
-
-    setTimeout(() => {
-      contactUsEl.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      });
-    }, 200);
-  }
-
-  function handleContactUsSubmit() {
-    console.log("handleContactUsSubmit");
-    contactUsEl.open = "false";
-    setTimeout(() => {
-      document.querySelector("body").scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 500);
-  }
-
-  contactUsEl.addEventListener("formsubmit", handleContactUsSubmit);
-</script> -->
-
 <style>
   section {
     margin: var(--spacing-5) 0 var(--spacing-5);

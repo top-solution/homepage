@@ -23,16 +23,3 @@ jobs:
         run: |
           npm install -g pa11y
           pa11y http://localhost:3000
-
-  run-container:
-    name: End to End
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: A11yWatch website scan
-        uses: ./
-        with:
-          WEBSITE_URL: https://a11ywatch.com
-          FAIL_TOTAL_COUNT: 1400
-          EXTERNAL: false
-          SITE_WIDE: true

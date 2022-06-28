@@ -93,11 +93,10 @@ function handleSubmit(event) {
   };
 
   toastEl.show();
-  document.querySelector("body").scrollIntoView({ behavior: "smooth" });
 }
 ---
 
-<form onsubmit={handleSubmit}>
+<form id="form" onsubmit={handleSubmit}>
   <FormTitleHex />
   <h2>Richiedi una <b>prova gratuita</b></h2>
   <p>
@@ -214,14 +213,111 @@ function handleSubmit(event) {
       </div>
     </div>
     <HoneypotField onchange={()=> (bot = true)} />
-      <div class="submit-button-form-row">
-        <Button component="button" variant="secondary" type="submit" on:click={handleSubmit}>
+      <div class="submit-button-form-row" id="button">
+        <Button component="button" variant="secondary">
           Invia
         </Button>
       </div>
   </div>
-  <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" />
+  <!-- <Toast bind:this={toastEl} message="La tua richiesta è stata presa in carico dal nostro team" /> -->
+  <div id="toast" class="ts-toast">La tua richiesta è stata presa in carico dal nostro team</div>
 </form>
+
+
+<script>
+  let bot = false;
+  const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let form = {
+    name: "",
+    role: "",
+    companyName: "",
+    employees: "",
+    industry: "",
+    email: "",
+    message: "",
+    emailAssessor: "",
+    emailAssessee: "",
+  };
+
+  let formErrors = {
+    name: null,
+    role: null,
+    companyName: null,
+    employees: null,
+    industry: null,
+    email: null,
+    emailAssessor: null,
+    emailAssessee: null,
+  };
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (bot) {
+      return;
+    }
+
+    if (!form.name || form.name.length === 0) {
+      formErrors.name = " ";
+    }
+    if (!form.role || form.role.length === 0) {
+      formErrors.role = " ";
+    }
+    if (!form.companyName || form.companyName.length === 0) {
+      formErrors.companyName = " ";
+    }
+    if (!form.employees || form.employees.length === 0) {
+      formErrors.employees = " ";
+    }
+    if (!form.industry || form.industry.length === 0) {
+      formErrors.industry = " ";
+    }
+    if (!form.email || form.email.length === 0) {
+      formErrors.email = " ";
+    }
+    if (emailRegexp.test(form.email) == false) {
+      formErrors.email = "Indirizzo email non valido";
+    }
+    if (form.emailAssessee && form.emailAssessee.length !== 0) {
+      if (emailRegexp.test(form.emailAssessee) == false) {
+        formErrors.emailAssessee = "Indirizzo email non valido";
+      }
+    }
+    if (form.emailAssessor && form.emailAssessor.length !== 0) {
+      if (emailRegexp.test(form.emailAssessor) == false) {
+        formErrors.emailAssessor = "Indirizzo email non valido";
+      }
+    }
+
+    if (Object.values(formErrors).find((err) => err !== null)) {
+      console.log('errors', formErrors); //To manage - FIXME
+      return;
+    }
+
+    form = {
+      name: "",
+      role: "",
+      companyName: "",
+      employees: "",
+      industry: "",
+      email: "",
+      message: "",
+      emailAssessor: "",
+      emailAssessee: "",
+    };
+
+    showToast();
+  }
+
+  function showToast() {
+    document.querySelector("#toast").classList.add("visible");
+    setTimeout(() => {
+      document.querySelector("#toast").classList.remove("visible");
+    }, 6000);
+  }
+
+  document.getElementById("form").addEventListener("submit", handleSubmit);
+</script>
 
 <style>
   form {

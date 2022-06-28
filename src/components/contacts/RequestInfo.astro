@@ -7,6 +7,7 @@ import Hex from "../../components/Hex.astro";
 import Textfield from "../../components/TextField.astro";
 import Select from "../../components/Select.astro";
 
+let showToast = false;
 let bot = false;
 let form = {
   name: "",
@@ -139,12 +140,11 @@ let formErrors = {
     </div>
   </section>
   <!-- bind:this={toastEl} -->
-  <Toast id="toast" message="La tua richiesta è stata presa in carico dal nostro team" />
+  <!-- <Toast id="toast" visible={showToast} message="La tua richiesta è stata presa in carico dal nostro team" /> -->
+  <div id="toast" class="ts-toast">La tua richiesta è stata presa in carico dal nostro team</div>
 </form>
 
 <script>
-  let toastEl = null;
-
   let bot = false;
   let form = {
     name: "",
@@ -197,7 +197,7 @@ let formErrors = {
 
     if (Object.values(formErrors).find((err) => err !== null)) {
       console.log('errors', formErrors); //To manage - FIXME
-      //return;
+      return;
     }
 
     console.log(event, form);
@@ -213,19 +213,17 @@ let formErrors = {
       industry: "",
     };
 
-    prova();
-    toastEl.show();
+    showToast();
     //document.querySelector("body").scrollIntoView({ behavior: "smooth" });
   }
 
-  function prova() {
-    alert("go")
-    var toastEl = document.getElementById("toast")
-    console.log("toastEl", toastEl);
-    toastEl.bind(show());
+  function showToast() {
+    document.querySelector("#toast").classList.add("visible");
+    setTimeout(() => {
+      document.querySelector("#toast").classList.remove("visible");
+    }, 6000);
   }
 
-  //document.getElementById("button").addEventListener("click", prova);
   document.getElementById("form").addEventListener("submit", handleSubmit);
 </script>
 
