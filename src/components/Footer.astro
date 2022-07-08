@@ -8,29 +8,29 @@ const { subPages } = Astro.props;
   <nav aria-label="Menù footer">
     <ul>
       <h5>Home</h5>
-      <li><a href="/company/">Azienda</a></li>
-      <li><a href="/team/">Team</a></li>
-      <li><a href="/#customers">Clienti</a></li>
+      <li><a href="/company/" id="company">Azienda</a></li>
+      <li><a href="/team/" id="team">Team</a></li>
+      <li><a href="/#customers" id="customers">Clienti</a></li>
     </ul>
     <ul>
       <h5>HR</h5>
-      <li><a href="/hr/audit-skills/">Audit competenze</a></li>
-      <li><a href="/hr/company-development/">Sviluppo organizzativo</a></li>
-      <li><a href="/hr/self-development/">Sviluppo individuale</a></li>
+      <li><a href="/hr/audit-skills/" id="auditCompetence">Audit competenze</a></li>
+      <li><a href="/hr/company-development/" id="companyDev">Sviluppo organizzativo</a></li>
+      <li><a href="/hr/self-development/" id="selfDevelopment">Sviluppo individuale</a></li>
     </ul>
     <ul>
       <h5>DEV</h5>
-      <li><a href="/dev/web-applications-mobile/">Applicazioni web e mobile</a></li>
-      <li><a href="/dev/software-development-consulting/">Consulenza sviluppo software</a></li>
-      <li><a href="/dev/cloud-computing/">Cloud computing</a></li>
+      <li><a href="/dev/web-applications-mobile/" id="webApplication">Applicazioni web e mobile</a></li>
+      <li><a href="/dev/software-development-consulting/" id="consulting">Consulenza sviluppo software</a></li>
+      <li><a href="/dev/cloud-computing/" id="cloudComputing">Cloud computing</a></li>
 
     </ul>
     <ul class="bordered-box">
-      <h5>Contatti</h5>
+      <h5 id="contacts">Contatti</h5>
       <li><a href={`tel:${contacts.phone}`}>{contacts.phone}</a></li>
       <li itemprop="email"><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
-      <li>Sede Legale: {contacts.registeredOffice}</li>
-      <li itemprop="address">Sede Operativa: {contacts.operationalOffice}</li>
+      <li><span id="office">Sede Legale</span>: {contacts.registeredOffice}</li>
+      <li itemprop="address"><span id="operationalOffice">Sede Operativa</span>: {contacts.operationalOffice}</li>
       <!-- <a target="_blank" href="https://twitter.com" rel="noopener noreferrer" class="picture" title="Twitter">
         <Picture base="footer" src="twitter" alt="Twitter" extension="svg" />
       </a>
@@ -60,7 +60,7 @@ const { subPages } = Astro.props;
         <img src={subPages ? "../../img/topsolution_footer_logo_dark.svg" : "../img/topsolution_footer_logo_dark.svg" }
           alt="top-solution_logo" width="79" height="79" itemprop="logo" />
       </a>
-      <p>Entra in contatto con noi. Scopri le opportunità per il tuo business offerte dalle nostre soluzioni</p>
+      <p id="homeBanner">Scopri le opportunità per il tuo business offerte dalle nostre soluzioni</p>
     </div>
     <div class="iva">
       <span itemprop="legalName">© Top Solution s.r.l </span>

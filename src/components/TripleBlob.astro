@@ -2,11 +2,11 @@
 import { Icon } from 'astro-icon'
 import Button from './Button.astro';
 import Blob from './Blob.astro';
-const { title, blobs, buttonlink } = Astro.props;
+const { title, blobs } = Astro.props;
 ---
 
 <section>
-  <h1>{title}</h1>
+  <h1 id="hrDevelopment">{title}</h1>
   <div class="container">
     {blobs.map((blob) => (
     <a href={blob.href} itemscope itemtype="https://schema.org/Service">

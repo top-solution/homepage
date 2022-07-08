@@ -2,7 +2,6 @@
 import HoneypotField from "../../components/HoneypotField.astro";
 import FormTitleHex from "../../components/FormTitleHex.astro";
 import Button from "../../components/Button.astro";
-import Toast from "../../components/Toast.astro";
 import Hex from "../../components/Hex.astro";
 import Textfield from "../../components/TextField.astro";
 import Select from "../../components/Select.astro";
@@ -139,8 +138,6 @@ let formErrors = {
         </div>
     </div>
   </section>
-  <!-- bind:this={toastEl} -->
-  <!-- <Toast id="toast" visible={showToast} message="La tua richiesta è stata presa in carico dal nostro team" /> -->
   <div id="toast" class="ts-toast">La tua richiesta è stata presa in carico dal nostro team</div>
 </form>
 

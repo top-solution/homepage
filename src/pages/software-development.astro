@@ -44,18 +44,14 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
         <Hex width="130" fill="#4758a3" shadow="true" />
       </div>
     </section>
-    <TripleBlob id="triple-blob-ht-development" title="SVILUPPO DELLE RISORSE UMANE" buttonlink="/hr-development.html"
-      blobs={developmentSoftwareBlobs} />
+    <TripleBlob id="triple-blob-ht-development" title="SVILUPPO DELLE RISORSE UMANE" blobs={developmentSoftwareBlobs} />
     <div class="blob">
-      <Blob interactive={true} shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4" height="400">
+      <Blob bleeding={true} interactive={true} shape="hexagon" fill="#EBEAF3" padding="48" variance="1.4" height="400">
         <div class="blob-content">
           <p>
             Il software è in continuo mutamento ed essere aggiornati sulle ultime tecnologie e tendenze richiede un
             sacco di tempo, un investimento che non tutte le aziende possono permettersi di sostenere.
           </p>
-          <div class="button">
-            <Button variant="primary" href="/contacts.html">Contattaci</Button>
-          </div>
         </div>
       </Blob>
     </div>
@@ -125,6 +121,11 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
 
   .blob {
     display: block;
+  }
+
+  .blob p {
+    font-size: 24px;
+    font-weight: 300;
   }
 
   .blob-content {

@@ -3,16 +3,17 @@ import { Icon } from "astro-icon";
 import { contacts } from "../utils/contacts";
 
 const { color = "light", subPages } = Astro.props;
+
 ---
 
 <header>
   <div class="sub-header">
-    <span>ENG</span>
+    <span class="body-2">ENG</span>
     <label class="switch">
-      <input id="translator" type="checkbox" checked aria-label="Translate" />
+      <input id="translator" type="checkbox" aria-label="Translate" />
       <span class="slider round"></span>
     </label>
-    <span>ITA</span>
+    <span class="body-2">ITA</span>
   </div>
   <nav aria-label="Menù principale">
     <a href="/" title="Home page">
@@ -104,11 +105,13 @@ const { color = "light", subPages } = Astro.props;
 
 <script>
   import locale from "../utils/locale.js";
+  import { setText } from "../utils/func.js";
 
   function translate(key) {
-    if (sessionStorage.getItem("language") === 'it' || sessionStorage.getItem("language") === null)
+    console.log(key);
+    if (localStorage.getItem("language") === 'it' || localStorage.getItem("language") === null)
       return locale.it[key];
-    else if (sessionStorage.getItem("language") === 'en')
+    else if (localStorage.getItem("language") === 'en')
       return locale.en[key];
   }
 
@@ -139,10 +142,10 @@ const { color = "light", subPages } = Astro.props;
   }
 
   function handleChangeTranslation() {
-    if (sessionStorage.getItem("language") === null || sessionStorage.getItem("language") === "en") {
-      sessionStorage.setItem("language", "it")
+    if (localStorage.getItem("language") === null || localStorage.getItem("language") === "en") {
+      localStorage.setItem("language", "it")
     } else {
-      sessionStorage.setItem("language", "en")
+      localStorage.setItem("language", "en")
     }
     setText(translate);
   }
@@ -150,12 +153,22 @@ const { color = "light", subPages } = Astro.props;
   document.querySelector(".toggle-open").addEventListener("click", openMenu);
   document.querySelector(".toggle-close").addEventListener("click", closeMenu);
   document.getElementById("translator").addEventListener("click", handleChangeTranslation);
+  if (localStorage.getItem("language") === null || localStorage.getItem("language") === "en") {
+    document.getElementById("translator")["checked"] = false;
+  } else {
+    document.getElementById("translator")["checked"] = true;
+  }
+  setText(translate);
 </script>
 
 <style>
   header {
     max-width: 900px;
     margin: 0 auto;
+  }
+
+  .body-2 {
+    font-weight: 600;
   }
 
   header .sub-header {
@@ -254,7 +267,7 @@ const { color = "light", subPages } = Astro.props;
   }
 
   .slider {
-    //position: absolute;
+    /* position: absolute; */
     cursor: pointer;
     top: 0;
     left: 0;

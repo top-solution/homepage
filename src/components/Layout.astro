@@ -7,18 +7,6 @@ import "../../src/styles/typography.css";
 import "../../src/utils/func.js"
 
 const { color = "light", subPages } = Astro.props;
-
-// if (subPages) {
-//   import "../../src/styles/global.css";
-//   import "../../src/styles/normalize.css";
-//   import "../../src/styles/typography.css";
-// } else {
-//   import "../src/styles/global.css";
-//   import "../src/styles/normalize.css";
-//   import "../src/styles/typography.css";
-// }
-
-// import "../../src/utils/func.js"
 ---
 
 <html class="no-js" lang="it" dir="ltr">
@@ -49,19 +37,16 @@ const { color = "light", subPages } = Astro.props;
   <link rel="icon" type="image/x-icon" href={subPages ? "../../img/logo.svg" : "../img/logo.svg" } />
   <!-- <link rel="stylesheet" href={subPages ? "../../src/styles/global.css" : "../src/styles/global.css" } />
   <link rel="stylesheet" href={subPages ? "../../src/styles/normalize.css" : "../src/styles/normalize.css" } />
-  <link rel="stylesheet" href={subPages ? "../../src/styles/typography.css" : "../src/styles/typography.css" } /> -->
-
-  <!-- <script type="text/javascript" src="../../src/utils/func.js"></script> -->
+  <link rel="stylesheet" href={subPages ? "../../src/styles/typography.css" : "../src/styles/typography.css" } />
+  <script type="text/javascript" src="../../src/utils/func.js"></script> -->
 </head>
 
 <script>
-  // if (sessionStorage.getItem("language") === null || sessionStorage.getItem("language") === "it") {
-  //   sessionStorage.setItem("language", "it")
-  // } else if (sessionStorage.getItem("language") === "en") {
-  //   sessionStorage.setItem("language", "en")
-  // }
-  sessionStorage.removeItem("language")
-  sessionStorage.setItem("language", "it")
+  if (localStorage.getItem("language") === null || localStorage.getItem("language") === "it") {
+    localStorage.setItem("language", "it")
+  } else if (localStorage.getItem("language") === "en") {
+    localStorage.setItem("language", "en")
+  }
 </script>
 
 <body>

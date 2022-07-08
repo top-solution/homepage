@@ -1,10 +1,8 @@
 ---
-import classnames from "classnames";
 import Hex from "../../components/Hex.astro";
 import FormTitleHex from "../../components/FormTitleHex.astro";
 import Textfield from "../../components/TextField.astro";
 import Button from "../../components/Button.astro";
-import Toast from "../../components/Toast.astro";
 
 import HoneypotField from "../../components/HoneypotField.astro";
 
@@ -245,7 +243,6 @@ function handleSubmit(event) {
     </div>
   </section>
 </form>
-<!-- <Toast bind:this={toastEl} message="Grazie per aver inviato la tua candidatura spontanea!" /> -->
 <div id="toast" class="ts-toast">Grazie per aver inviato la tua candidatura spontanea!</div>
 
 
