@@ -1,11 +1,18 @@
 ---
 import Layout from "../components/Layout.astro";
+import Hex from "../components/Hex.astro";
 ---
 
-<Layout color="light">
+
+<Layout color="dark">
   <div class="privacy-policy">
+    <div class="relative">
+      <div class="floating-hex-10">
+        <Hex width="240" fill="#221b5c" shadow="true" />
+      </div>
+    </div>
     <h4>Privacy Policy di <b>www.topsolution.it</b></h4>
-    <h6>Privacy Policy Semplificata</h6>
+    <h6><b>Privacy Policy Semplificata</b></h6>
     <p>
       Questa Applicazione raccoglie alcuni Dati Personali dei propri Utenti.
     </p>
@@ -27,15 +34,14 @@ import Layout from "../components/Layout.astro";
           <div>
             <b>Contattare l'Utente</b>
           </div>
-          <div>Modulo di contatto</div>
+          <div class="contactForm">Modulo di contatto</div>
           <div>
-            <div>
-              Dati Personali: Nome, cognome, data di nascita, email, numero di
+            <div class="smallFont">
+              <b>Dati Personali</b>: Nome, cognome, data di nascita, email, numero di
               telefono, anni di esperienza, titolo di studio.
             </div>
-
-            <div>
-              Dati Aziendali: nome azienda, ruolo, numero di dipendenti,
+            <div class="smallFont">
+              <b>Dati Aziendali</b>: nome azienda, ruolo, numero di dipendenti,
               settore.
             </div>
           </div>
@@ -49,8 +55,8 @@ import Layout from "../components/Layout.astro";
           <div>
             <b>Gestione della raccolta dati e dei sondaggi online</b>
           </div>
-          <div>Dati raccolti tramite moduli online gestiti in proprio</div>
-          <div>Dati Personali: nome; numero di telefono</div>
+          <div class="smallFont">Dati raccolti tramite moduli online gestiti in proprio</div>
+          <div class="smallFont">Dati Personali: nome; numero di telefono</div>
         </div>
       </div>
     </div>
@@ -59,25 +65,26 @@ import Layout from "../components/Layout.astro";
     <h5>
       <b>Informazioni di contatto:</b>
     </h5>
-    <div class="flex-container">
-      <div class="flex-icon">
-        <img src="../img/icons/user.svg" width="32" height="32" alt="User" />
+    <div class="flex-container direction">
+      <div class="flex-item ">
+        <div class="flex-icon">
+          <img src="../img/icons/user.svg" width="32" height="32" alt="User" />
+        </div>
       </div>
       <div class="flex-box">
         <div>
           <b>Titolare del Trattamento dei Dati</b>
         </div>
-        <div>Top Solution s.r.l</div>
-        <div>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
-        <div><b>Indirizzo email del Titolare</b>: info@topsolution.it</div>
+        <div class="smallFont">Top Solution s.r.l</div>
+        <div class="smallFont">Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</div>
+        <div class="smallFont"><b>Indirizzo email del Titolare</b>: info@topsolution.it</div>
       </div>
     </div>
-
-    <h5>Privacy Policy Estesa</h5>
-    <h5><b>Titolare del Trattamento dei Dati</b></h5>
-    <p>Top Solution s.r.l</p>
-    <p>Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</p>
-    <p><b>Indirizzo email del Titolare</b>: info@topsolution.it</p>
+    <h5><b>Privacy Policy Estesa</b></h5>
+    <h7 class="margin">Titolare del Trattamento dei Dati</h7>
+    <p class="margin">Top Solution s.r.l</p>
+    <p class="margin">Sede Legale Corso Regina Margherita, 254, 10144 Torino TO</p>
+    <p class="margin"><b>Indirizzo email del Titolare</b>: info@topsolution.it</p>
     <hr />
     <h5><b>Tipologie di Dati raccolti </b></h5>
     <p>
@@ -285,41 +292,41 @@ import Layout from "../components/Layout.astro";
     <p>In particolare, l’Utente ha il diritto di:</p>
     <ul>
       <li>
-        <b>revocare il consenso in ogni momento</b>. L’Utente può revocare il
+        <b>Revocare il consenso in ogni momento</b>: L’Utente può revocare il
         consenso al trattamento dei propri Dati Personali precedentemente
         espresso.
       </li>
       <li>
-        <b>opporsi al trattamento dei propri Dati</b>. L’Utente può opporsi al
+        <b>Opporsi al trattamento dei propri Dati</b>: l'Utente può opporsi al
         trattamento dei propri Dati quando esso avviene su una base giuridica
         diversa dal consenso. Ulteriori dettagli sul diritto di opposizione
         sono indicati nella sezione sottostante.
       </li>
       <li>
-        <b>accedere ai propri Dati</b>. L’Utente ha diritto ad ottenere
+        <b>Accedere ai propri Dati</b>: l’Utente ha diritto ad ottenere
         informazioni sui Dati trattati dal Titolare, su determinati aspetti
         del trattamento ed a ricevere una copia dei Dati trattati.
       </li>
       <li>
-        <b>verificare e chiedere la rettificazione</b>. L’Utente può
+        <b>Verificare e chiedere la rettificazione</b>: l’Utente può
         verificare la correttezza dei propri Dati e richiederne
         l’aggiornamento o la correzione.
       </li>
       <li>
-        <b>ottenere la limitazione del trattamento</b>. Quando ricorrono
+        <b>Ottenere la limitazione del trattamento</b>: quando ricorrono
         determinate condizioni, l’Utente può richiedere la limitazione del
         trattamento dei propri Dati. In tal caso il Titolare non tratterà i
         Dati per alcun altro scopo se non la loro conservazione.
       </li>
       <li>
-        <b>ottenere la cancellazione o rimozione dei propri Dati Personali</b>. Quando ricorrono determinate
+        <b>Ottenere la cancellazione o rimozione dei propri Dati Personali</b>: quando ricorrono determinate
         condizioni,
         l’Utente può richiedere la
         cancellazione dei propri Dati da parte del Titolare.
       </li>
       <li>
-        <b>ricevere i propri Dati o farli trasferire ad altro titolare</b>.
-        L’Utente ha diritto di ricevere i propri Dati in formato strutturato,
+        <b>Ricevere i propri Dati o farli trasferire ad altro titolare</b>:
+        l’Utente ha diritto di ricevere i propri Dati in formato strutturato,
         di uso comune e leggibile da dispositivo automatico e, ove
         tecnicamente fattibile, di ottenerne il trasferimento senza ostacoli
         ad un altro titolare. Questa disposizione è applicabile quando i Dati
@@ -328,7 +335,7 @@ import Layout from "../components/Layout.astro";
         misure contrattuali ad esso connesse.
       </li>
       <li>
-        <b>proporre reclamo</b>. L’Utente può proporre un reclamo all’autorità
+        <b>Proporre reclamo</b>: l’Utente può proporre un reclamo all’autorità
         di controllo della protezione dei dati personali competente o agire in
         sede giudiziale.
       </li>
@@ -486,18 +493,67 @@ import Layout from "../components/Layout.astro";
     </p>
 
     <hr />
-    <p>Ultima modifica: 1 giugno 2022</p>
+    <p>Ultima modifica: 12 luglio 2022</p>
+  </div>
+  <div>
+    <div class="floating-hex-0">
+      <Hex width="70" fill="#75bae5" shadow="true" />
+    </div>
+    <div class="floating-hex-1">
+      <Hex width="60" fill="#0078c3" shadow="true" />
+    </div>
+    <div class="floating-hex-2">
+      <Hex width="30" fill="#0078c3" shadow="true" />
+    </div>
+    <div class="floating-hex-3">
+      <Hex width="70" fill="#312783" shadow="true" />
+    </div>
+    <div class="floating-hex-4">
+      <Hex width="90" fill="#312783" shadow="true" />
+    </div>
+    <div class="floating-hex-5">
+      <Hex width="70" fill="#312783" shadow="true" />
+    </div>
+    <div class="floating-hex-6">
+      <Hex width="90" fill="#0078c3" shadow="true" />
+    </div>
+    <div class="floating-hex-7">
+      <Hex width="45" fill="#0078c3" shadow="true" />
+    </div>
+    <div class="floating-hex-8">
+      <Hex width="50" fill="#4857a3" shadow="true" />
+    </div>
+    <div class="floating-hex-9">
+      <Hex width="40" fill="#4857a3" shadow="true" />
+    </div>
+    <div class="floating-hex-10">
+      <Hex width="50" fill="#4857a3" shadow="true" />
+    </div>
+    <div class="floating-hex-11">
+      <Hex width="30" fill="#4857a3" shadow="true" />
+    </div>
+    <div class="floating-hex-12">
+      <Hex width="50" fill="#4857a3" shadow="true" />
+    </div>
+    <div class="floating-hex-13">
+      <Hex width="70" fill="#75bae5" shadow="true" />
+    </div>
+    <div class="floating-hex-14">
+      <Hex width="90" fill="#75bae5" shadow="true" />
+    </div>
+
   </div>
 </Layout>
 
 <style>
   .privacy-policy {
     color: var(--color-blue);
-    margin: var(--spacing-5) 0;
+    margin: var(--spacing-5);
   }
 
   h4 {
     font-weight: normal;
+    margin-bottom: 13px;
   }
 
   h5 {
@@ -510,6 +566,7 @@ import Layout from "../components/Layout.astro";
 
   .flex-item {
     display: flex;
+    align-items: center;
   }
 
   .flex-box {
@@ -520,10 +577,19 @@ import Layout from "../components/Layout.astro";
     margin: var(--spacing-0-5) 0;
   }
 
+  .contactForm {
+    margin-top: 8px;
+  }
+
   p {
     margin-bottom: var(--spacing-1);
     font-size: 13px;
     font-weight: normal;
+  }
+
+  .smallFont {
+    font-size: 13px;
+    margin-bottom: var(--spacing-1);
   }
 
   ul {
@@ -531,10 +597,145 @@ import Layout from "../components/Layout.astro";
     font-weight: normal;
   }
 
+  .floating-hex-0 {
+    position: absolute;
+    left: 26%;
+    top: 80px;
+    display: none;
+  }
+
+  .floating-hex-1 {
+    position: absolute;
+    right: -5%;
+    top: 110px;
+  }
+
+  .floating-hex-2 {
+    position: absolute;
+    right: -6%;
+    top: 186px;
+  }
+
+  .floating-hex-3 {
+    position: absolute;
+    right: -6%;
+    top: 600px;
+  }
+
+  .floating-hex-4 {
+    position: absolute;
+    right: -1%;
+    top: 670px;
+  }
+
+  .floating-hex-5 {
+    position: absolute;
+    left: 1%;
+    top: 850px;
+    transform: translateX(-52%);
+  }
+
+  .floating-hex-6 {
+    position: absolute;
+    left: 1%;
+    top: 1200px;
+    transform: translateX(-56%);
+  }
+
+  .floating-hex-7 {
+    position: absolute;
+    right: 1%;
+    transform: translateX(+53%);
+    top: 1700px;
+  }
+
+  .floating-hex-8 {
+    position: absolute;
+    right: 0%;
+    top: 1870px;
+    transform: translateX(+40%);
+  }
+
+  .floating-hex-9 {
+    position: absolute;
+    right: -8%;
+    top: 2040px;
+  }
+
+  .floating-hex-10 {
+    position: absolute;
+    left: -3%;
+    top: -273px;
+    z-index: -1;
+    transform: translate(-32%, 0);
+
+  }
+  .floating-hex-11{
+    position: absolute;
+    right: -4%;
+    top: 600px;
+    display:none;
+  }
+  .floating-hex-12{
+    position: absolute;
+    transform: translateX(+40%);
+    right: 0%;
+    top: 2860px;
+  }
+  .floating-hex-13{
+    position: absolute;
+    transform: translateX(+40%);
+    right: -2%;
+    top: 4060px;
+  }
+  .floating-hex-14{
+    position: absolute;
+    right: -4%;
+    top: 4460px;
+    transform: translateX(+40%);
+  }
+
+  .relative{
+    position: relative;
+  }
+
+  .margin {
+    margin: 4px 0px 8px;
+  }
+
   @media only screen and (max-width: 600px) {
     .flex-container {
       display: flex;
       flex-direction: column;
+    }
+
+    .floating-hex-0 {
+      position: absolute;
+      left: 26%;
+      top: 80px;
+      display: block;
+    }
+
+    .floating-hex-10 {
+      display: none;
+    }
+    .direction{
+      flex-direction: row;
+    }
+    .floating-hex-3{
+      display: none;
+    }
+    .floating-hex-4{
+      display: none;
+    }
+    .floating-hex-11{
+      position: absolute;
+      right: -4%;
+      top: 600px;
+      display: block;
+    }
+    .floating-hex-14{
+      display: none;
     }
   }
 </style>
