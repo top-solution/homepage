@@ -12,7 +12,7 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
 ---
 
 <Layout color="light">
-  <TopBanner title="Sviluppo Software" mobilealignleft="true" title2={false}>
+  <TopBanner title="Sviluppo Software" azure={true} mobilealignleft="true" title2={false}>
     <p class="claim" slot="text">
       Affrontiamo lo sviluppo dei nostri prodotti e servizi con tecnologie sempre nuove, perchè la curiosità e la voglia
       di sperimentare fanno parte del nostro DNA. Per questo siamo in grado di offrire una consulenza di sviluppo
@@ -28,6 +28,9 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
       </div>
       <div class="hexagons-floating">
         <Hex width="85" fill="#312783" shadow="true" />
+      </div>
+      <div class="hexagons-floating-1">
+        <Hex width="195" fill="#0069A7" shadow="true" />
       </div>
     </div>
   </TopBanner>
@@ -76,6 +79,13 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
     position: absolute;
     bottom: -50px;
     right: 30px;
+  }
+
+  .hexagons-floating-1 {
+    width: 85px;
+    position: absolute;
+    top: 225px;
+    left: -325px;
   }
 
   article {
@@ -180,6 +190,11 @@ import { developmentSoftwareBlobs } from "../utils/tripleBlobs";
   }
 
   @media only screen and (max-width: 960px) {
+
+    .hexagons-floating-1 {
+      display: none;
+    }
+
     .hr-svg {
       display: none;
     }
